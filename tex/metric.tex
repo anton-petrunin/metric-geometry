@@ -1,0 +1,451 @@
+\chapter{Definitions}
+
+\section{Metric spaces}
+\label{sec:metric spaces}
+
+
+The distance between two points $x$ and $y$ in a metric space $\spc{X}$ will be denoted by $\dist{x}{y}{}$ or $\dist{x}{y}{\spc{X}}$.
+The latter notation is used if we need to emphasize 
+that the distance is taken in the space~${\spc{X}}$.
+
+The function 
+\[\distfun_x\:y\mapsto \dist{x}{y}{}\]
+is called the \index{distance function}\emph{distance function} from~$x$. 
+
+Given $R\in[0,\infty]$ and $x\in \spc{X}$, the sets
+\begin{align*}
+\oBall(x,R)&=\{y\in \spc{X}\mid \dist{x}{y}{}<R\},
+\\
+\cBall[x,R]&=\{y\in \spc{X}\mid \dist{x}{y}{}\le R\}
+\end{align*}
+are called, respectively, the  \index{open ball}\emph{open} and  the \index{closed ball}\emph{closed  balls}   of radius $R$ with center~$x$.
+Again, if we need to emphasize that these balls are taken in the metric space $\spc{X}$,
+we write 
+\[\oBall(x,R)_{\spc{X}}\quad\text{and}\quad\cBall[x,R]_{\spc{X}}.\]
+
+\section{Variations of definition}
+
+Recall that a metric is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
+\begin{enumerate}[(i)]
+\item $\dist{x}{y}{\spc{X}}\ge 0$,
+\item\label{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
+\item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
+\item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
+\end{enumerate}
+
+\parbf{Pseudometrics.}
+A generalization of a metric in which the distance between two distinct points can be zero is called \emph{pseudometric}.
+In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from the list.
+
+The following two observations show that
+nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
+
+Assume $\spc{X}$ is a pseudometric space.
+Set
+$x\sim y$ if $\dist{x}{y}{}=0$. 
+Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
+Thus, $\dist{*}{*}{}$ defines a metric on the
+quotient set $\spc{X}/{\sim}$.
+In this way we obtain a metric space $\spc{X}'$.
+The space $\spc{X}'$ is called the 
+\emph{corresponding metric space} for the pseudometric space $\spc{X}$.
+Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
+
+\parbf{$\bm{\infty}$-metrics.}
+One may also consider metrics with values in $\RR\cup\{\infty\}$;
+we might call then $\infty$-metrics or simply metrics.
+
+Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
+
+Indeed, set $x\approx y$ if and only if $\dist{x}{y}{}<\infty$;
+this is an other equivalence relation on $\spc{X}$.
+The equivalence class of a point $x\in\spc{X}$ will be called the \emph{metric component}\index{metric component} 
+ of $x$; it will be denoted as $\spc{X}_x$.
+One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$; see definition below.
+
+It follows that any $\infty$-metric space is a \emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
+
+\section{Completeness}
+
+Recall that a metric space $\spc{X}$ is called \emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:almost-min}
+Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
+Show that for any $\eps>0$ there is a point $x\in \spc{X}$ such that 
+\[\rho(x)>(1-\eps)\cdot\rho(y)\]
+for any point $y\in \oBall(x,\rho(x))$.
+\end{thm}
+
+Most of the time we will assume that a metric space is complete.
+The following construction produces a complete metric space $\bar{\spc{X}}$ for any given metric space $\spc{X}$.
+The space $\bar{\spc{X}}$ is called \emph{completion} of $\spc{X}$;
+the original space $\spc{X}$ forms a dense subset in $\bar{\spc{X}}$.
+
+\parbf{Completion.}
+Given metric space $\spc{X}$, 
+consider the set of all Cauchy sequences in $\spc{X}$.
+Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side below is defined; moreover it defines a pseudometric on the set $\spc{C}$ of all Cauchy sequences
+\[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\]
+The corresponding metric space is called a completion of $\spc{X}$.
+
+It is left as an exercise that completion of $\spc{X}$ is complete.
+
+Note that for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
+It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
+It is easy to check that this map is distance preserving.
+In partucular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+
+\section{Compactness}
+
+Let us recall few equivalent definitions of compact metric spaces.
+
+\begin{thm}{Definition}\label{def:compact}
+A metric space $\spc{K}$ is compact if and only if one of the following equivalent condition holds:
+\begin{enumerate}[(a)]
+\item Every open cover of $\spc{K}$ has a finite subcover.
+\item For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called Lebesgue number of the covering.)
+\item Every sequence in $\spc{K}$ has a convergent subsequence.
+\item The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\eps>0$, the space $\spc{K}$ admits a finite cover by open $\eps$-balls.\footnote{Equivalently, for any $\eps>0$ there is a finite \emph{$\eps$-net}; that is a finite set of points $x_1,\dots,x_n\in \spc{K}$ such that any other point $x$ lies on the distance less than $\eps$ from one of $x_i$.}
+\end{enumerate}
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}>\eps$ for any $i\ne j$.
+
+Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}<\infty$ for any $\eps>0$.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:non-contracting-map}
+Let $K$  be a compact metric space and
+\[f\:K\z\to K\] 
+be a distance non-decreasing map.
+Prove that $f$ is an isometry.
+\end{thm}
+
+
+A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
+This condition is equivalent to each of the following statements:
+\begin{enumerate}
+\item For some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
+the closed ball $\cBall[p,R]\subset\spc{X}$ is compact. 
+\item The function $\dist{p}{}{}\:\spc{X}\to\RR$ is proper for some (and therefore any) point $p\in \spc{X}$;
+that is, for any compact set $K\subset \RR$, its inverse image 
+$\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}\in K}$
+is compact.
+\end{enumerate}
+
+A metric space $\spc{X}$ is called \emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
+in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
+
+\begin{thm}{Exercise}
+Give an example of space which is locally compact but not proper.
+\end{thm}
+
+\section{Geodesics}
+\label{sec:geods}
+
+Let $\spc{X}$ be a metric space 
+and $\II$\index{$\II$} be a real interval. 
+A~globally isometric map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
+\footnote{Various authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.}; 
+in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if 
+\[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
+for any pair $s,t\in \II$.
+
+We say that  $\gamma\:\II\to \spc{X}$ is a geodesic from point $p$ to point $q$ if 
+$\II=[a,b]$ and $p=\gamma(a)$, $q=\gamma(b)$.
+In this case the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$} and with an abuse of notations  we also call it a \index{geodesic}\emph{geodesic}.
+Given a geodesic $[pq]$, we can parametrize it by distance to $p$;
+this parametrization will be denoted by $\geod_{[p q]}(t)$.
+
+
+We may write $[p q]_{\spc{X}}$ 
+to emphasize that the geodesic $[p q]$ is in the space  ${\spc{X}}$.
+We also use the following shortcut notation:
+\begin{align*}
+\left] p q \right[&=[pq]\backslash\{p,q\},
+&
+\left] p q \right]&=[pq]\backslash\{p\},
+&
+\left[ p q \right[&=[pq]\backslash\{q\}.
+\end{align*}
+
+
+
+In general, a geodesic between $p$ and $q$ need not exist and if it exists, it need not  be unique.  
+However,  once we write $[p q]$ we mean that we have  made a choice of  geodesic.
+
+A metric space is called \index{geodesic}\emph{geodesic} if any pair of its points can be joined by a geodesic. 
+
+
+A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parametrization by $[0,1]$.
+Given a geodesic $[p q]$,
+we denote by $\geodpath_{[pq]}$ the corresponding geodesic path;
+that is,
+$$\geodpath_{[pq]}(t)\z\df\geod_{[pq]}(t\cdot\dist[{{}}]{p}{q}{}).$$
+
+A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
+A constant-speed parametrization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
+
+
+
+\section{Length}
+
+A \emph{curve} is defined as a continuous map from a real interval to a space.
+If the real interval is $[0,1]$, then the curve is called a \emph{path}.
+
+\begin{thm}{Definition}
+Let $\spc{X}$ be a metric space and
+$\alpha\: \II\to \spc{X}$ be a curve.
+We define the \index{length}\emph{length} of $\alpha$ as 
+\[
+\length \alpha \df \sup_{t_0\le t_1\le\ldots\le t_n}\sum_i \dist{\alpha(t_i)}{\alpha(t_{i-1})}{}.
+\]
+
+A curve $\alpha$ is called \emph{rectifiable} if $\length \alpha<\infty$.
+\end{thm}
+
+
+
+\begin{thm}{Theorem}\label{thm:length-semicont}
+Length is a lower semi-continuous with respect to pointwise convergence of curves. 
+
+More precisely, assume that a sequence
+of curves $\gamma_n\:[a,b]\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
+to a curve $\gamma_\infty\:[a,b]\to \spc{X}$;
+that is, for any fixed $t \in [a,b]$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
+Then 
+$$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
+\end{thm}
+
+
+\begin{wrapfigure}{o}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-6}
+\end{wrapfigure}
+
+
+Note that the inequality \ref{eq:semicont-length} might be strict.
+For example the diagonal $\gamma_\infty$ of the unit square 
+can be  approximated by a stairs-like
+polygonal curves $\gamma_n$
+with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
+In this case
+\[\length\gamma_\infty=\sqrt{2}\quad
+\text{and}\quad \length\gamma_n=2\]
+for any $n$.
+
+\parit{Proof.}
+Fix a partition $a=t_0<t_1<\dots<t_k=b$.
+Set 
+\begin{align*}\Sigma_n
+&\df
+|\gamma_n(t_0)-\gamma_n(t_1)|+\dots+|\gamma_n(t_{k-1})-\gamma_n(t_k)|.
+\\
+\Sigma_\infty
+&\df
+|\gamma_\infty(t_0)-\gamma_\infty(t_1)|+\dots+|\gamma_\infty(t_{k-1})-\gamma_\infty(t_k)|.
+\end{align*}
+
+Note that for each $i$ we have 
+\[|\gamma_n(t_{i-1})-\gamma_n(t_i)|\to|\gamma_\infty(t_{i-1})-\gamma_\infty(t_i)|\]
+and therefore
+\[\Sigma_n\to \Sigma_\infty\] 
+as $n\to\infty$.
+Note that 
+\[\Sigma_n\le\length\gamma_n\]
+for each $n$.
+Hence
+$$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.\eqlbl{>=Sigma-infty}$$
+
+If $\gamma_\infty$ is rectifiable, we can assume that 
+\begin{align*}
+\length\gamma_\infty<\Sigma_\infty+\eps.
+\end{align*}
+for any given $\eps>0$.
+By \ref{>=Sigma-infty} it follows that 
+$$\liminf_{n\to\infty} \length\gamma_n > \length\gamma_\infty-\eps$$
+for any $\eps>0$; whence \ref{eq:semicont-length} follows.
+
+It remains to consider the case when $\gamma_\infty$ is not rectifiable; 
+that is, $\length\gamma_\infty=\infty$.
+In this case we can choose a partition so that $\Sigma_\infty>L$ for any real number $L$.
+By \ref{>=Sigma-infty} it follows that 
+$$\liminf_{n\to\infty} \length\gamma_n > L$$
+for any given $L$; whence 
+\[\liminf_{n\to\infty}\length\gamma_n=\infty\]
+and \ref{eq:semicont-length} follows.
+\qeds
+
+\section{Length spaces}\label{sec:intrinsic}
+
+If for any $\eps>0$ and any pair of points $x$ and $y$ in a metric space $\spc{X}$, there is a path $\alpha$ connecting $x$ to $y$ such that
+\[\length\alpha< \dist{x}{y}{}+\eps,\]
+then $\spc{X}$ is called a \index{length space}\emph{length space} and the metric on $\spc{X}$ is called a \index{length metric}\emph{length metric}.\label{page:length metric}
+
+Note that any geodesic space is a length space.
+As can be seen from the following example, the converse does not hold.
+
+
+\begin{thm}{Example}
+Let $\spc{X}$ be obtained by gluing a countable collection of disjoint intervals $\{\II_n\}$ of length $1+\tfrac1n$, where for each $\II_n$ the left end is glued to $p$ and the right end to~$q$.
+Then $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{}=1$ but there is no geodesic connecting $p$ to~$q$.
+\end{thm}
+
+
+
+\begin{thm}{Exercise}\label{ex:no-geod}
+Give an example of a complete length space for which no pair of distinct points can be joined by a geodesic.
+\end{thm}
+
+Directly from the definition, it follows that if a path $\alpha\:[0,1]\to\spc{X}$ connects two points $x$ and $y$ 
+(that is, if $\alpha(0)=x$ and $\alpha(1)=y$), then 
+\[\length\alpha\ge \dist{x}{y}{}.\]
+Set 
+\[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
+where the infimum is taken for all paths connecing $x$ and $y$.
+It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
+The metric $\yetdist{*}{*}{}$ is called \emph{induced length metric}.
+
+\begin{thm}{Exercise}\label{ex:compact=>complete}
+Suppose $(\spc{X},\dist{*}{*}{})$ is a compact metric space.
+Show that $(\spc{X},\yetdist{*}{*}{})$ is complete.
+\end{thm}
+
+
+Let $A$ be a subset of a metric space $\spc{X}$.
+Given two points $x,y\in A$,
+consider the value
+\[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
+where the infimum is taken for all paths $\alpha$ from $x$ to $y$ in $A$.\footnote{Note that while this notation slightly conflicts with the previously defined notation for distance on a general metric space, we will usually work with ambient length spaces where the meaning will be unambiguous.}
+
+If $\dist{x}{y}{A}$ takes finite value for each pair $x,y\in A$,
+then $\dist{x}{y}{A}$ defines a metric on  $A$;
+this metric will be called the \index{induced length metric}\emph{induced length metric} on $A$.
+
+
+
+Let $\spc{X}$ be a metric space and $x,y\in\spc{X}$.
+
+\begin{enumerate}[(i)]
+\item A point $z\in \spc{X}$ is called a \index{midpoint}\emph{midpoint} between $x$ and $y$
+if 
+\[\dist{x}{z}{}=\dist{y}{z}{}=\tfrac12\cdot\dist[{{}}]{x}{y}{}.\]
+\item Assume $\eps\ge 0$.
+A point $z\in \spc{X}$ is called an \index{$\eps$-midpoint}\emph{$\eps$-midpoint} between $x$ and $y$
+if 
+\[\dist{x}{z}{},\quad\dist{y}{z}{}\le\tfrac12\cdot\dist[{{}}]{x}{y}{}+\eps.\]
+\end{enumerate}
+
+
+Note that a $0$-midpoint is the same as a midpoint.
+
+
+\begin{thm}{Lemma}\label{lem:mid>geod}
+Let $\spc{X}$ be a complete metric space.
+\begin{subthm}{lem:mid>length}
+Assume that for any pair of points $x,y\in \spc{X}$  
+ and any $\eps>0$
+there is an $\eps$-midpoint~$z$.
+Then $\spc{X}$ is a length space.
+\end{subthm}
+
+\begin{subthm}{lem:mid>geod:geod}
+Assume that for any pair of points $x,y\in \spc{X}$, 
+there is a midpoint~$z$.
+Then $\spc{X}$ is a geodesic space.
+\end{subthm}
+\end{thm}
+
+\parit{Proof.}
+We first prove (\ref{SHORT.lem:mid>length}).
+Let $x,y\in \spc{X}$ be a pair of points.
+
+Set $\eps_n=\frac\eps{4^n}$, $\alpha(0)=x$ and $\alpha(1)=y$.
+
+Let $\alpha(\tfrac12)$ be an $\eps_1$-midpoint between $\alpha(0)$ and $\alpha(1)$.
+Further, let $\alpha(\frac14)$ 
+and $\alpha(\frac34)$ be $\eps_2$-midpoints between the pairs $(\alpha(0),\alpha(\tfrac12))$ 
+and $(\alpha(\tfrac12),\alpha(1))$ respectively.
+Applying the above procedure recursively,
+on the $n$-th step we define $\alpha(\tfrac{k}{2^n})$,
+for every odd integer $k$ such that $0<\tfrac k{2^n}<1$, 
+as an $\eps_{n}$-midpoint between the already defined
+$\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
+
+
+In this way we define $\alpha(t)$ for $t\in W$,
+where $W$ denotes the set of dyadic rationals in $[0,1]$.
+Since $\spc{X}$ is complete, the map $\alpha$ can be extended continuously to $[0,1]$.
+Moreover,
+\[\begin{aligned}
+\length\alpha&\le \dist{x}{y}{}+\sum_{n=1}^\infty 2^{n-1}\cdot\eps_n\le
+\\
+&\le \dist{x}{y}{}+\tfrac\eps2.
+\end{aligned}
+\eqlbl{eq:eps-midpoint}
+\]
+Since $\eps>0$ is arbitrary, we get (\ref{SHORT.lem:mid>length}).
+
+To prove (\ref{SHORT.lem:mid>geod:geod}), 
+one should repeat the same argument 
+taking midpoints instead of $\eps_n$-midpoints.
+In this case \ref{eq:eps-midpoint} holds for $\eps_n=\eps=0$.
+\qeds
+
+Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, Lemma~\ref{lem:mid>geod} immediately implies
+
+\begin{thm}{Proposition}\label{prop:length+proper=>geodesic}
+A proper length space is geodesic.
+\end{thm}
+
+\begin{thm}{Hopf--Rinow theorem}\label{thm:Hopf-Rinow}
+Any complete, locally compact length space is proper.
+\end{thm}
+
+\parit{Proof.}
+Let $\spc{X}$ be a locally compact length space.
+Given $x\in \spc{X}$, denote by $\rho(x)$ the supremum of all $R>0$ such that
+the closed ball $\cBall[x,R]$ is compact.
+Since $\spc{X}$ is locally compact, 
+$$\rho(x)>0\ \ \text{for any}\ \ x\in \spc{X}.\eqlbl{eq:rho>0}$$
+It is sufficient to show that $\rho(x)=\infty$ for some (and therefore any) point $x\in \spc{X}$.
+
+Assume the contrary; that is, $\rho(x)<\infty$. We claim that
+
+\begin{clm}{} $B=\cBall[x,\rho(x)]$ is compact for any~$x$.
+\end{clm}
+
+Indeed, $\spc{X}$ is a length space;
+therefore for any $\eps>0$, 
+the set $\cBall[x,\rho(x)-\eps]$ is a compact $\eps$-net in~$B$.
+Since $B$ is closed and hence complete, it must be compact.
+\claimqeds
+Next we claim that
+\begin{clm}{} $|\rho(x)-\rho(y)|\le \dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$;
+in particular $\rho\:\spc{X}\to\RR$ is a continuous function.
+\end{clm}
+
+Indeed, 
+assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
+Then 
+$\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
+Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$, a contradiction.\claimqeds
+
+Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact.
+From \ref{eq:rho>0}, we have $\eps>0$.
+
+Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B$.
+The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
+Clearly 
+$\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
+Therefore $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
+a contradiction.
+\qeds
+
+\begin{thm}{Exercise}\label{exercise from BH}
+Construct a geodesic space that is locally compact,
+but whose completion is neither geodesic nor locally compact.
+\end{thm}

@@ -1,0 +1,46 @@
+\RequirePackage{snapshot}
+\documentclass[twoside]{book}
+
+\usepackage{lectures}
+\usepackage[colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black,
+pdftitle={Lectures in metric geometry},
+pdfsubject={Geometry},
+pdfauthor={Anton Petrunin}
+]{hyperref}
+\makeindex
+
+\begin{document}
+ 
+\title{Lectures in metric geometry}
+\author{Anton Petrunin}
+\date{}
+\maketitle
+
+
+
+\section*{Disclaimer}
+
+Considerable part of the text is a compilation from \cite{alexander-kapovitch-petrunin-2019, alexander-kapovitch-petrunin-2025, petrunin-yashinski, petrunin-zamorabarrera}.
+
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+
+
+
+
+\include{hwa}
+\include{metric}
+
+{
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\end{document}
