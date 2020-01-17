@@ -1,0 +1,186 @@
+\chapter{Convergence}
+
+\section{Hausdorff convergence}
+
+Let $\spc{X}$ be a metric space.
+Given a subset $A\subset \spc{X}$,
+consider the distance function to $A$
+$$\distfun_A: \spc{X} \to [0,\infty)$$
+defined as 
+$$\distfun_A(x)
+\df
+\inf_{a\in A}\{\,\dist ax{\spc{X}}\,\}.$$
+
+\begin{thm}{Definition}
+Let $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
+Then the \emph{Hausdorff distance} between $A$ and $B$ is defined as 
+$$|A-B|_{\mathcal{H}(\spc{X})}
+\df
+\sup_{x\in \spc{X}}\{\,|\distfun_A(x)-\distfun_B(x)|\,\}.
+$$
+
+\end{thm}
+ 
+Suppose $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
+It is straightforward to check that $|A-B|_{\mathcal{H}(\spc{X})}\le R$ if and only if 
+$\distfun_A(b)\le R$ for any $b\in B$
+and 
+$\distfun_B(a)\le R$ for any $a\in A$.
+In other words, $|A-B|_{\mathcal{H}(\spc{X})}< R$ if and only if 
+$B$ lies in a $R$-neighborhood of $A$, 
+and 
+$A$ lies in a $R$-neighborhood of $B$.
+
+Note that the set of all nonempty compact subsets of a metric space $\spc{X}$ equipped with the Hausdorff metric forms a metric space.
+This new metric space will be denoted as $\mathcal{H}(\spc{X})$.
+
+
+\begin{thm}{Exercise}\label{ex:diam}
+Let $\spc{X}$ be a metric space.
+Given a subset $A\subset \spc{X}$ define its diameter as 
+$$\diam A\df\sup_{a,b\in A} |a-b|.$$
+
+Show that 
+$$\diam\:\mathcal{H}(\spc{X})\to \RR$$ 
+is a continuous function.
+\end{thm}
+
+
+\begin{thm}{Blaschke selection theorem}\label{thm:compact+Hausdorff}
+Let $\spc{X}$ be a metric space.
+Then the space $\mathcal{H}(\spc{X})$ is compact if and only if $\spc{X}$ is compact.
+\end{thm}
+
+\parit{Proof; ``only if'' part.}
+Note that the map $\iota\:\spc{X}\to \mathcal{H}(\spc{X})$, defined as $\iota\:x\mapsto\{x\}$
+(that is, point $x$ mapped to the one-point subset $\{x\}$ of $\spc{X}$)
+is distance preserving.
+Therefore $\spc{X}$ is isometric to the set $\iota(\spc{X})$ in $\mathcal{H}(\spc{X})$.
+
+Note that for a nonempty subset $A\subset \spc{X}$, we have $\diam A=0$ if and only if $A$ is a one-point set.
+Therefore, from Exercise~\ref{ex:diam}, it follows 
+that $\iota(\spc{X})$ is closed in $\mathcal{H}(\spc{X})$.
+
+Hence $\iota(\spc{X})$  is compact, as it is a closed subset of a compact space. 
+Since $\spc{X}$ is isometric to $\iota(\spc{X})$,
+``only if'' part follows.
+\qeds
+
+To prove ``if'' part we will need the following two lemmas.%???CHANGE THE PROOF???
+
+\begin{thm}{Lemma}\label{lem:decreasing-converges}
+Let $K_1\supset K_2\supset\dots$ be a sequence of nonempty compact sets in a metric space $\spc{X}$
+then $K_\infty=\bigcap_n K_n$ is the Hausdorff limit of $K_n$;
+that is, $|K_\infty-K_n|_{\mathcal{H}(\spc{X})}\to0$ as $n\to\infty$.
+\end{thm}
+
+\parit{Proof.}
+Note that $K_\infty$ is compact;
+by finite intersection property, $K_\infty$ is nonempty.
+
+If the assertion were false, 
+then there is $\eps>0$ such that for each $n$ 
+one can choose $x_n\in K_n$
+such that $\distfun_{K_\infty}(x_n)\ge\eps$.
+Note that $x_n\in K_1$ for each $n$.
+Since $K_1$ is compact, 
+there is 
+a \emph{partial limit}\index{partial limit}\footnote{Partial limit is a limit of a subsequence.}
+ $x_\infty$ of $x_n$.
+Clearly $\distfun_{K_\infty}(x_\infty)\ge \eps$.
+
+On the other hand, since $K_n$ is closed and $x_m\in K_n$ for $m\ge n$,
+we get $x_\infty\in K_n$ for each $n$.
+It follows that $x_\infty\in K_\infty$ and therefore $\distfun_{K_\infty}(x_\infty)=0$,
+a contradiction.\qeds
+
+
+\begin{thm}{Lemma}\label{lem:complete+Hausdorff}
+If $\spc{X}$ is a compact metric space then $\mathcal{H}(\spc{X})$
+is complete.
+\end{thm}
+
+\parit{Proof.}
+Let $(Q_n)$ be a Cauchy sequence in $\mathcal{H}(\spc{X})$.
+Passing to a subsequence of $Q_n$ we may assume that 
+$$|Q_n-Q_{n+1}|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}\eqlbl{eq:eps=1/10}$$
+for each $n$.
+
+Set 
+\begin{align*}
+K_n&= \set{x\in \spc{X}}{\distfun_{Q_n}(x)\le \tfrac1{10^n}}
+\end{align*}
+Since $\spc{X}$ is compact so is each $K_n$.
+
+Clearly, $|Q_n-K_n|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}$ and from \ref{eq:eps=1/10}, we get
+$K_n\supset K_{n+1}$ 
+for each $n$.
+Set 
+$$K_\infty=\bigcap_{n=1}^\infty K_n.$$
+Applying Lemma \ref{lem:decreasing-converges},
+we get that $|K_n-K_\infty|_{\mathcal{H}(\spc{X})}\to 0$ as $n\to\infty$.
+Since $|Q_n-K_n|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}$, we get $|Q_n-K_\infty|_{\mathcal{H}(\spc{X})}\to 0$ as $n\to\infty$ --- hence the lemma.
+\qeds
+
+\begin{thm}{Exercise}
+Let $\spc{X}$ be a complete metric space and $K_n$ be a sequence of compact sets 
+which converges in the sence of Hausdorff.
+Show that closure of the union $\bigcup_{n=1}^\infty K_n$ is compact.
+
+Use this to show that in Lemma~\ref{lem:complete+Hausdorff} compactness of $\spc{X}$ can be exchanged to completeness.
+\end{thm}
+
+\parit{Proof of ``if'' part in \ref{thm:compact+Hausdorff}.}
+According to Lemma~\ref{lem:complete+Hausdorff},
+$\mathcal{H}(\spc{X})$ is complete.
+It remains to show that $\mathcal{H}(\spc{X})$ is totally bounded (\ref{totally-bounded});
+that is, given $\eps>0$ there is a finite $\eps$-net in $\mathcal{H}(\spc{X})$.
+
+Choose a finite $\eps$-net $A$ in $\spc{X}$.
+Denote by $\mathcal{A}$ the set of all subsets of $A$.
+Note that  $\mathcal{A}$ is finite set in $\mathcal{H}(\spc{X})$.
+For each compact set $K\subset \spc{X}$, consider the subset $K'$ of all points $a\in A$
+such that $\distfun_K(a)\le \eps$.
+Then $K' \in \mathcal{A}$ and $|K-K'|_{\mathcal{H}(\spc{X})}\le\eps$.
+In other words $\mathcal{A}$ is a finite $\eps$-net in $\mathcal{H}(\spc{X})$.
+\qeds
+
+Hausdorff metric defines convergence of compact sets which is more important than metric itself.
+
+\begin{thm}{Exercise}\label{ex:Hausdorff-bry}
+Let $X$ and $Y$ be two compact subsets in $\RR^2$.
+Assume $|X-Y|_{\mathcal{H}(\RR^2)}<\eps$, 
+is it true that
+$|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$,
+where $\partial X$ denotes the boundary of $X$.
+
+Does the converse holds? That is, assume $X$ and $Y$ be two compact subsets in $\RR^2$
+and $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$; 
+is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
+\end{thm}
+
+\section{A variation}
+
+It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff in \cite{hausdorff},
+and a couple of years later an equivalent definition was given by Wilhelm Blaschke in~\cite{blaschke}.
+
+The following refinement of the definition was introduced by  Zden\v{e}k Frol\'{\i}k in \cite{frolik},
+and later rediscovered by Robert Wijsman in~\cite{wijsman}.  
+This refinement takes an intermediate place between the original Hausdorff convergence and {}\emph{closed convergence}, also introduced by Hausdorff in \cite{hausdorff};
+so we still call it Hausdorff convergence.
+
+\begin{thm}{Definition}\label{def:gen-Haus-conv}
+Let $\spc{X}$ be a proper metric space.
+We say that a sequence of closed sets $A_n$ converges to a set $A_\infty$ in the sense of Hausdorff if $\distfun_{A_n}(x)\to \distfun_{A_\infty}(x)$ for any $x\in\spc{X}$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\spc{X}$ be a proper metric space
+and $(A_n)_{n=1}^\infty$ be a sequence of closed sets in~$\spc{X}$.
+Assume that for some (and therefore any) point  $x\in\spc{X}$, 
+the sequence $\distfun_{A_n}(x)$ is bounded.
+Show that the sequence  $(A_n)_{n=1}^\infty$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
+\end{thm}
+
+
+
