@@ -11,8 +11,6 @@
 \usepackage{xfrac}
 \usepackage{gensymb}%degree
 
-\hyphenation{Kirsz-braun para-met-rized}
-
 \usepackage[russian,
 slovak,
 german,
@@ -22,7 +20,7 @@ english]{babel}
 \DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
 
 \usepackage[
-sorting=none,
+sorting=debug,
 bibencoding=auto,
 backend=biber,
 maxnames=10,
@@ -138,8 +136,13 @@ isbn=false]{biblatex}
 \def\cBall{\overline{\mathrm{B}}{}}
 \def\length{\mathop{\rm length}\nolimits}
 \def\df{\buildrel \hbox{\tiny\it def} \over{=\joinrel=}}
+\def\iso{\buildrel \hbox{\tiny\it iso} \over{=\joinrel=}}
+\def\GHto{\xrightarrow{\mbox{\tiny GH}}}
 \def\geod{\mathop{\rm geod}\nolimits}
 \def\geodpath{\mathop{\rm path}\nolimits}
+\def\rad{\mathop{\rm rad}\nolimits}
+\def\lege{\lessgtr}
+\def\Under{\mathop{\rm Under}\nolimits}
 
 \newcommand*\yetdist[4][{}]%
 {\|{#2}\z-{#3}\|_{#4}^{#1}}
@@ -260,9 +263,12 @@ half-space
 ho-mo-mor-phism 
 ho-meo-mor-phisms
 Kar-sten
+Kirsz-braun 
+Ku-ra-tow-ski 
 Lyt-chak 
 Mat-ve-yev
 dif-feo-mor-phisms 
+para-met-rized 
 pin-ched
 qua-si-geo-de-sic 
 qua-si-geo-de-sics

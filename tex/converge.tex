@@ -11,7 +11,7 @@ $$\distfun_A(x)
 \df
 \inf_{a\in A}\{\,\dist ax{\spc{X}}\,\}.$$
 
-\begin{thm}{Definition}
+\begin{thm}{Definition}\label{def:hausdorff-convergence}
 Let $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
 Then the \emph{Hausdorff distance} between $A$ and $B$ is defined as 
 $$|A-B|_{\mathcal{H}(\spc{X})}
@@ -159,7 +159,7 @@ and $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$;
 is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
 \end{thm}
 
-\section{A variation}
+\section{History and a variation}
 
 It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff in \cite{hausdorff},
 and a couple of years later an equivalent definition was given by Wilhelm Blaschke in~\cite{blaschke}.
@@ -174,6 +174,11 @@ Let $\spc{X}$ be a proper metric space.
 We say that a sequence of closed sets $A_n$ converges to a set $A_\infty$ in the sense of Hausdorff if $\distfun_{A_n}(x)\to \distfun_{A_\infty}(x)$ for any $x\in\spc{X}$.
 \end{thm}
 
+For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at $(n,0)$.
+If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $A_n$ diverges in the sence of the standard definition (\ref{def:hausdorff-convergence}), but it converges to the $y$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
+
+The following exercise is analogous to the Blaschke selection theorem (\ref{thm:compact+Hausdorff}).
+
 \begin{thm}{Exercise}
 Let $\spc{X}$ be a proper metric space
 and $(A_n)_{n=1}^\infty$ be a sequence of closed sets in~$\spc{X}$.
@@ -181,6 +186,166 @@ Assume that for some (and therefore any) point  $x\in\spc{X}$,
 the sequence $\distfun_{A_n}(x)$ is bounded.
 Show that the sequence  $(A_n)_{n=1}^\infty$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
 \end{thm}
+
+
+\section{Gromov--Hausdorff metric}
+
+The goal of this section is to cook up a metric space out of metric spaces.
+More precisely, we want to define the so called  Gromov--Hausdorff metric on the set of \emph{isometry classes} of compact metric spaces.
+(Being isometric is an equivalence relation, 
+and an isometry class is an equivalence class with respect to this equivalence relation.)
+
+The obtained metric space will be denoted as $\spc{M}$.
+Given two metric spaces $\spc{X}$ and $\spc{Y}$,
+denote by $[\spc{X}]$ and $[\spc{Y}]$ their isometry classes;
+that is, $\spc{X}'\in [\spc{X}]$ if and only if $\spc{X}'\iso \spc{X}$.
+Pedantically, the Gromov--Hausdorff distance from $[\spc{X}]$ 
+to $[\spc{Y}]$ should be denoted as $|[\spc{X}]-[\spc{Y}]|_{\spc{M}}$;
+but we will often write it as $|\spc{X}-\spc{Y}|_{\spc{M}}$ and say (not quite correctly) 
+``$|\spc{X}-\spc{Y}|_{\spc{M}}$ is the Gromov--Hausdorff distance from  $\spc{X}$ 
+to  $\spc{Y}$''.
+In other words, from now on, 
+you should guess from the context if the term \emph{metric space} stands for \emph{isometry class of this metric space}.
+
+The metric on $\spc{M}$ is maximal metric such that \emph{the distance between subspaces in a metric space is not greater than the Hausdorff distance between them}.
+Here is a formal definition:
+
+\begin{thm}{Definition}\label{def:GH}
+Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces. 
+The Gromov--Hausdorff distance $|\spc{X}-\spc{Y}|_{\spc{M}}$
+between them is defined by the following
+relation.
+ 
+Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\spc{M}} < r$ if and only if there exist a metric
+space $\spc{Z}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$ which are isometric to $\spc{X}$ and $\spc{Y}$
+respectively and such that $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})} < r$. 
+(Here $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
+\end{thm}
+
+Bit later (see \ref{thm:GH-is-a-metric}) we will show that \emph{Hausdorff metric} is indeed a metric.
+
+We say that a sequence
+of (isometry classes of) compact metric spaces $\spc{X}_n$ 
+\emph{converges in the sense of Gromov--Hausdorff}\index{converges in the sense of Gromov--Hausdorff} to the (isometry classes of)
+compact metric space $\spc{X}_\infty$ if $|\spc{X}_n - \spc{X}_\infty|_{\spc{M}} \to 0$ as $n\z\to\infty$;
+in this case we write $\spc{X}_n\GHto \spc{X}_\infty$.
+
+Let us discuss few reformulations of the definition.
+
+\parbf{Metrics on disjoined union.}
+Definition~\ref{def:GH} deals with a huge class of metric spaces,
+namely, all metric spaces $\spc{Z}$ that contain subspaces isometric to $\spc{X}$ and $\spc{Y}$.
+It is possible to reduce this class to metrics on the disjoint unions of $\spc{X}$ and $\spc{Y}$. 
+More precisely, 
+
+\begin{thm}{Proposition}\label{prop:GH=X+Y}
+The Gromov--Hausdorff distance between two compact metric spaces $\spc{X}$
+and $\spc{Y}$ is the infimum of $r > 0$ such that there exists a metric
+$|{*}-{*}|_{\spc{W}}$ on the disjoint union $\spc{W}=\spc{X}\sqcup \spc{Y}$ 
+such that the restrictions of $|{*}-{*}|_{\spc{W}}$ to $\spc{X}$ and $\spc{Y}$
+coincide with $|{*}-{*}|_\spc{X}$ and $|{*}-{*}|_{\spc{Y}}$ 
+and $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{W})} < r$. 
+\end{thm}
+
+
+\parit{Proof.}
+Identify $\spc{X}\sqcup \spc{Y}$ with $\spc{X}'\cup \spc{Y}' \subset \spc{Z}$ 
+(the notation
+is from Definition~\ref{def:GH}). 
+
+More formally, fix isometries $f\: \spc{X} \to \spc{X}'$ and
+$g\: \spc{Y} \to \spc{Y}'$, then define the distance between $x \in \spc{X}$ and $y \in \spc{Y}$ by
+$|x-y|_{\spc{W}} = |f (x)- g(y)|_{\spc{Z}}+\eps$ for small enuf $\eps>0$.%
+\footnote{We add $\eps$ to ensure that $d(x, y) > 0$ for any $x\in \spc{X}$ and $y\in \spc{Y}$;
+so $|x-y|_{\spc{W}}$ is indeed a metric.}
+This yields a metric on $\spc{W}=\spc{X}\sqcup \spc{Y}$ for which
+$|\spc{X}- \spc{Y}|_{\mathcal{H}(\spc{W})} \z< r$.
+\qeds
+
+\parbf{Fixed ambient space.}
+The following proposition says that the space $\spc{Z}$ in Definition~\ref{def:GH} can be exchanged to a fixed space, namely $\ell^\infty$ --- the space of bounded infinite sequences with the metric defined by $\sup$-norm.
+
+\begin{thm}{Proposition}\label{prop:GH-with-fixed-Z}
+Let $\spc{X}$ and $\spc{Y}$ be comact metric spaces.
+Then
+$$|\spc{X}-\spc{Y}|_{\spc{M}} = \inf \{|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\ell^\infty)}\}$$ 
+where the infimum is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\ell^\infty$
+which isometric to  $\spc{X}$ and $\spc{Y}$ correspondingly.  
+\end{thm}
+
+
+
+
+\parit{Proof of \ref{prop:GH-with-fixed-Z}.}
+By the definition, we have that 
+\[|\spc{X}-\spc{Y}|_{\spc{M}} \leq \inf \{|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\ell^\infty)}\}.\]
+
+Let $\spc{W}$ be an arbitrary metric space with the underlying set $\spc{X}\sqcup \spc{Y}$.
+Note $\spc{W}$ is compact since it is union of two compact subsets $\spc{X},\spc{Y}\subset \spc{W}$.
+In particular, $\spc{W}$ is separable.
+
+By Lemma \ref{lem:frechet}, there is an distance preserving embedding $\iota\:\spc{W}\z\to \ell^\infty$.
+It remains to apply Proposition~\ref{prop:GH=X+Y}.
+\qeds
+
+
+
+\section{Almost isometries}\label{sec:alm-isom}
+
+\begin{thm}{Definition} Let $\spc{X}$ and $\spc{Y}$ be metric spaces and $\eps > 0$. 
+A  map\footnote{possibly noncontinuous} $f\: \spc{X} \z\to \spc{Y}$ is called an $\eps$-isometry 
+if 
+$$|f(x)-f(x')|_{\spc{Y}}\lege |x-x'|_{\spc{X}}\pm\eps$$
+for any $x,x'\in \spc{X}$ 
+and if $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:alm-isom:compositon}
+Let $f\:\spc{X}\to \spc{Y}$ and $g\:\spc{Y}\to \spc{Z}$ be two $\eps$-isometries.
+Show that $g\circ f\: \spc{X}\to \spc{Z}$ is a $(3\cdot\eps)$-isometry.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:alm-isom:inverse}
+ Assume $f\: \spc{X} \z\to \spc{Y}$ is an $\eps$-isometry.
+Show that there is a $(3\cdot\eps)$-isometry 
+$g\: \spc{Y}\to \spc{X}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:GH=>eps-isom}
+Assume $|\spc{X}-\spc{Y}|_{\spc{M}}<\eps$, show that there is a $(2\cdot\eps)$-isometry 
+$f\: \spc{X}\to \spc{Y}$.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:alm-isom=>GH}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces 
+and let $f\: \spc{X}\to \spc{Y}$ be an $\eps$-isometry.
+Then 
+\[|\spc{X}-\spc{Y}|_{\spc{M}}\le 2\cdot \eps.\]
+\end{thm}
+
+\parit{Proof.} Consider the set $\spc{W}=\spc{X}\sqcup \spc{Y}$.
+Note that the following defines a metric on $\spc{W}$:
+\begin{itemize}
+\item  For any $x,x'\in \spc{X}$
+$$|x-x'|_{\spc{W}}=|x-x'|_{\spc{X}};$$
+\item For any $y,y'\in \spc{Y}$,
+$$|y-y'|_{\spc{W}}=|y-y'|_{\spc{Y}}$$
+\item For any $x\in \spc{X}$ and $y\in \spc{Y}$,
+$$|x-y|_{\spc{W}}=\eps+\inf_{x'\in \spc{X}}\{|x-x'|_{\spc{X}}+|f(x')-y|_{\spc{Y}}\}.$$
+\end{itemize}
+
+Since $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$,
+for any $y\in \spc{Y}$ there is $x\in \spc{X}$ such that $|f(x)-y|_{\spc{Y}}\z\le\eps$;
+therefore $|x-y|_{\spc{W}}\le 2\cdot\eps$.
+On the other hand for any $x\in \spc{X}$, we have $|x-y|_{\spc{W}}\le\eps$
+for $y=f(x)\in \spc{Y}$.
+
+It follows that $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{W})}\le 2\cdot\eps$.
+\qedsf
+
+
+
 
 
 

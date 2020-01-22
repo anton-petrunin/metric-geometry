@@ -72,7 +72,7 @@ Recall that a metric space $\spc{X}$ is called \emph{complete} if every Cauchy s
 \begin{thm}{Exercise}\label{ex:almost-min}
 Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
 Show that for any $\eps>0$ there is a point $x\in \spc{X}$ such that 
-\[\rho(x)>(1-\eps)\cdot\rho(y)\]
+\[\rho(x)<(1+\eps)\cdot\rho(y)\]
 for any point $y\in \oBall(x,\rho(x))$.
 \end{thm}
 
@@ -123,13 +123,13 @@ The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\e
 \begin{thm}{Exercise}
 Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}>\eps$ for any $i\ne j$.
 
-Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}<\infty$ for any $\eps>0$.
+Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:non-contracting-map}
-Let $K$  be a compact metric space and
-\[f\:K\z\to K\] 
+Let $\spc{K}$  be a compact metric space and
+\[f\:\spc{K}\z\to \spc{K}\] 
 be a distance non-decreasing map.
 Prove that $f$ is an isometry.
 \end{thm}
@@ -234,7 +234,7 @@ $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semico
 \begin{wrapfigure}{o}{20 mm}
 \vskip-0mm
 \centering
-\includegraphics{mppics/pic-6}
+\includegraphics{mppics/pic-10}
 \end{wrapfigure}
 
 
@@ -316,7 +316,7 @@ Directly from the definition, it follows that if a path $\alpha\:[0,1]\to\spc{X}
 \[\length\alpha\ge \dist{x}{y}{}.\]
 Set 
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
-where the infimum is taken for all paths connecing $x$ and $y$.
+where the greatest lower bound is taken for all paths connecing $x$ and $y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
 The metric $\yetdist{*}{*}{}$ is called \emph{induced length metric}.
 
@@ -330,7 +330,7 @@ Let $A$ be a subset of a metric space $\spc{X}$.
 Given two points $x,y\in A$,
 consider the value
 \[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
-where the infimum is taken for all paths $\alpha$ from $x$ to $y$ in $A$.\footnote{Note that while this notation slightly conflicts with the previously defined notation for distance on a general metric space, we will usually work with ambient length spaces where the meaning will be unambiguous.}
+where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.\footnote{Note that while this notation slightly conflicts with the previously defined notation for distance on a general metric space, we will usually work with ambient length spaces where the meaning will be unambiguous.}
 
 If $\dist{x}{y}{A}$ takes finite value for each pair $x,y\in A$,
 then $\dist{x}{y}{A}$ defines a metric on  $A$;
@@ -460,3 +460,71 @@ a contradiction.
 Construct a geodesic space that is locally compact,
 but whose completion is neither geodesic nor locally compact.
 \end{thm}
+
+\section{Subsets in normed spaces}
+
+Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \emph{norm} if it satisfies the following condition for any two vectors $v,w\in \spc{V}$ and a scalar $\alpha$:
+\begin{enumerate}[(a)]
+\item $|v|\ge 0$ for any $v\in \spc{V}$;
+\item $|\alpha\cdot v|=|\alpha|\cdot |v|$;
+\item $|v|+|w|\ge|v+w|$.
+\end{enumerate}
+
+It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
+Therefore any normed space is an example of metric space (which is in fact geodesic).
+The following lemma says in particular that any metric space is isometric to a subset of a normed space.
+
+\begin{thm}{Lemma}\label{lem:frechet}
+Suppose $\spc{X}$ is separable; that is, it contains a countable, dense set $\{w_n\}$.
+Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty$ defied by 
+\[\iota\:x\mapsto (\dist{w_1}{x}{\spc{X}}-\dist{w_1}{x_0}{\spc{X}}, \dist{w_2}{x}{\spc{X}}-\dist{w_2}{x_0}{\spc{X}},\dots)\]
+is a distance preserving embedding.
+\end{thm}
+
+\parit{Proof.}
+By the triangle inequality 
+\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}|\le\dist{x}{x_0}{\spc{X}}.\]
+Therefore the sequence $\ell_n=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}$ is bounded; that is $\iota(x)\in\ell^\infty$ for any $x$.
+
+Again by the triangle inequality 
+\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\le \dist{x}{y}{\spc{X}}.\]
+Therefore $\iota$ is short.
+
+Again by triangle inequality we have 
+\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
+Since the set $\{w_i\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
+Whence the value $|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
+In other words 
+\[\sup_n\{\,|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\,\}\ge \dist{x}{y}{\spc{X}};\]
+hence $\iota$ is distance-preserving.
+\qeds
+
+\parbf{Remark.}
+Note that if the space $\spc{X}$ is bounded (that is $\diam\spc{X}<\infty$)
+then 
+\[x\mapsto (\dist{w_1}{x}{\spc{X}}, \dist{w_2}{x}{\spc{X}},\dots)\]
+is also distance preserving embedding $\spc{X}\to \ell^\infty$.
+
+\begin{thm}{Exercise}
+Show that any compact metric space is isometric to a subspace of a compact geodesic space. 
+\end{thm}
+
+The lemma above was proved by Maurice René Fréchet in the paper where he defined metric space \cite{frechet}.
+Nearly identical construction was rediscovered later by Kazimierz Kuratowski~\cite{kuratowski}.
+Namely he made the following claim; its proof is left as an exercise.
+
+\begin{thm}{Lemma}\label{lem:kuratowski}
+Let $\spc{X}$ be arbitrary metric space.
+Denote by $\ell^\infty(\spc{X})$ the space of all bounded functions of $\spc{X}$ equipped with sup-norm.
+
+Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defied by 
+\[\iota\:x\mapsto \distfun_x-\distfun_{x_0}\]
+is distance preserving.
+\end{thm}
+
+
+
+
+
+
+
