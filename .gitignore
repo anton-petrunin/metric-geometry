@@ -18,6 +18,7 @@ lib/*
 *.blg
 *.xml
 *.kilepr
+*.dep
 *.mps
 *.mpx
 *mptextmp.mp

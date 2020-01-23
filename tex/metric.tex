@@ -61,7 +61,7 @@ Indeed, set $x\approx y$ if and only if $\dist{x}{y}{}<\infty$;
 this is an other equivalence relation on $\spc{X}$.
 The equivalence class of a point $x\in\spc{X}$ will be called the \emph{metric component}\index{metric component} 
  of $x$; it will be denoted as $\spc{X}_x$.
-One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$; see definition below.
+One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
 It follows that any $\infty$-metric space is a \emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
 
@@ -84,8 +84,8 @@ the original space $\spc{X}$ forms a dense subset in $\bar{\spc{X}}$.
 \parbf{Completion.}
 Given metric space $\spc{X}$, 
 consider the set of all Cauchy sequences in $\spc{X}$.
-Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side below is defined; moreover it defines a pseudometric on the set $\spc{C}$ of all Cauchy sequences
-\[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\]
+Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on the set $\spc{C}$ of all Cauchy sequences
+\[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
 The corresponding metric space is called a completion of $\spc{X}$.
 
 It is left as an exercise that completion of $\spc{X}$ is complete.
@@ -120,10 +120,14 @@ The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\e
 
 \end{thm}
 
-\begin{thm}{Exercise}
-Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}>\eps$ for any $i\ne j$.
+Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ for any $i\ne j$.
+If $n=\pack_\eps\spc{X}<\infty$, then
+the collection of points $x_1,\dots,x_n$ is called a \emph{maximal $\eps$-packing}.
 
+\begin{thm}{Exercise}
 Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
+
+Show that any maximal $\eps$-packing is an $\eps$-net.
 \end{thm}
 
 
@@ -137,27 +141,23 @@ Prove that $f$ is an isometry.
 
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
 This condition is equivalent to each of the following statements:
-\begin{enumerate}
+\begin{itemize}
 \item For some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
-the closed ball $\cBall[p,R]\subset\spc{X}$ is compact. 
-\item The function $\dist{p}{}{}\:\spc{X}\to\RR$ is proper for some (and therefore any) point $p\in \spc{X}$;
+the closed ball $\cBall[p,R]_{\spc{X}}$ is compact. 
+\item The function $\distfun_p\:\spc{X}\to\RR$ is proper for some (and therefore any) point $p\in \spc{X}$;
 that is, for any compact set $K\subset \RR$, its inverse image 
-$\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}\in K}$
+\[\distfun_p^{-1}(K)=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}\in K}\]
 is compact.
-\end{enumerate}
+\end{itemize}
 
 A metric space $\spc{X}$ is called \emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
 in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
-
-\begin{thm}{Exercise}
-Give an example of space which is locally compact but not proper.
-\end{thm}
 
 \section{Geodesics}
 \label{sec:geods}
 
 Let $\spc{X}$ be a metric space 
-and $\II$\index{$\II$} be a real interval. 
+and $\II$\index{$\II$} a real interval. 
 A~globally isometric map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
 \footnote{Various authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.}; 
 in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if 
@@ -182,10 +182,8 @@ We also use the following shortcut notation:
 \left[ p q \right[&=[pq]\backslash\{q\}.
 \end{align*}
 
-
-
-In general, a geodesic between $p$ and $q$ need not exist and if it exists, it need not  be unique.  
-However,  once we write $[p q]$ we mean that we have  made a choice of  geodesic.
+In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need not  be unique.  
+However, once we write $[p q]$ we assume mean that we have made a choice of geodesic.
 
 A metric space is called \index{geodesic}\emph{geodesic} if any pair of its points can be joined by a geodesic. 
 
@@ -223,9 +221,9 @@ A curve $\alpha$ is called \emph{rectifiable} if $\length \alpha<\infty$.
 Length is a lower semi-continuous with respect to pointwise convergence of curves. 
 
 More precisely, assume that a sequence
-of curves $\gamma_n\:[a,b]\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
-to a curve $\gamma_\infty\:[a,b]\to \spc{X}$;
-that is, for any fixed $t \in [a,b]$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
+of curves $\gamma_n\:\II\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
+to a curve $\gamma_\infty\:\II\to \spc{X}$;
+that is, for any fixed $t \in \II$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
 Then 
 $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
 \end{thm}
@@ -249,7 +247,7 @@ In this case
 for any $n$.
 
 \parit{Proof.}
-Fix a partition $a=t_0<t_1<\dots<t_k=b$.
+Fix a sequence $t_0<t_1<\dots<t_k$ in $\II$.
 Set 
 \begin{align*}\Sigma_n
 &\df
@@ -302,7 +300,8 @@ As can be seen from the following example, the converse does not hold.
 
 \begin{thm}{Example}
 Let $\spc{X}$ be obtained by gluing a countable collection of disjoint intervals $\{\II_n\}$ of length $1+\tfrac1n$, where for each $\II_n$ the left end is glued to $p$ and the right end to~$q$.
-Then $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{}=1$ but there is no geodesic connecting $p$ to~$q$.
+
+Observe that the space $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{}=1$ but there is no geodesic connecting $p$ to~$q$.
 \end{thm}
 
 
@@ -330,13 +329,8 @@ Let $A$ be a subset of a metric space $\spc{X}$.
 Given two points $x,y\in A$,
 consider the value
 \[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
-where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.\footnote{Note that while this notation slightly conflicts with the previously defined notation for distance on a general metric space, we will usually work with ambient length spaces where the meaning will be unambiguous.}
-
-If $\dist{x}{y}{A}$ takes finite value for each pair $x,y\in A$,
-then $\dist{x}{y}{A}$ defines a metric on  $A$;
-this metric will be called the \index{induced length metric}\emph{induced length metric} on $A$.
-
-
+where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.%
+\footnote{This notation slightly conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
 
 Let $\spc{X}$ be a metric space and $x,y\in\spc{X}$.
 
@@ -416,6 +410,12 @@ A proper length space is geodesic.
 Any complete, locally compact length space is proper.
 \end{thm}
 
+It is instructive to solve the following exercise before reading the proof.
+
+\begin{thm}{Exercise}
+Give an example of space which is locally compact but not proper.
+\end{thm}
+
 \parit{Proof.}
 Let $\spc{X}$ be a locally compact length space.
 Given $x\in \spc{X}$, denote by $\rho(x)$ the supremum of all $R>0$ such that
@@ -464,46 +464,49 @@ but whose completion is neither geodesic nor locally compact.
 \section{Subsets in normed spaces}
 
 Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \emph{norm} if it satisfies the following condition for any two vectors $v,w\in \spc{V}$ and a scalar $\alpha$:
-\begin{enumerate}[(a)]
-\item $|v|\ge 0$ for any $v\in \spc{V}$;
+\begin{itemize}
+\item $|v|\ge 0$;
 \item $|\alpha\cdot v|=|\alpha|\cdot |v|$;
 \item $|v|+|w|\ge|v+w|$.
-\end{enumerate}
+\end{itemize}
 
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
 Therefore any normed space is an example of metric space (which is in fact geodesic).
 The following lemma says in particular that any metric space is isometric to a subset of a normed space.
 
 \begin{thm}{Lemma}\label{lem:frechet}
-Suppose $\spc{X}$ is separable; that is, it contains a countable, dense set $\{w_n\}$.
-Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty$ defied by 
-\[\iota\:x\mapsto (\dist{w_1}{x}{\spc{X}}-\dist{w_1}{x_0}{\spc{X}}, \dist{w_2}{x}{\spc{X}}-\dist{w_2}{x_0}{\spc{X}},\dots)\]
-is a distance preserving embedding.
+Suppose $\spc{X}$ is a bounded separable space;
+that is, $\diam\spc{X}$ is finite and $\spc{X}$ contains a countable, dense set $\{w_n\}$.
+Given $x\in \spc{X}$, set $a_n(x)=\dist{w_n}{x}{\spc{X}}$.
+Then 
+\[\iota\:x\mapsto (a_1(x), a_2(x),\dots)\]
+defines a distance preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
 \end{thm}
 
 \parit{Proof.}
 By the triangle inequality 
-\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}|\le\dist{x}{x_0}{\spc{X}}.\]
-Therefore the sequence $\ell_n=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}$ is bounded; that is $\iota(x)\in\ell^\infty$ for any $x$.
-
-Again by the triangle inequality 
-\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\le \dist{x}{y}{\spc{X}}.\]
+\[|a_n(x)-a_n(y)|\le \dist{x}{y}{\spc{X}}.\]
 Therefore $\iota$ is short.
 
 Again by triangle inequality we have 
-\[|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
-Since the set $\{w_i\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
-Whence the value $|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
+\[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
+Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
+Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
 In other words 
 \[\sup_n\{\,|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\,\}\ge \dist{x}{y}{\spc{X}};\]
-hence $\iota$ is distance-preserving.
+hence $\iota$ is distance non-decreasing.
 \qeds
 
-\parbf{Remark.}
-Note that if the space $\spc{X}$ is bounded (that is $\diam\spc{X}<\infty$)
-then 
-\[x\mapsto (\dist{w_1}{x}{\spc{X}}, \dist{w_2}{x}{\spc{X}},\dots)\]
-is also distance preserving embedding $\spc{X}\to \ell^\infty$.
+The following exercise generalizes the lemma to arbitrary separable spaces.
+
+\begin{thm}{Exercise}
+Suppose $\{w_n\}$ is a countable, dense set in a metric space $\spc{X}$.
+Choose $x_0\in \spc{X}$;
+given $x\in \spc{X}$, set 
+\[a_n(x)=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}.\]
+Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
+\end{thm}
+
 
 \begin{thm}{Exercise}
 Show that any compact metric space is isometric to a subspace of a compact geodesic space. 
@@ -511,16 +514,18 @@ Show that any compact metric space is isometric to a subspace of a compact geode
 
 The lemma above was proved by Maurice René Fréchet in the paper where he defined metric space \cite{frechet}.
 Nearly identical construction was rediscovered later by Kazimierz Kuratowski~\cite{kuratowski}.
-Namely he made the following claim; its proof is left as an exercise.
+Namely he made the following claim:
 
 \begin{thm}{Lemma}\label{lem:kuratowski}
 Let $\spc{X}$ be arbitrary metric space.
 Denote by $\ell^\infty(\spc{X})$ the space of all bounded functions of $\spc{X}$ equipped with sup-norm.
 
 Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defied by 
-\[\iota\:x\mapsto \distfun_x-\distfun_{x_0}\]
+\[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
 is distance preserving.
 \end{thm}
+
+Note that this claim implies that \emph{any metric space is isometric to a subset of a normed vector space}.
 
 
 

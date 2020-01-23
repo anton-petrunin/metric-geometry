@@ -42,7 +42,8 @@ $$\diam A\df\sup_{a,b\in A} |a-b|.$$
 
 Show that 
 $$\diam\:\mathcal{H}(\spc{X})\to \RR$$ 
-is a continuous function.
+is a $2$-Lipschitz function;
+that is, $|\diam A-\diam B|\le 2\cdot\dist{A}{B}{\mathcal{H}(\spc{X})}$.
 \end{thm}
 
 
@@ -159,10 +160,10 @@ and $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$;
 is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
 \end{thm}
 
-\section{History and a variation}
+\section{A variation}
 
-It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff in \cite{hausdorff},
-and a couple of years later an equivalent definition was given by Wilhelm Blaschke in~\cite{blaschke}.
+It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff~\cite{hausdorff},
+and a couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
 
 The following refinement of the definition was introduced by  Zden\v{e}k Frol\'{\i}k in \cite{frolik},
 and later rediscovered by Robert Wijsman in~\cite{wijsman}.  
@@ -170,12 +171,12 @@ This refinement takes an intermediate place between the original Hausdorff conve
 so we still call it Hausdorff convergence.
 
 \begin{thm}{Definition}\label{def:gen-Haus-conv}
-Let $\spc{X}$ be a proper metric space.
-We say that a sequence of closed sets $A_n$ converges to a set $A_\infty$ in the sense of Hausdorff if $\distfun_{A_n}(x)\to \distfun_{A_\infty}(x)$ for any $x\in\spc{X}$.
+Let $(A_n)$ be a sequence of closed sets in a metric space $\spc{X}$.
+We say that $(A_n)$ converges to a closed set $A_\infty$ in the sense of Hausdorff if $\distfun_{A_n}(x)\to \distfun_{A_\infty}(x)$ for any $x\in\spc{X}$.
 \end{thm}
 
 For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at $(n,0)$.
-If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $A_n$ diverges in the sence of the standard definition (\ref{def:hausdorff-convergence}), but it converges to the $y$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
+If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $(A_n)$ diverges, but it converges to the $y$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
 
 The following exercise is analogous to the Blaschke selection theorem (\ref{thm:compact+Hausdorff}).
 
@@ -183,7 +184,7 @@ The following exercise is analogous to the Blaschke selection theorem (\ref{thm:
 Let $\spc{X}$ be a proper metric space
 and $(A_n)_{n=1}^\infty$ be a sequence of closed sets in~$\spc{X}$.
 Assume that for some (and therefore any) point  $x\in\spc{X}$, 
-the sequence $\distfun_{A_n}(x)$ is bounded.
+the sequence $a_n=\distfun_{A_n}(x)$ is bounded.
 Show that the sequence  $(A_n)_{n=1}^\infty$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
 \end{thm}
 
@@ -204,8 +205,7 @@ to $[\spc{Y}]$ should be denoted as $|[\spc{X}]-[\spc{Y}]|_{\spc{M}}$;
 but we will often write it as $|\spc{X}-\spc{Y}|_{\spc{M}}$ and say (not quite correctly) 
 ``$|\spc{X}-\spc{Y}|_{\spc{M}}$ is the Gromov--Hausdorff distance from  $\spc{X}$ 
 to  $\spc{Y}$''.
-In other words, from now on, 
-you should guess from the context if the term \emph{metric space} stands for \emph{isometry class of this metric space}.
+In other words, from now on the term \emph{metric space} might stands for \emph{isometry class of this metric space}.
 
 The metric on $\spc{M}$ is maximal metric such that \emph{the distance between subspaces in a metric space is not greater than the Hausdorff distance between them}.
 Here is a formal definition:
@@ -217,7 +217,7 @@ between them is defined by the following
 relation.
  
 Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\spc{M}} < r$ if and only if there exist a metric
-space $\spc{Z}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$ which are isometric to $\spc{X}$ and $\spc{Y}$
+space $\spc{Z}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$ that are isometric to $\spc{X}$ and $\spc{Y}$
 respectively and such that $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})} < r$. 
 (Here $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
 \end{thm}
