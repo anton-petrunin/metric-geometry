@@ -1,129 +1,11 @@
-\section{Gromov--Hausdorff metric is a metric}
-
-\begin{thm}{Theorem}\label{thm:GH-is-a-metric}
-The set of isometry classes of compact metric spaces equipped with Gromov--Hausdorff metric forms a metric space which will be denoted further as $\spc{M}$.
-\end{thm}
 
 
 
-Let $\spc{X}$, $\spc{Y}$ and $\spc{Z}$ be arbitrary  compact metric spaces.
-We need to check the following:
-\begin{enumerate}[{\it (i)}]
-\item\label{GH-1} $|\spc{X}-\spc{Y}|_{\spc{M}}\ge 0$;
-\item\label{GH-2} $|\spc{X}-\spc{Y}|_{\spc{M}}=0$ if and only if $\spc{X}$ is isometric to $\spc{Y}$;
-\item\label{GH-3} $|\spc{X}-\spc{Y}|_{\spc{M}}=|\spc{Y}-\spc{X}|_{\spc{M}}$;
-\item\label{GH-4} $|\spc{X}-\spc{Y}|_{\spc{M}}+|\spc{Y}-\spc{Z}|_{\spc{M}}\ge |\spc{X}-\spc{Z}|_{\spc{M}}$.
-\end{enumerate}
 
 
-Note that {\it (\ref{GH-1})}, {\it(\ref{GH-3})} and ``if''-part of {\it(\ref{GH-2})} follow directly from Definition \ref{def:GH}.
-
-\parit{Proof of (\ref{GH-4}).}
-Choose arbitrary $a,b \in \mathbb{R}$ such that
-$$a>|\spc{X}-\spc{Y}|_{\spc{M}}\ \ \text{and}\ \  b>|\spc{Y}-\spc{Z}|_{\spc{M}}.$$
-Choose two metrics on $\spc{U}=\spc{X}\sqcup \spc{Y}$ and $\spc{V}=\spc{Y}\sqcup \spc{Z}$ so that
-$|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{U})}<a$ and $|\spc{Y}-\spc{Z}|_{\mathcal{H}(\spc{V})}<b$ 
-and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance preserving.
-
-Consider the metric on $\spc{W}=\spc{X}\sqcup \spc{Z}$ 
-so that inclusions $\spc{X}\hookrightarrow \spc{W}$ and $\spc{Z}\hookrightarrow \spc{W}$ are distance preserving
-and 
-$$|x-z|_{\spc{W}}=\inf_{y\in \spc{Y}}\{|x-y|_{\spc{U}}+|y-z|_{\spc{V}}\}.$$
-Note that $|{*}-{*}|_{\spc{W}}$ is indeed a metric and 
-$$|\spc{X}-\spc{Z}|_{\mathcal{H}(\spc{W})}<a+b.$$
-Property {\it (\ref{GH-4})} follows since the last inequality holds for any $a>|\spc{X}\z-\spc{Y}|_{\spc{M}}$ and $b>|\spc{Y}-\spc{Z}|_{\spc{M}}$.
-\qeds
-
-\parit{Proof of ``only if''-part of (\ref{GH-2}).}
-According to Exercise~\ref{ex:GH=>eps-isom},
-for any sequence $\eps_n\to0+$ there is a sequence of $\eps_n$-isometries 
-$f_n\:\spc{X}\to \spc{Y}$.
-
-Since $\spc{X}$ is compact, 
-we can choose a countable dense set
-$S$ in $\spc{X}$.
-Use a diagonal procedure if necessary, to pass to a subsequence of $(f_n)$
-such that for every $x \in S$ the sequence $(f_n(x))$ 
-converges in $\spc{Y}$. 
-Consider the pointwise limit map  $f_\infty \: S \to \spc{Y}$ defined by
- $$f_\infty(x) = \lim_{n\to\infty} f_n (x)$$ for every $x \in S$. 
-Since $$|f_n (x)- f_n (x')|_{\spc{Y}}\lege |x- x'|_\spc{X} \pm\eps_n,$$ 
-we have 
-$$|f_\infty(x)-f_\infty (x')|_{\spc{Y}} 
-= \lim_{n\to\infty} |f_n(x)-f_n (x')|_{\spc{Y}} 
-= |x -x'|_\spc{X}$$ for all
-$x, x' \in S$; 
-that is, $f_\infty\:S\to \spc{Y}$ is a distance-preserving map. 
-Therefore $f_\infty$ can be extended to a distance-preserving map from all of $\spc{X}$ to $\spc{Y}$.
-The later is done by setting 
-$$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$ 
-for some (and therefore any) sequence of points $(x_n)$ in $S$
-which converges to $x$ in $\spc{X}$.
-(Note that if $x_n\to x$ then $(x_n)$ is Cauchy.
-Since $f_\infty$ is distance preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
-therefore it converges.)
-
-This way we obtain a distance preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
-It remains to show that $f_\infty$ is surjective; that is, $f_\infty(\spc{X})=\spc{Y}$.
-
-Note that in the same way we can obtain a distance preserving map $g_\infty\:\spc{Y}\z\to \spc{X}$.
-If $f_\infty$ is not surjective, then neither is $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$.
-So $f_\infty \circ g_\infty$ is a distance preserving map from a compact space to itself which is not an isometry.
-The later contradicts Exercise~\ref{ex:non-contracting-map}. 
-\qeds
-
-\begin{thm}{Exercise}\label{ex:d_GH-and-diam}
- Let $\spc{X}$ and $\spc{Y}$ be two compact metric spaces.
-Prove that 
-$$|\diam \spc{X} - \diam \spc{Y} |\le 2\cdot |\spc{X}-\spc{Y}|_{\spc{M}}.$$
-In other words, $\diam\:\spc{M}\to\RR$ is a $2$-Lipschitz function.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:pack-GH}
-Suppose $\spc{X}_n$ is a sequence of compact metric spaces which converges to a compact metric space $\spc{X}_\infty$
-in the sense of Gromov--Hausdorff.
-Show that for any $\eps>0$
-$$\pack_\eps \spc{X}_n\ge\pack_\eps \spc{X}_\infty$$ 
-for all large $n$.
-In particular, $\pack_\eps$ is a lower semicontinuous function on $\spc{M}$.
-\end{thm}
 
 
-\section{Gromov--Hausdorff convegence}
 
-The Gromov--Hausdorff metric defines Gromov--Hausdorff convegence
-and this is the only thing it is good for.
-In other words in all applications, we use only topology on $\spc{M}$
-and we do not care about particular value of Gromov--Hausdorff distance between spaces.
-
-In order to determine that a given sequence of metric spaces $(\spc{X}_n)$ converges in the Gromov--Hausdorff sense to $\spc{X}_\infty$, it is sufficient to estimate distances $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}$ and  check if $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}\to 0$.
-This problem turns to be simpler than finding Gromov--Hausdorff distance between a particular pair of spaces.
-The proposition below gives one way to do this.
-
-\begin{thm}{Proposition}\label{prop:GH-e-isom}
-A sequence of compact metric spaces $(\spc{X}_n)$ converges to  $\spc{X}_\infty$ in the sense of Gromov--Hausdorff if and only if there is a sequence $\eps_n\to0+$
-and an $\eps_n$-isometry $f_n\:\spc{X}_n\to \spc{X}_\infty$ for each $n$.
-\end{thm}
-
-\parit{Proof.} Follows from Propsition~\ref{prop:alm-isom=>GH} and Exercise~\ref{ex:GH=>eps-isom}
-\qeds
-
-
-\section{Gromov's compactness theorem}
-
-The following theorem is analogous to Blaschke's compactness theorems (\ref{thm:compact+Hausdorff}).
-
-\begin{thm}{Gromov's compactness theorem}\label{thm:gromov-compactness}%
-Let $\spc{Q}$ be a closed subset of $\spc{M}$.
-Then $\spc{Q}$ is compact if and only if there is a sequence of positive numbers $\eps_1,\eps_2,\dots$ such that $\eps_n\to 0$ and 
-$$\pack_{\eps_n}\spc{X}\le n\eqlbl{eq:pack<n}$$
-for any space $\spc{X}$ in $\spc{Q}$.
-\end{thm}
-
-\begin{thm}{Exercise}\label{pack<n;n>1}
-Show that the conclusion of the theorem does not hold
-if the inequality \ref{eq:pack<n} holds only for $n\ge 2$.
-\end{thm}
 
 
 
@@ -286,21 +168,6 @@ Show that it does not hold for arbitrary metric space $\spc{X}$.
 Understand the reason why it holds for $\spc{X}=\ell^\infty$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{pr:under}
-Let $\spc{X}$ be a comapact metric space.
-Denote by $\Under(\spc{X})$ the set of all isometry classes of metric spaces $\spc{Y}$ 
-which admit a distance non-contracting map $\spc{Y}\to \spc{X}$.
-
-\begin{subthm}{pr:under:if}
-Show that $\Under(\spc{X})$ forms a compact set in $\spc{M}$.
-\end{subthm}
-
-\begin{subthm}{pr:under:only-if}
-Show that for any compact set $K$ in $\spc{M}$ there is a compact space $\spc{X}$
-such that  $\Under(\spc{X})\supset K$.
-\end{subthm}
-
-\end{thm}
 
 \begin{thm}{Exercise}\label{pr:GH-variation}
 Consider the pairs $(\spc{X},A)$, where $\spc{X}$ is a compact metric space and $A$ is a closed subset in $\spc{X}$.
