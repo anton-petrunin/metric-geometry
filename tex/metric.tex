@@ -121,10 +121,12 @@ The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\e
 \end{thm}
 
 Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ for any $i\ne j$.
+
 If $n=\pack_\eps\spc{X}<\infty$, then
 the collection of points $x_1,\dots,x_n$ is called a \emph{maximal $\eps$-packing}.
+Note that $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:pack-net}
 Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
 
 Show that any maximal $\eps$-packing is an $\eps$-net.
@@ -320,7 +322,7 @@ It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\inft
 The metric $\yetdist{*}{*}{}$ is called \emph{induced length metric}.
 
 \begin{thm}{Exercise}\label{ex:compact=>complete}
-Suppose $(\spc{X},\dist{*}{*}{})$ is a compact metric space.
+Suppose $(\spc{X},\dist{*}{*}{})$ is a complete metric space.
 Show that $(\spc{X},\yetdist{*}{*}{})$ is complete.
 \end{thm}
 
@@ -421,7 +423,9 @@ Let $\spc{X}$ be a locally compact length space.
 Given $x\in \spc{X}$, denote by $\rho(x)$ the supremum of all $R>0$ such that
 the closed ball $\cBall[x,R]$ is compact.
 Since $\spc{X}$ is locally compact, 
-$$\rho(x)>0\ \ \text{for any}\ \ x\in \spc{X}.\eqlbl{eq:rho>0}$$
+$$\rho(x)>0
+\quad\text{for any}\quad
+x\in \spc{X}.\eqlbl{eq:rho>0}$$
 It is sufficient to show that $\rho(x)=\infty$ for some (and therefore any) point $x\in \spc{X}$.
 
 Assume the contrary; that is, $\rho(x)<\infty$. We claim that

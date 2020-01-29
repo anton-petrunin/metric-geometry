@@ -49,7 +49,9 @@ we can pass to a subsequence of $(\spc{X}_n)$ which converge in $\mathcal{H}(\ba
 
 \parit{Proof of \ref{thm:gromov-compactness}; ``only if'' part.}
 If there is no sequence $\eps_n\to0$ as described in the problem, then for a fixed fixed $\delta>0$
-there is a sequence of spaces $\spc{X}_n\in\spc{Q}$ such that $$\pack_\delta \spc{X}_n\to\infty\ \ \text{as}\ \  n\to\infty.$$
+there is a sequence of spaces $\spc{X}_n\in\spc{Q}$ such that $$\pack_\delta \spc{X}_n\to\infty
+\quad\text{as}\quad
+n\to\infty.$$
 Since $\spc{Q}$ is compact, 
 this sequence has a partial limit say $\spc{X}_\infty\in\spc{Q}$.
 It is easy to see that $\pack_{\delta/10} \spc{X}_\infty=\infty$;
@@ -86,7 +88,9 @@ $$|x-x'|_{\spc{X}}\le|f(x)-f(x')|_{\spc{Y}}+\eps$$
 for any $x,x'\in \spc{X}$.
 
 Define 
-$$\dist[\star]{\spc{X}}{\spc{Y}}{\spc{M}}=\inf\set{\eps}{\spc{X}\preccurlyeq \spc{Y}+\eps\ \ \text{and}\ \ \spc{Y}\preccurlyeq \spc{X}+\eps}$$
+$$\dist[\star]{\spc{X}}{\spc{Y}}{\spc{M}}=\inf\set{\eps}{\spc{X}\preccurlyeq \spc{Y}+\eps
+\quad\text{and}\quad
+\spc{Y}\preccurlyeq \spc{X}+\eps}$$
 It turns out that $\dist[\star]{*}{*}{\spc{M}}$ is a different metric on the set of isometry classes of compact metric spaces; that is, in general $\dist[\star]{\spc{X}}{\spc{Y}}{\spc{M}}\not=|\spc{X}-\spc{Y}|_{\spc{M}}$. 
 However, these two metrics define the same topology on $\spc{M}$.
 More precicely:
@@ -94,7 +98,9 @@ More precicely:
 \begin{thm}{Proposition}\label{GH-po}
 For any sequence of compact metric spaces $(\spc{X}_n)$ and a compact metric space $\spc{X}_\infty$,
 we have
-$$|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}\to 0 \ \ \ \Leftrightarrow\ \ \ \dist[\star]{\spc{X}_n}{\spc{X}_\infty}{\spc{M}}\to 0$$ 
+$$|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}\to 0
+\quad\iff\quad
+\dist[\star]{\spc{X}_n}{\spc{X}_\infty}{\spc{M}}\to 0$$ 
 as $n\to\infty$.
 \end{thm}
 

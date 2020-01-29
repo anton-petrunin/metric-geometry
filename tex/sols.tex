@@ -1,9 +1,33 @@
 \chapter{Semisolutions}
 
+\parbf{Exercise~\ref{ex:almost-min}.}
+Assume the statement is wrong. 
+Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that 
+\[\dist{x}{x'}{}< \rho(x)
+\quad\text{and}\quad
+\rho(x')\le\frac{\rho(x)}{1+\eps}.\]
+Consider a sequence of points $(x_n)$ such that $x_{n+1}\z=x_n'$.
+Clearly 
+\[\dist{x_{n+1}}{x_n}{}
+\le
+\frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
+\quad\hbox{and}\quad
+\rho(x_n)\le \frac{\rho(x_0)}{(1+\eps)^n}.\] 
+Therefore $(x_n)$ is Cauchy.
+Since $\spc{X}$, the sequence $(x_n)$;
+denote its limit by $x_\infty$.
+Since $\rho$ is a continuous function we get
+\begin{align*}\rho(x_\infty)&=\lim_{n\to\infty}\rho(x_n)=
+\\&=0.
+\end{align*}
+
+The latter contradicts that $\rho>0$.
+\qeds
+
 \parbf{Exercise~\ref{ex:non-contracting-map}.}
 Given any pair of point $x_0,y_0\in \spc{K}$, 
 consider two sequences $x_0,x_1,\dots$ and $y_0,y_1,\dots$
-such that $x_{n+1}=f(x_n)$ and $y_{n+1}=f(y_n)$ for each $n$.
+such that $x_{n+1}=f(x_n)$ and $y_{n+1}\z=f(y_n)$ for each $n$.
 
 Since $\spc{K}$ is compact, 
 we can choose an increasing sequence of integers $n_k$
@@ -13,9 +37,9 @@ In particular, both are Cauchy sequences;
 that is,
 \[
 |x_{n_i}-x_{n_j}|_{\spc{K}}, |y_{n_i}-y_{n_j}|_{\spc{K}}\to 0
-\ \ 
+\quad
 \text{as}
-\ \ \min\{i,j\}\to\infty.
+\quad\min\{i,j\}\to\infty.
 \]
 
 
@@ -29,7 +53,7 @@ Since $f$ is non-contracting, we get
 It follows that  
 there is a sequence $m_i\to\infty$ such that
 \[
-x_{m_i}\to x_0\ \ \text{and}\ \ y_{m_i}\to y_0\ \ \text{as}\ \ i\to\infty.
+x_{m_i}\to x_0\quad\text{and}\quad y_{m_i}\to y_0\quad\text{as}\quad i\to\infty.
 \leqno({*})\]
 
 Set \[\ell_n=|x_n-y_n|_{\spc{K}}.\]
@@ -91,6 +115,26 @@ In particular, $(B,\rho_1)$ has no geodesics.\qeds
 
 This example was suggested by Fedor Nazarov~\cite{nazarov}.
 
+\parbf{Exercise~\ref{ex:compact=>complete}.}
+Choose a Cauchy sequence $(x_n)$ in $(\spc{X},\|*-*\|)$; it sufficient to show that a subsequence of $(x_n)$ converges.
+
+Note that the sequence $(x_n)$ is Cauchy in $(\spc{X},|*-*|)$;
+denote its limit by $x_\infty$.
+
+After passing to a subsequence, we can assume that $\|x_n-x_{n+1}\|\z<\tfrac1{2^n}$.
+It follows that there is a 1-Lipschitz path $\gamma$ in $(\spc{X},\|*-*\|)$ such that $x_n=\gamma(\tfrac1{2^n})$ for each $n$ and $x_\infty=\gamma(0)$.
+
+It follows that
+\begin{align*}
+\|x_\infty-x_n\|&\le \length\gamma|_{[0,\frac1{2^n}]}\le
+\\
+&\le \tfrac1{2^n}.
+\end{align*}
+In particular $x_n$ converges.\qeds
+
+Source: \cite[Lemma 2.3]{petrunin-stadler}.
+
+
 \begin{wrapfigure}{o}{20 mm}
 \vskip-0mm
 \centering
@@ -130,3 +174,82 @@ Note that $\partial X=\partial Y$ in particular $\dist{\partial X}{\partial Y}{\
 \qeds
 
 A more interesting example for the second part can be build on \emph{lakes of Wada} --- and example of three open bounded topological disks in the plane that have identical boundary.
+
+\parbf{Exercise~\ref{ex:Huas-perimeter-area}.}
+Let $A$ be a compact convex set in the plane.
+Denote by $A^r$ the closed $r$-neighborhood of $A$.
+Recall that by Steiner's formula we have
+\[\area A^r=\area A+r\cdot\perim A+\pi\cdot r^2.\]
+Taking derivative and applying coarea formula, we get 
+\[\perim A^r=\perim A+2\cdot\pi\cdot r.\]
+
+Observe that if $A$ lies in a compact set $B$ bounded by a colsed curve then 
+\[\perim A\le \perim B.\]
+Indeed the closest-point projection $\RR^2\to A$ is short and it maps $\partial B$ onto $\partial A$.
+
+It remains to observe that if $A_n\to A_\infty$, then for any $r>0$ we have that
+\[A_\infty^r\supset A_n
+\quad\text{and}\quad
+A_\infty\subset A_n^r\]
+for all large $n$.
+
+\parbf{Exercise~\ref{ex:GH-po}.}
+In order to check that $\dist{*}{*}{\spc{M}'}$ is a metric, it is sufficient to show that
+\[\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0 
+\quad\Longrightarrow\quad
+\spc{X}\iso\spc{Y};\]
+the remaining conditions are trivial.
+
+If $\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
+\[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
+
+Choose a countable dense set $S$ in $\spc{X}$.
+Passing to a subsequence of $f_n$ we can assume that $f_n(x)$ converges for any $x\in S$ as $n\to\infty$;
+denote its limit by $f_\infty(x)$.
+
+For each point $x\in\spc{X}$ choose a sequence $x_m\in S$ converging to $x$.
+Since $\spc{Y}$ is compact, we can assume in addition that $y_m=f_\infty(x_m)$ converges in $\spc{Y}$.
+Set $f_\infty(x)=y$.
+Note that the map $f_\infty\:\spc{X}\to \spc{Y}$ is  distance non-decreasing.
+
+The same way we can construct a distance non-decreasing map 
+$g_\infty\:\spc{Y}\to \spc{X}$.
+
+By Exercise~\ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometrises.
+Therefore $f_\infty$ and $g_\infty$ are isometries as well.
+
+(The proof of the second part is coming.) %???
+
+\parbf{Exercise~\ref{pr:doubling}.}
+Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by $\mu$.
+Without loss of generality we may assume that $\mu(\spc{X})\z=1$.
+
+The doubling condition implies that 
+\[\mu[\oBall(p,\tfrac D{2^n})]\ge\tfrac 1{C^n}\]
+for any point $x\in \spc{X}$.
+It follows that 
+\[\pack_{\frac D{2^n}}\spc{X}\le C^n.\]
+
+By Exercise~\ref{ex:pack-net}, for any $\eps\ge\frac D{2^{n-1}}$, the space $\spc{X}$ admits an $\eps$-net with at most $C^n$ points.
+Whence $\spc{Q}(C,D)$ is uniformly totally bounded.
+
+\parbf{Exercise~\ref{pr:under}.} 
+Since $\spc{Y}$ is compact, it has a finite $\eps$-net for any $\eps>0$.
+For each $\eps>0$ choose a finite $\eps$-net $\{y_1,\dots,y_{n_\eps}\}$ in $\spc{Y}$.
+
+Suppose $f\:\spc{X}\to \spc{Y}$ be a distance non-decreasing map.
+Choose one point $x_i$ in each nonempty subset $B_i=f^{-1}[\oBall(y_i,\eps)]$.
+Note that the subset $B_i$ has diameter at most $2\cdot \eps$ and 
+\[\spc{X}=\bigcup_iB_i.\]
+Therefore the set of points $\{x_i\}$ forms a $2\cdot\eps$ net in $\spc{X}$.
+Whence (\ref{SHORT.pr:under:if}) follows.
+
+\parit{(\ref{SHORT.pr:under:only-if}).} Let $\spc{Q}$ be a uniformly totally bounded family of spaces. 
+Suppose that each space in $\spc{Q}$ has an $\tfrac1{2^n}$-net with at most $M_n$ points; we may assume that $M_0=1$.
+
+Consider the space $\spc{Y}$ of all infinite integer sequences $m_0,m_1,\dots$ such that $1\le m_n\le M_n$ for any $n$.
+Given two sequences $\bm{\ell},\bm{m}\in\spc{Y}$, set 
+\[\dist{\bm{\ell}}{\bm{m}}{\spc{Y}}=\tfrac1{2^{n-1}},\]
+where $n$ is minimal index such that $\ell_n\ne m_n$.
+
+It remains to observe that any space $\spc{X}$ in $\spc{Q}$ admits a distance non-decreasing map $\spc{X}\to \spc{Y}$.

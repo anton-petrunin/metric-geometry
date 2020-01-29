@@ -390,7 +390,9 @@ Note that {\it (\ref{GH-1})}, {\it(\ref{GH-3})} and ``if''-part of {\it(\ref{GH-
 
 \parit{(\ref{GH-4}).}
 Choose arbitrary $a,b \in \mathbb{R}$ such that
-$$a>|\spc{X}-\spc{Y}|_{\spc{M}}\ \ \text{and}\ \  b>|\spc{Y}-\spc{Z}|_{\spc{M}}.$$
+$$a>|\spc{X}-\spc{Y}|_{\spc{M}}
+\quad\text{and}\quad
+b>|\spc{Y}-\spc{Z}|_{\spc{M}}.$$
 Choose two metrics on $\spc{U}=\spc{X}\sqcup \spc{Y}$ and $\spc{V}=\spc{Y}\sqcup \spc{Z}$ so that
 $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{U})}<a$ and $|\spc{Y}-\spc{Z}|_{\mathcal{H}(\spc{V})}<b$ 
 and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance preserving.
@@ -465,12 +467,16 @@ for any $x,x'\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:GH-po}
 Show that 
-$$\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=\inf\set{\eps}{\spc{X}\le \spc{Y}+\eps\ \ \text{and}\ \ \spc{Y}\le \spc{X}+\eps}$$
+$$\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=\inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
+\quad\text{and}\quad
+\spc{Y}\le \spc{X}+\eps}$$
 defines a metric on the space of (isometry classes) of compact metric spaces.
 
 Moreover $\dist{*}{*}{\spc{M}'}$ is equivalent to the Gromov--Haudorff metric;
 that is,
-$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 \ \ \ \Leftrightarrow\ \ \ \dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$ 
+$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
+\quad\iff\quad 
+\dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$ 
 as $n\to\infty$.
 \end{thm}
 
@@ -518,7 +524,7 @@ This approach can be also used to define Gromov--Hausdorff convergence of noncom
 
 
 
-\section{Uniformly totally bonded sets}
+\section{Uniformly totally bonded families}
 
 Let $\spc{Q}$ be a set of (isometry classes) of compact metric spaces.
 Suppose that there is a sequence $\eps_n\to 0$ such that for any positive integer $n$ each space $\spc{X}$ in $\spc{Q}$ admits an $\eps_n$-net with at most $n$ points.
@@ -537,7 +543,7 @@ Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at 
 Show that $\spc{Q}(C,D)$ is totally bounded.
 \end{thm}
 
-Given two metric spaces $\spc{X}$ and $\spc{Y}$ we will write $\spc{X}\le\spc{Y}$ if there is a distance non-decreasing map $\spc{X}\to\spc{Y}$
+Recall that we write $\spc{X}\le\spc{Y}$ if there is a distance non-decreasing map $\spc{X}\to\spc{Y}$.
 
 \begin{thm}{Exercise}\label{pr:under}
 
