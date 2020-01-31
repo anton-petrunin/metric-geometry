@@ -23,6 +23,7 @@ Again, if we need to emphasize that these balls are taken in the metric space $\
 we write 
 \[\oBall(x,R)_{\spc{X}}\quad\text{and}\quad\cBall[x,R]_{\spc{X}}.\]
 
+
 \section{Variations of definition}
 
 Recall that a metric is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
@@ -64,6 +65,19 @@ The equivalence class of a point $x\in\spc{X}$ will be called the \emph{metric c
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
 It follows that any $\infty$-metric space is a \emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
+
+\begin{thm}{Exercise}
+Given two sets $A$ and $B$ on the plane, set 
+\[\dist{A}{B}{}=\mu(A\backslash B)+\mu(B\backslash A),\]
+where $\mu$ denotes the Lebesgue measure.
+\begin{subthm}{}
+Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded measurable sets of the plane.
+\end{subthm}
+
+\begin{subthm}{}
+Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of the plane.
+\end{subthm}
+\end{thm}
 
 \section{Completeness}
 

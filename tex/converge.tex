@@ -569,4 +569,89 @@ Let $\spc{Q}$ be a closed and totally bounded subset of $\spc{M}$.
 Then $\spc{Q}$ is compact.
 \end{thm}
 
+\begin{thm}{Lemma}
+$\spc{M}$ is complete.
+\end{thm}
+
+\parit{Proof.}
+Let $(\spc{X}_n)$ be a Cauchy sequence in $\spc{M}$.
+Passing to a subsequence if necessary, 
+we can assume that $|\spc{X}_n-\spc{X}_{n+1}|_{\spc{M}}<\tfrac1{2^n}$ for each $n$.
+In particular, for each $n$ one can equip $\spc{W}_n=\spc{X}_n \sqcup \spc{X}_{n+1}$ with a metric such that
+inclusions $\spc{X}_n\hookrightarrow \spc{W}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{W}_n$ are distance preserving,
+and $$|\spc{X}_n-\spc{X}_{n+1}|_{\mathcal{H}(\spc{W}_n)}\z<\tfrac1{2^n}$$
+for each $n$.
+
+Set $\spc{W}$ to be the disjoint union of all $\spc{X}_n$.
+Let us equip $\spc{W}$ with a metric defined the following way:
+\begin{itemize}
+\item for any fixed $n$ and any two points $x_n,x_n'\in \spc{X}_n$ set
+$$|x_n-x_n'|_{\spc{W}}=|x_n-x_n'|_{\spc{X}_n}$$
+\item for any positive integers $m>n$ and any two points $x_n\in \spc{X}_n$ and $x_m\in \spc{X}_m$ set
+$$|x_n-x_m|_{\spc{W}}=\inf\left\{\sum_{i=n}^{m-1}|x_i-x_{i+1}|_{\spc{W}_i}\right\},$$
+where the infimum is taken for all sequences $x_i\in \spc{X}_i$.
+\end{itemize}
+Observe that $|*-*|_{\spc{W}}$ is indeed a metric.
+
+
+Let $\bar{\spc{W}}$ be the completion of $\spc{W}$.
+Note that $|\spc{X}_m-\spc{X}_n|<\tfrac1{2^{n-1}}$ if $m>n$.
+Therefore the union of $\spc{X}_1\cup \spc{X}_2\cup\dots\cup \spc{X}_n$ forms a $\tfrac1{2^{n-1}}$-net in $\bar{\spc{W}}$.
+Since each $\spc{X}_i$ is compact, we get that $\bar{\spc{W}}$ admits a compact $\eps$-net for any $\eps>0$.
+Whence $\bar{\spc{W}}$ is compact.
+
+According to Blaschke selection theorem (\ref{thm:compact+Hausdorff}),
+we can pass to a subsequence of $(\spc{X}_n)$ that converges in $\mathcal{H}(\bar{\spc{W}})$ and therefore in $\spc{M}$.
+\qeds
+
+\parit{Proof of \ref{thm:gromov-compactness}; ``only if'' part.}
+If there is no sequence $\eps_n\to0$ as described in the problem, then for a fixed fixed $\delta>0$
+there is a sequence of spaces $\spc{X}_n\in\spc{Q}$ such that $$\pack_\delta \spc{X}_n\to\infty
+\quad\text{as}\quad
+n\to\infty.$$
+Since $\spc{Q}$ is compact, 
+this sequence has a partial limit say $\spc{X}_\infty\in\spc{Q}$.
+Observe that $\pack_{\delta} \spc{X}_\infty=\infty$.
+Therefore $\spc{X}_\infty$ --- a contradiction.
+
+\parit{``If'' part.}
+Without loss of generality, we may assume that there is a sequence $\eps_n\to 0$ such that 
+$\spc{Q}$ is the set of all compact metric spaces $\spc{X}$ such that
+$\pack_{\eps_n} \spc{X}\le n$.
+
+Note that $\diam \spc{X}\le \eps_1$ for any $\spc{X}\in \spc{Q}$.
+Given positive integer $n$ consider set of all metric spaces $\spc{W}_n$
+with number of points at most $n$ and diameter $\le \eps_1$.
+Note that $\spc{W}_n$ is compact for each $n$.
+
+Further a maximal $\eps_n$-packing of any $\spc{X}\in\spc{Q}$ forms a subspace from $\spc{W}_n$.
+Therefore $\spc{W}_n\cap\spc{Q}$ is a comapct $\eps_n$-net in  $\spc{Q}$.
+That is, $\spc{Q}$ has compact $\eps$-net for any $\eps>0$.
+The ince $\spc{Q}$ is a closed set 
+\qeds
+
+In the following exercises \emph{converge} means \emph{converge in the sense of Gromov--Hausdorff}.
+
+\begin{thm}{Exercise}\label{ex:GH-SC}
+\begin{subthm}{}
+Show that a sequence of compact simply connected length spaces can not converge to a circle.
+\end{subthm}
+
+\begin{subthm}{}
+Construct a sequence of compact simply connected length spaces that converges to a compact nonsimply connected space.
+\end{subthm}
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:sphere-to-ball}
+\begin{subthm}{}
+Show that a sequence of lenght metrics on the 2-sphere can not converge to a the unit disc.
+\end{subthm}
+
+\begin{subthm}{}
+Construct a sequence of lenght metrics on the 3-sphere that converges to a unit 3-ball.
+\end{subthm}
+
+\end{thm}
+
+
 
