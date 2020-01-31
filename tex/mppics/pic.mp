@@ -26,9 +26,9 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u;
 
 for i=2 step 1 until n:
 draw (1/i,0)*u--(1/i,1)*u penhair;
+endfor
 
 dOt (0,0)*u,(0,1)*u;
-endfor
 
 label.lft(btex $\dots$ etex, (1/n,.5)*u);
 label.lft(btex $p$ etex, (0,0)*u);
@@ -46,5 +46,24 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,
 
 endfig;
 
+beginfig(30) 
 
+save u,v,n;
+v:=1.8;
+u:=1cm;
+n:=6;
+
+for i=1 step 1 until n:
+draw (-i,v/i)*u--(4,v/i)*u penhair;
+Dot (-i,v/i)*u;
+endfor
+
+draw (-n,0)*u--(4,0)*u pensemibold;
+
+label.top(btex $\spc{X}_1$ etex, (.5*4,v)*u);
+label.top(btex $\spc{X}_2$ etex, (.5*3,v/2)*u);
+label(btex $\dots$ etex, (0,v/n)*.5*u);
+label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
+
+endfig;
 end

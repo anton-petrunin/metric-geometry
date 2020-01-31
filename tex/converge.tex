@@ -100,7 +100,7 @@ a contradiction.\qeds
 
 
 \begin{thm}{Lemma}\label{lem:complete+Hausdorff}
-If $\spc{X}$ is a compact metric space then $\mathcal{H}(\spc{X})$
+If $\spc{X}$ is a compact metric space, then $\mathcal{H}(\spc{X})$
 is complete.
 \end{thm}
 
@@ -165,7 +165,7 @@ is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
 
 \begin{thm}{Exercise}\label{ex:Huas-perimeter-area}
 Let $\spc{C}$ be a subspace of $\mathcal{H}(\RR^2)$ formed by all compact convex subsets in $\RR^2$.
-Show that perimeter\footnote{If the set degenerates to a line segment of length $\ell$ then its perimeter is defined as $2\cdot \ell$.} and area are continuous on~$\spc{C}$.
+Show that perimeter\footnote{If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.} and area are continuous on~$\spc{C}$.
 That is, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then 
 \[\perim X_n\to \perim X_\infty\quad\text{and}\quad\area X_n\to\area X_\infty\]
 as $n\to\infty$.
@@ -180,7 +180,7 @@ It remains to show that $D_\ell$ is a round disc.
 The latter is easy to show, see for example Steiner's 4-joint method \cite{blaschke}.
 
 
-\section{A variation}
+\section{A variation}\label{sec:H-variation}
 
 It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff~\cite{hausdorff},
 and a couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
@@ -368,6 +368,22 @@ for $y=f(x)\in \spc{Y}$.
 It follows that $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{W})}\le 2\cdot\eps$.
 \qedsf
 
+The Gromov--Hausdorff metric defines Gromov--Hausdorff convegence
+and this is the only thing it is good for.
+In other words in all applications, we use only topology on $\spc{M}$
+and we do not care about particular value of Gromov--Hausdorff distance between spaces.
+
+In order to determine that a given sequence of metric spaces $(\spc{X}_n)$ converges in the Gromov--Hausdorff sense to $\spc{X}_\infty$, it is sufficient to estimate distances $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}$ and  check if $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}\to 0$.
+This problem turns to be simpler than finding Gromov--Hausdorff distance between a particular pair of spaces.
+The following proposition gives one way to do this.
+
+\begin{thm}{Proposition}\label{prop:GH-e-isom}
+A sequence of compact metric spaces $(\spc{X}_n)$ converges to  $\spc{X}_\infty$ in the sense of Gromov--Hausdorff if and only if there is a sequence $\eps_n\to0+$
+and an $\eps_n$-isometry $f_n\:\spc{X}_n\to \spc{X}_\infty$ for each $n$.
+\end{thm}
+
+\parit{Proof.} Follows from Propsition~\ref{prop:alm-isom=>GH} and Exercise~\ref{ex:GH=>eps-isom}
+\qeds
 
 \section{It is a metric}
 
@@ -431,7 +447,7 @@ The later is done by setting
 $$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$ 
 for some (and therefore any) sequence of points $(x_n)$ in $S$
 which converges to $x$ in $\spc{X}$.
-(Note that if $x_n\to x$ then $(x_n)$ is Cauchy.
+(Note that if $x_n\to x$, then $(x_n)$ is Cauchy.
 Since $f_\infty$ is distance preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
 therefore it converges.)
 
@@ -452,7 +468,7 @@ In other words, $\diam\:\spc{M}\to\RR$ is a $2$-Lipschitz function.
 \end{thm}
 
 \begin{thm}{Exercise}
-Show that $\spc{M}$ is a length metric space.
+Show that $\spc{M}$ is a length space.
 \end{thm}
 
 Given two metric spaces $\spc{X}$ and $\spc{Y}$, we will write $\spc{X}\le \spc{Y}$ if there is a noncontracting map $f\:\spc{X}\to \spc{Y}$;
@@ -479,49 +495,6 @@ $$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0
 \dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$ 
 as $n\to\infty$.
 \end{thm}
-
-
-\section{Gromov--Hausdorff convegence}
-
-The Gromov--Hausdorff metric defines Gromov--Hausdorff convegence
-and this is the only thing it is good for.
-In other words in all applications, we use only topology on $\spc{M}$
-and we do not care about particular value of Gromov--Hausdorff distance between spaces.
-
-In order to determine that a given sequence of metric spaces $(\spc{X}_n)$ converges in the Gromov--Hausdorff sense to $\spc{X}_\infty$, it is sufficient to estimate distances $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}$ and  check if $|\spc{X}_n-\spc{X}_\infty|_{\spc{M}}\to 0$.
-This problem turns to be simpler than finding Gromov--Hausdorff distance between a particular pair of spaces.
-The proposition below gives one way to do this.
-
-\begin{thm}{Proposition}\label{prop:GH-e-isom}
-A sequence of compact metric spaces $(\spc{X}_n)$ converges to  $\spc{X}_\infty$ in the sense of Gromov--Hausdorff if and only if there is a sequence $\eps_n\to0+$
-and an $\eps_n$-isometry $f_n\:\spc{X}_n\to \spc{X}_\infty$ for each $n$.
-\end{thm}
-
-\parit{Proof.} Follows from Propsition~\ref{prop:alm-isom=>GH} and Exercise~\ref{ex:GH=>eps-isom}
-\qeds
-
-Suppose $\spc{X}_n\GHto \spc{X}_\infty$, then there is a metric on the disjoint union 
-\[\bm{X}=\bigsqcup_{n\in \NN\cup\{\infty\}} \spc{X}_n\]
-such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and and $\spc{X}_n\Hto \spc{X}_\infty$ as subsets in $\bm{X}$.
-
-Indeed, since $\spc{X}_n\GHto \spc{X}_\infty$, there is a metric on $\spc{V}_n=\spc{X}_n\sqcup \spc{X}_\infty$ such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and $\dist{\spc{X}_n}{\spc{X}_\infty}{\mathcal{H}(\spc{V}_n)}<\eps_n$ for some sequence $\eps_n\to 0$.
-Arguing as in the proof of (\ref{GH-4}) in Theorem~\ref{thm:GH-is-a-metric}
-we define metric on $\bm{X}$ by setting 
-\begin{align*}
-\dist{x_m}{x_n}{\bm{X}}&=\inf_{x_\infty}\set{\dist{x_m}{x_\infty}{\spc{V}_m}+\dist{x_n}{x_\infty}{\spc{V}_n}}{},
-\\
-\dist{x_n}{x_\infty}{\bm{X}}&=\dist{x_n}{x_\infty}{\spc{V}_n}
-\\
-\dist{x_n}{x'_n}{\bm{X}}&=\dist{x_n}{x_n'}{\spc{X}_n}
-\end{align*}
-where $x_n,x_n'\in\spc{X}_n$ for every $n\in \NN\cup\{\infty\}$.
-
-In other words, the metric on $\bm{X}$ defines convergence $\spc{X}_n\GHto \spc{X}_\infty$.
-This metric makes possible to talk about limits of sequences $x_n\in \spc{X}_n$ as $n\to\infty$, as well as weak limit of a sequence of measures $\mu_n$ on $\spc{X}_n$ and so on.
-By that reason it might be useful to fix such metric on $\bm{X}$.
-This approach can be also used to define Gromov--Hausdorff convergence of noncompact spaces which will be discussed latter.
-
-
 
 
 \section{Uniformly totally bonded families}
@@ -653,5 +626,49 @@ Construct a sequence of lenght metrics on the 3-sphere that converges to a unit 
 
 \end{thm}
 
+\section{Remarks}
 
+Suppose $\spc{X}_n\GHto \spc{X}_\infty$, then there is a metric on the disjoint union 
+\[\bm{X}=\bigsqcup_{n\in \NN\cup\{\infty\}} \spc{X}_n\]
+such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and and $\spc{X}_n\Hto \spc{X}_\infty$ as subsets in $\bm{X}$.
 
+Indeed, since $\spc{X}_n\GHto \spc{X}_\infty$, there is a metric on $\spc{V}_n=\spc{X}_n\sqcup \spc{X}_\infty$ such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and $\dist{\spc{X}_n}{\spc{X}_\infty}{\mathcal{H}(\spc{V}_n)}<\eps_n$ for some sequence $\eps_n\to 0$.
+Arguing as in the proof of (\ref{GH-4}) in Theorem~\ref{thm:GH-is-a-metric}
+we define metric on $\bm{X}$ by setting 
+\begin{align*}
+\dist{x_m}{x_n}{\bm{X}}&=\inf_{x_\infty}\set{\dist{x_m}{x_\infty}{\spc{V}_m}+\dist{x_n}{x_\infty}{\spc{V}_n}}{},
+\\
+\dist{x_n}{x_\infty}{\bm{X}}&=\dist{x_n}{x_\infty}{\spc{V}_n}
+\\
+\dist{x_n}{x'_n}{\bm{X}}&=\dist{x_n}{x_n'}{\spc{X}_n}
+\end{align*}
+where $x_n,x_n'\in\spc{X}_n$ for every $n\in \NN\cup\{\infty\}$.
+
+In other words, the metric on $\bm{X}$ defines convergence $\spc{X}_n\GHto \spc{X}_\infty$.
+This metric makes possible to talk about limits of sequences $x_n\in \spc{X}_n$ as $n\to\infty$, as well as weak limit of a sequence of measures $\mu_n$ on $\spc{X}_n$ and so on.
+By that reason it might be useful to fix such metric on $\bm{X}$.
+This approach can be also used to define Gromov--Hausdorff convergence of noncompact spaces which will be discussed latter.
+
+We may consider a metric on $\bm{X}$ such that $\spc{X}_n\Hto \spc{X}_\infty$ without assuming that all the spaces $\spc{X}_n$ and $\spc{X}_\infty$ are compact; in this case we need to use the variation of Hausdorff convergence described in Section~\ref{sec:H-variation}.
+The limit spaces for this generalized convergence is not uniquely defined.
+For example if each space $\spc{X}_n$ in the sequence is isometric to the half-line, then its limit might be isometric to the half-line or to whole line.
+The first convergence is evident and the second could be guessed from the diagram.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-30}
+\end{figure}
+
+Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \emph{pointed Gromov--Haudorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
+For example the sequence $(\spc{X}_n,p_n)=(\RR_+,0)$ converges to $(\RR_+,0)$, while $(\spc{X}_n,p_n)=(\RR_+,n)$ converges to $(\RR,0)$.
+
+This convergence works nicely for proper metric spaces.
+The following theorem is an analog of Gromov's selection theorem for pointed Gromov--Haudorff convergence.
+
+\begin{thm}{Theorem}\label{thm:pointed-gromov-compactness}%
+Let $\spc{Q}$ be a set of isometry classes of pointed proper metric spaces
+$(\spc{X},p)$.
+Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
+Then $\spc{Q}$ is precompact with respect to pointed Gromov--Haudorff convergence. 
+\end{thm}
