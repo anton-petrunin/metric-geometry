@@ -81,10 +81,6 @@ x_n\to x_\omega\ \text{as}\ n\to\omega.\]
 For example if $\omega$ is the principle ultrafilter such that $\omega(\{n\})=1$ for some $n\in\NN$, then
 $x_\omega=x_n$.
 
-The sequence $(x_n)$ can be regarded as a map $\NN\to\spc{X}$.
-Assume $\spc{X}$ is compact, in this case the map $\NN\to\spc{X}$ can be extended to a continuous map from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
-Then $x_\omega$ can be regarded as the image of $\omega$.
-
 Note that $\omega$-limits of a sequence and its subsequence may differ.
 For example, in general
 \[\lim_{n\to\omega}x_n
@@ -98,6 +94,18 @@ and $x_n\to  x_\omega$ as $n\to\omega$.
 Then $x_\omega$ is a partial limit of the sequence $(x_n)$;
 that is, there is a subsequence $(x_n)_{n\in S}$ that converges to $x_\omega$ in the usual sense.
 \end{thm}
+
+\parbf{Remark.}
+A nonprinciple ultrafilter $\omega$ is called 
+\emph{selective}\index{ultrafilter!selective ultrafilter}\index{selective ultrafilter} if for any partition of $\NN$ into sets $\{C_\alpha\}_{\alpha\in\IndexSet}$ such that $\omega(C_\alpha)\z=0$ for each $\alpha$, 
+there is a set $S\subset \NN$ such that $\omega(S)=1$ and $S\cap C_\alpha$ is a one-point set for each $\alpha\in\IndexSet$.
+
+The existence of a selective ultrafilter follows from the continuum hypothesis;
+it was proved by Walter Rudin in \cite{rudin}.
+
+For a selective ultrafilter $\omega$, there is a stronger version of Proposition~\ref{prop:ultra/partial};
+namely we can assume that the subsequence $(x_n)_{n\in S}$ can be chosen so that $\omega(S)=1$.
+(So, if needed, you may assume that the ultrafilter $\omega$ is selective and use this stronger version of the proposition.)
 
 \parit{Proof.}
 Given $\eps>0$, 
@@ -122,6 +130,10 @@ any sequence of points $(x_n)$ in $\spc{X}$ has unique $\omega$-limit $x_\omega$
 
 In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 \end{thm}
+
+Alternatively, the sequence $(x_n)$ can be regarded as a map $\NN\to\spc{X}$.
+In this case the map $\NN\to\spc{X}$ can be extended to a continuous map from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
+Then the $\omega$-limit $x_\omega$ can be regarded as the image of $\omega$.
 
 The following lemma is an ultralimit analog of Cauchy convergence test.
 
@@ -190,14 +202,13 @@ It follows that we can choose a nested sequence of sets
 \[\NN= S_1\supset S_2\supset\dots\] 
 such that 
 \begin{itemize}
-\item $\omega(S_m)=1$ for each $m$, and
+\item $\omega(S_m)=1$ for each $m$, 
+\item $k\ge m$ for any $k\in S_m$, and
 \item if $n\in S_m$, then 
 \[\dist{x_{n,m}}{x_{n,m-1}}{}<\tfrac1{2^m}\]
 \end{itemize}
 
-
-
-Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $m(n)\le n$ and $m(n)\in S_{m}$.
+Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $m(n)\in S_{m}$.
 Denote by $y\in \spc{X}_\omega$ its $\omega$-limit.
 
 Observe that by construction $x_n\to y$ as $n\to \infty$.
@@ -218,7 +229,19 @@ By Observation~\ref{obs:ultralimit-is-complete}, $\spc{X}^\omega$ is complete.
 Applying Lemma~\ref{lem:mid>geod} we get the statement.
 \qeds
 
-\parbf{Ultrapower.} If all the metric spaces in the sequence are identical $\spc{X}_n=\spc{X}$, 
+A geodesic space $\spc{T}$ is called a \emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
+and the union of any two geodesics $[xy]$, and $[yz]$ contain the geodesic $[xz]_{\spc{T}}$.
+In other words any triangle in $\spc{T}$ is a tripod;
+that is for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
+
+\begin{thm}{Exercise}\label{ex:lim(tree)}
+Show that an ultralimit of metric trees is a metric tree. 
+\end{thm}
+
+
+\section{Ultrapower}
+
+If all the metric spaces in the sequence are identical $\spc{X}_n=\spc{X}$, 
 its $\omega$-limit 
 $\lim_{n\to\omega}\spc{X}_n$
 is denoted by $\spc{X}^\omega$
@@ -230,15 +253,15 @@ and called $\omega$-power of $\spc{X}$.
 For any point $x\in \spc{X}$, consider the constant sequence $x_n=x$
 and set $\iota(x)=\lim_{n\to\omega}x_n\in\spc{X}^\omega$.
 
-\begin{subthm}{}
+\begin{subthm}{ex:ultrapower:a}
 Show that $\iota\:\spc{X}\to\spc{X}^\omega$ is distance preserving embedding. (So we can and will consider $\spc{X}$ as a subset of $\spc{X}^\omega$.)
 \end{subthm}
 
-\begin{subthm}{} 
+\begin{subthm}{ex:ultrapower:compact} 
 Show that $\iota$ is onto if and only if $\spc{X}$ compact.
 \end{subthm}
 
-\begin{subthm}{} 
+\begin{subthm}{ex:ultrapower:proper} 
 Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component of $\spc{X}^\omega$; that is, a subset of $\spc{X}^\omega$ that lie on finite distance from a given point.
 \end{subthm}
 
@@ -273,15 +296,49 @@ Then there are at least two distinct geodesics between $p$ and $q$
 in the ultrapower $\spc{X}^\omega$.
 \end{thm}
 
+\begin{thm}{Exercise}
+ Construct a proper metric space $\spc{X}$ such that $\spc{X}^\omega$ is not proper; that is, there is a point $p\in \spc{X}^\omega$ and $R<\infty$ such that the closed ball $\cBall[p,R]_{\spc{X}^\omega}$ is not compact.
+\end{thm}
 
-\section{Remarks}
+\section{Tangent and asymptotic spaces}
 
-A nonprinciple ultrafilter $\omega$ is called 
-\emph{selective}\index{ultrafilter!selective ultrafilter}\index{selective ultrafilter} if for any partition of $\NN$ into sets $\{C_\alpha\}_{\alpha\in\IndexSet}$ such that $\omega(C_\alpha)\z=0$ for each $\alpha$, 
-there is a set $S\subset \NN$ such that $\omega(S)=1$ and $S\cap C_\alpha$ is a one-point set for each $\alpha\in\IndexSet$.
+Choose a space $\spc{X}$ and a sequence of $\lambda_n>0$.
+Consider the sequence of scalings $\spc{X}_n=\lambda_n\cdot\spc{X}=(\spc{X},\lambda_n\cdot\dist{*}{*}{\spc{X}})$.
 
-The existence of a selective ultrafilter follows from the continuum hypothesis;
-it was proved by Walter Rudin in \cite{rudin}.
+Choose a point $p\in \spc{X}$ and denote by $p_n$ the corresponding point in $\spc{X}_n$.
+Consider the $\omega$-limit $\spc{X}_\omega$ of $\spc{X}_n$ (one may denote it by $\lambda_\omega\cdot \spc{X}$);
+set $p_\omega$ to be the $\omega$-limit of $p_n$.
 
-For a selective ultrafilter $\omega$, there is a stronger version of Proposition~\ref{prop:ultra/partial};
-namely we can assume that the subsequence $(x_n)_{n\in S}$ can be chosen so that $\omega(S)=1$.
+If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \emph{$\omega$-tangent space} at $p$ and denoted by $\T_p\spc{X}$.
+
+If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in called \emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$.
+Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:Asym(Lob)}
+Let $\spc{L}$ be the Lobachevsky plane; $\spc{T}=\Asym\spc{L}$.
+
+\begin{subthm}{ex:Asym(Lob):metric-tree}
+Show that $\spc{T}$ is a complete metric tree.
+\end{subthm}
+
+\begin{subthm}{ex:Asym(Lob):continuum}
+Show that $\spc{T}$ has \emph{continuum degree} at any point;
+that is, for any point $t\in \spc{T}$ the set of connected components of the complement $\spc{T}\backslash\{t\}$ has cardinality continuum.
+\end{subthm}
+
+\begin{subthm}{ex:Asym(Lob):homogeneous}
+Show that $\spc{T}$ is homogeneous; that is given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
+\end{subthm}
+
+\begin{subthm}{ex:Asym(Lob):others}
+Prove (\ref{SHORT.ex:Asym(Lob):metric-tree}--\ref{SHORT.ex:Asym(Lob):homogeneous}) if $\spc{L}$ is Lobachevsky space and/or for the infinite 3-regular%
+\footnote{that is, degree of any vertex is 3.}
+tree with unit edge. 
+\end{subthm}
+
+
+\end{thm}
+
+As it shown in \cite{dyubina-polterovich}, the properties (\ref{SHORT.ex:Asym(Lob):metric-tree}) and (\ref{SHORT.ex:Asym(Lob):continuum}) describe the tree $\spc{T}$ up to isometry.
+In particular, the asymptotic space of Lobachevsky plane does not depend on the choice of ultrafilter and the sequence $\lambda_n\to \infty$.
+In general, the tangent and asymptotic spaces depend on number of choices --- we need to fix a sequence $\lambda_n$ and an nonprinciple ultrafiler $\omega$.
