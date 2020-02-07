@@ -36,6 +36,36 @@ label.lft(btex $q$ etex, (0,1)*u);
 
 endfig;
 
+beginfig(2)
+save u;
+u:=1cm;
+
+setbounds currentpicture to (-2.1,-1.7)*u--(2.1,-1.7)*u--(2.1,.8)*u--(-2.1,.8)*u--cycle;
+
+z.p=(1,-3)*u;
+z.q=(-1,-3)*u;
+save p,q;
+path p[];
+path q[];
+
+p[1]=circle((1/1,0)*u,u/1);
+q[1]=circle((-1/1,0)*u,u/1);
+draw p[1] yscaled .5;
+draw q[1] yscaled .5;
+draw ((support.lft(p[1],z.p)--z.p--support.rt(p[1],z.p))) yscaled .5;
+draw ((support.rt(q[1],z.q)--z.q--support.lft(q[1],z.q))) yscaled .5;
+
+for i=2 step 1 until 100:
+p[i]=circle((1/i,0)*u,u/i);
+q[i]=circle((-1/i,0)*u,u/i);
+draw p[i] yscaled .5;
+draw q[i] yscaled .5;
+draw ((z.p--support(p[i],z.p)) cutbefore p[i-1]) yscaled .5;
+draw ((z.q--support.lft(q[i],z.q)) cutbefore q[i-1]) yscaled .5;
+endfor
+
+endfig;
+
 beginfig(10) 
 save u;
 u:=.3cm;

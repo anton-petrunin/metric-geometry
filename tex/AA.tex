@@ -1,3 +1,50 @@
+\begin{thm}{Advanced exercise}\label{ex:urysohn-contractable}
+ Show that the space $\spc{U}$ is contactable.
+\end{thm}
+
+
+\parbf{Advanced exercise~\ref{ex:urysohn-contractable}.}
+Note that points in the space $\spc{X}_\infty$ constructed in the proof of \ref{prop:univeral-separable} can be multiplied number $t\in [0,1]$ --- simply multiply each function by factor $t$.
+That defines a map 
+\[\lambda_t\:\spc{X}_\infty\to \spc{X}_\infty\]
+that scales all distances by factor $t$.
+The map $\lambda_t$ can be extended to the completion of $\spc{X}_\infty$, which is isometic to $\spc{U}_d$ (or $\spc{U}$).
+
+Observe that 
+the map $\lambda_1$ is the identity  and $\lambda_0$ maps whole space to a single point, say $x_0$ --- that is the only point of $\spc{X}_0$.
+Further note that the map $(t,p)\mapsto \lambda_t(p)$ is continuous ---  in particular $\spc{U}_d$ and $\spc{U}$ are contractible.\qeds
+
+Source: \cite[(d) on page 82]{gromov-2007}.
+
+Observe that for any point $p\in \spc{U}_d$ the curve $t\mapsto \lambda_t(p)$ is a geodesic path from $p$ to $x_0$.
+
+
+
+
+
+
+
+
+Note that $\spc{M}$ --- the space of compact metric spaces can be treated as a space of compact subsets in $\spc{U}$ up to congruence.
+Namely two subsets $A$ and $A'$ are called \emph{congruent} (briefly $A\cong A'$) if there is isometry of the ambient space $\spc{U}$ that maps $A$ to $A'$.
+Let us define distance between congruence classes of two compact subsets $A$ and $B$ as 
+\[\inf\set{\dist{A'}{B}{\spc{H}(\spc{U})}}{A'\cong A}.\]
+
+
+By \ref{prop:sep-in-urys}, any compact metric spaces $\spc{K}$ admits a distance preserving map $f\:\spc{K}\to\spc{U}$.
+Moreover by \ref{thm:compact-homogeneous} any two such maps $f_1$ and $f_2$ differ by isometry of $\spc{U}$;
+that is, there is an isometry $\iota\:\spc{U}\to\spc{U}$ such that $f_2=\iota\circ f_1$.
+In particular $f_1(\spc{K})\cong f_2(\spc{K})$.
+
+
+
+
+
+
+
+
+
+
 \section{Ultratangent space} 
 
 Recall that we assume that $\omega$ is a once for all fixed choice of a nonprinciple ultrafilter.

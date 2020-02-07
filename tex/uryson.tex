@@ -1,0 +1,204 @@
+\chapter{Urysohn space}
+
+We discuss a construction introduced by Pavel Urysohn~\cite{urysohn}.
+We follow our presentation is very close \cite{gromov}.
+
+This subject is closely related to the so called \emph{Rado graph},
+also known as \emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey this subject is written by Peter Cameron~\cite{cameron}.
+
+\section{Existance}
+Suppose a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$.
+In this case we may say that $\spc{X}'$ is an \emph{extension} of $\spc{X}$.
+If $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a \emph{$d$-extension}.
+
+If the complement $\spc{X}'\backslash \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \emph{one-point extension} of $\spc{X}$.
+In this case, to define metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
+\[f(x)=\dist{p}{x}{\spc{X}'}.\]
+
+The function $f$ can not be taken arbitrary --- the triangle inequality implies that 
+\[f(x)+f(y)\ge \dist{x}{y}{\spc{X}}\ge |f(x)-f(y)|\]
+for any $x,y\in \spc{X}$.
+In particular $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
+For a $d$-extension we need to assume in addition that $\diam\spc{X}\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
+
+Any function $f$ of that type will be called \emph{extension function} or \emph{$d$-extension function} correspondingly.
+
+\begin{thm}{Definition}\label{def:universal}
+A metric space $\spc{U}$ is called \emph{universal}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
+
+If instead of extension functions we consider only $d$-extension functions and assume in addition that $\diam \spc{U}\le d$, then we arrive to a definition of \emph{$d$-universal space}.
+
+If in addition $\spc{U}$ is separable and complete, then it is called \emph{Urysohn space} or \emph{$d$-Urysohn space}.
+\end{thm}
+
+
+\begin{thm}{Proposition}\label{prop:univeral-separable}
+Given a positive $d$, there is a separable $d$-universal metric space.
+
+Moreover, a separable universal space metric exists.
+\end{thm}
+
+\parit{Proof.}
+Let $\spc{X}$ be a compact metric space such that $\diam\spc{X}\le d$.
+Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by sup-norm.
+Note that the map $\spc{X} \to \spc{X}^d$ defined by $x\mapsto\distfun_x$ is a distance preserving embedding,
+so we can (and will) treat $\spc{X}$ as a subspace of $\spc{X}^d$, or, equivalently, $\spc{X}^d$ is an extension of $\spc{X}$.
+
+Let us iterate this construction.
+Start with a one-point space $\spc{X}_0$ and consider a sequence of spaces $(\spc{X}_n)$ defined by $\spc{X}_{n+1}\z=\spc{X}_n^d$.
+Note that the sequence is nested, that is $\spc{X}_0\subset \spc{X}_1\subset\dots$
+and the union
+\[\spc{X}_\infty=\bigcup_n\spc{X}_n;\]
+comes with metric such that
+$\dist{x}{y}{\spc{X}_\infty} = \dist{x}{y}{\spc{X}_n}$
+if $x,y\in\spc{X}_n$.
+
+Note that if $\spc{X}$ is compact, then so is $\spc{X}^d$.
+It follows that each space $\spc{X}_n$ is compact.
+Since $\spc{X}_\infty$ is a countable union of compact spaces, it is separable.
+
+Any finite subspace $\spc{F}$ of $\spc{X}_\infty$ lies in some $\spc{X}_n$ for $n<\infty$.
+By construction, there is a point $p\in \spc{X}_{n+1}$ that meets the condition in Definiton~\ref{def:universal}.
+That is, $\spc{X}_\infty$ is $d$-universal.
+
+A construction of a universal separable metric space is done along the same lines, but one has the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$ for some sequence $d_n\to\infty$.
+\qeds
+
+\begin{thm}{Proposition}\label{prop:completion-univeral}
+A completion of $d$-universlal space is $d$-universal.
+
+A completion of universal space universal.
+\end{thm}
+
+Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply the following:
+
+\begin{thm}{Theorem}\label{thm:urysohn-exists}
+Urysohn space, and $d$-Urysohn space for any $d>0$, exist.
+\end{thm}
+
+
+\parit{Proof.} Suppose $\spc{V}$ be a $d$-universal space;
+denote by $\spc{U}$ its completion; so $\spc{V}$ is a dense subset in a complete space $\spc{U}$.
+
+Observe that $\spc{U}$ is \emph{approximately $d$-universal};
+that is, if $\spc{F}\subset\spc{U}$ is a finite set, and $f\:\spc{F}\to \RR$ is a $d$-extension function, then
+there exists $p\in \spc{U}$ such that
+\[\dist{p}{x}{}\lg f(x)\pm\eps.\]
+for any $x\in\spc{F}$.
+
+Therefore there is a sequence of points $p_n\in \spc{U}$ such that for any $x\in \spc{F}$, 
+\[\dist{p_n}{x}{}\lg f(x)\pm\tfrac1{2^n}.\]
+
+Moreover, we can assume that 
+\[\dist{p_n}{p_{n+1}}{} < \tfrac1{2^n}\eqlbl{eq:|pn-pn|}\]
+for all large $n$.
+Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n$ defined by $f_n(x)=f(x)$ for any $x\in \spc{F}$, and
+\[f_n(p_n)=\max\set{\bigl|\dist{p_n}{x}{}- f(x)\bigr|}{x\in \spc{F}}.\]
+Observe that $f_n$ is a an $d$-extension function for large $n$ and
+$f_n(p_n)\z<\tfrac1{2^n}$.
+By applying approximate universal property recursively we get~\ref{eq:|pn-pn|}.
+
+By \ref{eq:|pn-pn|}, $(p_n)$ is a Cauchy sequence and its limit meets the condition in the definition of universal space (\ref{def:universal}).
+\qeds
+
+\begin{thm}{Exercise}\label{ex:geodesics-urysohn}
+Show that any two distinct points in an Urysohn space can be jointed by infinite number of geodesics.
+\end{thm}
+
+
+\section{Universality}
+
+\begin{thm}{Proposition}\label{prop:sep-in-urys}
+Let $\spc{U}$ a Urysohn space.
+Then any separable metric space $\spc{S}$ admits a distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
+
+Moreover, for any finite subspace $\spc{F}\subset \spc{S}$,
+any distance preserving embedding $\spc{F}\hookrightarrow \spc{U}$ can be extended to an distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
+
+If $\spc{U}$ is $d$-Urysohn,
+then the statements hold provided $\diam\spc{S}\le d$.  
+\end{thm}
+
+\parit{Proof.}
+The required isometry will be denoted by $x\mapsto x'$.
+
+Choose a dense sequence of points $s_1,s_2,\dotsc\in\spc{S}$.
+We may assume that $\spc{F}=\{s_1,\dots,s_n\}$, so $s_i'\in \spc{U}$ are defined for $i\le n$.
+
+The sequence $s_i'$ for $i>n$ can be defined recursively using universality of $\spc{U}$.
+Namely that $s_1',\dots,s_{i-1}'$ are already defined.
+Since $\spc{U}$ is universal, there is a point $s_i'\in \spc{U}$ such that
+\[\dist{s_i'}{s_j'}{\spc{U}}=\dist{s_i}{s_j}{\spc{S}}\]
+for any $j<i$.
+
+We constructed a distance preserving map $s_i\mapsto s_i'$, it remains to extend it to a continuous map on whole $\spc{S}$.
+
+The first statement follows if $\spc{F}=\emptyset$.\qeds
+
+\section{Uniqueness}
+
+\begin{thm}{Theorem}\label{thm:urysohn-unique}
+Suppose $\spc{F}\subset \spc{U}$ and $\spc{F}'\subset \spc{U}'$ be finite isometric subspaces in a pair of ($d$-)Urysohn spaces $\spc{U}$ and $\spc{U}'$.
+Then any isometry $\spc{F}\to \spc{F}'$ can be extended to an isometry $\spc{U}\to \spc{U}'$.
+
+\end{thm}
+
+Note that \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
+but it does not immideately implies existence of an isometry.
+The following construction use the same idea as in the proof of \ref{prop:sep-in-urys}, but we need to apply it \emph{back and forth} to ensure that the constructed distance-preserving map is onto.
+
+\parit{Proof.}
+The required isometry $\spc{U}\leftrightarrow \spc{U}'$ will be denoted by $u \leftrightarrow u'$.
+
+Choose a dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}$.
+Let us define recursively $a_1',b_1, a_2', b_2,\dots$ --- on the odd step we define the images of $a_1,a_2,\dots$ and on the even steps we define invese images of $b'_1,b'_2,\dots$.
+The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can construct two sequences $a_1',a_2',\dots\in \spc{U}'$ and $b_1,b_2,\dots\in \spc{U}$ such that
+\begin{align*}
+\dist{a_i}{a_j}{\spc{U}}&=\dist{a_i'}{a_j'}{\spc{U}'}
+\\
+\dist{a_i}{b_j}{\spc{U}}&=\dist{a_i'}{b_j'}{\spc{U}'}
+\\
+\dist{b_i}{b_j}{\spc{U}}&=\dist{b_i'}{b_j'}{\spc{U}'}
+\end{align*}
+for all $i$ and $j$.
+
+Let us extend the constructed distance preserving bijection defined by $a_i\leftrightarrow a_i'$ and $b_i\leftrightarrow b_i'$ continuousely to whole $\spc{U}$.
+Observe that the image of this bijection is dense in $\spc{U}'$ therefore the constructed map $\spc{U}\to \spc{U}'$ is a bijection.
+\qeds
+
+Further the Urysohn space will be denoted by $\spc{U}$, and the $d$-Urysohn space will be denoted by $\spc{U}_d$.
+Observe that \ref{thm:urysohn-unique} implies that the spaces $\spc{U}$ and $\spc{U}_d$ are $n$-point homogeneous; that is, 
+\begin{itemize}
+ \item Any distance preserving map from a finite set $F$
+\end{itemize}
+
+
+\begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
+Let $S$ be a sphere of radius $\tfrac d2$ in $\spc{U}_d$;
+that is, 
+\[S=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=\tfrac d2}\]
+for some point $p\in \spc{U}_d$.
+Show that $S$ is isometric to $\spc{U}_d$.
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Modify the proofs of \ref{prop:completion-univeral} and \ref{thm:urysohn-unique} to prove the following theorem.
+\end{thm}
+
+\begin{thm}{Theorem}\label{thm:compact-homogeneous}
+Let $K\subset \spc{U}$ be a compact set.
+Show that any distance-preserving map $f\:K\to\spc{U}$ can be extended to 
+an isometry of~$\spc{U}$.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+

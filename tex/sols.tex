@@ -158,7 +158,7 @@ $\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,0)$ and $q
 The point $p$ admits no compact neighborhood in $\bar{\spc{X}}$ 
 and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. \qeds
 
-This exercise and solution is taken from \cite{bridson-haefliger}.
+This exercise and its solution is taken from \cite{bridson-haefliger}.
 
 
 \parbf{Exercise~\ref{ex:compact-length}.} By Frechet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
@@ -166,7 +166,7 @@ This exercise and solution is taken from \cite{bridson-haefliger}.
 Denote by $\spc{L}=\Conv\spc{K}$ the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
 Observe that $\spc{L}$ is a length space.
 
-It remains to show that $\spc{L}$ is compact. 
+It remains to show that since $\spc{K}$, so is $\spc{L}$ --- do it.
 
 \parbf{Exercise~\ref{ex:Hausdorff-bry}.}
 The answer is ``no'' in both parts.
@@ -225,6 +225,20 @@ $g_\infty\:\spc{Y}\to \spc{X}$.
 By Exercise~\ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometrises.
 Therefore $f_\infty$ and $g_\infty$ are isometries as well.
 
+%Observe that 
+%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
+%\quad\Longrightarrow\quad 
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$
+%follows from Proposition~\ref{prop:GH-e-isom} and Exercise~\ref{ex:alm-isom:inverse}.
+%To prove that 
+%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
+%\quad\Longleftarrow\quad 
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0,$$
+%Suppose that $f_n\:\spc{X}_n\to\spc{X}_\infty$ and $g_n\:\spc{X}_\infty\to\spc{X}_n$ are $\eps_n$-almost distance non-decreasing maps for $\eps_n\to 0$.
+%Arguing as above, pass to a partial limit $h$ of the sequence $f_n\circ g_n\:\spc{X}_\infty\to\spc{X}_\infty$.
+%Note that $h$ is a distance non-deceasing map from a compact space to an itself.
+%By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
+
 (The proof of the second part is coming.) %???
 
 \parbf{Exercise~\ref{pr:doubling}.}
@@ -261,6 +275,36 @@ where $n$ is minimal index such that $\ell_n\ne m_n$.
 
 It remains to observe that $\spc{Y}$ is compact and any space $\spc{X}$ in $\spc{Q}$ admits a distance non-decreasing map $\spc{X}\to \spc{Y}$.
 
+\begin{wrapfigure}{r}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2}
+\end{wrapfigure}
+
+\parbf{Exercise~\ref{ex:GH-SC:nonsc-limit}.}
+Let $\spc{V}$ be a cone over Hawaiian earring.
+Consider the \emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points earrings (see the diagrm).
+
+The space $\spc{W}$ can be equipped with length metric for example the induced length metric from the shown embedding.
+
+Note that $\spc{V}$ is simply connected, but $\spc{W}$ is not --- it is a good exercise in topology.
+
+If we delete from the earrings all small circles, then the obtained double cone becomes simply connected and it remains to be close to $\spc{W}$ in the sense of Gromov--Hausdorff.
+
+\parbf{Exercise~\ref{ex:sphere-to-ball:3}.}
+Make fine burrows in the standard 3-ball without changing its topology,
+but at the same time come sufficiently close to any point in the ball.
+
+Consider the \emph{doubling} of the obtained ball along its boundary;
+that is, two copies of the ball with identified corresponding points on their boundaries.
+The obtained space is homeomorphic to $\mathbb{S}^3$.
+Note that the burrows can be made 
+so that the obtained space is sufficiently close to the original ball 
+in the Gromov--Hausdorff metric.\qeds
+
+Sourse: \cite[Ex. 7.5.17]{burago-burago-ivanov}. 
+
+
 \parbf{Exercise~\ref{ex:ultrapower}.}
 Part (\ref{SHORT.ex:ultrapower:a}) follows directly from the definitions.
 Further we consider $\spc{X}$ as a subset of $\spc{X}^\omega$.
@@ -287,3 +331,5 @@ The same argument as in (\ref{SHORT.ex:ultrapower:compact}) shows that any $\ome
 Further if $(x_n)$ is not  $\omega$-bounded, then 
 \[\lim_{n\to\omega}\dist{p}{x_n}{\spc{X}}=\infty;\]
 that is $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
+
+
