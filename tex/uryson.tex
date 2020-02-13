@@ -144,10 +144,11 @@ Show that Urysohn space is simply connected.
 Suppose $\spc{F}\subset \spc{U}$ and $\spc{F}'\subset \spc{U}'$ be finite isometric subspaces in a pair of ($d$-)Urysohn spaces $\spc{U}$ and $\spc{U}'$.
 Then any isometry $\spc{F}\to \spc{F}'$ can be extended to an isometry $\spc{U}\to \spc{U}'$.
 
+In particular ($d$-)Urysohn space is unique up to isometry.
 \end{thm}
 
 Note that \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
-but it does not immideately implies existence of an isometry.
+but it does not immideately imply existence of an isometry.
 The following construction use the same idea as in the proof of \ref{prop:sep-in-urys}, but we need to apply it \emph{back and forth} to ensure that the constructed distance-preserving map is onto.
 
 \parit{Proof.}
@@ -170,10 +171,11 @@ Observe that the image of this bijection is dense in $\spc{U}'$ therefore the co
 \qeds
 
 Further the Urysohn space will be denoted by $\spc{U}$, and the $d$-Urysohn space will be denoted by $\spc{U}_d$.
-Observe that \ref{thm:urysohn-unique} implies that the spaces $\spc{U}$ and $\spc{U}_d$ are $n$-point homogeneous; that is, 
+Observe that \ref{thm:urysohn-unique} implies that the spaces $\spc{U}$ and $\spc{U}_d$ are finite-set homogeneous; that is,
 \begin{itemize}
- \item Any distance preserving map from a finite set $F$
+ \item any distance preserving map from a finite subset to to the whole space can be extended to an isometry.
 \end{itemize}
+It is unknown if there is a separable universal space that is finite-set homogeneous (this question appeared already in \cite{urysohn} and reappeared in \cite[p. 83]{gromov-2007} with a missing key word). 
 
 
 \begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
@@ -182,6 +184,9 @@ that is,
 \[S=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=\tfrac d2}\]
 for some point $p\in \spc{U}_d$.
 Show that $S$ is isometric to $\spc{U}_d$.
+
+Use it to show that $\spc{U}_d$ is not countable-set homogeneous;
+that is there is an distance preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that can not be extended to an isometry $\spc{U}_d\to \spc{U}_d$.
 \end{thm}
 
 
@@ -194,7 +199,6 @@ Let $K\subset \spc{U}$ be a compact set.
 Show that any distance-preserving map $f\:K\to\spc{U}$ can be extended to 
 an isometry of~$\spc{U}$.
 \end{thm}
-
 
 
 

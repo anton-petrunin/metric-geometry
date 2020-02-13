@@ -129,10 +129,20 @@ A metric space $\spc{K}$ is compact if and only if one of the following equivale
 \end{subthm}
 
 \begin{subthm}{totally-bounded}
-The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\eps>0$, the space $\spc{K}$ admits a finite cover by open $\eps$-balls.\footnote{Equivalently, for any $\eps>0$ there is a finite \emph{$\eps$-net}; that is a finite set of points $x_1,\dots,x_n\in \spc{K}$ such that any other point $x$ lies on the distance less than $\eps$ from one of $x_i$.}
+The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\eps>0$, the space $\spc{K}$ admits a finite cover by open $\eps$-balls.
 \end{subthm}
 
 \end{thm}
+
+
+Alternatively totally bounded spaces can be defined the following way.
+
+A metric space $\spc{K}$ is \emph{totally bounded} if for any $\eps>0$ there is a finite \emph{$\eps$-net}; that is, a finite set of points $x_1,\dots,x_n\in \spc{K}$ such that any other point $x$ lies on the distance less than $\eps$ from one of $x_i$.
+
+\begin{thm}{Exercise}\label{ex:compact-net}
+Show that a space $\spc{K}$ is totally bounded if and only if it contains a compact $\eps$-net for any $\eps>0$. 
+\end{thm}
+
 
 Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ for any $i\ne j$.
 
