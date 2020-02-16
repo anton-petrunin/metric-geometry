@@ -1,12 +1,20 @@
 \chapter{Urysohn space}
 
 We discuss a construction introduced by Pavel Urysohn~\cite{urysohn}.
-Our presentation is very close to the one given by Mikhael Gromov \cite{gromov-2007}.
+It produces a separable metric space that includes a subspace  isometric to any separable metric space; in addition it is homogenius in a very strong sense, see \ref{thm:compact-homogeneous}.%
+\footnote{The idea of this construction was reused in graph theory; it produces the so called \emph{Rado graph},
+also known as \emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; it is discussed by Peter Cameron~\cite{cameron}.}
+This construction answers a question of Maurice Fréchet.
+Note that Fréchet lemma (\ref{lem:frechet} and \ref{ex:frechet}) says that $\ell^\infty$ includes an isometric copy of any separable metric space, but $\ell^\infty$ is not separable and it is only 1-point homogeneous.
 
-(This subject is closely related to the so called \emph{Rado graph},
-also known as \emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; it is discussed by Peter Cameron~\cite{cameron}.)
+We follow presentation given by Mikhael Gromov \cite{gromov-2007}.
 
-\section{Existance}
+
+
+
+
+
+\section{Construction}
 Suppose a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$.
 In this case we may say that $\spc{X}'$ is an \emph{extension} of $\spc{X}$.
 If $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a \emph{$d$-extension}.
@@ -100,7 +108,7 @@ Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply
 Urysohn space, and $d$-Urysohn space for any $d>0$, exist.
 \end{thm}
 
-\section{Existence of embedding}
+\section{Separable universality}
 
 \begin{thm}{Proposition}\label{prop:sep-in-urys}
 Let $\spc{U}$ be an Urysohn space.
@@ -149,7 +157,7 @@ a distance-preserving map on whole $\spc{S}$.
 Show that Urysohn space is simply connected.
 \end{thm}
 
-\section{Uniqueness}
+\section{Uniqueness and homogeneity}
 
 \begin{thm}{Theorem}\label{thm:urysohn-unique}
 Suppose $\spc{F}\subset \spc{U}$ and $\spc{F}'\subset \spc{U}'$ be finite isometric subspaces in a pair of ($d$-)Urysohn spaces $\spc{U}$ and $\spc{U}'$.
