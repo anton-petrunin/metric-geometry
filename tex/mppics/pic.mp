@@ -42,7 +42,7 @@ u:=1cm;
 
 setbounds currentpicture to (-2.1,-1.7)*u--(2.1,-1.7)*u--(2.1,.8)*u--(-2.1,.8)*u--cycle;
 
-z.p=(1,-3)*u;
+z.www=(1,-3)*u;
 z.q=(-1,-3)*u;
 save p,q;
 path p[];
@@ -52,7 +52,7 @@ p[1]=circle((1/1,0)*u,u/1);
 q[1]=circle((-1/1,0)*u,u/1);
 draw p[1] yscaled .5;
 draw q[1] yscaled .5;
-draw ((support.lft(p[1],z.p)--z.p--support.rt(p[1],z.p))) yscaled .5;
+draw ((support.lft(p[1],z.www)--z.www--support.rt(p[1],z.www))) yscaled .5;
 draw ((support.rt(q[1],z.q)--z.q--support.lft(q[1],z.q))) yscaled .5;
 
 for i=2 step 1 until 100:
@@ -60,10 +60,30 @@ p[i]=circle((1/i,0)*u,u/i);
 q[i]=circle((-1/i,0)*u,u/i);
 draw p[i] yscaled .5;
 draw q[i] yscaled .5;
-draw ((z.p--support(p[i],z.p)) cutbefore p[i-1]) yscaled .5;
+draw ((z.www--support(p[i],z.www)) cutbefore p[i-1]) yscaled .5;
 draw ((z.q--support.lft(q[i],z.q)) cutbefore q[i-1]) yscaled .5;
 endfor
 
+endfig;
+
+beginfig(3) 
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(0,1)*u;
+z.b=z.a rotated 120;
+z.c=z.a rotated -120;
+
+draw z.o--z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+
+Dot z.a,z.b,z.c,z.o;
+
+label.top(btex $a$ etex, z.a);
+label.llft(btex $b$ etex, z.b);
+label.lrt(btex $c$ etex, z.c);
 endfig;
 
 beginfig(10) 
@@ -96,4 +116,55 @@ label(btex $\dots$ etex, (0,v/n)*.5*u);
 label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
 
 endfig;
+
+beginfig(70) 
+save u;
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+
+save p;
+path p[];
+
+p1=circle(z.a,z.b-z.a);
+p2=circle(z.b,z.a-z.b);
+
+draw p1;
+draw p2;
+
+hatchfill p1 withcolor (77, 1mm, -.5bp);
+hatchfill p2 withcolor (177, 1mm, -.5bp);
+
+label.top(btex $\spc{M}_4$ etex, z.b rotatedabout(z.a,60)+(0,2));
+whitelabel(btex $\spc{E}_4$ etex, .5[z.a,z.b]);
+whitelabel(btex $\spc{P}_4$ etex, 1.5[z.a,z.b]);
+whitelabel(btex $\spc{N}_4$ etex, (-.5)[z.a,z.b]);
+endfig;
+
+beginfig(71) 
+save u;
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+z.c=(.4,1.1)*u;
+z.d=(.55,.25)*u;
+
+z.a1=(2,0)*u;
+z.b1=(3,0)*u;
+z.c1=(2.1,.9)*u;
+z.d1=(2.95,1.05)*u;
+
+draw z.a--z.b--z.c--z.d--cycle;
+draw z.a--z.c;
+draw z.b--z.d;
+
+draw z.a1--z.b1--z.c1--z.d1--cycle;
+draw z.a1--z.c1;
+draw z.b1--z.d1;
+
+dOt z.a,z.b,z.c,z.d,z.a1,z.b1,z.c1,z.d1;
+endfig;
+
 end

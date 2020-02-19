@@ -1,0 +1,109 @@
+\chapter{Definitions}
+
+\section{Manifesto of Alexandrov geometry}
+
+Alexandrov geometry can use ``back to Euclid'' as a slogan.
+Alexandrov spaces are defined via axioms similar to those given by Euclid,
+but certain  equalities are changed to inequalities. 
+Depending on the sign of the inequalities, we get Alexandrov spaces with \emph{curvature bounded above} or \emph{curvature bounded below}.
+The definitions of the two classes of spaces are similar, but their properties and known applications are quite different.
+
+
+Consider the space $\mathcal{M}_4$ of all isometry classes of 4-point metric spaces.
+Each element in $\mathcal{M}_4$ can be described by 6 numbers 
+ --- the distances between all 6 pairs of its points, say $\ell_{i,j}$ for $1\le i< j\le 4$ modulo permutations of the index set $(1,2,3,4)$.
+These 6 numbers are subject to 12 triangle inequalities; that is,
+\[\ell_{i,j}+\ell_{j,k}\ge \ell_{i,k}\]
+holds for all $i$, $j$ and $k$, where we assume that $\ell_{j,i}=\ell_{i,j}$ and $\ell_{i,i}=0$.
+
+The space $\mathcal{M}_4$ can be though of the cone in $\RR^6$ defined by triangle inequalities that is factorized by permutations of the 4-points of the space.
+The same topology is induced on $\mathcal{M}_4$ by the Gromov--Hausdorff metric.
+
+Consider the subset $\mathcal{E}_4\subset \mathcal{M}_4$ of all isometry classes of 4-point metric spaces that admit isometric embeddings into Euclidean space.
+
+\begin{thm}{Claim}\label{clm:two-components-of-M4}
+The complement $\mathcal{M}_4\backslash \mathcal{E}_4$ has two connected components.
+\end{thm}
+
+\begin{wrapfigure}{o}{33mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-70}
+\end{wrapfigure}
+
+One of the components will be denoted by $\mathcal{P}_4$ and the other by~$\mathcal{N}_4$.
+Here $\mathcal{P}$ and $\mathcal{N}$ stand for {}\emph{positive} 
+and {}\emph{negative curvature} because spheres have no quadruples of type $\mathcal{N}_4$ and 
+hyperbolic space
+has no quadruples of type~$\mathcal{P}_4$.
+
+A metric space, with length metric, 
+that has no quadruples of points of type $\mathcal{P}_4$ or $\mathcal{N}_4$
+respectively 
+is called an Alexandrov space with non-positive or non-negative curvature.
+
+The following argument is based on idea from \cite{petrunin-quest}.
+
+\parit{Sketch of proof.}
+Let $\spc{X}$ be a 4-point metric space.
+
+Fix a tetrahedron $\triangle$ in~$\RR^3$.
+The vertices of $\triangle$, 
+say $x_0$, $x_1$, $x_2$, $x_3$, can be identified with the points of~$\spc{X}$.
+
+Note that there is a unique quadratic form $W$ on $\RR^3$
+such that 
+\[W(x_i-x_j)=\dist[2]{x_i}{x_j}{\spc{X}}\]
+for all $i$ and~$j$.
+
+By the triangle inequality, $W(v)\ge 0$ 
+for any vector $v$ parallel to one of the faces of~$\triangle$.
+
+Note that $\spc{X}$ is isometric to a 4-point subset in the Euclidean space
+%???the Euclidean space or just Euclidean space? I mean the 3D  Euclidean space. A.
+if and only if $W(v)\ge 0$ for any vector $v$ in~$\RR^3$.
+
+\begin{wrapfigure}{o}{33mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-71}
+\end{wrapfigure}
+
+Therefore, if $\spc{X}$ is not of type $\mathcal{E}_4$, then $W(v)<0$ for some vector~$v$.
+From above, the vector $v$ must be transversal to each of the 4 faces of~$\triangle$.
+Therefore if we project $\triangle$ along $v$ to a plane transversal to $v$ we see one of the two pictures on the right.
+
+Note that the set of vectors $v$ such that $W(v)<0$ has two connected components;
+the opposite vectors $v$ and $-v$ lie in the different components.
+If one moves $v$ continuously, keeping $W(v)<0$,
+then the corresponding projection moves continuously and the projections of the 4 faces 
+cannot degenerate. 
+It follows that the combinatorics of the picture do not depend on the choice of~$v$. 
+Hence $\mathcal{M}_4\backslash\mathcal{E}_4$ is not connected. 
+
+It remains to show that if the combinatorics of the pictures for two spaces is the same, then one can continuously deform one space into the other.
+This can be easily done by deforming $W$ and applying a permutation of $x_0$, $x_1$, $x_2$, $x_3$ if necessary.
+\qeds
+
+Here is an exercise, solving which would force the reader to rebuild a considerable part of Alexandrov geometry.
+
+\begin{thm}{Advanced exercise}\label{ex:convex-set}
+Assume $\spc{X}$ is a complete metric space with length metric, 
+containing only quadruples of type~$\mathcal{E}_4$.
+Show that $\spc{X}$ is isometric to a convex set in a Hilbert space.
+\end{thm}
+
+In fact, it might be helpful to spend some time thinking about this exercise before proceeding.
+
+In the definition above, 
+instead of  Euclidean space 
+one can take  
+hyperbolic space of curvature~$-1$.
+In this case,
+one obtains the definition of spaces with curvature bounded above or below by~$-1$.
+
+To define spaces with curvature bounded above or below by $1$,
+one has to take the unit 3-sphere 
+and specify that only the quadruples of points such that each of the four triangles has perimeter 
+less than $2\cdot\pi$ are checked.
+The latter condition could be considered as a part of the {}\emph{spherical triangle inequality}.

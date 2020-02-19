@@ -446,3 +446,143 @@ Source: \cite[(d) on page 82]{gromov-2007}.
 
 \parbf{Exercise~\ref{ex:sphere-in-urysohn}.}
 Observe that $S$ is an $d$-Urysohn space and apply uniqueness (\ref{thm:urysohn-unique}).
+
+\parbf{Exercise~\ref{ex:compact-extension}.} 
+The following claim is a key to the proof.
+
+\begin{thm}{Claim}
+Suppose $f\: K\to\RR$ is an extension function defined on a compact subset $K$ of the Urysohn space $\spc{U}$.
+Then there is a point $p\in \spc{U}$ such that 
+$\dist{p}{x}{}=f(x)$ for any $x\in K$.
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we may assume that $f(x)>0$ for any $x\in K$.
+Since $K$ is compact, we may fix $\eps>0$ such that $f(x)>\eps$.
+
+Consider the sequenc $\eps_n=\tfrac\eps{100\cdot 2^n}$.
+Choose a sequence of $\eps_n$-nets $N_n\subset K$.
+Applying universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
+Observe that the sequence $(p_n)$ is Cauchy and its limit $p$ meets 
+$\dist{p}{x}{}=f(x)$ for any $x\in K$.
+\qeds
+
+Choose a sequence of points $(x_n)$ in $\spc{S}$.
+Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, and further to $K\cup\{x_1,x_2\}$, and so on.
+As a result we extend the distance-preserving map $f$ to whole sequence $(x_n)$.
+It remains to extend it continuisly to whole space $\spc{S}$.
+
+\parbf{Exercise~\ref{ex:+-c}.}
+If $c<0$ then $r>s$.
+The latter is impossible since $r$ is extremal and $s$ is admissible.
+
+Observe that the function $\bar r=\min\{\,r,s+c\}$ is admissible.
+Indeed if $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$ then 
+\[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
+Further if $\bar r(x)=s(x)+c$ then 
+\begin{align*}
+\bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
+\\
+&=s(x)+s(y) \ge 
+\\
+&\ge\dist{x}{y}{}.
+\end{align*}
+
+Since $r$ is extremal, we have $r=\bar r$;
+that is $r\le s+c$.
+
+\parbf{Exercise~\ref{ex:ultrametric}.}
+Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
+Let $f\:\spc{A}\to \spc{Y}$ be an isometry.
+Then $F(y)=f(x)$ or $F(y)=f(z)$.
+If  $f(y)=f(x)$, then
+\begin{align*}
+\dist{y}{z}{\spc{X}}&\ge  \dist{F(y)}{f(z)}{\spc{Y}}=
+\\
+ &=\dist{x}{z}{\spc{X}}.
+\end{align*}
+Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
+
+It remains to observe that the strong triangle inequality holds in both cases.
+
+\parbf{Exercise~\ref{ex:injective-spaces}.}
+Suppose a short map $f\:A\to\spc{Y}$ is defined on a subset of a metric space $\spc{X}$.
+We need to construct a short extension $F$ of $f$.
+
+\parit{(\ref{SHORT.ex:injective-spaces:R}).}
+In this case $\spc{Y}=\RR$.
+Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map whole $\spc{X}$ to a single point.
+Set 
+\[F(x)=\inf\set{f(a)-\dist{a}{x}{}}{a\in A}.\] 
+Observe that $F$ is short and $F(a)=f(a)$ for any $a\in A$.
+
+\parit{(\ref{SHORT.ex:injective-spaces:tree}).}
+In this case $\spc{Y}$ is a complete metric tree.
+Fix a point $p\in \spc{X}$ and $q\in\spc{Y}$.
+Given a point $a\in A$,
+let $x_a\in\cBall[f(a),\dist{a}{p}{}]$ be the point closest to $f(x)$.
+Note that $x_a\in[q\,f(a)]$ and either $x_a=q$ or $x_a$ lies on distance $\dist{a}{p}{}$ from $f(a)$.
+
+Note that the geodesics $[q\,x_a]$ are nested;
+that is, for any $a,b\in A$ we have either $[q\,x_a]\subset [q\,x_b]$ or $[q\,x_b]\subset [q\,x_a]$.
+Moreover, in the first case we have $\dist{x_b}{f(a)}{}\le \dist{p}{a}{}$ and in the second $\dist{x_a}{f(b)}{}\le \dist{p}{b}{}$.
+
+It follows that the closure of the union of all geodesics $[q\,x_a]$ for $a\in\spc{A}$ is a geodesic.
+Denote by $x$ its end (it exists since $\spc{Y}$ is complete).
+It remains to observe that $\dist{x}{f(a)}{}\le \dist{p}{a}{}$ for any $a\in\spc{A}$;
+that is, one one can take $f(p)=x$.
+
+\parit{(\ref{SHORT.ex:injective-spaces:ell-infty}).}
+In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
+Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
+It remains to apply (\ref{SHORT.ex:injective-spaces:R}).
+
+\parbf{Exercise~\ref{ex:tripod+square:tripod}.}
+Let $f$ be an extremal function.
+Observe that at least two of the numbers $f(a)+f(b)$, $f(b)+f(c)$, and $f(c)+f(a)$ are $1$.
+It follows that for some $x\in[0,\tfrac12]$, we have 
+\begin{align*}
+f(a)&=1\pm x,&
+f(b)&=1\pm x,&
+f(c)&=1\pm x,
+\end{align*}
+where we have one ``$-$'' and two ``$+$'' in these three formulas.
+
+Suppose that
+\begin{align*}
+g(a)&=1\pm y,& g(b)&=1\pm y,& g(c)&=1\pm y
+\end{align*}
+is another extramal function.
+Then $|f-g|\z=|x-y|$ if $g$ has ``$-$'' at the same place as $f$ and $|f-g|=|x+y|$ otherwise.
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-3}
+\end{wrapfigure}
+
+It follows that $\Inj\spc{X}$ is isometric to a tripod --- that is, $\Inj\spc{X}$ can be made from three segments of length $\tfrac12$ and by gluing then at one end.
+
+\parbf{Exercise~\ref{ex:4-on-a-line}.}
+Recall that 
+\[\dist{f}{g}{\Inj\spc{X}}=\sup\set{|f(x)-g(x)|}{x\in\spc{X}}\]
+and 
+\[\dist{f}{p}{\Inj\spc{X}}=f(p)\]
+for any $f,g\in \Inj\spc{X}$ and $p\in \spc{X}$.
+
+Since $\spc{X}$ is compact we can find a point $p\in\spc{X}$ such that 
+\[\dist{f}{g}{\Inj\spc{X}}=|f(p)-g(p)|=\left|\dist{f}{p}{\Inj\spc{X}}-\dist{g}{p}{\Inj\spc{X}}\right|.\]
+Without loss of generality we may assume that 
+\[\dist{f}{p}{\Inj\spc{X}}
+=
+\dist{g}{p}{\Inj\spc{X}}
++
+\dist{f}{g}{\Inj\spc{X}}.\]
+Applying \ref{lem:opposite}, we can find a point $q\in\spc{X}$ such that 
+\[\dist{q}{p}{\Inj\spc{X}}
+=
+\dist{f}{p}{\Inj\spc{X}}
++
+\dist{f}{q}{\Inj\spc{X}},\]
+whence the result.
+
