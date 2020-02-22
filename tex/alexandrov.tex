@@ -324,20 +324,25 @@ where $\alpha= \min\{\pi, \dist{p}{q}{\spc{U}}\}$.
 
 The point in the cone $\spc{V}$ formed by the equivalence class of $0\times\spc{U}$ is called the \index{tip of the cone}\emph{tip of the cone} and is denoted by $0$ or $0_{\spc{V}}$.
 The distance $\dist{0}{v}{\spc{V}}$ is called the norm of $v$ and is denoted by $|v|$ or $|v|_{\spc{V}}$.
+The space $\spc{U}$ can be identified with the subset $x\in \spc{V}$ such that $|x|=1$.
+
+The points in the cone $\spc{V}$ can be multiplied by a real number $\lambda\ge 0$;
+namely, if $x=(x',r)$, then $\lambda\cdot x\df(x',\lambda\cdot r)$.
+
 
 
 \begin{thm}{Proposition}\label{ex:cone+susp}
-Let $\spc{V}$ be a metric space and $\spc{U}=\Cone\spc{V}$.
-Then $\spc{U}$ is  $\CAT(0)$ if and only if $\spc{V}$ is $\CAT(1)$.
+Let $\spc{U}$ be a metric space.
+Then $\Cone\spc{U}$ is  $\CAT(0)$ if and only if $\spc{U}$ is $\CAT(1)$.
 \end{thm}
 
-\parit{Proof.}
-Given a point $x\in \Cone\spc{V}$, denote by $x'$ its projection to $\spc{V}$
+\parit{Proof; ``if'' part.}
+Given a point $x\in \Cone\spc{U}$, denote by $x'$ its projection to $\spc{U}$
 and by $|x|$ the distance from $x$ to the tip of the cone;
 if $x$ is the tip, then $|x|=0$ and we can take any point of $\spc{U}$ as~$x'$.
 
 Let $p$, $q$, $x$, $y$
-be a quadruple in $\Cone\spc{V}$.
+be a quadruple in $\Cone\spc{U}$.
 Assume that the spherical model triangles $\trig{\tilde p'}{\tilde x'}{\tilde y'}=\modtrig(p'x'y')_{\SSS^2}$ and $\trig{\tilde q'}{\tilde x'}{\tilde y'}=\modtrig(q'x'y')_{\SSS^2}$ are defined.
 Consider the following points in $\EE^3=\Cone\SSS^2$: 
 \begin{align*}
@@ -354,14 +359,29 @@ Note that
 $\trig{\tilde p}{\tilde x}{\tilde y}\iso\modtrig(pxy)_{\EE^2}$
 and
 $\trig{\tilde q}{\tilde x}{\tilde y}\iso\modtrig(qxy)_{\EE^2}$.
-Further note that if $\tilde z\in [\tilde x\tilde y]$, then
-$\tilde z'=\tilde z/|\tilde z|$ lies on the geodesic $[\tilde x'\tilde y']$ in~$\SSS^2$.
+Further note that if $\tilde z\in [\tilde x\tilde y]_{\EE^3}$, then
+$\tilde z'=\tilde z/|\tilde z|$ lies on the geodesic $[\tilde x'\tilde y']_{\SSS^2}$.
 Therefore the $\CAT(1)$ comparison for $\dist{p'}{q'}{}$ with $\tilde z'\in[\tilde x'\tilde y']_{\SSS^2}$ implies the 
 $\CAT(0)$ comparison for $\dist{p}{q}{}$ with $\tilde z\in[\tilde x\tilde y]_{\EE^3}$.
 
-To show the converse, we need to apply 
-the $\CAT(0)$ comparison to a quadruple $s=a\cdot p$, $q$, $x$, $y$ with $a\ge 0$ chosen so  that the corresponding points 
-$\tilde s=a\cdot \tilde p$, $\tilde q$, $\tilde x$, $\tilde y$ lie in one plane.
+\parit{``Only-if'' part.}
+Suppose that $\tilde p'$, $\tilde q'$, $\tilde x'$, $\tilde y'$ are defined as above.
+Assume all these points lie in a half-space of $\EE^3=\Cone\SSS^2$ with origin at its boundary. 
+Then we can choose positive values $a$, $b$, $c$, and $d$ such that the points $a\cdot \tilde p'$, $b\cdot \tilde q'$, $c\cdot \tilde x'$, $d\cdot \tilde y'$ lie in one plane.
+Consider the corresponding points $a\cdot  p'$, $b\cdot  q'$, $c\cdot  x'$, $d\cdot y'$ in $\Cone\spc{U}$.
+Applying the $\CAT(0)$ comparison for the these points leads to $\CAT(1)$ comparison for the quadruple $ p'$, $q'$, $ x'$, $ y'$ in $\spc{U}$.
+
+It remains to consider the case when $\tilde p'$, $\tilde q'$, $\tilde x'$, $\tilde y'$ do not in a half-space.
+Fix $\tilde z'\in [\tilde x' \tilde y']_{\SSS^2}$.
+Observe that 
+\begin{align*}\dist{\tilde p'}{\tilde x'}{\SSS^2}+\dist{\tilde q'}{\tilde x'}{\SSS^2}
+ &
+\le \dist{\tilde p'}{\tilde z'}{\SSS^2}+\dist{\tilde q'}{\tilde z'}{\SSS^2}
+\intertext{or} 
+\dist{\tilde p'}{\tilde y'}{\SSS^2}+\dist{\tilde q'}{\tilde y'}{\SSS^2}
+&\le
+\dist{\tilde p'}{\tilde z'}{\SSS^2}+\dist{\tilde q'}{\tilde z'}{\SSS^2}.\end{align*}
+That is, in this case, the $\CAT(1)$ comparison follow from the triangle inequality.
 \qeds
 
 
