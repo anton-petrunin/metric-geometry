@@ -1,6 +1,6 @@
 \chapter{Definitions}
 
-\section{Manifesto of Alexandrov geometry}
+\section{Manifesto}
 
 Alexandrov geometry can use ``back to Euclid'' as a slogan.
 Alexandrov spaces are defined via axioms similar to those given by Euclid,
@@ -31,7 +31,8 @@ The complement $\mathcal{M}_4\backslash \mathcal{E}_4$ has two connected compone
 \includegraphics{mppics/pic-70}
 \end{wrapfigure}
 
-One of the components will be denoted by $\mathcal{P}_4$ and the other by~$\mathcal{N}_4$.
+The definition of Alexandrov spaces is based on this claim.
+Let us denote one of the components by $\mathcal{P}_4$ and the other by~$\mathcal{N}_4$.
 Here $\mathcal{P}$ and $\mathcal{N}$ stand for {}\emph{positive} 
 and {}\emph{negative curvature} because spheres have no quadruples of type $\mathcal{N}_4$ and 
 hyperbolic space
@@ -42,48 +43,21 @@ that has no quadruples of points of type $\mathcal{P}_4$ or $\mathcal{N}_4$
 respectively 
 is called an Alexandrov space with non-positive or non-negative curvature.
 
-The following argument is based on idea from \cite{petrunin-quest}.
-
-\parit{Sketch of proof.}
-Let $\spc{X}$ be a 4-point metric space.
-
-Fix a tetrahedron $\triangle$ in~$\RR^3$.
-The vertices of $\triangle$, 
-say $x_0$, $x_1$, $x_2$, $x_3$, can be identified with the points of~$\spc{X}$.
-
-Note that there is a unique quadratic form $W$ on $\RR^3$
-such that 
-\[W(x_i-x_j)=\dist[2]{x_i}{x_j}{\spc{X}}\]
-for all $i$ and~$j$.
-
-By the triangle inequality, $W(v)\ge 0$ 
-for any vector $v$ parallel to one of the faces of~$\triangle$.
-
-Note that $\spc{X}$ is isometric to a 4-point subset in the Euclidean space
-%???the Euclidean space or just Euclidean space? I mean the 3D  Euclidean space. A.
-if and only if $W(v)\ge 0$ for any vector $v$ in~$\RR^3$.
-
-\begin{wrapfigure}{o}{33mm}
-\vskip-0mm
+\begin{wrapfigure}{r}{33mm}
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-71}
 \end{wrapfigure}
 
-Therefore, if $\spc{X}$ is not of type $\mathcal{E}_4$, then $W(v)<0$ for some vector~$v$.
-From above, the vector $v$ must be transversal to each of the 4 faces of~$\triangle$.
-Therefore if we project $\triangle$ along $v$ to a plane transversal to $v$ we see one of the two pictures on the right.
+Let us give an intuitive description of the subdivision of $\mathcal{M}_4$ into  $\mathcal{P}_4$, $\mathcal{E}_4$ and $\mathcal{N}_4$.
+When you move from $\mathcal{E}_4$ the last thing you see is one of the two plane configurations shown on the diagram.
+If you see the first configuration then you move into $\mathcal{N}_4$;
+if it is the second, then you move into $\mathcal{P}_4$.
 
-Note that the set of vectors $v$ such that $W(v)<0$ has two connected components;
-the opposite vectors $v$ and $-v$ lie in the different components.
-If one moves $v$ continuously, keeping $W(v)<0$,
-then the corresponding projection moves continuously and the projections of the 4 faces 
-cannot degenerate. 
-It follows that the combinatorics of the picture do not depend on the choice of~$v$. 
-Hence $\mathcal{M}_4\backslash\mathcal{E}_4$ is not connected. 
+It turns out that you might avoid a more degenerate picture, for example a triangle with a point on a side.
+From such a configuration one may move in $\mathcal{N}_4$ and in $\mathcal{P}_4$ (as well as come back to $\mathcal{E}_4$).
 
-It remains to show that if the combinatorics of the pictures for two spaces is the same, then one can continuously deform one space into the other.
-This can be easily done by deforming $W$ and applying a permutation of $x_0$, $x_1$, $x_2$, $x_3$ if necessary.
-\qeds
+A formal proof of the claim can extracted from \ref{ex:CAT+CBB}.
 
 Here is an exercise, solving which would force the reader to rebuild a considerable part of Alexandrov geometry.
 
@@ -107,3 +81,539 @@ one has to take the unit 3-sphere
 and specify that only the quadruples of points such that each of the four triangles has perimeter 
 less than $2\cdot\pi$ are checked.
 The latter condition could be considered as a part of the {}\emph{spherical triangle inequality}.
+
+\section{Definitions}\label{sec:mod-tri/angles}
+
+\parbf{Model triangles.}
+Let $\spc{X}$ be a metric space and 
+$p,q,r\in \spc{X}$. 
+Let us define the \index{model triangle}\emph{model triangle} $\trig{\tilde p}{\tilde q}{\tilde r}$ 
+(briefly, 
+$\trig{\tilde p}{\tilde q}{\tilde r}=\modtrig(p q r)_{\EE^2}$%
+\index{$\modtrig$!$\modtrig({*}{*}{*})_{\EE^2}$}) to be a triangle in the Euclidean plane $\EE^2$ such that
+\begin{align*}\dist{\tilde p}{\tilde q}{\EE^2}&=\dist{p}{q}{\spc{X}},
+\\
+\quad\dist{\tilde q}{\tilde r}{\EE^2}&=\dist{q}{r}{\spc{X}},
+\\
+\quad\dist{\tilde r}{\tilde p}{\EE^2}&=\dist{r}{p}{\spc{X}}.
+\end{align*}
+
+In the same way we can define the \index{hyperbolic model triangle}\emph{hyperbolic} and the \index{spherical model triangles}\emph{spherical model triangles} $\modtrig(p q r)_{\HH^2}$, $\modtrig(p q r)_{\SSS^2}$
+in the hyperbolic plane $\HH^2$ and the unit sphere~$\SSS^2$.
+In the latter case the model triangle is said to be defined if in addition
+\[\dist{p}{q}{}+\dist{q}{r}{}+\dist{r}{p}{}< 2\cdot\pi.\]
+In this case the model triangle again exists and is unique up to an isometry of~$\SSS^2$.
+
+\parbf{Model angles.}
+If 
+$\trig{\tilde p}{\tilde q}{\tilde r}=\modtrig(p q r)_{\EE^2}$ 
+and $\dist{p}{q}{},\dist{p}{r}{}>0$, 
+the angle measure of 
+$\trig{\tilde p}{\tilde q}{\tilde r}$ at $\tilde p$ 
+will be called the \index{model angle}\emph{model angle} of the triple $p$, $q$, $r$ and will be denoted by
+$\angk p q r_{\EE^2}$%
+\index{$\tangle$!$\angk{{*}}{{*}}{{*}}$}.
+In the same way we define $\angk p q r_{\HH^2}$ and $\angk p q r_{\SSS^2}$;
+in the latter case  we assume in addition that the model triangle $\modtrig(p q r)_{\SSS^2}$ is defined.
+
+We may use the notation $\angk p q r$ if it is evident which of the model spaces $\HH^2$, $\EE^2$ or $\SSS^2$ is meant.
+
+\parbf{Curvature bounded above.}
+Given a quadruple of points $p,q,x,y$ in a metric space $\spc{X}$,
+consider two model triangles 
+$\trig{\tilde p}{\tilde x}{\tilde y}=\modtrig{}(pxy)_{\EE^2}$ 
+and 
+$\trig{\tilde q}{\tilde x}{\tilde y}\z=\modtrig{}(qxy)_{\EE^2}$ with common side $[\tilde x\tilde y]$.
+
+\begin{wrapfigure}{r}{33mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-72}
+\end{wrapfigure}
+
+If the inequality
+\[\dist{p}{q}{\spc{X}}\le \dist{\tilde p}{\tilde z}{\EE^2}+\dist{\tilde z}{\tilde q}{\EE^2}\]
+holds for any point $\tilde z\in [\tilde x\tilde y]$, then we say that 
+the quadruple $p,q,x,y$ \index{$\CAT(0)$ comparison}\emph{satisfies $\CAT(0)$ comparison}.
+\label{page:CAT-comparison}
+
+
+If we do the same for spherical model triangles  
+$\trig{\tilde p}{\tilde x}{\tilde y}=\modtrig{}(pxy)_{\SSS^2}$ 
+and 
+$\trig{\tilde q}{\tilde x}{\tilde y}=\modtrig{}(qxy)_{\SSS^2}$,
+then we arrive at the definition of $\CAT(1)$ comparison.
+If one of the spherical model triangles is undefined,\footnote{That is, if 
+\[\dist{p}{x}{}+\dist{p}{y}{}+\dist{x}{y}{}\ge 2\cdot\pi
+\quad
+\text{or}
+\quad
+\dist{q}{x}{}+\dist{q}{y}{}+\dist{x}{y}{}\ge 2\cdot\pi.\]}
+then it is assumed that $\CAT(1)$ comparison automatically holds for this quadruple.
+
+We can do the same for the \emph{model plane} of curvature $\kappa$;
+that is, a sphere if $\kappa>0$, 
+Euclidean plane if $\kappa=0$ 
+and Lobachevsky plane if $\kappa<0$.
+In this case we arrive at the definition of $\CAT(\kappa)$ comparison.
+However we will mostly consider $\CAT(0)$ comparison and occasionally $\CAT(1)$ comparison;
+so, if you see $\CAT(\kappa)$, you can assume that $\kappa$ is $0$ or~$1$.
+
+If all quadruples in a metric space $\spc{X}$ satisfy $\CAT(\kappa)$ comparison, then we say that the space $\spc{X}$ is $\CAT(\kappa)$
+(we use $\CAT(\kappa)$ as an adjective).
+
+(Here ``$\CAT$'' is an acronym for Cartan, Alexandrov, and Toponogov.
+It was coined by Mikhael Gromov in 1987.
+Originally, Alexandrov called these spaces ``$\mathfrak{R}_\kappa$ domain'';
+this term is still in use.)
+
+\begin{thm}{Exercise}\label{ex:sba-2+2-short}
+Show that a metric space $\spc{X}$ is $\CAT(0)$
+if and only if for any quadruple of points 
+$p,q,x,y$ in $\spc{X}$ 
+there is a quadruple $\tilde p,\tilde q,\tilde x,\tilde y$ in $\EE^2$
+such that 
+\begin{align*}
+\dist{\tilde p}{\tilde q}{}&=\dist{p}{q}{},
+&
+\dist{\tilde x}{\tilde y}{}&=\dist{x}{y}{},
+\\
+\dist{\tilde p}{\tilde x}{}&\le \dist{p}{x}{},
+&
+\dist{\tilde p}{\tilde y}{}&\le \dist{p}{y}{},
+\\
+\dist{\tilde q}{\tilde x}{}&\le \dist{q}{x}{},
+&
+\dist{\tilde q}{\tilde y}{}&\le \dist{q}{y}{}.
+\end{align*}
+
+\end{thm}
+
+\parbf{Curvature bounded below.}
+If the inequality
+\[\angk pxy_{\EE^2}+\angk pyz_{\EE^2}+\angk pzx_{\EE^2}\le2\cdot\pi\]
+holds for points $p,x,y,z$ in a metric space $\spc{X}$,
+then we say that 
+the quadruple $p,x,y,z$ \index{$\CBB(0)$ comparison}\emph{satisfies $\CBB(0)$ comparison}.\label{page:CBB-comparison}
+
+If we do the same for spherical or hyperbolic model angles,
+then we arrive at the definition of $\CBB(1)$ or $\CBB(-1)$ comparison.
+Here $\CBB(\kappa)$ is an abbreviation of \emph{curvature bounded below by $\kappa$}.
+If one of one of the model angles is undefined,
+then we assume that $\CBB(1)$ comparison automatically holds for this quadruple.
+
+We can do the same for the model plane of curvature $\kappa$.
+In this case we arrive at the definition of $\CAT(\kappa)$ comparison.
+But we will mostly consider  $\CBB(0)$ comparison and occasionally $\CBB(1)$ comparison;
+so, if you see $\CBB(\kappa)$, you can assume that $\kappa$ is $0$ or~$1$.
+
+If all quadruples in a metric space $\spc{X}$ satisfy $\CBB(\kappa)$ comparison, then we say that the space $\spc{X}$ is $\CBB(\kappa)$.
+(Again --- $\CBB(\kappa)$ is an adjective.)
+
+\begin{thm}{Exercise}\label{ex:(3+1)-expanding}
+Show that a metric space $\spc{X}$ is $\Alex0$
+if and only if for any quadruple of points $p,x,y,z\in \spc{X}$,
+there is a quadruple of points $\tilde p,\tilde x,\tilde y,\tilde z\in\EE^2$
+such that 
+\begin{align*}
+\dist{p}{x}{\spc{X}}&=\dist{\tilde p}{\tilde x}{\EE^2},
+&
+\dist{p}{y}{\spc{X}}&=\dist{\tilde p}{\tilde y}{\EE^2},
+&
+\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^2},
+\\
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
+&
+\dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^2},
+&
+\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^2}
+\end{align*}
+for all $i$ and $j$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:CAT+CBB}
+Suppose that a quadruple of points satisfies $\CAT(0)$ and $\CBB(0)$ for all labeling.
+Show that the quadruple is isometric to a subset of Euclidean space.
+\end{thm}
+
+Observe that in order to check $\CAT(\kappa)$ or $\CBB(\kappa)$ comparison, it is sufficient to know the 6 distances between all pairs of points in the quadruple.
+This observation implies the following.
+
+\begin{thm}{Proposition}\label{prop:cat-limit}
+Any Gromov--Hausdorff limit (as well as ultra limit) of a sequence of $\CAT(\kappa)$ or $\CBB(\kappa)$ spaces is $\CAT(\kappa)$ or $\CBB(\kappa)$ correspondingly. 
+\end{thm}
+
+In the proposition above, 
+it does not matter which definition of convergence for metric spaces you use, 
+as long as any quadruple of points in the limit space can be arbitrarily well approximated by  quadruples in the sequence of metric spaces. 
+
+\section{Products and cones}
+
+Given two metric spaces $\spc{U}$ and $\spc{V}$, the \index{product space}\emph{product space} 
+$\spc{U}\times\spc{V}$ is defined as the set of all pairs $(u,v)$ where $u\in\spc{U}$ and $v\in \spc{V}$ 
+with the metric defined by formula
+\[\dist{(u_1,v_1)}{(u_2,v_2)}{\spc{U}\times\spc{V}}=\sqrt{\dist[2]{u_1}{u_2}{\spc{U}}+\dist[2]{v_1}{v_2}{\spc{V}}}.\]
+
+\begin{thm}{Proposition}\label{ex:product-CAT}
+Let $\spc{U}$ and $\spc{V}$ be $\CAT(0)$ spaces.
+Then the product space $\spc{U}\times\spc{V}$ is $\CAT(0)$.
+\end{thm}
+
+\parit{Proof.}
+Let us start with $\CAT(0)$ case.
+
+Fix a quadruple in $\spc{U}\times \spc{V}$:
+\begin{align*}
+p&=(p_1,p_2),
+&
+q&=(q_1,q_2), 
+&
+x&=(x_1,x_2),
+&
+y&=(y_1,y_2).
+\end{align*}
+For the quadruple $p_1,q_1,x_1,y_1$ in $\spc{U}$,
+construct two model triangles $\trig{\tilde p_1}{\tilde x_1}{\tilde y_1}=\modtrig(p_1x_1y_1)_{\EE^2}$ 
+and $\trig{\tilde q_1}{\tilde x_1}{\tilde y_1}=\modtrig(q_1x_1y_1)_{\EE^2}$.  
+Similarly, for the quadruple $p_2,q_2,x_2,y_2$ in $\spc{V}$
+construct two model triangles $\trig{\tilde p_2}{\tilde x_2}{\tilde y_2}$ and $\trig{\tilde q_2}{\tilde x_2}{\tilde y_2}$.
+
+Consider four points in $\EE^4=\EE^2\times\EE^2$ 
+\begin{align*}
+\tilde p&=(\tilde p_1,\tilde p_2),
+&
+\tilde q&=(\tilde q_1,\tilde q_2),
+&
+\tilde x&=(\tilde x_1,\tilde x_2),
+&
+\tilde y&=(\tilde y_1,\tilde y_2).
+\end{align*}
+Note that the triangles $\trig{\tilde p}{\tilde x}{\tilde y}$ and $\trig{\tilde q}{\tilde x}{\tilde y}$ in $\EE^4$ are isometric to the model triangles 
+$\modtrig(pxy)_{\EE^2}$ and $\modtrig(qxy)_{\EE^2}$.
+
+If $\tilde z=(\tilde z_1,\tilde z_2)\in [\tilde x\tilde y]$, then $\tilde z_1\in [\tilde x_1\tilde y_1]$ and $\tilde z_2\in [\tilde x_2\tilde y_2]$ and
+\begin{align*}
+\dist[2]{\tilde z}{\tilde p}{\EE^4}&=\dist[2]{\tilde z_1}{\tilde p_1}{\EE^2}+\dist[2]{\tilde z_2}{\tilde p_2}{\EE^2},
+\\
+\dist[2]{\tilde z}{\tilde q}{\EE^4}&=\dist[2]{\tilde z_1}{\tilde q_1}{\EE^2}+\dist[2]{\tilde z_2}{\tilde q_2}{\EE^2},
+\\
+\dist[2]{p}{q}{\spc{U}\times\spc{V}}&=\dist[2]{p_1}{q_1}{\spc{U}}+\dist[2]{p_2}{q_2}{\spc{V}}.
+\end{align*}
+Therefore $\CAT(0)$ comparison for the quadruples $p_1,q_1,x_1,y_1$ in $\spc{U}$
+and 
+$p_2,q_2,x_2,y_2$ in $\spc{V}$ implies 
+$\CAT(0)$ comparison for the quadruples $p,q,x,y$ in $\spc{U}\times \spc{V}$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:product-CBB}
+Assume $\spc{U}$ and $\spc{V}$ are $\CBB(0)$ spaces.
+Show that the product space $\spc{U}\times\spc{V}$ is $\CBB(0)$.
+\end{thm}
+
+The \index{cone}\emph{cone} $\spc{V}=\Cone\spc{U}$ over a metric space $\spc{U}$
+is defined as the metric space whose underlying set consists of
+equivalence classes in
+$[0,\infty)\times \spc{U}$ with the equivalence relation ``$\sim$'' given by $(0,p)\sim (0,q)$ for any points $p,q\in\spc{U}$,
+and whose metric is given by the cosine rule
+\[
+\dist{(p,s)}{(q,t)}{\spc{V}} 
+=
+\sqrt{s^2+t^2-2\cdot s\cdot t\cdot \cos\alpha},
+\]
+where $\alpha= \min\{\pi, \dist{p}{q}{\spc{U}}\}$.
+
+The point in the cone $\spc{V}$ formed by the equivalence class of $0\times\spc{U}$ is called the \index{tip of the cone}\emph{tip of the cone} and is denoted by $0$ or $0_{\spc{V}}$.
+The distance $\dist{0}{v}{\spc{V}}$ is called the norm of $v$ and is denoted by $|v|$ or $|v|_{\spc{V}}$.
+
+
+\begin{thm}{Proposition}\label{ex:cone+susp}
+Let $\spc{V}$ be a metric space and $\spc{U}=\Cone\spc{V}$.
+Then $\spc{U}$ is  $\CAT(0)$ if and only if $\spc{V}$ is $\CAT(1)$.
+\end{thm}
+
+\parit{Proof.}
+Given a point $x\in \Cone\spc{V}$, denote by $x'$ its projection to $\spc{V}$
+and by $|x|$ the distance from $x$ to the tip of the cone;
+if $x$ is the tip, then $|x|=0$ and we can take any point of $\spc{U}$ as~$x'$.
+
+Let $p$, $q$, $x$, $y$
+be a quadruple in $\Cone\spc{V}$.
+Assume that the spherical model triangles $\trig{\tilde p'}{\tilde x'}{\tilde y'}=\modtrig(p'x'y')_{\SSS^2}$ and $\trig{\tilde q'}{\tilde x'}{\tilde y'}=\modtrig(q'x'y')_{\SSS^2}$ are defined.
+Consider the following points in $\EE^3=\Cone\SSS^2$: 
+\begin{align*}
+\tilde p&=|p|\cdot\tilde p',
+&
+\tilde q&=|q|\cdot\tilde q',
+&
+\tilde x&=|x|\cdot\tilde x',
+&
+\tilde y&=|y|\cdot\tilde y'.
+\end{align*}
+
+Note that
+$\trig{\tilde p}{\tilde x}{\tilde y}\iso\modtrig(pxy)_{\EE^2}$
+and
+$\trig{\tilde q}{\tilde x}{\tilde y}\iso\modtrig(qxy)_{\EE^2}$.
+Further note that if $\tilde z\in [\tilde x\tilde y]$, then
+$\tilde z'=\tilde z/|\tilde z|$ lies on the geodesic $[\tilde x'\tilde y']$ in~$\SSS^2$.
+Therefore the $\CAT(1)$ comparison for $\dist{p'}{q'}{}$ with $\tilde z'\in[\tilde x'\tilde y']_{\SSS^2}$ implies the 
+$\CAT(0)$ comparison for $\dist{p}{q}{}$ with $\tilde z\in[\tilde x\tilde y]_{\EE^3}$.
+
+To show the converse, we need to apply 
+the $\CAT(0)$ comparison to a quadruple $s=a\cdot p$, $q$, $x$, $y$ with $a\ge 0$ chosen so  that the corresponding points 
+$\tilde s=a\cdot \tilde p$, $\tilde q$, $\tilde x$, $\tilde y$ lie in one plane.
+\qeds
+
+
+\section{Geodesics}
+
+
+\begin{thm}{Proposition}\label{ex:CAT-geodesic}
+Let $\spc{X}$ be a complete length $\CAT(0)$ space.
+Then any two points in $\spc{X}$ are joint by a unique geodesic.
+\end{thm}
+
+\parit{Proof.} 
+Fix two points $x,y\in \spc{X}$.
+Choose a sequence of approximate midpoints $p_n$ for $x$ and $y$;
+that is,  
+\[\dist{x}{p_n}{}\to\tfrac12\cdot\dist{x}{y}{}
+\quad\text{and}\quad
+\dist{y}{p_n}{}
+\to\tfrac12\cdot\dist{x}{y}{}
+\eqlbl{eq:to|p1p2|/2}\]
+as $n\to\infty$.
+
+Consider model triangles $[\tilde p_n\tilde x\tilde y]=\modtrig(p_nxy)$.
+Let $\tilde z$ be the midpoint of $\tilde x$ and $\tilde y$.
+By \ref{eq:to|p1p2|/2}, we have that 
+\[\dist{\tilde p_n}{\tilde z}{}\to 0\] as $n\to\infty$.
+
+By $\CAT(0)$ comparison, 
+\[\dist{p_n}{p_m}{\spc{X}}\le\dist{\tilde p_n}{\tilde z}{}+\dist{\tilde p_m}{\tilde z}{}.\]
+Therefore $\dist{p_n}{p_m}{}\to 0$ as $m,n\to\infty$;
+that is, $(p_n)$ is Cauchy.
+Clearly the limit of the sequence $(p_n)$ is a midpoint of $x$ and $y$.
+Applying \ref{lem:mid>geod:geod}, we get that $\spc{X}$ is geodesic.
+
+It remains to prove uniqueness.
+Suppose there are two geodescics between $x$ and $y$.
+Then we can choose two points $p\ne q$ on these geodesics such that $\dist{x}{p}{}=\dist{x}{q}{}$ and therefore $\dist{y}{p}{}=\dist{y}{q}{}$.
+
+Observe that the model triangles $[\tilde p\tilde x\tilde y]=\modtrig(pxy)$ and $[\tilde q\tilde x\tilde y]\z=\modtrig(qxy)$ are degenerate and moreover $\tilde p=\tilde q$.
+Applying $\CAT(0)$ comparison with $\tilde z=\tilde p=\tilde q$,
+we get that $\dist{p}{q}{}=0$, a contradiction.
+\qeds
+
+The following exercise is an analogous statement for $\CBB$ spaces.
+In general complete length $\CBB(0)$ space might fail to be geodesic
+and uniqueness of geodesic usually does not hold.
+
+\begin{thm}{Exercise}\label{ex:CBB-geodesic}
+Let $\spc{X}$ be a complete length $\CBB(0)$ space.
+Show that if two geodesics from $x$ to $y$ share yet another point $z$,
+then they coincide.
+\end{thm}
+
+\section{Triangles and hinges}
+
+
+For a triple of points $p,q,r\in \spc{X}$, a choice of a triple of geodesics $([q r], [r p], [p q])$ will be called a \index{triangle}\emph{triangle}; we will use the short notation 
+$\trig p q r=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
+
+Given a triple $p,q,r\in \spc{X}$ there may be no triangle 
+$\trig p q r$ simply because one of the pairs of these points cannot be joined by a geodesic.
+Also, many different triangles with these vertices may exist, any of which can be denoted by $\trig p q r$.
+However, if we write $\trig p q r$, it means that we have made a choice of such a triangle; 
+that is, we have  fixed a choice of the geodesics $[q r]$, $[r p]$, and $[p q]$.
+
+The value 
+\[\dist{p}{q}{}+\dist{q}{r}{}+\dist{r}{p}{}\]
+will be called the {}\emph{perimeter of the triangle} $\trig p q r$.
+
+Let $p,x,y\in \spc{X}$ be a triple of points such that $p$ is distinct from $x$ and~$y$.
+A pair of geodesics $([p x],[p y])$ will be called  a \index{hinge}\emph{hinge} and will be denoted by 
+$\hinge p x y=([p x],[p y])$\index{$\hinge{{*}}{{*}}{{*}}$}.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-75}
+\end{wrapfigure}
+
+Given a hinge $\hinge p x y$, we define its \index{angle}\emph{angle} as 
+the limit\index{$\mangle$!$\mangle\hinge{{*}}{{*}}{{*}}$}
+\[\mangle\hinge p x y
+\df
+\lim_{\bar x,\bar y\to p} \angk p{\bar x}{\bar y},\eqlbl{eq:def-angle}\]
+where $\bar x\in\left]p x\right]$ and $\bar y\in\left]p y\right]$.
+The angle $\mangle\hinge p x y$ is defined if the limit exists.
+
+It is straightforward to check that in \ref{eq:def-angle}, one can use $\angk p{\bar x}{\bar y}_{\SS^2}$ or  $\angk p{\bar x}{\bar y}_{\HH^2}$ or $\angk p{\bar x}{\bar y}_{\EE^2}$, the result will be the same.
+
+\begin{thm}{Exercise} Give an example of a hinge $\hinge p x y$ in a metric space with undefined angle $\mangle\hinge p x y$.
+\end{thm}
+
+
+\section{Alexandrov's lemma}
+
+\begin{thm}{Lemma}
+\index{Alexandrov's lemma}
+\index{lemma!Alexandrov's lemma}
+\label{lem:alex}  
+Let $p,x,y,z$ be distinct points in a metric space such that $z\in \left]x y\right[$.
+Then 
+the following expressions for the Euclidean model angles have the same sign:
+
+\begin{subthm}{lem-alex-difference}
+$\angk x p y
+-\angk x p z$,
+\end{subthm} 
+
+\begin{subthm}{lem-alex-angle}
+$\angk z p x
++\angk z p y -\pi$.
+\end{subthm}
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-73}
+\end{wrapfigure}
+
+Moreover,
+\[\angk p x y \ge \angk p x z +  \angk p z y,\]
+with equality if and only if the expressions in (\ref{SHORT.lem-alex-difference}) and (\ref{SHORT.lem-alex-angle}) vanish.
+
+The same holds for the hyperbolic and spherical model angles, 
+but in the latter case one has to assume in addition that
+\[\dist{p}{z}{}+\dist{p}{y}{}+\dist{x}{y}{}< 2\cdot\pi.\]
+
+\end{thm}
+
+
+\parit{Proof.} 
+Consider the model triangle $\trig{\tilde x}{\tilde p}{\tilde z}=\modtrig(x p z)$.
+Take 
+a point $\tilde y$ on the extension of 
+$[\tilde x \tilde z]$ beyond $\tilde z$ so that $\dist{\tilde x}{\tilde y}{}=\dist{x}{y}{}$ (and therefore $\dist{\tilde x}{\tilde z}{}=\dist{x}{z}{}$). 
+
+\begin{wrapfigure}{r}{33mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-74}
+\end{wrapfigure}
+
+Since increasing the opposite side in a plane triangle increases the corresponding angle, 
+the following expressions have the same sign:
+\begin{enumerate}[(i)]
+\item $\mangle\hinge{\tilde x}{\tilde p}{\tilde y}-\angk{x}{p}{y}$,
+\item $\dist{\tilde p}{\tilde y}{}-\dist{p}{y}{}$,
+\item $\mangle\hinge{\tilde z}{\tilde p}{\tilde y}-\angk{z}{p}{y}$.
+\end{enumerate}
+Since 
+\[\mangle\hinge{\tilde x}{\tilde p}{\tilde y}=\mangle\hinge{\tilde x}{\tilde p}{\tilde z}=\angk{x}{p}{z}\]
+and
+\[ \mangle\hinge{\tilde z}{\tilde p}{\tilde y}
+=\pi-\mangle\hinge{\tilde z}{\tilde x}{\tilde p}
+=\pi-\angk{z}{x}{p},\]
+the first statement follows.
+
+For the second statement, construct a model triangle $\trig{\tilde p}{\tilde z}{\tilde y'}\z=\modtrig(pzy)_{\EE^2}$ on the opposite side of $[\tilde p\tilde z]$ from $\trig{\tilde x}{\tilde p}{\tilde z}$.  
+Note that 
+\begin{align*}
+\dist{\tilde x}{\tilde y'}{}
+&\le \dist{\tilde x}{\tilde z}{} + \dist{\tilde z}{\tilde y'}{}=
+\\
+&=\dist{x}{z}{}+\dist{z}{y}{}=
+\\
+&=\dist{x}{y}{}.
+\intertext{Therefore}
+\angk{p}{x}{z} + \angk{p}{z}{y} 
+&
+= 
+\mangle\hinge{\tilde p}{\tilde x}{\tilde z}+ \mangle\hinge{\tilde p}{\tilde z}{\tilde y'} 
+=
+\\
+&
+= 
+\mangle\hinge{\tilde p}{\tilde x}{\tilde y'}
+\le
+\\
+&\le  \angk p x y.
+\end{align*}
+Equality holds if and only  if $\dist{\tilde x}{\tilde y'}{}=\dist{x}{y}{}$, 
+as required.
+\qeds
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-75}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:noncreasing} Given $\hinge p x y$ in a metric space $\spc{X}$, consider the function 
+\[f\:(\dist{p}{\bar x}{},\dist{p}{\bar y}{})\mapsto \angk p{\bar x}{\bar y}\]
+where $\bar x\in\left]p x\right]$ and $\bar y\in\left]p y\right]$.
+
+\begin{subthm}{ex:noncreasing-CAT}
+Suppose $\spc{X}$ is $\CAT(0)$.
+Show that $f$ is nondecreasing in each argument.
+\end{subthm}
+
+\begin{subthm}{ex:noncreasing-CBB}
+Suppose $\spc{X}$ is $\CBB(0)$.
+Show that $f$ is nonincreasing in each argument.
+\end{subthm}
+
+Conclude that for any hinge in a $\CAT(0)$ or $\CBB(0)$ space has defined angle.
+\end{thm}
+
+\section{Thin and fat triangles}
+
+Recall that a \index{triangle}\emph{triangle} $\trig xyz$ in a space $\spc{X}$ 
+is a triple of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
+Consider the  model triangle $\trig{\tilde x}{\tilde y}{\tilde z}=\modtrig{}({x}{y}{z})_{\EE^2}$ in the Euclidean plane.
+The \index{natural map}\emph{natural map} $\trig{\tilde x}{\tilde y}{\tilde z}\to \trig{x}{y}{z}$ 
+sends a point $\tilde p\in[\tilde x\tilde y]\cup[\tilde y\tilde z]\cup[\tilde z\tilde x]$ to the corresponding point $p\in[ x y]\cup[y z]\cup[ z x]$;
+that is, if $\tilde p$ lies on $[\tilde y\tilde z]$,
+then $p\in [y z]$ and $\dist{\tilde y}{\tilde p}{}=\dist{y}{p}{}$ (and therefore $\dist{\tilde z}{\tilde p}{}=\dist{z}{p}{}$.
+
+In the same way, the natural map can be defined for the spherical model triangle $\modtrig{}({x}{y}{z})_{\SSS^2}$.
+ 
+\begin{thm}{Definition}\label{def:k-thin}
+A triangle $\trig{x}{y}{z}$ in the metric space $\spc{X}$ 
+is called \index{thin triangle}\emph{thin} (or \index{fat triangle}\emph{fat}) if the natural map $\modtrig{}({x}{y}{z})_{\EE^2}\to \trig{x}{y}{z}$ is distance nonincreasing (or correspondingly distance nondecreasing).
+
+Analogously, a triangle $\trig{x}{y}{z}$ 
+is called \index{spherically thin}\emph{spherically thin} or \index{spherically fat}\emph{spherically fat} if
+the natural map from the spherical model triangle $\modtrig{}({x}{y}{z})_{\SSS^2}$ to $\trig{x}{y}{z}$ is distance nonincreasing or nondecreasing.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:thin=cat}
+A geodesic space is $\CAT(0)$ 
+($\CAT(1)$) 
+if and only if 
+all its triangles are thin (respectively, all its triangles of perimeter $<2\cdot\pi$ are spherically thin).
+\end{thm}
+
+\parit{Proof; ``if'' part.} 
+Apply  the triangle inequality and thinness of triangles $\trig pxy$ and $\trig qxy$, where $p$, $q$, $x$ and $y$ are as in the definition of $\CAT(\kappa)$ comparison (page \pageref{page:CAT-comparison}).
+
+\parit{``Only if'' part.} 
+Applying $\CAT(0)$ comparison to a quadruple $p,q,x,y$ with $q\in [xy]$ shows that any triangle satisfies \emph{point-side comparison}, that is, the distance from a vertex to a  point on the opposite side is no greater than the corresponding distance in the Euclidean model triangle.  
+
+Now consider a triangle $\trig{x}{y}{z}$ and let $p\in [xy]$ and $q\in [xz]$.
+Let $\tilde p$, $\tilde q$ be the corresponding points on the sides of the model triangle $\modtrig({x}{y}{z})_{\EE^2}$.
+Applying \ref{ex:noncreasing-CAT}, we get that
+\[\angk {x} {y} {z}_{\EE^2} \ge \angk {x} p q _{\EE^2}.\]
+Therefore $ \dist{\tilde p}{\tilde q}{\EE^2}\ge \dist{p}{q}{}$.
+
+The $\CAT(1)$ argument is the same.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:fat-triangle}
+Show that any triangle is a $\CBB(0)$ space is fat. 
+\end{thm}
+
+

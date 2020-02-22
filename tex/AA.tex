@@ -1,3 +1,238 @@
+
+\begin{thm}{Uniqueness of geodesics}\label{thm:cat-unique}
+In a proper length $\CAT(0)$ space, pairs of points are joined by unique geodesics, and these geodesics depend continuously on their endpoint pairs.
+
+Analogously, in a proper length $\CAT(1)$ space, pairs of points at distance less than $\pi$ are joined by unique geodesics, and these geodesics depend continuously on their endpoint pairs.
+\end{thm}
+
+\parit{Proof.} 
+Given 4 points $p^1,p^2,q^1,q^2$ in a proper length $\CAT(0)$ space $\spc{U}$, 
+consider two triangles $\trig{p^1}{q^1}{p^2}$ and $\trig{p^2}{q^2}{q^1}$.
+Since both of these triangles are thin, we get 
+\begin{align*}
+\dist{\geodpath_{[p^1q^1]}(t)}{\geodpath_{[p^2q^1]}(t)}{\spc{U}}
+&\le (1-t)\cdot \dist{p^1}{p^2}{\spc{U}},
+\\
+\dist{\geodpath_{[p^2q^1]}(t)}{\geodpath_{[p^2q^2]}(t)}{\spc{U}}
+&\le t\cdot \dist{q^1}{q^2}{\spc{U}}.
+\intertext{By the triangle inequality,}
+\dist{\geodpath_{[p^1q^1]}(t)}{\geodpath_{[p^2q^2]}(t)}{\spc{U}}&\le \max\{\dist{p^1}{p^2}{\spc{U}},\dist{q^1}{q^2}{\spc{U}}\}.
+\end{align*}
+
+This implies continuity and uniqueness in the $\CAT(0)$ case.  
+ 
+The $\CAT(1)$ case is done in essentially the same way.
+\qeds
+
+Adding the first two inequalities of the preceding proof gives the following:
+
+\begin{thm}{Proposition}
+Suppose $p^1,p^2,q^1,q^2$ are points in a proper length $\CAT(0)$ space~$\spc{U}$.
+Then 
+\[\dist{\geodpath_{[p^1q^1]}(t)}{\geodpath_{[p^2q^2]}(t)}{\spc{U}}\]
+is a convex function.
+\end{thm}
+
+\begin{thm}{Corollary}\label{cor:dist-convex}
+Let $K$ be a closed convex subset in a proper length $\CAT(0)$ space~$\spc{U}$.
+Then $\dist{K}{}{}\:\spc{U}\to\RR$ is \index{convex function}\emph{convex};
+that is, the function $t\mapsto\dist{K}{}{}\circ\gamma$ is convex for any geodesic $\gamma$ in $\spc{U}$.
+
+In particular, $\dist{p}{}{}$ is convex for any point $p$ in~$\spc{U}$.
+\end{thm}
+
+
+\begin{thm}{Corollary}\label{cor:contractible-cat}
+Any proper length $\CAT(0)$ space is contractible.
+
+Analogously, any proper length $\CAT(1)$ space with diameter $<\pi$ is contractible.
+\end{thm}
+
+\parit{Proof.} Let $\spc{U}$ be a proper length $\CAT(0)$ space.
+Fix a point $p\in \spc{U}$.
+
+For each point $x$ consider the geodesic path $\gamma_x\:[0,1]\to \spc{U}$ from $p$ to~$x$.
+Consider the one parameter family of maps 
+$h_t\:x\mapsto \gamma_x(t)$ for $t\in [0,1]$.
+By uniqueness of geodesics (\ref{thm:cat-unique}), the map 
+$(t,x)\mapsto h_t(x)$ is continuous. The family $h_t$ is called a \index{geodesic homotopy}\emph{geodesic homotopy}.
+
+It remains to note that $h_1(x)=x$ and $h_0(x)=p$ for any~$x$.
+
+The proof of the $\CAT(1)$ case is identical.
+\qeds
+
+\begin{thm}{Proposition}\label{cor:loc-geod-are-min}
+Suppose $\spc{U}$ is a proper length $\CAT(0)$ space.  
+Then any local geodesic in $\spc{U}$ is a geodesic.
+
+Analogously, if $\spc{U}$ is a proper length $\CAT(1)$ space, then any local geodesic in $\spc{U}$ which is shorter than $\pi$ is a geodesic.
+\end{thm}
+
+\begin{wrapfigure}{r}{21mm}
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{pics/local-geod(1)}
+\lbl[t]{2.5,1;$\gamma(0)$}
+\lbl[b]{10,14;$\gamma(a)$}
+\lbl[t]{19,8;$\gamma(b)$}
+\end{lpic}
+\end{wrapfigure}
+
+\parit{Proof.}
+Suppose $\gamma\:[0,\ell]\to\spc{U}$ is a local geodesic that is not a geodesic.
+Choose $a$ to be the maximal value 
+such that $\gamma$ is a geodesic on $[0,a]$.
+Further choose $b>a$ so that $\gamma$ is a geodesic on $[a,b]$.
+
+Since the triangle $\trig{\gamma(0)}{\gamma(a)}{\gamma(b)}$ is thin and 
+$\dist{\gamma(0)}{\gamma(b)}{}<b$ we have
+\[\dist{\gamma(a-\eps)}{\gamma(a+\eps)}{}<2\cdot\eps\]
+for all small~$\eps>0$.
+That is, $\gamma$ is not length-minimizing on the interval $[a-\eps,a+\eps]$ for any $\eps>0$,
+a contradiction.
+
+The spherical case is done in the same way.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:geod-CBA}
+Assume $\spc{U}$ is a proper length $\CAT(\kappa)$ space
+ with extendable geodesics;
+that is, any geodesic is an arc in a local geodesic $\RR\to \spc{U}$.
+
+Show that the space of geodesic directions at any point in $\spc{U}$ is complete.
+
+Does the statement remain true if $\spc{U}$ is complete, but not required to be proper?
+\end{thm}
+
+Now let us formulate the main result of this section.
+
+
+\begin{wrapfigure}[6]{r}{28mm}
+\begin{lpic}[t(-4mm),b(6mm),r(0mm),l(0mm)]{pics/lem_alex1(1)}
+\lbl[lb]{10,23;$y$}
+\lbl[rt]{1.5,.5;$p$}
+\lbl[bl]{25,7.5;$x$}
+\lbl[lb]{17,15;$z$}
+\end{lpic}
+\end{wrapfigure}
+
+\begin{thm}{Inheritance lemma}
+\label{lem:inherit-angle} 
+Assume that a triangle $\trig p x y$ 
+in a metric space is \index{decomposed triangle}\emph{decomposed} 
+into two triangles $\trig p x z$ and $\trig p y z$;
+that is, $\trig p x z$ and $\trig p y z$ have a common side $[p z]$, and the sides $[x z]$ and $[z y]$ together form the side $[x y]$ of $\trig p x y$.
+
+If both triangles $\trig p x z$ and $\trig p y z$ are thin, 
+then the triangle $\trig p x y$ is also thin.
+
+Analogously, if $\trig p x y$ has perimeter $<2\cdot\pi$ and both triangles $\trig p x z$ and $\trig p y z$ are spherically thin, then triangle $\trig p x y$ is spherically thin.
+\end{thm} 
+
+
+\begin{wrapfigure}{r}{32mm}
+\begin{lpic}[t(-4mm),b(0mm),r(0mm),l(0mm)]{pics/cat-monoton-ineq(1)}
+\lbl[b]{14,23;$\dot z$}
+\lbl[t]{10,.5;$\dot p$}
+\lbl[r]{1,14;$\dot x$}
+\lbl[l]{30.5,14;$\dot y$}
+\lbl[tl]{13,13;$\dot w$}
+\end{lpic}
+\end{wrapfigure}
+
+\parit{Proof.}
+Construct  the model triangles $\trig{\dot p}{\dot x}{\dot z}\z=\modtrig(p x z)_{\EE^2}$ 
+and $\trig {\dot p} {\dot y} {\dot z}\z=\modtrig(p y z)_{\EE^2}$ so that $\dot x$ and $\dot y$ lie on opposite sides of $[\dot p\dot z]$.
+
+Let us show that 
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+\ge
+\pi.
+\eqlbl{eq:<+<>=pi}\]
+Suppose the contrary, that is
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+<
+\pi.\]
+Then for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
+<
+\dist{\dot x}{\dot z}{}+\dist{\dot z}{\dot y}{}=\dist{x}{y}{}.\]
+Let $w\in[p z]$ correspond to $\dot w$; that is, $\dist{z}{w}{}=\dist{\dot z}{\dot w}{}$. 
+Since $\trig p x z$ and $\trig p y z$ are thin, we have 
+\[\dist{x}{w}{}+\dist{w}{y}{}<\dist{x}{y}{},\]
+contradicting the triangle inequality. 
+
+Denote by $\dot D$ the union of two solid triangles $\trig {\dot p}{\dot x}{\dot z}$ and $\trig {\dot p} {\dot y} {\dot z}$.
+Further, denote by $\tilde D$ the solid triangle $\trig{\tilde  p}{\tilde  x}{\tilde  y}=\modtrig(p x y)_{\EE^2}$.
+By \ref{eq:<+<>=pi}, there is a short map $F\:\tilde D\to \dot D$ that sends 
+\begin{align*}
+\tilde p&\mapsto \dot p,
+&
+\tilde x&\mapsto \dot x,
+&
+\tilde z&\mapsto \dot z,
+&
+\tilde y&\mapsto \dot y.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:short-map}
+Use Alexandrov's lemma (\ref{lem:alex}) to prove the last statement. 
+\end{thm}
+
+
+By assumption, the natural maps $\trig {\dot p} {\dot x} {\dot z}\to\trig p x z$ and $\trig {\dot p} {\dot y} {\dot z}\to\trig p y z$ are short.  
+By composition,  the natural map from $\trig{\tilde  p}{\tilde  x}{\tilde  y}$ to $\trig p y z$ is short, as claimed.
+
+The spherical case is done along the same lines.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:convex-balls}
+Show that any ball in a proper length $\CAT(0)$ space is a convex set.
+
+Analogously, show that any ball of radius $R<\tfrac\pi2$ in a proper length $\CAT(1)$ space  is a convex set.
+\end{thm}
+
+Recall that a set $A$ in a metric space $\spc{U}$ is called locally convex if for any point $p\in A$ there is an open neighborhood $\spc{U}\ni p$ such that any geodesic in $\spc{U}$ with  ends in $A$ lies in~$A$. 
+
+\begin{thm}{Exercise}\label{ex:locally-convex}
+Let $\spc{U}$ be a proper length $\CAT(0)$ space.
+Show that any closed, connected, locally convex set in $\spc{U}$ is convex.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:closest-point}
+Let  $\spc{U}$ be a proper length $\CAT(0)$ space 
+and $K\subset \spc{U}$ be a closed convex set.
+Show that: 
+
+\begin{subthm}{ex:closest-point:a}
+For each point $p\in \spc{U}$ there is unique point $p^*\in K$ that minimizes the distance $\dist{p}{p^*}{}$.
+\end{subthm}
+
+\begin{subthm}{}
+The closest-point projection $p\mapsto p^*$ defined by (\ref{SHORT.ex:closest-point:a}) is short. 
+\end{subthm}
+
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{thm}{Advanced exercise}\label{ex:urysohn-contractable}
  Show that the space $\spc{U}$ is contactable.
 \end{thm}

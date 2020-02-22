@@ -167,4 +167,99 @@ draw z.b1--z.d1;
 dOt z.a,z.b,z.c,z.d,z.a1,z.b1,z.c1,z.d1;
 endfig;
 
+beginfig(72) 
+save u;
+u:=1cm;
+
+z.p=(0,0)*u;
+z.q=(1.5,1.3)*u;
+z.x=(1,0)*u;
+z.y=(-.2,1)*u;
+z.z=.6[z.x,z.y];
+
+draw z.p--z.x--z.q--z.y--cycle;
+draw z.x--z.y;
+draw z.p--z.z--z.q dashed evenly;
+
+dOt z.x,z.y,z.z,z.p,z.q;
+
+label.lrt(btex $\tilde x$ etex, z.x);
+label.ulft(btex $\tilde y$ etex, z.y);
+label.top(btex $\tilde z$ etex, z.z);
+label.llft(btex $\tilde p$ etex, z.p);
+label.urt(btex $\tilde q$ etex, z.q);
+endfig;
+
+beginfig(73) 
+save u;
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.x=(.2,1)*u;
+z.y=(1.2,.1)*u;
+z.z=.9[z.p,.4[z.x,z.y]];
+
+draw z.x..z.z..z.y;
+draw z.p{.1,1}..z.x;
+draw z.p{1,.1}..z.y;
+draw z.p{.5,.5}..z.z;
+
+dOt z.x,z.y,z.z,z.p;
+
+label.top(btex $\tilde x$ etex, z.x);
+label.rt(btex $\tilde y$ etex, z.y);
+label.urt(btex $\tilde z$ etex, z.z);
+label.llft(btex $\tilde p$ etex, z.p);
+
+endfig;
+
+beginfig(74) 
+save u;
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.x=(.2,1)*u;
+z.y=(1.2,.1)*u;
+z.z=.4[z.x,z.y];
+z.yy=z.y rotatedabout(z.z,-20);
+
+draw z.x--z.y;
+draw z.p--z.x;
+draw z.p--z.y dashed evenly;
+draw z.p--z.z;
+draw z.p--z.yy--z.z;
+
+dOt z.x,z.y,z.z,z.p,z.yy;
+
+label.top(btex $\tilde x$ etex, z.x);
+label.rt(btex $\tilde y$ etex, z.y);
+label.bot(btex $\tilde y'$ etex, z.yy);
+label.urt(btex $\tilde z$ etex, z.z);
+label.llft(btex $\tilde p$ etex, z.p);
+
+endfig;
+
+beginfig(75) 
+save u;
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.x=(.2,1)*u;
+z.y=(1.2,.1)*u;
+z.xx=.4[z.p,z.x];
+z.yy=.3[z.p,z.y];
+
+draw z.p--z.y;
+draw z.p--z.x;
+draw z.xx--z.yy;
+
+dOt z.x,z.y,z.p,z.xx,z.yy;
+
+label.top(btex $x$ etex, z.x);
+label.rt(btex $y$ etex, z.y);
+label.bot(btex $\bar y$ etex, z.yy);
+label.lft(btex $\bar x$ etex, z.xx);
+label.llft(btex $p$ etex, z.p);
+
+endfig;
 end
