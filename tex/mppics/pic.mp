@@ -68,7 +68,7 @@ endfig;
 
 beginfig(3) 
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.o=origin;
 z.a=(0,1)*u;
@@ -84,6 +84,34 @@ Dot z.a,z.b,z.c,z.o;
 label.top(btex $a$ etex, z.a);
 label.llft(btex $b$ etex, z.b);
 label.lrt(btex $c$ etex, z.c);
+endfig;
+
+beginfig(4) 
+save u;
+u:=.7cm;
+
+z.p=(1,0)*u;
+z.q=-z.p;
+z.x=(0,1)*u;
+z.y=-z.x;
+
+save p;
+path p;
+p=z.p--z.x--z.q--z.y--cycle;
+
+
+hatchfill p withcolor (77, 1mm, -.5bp);
+
+draw p;
+drawarrow ddline (z.q,z.p)(.3,.3);
+drawarrow ddline (z.y,z.x)(.3,.3);
+
+Dot z.x,z.y,z.p,z.q;
+
+label.urt(btex $x$ etex, z.x);
+label.lrt(btex $y$ etex, z.y);
+label.lrt(btex $p$ etex, z.p);
+label.llft(btex $q$ etex, z.q);
 endfig;
 
 beginfig(10) 

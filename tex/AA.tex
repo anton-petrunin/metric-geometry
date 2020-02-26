@@ -1,3 +1,218 @@
+\newpage
+\pagestyle{empty}
+
+\noindent Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
+Show that for any $\eps>0$ there is a point $x\in \spc{X}$ such that 
+\[\rho(x)<(1+\eps)\cdot\rho(y)\]
+for any point $y\in \oBall(x,\rho(x))$.
+
+\vskip 50mm
+
+\noindent Let $\spc{K}$  be a compact metric space and
+\[f\:\spc{K}\z\to \spc{K}\] 
+be a distance non-decreasing map.
+Prove that $f$ is an isometry.
+
+\vskip 50mm
+
+\noindent 
+Suppose $(\spc{X},\dist{*}{*}{})$ is a complete metric space.
+Show that $(\spc{X},\yetdist{*}{*}{})$ is complete.
+
+\newpage
+\pagestyle{empty}
+
+\noindent Show that any compact metric space is isometric $\spc{K}$ to a subspace of a compact geodesic space. 
+
+\vskip 50mm
+
+\noindent Let $\spc{C}$ be a subspace of $\mathcal{H}(\RR^2)$ formed by all compact convex subsets in $\RR^2$.
+Show that perimeter and area are continuous on~$\spc{C}$.
+
+That is, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then 
+\[\perim X_n\to \perim X_\infty\quad\text{and}\quad\area X_n\to\area X_\infty\]
+as $n\to\infty$.
+(If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.)
+
+\vskip 50mm
+
+\noindent Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at most $D$ that admit a $C$-doubling measure.
+Show that $\spc{Q}(C,D)$ is totally bounded.
+
+\newpage
+\pagestyle{empty}
+
+\noindent
+\begin{subthm}{pr:under:if}Let $\spc{Y}$ be a compact metric space.
+Show that the set of all spaces $\spc{X}$ such that $\spc{X}\le\spc{Y}$
+is uniformly totally bounded.
+\end{subthm}
+
+\begin{subthm}{pr:under:only-if}
+Show that for any uniformly totally bounded set $\spc{Q}\subset\spc{M}$ there is a compact space $\spc{Y}$
+such that $\spc{X}\le\spc{Y}$ for any $\spc{X}$ in $\spc{Q}$.
+\end{subthm}
+
+\stepcounter{thm}
+
+\vskip 50mm
+
+\noindent \begin{subthm}{}
+Show that a sequence of compact simply connected length spaces can not converge to a circle.
+\end{subthm}
+
+\begin{subthm}{ex:GH-SC:nonsc-limit}
+Construct a sequence of compact simply connected length spaces that converges to a compact nonsimply connected space.
+\end{subthm}
+
+\stepcounter{thm}
+
+\vskip 50mm
+
+\noindent \begin{subthm}{ex:sphere-to-ball:2}
+Show that a sequence of lenght metrics on the 2-sphere can not converge to a the unit disc.
+\end{subthm}
+
+\begin{subthm}{ex:sphere-to-ball:3}
+Construct a sequence of lenght metrics on the 3-sphere that converges to a unit 3-ball.
+\end{subthm}
+
+\stepcounter{thm}
+
+\newpage
+\pagestyle{empty}
+
+\noindent For any point $x\in \spc{X}$, consider the constant sequence $x_n=x$
+and set $\iota(x)=\lim_{n\to\omega}x_n\in\spc{X}^\omega$.
+
+\begin{subthm}{ex:ultrapower:a}
+Show that $\iota\:\spc{X}\to\spc{X}^\omega$ is distance preserving embedding.
+\end{subthm}
+
+\begin{subthm}{ex:ultrapower:compact} 
+Show that $\iota$ is onto if and only if $\spc{X}$ compact.
+\end{subthm}
+
+\stepcounter{thm}
+
+
+\vskip 50mm
+
+\noindent Assume $\spc{X}$ is a complete length space 
+and $p,q\in\spc{X}$ cannot be joined by a geodesic in $\spc{X}$.  
+Then there are at least two distinct geodesics between $p$ and $q$ 
+in the ultrapower $\spc{X}^\omega$.
+
+\vskip 50mm
+
+\noindent Show that an ultralimit of metric trees is a metric tree. 
+
+\newpage
+\pagestyle{empty}
+
+\noindent Show that any two distinct points in an Urysohn space can be jointed by infinite number of geodesics.
+
+\vskip 50mm
+
+\noindent 
+Let $K$ be a compact set in a separable space $\spc{S}$.
+Then any distance-preserving map from $K$ to an Urysohn space can be extended to 
+a distance-preserving map on whole $\spc{S}$.
+
+
+\vskip 50mm
+
+\noindent Let $S$ be a sphere of radius $\tfrac d2$ in $\spc{U}_d$;
+that is, 
+\[S=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=\tfrac d2}\]
+for some point $p\in \spc{U}_d$.
+Show that $S$ is isometric to $\spc{U}_d$.
+
+Use it to show that $\spc{U}_d$ is not countable-set homogeneous;
+that is, there is an distance preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that can not be extended to an isometry of $\spc{U}_d$.
+
+\newpage
+\pagestyle{empty}
+
+\noindent Let $r$ and $s$ be two extremal functions of a metric space $\spc{X}$.
+Suppose that $r\ge s-c$ for some constant $c$.
+Show that $c\ge 0$ and $r\le s+c$.
+
+\vskip 50mm
+
+\noindent Suppose that a metric space $\spc{X}$ satisfies the following property:
+
+For any subspace $\spc{A}$ in $\spc{X}$ and any other metric space $\spc{Y}$, any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$.
+
+Show that $\spc{X}$ is an ultrametric space;
+that is, the following strong version of triangle inequality
+\[\dist{x}{z}{\spc{X}}
+\le
+\max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
+holds for any three points $x,y,z\in \spc{X}$.
+
+\vskip 50mm
+
+\noindent Show that the following spaces are injective:
+\begin{subthm}{ex:injective-spaces:R}
+the real line;
+\end{subthm}
+
+\begin{subthm}{ex:injective-spaces:tree}
+complete metric tree;
+\end{subthm}
+
+\begin{subthm}{ex:injective-spaces:ell-infty}
+plane with the metric induced by $\ell^\infty$-norm.
+\end{subthm}
+
+\stepcounter{thm}
+
+\newpage
+\pagestyle{empty}
+
+\noindent Suppose that $\spc{X}$ is
+\begin{subthm}{ex:tripod+square:tripod} 
+a metric space with exactly tree points $a,b,c$ such that 
+\[\dist{a}{b}{\spc{X}}=\dist{b}{c}{\spc{X}}=\dist{c}{a}{\spc{X}}=1.\]
+\end{subthm}
+\begin{subthm}{ex:tripod+square:square}
+ a metric space with exactly four points $p,q,x,y$ such that 
+\[\dist{p}{x}{\spc{X}}=\dist{p}{y}{\spc{X}}=\dist{q}{x}{\spc{X}}=\dist{q}{x}{\spc{X}}=1\]
+and
+\[\dist{p}{q}{\spc{X}}=\dist{x}{y}{\spc{X}}=2.\]
+\end{subthm}
+Describe the set of all extremal functions on $\spc{X}$ and the metric space $\Inj \spc{X}$ in each case.
+
+\vskip 50mm
+
+\noindent Let $\spc{X}$ be a compact space.
+Show that for any two points $f,g\in\Inj \spc{X}$ there are points $p,q\in \spc{X}$
+such that 
+\[\dist{p}{f}{\Inj\spc{X}}+\dist{f}{g}{\Inj\spc{X}}+\dist{g}{q}{\Inj\spc{X}}=\dist{p}{q}{\Inj\spc{X}}.\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{thm}{Uniqueness of geodesics}\label{thm:cat-unique}
 In a proper length $\CAT(0)$ space, pairs of points are joined by unique geodesics, and these geodesics depend continuously on their endpoint pairs.

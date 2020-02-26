@@ -1,4 +1,4 @@
-\chapter{Definitions}
+\chapter{Introduction}
 
 \section{Manifesto}
 
@@ -16,8 +16,15 @@ These 6 numbers are subject to 12 triangle inequalities; that is,
 \[\ell_{i,j}+\ell_{j,k}\ge \ell_{i,k}\]
 holds for all $i$, $j$ and $k$, where we assume that $\ell_{j,i}=\ell_{i,j}$ and $\ell_{i,i}=0$.
 
-The space $\mathcal{M}_4$ can be though of the cone in $\RR^6$ defined by triangle inequalities that is factorized by permutations of the 4-points of the space.
-The same topology is induced on $\mathcal{M}_4$ by the Gromov--Hausdorff metric.
+The space $\mathcal{M}_4$ comes with topology.
+It can defined as a quotient of the cone in $\RR^6$ by permutations of the 4-points of the space.
+And, the same topology is induced on $\mathcal{M}_4$ by the Gromov--Hausdorff metric.
+
+\begin{wrapfigure}[7]{o}{33mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-70}
+\end{wrapfigure}
 
 Consider the subset $\mathcal{E}_4\subset \mathcal{M}_4$ of all isometry classes of 4-point metric spaces that admit isometric embeddings into Euclidean space.
 
@@ -25,11 +32,7 @@ Consider the subset $\mathcal{E}_4\subset \mathcal{M}_4$ of all isometry classes
 The complement $\mathcal{M}_4\backslash \mathcal{E}_4$ has two connected components.
 \end{thm}
 
-\begin{wrapfigure}{o}{33mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-70}
-\end{wrapfigure}
+A proof of the claim can extracted from \ref{ex:CAT+CBB}.
 
 The definition of Alexandrov spaces is based on this claim.
 Let us denote one of the components by $\mathcal{P}_4$ and the other by~$\mathcal{N}_4$.
@@ -41,7 +44,7 @@ has no quadruples of type~$\mathcal{P}_4$.
 A metric space, with length metric, 
 that has no quadruples of points of type $\mathcal{P}_4$ or $\mathcal{N}_4$
 respectively 
-is called an Alexandrov space with non-positive or non-negative curvature.
+is called an Alexandrov space with non-positive ($\CAT(0)$) or non-negative curvature ($\CBB(0)$).
 
 \begin{wrapfigure}{r}{33mm}
 \vskip-4mm
@@ -49,17 +52,16 @@ is called an Alexandrov space with non-positive or non-negative curvature.
 \includegraphics{mppics/pic-71}
 \end{wrapfigure}
 
-Let us give an intuitive description of the subdivision of $\mathcal{M}_4$ into  $\mathcal{P}_4$, $\mathcal{E}_4$ and $\mathcal{N}_4$.
-When you move from $\mathcal{E}_4$ the last thing you see is one of the two plane configurations shown on the diagram.
-If you see the first configuration then you move into $\mathcal{N}_4$;
-if it is the second, then you move into $\mathcal{P}_4$.
-
-It turns out that you might avoid a more degenerate picture, for example a triangle with a point on a side.
+Let us describe the subdivision into  $\mathcal{P}_4$, $\mathcal{E}_4$ and $\mathcal{N}_4$ intuitively.
+Imagine that you move out of $\mathcal{E}_4$ --- your path is a one parameter family of 4-point metric spaces.
+The last thing you see in $\mathcal{E}_4$ is one of the two plane configurations shown on the diagram.
+If you see the left configuration then you move into $\mathcal{N}_4$;
+if it is the one on the right, then you move into $\mathcal{P}_4$.
+More degenerate pictures can be avoided, for example a triangle with a point on a side.
 From such a configuration one may move in $\mathcal{N}_4$ and in $\mathcal{P}_4$ (as well as come back to $\mathcal{E}_4$).
 
-A formal proof of the claim can extracted from \ref{ex:CAT+CBB}.
-
-Here is an exercise, solving which would force the reader to rebuild a considerable part of Alexandrov geometry.
+Here is an exercise, solving which would force you to rebuild a considerable part of Alexandrov geometry.
+It might be helpful to spend some time thinking about this exercise before proceeding.
 
 \begin{thm}{Advanced exercise}\label{ex:convex-set}
 Assume $\spc{X}$ is a complete metric space with length metric, 
@@ -67,22 +69,34 @@ containing only quadruples of type~$\mathcal{E}_4$.
 Show that $\spc{X}$ is isometric to a convex set in a Hilbert space.
 \end{thm}
 
-In fact, it might be helpful to spend some time thinking about this exercise before proceeding.
-
 In the definition above, 
 instead of  Euclidean space 
 one can take  
 hyperbolic space of curvature~$-1$.
 In this case,
-one obtains the definition of spaces with curvature bounded above or below by~$-1$.
+one obtains the definition of spaces with curvature bounded above or below by~$-1$ ($\CAT(-1)$ or $\CBB(-1)$).
 
-To define spaces with curvature bounded above or below by $1$,
+To define spaces with curvature bounded above or below by $1$ ($\CAT(1)$ or $\CBB(1)$),
 one has to take the unit 3-sphere 
 and specify that only the quadruples of points such that each of the four triangles has perimeter 
 less than $2\cdot\pi$ are checked.
 The latter condition could be considered as a part of the {}\emph{spherical triangle inequality}.
 
-\section{Definitions}\label{sec:mod-tri/angles}
+\section{Triangles, hinges and angles}
+
+\parbf{Triangles.}
+For a triple of points $p,q,r\in \spc{X}$, a choice of a triple of geodesics $([q r], [r p], [p q])$ will be called a \index{triangle}\emph{triangle}; we will use the short notation 
+$\trig p q r=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
+
+Given a triple $p,q,r\in \spc{X}$ there may be no triangle 
+$\trig p q r$ simply because one of the pairs of these points cannot be joined by a geodesic.
+Also, many different triangles with these vertices may exist, any of which can be denoted by $\trig p q r$.
+However, if we write $\trig p q r$, it means that we have made a choice of such a triangle; 
+that is, we have  fixed a choice of the geodesics $[q r]$, $[r p]$, and $[p q]$.
+
+The value 
+\[\dist{p}{q}{}+\dist{q}{r}{}+\dist{r}{p}{}\]
+will be called the {}\emph{perimeter of the triangle} $\trig p q r$.
 
 \parbf{Model triangles.}
 Let $\spc{X}$ be a metric space and 
@@ -117,6 +131,32 @@ In the same way we define $\angk p q r_{\HH^2}$ and $\angk p q r_{\SSS^2}$;
 in the latter case  we assume in addition that the model triangle $\modtrig(p q r)_{\SSS^2}$ is defined.
 
 We may use the notation $\angk p q r$ if it is evident which of the model spaces $\HH^2$, $\EE^2$ or $\SSS^2$ is meant.
+
+\parbf{Hinges.} Let $p,x,y\in \spc{X}$ be a triple of points such that $p$ is distinct from $x$ and~$y$.
+A pair of geodesics $([p x],[p y])$ will be called  a \index{hinge}\emph{hinge} and will be denoted by 
+$\hinge p x y=([p x],[p y])$\index{$\hinge{{*}}{{*}}{{*}}$}.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-75}
+\end{wrapfigure}
+
+\parbf{Angles.}
+Given a hinge $\hinge p x y$, we define its \index{angle}\emph{angle} as 
+the limit\index{$\mangle$!$\mangle\hinge{{*}}{{*}}{{*}}$}
+\[\mangle\hinge p x y
+\df
+\lim_{\bar x,\bar y\to p} \angk p{\bar x}{\bar y},\eqlbl{eq:def-angle}\]
+where $\bar x\in\left]p x\right]$ and $\bar y\in\left]p y\right]$.
+The angle $\mangle\hinge p x y$ is defined if the limit exists.
+
+It is straightforward to check that in \ref{eq:def-angle}, one can use $\angk p{\bar x}{\bar y}_{\SSS^2}$ or  $\angk p{\bar x}{\bar y}_{\HH^2}$ or $\angk p{\bar x}{\bar y}_{\EE^2}$, the result will be the same.
+
+\begin{thm}{Exercise} Give an example of a hinge $\hinge p x y$ in a metric space with undefined angle $\mangle\hinge p x y$.
+\end{thm}
+
+\section{Definitions}
 
 \parbf{Curvature bounded above.}
 Given a quadruple of points $p,q,x,y$ in a metric space $\spc{X}$,
@@ -435,45 +475,6 @@ Show that if two geodesics from $x$ to $y$ share yet another point $z$,
 then they coincide.
 \end{thm}
 
-\section{Triangles and hinges}
-
-
-For a triple of points $p,q,r\in \spc{X}$, a choice of a triple of geodesics $([q r], [r p], [p q])$ will be called a \index{triangle}\emph{triangle}; we will use the short notation 
-$\trig p q r=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
-
-Given a triple $p,q,r\in \spc{X}$ there may be no triangle 
-$\trig p q r$ simply because one of the pairs of these points cannot be joined by a geodesic.
-Also, many different triangles with these vertices may exist, any of which can be denoted by $\trig p q r$.
-However, if we write $\trig p q r$, it means that we have made a choice of such a triangle; 
-that is, we have  fixed a choice of the geodesics $[q r]$, $[r p]$, and $[p q]$.
-
-The value 
-\[\dist{p}{q}{}+\dist{q}{r}{}+\dist{r}{p}{}\]
-will be called the {}\emph{perimeter of the triangle} $\trig p q r$.
-
-Let $p,x,y\in \spc{X}$ be a triple of points such that $p$ is distinct from $x$ and~$y$.
-A pair of geodesics $([p x],[p y])$ will be called  a \index{hinge}\emph{hinge} and will be denoted by 
-$\hinge p x y=([p x],[p y])$\index{$\hinge{{*}}{{*}}{{*}}$}.
-
-\begin{wrapfigure}{r}{25mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-75}
-\end{wrapfigure}
-
-Given a hinge $\hinge p x y$, we define its \index{angle}\emph{angle} as 
-the limit\index{$\mangle$!$\mangle\hinge{{*}}{{*}}{{*}}$}
-\[\mangle\hinge p x y
-\df
-\lim_{\bar x,\bar y\to p} \angk p{\bar x}{\bar y},\eqlbl{eq:def-angle}\]
-where $\bar x\in\left]p x\right]$ and $\bar y\in\left]p y\right]$.
-The angle $\mangle\hinge p x y$ is defined if the limit exists.
-
-It is straightforward to check that in \ref{eq:def-angle}, one can use $\angk p{\bar x}{\bar y}_{\SSS^2}$ or  $\angk p{\bar x}{\bar y}_{\HH^2}$ or $\angk p{\bar x}{\bar y}_{\EE^2}$, the result will be the same.
-
-\begin{thm}{Exercise} Give an example of a hinge $\hinge p x y$ in a metric space with undefined angle $\mangle\hinge p x y$.
-\end{thm}
-
 
 \section{Alexandrov's lemma}
 
@@ -636,4 +637,111 @@ The $\CAT(1)$ argument is the same.
 Show that any triangle is a $\CBB(0)$ space is fat. 
 \end{thm}
 
+\section{Other descriptions}
 
+In this section we will list few ways to describe $\CAT(0)$ and $\CBB(0)$ spaces.
+We do not give proofs of these statements, altho they are not hard;
+see \cite{alexander-kapovitch-petrunin-2025} and the reference there in.
+
+These conditions will not be used in the sequel, but they might help to build right intuition.  
+
+\parbf{Convexity of function.}
+The following condition might help to adapt intuition from real analysis.
+
+Let $\spc{X}$ be a metric space and $\lambda\in\RR$.
+A function $f\:\spc{X}\to \RR$ is called \emph{$\lambda$-convex} (\emph{$\lambda$-concave}) if 
+the real-to-real function 
+\[t\mapsto f\circ\gamma(\gamma)-\tfrac{\lambda}{2}\cdot t^2\] 
+is convex (correspondingly concave)
+for any geodesic $\gamma\:\II\to \RR$.
+
+The $\lambda$-convex  and $\lambda$-concave functions can be thought as functions satisfying inequalities $f''\ge\lambda$ and correspondingly $f''\le\lambda$ in a generalized sense.
+Note that a smooth real-to-real function $f$ is $\lambda$-convex ($\lambda$-concave) if it satisfies inequality $f''\ge\lambda$ (correspondingly $f''\le\lambda$).
+
+\begin{thm}{Proposition}
+Let $\spc{X}$ be a geodesic space.
+Then $\spc{X}$ is $\CAT(0)$ (correspondingly $\CBB(0)$) if and only if for any point $p\in \spc{X}$ the function
+\[f(x)=\tfrac12\cdot\dist{p}{x}{\spc{X}}\]
+is 1-convex (correspondingly 1-concave).
+\end{thm}
+
+\parbf{Angle comparison.}
+The following condition might help to adapt intuition from Euclidean geometry.
+
+Recall that in $\CAT(0)$ and $\CBB(0)$ spaces any hinge has defined angle; see \ref{ex:noncreasing}.
+
+\begin{thm}{Proposition}\label{prop:convexity}
+Let $\spc{X}$ be a geodesic space such that any hinge in $\spc{X}$ has defined angle.
+Then 
+
+\begin{subthm}{prop:convexity:CAT}
+$\spc{X}$ is $\CAT(0)$ if and only if 
+\[\mangle\hinge pxy\le \angk pxy.\]
+\end{subthm}
+
+\begin{subthm}{prop:convexity:CBB}
+$\spc{X}$ is $\CBB(0)$ if and only if 
+\[\mangle\hinge pxy\ge \angk pxy\]
+and 
+\[\mangle\hinge pxy+\mangle\hinge pxz=\pi\]
+for any \emph{adjacent hinges} $\hinge pxy$ and $\hinge pxz$;
+that is, the union of the sides $[px]$ and $[pz]$ of the hinges form a geodesic $[xy]$.
+\end{subthm}
+
+\end{thm}
+
+It is unknown if the condition on adjacent hinges in (\ref{SHORT.prop:convexity:CBB}) can be removed (even in the two-dimesional case).
+
+\parbf{Kirszbraun property.}
+We include the following condition only because it is beautiful.
+
+The following theorem was proved by Mojżesz Kirszbraun \cite{kirszbraun} and rediscovered later by Frederick Valentine \cite{valentine}.
+
+\begin{thm}{Theorem}
+Let $A\subset \EE^m$.
+Then any short map $f\:A\to \EE^n$
+admits a short extension $f\:\EE^m\to \EE^n$.
+\end{thm}
+
+The conclusion of the theorem holds for some other metric spaces instead of $\EE^m$ and $\EE^n$.
+For example instead of $\EE^n$ one might take any injective space (\ref{def:injective}) and instead of $\EE^m$ one may take any compact ultrametric space (\ref{ex:ultrametric}).
+On the other hand existance of extension to/from a Euclidean space is much weaker condition than in \ref{def:injective} and \ref{ex:ultrametric}.
+As the following theorems state, these conditions are closely related to the $\CBB(0)$ and $\CAT(0)$ conditions.
+
+\begin{thm}{Theorem}
+Let $\spc{X}$ be a complete length space and $n\ge 2$.
+Then $\spc{X}$ is $\CBB(0)$ if and only if for any set $A\subset \spc{X}$, 
+any short map $f\:A\to \EE^n$ 
+admits a short extension $F\:\spc{X}\to \EE^n$.
+\end{thm}
+
+\begin{thm}{Theorem}
+Let $\spc{Y}$ be a metric space with and $m\ge 2$.
+Assume any two points in $\spc{Y}$ are joint by unique geodesic.
+Then $\spc{Y}$ is $\CAT(0)$ if and only if for any set $A\subset \EE^m$, 
+any short map $f\:\EE^m\to \spc{Y}$ 
+admits a short extension $F\:\EE^m\to \spc{Y}$.
+\end{thm} 
+
+
+\section{History}
+
+The idea that the essence of curvature lies in a condition on quadruples of points apparently originated with Abraham Wald.
+It is found in his publication on ``coordinate-free differential geometry'' \cite{wald} written under the supervision of Karl Menger;
+the story of this discovery can be found in \cite{menger}.
+In 1941, similar definitions were rediscovered independently by 
+Alexandr Danilovich Alexandrov %Alexandr is the right spelling
+\cite{alexandrov:def}.
+In Alexandrov's work the first fruitful applications of this approach were given.
+Mainly:
+\begin{itemize}
+\item Alexandrov's embedding theorem --- 
+\textit{metrics of non-negative curvature on the sphere, and only they, are isometric to closed convex surfaces in Euclidean 3-space}. 
+\item Gluing theorem, which tells  when the sphere obtained by gluing of two discs along their boundaries has non-negative curvature in the sense of Alexandrov.
+\end{itemize}
+These two results together gave  a very intuitive geometric tool for studying  embeddings and bending of surfaces in  Euclidean space, and changed this subject dramatically.
+They formed the foundation of the branch of geometry now called \emph{Alexandrov geometry}.
+
+The study of  spaces with curvature bounded above started later.
+The first paper on the subject was written by Alexandrov \cite{alexandrov:strong-angle}.
+It was based on work of Herbert Busemann, who studied spaces satisfying a weaker condition \cite{busemann-CBA}.
