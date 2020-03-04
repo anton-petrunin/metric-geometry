@@ -491,6 +491,43 @@ Further if $\bar r(x)=s(x)+c$ then
 Since $r$ is extremal, we have $r=\bar r$;
 that is $r\le s+c$.
 
+\parbf{Exercise~\ref{ex:inj=complete-geodesic-contractible}.}
+Choose an injective space $\spc{Y}$.
+
+\textit{(\ref{SHORT.ex:inj=complete-geodesic-contractible:complete}).}
+Fix a Cauchy sequence $(x_n)$ in $\spc{Y}$;
+we need to show that it has a limit $x_\infty\in \spc{Y}$.
+Consider metric on $\spc{X}=\NN\cup\{\infty\}$ defined by 
+\begin{align*}
+\dist{m}{n}{\spc{X}}&=\dist{x_m}{x_n}{\spc{Y}},
+\\
+\dist{m}{\infty}{\spc{X}}&=\lim_{n\to\infty}\dist{x_m}{x_n}{\spc{Y}}.
+\end{align*}
+Since the sequence is Cauchy, so is the sequence $\ell_n=\dist{p}{x_n}{\spc{Y}}$.
+Therefore the last limit is defined.
+
+By construction the map $n\mapsto x_n$ is distance preserving on $\NN\subset \spc{X}$.
+Since $\spc{Y}$ is injective, this map can be exteneded to $\infty$ as a short map; set $\infty\mapsto x_\infty$.
+Since $\dist{x_n}{x_\infty}{\spc{Y}}\le \dist{n}{\infty}{\spc{X}}$ 
+and $\dist{n}{\infty}{\spc{X}}\to 0$, we get that
+$x_n\to x_\infty$ as $n\to\infty$.
+
+\textit{(\ref{SHORT.ex:inj=complete-geodesic-contractible:geodesic}).}
+Applying the definition of injective space, we get a midpoint for any pair of points in $\spc{Y}$.
+By (\ref{SHORT.ex:inj=complete-geodesic-contractible:complete}),
+$\spc{Y}$ is a complete space.
+It remains to apply \ref{lem:mid>geod:geod}.
+
+\textit{(\ref{SHORT.ex:inj=complete-geodesic-contractible:contractible}).}
+Let $k\:\spc{Y}\hookrightarrow \ell^\infty(\spc{Y})$ be the Kuratowski embedding (\ref{lem:kuratowski}).
+Observe that $\ell^\infty(\spc{Y})$ is contractible;
+in particular, there is a homotopy $k_t\:\spc{Y}\hookrightarrow \ell^\infty(\spc{Y})$ such that $k_0=k$ and $k_1$ is a constant map.
+(In fact one can take $k_t=(1-t)\cdot k$.)
+
+Since $k$ is distance preserving and $\spc{Y}$ is injective,
+there is a short map $f\:\ell^\infty(\spc{Y})\to \spc{Y}$ such that the composition $f\circ k$ is the identity map on $\spc{Y}$.
+The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotopy. 
+
 \parbf{Exercise~\ref{ex:ultrametric}.}
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
 Let $f\:\spc{A}\to \spc{Y}$ be an isometry.
@@ -604,3 +641,243 @@ Applying \ref{lem:opposite}, we can find a point $q\in\spc{X}$ such that
 \dist{f}{q}{\Inj\spc{X}},\]
 whence the result.
 
+\parbf{Exercise~\ref{ex:sba-2+2-short};} \textit{``only if'' part.}
+Let us start with two model triangles $[\tilde x\tilde y\tilde p]=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
+
+Suppose $[\tilde x \tilde y]$ intersects $[\tilde p\tilde q]$ at a point $\tilde z$.
+In this case by $\CAT(0)$ comparison we have that
+\[\dist{\tilde p}{\tilde q}{\EE^2}=\dist{\tilde p}{\tilde z}{\EE^2}-\dist{\tilde z}{\tilde q}{\EE^2}\le \dist{p}{q}{\spc{X}}.\]
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-5}
+\end{wrapfigure}
+
+Let us fix points $\tilde x$ and $\tilde y$, and the distances from $\tilde x$ to the remaining three points and reduce the angles $\alpha=\mangle\hinge{\tilde x}{\tilde p}{\tilde y}$ and $\beta=\mangle\hinge{\tilde x}{\tilde q}{\tilde y}$.
+It results in decreasing distances $\dist{\tilde p}{\tilde q}{}$, $\dist{\tilde p}{\tilde y}{}$, and $\dist{\tilde q}{\tilde y}{}$.
+If $\alpha=\beta=0$, then 
+\begin{align*}
+\dist{\tilde p}{\tilde q}{\EE^2}&=
+\biggl|\dist{\tilde x}{\tilde p}{\EE^2}-\dist{\tilde x}{\tilde q}{\EE^2}\biggr|=
+\\
+&=\biggl|\dist{ x}{ p}{\spc{X}}-\dist{ x}{ q}{\spc{X}}\biggr|\ge
+\\
+&\ge\dist{p}{q}{\spc{X}}.
+\end{align*}
+By the intermediate value theorem, there are intermediate values of $\alpha$ and $\beta$ so that $\dist{\tilde p}{\tilde q}{\EE^2}\z=\dist{p}{q}{\spc{X}}$.
+By construction, $\dist{\tilde x}{\tilde p}{\EE^2}=\dist{x}{p}{\spc{X}}$, $\dist{\tilde x}{\tilde q}{\EE^2}=\dist{x}{q}{\spc{X}}$, $\dist{\tilde y}{\tilde p}{\EE^2}\le\dist{y}{p}{\spc{X}}$, $\dist{\tilde y}{\tilde q}{\EE^2}\le\dist{y}{q}{\spc{X}}$.
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-6}
+\end{wrapfigure}
+
+Now suppose $[\tilde p \tilde q]$ does not intersect $[\tilde x\tilde y]$.
+Without loss of generality, we may assume that $[\tilde p \tilde q]$ crosses the line $\tilde x\tilde y$ behind $\tilde x$.
+
+Let us rotate $\tilde p$ around $\tilde x$ so that $\tilde x$ will lie between $\tilde p$ and $\tilde q$.
+It will result in decreasing the distance $\dist{\tilde p}{\tilde y}{}$,
+by triangle inequality we have that 
+\begin{align*}
+\dist{\tilde p}{\tilde q}{\EE^2}&=\dist{\tilde p}{\tilde x}{\EE^2}+\dist{\tilde x}{\tilde q}{\EE^2}=
+\\
+&=\dist{p}{x}{\spc{X}}+\dist{x}{q}{\spc{X}}\ge
+\\
+&\ge \dist{p}{q}{\spc{X}}.
+\end{align*}
+Repeating the argument above produces the needed configuration.
+
+\parit{``If'' part.}
+Suppose $\tilde p,\tilde q,\tilde x,\tilde y\in\EE^2$ satisfies the conditions 
+\begin{align*}
+\dist{\tilde p}{\tilde q}{}&=\dist{p}{q}{},
+&
+\dist{\tilde x}{\tilde y}{}&=\dist{x}{y}{},
+\\
+\dist{\tilde p}{\tilde x}{}&\le \dist{p}{x}{},
+&
+\dist{\tilde p}{\tilde y}{}&\le \dist{p}{y}{},
+\\
+\dist{\tilde q}{\tilde x}{}&\le \dist{q}{x}{},
+&
+\dist{\tilde q}{\tilde y}{}&\le \dist{q}{y}{}.
+\end{align*}
+
+Fix $\tilde z\in [\tilde x\tilde y]$.
+By triangle inequality 
+\[\dist{\tilde p}{\tilde z}{}+\dist{\tilde z}{\tilde q}{}\ge \dist{\tilde p}{\tilde q}{}=\dist{p}{q}{}.\]
+
+Note that if 
+$\dist{\tilde p'}{\tilde x}{}\ge \dist{\tilde p}{\tilde x}{}$
+and
+$\dist{\tilde p'}{\tilde y}{}\ge \dist{\tilde p}{\tilde y}{}$,
+then $\dist{\tilde p'}{\tilde z}{}\ge \dist{\tilde p}{\tilde z}{}$.
+In particular if $[\tilde x\tilde y\tilde p']=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q']=\modtrig(xyq)$, then
+\begin{align*}
+ \dist{\tilde p'}{\tilde z}{}+\dist{\tilde q'}{\tilde z}{}\ge \dist{\tilde p}{\tilde z}{}+\dist{\tilde z}{\tilde q}{}.
+\end{align*}
+Whence the ``if'' part follows.
+
+\parbf{Exercise~\ref{ex:(3+1)-expanding}.}
+Set $\tilde\alpha=\angk pxy$, $\tilde\beta=\angk pyz$ and $\tilde\gamma=\angk pzx$.
+
+If $\spc{X}$ is $\Alex0$, then
+\[\tilde\alpha+\tilde\beta+\tilde\gamma\le 2\cdot \pi.\]
+Note that we can find $\alpha,\beta,\gamma$ such that 
+\[
+\tilde\alpha\le\alpha\le\pi,
+\quad \tilde\beta\le\beta\le\pi,
+\quad\tilde\gamma\le\gamma\le\pi,\]
+and
+\[\alpha+\beta+\gamma=2\cdot \pi.\]
+Consider a model configuration $\tilde p$, $\tilde x$, $\tilde y$, $\tilde z\in\EE^2$ such that 
+\begin{align*}
+\dist{\tilde p}{\tilde x}{\EE^2}&=\dist{p}{x}{\spc{X}},
+&
+\dist{\tilde p}{\tilde y}{\EE^2}&=\dist{p}{y}{\spc{X}},
+&
+\dist{\tilde p}{\tilde z}{\EE^2}&=\dist{p}{z}{\spc{X}},
+\\
+\mangle\hinge {\tilde p}{\tilde x}{\tilde y}&=\alpha,
+&
+\mangle\hinge {\tilde p}{\tilde y}{\tilde z}&=\beta,
+&
+\mangle\hinge {\tilde p}{\tilde z}{\tilde x}&=\gamma.
+\end{align*}
+
+Since increasing angle in a triangle increase the opposite side, we have 
+\begin{align*}
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
+&
+\dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^2},
+&
+\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^2}.
+\end{align*}
+Whence the ``only-if'' part follows.
+
+Now suppse that we have a model configuration $\tilde p,\tilde x,\tilde y,\tilde z\in\EE^2$
+such that 
+\begin{align*}
+\dist{p}{x}{\spc{X}}&=\dist{\tilde p}{\tilde x}{\EE^2},
+&
+\dist{p}{y}{\spc{X}}&=\dist{\tilde p}{\tilde y}{\EE^2},
+&
+\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^2},
+\\
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
+&
+\dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^2},
+&
+\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^2}.
+\end{align*}
+
+Set
+\begin{align*} 
+\alpha&=\mangle\hinge {\tilde p}{\tilde x}{\tilde y},
+&
+\beta&=\mangle\hinge {\tilde p}{\tilde y}{\tilde z},
+&
+\gamma&=\mangle\hinge {\tilde p}{\tilde z}{\tilde x}.
+\end{align*}
+Observe that 
+\[\alpha+\beta+\gamma\le 2\cdot \pi.\]
+Since increasing a side in a triangle increase the opposite angle, we have that
+\[
+\tilde\alpha\le\alpha,
+\quad \tilde\beta\le\beta,
+\quad\tilde\gamma\le\gamma.\]
+Whence the ``if'' part follows.
+
+\parbf{Exercise~\ref{ex:CAT+CBB}.}
+Set $\tilde \alpha=\angk pxq$, $\tilde\beta=\angk pyq$ and $\tilde\gamma=\angk pxy$.
+
+Note that the quadruple $p,x,y,z$ is euclidean if 
+\[\tilde\alpha+\tilde\beta+\tilde\gamma\le 2\cdot\pi
+\eqlbl{eq:a+b+c=<2pi}\]
+and the triple of numbers $\tilde\alpha,\tilde\beta,\tilde\gamma$ satisfies all triangle inequalities.
+Without loss of generality we may assume that
+$\tilde\alpha\le\tilde\beta\le\tilde\gamma$;
+in this case the triangle inequities hold if 
+\[\tilde\gamma\le \tilde\alpha+\tilde\beta.\eqlbl{eq:a+b>=c}\]
+
+Note that the inequality \ref{eq:a+b+c=<2pi} follow from $\CBB(0)$ comparison.
+
+Consider two model triangles $[\tilde x\tilde y\tilde p]=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
+
+Suppose $[\tilde x \tilde y]$ intersects $[\tilde p\tilde q]$ at a point $\tilde z$.
+In this case by $\CAT(0)$ comparison we have that
+\[\dist{\tilde x}{\tilde y}{\EE^2}=\dist{\tilde x}{\tilde z}{\EE^2}-\dist{\tilde z}{\tilde y}{\EE^2}\le \dist{x}{y}{\spc{X}}.\]
+Which is equivalent to \ref{eq:a+b>=c}.
+
+If $[\tilde x \tilde y]$ crosses the line $[\tilde p\tilde q]$ behind $\tilde p$,
+then $\tilde\alpha+\tilde\beta>\pi$ and therefore \ref{eq:a+b>=c} follows from \ref{eq:a+b+c=<2pi}.
+
+Finally if $[\tilde x \tilde y]$ crosses the line $[\tilde p\tilde q]$ behind $\tilde q$,
+then by $\CBB(0)$ comparison with center at $q$, we have that 
+\[\angk qxp+\angk qyp+\angk qxy\le 2\cdot\pi\]
+It follows that 
+\[\dist{\tilde x}{\tilde y}{\EE^2}\ge\dist{ x}{ y}{\spc{X}}\]
+and therefore 
+\[\tilde \gamma\le \mangle\hinge{\tilde p}{\tilde x}{\tilde y}.\]
+Since $\mangle\hinge{\tilde p}{\tilde x}{\tilde y}=\tilde\alpha+\tilde\beta$ we get \ref{eq:a+b>=c}.
+
+\parbf{Exercise~\ref{ex:product-CBB}.}
+We will use the charcterization of $\CBB(0)$ space provided by \ref{ex:(3+1)-expanding}; the rest is nearly identical to the proof of \ref{ex:product-CAT}.
+
+Fix a quadruple in $\spc{U}\times \spc{V}$:
+\begin{align*}
+p&=(p_1,p_2),
+&
+x&=(x_1,x_2),
+&
+y&=(y_1,y_2),
+&
+z&=(z_1,z_2).
+\end{align*}
+For the quadruple $p_1,x_1,y_1,z_1$ in $\spc{U}$,
+construct model configurations  $\tilde p_1,\tilde x_1,\tilde y_1,\tilde z_1$ in $\EE^2$ provided by \ref{ex:(3+1)-expanding}.  
+Similarly, for the quadruple $p_2,q_2,x_2,y_2$ in $\spc{V}$
+construct model configurations  $\tilde p_2,\tilde x_2,\tilde y_2,\tilde z_2$ in $\EE^2$
+
+Consider four points in $\EE^4=\EE^2\times\EE^2$ 
+\begin{align*}
+\tilde p&=(\tilde p_1,\tilde p_2),
+&
+\tilde x&=(\tilde x_1,\tilde x_2),
+&
+\tilde y&=(\tilde y_1,\tilde y_2),
+&
+\tilde z&=(\tilde z_1,\tilde z_2).
+\end{align*}
+The inequalities in  \ref{ex:(3+1)-expanding} imply that
+\begin{align*}
+\dist{p}{x}{\spc{X}}&=\dist{\tilde p}{\tilde x}{\EE^4},
+&
+\dist{p}{y}{\spc{X}}&=\dist{\tilde p}{\tilde y}{\EE^4},
+&
+\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^4},
+\\
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^4},
+&
+\dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^4},
+&
+\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^4}
+\end{align*}
+It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$, $\tilde x$, and $\tilde y$ keeping the distance $\dist{\tilde p}{\tilde z}{\EE^4}$ and nondecreasing the rest of diatances. 
+
+\parbf{Exercise~\ref{ex:fat-triangle}.}
+Apply \ref{ex:noncreasing-CBB} twice.
+
+More precisely, consider a triangle $[xyz]$ in the space; let $[\tilde x\tilde y\tilde z]\z=\modtrig(xyz)$.
+Choose points $p\in[xy]$ and $q\in[xz]$;
+consider the corresponding points $\tilde p\in[\tilde x\tilde y]$ and $\tilde q\in[\tilde x\tilde z]$.
+We need to show that 
+\[\dist{\tilde p}{\tilde q}{\EE^2}\le \dist{ p}{q}{\spc{X}}.
+\eqlbl{eq:pq=<pq}\]
+
+By \ref{ex:noncreasing-CBB}, we have
+\[\angk{x}{p}{q}\ge\angk{x}{y}{z}.\]
+Whence \ref{eq:pq=<pq} follows.
+  
