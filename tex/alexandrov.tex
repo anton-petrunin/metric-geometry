@@ -156,6 +156,23 @@ It is straightforward to check that in \ref{eq:def-angle}, one can use $\angk p{
 \begin{thm}{Exercise} Give an example of a hinge $\hinge p x y$ in a metric space with undefined angle $\mangle\hinge p x y$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:tringle-inq-angles} Suppose that for three geodesics $[px]$, $[py]$, and $[pz]$ in a metric space, the angles 
+$\alpha=\mangle\hinge pxy$,
+$\beta=\mangle\hinge pyz$,
+and 
+$\gamma=\mangle\hinge pzx$ are defined.
+Show that $\alpha$, $\beta$ and $\gamma$ satisfy all triangle inequalities:
+\begin{align*}
+\alpha&\le \beta+\gamma,
+&
+\beta&\le\gamma+\alpha,
+&
+\gamma&\le \alpha+\beta,
+\end{align*}
+
+\end{thm}
+
+
 \section{Definitions}
 
 \parbf{Curvature bounded above.}
@@ -634,6 +651,18 @@ The $\CAT(1)$ argument is the same.
 
 \begin{thm}{Exercise}\label{ex:fat-triangle}
 Show that any triangle is a $\CBB(0)$ space is fat. 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-balls}
+Show that any ball $B$ in a proper length $\CAT(0)$ space is a convex set;
+that is, if $ x,y\in B$, then $[xy]\subset B$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-dist}
+Suppose $\gamma_1,\gamma_2\:[0,1]\to \spc{U}$ be two geodesic paths in a complete length $\CAT(0)$ space $\spc{U}$.
+Show that
+\[t\mapsto\dist{\gamma_1(t)}{\gamma_2(t)}{\spc{U}}\]
+is a convex function.
 \end{thm}
 
 \section{Other descriptions}
