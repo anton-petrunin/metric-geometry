@@ -136,8 +136,8 @@ draw z.p--z.x--z.y--z.q;
 draw z.p--z.y;
 draw z.q--z.x;
 
-drawarrow reverse(ddarc(z.p,z.ppp,z.pp)(-4,-4));
-drawarrow ddarc(z.qq,z.qqq,z.q)(-4,-4);
+drawarrow ddarc(z.p,z.ppp,z.pp)(-4,-4));
+drawarrow ddarc(z.q,z.qqq,z.qq)(-4,-4);
 
 draw z.pp--z.y--z.qq dashed evenly;
 draw z.pp--z.qq--z.x--cycle;
@@ -169,7 +169,7 @@ draw z.p--z.x--z.y--z.q;
 draw z.p--z.y;
 draw z.q--z.x--z.pp;
 
-drawarrow reverse(ddarc(z.p,z.ppp,z.pp)(-4,-4));
+drawarrow ddarc(z.p,z.ppp,z.pp)(-4,-4);
 
 draw z.pp--z.y dashed evenly;
 
