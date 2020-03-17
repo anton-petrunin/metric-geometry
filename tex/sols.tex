@@ -641,6 +641,51 @@ Applying \ref{lem:opposite}, we can find a point $q\in\spc{X}$ such that
 \dist{f}{q}{\Inj\spc{X}},\]
 whence the result.
 
+\parbf{Exercise~\ref{ex:tringle-inq-angles}.}
+Let us show that $\gamma\le\alpha+\beta$; the rest of inequalities can be done the same way.
+Since $\gamma\le\pi$, we may assume that $\alpha+\beta< \pi$.
+
+Denote by $\gamma_x$, $\gamma_y$, and $\gamma_z$ the geodesics $[px]$, $[py]$, and $[pz]$ parameterized from $p$ by arc-length.
+By triangle inequality,
+for any $\eps>0$ and all sufficiently small $t,\tau,s\in\RR_+$ we have
+\begin{align*}
+\dist{\gamma_x(t)}{\gamma_z(\tau)}{}
+\le 
+\ &\dist{\gamma_x(t)}{\gamma_y(s)}{}+\dist{\gamma_y(s)}{\gamma_z(\tau)}{}<\\
+<
+\ &\sqrt{t^2+s^2-2\cdot t\cdot  s\cdot \cos(\alpha+\eps)}\ +
+\\
+&+\sqrt{s^2+\tau^2-2\cdot s\cdot \tau\cdot \cos(\beta+\eps)}\le
+\end{align*}
+
+Below we define 
+$s(t,\tau)$ so that for 
+$s=s(t,\tau)$, this chain of inequalities can be continued as follows:
+\[\le
+\ \sqrt{t^2+\tau^2-2\cdot t\cdot \tau\cdot \cos(\alpha+\beta+2\cdot \eps)}.
+\]
+Thus for any $\eps>0$, 
+\[\gamma\le \alpha+\beta+2\cdot \eps.\]
+Hence the result.
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-7}
+\end{wrapfigure}
+
+To define $s(t,\tau)$, consider three rays $\tilde \gamma_x$, $\tilde \gamma_y$, $\tilde \gamma_z$ on a Euclidean plane starting at one point, such that $\mangle(\tilde \gamma_x,\tilde \gamma_y)=\alpha+\eps$,
+$\mangle(\tilde \gamma_y,\tilde \gamma_z)=\beta+\eps$ and $\mangle(\tilde \gamma_x,\tilde \gamma_z)=\alpha+\beta+2\cdot \eps$.
+We parametrize each ray by the distance from the starting point.
+Given two positive numbers $t,\tau\in\RR_+$, let $s=s(t,\tau)$ be 
+the number such that 
+$\tilde \gamma_y(s)\in[\tilde \gamma_x(t)\ \tilde \gamma_z(\tau)]$. 
+Clearly $s\le\max\{t,\tau\}$, so $t,\tau,s$ may be taken sufficiently small.
+
+\parit{Remark.}
+Note that for the Euclidean space the statement implies that central angle defines a metric on unit sphere.
+This statement is not quite trivial; moreover, it is straightforward to modify Euclidean proof so it will work in Alexandrov settings. 
+
 \parbf{Exercise~\ref{ex:sba-2+2-short};} \textit{``only if'' part.}
 Let us start with two model triangles $[\tilde x\tilde y\tilde p]=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
 
@@ -865,7 +910,23 @@ The inequalities in  \ref{ex:(3+1)-expanding} imply that
 &
 \dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^4}
 \end{align*}
-It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$, $\tilde x$, and $\tilde y$ keeping the distance $\dist{\tilde p}{\tilde z}{\EE^4}$ and nondecreasing the rest of diatances. 
+It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$, $\tilde x$, and $\tilde y$ keeping the distance $\dist{\tilde p}{\tilde z}{\EE^4}$ and nondecreasing the rest of distances. 
+
+\parbf{Exercise~\ref{ex:CBB-geodesic}.}
+Suppose that the geodesic are distinct.
+In this case there are two points $p$ and $q$ on different geodesics such that $\dist{p}{x}{}=\dist{q}{x}{}$.
+Without loss of generality we may assume that $\dist{z}{x}{}<\dist{p}{x}{}$;
+in other words $z$ lies between $p$ and $x$ on the first geodesic and 
+$z$ lies between $q$ and $x$ on the second geodesic.
+Observe that 
+\[\angk zxp=\angk zxq=\pi.\]
+
+By comparison, we have
+\[\angk zxp+\angk zxq+\angk zpq\le2\cdot\pi.\]
+It follows that $\angk zpq=0$.
+Since $\dist{z}{p}{}=\dist{z}{q}{}$, it implies that $p=q$ --- a contradiction.
+
+
 
 \parbf{Exercise~\ref{ex:fat-triangle}.}
 Apply \ref{ex:noncreasing-CBB} twice.
@@ -880,4 +941,87 @@ We need to show that
 By \ref{ex:noncreasing-CBB}, we have
 \[\angk{x}{p}{q}\ge\angk{x}{y}{z}.\]
 Whence \ref{eq:pq=<pq} follows.
-  
+
+
+\parbf{Exercise~\ref{ex:convex-dist}.}
+By Jensen inequality, it is sufficient to show that 
+\[
+\dist{\gamma_1(t)}{\gamma_2(t)}{}
+\le
+(1-t)\cdot\dist{\gamma_1(0)}{\gamma_2(0)}{}
+t\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
+\]
+
+\begin{wrapfigure}{o}{45 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-8}
+\end{wrapfigure}
+
+Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
+From \ref{ex:noncreasing-CAT}, we have
+\begin{align*}
+\dist{\gamma_1(t)}{\delta(t)}{}
+&\le
+(1-t)\cdot\dist{\gamma_1(0)}{\delta(0)}{}
+\\
+\dist{\delta(t)}{\gamma_2(t)}{}
+&\le
+t\cdot\dist{\delta(1)}{\gamma_2(1)}{}
+\end{align*}
+It remains to sum it up and apply the triangle inequality.
+
+\parit{Remark.} Note that in the Euclidean space the proof is just as hard.
+
+\parbf{Exercise~\ref{ex:reshetnyak-doubling}.}
+If $A$ is not convex, then there is a geodesic $[xy]$ with the ends in $A$ and the remaining points outside of $A$.
+Observe that in the doubling, say $\spc{W}$, two copies of this geodesics connect the same pair of points $x$ and $y$.
+By \ref{ex:CAT-geodesic}, $\spc{W}$ is not $\CAT(0)$.
+
+\parbf{Exercise~\ref{ex:supporting-planes}.}
+By approximation, it is sufficient to consider the case when 
+$A$ and $B$ have smooth boundary. 
+
+If $[xy]\cap A\cap B\ne \emptyset$, then $z_0\in [xy]$ and $\dot A, \dot B$ can be chosen to be arbitrary half-spaces containing $A$ and $B$ respectively.  
+
+In the remaining case $[xy]\cap A\cap B=\emptyset$, 
+we have $z_0\in\partial (A\cap B)$.  
+Consider the solid ellipsoid
+\[C=\set{z\in\EE^m}{f(z)\le f(z_0)}.\] 
+Note that $C$ is compact, convex and has  smooth boundary. 
+
+Suppose $z_0\in\partial  A \cap \Int B$. 
+Then $A$ and $C$ touch at $z_0$ and we can set $\dot A$ to be the uniquely defined supporting half-space to $A$  at $z_0$ and $\dot B$ to be any half-space containing~$B$. 
+The case $z_0\in\partial B \cap \Int A$ is treated similarly.
+
+
+Finally, suppose $z_0\in\partial A\cap\partial B$. 
+Then the set  $\dot A$ (respectively, $\dot B$) is defined as the unique supporting half-space to $A$ (respectively, $B$) at $z_0$ containing $A$ (respectively, $B$).
+
+Suppose $f(z)<f(z_0)$ for some $z\in \dot A\cap\dot B$.
+Since $f$ is concave,
+$f(\bar z)<f(z_0)$ for any $\bar z \in \left[zz_0\right[$.
+Since $\left[zz_0\right[\cap A\cap B\ne\emptyset$,
+the latter contradicts the fact that $z_0$ is minimum point of $f$ on $A\cap B$.
+
+
+\parbf{Exercise~\ref{ex:compact-walls}.}
+Fix two open balls $B_1\z=\oBall(0,r_1)$ and $B_2=\oBall(0,r_2)$
+such that 
+\[B_1\subset A^i\subset B_2\]
+for each wall~$A^i$.
+
+Suppose $X$ is an intersections of  the walls.
+Observe that 
+\[B_1\subset X\subset B_2.\]
+Therefore if $x\in X$, then $X$ contains the convex hull $\Conv(B_1\cup\{x\}$;
+therefore all intersections of the walls have $\eps$-wide corners for $\eps=2\cdot \arcsin\tfrac{r_1}{r_2}$.
+
+\parbf{Exercise~\ref{ex:centrally-simmetric-walls}.}
+Note that any centrally symmetric convex closed set in Euclidean space is a product of a compact centrally symmetric convex set and a subspace.
+
+It follows that there is $R<\infty$
+such that if $X$ is an intersection of an arbitrary number of walls, then for any point $p\in X$ there is an isometry of $X$ 
+that moves  $p$ to a point in the ball $\oBall(0,R)$.
+
+It remains to apply the argument in Exercise~\ref{ex:compact-walls}.

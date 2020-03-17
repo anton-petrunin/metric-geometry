@@ -136,7 +136,7 @@ draw z.p--z.x--z.y--z.q;
 draw z.p--z.y;
 draw z.q--z.x;
 
-drawarrow ddarc(z.p,z.ppp,z.pp)(-4,-4));
+drawarrow ddarc(z.p,z.ppp,z.pp)(-4,-4);
 drawarrow ddarc(z.q,z.qqq,z.qq)(-4,-4);
 
 draw z.pp--z.y--z.qq dashed evenly;
@@ -181,6 +181,62 @@ label.rt(btex $\tilde y$ etex, z.y);
 label.top(btex $\tilde p$ etex, z.p);
 label.bot(btex $\tilde q$ etex, z.q);
 
+endfig;
+
+beginfig(7) 
+save u;
+u:=2cm;
+
+z.p=origin;
+z.x=(1,1)*u;
+z.z=(1.2,-.8)*u;
+z.y=.5[z.x,z.z];
+
+labelarcsprof(z.x, z.p, z.y, 10, 22, btex $=\alpha+\eps$ etex rotated (.5*(angle(z.y-z.p)+angle(z.x-z.p))));
+labelarcsprof2(z.y, z.p, z.z, 10, 21, btex $=\beta+\eps$ etex rotated (.5*(angle(z.y-z.p)+angle(z.z-z.p))));
+
+draw ddline(z.p,z.x)(0,.2);
+draw ddline(z.p,z.y)(0,.2);
+draw ddline(z.p,z.z)(0,.2);
+draw z.x--z.z;
+
+dOt z.p,z.x,z.y,z.z;
+
+whitelabel(btex $t$ etex rotated angle(z.x-z.p), .5[z.p,z.x]+(0,-2)); 
+whitelabel(btex $s(t,\tau)$ etex rotated angle(z.y-z.p), .7[z.p,z.y]+(0,1)); 
+whitelabel(btex $\tau$ etex rotated angle(z.z-z.p), .5[z.p,z.z]);
+endfig;
+
+beginfig(8) 
+save u,k;
+u:=.7cm;
+k=.4;
+
+
+z.p0=(0,0)*u;
+z.p1=(2,1)*u;
+z.q0=(1,-2)*u;
+z.q1=(3,-2.2)*u;
+
+z.a=k[z.p0,z.p1];
+z.b=k[z.q0,z.p1];
+z.c=k[z.q0,z.q1];
+
+draw z.p0--z.p1--z.q0--z.q1;
+draw z.a--z.b--z.c penhair dashed evenly;
+draw z.a--z.c penhair;
+draw z.p0--z.q0 penhair;
+draw z.p1--z.q1 penhair;
+
+dOt z.p0,z.p1,z.q0,z.q1,z.a,z.b,z.c;
+
+label.lft(btex $\gamma_1(0)$ etex, z.p0);
+label.urt(btex {\small $\gamma_1(1)=\delta(1)$} etex, z.p1);
+label.bot(btex $\gamma_2(1)$ etex, z.q1);
+label.llft(btex {\small $\gamma_2(0)=\delta(0)$} etex, z.q0);
+label.top(btex $\gamma_1(t)$ etex, z.a);
+label.rt(btex $\delta(t)$ etex, z.b);
+label.bot(btex $\gamma_2(t)$ etex, z.c);
 endfig;
 
 beginfig(10) 
