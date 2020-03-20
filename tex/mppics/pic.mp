@@ -736,4 +736,96 @@ whitelabel.bot(btex $z_0$ etex, z.z0+(0,-2));
 
 endfig;
 
+beginfig(91) 
+save u,p,n;
+path p[];
+u:=1cm;
+n=5;
+
+p0=(0,0)*u{1,-.5}..{1,-.5}(5,0)*u;
+
+draw p0;
+
+for i=0 step 1/n until 1.1:
+draw circle(point i of p0, .7*u);
+dOt point i of p0;
+endfor
+
+label.lft(btex $\spc{B}^0$ etex, point 0 of p0);
+label.bot(btex $\spc{B}^1$ etex, point 1/n of p0);
+label.bot(btex $\dots$ etex rotated angle(direction 3/n of p0), (2,-1)+point 3/n of p0);
+label.rt(btex $\spc{B}^n$ etex, point 1 of p0);
+endfig;
+
+beginfig(93) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.a0=(0,.3)*u;
+z.l=(-2.5,0)*u;
+z.a1=z.l+(0,1)*u;
+z.a2=z.l+(-1,0)*u;
+z.a3=z.l+(0,-1)*u;
+
+p0=z.a0..z.a1..z.a2..z.a3..-z.a0..-z.a1..-z.a2..-z.a3..cycle;
+p1=z.a0{left}..tension 5..-z.a0{right}..tension 5..cycle;
+
+draw p0;
+draw subpath (0,1) of p1;
+draw subpath (1,2) of p1 dashed evenly;
+endfig;
+
+beginfig(95) 
+save u,p,n;
+path p[];
+u:=1cm;
+n=5;
+
+z.p=origin;
+z.x=(-3,-4)*u;
+z.y=(3.5,-4)*u;
+
+draw z.x--z.y;
+draw z.p--z.x;
+draw z.p--z.y;
+
+z.x[0][n]=z.x;
+z.x[n][n]=z.y;
+for i=1 step 1 until n-1:
+z.x[i][n]=(i/n+normaldeviate/(20*n))[z.x,z.y];
+draw z.p--z.x[i][n];
+endfor
+
+for i=0 step 1 until n:
+for j=1 step 1 until n-1:
+z.x[i][j]=(j/n+normaldeviate/(20*n))[z.p,z.x[i][n]];
+endfor
+endfor
+
+for i=1 step 1 until n:
+for j=1 step 1 until n-1:
+draw z.x[i-1][j+1]--z.x[i][j]--z.x[i-1][j];
+endfor
+endfor
+
+for i=0 step 1 until n:
+for j=1 step 1 until n:
+dOt z.x[i][j];
+endfor
+endfor
+
+dOt z.p;
+
+
+label.urt(btex $p=x^{0,0}=\dots=x^{N,0}$ etex, z.p);
+label.lrt(btex $y=x^{N,N}$ etex, z.y);
+label.llft(btex $x^{0,N}=x$ etex, z.x);
+label.ulft(btex $x^{0,1}$ etex, z.x[0][1]);
+label.urt(btex $x^{N,1}$ etex, z.x[n][1]);
+label.bot(btex $x^{1,N}$ etex, z.x[1][n]);
+label.bot(btex $\dots$ etex, z.x[3][n]+(0,-2));
+label(btex $\dots$ etex rotated angle(z.p-z.x), z.x[0][3]+(-3,3));
+label(btex $\dots$ etex rotated angle(z.y-z.p), z.x[n][3]+(3,3));
+endfig;
 end

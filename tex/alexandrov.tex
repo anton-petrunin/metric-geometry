@@ -606,6 +606,18 @@ Show that $f$ is nonincreasing in each argument.
 Conclude that for any hinge in a $\CAT(0)$ or $\CBB(0)$ space has defined angle.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:contractible}
+Fix a point $p$ in a  be a complete length $\CAT(0)$ space $\spc{X}$.
+Given a point $x\in \spc{X}$, denote by $\gamma_x$ a (necessary unique) geodesic path from $p$ to $x$.
+
+Show that the family of maps $h_t\: \spc{X}\to \spc{X}$ defined by 
+\[h_t(x)= \gamma_x(t)\]
+is a homotopy; it is called \emph{geodesic homotopy}. 
+Conclude that $\spc{X}$ is contractible.
+\end{thm}
+
+ 
+
 \section{Thin and fat triangles}
 
 Recall that a \index{triangle}\emph{triangle} $\trig xyz$ in a space $\spc{X}$ 
@@ -653,17 +665,37 @@ The $\CAT(1)$ argument is the same.
 Show that any triangle is a $\CBB(0)$ space is fat. 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:convex-balls}
-Show that any ball $B$ in a proper length $\CAT(0)$ space is a convex set;
-that is, if $ x,y\in B$, then $[xy]\subset B$.
-\end{thm}
-
 \begin{thm}{Exercise}\label{ex:convex-dist}
 Suppose $\gamma_1,\gamma_2\:[0,1]\to \spc{U}$ be two geodesic paths in a complete length $\CAT(0)$ space $\spc{U}$.
 Show that
 \[t\mapsto\dist{\gamma_1(t)}{\gamma_2(t)}{\spc{U}}\]
 is a convex function.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-nbhd}
+Let $A$ be a convex closed set in a proper length $\CAT(0)$ space $\spc{U}$;
+that is, if $x,y\in A$, then $[xy]\subset A$.
+Show that for any $r>0$ the closed $r$-neighborhood of $A$ is convex;
+that is, the set
+\[A_r=\set{x\in \spc{U}}{\distfun_Ax\le r}\]
+is convex.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:closest-point}
+Let  $\spc{U}$ be a proper length $\CAT(0)$ space 
+and $K\subset \spc{U}$ be a closed convex set.
+Show that: 
+
+\begin{subthm}{ex:closest-point:a}
+For each point $p\in \spc{U}$ there is unique point $p^*\in K$ that minimizes the distance $\dist{p}{p^*}{}$.
+\end{subthm}
+
+\begin{subthm}{}
+The closest-point projection $p\mapsto p^*$ defined by (\ref{SHORT.ex:closest-point:a}) is short. 
+\end{subthm}
+
+\end{thm}
+
 
 \section{Other descriptions}
 
