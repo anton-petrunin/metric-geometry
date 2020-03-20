@@ -944,16 +944,20 @@ Whence \ref{eq:pq=<pq} follows.
 
 
 \parbf{Exercise~\ref{ex:convex-dist}.}
-By Jensen inequality, it is sufficient to show that 
+It is sufficient to prove the Jensen inequality;
+that is, 
 \[
 \dist{\gamma_1(t)}{\gamma_2(t)}{}
 \le
 (1-t)\cdot\dist{\gamma_1(0)}{\gamma_2(0)}{}
++
 t\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
+{
+
 \begin{wrapfigure}{o}{45 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-8}
 \end{wrapfigure}
@@ -970,6 +974,8 @@ From \ref{ex:noncreasing-CAT}, we have
 t\cdot\dist{\delta(1)}{\gamma_2(1)}{}
 \end{align*}
 It remains to sum it up and apply the triangle inequality.
+
+}
 
 \parit{Remark.} Note that in the Euclidean space the proof is just as hard.
 
