@@ -242,10 +242,10 @@ isbn=false]{biblatex}
 \newcounter{subthm}[thm]
 \renewcommand{\thesubthm}{\hbox{\thethm\textit{\hskip-0.03em \alph{subthm}}}}
 \newcounter{clone}[thm]
-\renewcommand{\theclone}{\textit{\alph{subthm}}}
+\renewcommand{\theclone}{\textit{(\alph{subthm})}}
 \newenvironment{subthm}[1]{\ifthenelse{\equal{#1}{}}
-{\par\refstepcounter{subthm}\begin{itemize}\item[\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
-\item [\alph{subthm})]}}{\end{itemize}}
+{\par\refstepcounter{subthm}\begin{itemize}\item[(\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
+\item [(\alph{subthm})]}}{\end{itemize}}
 %SUBTHEOREM A
 \newcounter{subthmA}[thm]
 \renewcommand{\thesubthmA}{\thethm\textit{\hskip-0.05em \Alph{subthmA}}}
