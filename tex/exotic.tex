@@ -1,0 +1,349 @@
+\section{Cubical complexes}
+
+The definition of a cubical complex
+mostly repeats the definition of a simplicial complex, 
+with simplices replaced by cubes.
+
+Formally, a \index{cubical complex}\emph{cubical complex} is defined as a subcomplex 
+of the unit cube in the Euclidean space $\RR^N$ of large dimension;
+that is, a collection of faces of the cube
+such that together with each face it contains all its sub-faces.
+Each cube face in this collection 
+will be called a \index{cube}\emph{cube} of the cubical complex.
+
+Note that according to this definition, 
+any cubical complex is finite.
+
+The union of all the cubes in a cubical complex $\spc{Q}$ will be called its \index{underlying space}\emph{underlying space}.
+A homeomorphism from the underlying space of $\spc{Q}$ to a topological space $\spc{X}$ is called a \index{cubulation}\emph{cubulation of}~$\spc{X}$.
+
+The underlying space of a cubical complex $\spc{Q}$ will be always considered with the length metric
+induced from~$\RR^N$.
+In particular, with this metric, 
+each cube of $\spc{Q}$ is isometric to the unit cube of the corresponding dimension.
+%the same dimension.
+%???Why should all the cubes have the same dimension?? V. Is it better? A.???
+
+It is straightforward to construct a triangulation 
+of the underlying space of $\spc{Q}$ 
+such that each simplex is isometric to a Euclidean simplex.
+In particular the underlying space of $\spc{Q}$ is a Euclidean polyhedral space.
+
+The link of a cube in a cubical complex is defined similarly to the link of a simplex in a simplicial complex.
+It is a simplicial complex that admits a natural all-right triangulation --- each simplex corresponds to an adjusted cube.
+
+\parbf{Cubical analog of a simplicial complex.}
+Let $\spc{S}$ be a finite simplicial complex and $\{v_1,\dots,v_N\}$ be the set of its vertices.
+
+Consider $\RR^N$ with the standard basis $\{e_1,\dots,e_N\}$.
+Denote by $\square^N$ the standard unit cube in $\RR^N$;
+that is, 
+\[\square^N=\set{(x_1,\dots,x_N)\in \RR^N}{0\le x_i\le 1\ \text{for each}\ i}.\]
+
+Given a $k$-dimensional simplex $\<v_{i_0},\dots,v_{i_k}\>$ in $\spc{S}$, 
+mark the $(k\z+1)$-dimensional faces in $\square^N$ (there are  $2^{N-k}$ of them)
+which are parallel to the coordinate $(k+1)$-plane 
+spanned by $e_{i_0},\dots,e_{i_k}$.
+
+
+Note that the set of all marked faces of $\square^{N}$
+forms a cubical complex;
+it will be called 
+the \index{cubical analog}\emph{cubical analog} of $\spc{S}$
+and will be denoted as $\square_\spc{S}$.
+
+\begin{thm}{Proposition}\label{prob:cubical-analog}
+Let $\spc{S}$ be a finite connected simplicial complex
+and $\spc{Q}=\square_{\spc{S}}$ be its cubical analog.
+Then the underlying space of $\spc{Q}$ is connected 
+and the link of any vertex of $\spc{Q}$
+is isometric to  ${\spc{S}}$
+equipped with the spherical right-angled metric.
+
+In particular, if $\spc{S}$ is a flag complex,
+then $\spc{Q}$ is a locally $\CAT(0)$
+and therefore its universal cover $\tilde{\spc{Q}}$ is $\CAT(0)$.
+\end{thm}
+
+\parit{Proof.}
+The first part of the proposition follows 
+from the construction of $\square_{\spc{S}}$.
+
+If ${\spc{S}}$ is flag, 
+then by the flag condition (\ref{thm:flag}) 
+the link of any cube in $\spc{Q}$ is $\CAT(1)$.
+Therefore, by the cone construction (Exercise \ref{ex:cone+susp})
+$\spc{Q}$
+is locally $\CAT(0)$.
+It remains to apply the globalization theorem 
+(\ref{thm:hadamard-cartan}).
+\qeds
+
+From Proposition \ref{prob:cubical-analog}, 
+it follows that the cubical analog
+of any flag complex is aspherical.
+The following exercise states that the  converse also holds; see \cite[5.4]{davis-survey}.
+
+\begin{thm}{Exercise}\label{ex:flag-aspherical}
+Show that a finite simplicial complex is flag 
+if and only if its cubical analog is aspherical.
+\end{thm}
+
+\section{Exotic aspherical manifolds}
+
+
+By the globalization theorem (\ref{thm:hadamard-cartan}),
+any proper length $\CAT(0)$ space is contractible.
+Therefore all proper length, locally $\CAT(0)$ spaces 
+are \index{aspherical}\emph{aspherical};
+that is, they have contractible universal covers.
+This observation can be used to construct examples of  aspherical spaces. 
+
+Let $\spc X$ be a proper topological space.
+Recall that $\spc X$ is called 
+\index{simply connected space at infinity}\emph{simply connected at infinity} 
+if for any compact set $K\subset\spc X$
+there is a bigger compact set $K'\supset K$
+such that  $\spc X\backslash K'$ is path connected 
+and any loop which lies in $\spc X\backslash K'$
+is null-homotopic in  $\spc X\backslash K$.
+
+Recall that path connected spaces are not empty by definition.
+Therefore compact spaces are not simply connected at infinity.
+
+The following example was constructed by Michael Davis in \cite{davis-noneuclidean}.
+
+\begin{thm}{Proposition}\label{prop:aspherical}
+For any  $m\ge 4$ there is a closed aspherical 
+$m$-dimensional manifold whose universal cover is not simply connected at infinity.
+
+In particular, the universal cover of this manifold 
+is not homeomorphic to the $m$-dimensional Euclidean space.
+\end{thm}
+
+The proof requires the following lemma.
+
+\begin{thm}{Lemma}\label{lem:example-pi_infty}
+Let $\spc{S}$ be a finite flag complex,
+$\spc{Q}=\square_{\spc{S}}$ be its cubical analog
+and $\tilde{\spc{Q}}$ be the universal cover of~$\spc{Q}$.
+
+Assume  $\tilde{\spc{Q}}$ is simply connected at infinity.
+Then $\spc{S}$ is simply connected.
+\end{thm}
+
+\parit{Proof.}
+Assume $\spc{S}$ is not simply connected. Equip $\spc{S}$ with an all-right spherical metric.
+Choose a shortest noncontractible circle $\gamma\:\mathbb{S}^1\to\spc{S}$ formed by the edges of~$\spc{S}$.
+
+Note that $\gamma$ forms a one-dimensional subcomplex of $\spc{S}$ which is a closed local geodesic.
+Denote by $G$ the subcomplex of $\spc{Q}$ which corresponds to~$\gamma$.
+
+Fix a vertex $v\in G$;
+let $G_v$ be the connected component of $v$ in~$G$.
+Let $\tilde G$ be a connected component of the inverse image of $G_v$ in $\tilde{\spc{Q}}$
+for the universal cover $\tilde{\spc{Q}}\to \spc{Q}$.
+Fix a point $\tilde v\in\tilde G$ in the inverse image of~$v$.
+
+ 
+Note that 
+\begin{clm}{}\label{tilde-G-convex}
+$\tilde G$ is a convex set in~$\tilde{\spc{Q}}$.
+\end{clm}
+
+%???PIC
+
+Indeed, according to Proposition \ref{prob:cubical-analog},
+$\tilde{\spc{Q}}$ is $\CAT(0)$.
+By Exercise \ref{ex:locally-convex},
+it is sufficient to show that $\tilde G$ is locally convex in $\tilde{\spc{Q}}$,
+or equivalently, $G$ is locally convex in~$\spc{Q}$.
+
+Note that the latter can only fail if $\gamma$ contains two vertices, say $\xi$ 
+and 
+$\zeta$ in $\spc{S}$,
+which are joined by an edge not in $\gamma$; 
+denote this edge by~$e$.
+
+Each edge of $\spc{S}$ has length~$\tfrac\pi2$.
+Therefore each of two circles formed by $e$ and an arc of $\gamma$
+from $\xi$ to $\zeta$ is shorter that~$\gamma$.
+Moreover,
+at least one of them is noncontractible 
+since $\gamma$ is 
+noncontractible.
+That is, 
+$\gamma$ is not a shortest noncontractible circle, a contradiction.
+\claimqeds
+
+Further, note that 
+$\tilde G$ is homeomorphic to the plane, 
+since $\tilde G$ is 
+a two-dimensional manifold without boundary which 
+by the above is $\CAT(0)$ and hence is contractible.
+
+Denote by $C_R$ the circle of radius $R$ in $\tilde G$ centered at~$\tilde v$.
+All $C_R$ are homotopic to each other in $\tilde G\backslash\{\tilde v\}$ and therefore in $\tilde{\spc{Q}}\backslash \{\tilde v\}$.
+
+Note that the map $\tilde{\spc{Q}}\backslash \{\tilde v\}\to \spc{S}$
+which returns the direction of $[{\tilde v}{x}]$  for any $x\ne \tilde v$, maps $C_R$ to a circle homotopic to~$\gamma$.
+Therefore $C_R$ is not contractible in $\tilde{\spc{Q}}\backslash \{\tilde v\}$.
+
+If $R$ is large, 
+the circle $C_R$  
+lies outside of any fixed compact set $K'$ in~$\tilde{\spc{Q}}$.
+From above $C_R$ is not contractible in $\tilde{\spc{Q}}\backslash K$
+if $K\supset \tilde v$.
+It follows that $\tilde{\spc{Q}}$ is not simply connected at infinity, a contradiction.
+\qeds
+
+The proof of the following exercise is analogous.
+It will be used later in the proof of Proposition~\ref{prop:loc-CAT-mnfld} --- a more geometric version of Proposition~\ref{prop:aspherical}.
+
+\begin{thm}{Exercise}\label{ex:example-pi_infty-new}
+Under the assumptions of Lemma~\ref{lem:example-pi_infty}, 
+for any vertex $v$ in $\spc{S}$
+the complement $\spc{S}\backslash\{v\}$ is simply connected.
+\end{thm}
+
+\parit{Proof of \ref{prop:aspherical}.}
+Let $\Sigma^{m-1}$ be an $(m-1)$-dimensional smooth homology sphere that  is not simply connected, and bounds a contractible smooth compact $m$-dimensional manifold~$\spc{W}$. 
+
+For $m\ge 5$ the existence of such $(\spc{W}, \Sigma)$ follows from \cite{kervaire}. 
+For $m=4$ it follows from the construction in \cite{mazur}.
+
+Pick any triangulation $\tau$ of $W$ and let $\spc{S}$ be the resulting subcomplex that triangulates~$\Sigma$.
+
+
+We can assume that $\spc{S}$ is flag; 
+otherwise pass to the barycentric subdivision 
+of $\tau$ and apply Exercise~\ref{ex:baricenric-flag}.
+
+
+Let $\spc{Q}=\square_{\spc{S}}$ be the cubical analog of~$\spc{S}$.
+
+By Proposition~\ref{prob:cubical-analog},
+$\spc{Q}$ is a homology manifold.
+It follows that $\spc{Q}$ is a piecewise linear manifold 
+with a finite number of singularities at its vertices.
+
+
+Removing a small contractible neighborhood $V_v$ of each vertex $v$ in $\spc{Q}$,
+we can obtain a piecewise linear manifold $\spc{N}$
+whose boundary is formed by several copies of~$\Sigma$.
+
+Let us glue a copy of  $\spc{W}$ along its boundary to each copy of $\Sigma$ in the boundary of~$\spc{N}$.
+This results in a  closed piecewise linear manifold 
+$\spc{M}$ which is homotopically equivalent to~$\spc{Q}$.
+
+Indeed, since both $V_v$ and $\spc{W}$ are contractible, the identity map of  their common boundary $\Sigma$ can be extended to a homotopy equivalence $V_v\to\spc{W}$ relative to the boundary.
+Therefore the identity map on $\spc{N}$ extends to homotopy equivalences 
+$f\: \spc Q\to \spc M$ and $g\:\spc M\to \spc Q$.
+
+Finally, by Lemma~\ref{lem:example-pi_infty},  
+the universal cover $\tilde{\spc{Q}}$ of $\spc{Q}$
+is not simply connected at infinity.
+
+The same holds for 
+the universal cover $\tilde{\spc{M}}$ of $\spc{M}$.
+The latter follows since the constructed homotopy equivalences 
+$f\: \spc Q\to \spc M$ and $g\:\spc M\to \spc Q$ 
+lift to {}\emph{proper maps} 
+$\tilde f \: \tilde{\spc{Q}}\to \tilde{\spc{M}}$
+and $\tilde g \: \tilde{\spc{M}}\to \tilde{\spc{Q}}$;
+that is, for any compact sets $A\subset \tilde{\spc{Q}}$ and $B\subset\tilde{\spc{M}}$, the inverse images $\tilde g^{-1}(A)$ and $\tilde f^{-1}(B)$ are compact.
+\qeds
+
+
+The following proposition was proved by
+Fredric Ancel, 
+Michael Davis,
+and Craig Guilbault in \cite{ADG};
+it could be considered as a more geometric version of Proposition~\ref{prop:aspherical}.
+
+
+\begin{thm}{Proposition}\label{prop:loc-CAT-mnfld}
+Given $m\ge 5$, there is a Euclidean polyhedral space $\spc{P}$ such that:
+\begin{subthm}{}
+$\spc{P}$ is homeomorphic to a closed $m$-dimensional manifold.
+\end{subthm}
+
+\begin{subthm}{}
+$\spc{P}$ is locally $\CAT(0)$.
+\end{subthm}
+
+\begin{subthm}{}
+The universal cover of $\spc{P}$ is not simply connected at infinity.
+\end{subthm}
+\end{thm}
+
+There are no three-dimensional examples of that type;
+see \cite{rolfsen} by Dale Rolfsen.
+In \cite{thurston}, Paul Thurston conjectured that the same holds in the four-dimensional case.
+\parit{Proof.}
+Apply Exercise~\ref{ex:example-pi_infty-new} to the barycentric subdivision of the simplicial complex $\spc{S}$ provided by Exercise~\ref{ex:funny-S}.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:funny-S}
+Given an integer $m\ge 5$,
+construct a finite $(m-1)$-dimensional simplicial complex $\spc{S}$ such that $\Cone\spc{S}$ is homeomorphic to $\EE^m$
+and $\pi_1(\spc{S}\backslash\{v\})\ne0$ for some vertex $v$ in~$\spc{S}$.
+\end{thm} 
+
+
+\section{Comments}
+As was mentioned earlier, the motivation for the notion of $\CAT(kappa)$ spaces comes from the fact that a Riemannian manifold is locally  $\CAT(kappa)$ if and only if it has $\sec\le\kappa$.
+This easily follows from Rauch comparison for Jacobi fields and Proposition~\ref{prop:thin=cat}.
+
+In the globalization theorem (\ref{thm:hadamard-cartan}), properness can be weakened to completeness; see our book \cite{AKP} and the references therein.
+
+The condition on polyhedral $\CAT(kappa)$ spaces given in Theorem~\ref{thm:PL-CAT} might look easy to use, 
+but in fact, it is hard to check even in very simple cases.
+For example the description of those coverings of $\SS^3$ branching at three 
+great circles which are $\CAT(1)$ requires quite a bit of work;
+see \cite{charney-davis-93} --- try to guess the answer before reading.
+
+Another example is the space $\spc{B}_4$ that  is the universal cover of $\CC^4$ infinitely branching in six complex planes $z_i=z_j$ with the induced length metric.
+So far it is not known if $\spc{B}_4$ is $\CAT(0)$.
+Understanding this space could be helpful for studying the braid group on 4 strings;
+read \cite{panov-petrunin:ramification} 
+by Dmitri Panov and the third author for more on it.
+This circle of questions is closely related to the generalization of the flag condition (\ref{thm:flag}) to  spherical simplices with few acute dihedral angles.
+
+
+The construction used in the proof of  Proposition~\ref{prop:aspherical} admits a number of interesting modifications,  
+several of which are discussed in the survey \cite{davis-survey} by Michael Davis.
+
+A similar argument was used by Michael Davis, 
+Tadeusz Januszkiewicz,
+and  Jean-Fran\c{c}ois Lafont in \cite{davis-januszkiewicz-lafont}.
+They constructed a closed smooth four-dimensional manifold $M$ with  universal cover $\tilde M$ diffeomorphic to $\RR^4$, such that $M$ admits a polyhedral metric which is locally $\CAT(0)$, but does not admit a Riemannian metric with nonpositive sectional curvature.
+Another example of that type was constructed by Stephan Stadler; see~\cite{stadler}.
+There are no lower dimensional examples of this type ---
+the two-dimensional case follows from the  classification of surfaces,
+and 
+the three-dimensional case follows from the geometrization conjecture.
+
+It is noteworthy that any complete, simply connected Riemannian manifold with nonpositive curvature is homeomorphic to the Euclidean space of the same dimension.
+In fact, by the globalization theorem
+(\ref{thm:hadamard-cartan}), 
+the exponential map at a point of such a manifold is a homeomorphism.
+In particular, there is no Riemannian analog of Proposition~\ref{prop:loc-CAT-mnfld}.
+
+Recall that a triangulation of an $m$-dimensional manifold defines a piecewise linear structure if the link  of every simplex $\Delta$ is homeomorphic to the sphere of dimension $m-1-\dim\Delta$.
+According to Stone's theorem, see \cite{stone, davis-januszkiewicz}, the triangulation of $\spc{P}$ in Proposition~\ref{prop:loc-CAT-mnfld} 
+cannot be made piecewise linear --- despite  the fact that $\spc{P}$ is a manifold, its triangulation does not induce a piecewise linear structure.
+
+The flag condition also leads to the so-called {}\emph{hyperbolization} procedure, a flexible tool for constructing  aspherical spaces;
+a good survey on the subject is given by Ruth Charney and Michael Davis in \cite{charney-davis}.
+
+All the topics discussed in this chapter link Alexandrov geometry with the fundamental group.
+The theory of {}\emph{hyperbolic groups}, 
+a branch of \emph{geometric group theory}, 
+introduced by 
+Mikhael Gromov \cite{gromov:hyp-groups},
+could be considered as a further step in this direction.
+
+
+
+

@@ -1,0 +1,427 @@
+\chapter{Polyhedral spaces}\label{chapter:polyhedral}
+
+\section{Space of directions and tangent space}
+\label{sec:tangent-space+directions}
+
+In this section we introduce a metric analog of (unit) tangent bundle that makes sense in Alexandrov geometry.
+
+Let $\spc{X}$ be a metric space with defined angles for all hinges;
+by \ref{ex:noncreasing} it holds for any $\CBB(\kappa)$ or $\CAT(\kappa)$ space.
+Fix a point $p\in \spc{X}$. 
+
+Consider the set $\mathfrak{S}_p$ 
+of all nontrivial geodesics  that start at~$p$.
+By \ref{ex:tringle-inq-angles}, the triangle inequality holds for $\mangle$ on $\mathfrak{S}_p$,
+so
+ $(\mathfrak{S}_p,\mangle)$ 
+forms a \index{pseudometric space}\emph{pseudometric space};
+that is, $\mangle$ satisfies all the conditions of a metric on $\mathfrak{S}_p$, except that  the angle between distinct geodesics might vanish.
+
+The metric space corresponding to  $(\mathfrak{S}_p,\mangle)$ is called the \index{space of geodesic directions}\emph{space of geodesic directions} at $p$, denoted by $\Sigma'_p$ or $\Sigma'_p\spc{X}$.
+Elements of $\Sigma'_p$ are called \index{geodesic directions}\emph{geodesic directions} at~$p$.
+Each geodesic direction is formed by an equivalence class of geodesics in $\mathfrak{S}_p$
+for the equivalence relation 
+\[[px]\sim[py]\ \ \iff\ \ \mangle\hinge pxy=0.\]
+
+The completion of $\Sigma'_p$ is called the 
+\index{space of directions}\emph{space of directions} at $p$ and is denoted by $\Sigma_p$ or $\Sigma_p\spc{X}$.
+Elements of $\Sigma_p$ are called \index{direction}\emph{directions} at~$p$.
+
+The Euclidean cone $\Cone\Sigma_p$ over the space of directions $\Sigma_p$ is called the \index{tangent space}\emph{tangent space} at  $p$ and is denoted by $\T_p$ or $\T_p\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:geod-CBA}
+Assume $\spc{U}$ is a proper length $\CAT(\kappa)$ space
+ with extendable geodesics;
+that is, any geodesic is an arc in a local geodesic $\RR\to \spc{U}$.
+
+Show that the space of geodesic directions at any point in $\spc{U}$ is complete.
+
+Does the statement remain true if $\spc{U}$ is complete, but not required to be proper?
+\end{thm}
+
+
+The tangent space $\T_p$ could also be defined directly, without introducing the space of directions.
+To do so, consider the set $\mathfrak{T}_p$ of all geodesics with constant-speed parametrizations starting at~$p$. 
+Given $\alpha,\beta\in \mathfrak{T}_p$,
+set 
+\[\dist{\alpha}{\beta}{\mathfrak{T}_p}
+=
+\lim_{\eps\to0} 
+\frac{\dist{\alpha(\eps)}{\beta(\eps)}{\spc{X}}}\eps
+\eqlbl{eq:dist-in-T_p}\]
+Since the angles in $\spc{X}$ are defined, 
+\ref{eq:dist-in-T_p}
+defines a pseudometric on $\mathfrak{T}_p$.
+
+
+The corresponding metric space admits a natural isometric identification with the cone $\T'_p=\Cone\Sigma'_p$.
+The elements of $\T'_p$ are  equivalence classes for the relation 
+\[\alpha\sim\beta\ \ \iff\ \ \dist{\alpha(t)}{\beta(t)}{\spc{X}}=o(t).\]
+The completion of $\T'_p$ is therefore  naturally isometric to~$\T_p$.
+
+Elements of $\T_p$ will be called 
+\index{tangent vector}\emph{tangent vectors} 
+at $p$, regardless of the fact that $\T_p$ is only a metric cone and need not be a vector space.
+Elements of $\T'_p$ will be called 
+\index{geodesic tangent vector}\emph{geodesic tangent vectors} 
+at~$p$.
+
+\begin{thm}{Exercise}\label{ex:tan(CAT)isCAT}
+Let $\spc{X}$ be a complete length $\CAT(0)$ space.
+Show that for any point $p\in \spc{X}$  the tangent space $\T_p\spc{X}$ is isometric to a subset of the ultra-tangent space $\T_p^\omega\spc{X}$ (defined on page~\ref{page:ultratangent space}).
+
+Use \ref{prop:cat-limit} to conclude that $\T_p\spc{X}$ is $\CAT(0)$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:tan(CAT)is-length}
+Let $\spc{X}$ be a complete length $\CAT(0)$ space.
+Show that for any point $p\in \spc{X}$ the tangent space $\T_p\spc{X}$ is a length space.
+\end{thm}
+
+\section{Suspension}
+
+Suspension a spherical analog of cone construction defined on page~\pageref{page:cone}.
+
+The \index{suspension}\emph{suspension} $\spc{V}=\Susp\spc{U}$ over a metric space $\spc{U}$
+is defined as the metric space whose underlying set consists of equivalence classes in
+$[0,\pi]\times \spc{U}$ with the equivalence relation ``$\sim$'' given by $(0,p)\z\sim (0,q)$ and $(\pi,p)\z\sim (\pi,q)$ for any points $p,q\in\spc{U}$,
+and whose metric is given by the  spherical cosine rule
+\[
+\cos\dist{(p,s)}{(q,t)}{\Susp\spc{U}} 
+=
+\cos s\cdot\cos t-\sin s\cdot\sin t\cdot\cos\alpha,
+\]
+where $\alpha= \min\{\pi, \dist{p}{q}{\spc{U}}\}$.
+
+The points in $\spc{V}$ formed by the equivalence classes of $0\times\spc{U}$ and $\pi\times\spc{U}$ are called  the \emph{north} and the  \index{pole of suspension}\emph{south poles} of the suspension.
+
+\begin{thm}{Exercise}\label{ex:product-cone}
+Let $\spc{U}$ be a metric space.
+Show that the spaces 
+\[\RR\times \Cone\spc{U}\quad\text{and}\quad\Cone[\Susp\spc{U}]\]
+are  isometric.
+\end{thm}
+
+The following statement is a direct analog of \ref{ex:cone+susp} and it can be proved along the same lines.
+
+\begin{thm}{Proposition}\label{prop:susp}
+Let $\spc{U}$ be a metric space.
+Then $\Susp\spc{U}$ is  $\CAT(1)$ if and only if $\spc{U}$ is $\CAT(1)$.
+\end{thm}
+
+
+\section{Definitions}
+
+\begin{thm}{Definition}\label{def:poly}
+A length space $\spc{P}$ is called  
+a \index{polyhedral space}\emph{(spherical) polyhedral space} 
+if it admits a finite triangulation $\tau$ 
+such that every simplex in $\tau$ is isometric to a simplex in a Euclidean space (or correspondingly a unit sphere) of appropriate dimension.
+
+By a 
+\index{triangulation of a polyhedral space}\emph{triangulation of a polyhedral space} 
+we will always understand a triangulation as above. 
+\end{thm}
+
+Note that according to the above definition,
+all polyhedral spaces are compact.
+However, 
+most of the statements below admit straightforward generalizations 
+to \index{polyhedral spaces!locally polyhedral spaces}\emph{locally polyhedral spaces};
+that is, complete length spaces,  
+any point of which admits a closed neighborhood isometric to a polyhedral space.
+The latter class of spaces includes in particular infinite covers of polyhedral spaces.
+
+The \index{dimension of a polyhedral space}\emph{dimension} of a polyhedral space $\spc{P}$
+is defined as the maximal dimension of the simplices 
+in one (and therefore any) triangulation of~$\spc{P}$.
+
+\parbf{Links.}
+Let $\spc{P}$ be a polyhedral space
+and $\sigma$ be a simplex in a triangulation $\tau$ of~$\spc{P}$.
+
+The simplices that  contain $\sigma$
+form an abstract simplicial complex called the \index{link}\emph{link} of $\sigma$, 
+denoted by $\Link_\sigma$.
+If $m$ is  the dimension of $\sigma$,
+then the set of vertices of $\Link_\sigma$
+is formed by the $(m+1)$-simplices that  contain $\sigma$;
+the set of its edges are formed by the $(m+2)$-simplices 
+that contain $\sigma$; and so on.
+
+The link $\Link_\sigma$
+can be identified with the subcomplex of $\tau$ 
+formed by all the simplices $\sigma'$ 
+such that $\sigma\cap\sigma'=\emptyset$ 
+but both $\sigma$ and $\sigma'$ are faces of a simplex of~$\tau$.
+
+The points in $\Link_\sigma$ can be identified with the normal directions to $\sigma$ at a point in its interior.
+The angle metric between directions makes  $\Link_\sigma$ into a spherical polyhedral space.
+We will always consider the link with this metric.
+
+\parbf{Tangent space and space of directions.}
+Let $\spc{P}$ be a polyhedral space (Euclidean or spherical) and  $\tau$ be its triangulation.
+If a point $p\in \spc{P}$ 
+lies in the interior of a $k$-simplex $\sigma$ of $\tau$ 
+then the tangent space $\T_p=\T_p\spc{P}$
+is  naturally isometric to
+\[\EE^k\times(\Cone\Link_\sigma).\]
+Equivalently, the space of directions $\Sigma_p=\Sigma_p\spc{P}$
+can be isometrically identified with the 
+$k$-times iterated suspension over $\Link_\sigma$;
+that is, 
+\[\Sigma_p\iso\Susp^{k}(\Link_\sigma).\]
+
+If $\spc{P}$ is an $m$-dimensional polyhedral space,
+then for any $p\in \spc{P}$
+the space of directions $\Sigma_p$ is a spherical polyhedral space
+of dimension at most $m-1$. 
+
+In particular, 
+for any point $p$ in $\sigma$,
+the isometry class of $\Link_\sigma$ together with $k=\dim\sigma$
+determines the isometry class of $\Sigma_p$, 
+ and the other way around --- $\Sigma_p$ and $k$ determines the isometry class of $\Link_\sigma$.
+
+A small neighborhood of $p$ is isometric to a neighborhood of the tip of $\Cone\Sigma_p$. 
+(If $\spc{P}$ is a spherical polyhedral space, then a small neighborhood of $p$ is isometric to a neighborhood of the north pole in $\Susp\Sigma_p$.)
+In fact, if this property holds at any point of a compact length space $\spc{P}$,
+then  $\spc{P}$ is a polyhedral space \cite{lebedeva-petrunin}.
+
+The following theorem provides a combinatorial description of polyhedral spaces with curvature bounded above.
+
+
+\begin{thm}{Theorem}\label{thm:PL-CAT}
+Let $\spc{P}$ be a polyhedral space and $\tau$ be its triangulation. 
+Then $\spc{P}$ is locally $\CAT(0)$ if and only if the link of each simplex in $\tau$ has no closed local geodesic shorter than $2\cdot\pi$.
+
+Analogously, let $\spc{P}$ be a spherical polyhedral space and $\tau$ be its triangulation. 
+Then $\spc{P}$ is $\CAT(1)$ if and only if neither $\spc{P}$ nor  the  link of any simplex in $\tau$ has a closed local geodesic shorter than $2\cdot\pi$.
+\end{thm}
+
+
+
+
+
+\parit{Proof.}
+The ``only if'' part follows from \ref{cor:loc-geod-are-min}, \ref{prop:susp}, and \ref{ex:cone+susp}.
+
+To prove the ``if'' part,
+we apply induction on $\dim\spc{P}$.
+The base case $\dim\spc{P}=0$ is evident.
+Let us start with the $\CAT(1)$ case.
+
+\parit{Step.}
+Assume that the theorem is proved in the case $\dim\spc{P}<m$. Suppose  $\dim\spc{P}=m$.
+
+
+Fix a point $p\in\spc{P}$.
+A neighborhood of $p$ 
+is isometric to a neighborhood of the north pole in the suspension over the space of directions~$\Sigma_p$.
+
+Note that $\Sigma_p$ is a spherical polyhedral space, 
+and its  links are isometric to  links of~$\spc{P}$. 
+By the  induction hypothesis, $\Sigma_p$ is $\CAT(1)$.
+Thus, by the second part of Exercise~\ref{ex:cone+susp}, $\spc{P}$ is locally  $\CAT(1)$.
+
+
+Applying the second part of Corollary~\ref{cor:closed-geod-cat},
+we get the statement.
+
+The $\CAT(0)$ case is done in exactly the same way except we need to use the first part of Exercise~\ref{ex:cone+susp} and  the first part of Corollary~\ref{cor:closed-geod-cat} on the last step.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:unique-geod=CAT}
+Let $\spc{P}$
+be a polyhedral space such that any two points can be connected by a unique geodesic.
+Show that $\spc{P}$ is $\CAT(0)$.
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:S3}
+Construct a Euclidean polyhedral metric on $\mathbb{S}^3$
+such that the total angle around each edge in its triangulation is at least $2\cdot \pi$.
+\end{thm}
+
+
+\section{Flag complexes}
+
+
+\begin{thm}{Definition}\label{def:flag}
+A simplicial complex $\mathcal{S}$ 
+is called \index{flag complex}\emph{flag} if whenever $\{v^0,\z\dots,v^k\}$
+is a set of distinct vertices of $\mathcal{S}$
+that are pairwise joined by edges, then the vertices $v^0,\dots,v^k$
+span a $k$-simplex in~$\mathcal{S}$.
+
+If the above condition is satisfied for $k=2$, 
+then we say that $\mathcal{S}$ satisfies 
+the \index{no-triangle condition}\emph{no-triangle condition}.
+\end{thm}
+
+Note that every flag complex is determined by its one-skeleton.
+Moreover, for any graph, its \index{clique}\emph{cliques} (that is, complete subgraphs) define a flag complex.
+For that reason  flag complexes are also called  \index{clique complex}\emph{clique complexes}.
+
+\begin{thm}{Exercise}\label{ex:baricenric-flag}
+Show that the barycentric subdivision of any simplicial complex is a flag complex.
+
+Use the flag condition (see \ref{thm:flag} below)
+to conclude that any finite simplicial complex is homeomorphic to a proper length $\CAT(1)$ space.
+
+\end{thm}
+
+
+\begin{thm}{Proposition}\label{prop:no-trig}
+A simplicial complex $\mathcal{S}$ is flag if and only if 
+$\mathcal{S}$ as well as all the links of all its simplices
+satisfy the no-triangle condition.
+\end{thm}
+
+From the definition of flag complex 
+we get the following.
+
+\begin{thm}{Observation}\label{obs:link-of-flag}
+Any link of any simplex in a flag complex is flag.
+\end{thm}
+
+
+\parit{Proof of \ref{prop:no-trig}.}
+By Observation~\ref{obs:link-of-flag}, the no-triangle condition holds 
+for any flag complex and the  links of all its simplices.
+
+Now assume that a complex $\spc{S}$ and all its links satisfy 
+the no-triangle condition.
+It follows that $\spc{S}$ includes a 2-simplex for each triangle.
+Applying the same observation for each edge we get that $\spc{S}$ 
+includes a 3-simplex for any complete graph with 4 vertices.
+Repeating this observation 
+for triangles, 
+4-simplices,
+5-simplices,
+and so on, we get that $\spc{S}$ is flag.
+\qeds
+
+
+\parbf{All-right triangulation.}
+A triangulation of a spherical polyhedral space 
+is called an  \index{all-right triangulation}\emph{all-right triangulation} 
+if each simplex of the triangulation is isometric 
+to a spherical simplex all of whose angles are right.
+Similarly, we say that a simplicial complex 
+is equipped with an  \index{all-right spherical metric}\emph{all-right spherical metric}
+if it is a length metric and each simplex is isometric 
+to a spherical simplex all of whose angles are right.
+
+Spherical polyhedral $\CAT(1)$ spaces glued from right-angled simplices
+admit the following characterization 
+discovered by Mikhael Gromov \cite[p.~122]{gromov-1987}.
+
+\begin{thm}{Flag condition}\label{thm:flag}
+Assume that a spherical polyhedral space $\spc{P}$
+admits an all-right triangulation~$\tau$.
+Then $\spc{P}$ is $\CAT(1)$
+if and only if $\tau$ is flag.
+\end{thm}
+
+\parit{Proof; ``only if'' part.} 
+Assume there are three vertices $v^1,v^2$ and $v^3$ of $\tau$
+that are pairwise joined by edges 
+but do not span a triangle.
+Note that in this case 
+\[
+\mangle\hinge{v^1}{v^2}{v^3}=
+\mangle\hinge{v^2}{v^3}{v^1}=
+\mangle\hinge{v^3}{v^1}{v^2}=
+\pi.
+\]
+Equivalently,
+\begin{clm}{}\label{clm:3pi/2}
+The product
+of the geodesics $[v^1v^2]$, $[v^2v^3]$ and $[v^3v^1]$
+forms a locally geodesic loop in~$\spc{P}$ of length $\tfrac32\cdot\pi$.
+\end{clm}
+
+Now assume that $\spc{P}$ is $\CAT(1)$.
+Then by Theorem~\ref{thm:PL-CAT},
+$\Link_\sigma\spc{P}$ is $\CAT(1)$ for every simplex $\sigma$ 
+in~$\tau$. 
+
+Each of these links is an all-right spherical complex and by Theorem \ref{thm:PL-CAT}, none of these links can contain a geodesic circle shorter than $2\cdot\pi$. 
+
+Therefore Proposition~\ref{prop:no-trig} and \ref{clm:3pi/2} 
+imply the ``only if'' part.
+
+\parit{``If'' part.} 
+By Observation~\ref{obs:link-of-flag} and Theorem~\ref{thm:PL-CAT},
+it is sufficient to show that any closed local geodesic $\gamma$ 
+in a flag complex $\spc{S}$ with all-right metric has length at least $2\cdot\pi$.
+
+Recall that the  \index{star of vertex}\emph{closed star} of a vertex $v$ (briefly $\overline \Star_v$)
+is formed by all the simplices containing~$v$. 
+Similarly, $\Star_v$, the open star of $v$, is the union of all simplices containing $v$ with faces opposite $v$ removed.
+
+Choose a vertex $v$ such that $\Star_v$ contains a point $\gamma(t_0)$ of $\gamma$.
+Consider the maximal arc $\gamma_v$ of $\gamma$ 
+that contains the point $\gamma(t_0)$
+and runs in $\Star_v$.
+Note that the distance $\dist{v}{\gamma_v(t)}{\spc{P}}$ behaves in exactly the same way 
+as the distance from the north pole in~$\mathbb{S}^2$ to a geodesic in the north hemisphere;
+that is, there is a geodesic $\tilde\gamma_v$ in the north hemisphere of $\mathbb{S}^2$ such that for any $t$ we have
+\[\dist{v}{\gamma_v(t)}{\spc{P}}
+=
+\dist{n}{\tilde\gamma_v(t)}{\mathbb{S}^2},\]
+where $n$ denotes the north pole of~$\mathbb{S}^2$.
+In particular, 
+\[\length\gamma_v=\pi;\]
+that is, $\gamma$ spends time $\pi$ on every visit to $\Star_v$.
+
+
+\begin{wrapfigure}{r}{45mm}
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-100}
+\end{wrapfigure}
+
+After leaving $\Star_v$,
+the local geodesic $\gamma$ has to enter another simplex, 
+say~$\sigma'$.
+Since $\tau$ is flag, the simplex $\sigma'$
+has a vertex $v'$ not joined to $v$ by an edge;
+that is, 
+\[\Star_v\cap\Star_{v'}=\emptyset\]
+
+The same argument as above shows that $\gamma$ spends time $\pi$ on every visit to $\Star_{v'}$.
+Therefore the total length of $\gamma$ is at least~$2\cdot\pi$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:flag>=pi/2}
+Assume that a spherical polyhedral space $\spc{P}$
+admits a triangulation $\tau$ such that all edge lengths of all simplices are at least~$\tfrac\pi2$.
+Show that $\spc{P}$ is $\CAT(1)$
+if $\tau$ is flag.
+\end{thm}
+
+\parbf{The space of trees.}
+The following construction is given by
+Louis Billera,
+Susan Holmes,
+and  Karen Vogtmann in~\cite{billera-holmes-vogtmann}.
+
+Let $\spc{T}_n$ be the set of all metric trees with 
+$n$ end vertices
+labeled by $a^1,\dots,a^n$.
+To describe one tree in $\spc{T}_n$ we may fix a topological  trivalent tree $t$ with end vertices $a^1,\dots,a^n$ 
+and all  other vertices of degree 3,  
+and prescribe the lengths of $2\cdot n-3$ edges.
+If the length of an edge vanishes, we assume that this edge degenerates;
+such a tree can be also described using a different topological tree~$t'$.
+The subset of $\spc{T}_n$ corresponding to the given topological tree $t$ can be identified with the octant
+\[\set{(x_1,\dots,x_{2\cdot n-3})\in\mathbb{R}^{2\cdot n-3}}{x_i\ge 0}.\]
+Equip each such subset with the metric induced from $\mathbb{R}^{2\cdot n-3}$ and consider the length metric on $\spc{T}_n$ induced by these metrics.
+
+\begin{thm}{Exercise}\label{ex:tree}
+Show that $\spc{T}_n$ with the described metric is $\CAT(0)$.
+\end{thm}
+
+
+
