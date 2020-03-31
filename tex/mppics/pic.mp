@@ -829,6 +829,23 @@ label(btex $\dots$ etex rotated angle(z.p-z.x), z.x[0][3]+(-3,3));
 label(btex $\dots$ etex rotated angle(z.y-z.p), z.x[n][3]+(3,3));
 endfig;
 
+beginfig(97) 
+save u,p;
+path p[];
+u:=1cm;
+
+p0=(0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u--cycle;
+
+hatchfill p0 withcolor (40, 1mm, -.5bp);
+draw subpath(0,1) of p0 dashed evenly pensemibold;
+draw subpath(1,4) of p0 pensemibold;
+
+draw (0,0)*u{1,-.6}..{1,.6}(1,0)*u pensemibold;
+
+Dot (0,0)*u,(1,0)*u;
+
+endfig;
+
 beginfig(100) 
 save u,p;
 path p[];
