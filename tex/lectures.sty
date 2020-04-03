@@ -42,6 +42,10 @@ isbn=false]{biblatex}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{library.bib}
 
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
+
 
 %LIST STILES
 \renewcommand{\@listI}{%

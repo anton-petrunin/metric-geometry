@@ -882,4 +882,29 @@ whitelabel.urt(btex $\Star_v$ etex, z.r rotatedabout(z.v,-160));
 label.llft(btex $\Star_{v'}$ etex, -z.r rotatedabout(z.vv,-160));
 endfig;
 
+beginfig(110) 
+save u,p;
+path p[];
+u:=.7cm;
+
+z.x=origin;
+z.z=(0,1)*u;
+z.r2=z.z+(z.z rotated -72);
+z.r3=z.r2+(z.z rotated -144);
+z.r4=(-z.z rotated 72);
+
+z.l2=z.z+(z.z rotated 60);
+z.l3=z.l2+(z.z rotated 120);
+z.l4=z.l3+(z.z rotated 180);
+z.l5=z.l4+(z.z rotated -120);
+
+draw z.x--z.z--z.r2--z.r3--z.r4--cycle;
+draw z.z--z.l2--z.l3--z.l4--z.l5--z.x--cycle;
+
+dOt z.x,z.z,z.r2,z.r3,z.r4,z.l2,z.l3,z.l4,z.l5;
+
+label.bot(btex $\xi$ etex, z.x);
+label.top(btex $\zeta$ etex, z.z);
+label.lft(btex $e$ etex, .5[z.x,z.z]);
+endfig;
 end

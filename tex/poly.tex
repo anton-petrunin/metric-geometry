@@ -192,6 +192,8 @@ A small neighborhood of $p$ is isometric to a neighborhood of the tip of $\Cone\
 In fact, if this property holds at any point of a compact length space $\spc{P}$,
 then  $\spc{P}$ is a polyhedral space \cite{lebedeva-petrunin}.
 
+\section{CAT test}
+
 The following theorem provides a combinatorial description of polyhedral spaces with curvature bounded above.
 
 
@@ -405,6 +407,14 @@ Show that $\spc{P}$ is $\CAT(1)$
 if $\tau$ is flag.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:polyhedron-glue}
+Let $P$ be a convex polyhedron in $\EE^3$ with $n$ faces $F_1,\dots, F_n$.
+Suppose that each face of $P$ has only obtuse or right angles.
+Let us take $2^n$ copies of $P$ indexed by $n$-bit array.
+Glue two copies of $P$ along $F_i$ if their arrays differ only in $i$-th bit.
+Show that the obtained space is a locally $\CAT(0)$ topological manifold.
+\end{thm}
+
 \parbf{The space of trees.}
 The following construction is given by
 Louis Billera,
@@ -427,5 +437,51 @@ Equip each such subset with the metric induced from $\mathbb{R}^{2\cdot n-3}$ an
 Show that $\spc{T}_n$ with the described metric is $\CAT(0)$.
 \end{thm}
 
+\section{Remarks}
 
+Let us formulate a test for spaces with lower curvature bound.
+
+\begin{thm}{Theorem}\label{thm:poly-CBB} Let $\spc{P}$ be a polyhedral space and $\tau$ be a triangulation of $\spc{P}$.
+Then $\spc{P}$ is $\CBB(0)$ if and only if the following conditions hold.
+
+\begin{subthm}{} $\tau$ is \emph{pure}; 
+that is, any simplex in $\tau$ is  a face of some simplex of dimension exactly $m$. 
+\end{subthm}
+
+\begin{subthm}{thm:poly-CBB:m-1}
+The link of any simplex of dimension $m-1$ is formed by single point or two points.
+\end{subthm}
+
+\begin{subthm}{thm:poly-CBB:connected}
+The link of any simplex of dimension $\le m-2$ is connected.
+\end{subthm}
+
+\begin{subthm}{thm:poly-CBB:2pi}
+Any link of any simplex of dimension $m-2$
+has diameter at most~$\pi$.
+\end{subthm}
+\end{thm}
+
+The proof relies on \ref{thm:cbb-globalization}.
+The condition \ref{SHORT.thm:poly-CBB:connected}
+can be reformulated in the following way:
+
+\begin{itemize}
+ \item[{\it \ref{SHORT.thm:poly-CBB:connected}$'$}] 
+Any path $\gamma\:[0,1]\to \spc{P}$ can be approximated by paths
+$\gamma_n\:[0,1]\to \spc{P}$ 
+that cross only simplexes of dimension $m$ and $m-1$.
+\end{itemize}
+
+Further, modulo the other conditions,
+the condition \ref{SHORT.thm:poly-CBB:2pi}
+is equivalent to the following:
+
+
+\begin{itemize}
+ \item[{\it \ref{SHORT.thm:poly-CBB:2pi}$'$}] 
+The link of any simplex of dimension $m-2$ is 
+isometric to a circle of length $\le 2\cdot\pi$
+or a closed real interval of length $\le \pi$.
+\end{itemize}
 

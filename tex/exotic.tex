@@ -1,3 +1,5 @@
+\chapter{Exotic aspherical manifolds}\label{chapter:aspherical}
+
 \section{Cubical complexes}
 
 The definition of a cubical complex
@@ -72,7 +74,7 @@ from the construction of $\square_{\spc{S}}$.
 If ${\spc{S}}$ is flag, 
 then by the flag condition (\ref{thm:flag}) 
 the link of any cube in $\spc{Q}$ is $\CAT(1)$.
-Therefore, by the cone construction (Exercise \ref{ex:cone+susp})
+Therefore, by the cone construction (\ref{ex:cone+susp})
 $\spc{Q}$
 is locally $\CAT(0)$.
 It remains to apply the globalization theorem 
@@ -82,14 +84,14 @@ It remains to apply the globalization theorem
 From Proposition \ref{prob:cubical-analog}, 
 it follows that the cubical analog
 of any flag complex is aspherical.
-The following exercise states that the  converse also holds; see \cite[5.4]{davis-survey}.
+The following exercise states that the  converse also holds; see \cite[5.4]{davis-2001}.
 
 \begin{thm}{Exercise}\label{ex:flag-aspherical}
 Show that a finite simplicial complex is flag 
 if and only if its cubical analog is aspherical.
 \end{thm}
 
-\section{Exotic aspherical manifolds}
+\section{Construction}
 
 
 By the globalization theorem (\ref{thm:hadamard-cartan}),
@@ -111,7 +113,7 @@ is null-homotopic in  $\spc X\backslash K$.
 Recall that path connected spaces are not empty by definition.
 Therefore compact spaces are not simply connected at infinity.
 
-The following example was constructed by Michael Davis in \cite{davis-noneuclidean}.
+The following example was constructed by Michael Davis in \cite{davis-1983}.
 
 \begin{thm}{Proposition}\label{prop:aspherical}
 For any  $m\ge 4$ there is a closed aspherical 
@@ -145,13 +147,17 @@ Let $\tilde G$ be a connected component of the inverse image of $G_v$ in $\tilde
 for the universal cover $\tilde{\spc{Q}}\to \spc{Q}$.
 Fix a point $\tilde v\in\tilde G$ in the inverse image of~$v$.
 
+\begin{wrapfigure}{r}{25mm}
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-110}
+\end{wrapfigure}
  
 Note that 
 \begin{clm}{}\label{tilde-G-convex}
 $\tilde G$ is a convex set in~$\tilde{\spc{Q}}$.
 \end{clm}
 
-%???PIC
 
 Indeed, according to Proposition \ref{prob:cubical-analog},
 $\tilde{\spc{Q}}$ is $\CAT(0)$.
@@ -247,7 +253,7 @@ is not simply connected at infinity.
 The same holds for 
 the universal cover $\tilde{\spc{M}}$ of $\spc{M}$.
 The latter follows since the constructed homotopy equivalences 
-$f\: \spc Q\to \spc M$ and $g\:\spc M\to \spc Q$ 
+$f\: \spc Q\to \spc M$ and $g\:\spc M\z\to \spc Q$ 
 lift to {}\emph{proper maps} 
 $\tilde f \: \tilde{\spc{Q}}\to \tilde{\spc{M}}$
 and $\tilde g \: \tilde{\spc{M}}\to \tilde{\spc{Q}}$;
@@ -258,7 +264,7 @@ that is, for any compact sets $A\subset \tilde{\spc{Q}}$ and $B\subset\tilde{\sp
 The following proposition was proved by
 Fredric Ancel, 
 Michael Davis,
-and Craig Guilbault in \cite{ADG};
+and Craig Guilbault \cite{ancel-davis-guilbault};
 it could be considered as a more geometric version of Proposition~\ref{prop:aspherical}.
 
 
@@ -280,6 +286,7 @@ The universal cover of $\spc{P}$ is not simply connected at infinity.
 There are no three-dimensional examples of that type;
 see \cite{rolfsen} by Dale Rolfsen.
 In \cite{thurston}, Paul Thurston conjectured that the same holds in the four-dimensional case.
+
 \parit{Proof.}
 Apply Exercise~\ref{ex:example-pi_infty-new} to the barycentric subdivision of the simplicial complex $\spc{S}$ provided by Exercise~\ref{ex:funny-S}.
 \qeds
@@ -290,32 +297,30 @@ construct a finite $(m-1)$-dimensional simplicial complex $\spc{S}$ such that $\
 and $\pi_1(\spc{S}\backslash\{v\})\ne0$ for some vertex $v$ in~$\spc{S}$.
 \end{thm} 
 
+\section{Remarks}
 
-\section{Comments}
-As was mentioned earlier, the motivation for the notion of $\CAT(kappa)$ spaces comes from the fact that a Riemannian manifold is locally  $\CAT(kappa)$ if and only if it has $\sec\le\kappa$.
+As was mentioned earlier, the motivation for the notion of $\CAT(\kappa)$ spaces comes from the fact that a Riemannian manifold is locally  $\CAT(\kappa)$ if and only if it has $\sec\le\kappa$.
 This easily follows from Rauch comparison for Jacobi fields and Proposition~\ref{prop:thin=cat}.
 
-In the globalization theorem (\ref{thm:hadamard-cartan}), properness can be weakened to completeness; see our book \cite{AKP} and the references therein.
+In the globalization theorem (\ref{thm:hadamard-cartan}), properness can be weakened to completeness; see our book \cite{alexander-kapovitch-petrunin-2025} and the references therein.
 
-The condition on polyhedral $\CAT(kappa)$ spaces given in Theorem~\ref{thm:PL-CAT} might look easy to use, 
+The condition on polyhedral $\CAT(\kappa)$ spaces given in Theorem~\ref{thm:PL-CAT} might look easy to use, 
 but in fact, it is hard to check even in very simple cases.
-For example the description of those coverings of $\SS^3$ branching at three 
+For example the description of those coverings of $\mathbb{S}^3$ branching at three 
 great circles which are $\CAT(1)$ requires quite a bit of work;
-see \cite{charney-davis-93} --- try to guess the answer before reading.
+see \cite{charney-davis-1993} --- try to guess the answer before reading.
 
 Another example is the space $\spc{B}_4$ that  is the universal cover of $\CC^4$ infinitely branching in six complex planes $z_i=z_j$ with the induced length metric.
-So far it is not known if $\spc{B}_4$ is $\CAT(0)$.
-Understanding this space could be helpful for studying the braid group on 4 strings;
-read \cite{panov-petrunin:ramification} 
-by Dmitri Panov and the third author for more on it.
+So far it is not known if $\spc{B}_4$ is $\CAT(0)$ \cite{panov-petrunin-2016}.
+Understanding this space could be helpful for studying the braid group on 4 strings.
 This circle of questions is closely related to the generalization of the flag condition (\ref{thm:flag}) to  spherical simplices with few acute dihedral angles.
 
 
 The construction used in the proof of  Proposition~\ref{prop:aspherical} admits a number of interesting modifications,  
-several of which are discussed in the survey \cite{davis-survey} by Michael Davis.
+several of which are discussed in the survey \cite{davis-2001} by Michael Davis.
 
 A similar argument was used by Michael Davis, 
-Tadeusz Januszkiewicz,
+Tadeusz Ja\-nu\-szkie\-wicz,
 and  Jean-Fran\c{c}ois Lafont in \cite{davis-januszkiewicz-lafont}.
 They constructed a closed smooth four-dimensional manifold $M$ with  universal cover $\tilde M$ diffeomorphic to $\RR^4$, such that $M$ admits a polyhedral metric which is locally $\CAT(0)$, but does not admit a Riemannian metric with nonpositive sectional curvature.
 Another example of that type was constructed by Stephan Stadler; see~\cite{stadler}.
@@ -335,15 +340,35 @@ According to Stone's theorem, see \cite{stone, davis-januszkiewicz}, the triangu
 cannot be made piecewise linear --- despite  the fact that $\spc{P}$ is a manifold, its triangulation does not induce a piecewise linear structure.
 
 The flag condition also leads to the so-called {}\emph{hyperbolization} procedure, a flexible tool for constructing  aspherical spaces;
-a good survey on the subject is given by Ruth Charney and Michael Davis in \cite{charney-davis}.
+a good survey on the subject is given by Ruth Charney and Michael Davis in \cite{charney-davis-1995}.
+
+The $\CAT(0)$ property of a cube complex admits interesting (and useful) geometric descriptions if one exchanged the $\ell^2$-metric to a natural $\ell^1$ or $\ell^\infty$ on each cube.
+The following statement can extracted from a paper of Brian Bowditch~\cite{bowditch-2020}.
+
+\begin{thm}{Theorem}
+The following three conditions are equivalent.
+
+\begin{subthm}{cube-2} A cube complex $Q$ equiped with $\ell^2$-metric is $\CAT(0)$.
+\end{subthm}
+
+\begin{subthm}{cube-infty} A cube complex $Q$ equiped with $\ell^\infty$-metric is injective.
+\end{subthm}
+
+\begin{subthm}{cube-1} A cube complex $Q$ equiped with $\ell^1$-metric is \emph{median}.
+ The later means that for any three points $x,y,z$ there is a \emph{unique} point   $m$ (it is called \emph{median} of $x$, $y$, and $z$) that lies on \emph{some} geodesics $[xy]$, $[xz]$ and $[yz]$.
+\end{subthm}
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:cube-infty=>cube-2} Prove the implication \ref{SHORT.cube-infty}$\Rightarrow$\ref{SHORT.cube-2} in the theorem.
+\end{thm}
+
 
 All the topics discussed in this chapter link Alexandrov geometry with the fundamental group.
 The theory of {}\emph{hyperbolic groups}, 
 a branch of \emph{geometric group theory}, 
 introduced by 
-Mikhael Gromov \cite{gromov:hyp-groups},
+Mikhael Gromov \cite{gromov-1987},
 could be considered as a further step in this direction.
-
 
 
 
