@@ -931,8 +931,13 @@ Use \ref{ex:noncreasing-CAT}, to show that the map $(t,x)\mapsto \gamma_x(t)$ is
 
 It remains to observe that $h_1(x)=x$ and $h_0(x)=p$ for any $x$.
 
+\parbf{Exercise~\ref{ex:CAT-mnfld=>ext.geod}.}
+Suppose that a geodesic $[pq]$ is not expendable behind~$q$.
+Denote by $h_t$ the geodesic homotopy with the center at $p$; see \ref{ex:contractible}.
 
-
+Since $[pq]$ is not extendable, $q\notin \Im h_t$ for any $t<1$.
+In particular the local homology groups vanish at $p$;
+the latter does not hold for a manifold --- a contradiction.
 
 \parbf{Exercise~\ref{ex:fat-triangle}.}
 Apply \ref{ex:noncreasing-CBB} twice.
@@ -1018,8 +1023,54 @@ Use thinness of $[pp^*q^*]$ and $[pqq^*]$ to show that $\mangle\hinge{\tilde p*}
 Finally observe that 
 \[\dist{p}{q}{\spc{U}}=\dist{\tilde p}{\tilde q}{\EE^2}\ge \dist{\tilde p^*}{\tilde q^*}{\EE^2}=\dist{p^*}{q^*}{\spc{U}}.\]
 
-If some of the points $p,q,p^*,q^*$ coincide, then the proof is easier.
+If some of the points $p$, $q$, $p^*$, $q^*$ coincide, then the proof is easier.
 
+\parbf{Exercise~\ref{ex:locally-convex}.} Fix a closed, connected, locally convex set~$K$.
+
+Let us show that $f=\distfun_K$ is convex in a neighborhood $\Omega\supset K$; that is, $\distfun_K$ is convex along any geodesic completely contained in~$\Omega$.
+It is sufficient to show that for any a point $p\in K$ the function $f$ is convex in a ball $B_p= \oBall(p, r_p)$ if $K\cap \cBall[p,2\cdot r_p]$ is convex.
+
+By \ref{ex:convex-dist} for any geodesic path $\gamma_0$ in $B$ and any geodesic path $\gamma_1$ in $K$ we have that the function 
+$t\mapsto\dist{\gamma_0(t)}{\gamma_1(t)}{}$ is convex.
+We may choose $\gamma_1$ in such a way that its ends realize the distances from the ends of $\gamma_0$ to $K$;
+that is,
+\begin{align*}
+\dist{\gamma_0(0)}{\gamma_1(0)}{}&=f\circ\gamma_0(0),
+\\
+\dist{\gamma_0(1)}{\gamma_1(1)}{}&=f\circ\gamma_0(1).
+\end{align*}
+Observe that 
+\[\dist{\gamma_0(t)}{\gamma_1(t)}{}\ge f\circ\gamma_0(t)\]
+for any $t$.
+Whence Jensen's inequality holds for $f\circ\gamma$ if $\gamma$ is any geodesic in $B_p$.
+
+\begin{wrapfigure}{o}{45 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-9}
+\end{wrapfigure}
+
+Since $K$ is locally convex,
+it is locally path connected.
+Since $K$ is connected, the latter implies that $K$ is path connected.
+
+Fix two points $x,y\in K$. 
+Let us connect $x$ to $y$ by a path $\alpha\:[0,1]\z\to K$.
+By \ref{ex:CAT-geodesic} and \ref{ex:convex-dist}, the geodesic $[x\,\alpha(s)]$ 
+is uniquely defined and depends continuously on~$s$.
+
+If $[xy]=[x\,\alpha(1)]$ does not completely lie in $K$, then 
+there is a value $s\in [0,1]$ such that $[x\,\alpha(s)]$ 
+lies in $\Omega$,
+but does not completely lie in~$K$.
+Therefore $f$ is convex 
+along $[x\alpha(s)]$.
+Note that $f(x)\z=f(\alpha(s))=0$ and $f\ge 0$, 
+therefore $f(z)= 0$ for any $z\in [x\,\alpha(s)]$.
+In other words, $[x\,\alpha(s)]\subset K$ --- a contradiction.
+
+\parit{Comment.}
+The statement generalizes a theorem of Heinrich Tietze, and the proof presented here is nearly identical to the original proof given in~\cite{tietze}.
 
 \parbf{Exercise~\ref{ex:reshetnyak-doubling}.}
 If $A$ is not convex, then there is a geodesic $[xy]$ with the ends in $A$ and the remaining points outside of $A$.
@@ -1105,6 +1156,50 @@ such that:
 By Corollary~\ref{cor:discrete-paths},
 the construction in Corollary~\ref{cor:path-geod} produces the same result for $\alpha_\tau$ and $\beta_\tau$.
 Hence the result.
+
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-11}
+\end{wrapfigure}
+
+\parbf{Exercise~\ref{ex:geod-circle}.}
+The following proof works for compact locally simply connected metric spaces;
+it includes compact length, locally $\CAT(0)$ spaces. 
+
+\medskip
+
+
+By the globalization theorem there is  a nontrivial homotopy class of closed curves.
+
+Consider a shortest noncontractible closed curve $\gamma$ in  $\spc{X}$;
+note that such a curve exists.
+
+Indeed, let $L$ be the infimum of lengths of all noncontractible closed curves in $\spc{X}$.
+Compactness and local contractibility of $\spc{X}$ imply that any two sufficiently close closed curves in $\spc{X}$ are homotopic.
+Then choosing a sequence of unit speed noncontractible curves whose lengths converge to $L$, an Arzel\'{a}--Ascoli type of argument shows that these curves subconverge to a noncontractible curve of length $L$.
+
+
+Assume that $\gamma$ is not a geodesic circle,
+that is,  there are two points $p$ and $q$ on $\gamma$ such that the distance $\dist{p}{q}{}$ 
+is shorter then the lengths of the arcs, say $\alpha_1$ and $\alpha_2$, of $\gamma$ from $p$ to~$q$.
+Consider the products, say $\gamma_1$ and $\gamma_2$,
+of $[qp]$ with $\alpha_1$ and~$\alpha_2$.
+Then
+\begin{itemize}
+ \item  $\gamma_1$ or $\gamma_2$ is noncontractible,
+ \item $\length\gamma_1, \length\gamma_2<\length \gamma$,
+\end{itemize}
+a contradiction.
+
+In the $\CAT(1)$ case we also have a geodesic circle.
+The proof is done nearly the same way, but we need to consider the homotopy classes of closed curves shorter than $2\cdot \pi$.
+One also need to apply \ref{ex:null-homotopic}, to show that curves $\gamma_1$ and $\gamma_2$ are not contractible in the class of curves shorter than $2\cdot \pi$.
+
+\parit{Remarks.}
+The statement of the exercise fails if the requirement that $\spc{X}$ be compact is replaced by the assumption that it is proper. For example, the surface of revolution of the graph of $y=e^x$ around the $x$-axis is locally $\CAT(0)$ but has no closed geodesics.
+
 
 \parbf{Exercise~\ref{ex:branching-cover}.}
 Consider a closed $\eps$-neighborhood $A$ of the geodesic.
@@ -1221,3 +1316,80 @@ Direct inspection shows that this is impossible.
 
 Therefore, by Proposition~\ref{prop:no-trig} our complex is flag.
 It remains to apply the flag condition (\ref{thm:flag}), and then \ref{ex:cone+susp}.
+
+\parbf{Exercise~\ref{ex:flag-aspherical}.}
+If the complex $\mathcal{S}$ is flag, then its cubical analog $\square_{\mathcal{S}}$ is locally $\CAT(0)$ and therefore aspherical.
+
+Assume now that the complex $\mathcal{S}$ is not flag. 
+Extend it to a flag complex $\mathcal{T}$ by gluing a simplex in every clique (that is, a complete subgraph) of its one-skeleton.
+
+Note that the cubical analog $\square_{\mathcal{S}}$ is a proper subcomplex in $\square_{\mathcal{T}}$.
+Since $\mathcal{T}$ is flag,
+$\tilde\square_{\mathcal{T}}$,
+the universal cover of $\square_{\mathcal{T}}$, is $\CAT(0)$.
+Let $\tilde\square_{\mathcal{S}}$ be the inverse image of $\square_{\mathcal{S}}$ in $\tilde\square_{\mathcal{T}}$.
+
+Choose a cube $Q$ with minimal dimension in $\tilde\square_{\mathcal{T}}$ which is not present in $\tilde\square_{\mathcal{S}}$.
+By Exercise~\ref{ex:locally-convex}, $Q$ is a convex set in $\tilde\square_{\mathcal{T}}$.
+The closest point projection $\tilde\square_{\mathcal{T}}\to Q$ is a retraction.
+It follows that the boundary $\partial Q$ is not contractible in $\tilde\square_{\mathcal{T}}\backslash\Int Q$.
+Therefore the spheroid $\partial Q$ is not contractible in $\tilde\square_{\mathcal{S}}$.
+That is, a covering of $\square_{\mathcal{S}}$ is not aspherical and therefore $\square_{\mathcal{S}}$ is not as well.
+
+\parbf{Exercise~\ref{ex:example-pi_infty-new}.}
+The solution goes along the same lines as the proof of Lemma~\ref{lem:example-pi_infty}, but few changes are needed.
+
+The cycle $\gamma$ is taken in the complement $\mathcal{S}\backslash\{v\}$ (or,alternatively, in the link of $v$ in $\mathcal{S}$).
+Instead of a vertex, one has to take edge $e$ in $\tilde Q$ that corresponds to $v$; so we show existence of large cycle in $\tilde Q$ that is not contractible in $\tilde Q\backslash e$.
+The last change is not principle:
+it is more visual to think that $G$ is made from the squares parallel to the squares of the cubical complex which meet the edges of the complex orthogonally at their midpoints (in this case formally speaking $G$ is not a subcomplex of the cubical analog).
+
+\parbf{Exercise~\ref{ex:cube-infty=>cube-2}}; \ref{SHORT.cube-infty}$\Rightarrow$\ref{SHORT.cube-2}.
+By \ref{ex:inj=complete-geodesic-contractible:contractible}, $Q$ is contractible.
+Therefore the globalization theorem and flag condition (\ref{thm:hadamard-cartan} and \ref{thm:flag}) imply that it is sufficient to show that each link in $Q$ is flag.
+Further, by \ref{prop:no-trig} it is sufficient to show that link of each cube in $Q$ satisfies no triangle condition.
+
+Assume that no triangle condition does not hold at a vertex $v$;
+that is $v$ is a vertex of there edges $e_x$, $e_y$, and $e_z$;
+each pair of edges belong to one square, but all three of them do not belong to one cube.
+It is sufficient to consider only this case --- for higher dimensional cube we have the same configuration multiplied by a cube.
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-13}
+\end{wrapfigure}
+
+Let $m_x$, $m_y$ and $m_z$ be the midpoints of $e_x$, $e_y$, and $e_z$ correspondingly.
+Consider 3 balls with centers $m_x$, $m_y$ and $m_z$ and radius $\tfrac14$.
+Observe that each pair of balls have a common point;
+but all three together have no points of intersection.
+By \ref{thm:injective=hyperconvex:balls}, the latter implies that $(Q,\ell^\infty)$ is not an injective space;
+hence the statement follows.
+
+
+\parit{\ref{SHORT.cube-1}$\Rightarrow$\ref{SHORT.cube-2}.}
+Observe that median point $m(x,y,z)$ of depends continuously on triple of points $(x,y,z)$ and $m(x,x,y)=x$.
+
+Given a loop $\gamma\:[0,1]\to Q$ with base at $p=\gamma(0)=\gamma(1)$,
+consider the map $(a,b)\mapsto m(p,\gamma(a),\gamma(b))$ of the triangle $\triangle$ defined by $0\z\le a \z\le b\z\le 1$.
+Note that boundary of triangle runs along $\gamma$.
+It follows that $\gamma$ is null homotopic and therefore $Q$ is simply connected.
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-15}
+\end{wrapfigure}
+
+It remains to check that all links of $Q$ satisfy no-triangle condition.
+
+Assume that a link of $Q$ does not satisfy the no-triangle condition.
+The same way as in the previous problem, we can assume that it is a link of a vertex;
+so we have a configuration of three squares, three edges and one common vertex as above.
+Observe that the centers of the squares $x$, $y$, and $z$ do not have a median; that is, $(Q,\ell^1)$ is not median.
+
+
+
+
+

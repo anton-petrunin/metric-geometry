@@ -239,7 +239,156 @@ label.rt(btex $\delta(t)$ etex, z.b);
 label.bot(btex $\gamma_2(t)$ etex, z.c);
 endfig;
 
-beginfig(10) 
+
+beginfig(9) 
+save u,p;
+path p[];
+u:=1.4cm;
+
+z0=(0,0)*u;
+z1=(1,-.8)*u;
+z2=(2,0)*u;
+z3=(1,-1.4)*u;
+
+z.x=(0,-.3)*u;
+z.y=(2,-.2)*u;
+z.t=(1.6,-.8)*u;
+
+p0=z0..z1..z2..z3..cycle;
+p1=
+point 0 of p0+(10*unitvector(direction 0 of p0) rotated 90)..
+point 1 of p0+(10*unitvector(direction 1 of p0) rotated 90)..
+point 2 of p0+(10*unitvector(direction 2 of p0) rotated 90)..
+point 3 of p0+(10*unitvector(direction 3 of p0) rotated 90)..cycle;
+p2=z.x{1,-2}..z.t..{1,2}z.y;
+
+hatchfill p0--reverse(p1)--cycle withcolor (77, 1mm, -.5bp);
+draw p0;
+draw p1;
+draw z.t--z.x--z.y;
+draw p2;
+
+dOt z.t,z.x,z.y;
+
+label.top(btex $K$ etex, z3);
+whitelabel(btex $\Omega$ etex, point 3.5 of p0);
+label.lft(btex $x$ etex, z.x);
+label.rt(btex $y$ etex, z.y);
+label.rt(btex $\alpha(t)$ etex, z.t);
+endfig;
+
+beginfig(11) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.p=(0,0)*u;
+z.q=(0,-2)*u;
+
+p0=z.p{1,.3}..{-1,-.2}z.q..cycle;
+
+draw p0;
+draw z.p--z.q;
+
+dOt z.p,z.q;
+
+label.top(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.rt(btex $\gamma$ etex, point .5 of p0);
+endfig;
+
+beginfig(13) 
+save u,p,a,b,c,r;
+path p[];
+u:=1.4cm;
+a:=30;
+b:=30;
+c:=37;
+r:=1/4;
+
+p0=(.5+r,0)*u--(.5+r,r)*u--(.5-r,r)*u--(.5-r,0)*u--cycle;
+p1=(0,.5+r)*u--(r,.5+r)*u--(r,.5-r)*u--(0,.5-r)*u--cycle;
+
+picture box;
+box:= image(
+hatchfill p0 withcolor (c, 1mm, -.5bp);
+hatchfill p1 withcolor (c-90, 1mm, -.5bp);
+draw (0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u;
+draw subpath (0,3) of p0;
+draw subpath (0,3) of p1;
+);
+
+z.x=(cosd(b),-sind(b)*sind(a))*u;
+z.y=(-sind(b),-cosd(b)*sind(a))*u;
+z.z=(0,cosd(a))*u;
+
+transform T[];
+
+origin=origin transformed T1;
+z.x=(0,1)*u transformed T1;
+z.y=(1,0)*u transformed T1;
+
+origin=origin transformed T2;
+z.y=(0,1)*u transformed T2;
+z.z=(1,0)*u transformed T2;
+
+origin=origin transformed T3;
+z.z=(0,1)*u transformed T3;
+z.x=(1,0)*u transformed T3;
+
+draw box transformed T1;
+draw box transformed T2;
+draw box transformed T3;
+
+endfig;
+
+beginfig(15) 
+save u,p,a,b,c,r;
+path p[];
+u:=1.4cm;
+a:=30;
+b:=30;
+c:=37;
+r:=1/4;
+
+z=(.5,.5)*u;
+
+
+picture box;
+box:= image(
+draw (.5,0)*u--(.5,.5)*u--(0,.5)*u;
+draw (0,0)*u--(1,0)*u--(1,1)*u--(0,1)*u;
+dOt z;
+);
+
+z.x=(cosd(b),-sind(b)*sind(a))*u;
+z.y=(-sind(b),-cosd(b)*sind(a))*u;
+z.z=(0,cosd(a))*u;
+
+transform T[];
+
+origin=origin transformed T1;
+z.x=(0,1)*u transformed T1;
+z.y=(1,0)*u transformed T1;
+
+origin=origin transformed T2;
+z.y=(0,1)*u transformed T2;
+z.z=(1,0)*u transformed T2;
+
+origin=origin transformed T3;
+z.z=(0,1)*u transformed T3;
+z.x=(1,0)*u transformed T3;
+
+draw box transformed T1;
+draw box transformed T2;
+draw box transformed T3;
+
+label.urt(btex $x$ etex, z transformed T3);
+label.ulft(btex $y$ etex, z transformed T2);
+label.bot(btex $z$ etex, z transformed T1);
+endfig;
+
+beginfig(100) 
 save u;
 u:=.3cm;
 
@@ -250,7 +399,7 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,
 
 endfig;
 
-beginfig(30) 
+beginfig(300) 
 
 save u,v,n;
 v:=1.8;
@@ -271,7 +420,7 @@ label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
 
 endfig;
 
-beginfig(70) 
+beginfig(700) 
 save u;
 u:=1cm;
 
@@ -296,7 +445,7 @@ whitelabel(btex $\spc{P}_4$ etex, 1.5[z.a,z.b]);
 whitelabel(btex $\spc{N}_4$ etex, (-.5)[z.a,z.b]);
 endfig;
 
-beginfig(71) 
+beginfig(710) 
 save u;
 u:=1cm;
 
@@ -321,7 +470,7 @@ draw z.b1--z.d1;
 dOt z.a,z.b,z.c,z.d,z.a1,z.b1,z.c1,z.d1;
 endfig;
 
-beginfig(72) 
+beginfig(720) 
 save u;
 u:=1cm;
 
@@ -344,7 +493,7 @@ label.llft(btex $\tilde p$ etex, z.p);
 label.urt(btex $\tilde q$ etex, z.q);
 endfig;
 
-beginfig(73) 
+beginfig(730) 
 save u;
 u:=1.4cm;
 
@@ -367,7 +516,7 @@ label.llft(btex $p$ etex, z.p);
 
 endfig;
 
-beginfig(74) 
+beginfig(740) 
 save u;
 u:=1.4cm;
 
@@ -393,7 +542,7 @@ label.llft(btex $\tilde p$ etex, z.p);
 
 endfig;
 
-beginfig(75) 
+beginfig(750) 
 save u;
 u:=1.4cm;
 
@@ -417,7 +566,7 @@ label.llft(btex $p$ etex, z.p);
 
 endfig;
 
-beginfig(80) 
+beginfig(800) 
 save u,p;
 u:=1cm;
 path p[];
@@ -436,7 +585,7 @@ label.urt(btex $\gamma(b)$ etex, z.b);
 
 endfig;
 
-beginfig(81) 
+beginfig(810) 
 save u;
 u:=1.4cm;
 
@@ -459,7 +608,7 @@ label.llft(btex $ p$ etex, z.p);
 
 endfig;
 
-beginfig(82) 
+beginfig(820) 
 save u;
 u:=2cm;
 
@@ -484,7 +633,7 @@ label.lft(btex $\dot w$ etex, z.w);
 
 endfig;
 
-beginfig(83) 
+beginfig(830) 
 save u,p;
 u:=2cm;
 path p[];
@@ -536,7 +685,7 @@ label.bot(btex $\tilde p$ etex, z.p);
 
 endfig;
 
-beginfig(84) 
+beginfig(840) 
 save u,p;
 u:=1.4cm;
 path p[];
@@ -579,7 +728,7 @@ whitelabel.top(btex $a$ etex, z.z1);
 whitelabel.bot(btex $b$ etex, z.z2+(0,-1));
 endfig;
 
-beginfig(85) 
+beginfig(850) 
 save u,p;
 path p[];
 u:=1cm;
@@ -638,7 +787,7 @@ whitelabel(btex $\mathcal{R}^3$ etex zscaled z.v, z.r shifted (z.a0-z.a1) zscale
 
 endfig;
 
-beginfig(86) 
+beginfig(860) 
 save u,p;
 path p[];
 u:=1cm;
@@ -662,7 +811,7 @@ whitelabel(btex $X$ etex, .6[z.p,z.q]);
 whitelabel(btex $D$ etex, 1.3[z.p,z.q]);
 endfig;
 
-beginfig(87) 
+beginfig(870) 
 save u,p;
 path p[];
 u:=1cm;
@@ -701,7 +850,7 @@ label.lft(btex {\small $\pi-\alpha$} etex rotated 90, z.r rotated 90);
 label.rt(btex {\small $\pi-\alpha$} etex rotated -90, z.r rotated -90);
 endfig;
 
-beginfig(88) 
+beginfig(880) 
 save u,p;
 path p[];
 u:=1cm;
@@ -736,7 +885,7 @@ whitelabel.bot(btex $z_0$ etex, z.z0+(0,-2));
 
 endfig;
 
-beginfig(91) 
+beginfig(910) 
 save u,p,n;
 path p[];
 u:=1cm;
@@ -757,7 +906,7 @@ label.bot(btex $\dots$ etex rotated angle(direction 3/n of p0), (2,-1)+point 3/n
 label.rt(btex $\spc{B}^n$ etex, point 1 of p0);
 endfig;
 
-beginfig(93) 
+beginfig(930) 
 save u,p;
 path p[];
 u:=1cm;
@@ -776,7 +925,7 @@ draw subpath (0,1) of p1;
 draw subpath (1,2) of p1 dashed evenly;
 endfig;
 
-beginfig(95) 
+beginfig(950) 
 save u,p,n;
 path p[];
 u:=1cm;
@@ -829,7 +978,7 @@ label(btex $\dots$ etex rotated angle(z.p-z.x), z.x[0][3]+(-3,3));
 label(btex $\dots$ etex rotated angle(z.y-z.p), z.x[n][3]+(3,3));
 endfig;
 
-beginfig(97) 
+beginfig(970) 
 save u,p;
 path p[];
 u:=1cm;
@@ -846,7 +995,7 @@ Dot (0,0)*u,(1,0)*u;
 
 endfig;
 
-beginfig(100) 
+beginfig(1000) 
 save u,p;
 path p[];
 u:=1cm;
@@ -882,7 +1031,7 @@ whitelabel.urt(btex $\Star_v$ etex, z.r rotatedabout(z.v,-160));
 label.llft(btex $\Star_{v'}$ etex, -z.r rotatedabout(z.vv,-160));
 endfig;
 
-beginfig(110) 
+beginfig(1100) 
 save u,p;
 path p[];
 u:=.7cm;
