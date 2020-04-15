@@ -1216,6 +1216,30 @@ By the globalization theorem, $\spc{W}'_\eps$ is $\CAT(0)$.
 
 It remains to note that $\tilde {\spc{U}}$ can be obtained as a limit of $\spc{W}'_\eps$ as $\eps\to 0$, and apply Proposition~\ref{prop:cat-limit}.
 
+\parbf{Exercise~\ref{ex:geod-CBA}.}
+Recall that by Proposition~\ref{cor:loc-geod-are-min}, any local geodesic shorter in $\spc{U}$ is a geodesic.
+
+Consider a sequence of directions $\xi_n$ 
+at $p$
+of geodesics $[pq_n]$.
+Since the geodesics are extendable, we can assume that the distances $\dist{p}{q_n}{\spc{U}}=1$ for any $n$.
+
+Since $\spc{U}$ is proper,
+we can pass to a converging subsequence of $(q_n)$;
+denote its limit by~$q$.
+Since $q_n\to q$, the comparison implies that $\mangle\hinge p{q_n}q\to 0$ as $n\to \infty$.
+Therefore the direction $\xi$ of $[pq]$ is the limit of directions $\xi_n$.
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-12}
+\end{wrapfigure}
+
+Note that the unit disc in the plane with attached half-line to each point is a complete $\CAT(0)$ length space with extendable geodesics. 
+However, the space of geodesic directions on the boundary of the disc is not complete --- there is no geodesic tangent to the boundary of the disc.
+This provides a counterexample to the statement of the exercise if  $\spc{U}$ is not assumed to be proper.
+
 \parbf{Exercise~\ref{ex:tan(CAT)isCAT}.} Given a constant speed geodesic $\alpha$ starting at $p$, consider sequence of points $x_n=\alpha(\tfrac1n)$.
 Note that $n\cdot\dist{p}{x_n}{}$ is constant.
 Therefore if we consider $x_n$ as a point in $n\cdot \spc{X}$, then this sequence has an $\omega$-limit $\iota(\alpha)$ in $\T_p^\omega$.
@@ -1393,5 +1417,107 @@ It follows that the triple $(x,y,z)$ does not have a median;
 that is, $(Q,\ell^1)$ is not a median space --- a contradiction.
 
 
+\parbf{Exercise~\ref{ex:hemisphere}.}
+Let $\alpha$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
+
+Assume $\ell<\pi$.
+Let $\alpha_1$ be a subarc of $\alpha$ of length $\ell$, with endpoints $p$ and~$q$. 
+Since $\dist{p}{q}{}\le\ell<\pi$, there is a unique geodesic $[pq]$ in~$\mathbb{S}^2$.  
+Let $z$ be the midpoint of $[pq]$. 
+
+We claim that $\alpha$ lies in the open hemisphere $H$ centered at~$z$.  
+
+Assume the contrary; that is, $\alpha$ meets the equator $\partial H$ at a point $r$.
+Without loss of generality we may assume that $r\in\alpha_1$.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-17}
+\end{wrapfigure}
+
+The arc $\alpha_1$ together with its reflection $\alpha_1^*$ in $z$ form a closed curve of length $2\cdot \ell$ which meets $r$ and its antipodal point~$r'$.
+Thus 
+\[\ell\z=\length \alpha_1\ge \dist{r}{r'}{}=\pi\] 
+--- a contradiction.
+
+\parit{Solution with the Crofton formula.}
+Let $\alpha$ be a closed curve in  $\mathbb{S}^2$ of length $\le 2\cdot\pi$.  We wish to prove that $\alpha$ is contained in a hemisphere in~$\mathbb{S}^2$.
+By approximation it suffices to prove this for  smooth curves $\alpha$ of length $< 2\cdot\pi$ with transverse self-intersections. 
+
+Given $v\in \mathbb{S}^2$, denote by $v^\perp$ the equator in $\mathbb{S}^2$ with the pole at~$v$.
+Further, $\# X$ will denote the number of points in the set~$X$.
+
+Obviously,  if $\#(\alpha\cap v^\perp) =0$, then $\alpha$ is contained in one of the hemispheres determined by~$v^\perp$. 
+Note that $\#(\alpha\cap v^\perp)$ is even for almost all~$v$.
+
+Therefore, if $\alpha$ does not lie in a hemisphere, then
+$\#(\alpha\cap v^\perp) \ge 2$ for almost all $v\in\mathbb{S}^2$.  
+
+By the Crofton formula we have that
+\begin{align*}
+\length(\alpha)
+&=\frac 1 4\cdot \int\limits_{\mathbb{S}^2}\#(\alpha\cap v^\perp)\cdot d_v\area\ge
+\\
+&\ge2\cdot\pi.
+\end{align*}
+
+\parbf{Exercise~\ref{ex:inner-support}.}
+Since  $\Omega$ is not two-convex, 
+we can choose a simple closed curve $\gamma$ that lies in the intersection of a plane $W_0$ and $\Omega$, 
+and is contractible in $\Omega$ but not contractible in $\Omega\cap W_0$.
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-19}
+\end{wrapfigure}
+
+Let $\phi\:\DD\to \Omega$ be a disc that  shrinks~$\gamma$.
+Applying the loop theorem (arguing as in the proof of Proposition~\ref{prop:3d-strong-2-convexity}), we can assume that $\phi$ is an embedding and $\phi(\DD)$ lies on one side of~$W_0$.
+
+Let $Q$ be the bounded closed domain cut from $\EE^3$ by $\phi(\DD)$ and~$W_0$. 
+By assumption it contains a point that is not in~$\Omega$. 
+Changing $W_0,\gamma$ and $\phi$ slightly, we can assume that such a point lies in the interior of~$Q$.
+
+Fix a circle $\Gamma$ in $W_0$ that  surrounds $Q\cap W_0$.
+Since $Q$ lies in a half-space with boundary $W_0$, there is a
+smallest spherical dome with boundary $\Gamma$ that  includes the set $R=Q\backslash\Omega$.
+
+The dome has to touch $R$ at some point~$p$.
+The plane $W$ tangent to the dome at $p$ has the required property --- the point $p$ is an isolated point of the complement $W\backslash \Omega$.
+Further, by construction a small circle around $p$ in $W$ is contractible in $\Omega$.
+
+\parbf{Exercise~\ref{ex:convex+saddle+broken=>PL}.}
+The proof is simple and visual, but it is hard to write it formally in a non-tedious way.
+
+\medskip
+
+Consider the surface $\bar S$ 
+formed by the closure of the remaining part $S$ of the boundary.
+Note that the boundary $\partial S$ of $\bar S$ is a collection of closed polygonal lines.
+
+Assume $\bar S$ is not piecewise linear.
+Show that there is a line segment $[pq]$ in $\EE^3$ that is tangent to $\bar S$ at some point $p$ and    has no common points with $\bar S$ except~$p$.
+
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-21}
+\end{wrapfigure}
+
+Since $\bar S$ is locally concave,
+there is a local inner supporting plane $\Pi$ at $p$ that contains the segment $[pq]$.
+
+Show that $\Pi\cap \bar S$ contains a segment $[xy]\z\ni p$ with the ends in $\partial \bar S$.
+Denote by $\Pi^+$ the half-plane in $\Pi$ that contains $[pq]$ and has $[xy]$ in its boundary.
+
+Use the fact that $[pq]$ is tangent to $S$ to show that there is a point $z\in\partial \bar S$ such that the line segment $[xz]$ or $[yz]$ lies in $\partial \bar S\cap\Pi^+$.
+ 
+
+From the latter statement and local convexity of $\bar S$, 
+it follows that the solid triangle $[xyz]$ lies in~$\bar S$.
+In particular, all points on $[pq]$ sufficiently close to $p$ lie in $\bar S$ --- a contradiction.
 
 

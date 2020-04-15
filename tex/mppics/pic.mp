@@ -297,6 +297,21 @@ label.bot(btex $q$ etex, z.q);
 label.rt(btex $\gamma$ etex, point .5 of p0);
 endfig;
 
+beginfig(12) 
+save u,p;
+path p[];
+u:=1cm;
+
+p0=circle(origin,1*u);
+
+fill p0 withcolor 0;
+
+for i=1/2**4 step 1/2**4 until 4:
+draw point i of p0 --2*point i of p0;
+endfor
+
+endfig;
+
 beginfig(13) 
 save u,p,a,b,c,r;
 path p[];
@@ -386,6 +401,109 @@ draw box transformed T3;
 label.urt(btex $x$ etex transformed T3, z transformed T3);
 label.ulft(btex $y$ etex rotated -90 transformed T2, z transformed T2);
 label.bot(btex $z$ etex rotated 90 transformed T1, z transformed T1);
+endfig;
+
+beginfig(17) 
+save u;
+u:=1cm;
+
+z.z=origin;
+z.r=(1,1)*u;
+draw circle(z.z,z.r);
+
+z.p=(.3,-.2)*u;
+z.q=-z.p;
+
+draw z.p--z.q;
+
+z.s=(.5,-.5)*u;
+save p; path p[];
+p1= z.p{up}..z.r..z.q{-1,-1}..z.s..cycle;
+
+draw p1;
+
+p2=(subpath (0,2) of p1) rotated 180;
+
+draw p2 dashed evenly;
+
+
+dOt z.p,z.q,z.r,-z.r,z.z;
+
+label.rt(btex $p$ etex, z.p);
+label.ulft(btex $q$ etex, z.q);
+label.urt(btex $z$ etex, z.z);
+label.urt(btex $r$ etex, z.r);
+label.llft(btex $r^{*}$ etex, -z.r);
+
+label.ulft(btex $\alpha_1$ etex, point 1.6 of p1+(1,0));
+label.ulft(btex $\alpha_1^{*}$ etex, point .6 of p2+(1,0));
+endfig;
+
+beginfig(19) 
+save u;
+u:=1cm;
+path p[];
+
+z.p=(-.5,.8)*u;
+z.r=(1.4,0)*u;
+z.a=(-.6,0)*u;
+z.b=(.7,0)*u;
+
+p1=-z.r..z.p..z.r;
+p2=z.a..tension 1.5..point 1 of p1{direction 1 of p1}..tension 1.5..z.b;
+
+
+hatchfill p2--cycle withcolor (77, 1mm, -.5bp);
+draw p1;
+draw p2;
+draw ddline(-z.r,z.r)(.2,.2);
+
+draw ddline(z.p,z.p+direction 1 of p1)(1.2,.2);
+
+dOt z.p;
+
+label.ulft(btex $p$ etex, z.p);
+whitelabel.bot(btex $R$ etex, z.p+(6,-6));
+label.bot(btex $W_0$ etex, 1.3*z.r);
+label.ulft(btex $W$ etex, z.p+1.2*(direction 1 of p1));
+endfig;
+
+beginfig(21) 
+save u;
+u:=1cm;
+path p[];
+
+z.x=(-1,0)*u;
+z.y=(-.8,.4)*u;
+z.z=(1,0)*u;
+z.p=.5[z.x,z.z];
+z.pq=.4[z.y,z.z];
+z.q=3.3[z.p,z.pq];
+
+z.z0=(1.2,-.8)*u;
+z.z2=(1.1,1.3)*u;
+
+z.x0=(-1.1,-.8)*u;
+z.x2=(-.9,1.3)*u;
+
+
+p1=z.x--z.y--z.z--cycle;
+
+hatchfill p1 withcolor (77, 1mm, -.5bp);
+draw p1;
+draw z.p--z.q;
+draw z.z0--z.z--z.z2 pensemibold;
+draw z.x0--z.x--z.y--z.x2 pensemibold;
+
+dOt z.x,z.y,z.z,z.p,z.q,z.pq;
+
+label.bot(btex $p$ etex, z.p);
+label.top(btex $q$ etex, z.q);
+label.lft(btex $x$ etex, z.x);
+label.lft(btex $y$ etex, z.y);
+label.rt(btex $z$ etex, z.z);
+label.rt(btex $\partial \bar S$ etex, z.z2);
+label.lft(btex $\partial \bar S$ etex, z.x2);
 endfig;
 
 beginfig(100) 
@@ -1232,4 +1350,6 @@ label.top(btex $\ell$ etex,z.p+z.d*u);
 label.rt(btex $A$ etex,point .5 of p0);
 whitelabel.llft(btex $F_i'$ etex,point 2.5 of p0);
 endfig;
+
+
 end

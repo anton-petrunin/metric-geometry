@@ -1,3 +1,51 @@
+\begin{thm}{Area formula}\label{thm:area-formula}
+Let $\bm{f}\:K\to\RR^n$ be a smooth map defined on a compact set $K\subset \RR^n$.
+Then for any function $h\:K\to \RR$
+\[\int_K h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K)} H_K(\bm{y})\cdot d\bm{y},\]
+where 
+\[H_K(\bm{y})=\sum_{\substack{\bm{x}\in K \\ \bm{f}(\bm{x})=\bm{y}}}h(\bm{x}).\]
+(The integrals are understood in the sense of Lebesgue.)
+\end{thm}
+
+Let us sketch the proof of area formula using  Sard's lemma (\ref{lem:sard}) and the substitution rule (\ref{thm:mult-substitution}).
+
+\parit{Sketch of proof.}
+Denote by $S\subset K$ the set of critical points of $\bm{f}$; that is, $\bm{x}\in S$ if $\jac_{\bm{x}}\bm{f}=0$.
+By Sard's lemma,
+\emph{$\bm{f}(S)$ has vanishing measure}.
+Note that 
+\[\int_S h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=0\]
+since $\jac_{\bm{x}}\bm{f}=0$
+and
+\[\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y}\]
+since $\bm{f}(S)$ has vanishing measure.
+In particular,
+\[\int_S h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y};\]
+that is the area formula holds for $S$.
+
+It remains to prove that 
+\[\int_{K\backslash S} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K\backslash S)} H_{K\backslash S}(\bm{y})\cdot d\bm{y}.\]
+Since $\jac_{\bm{x}}\bm{f}\ne 0$ for any $\bm{x}\in K\backslash S$, by inverse function theorem, the restriction of $\bm{f}$ to a neighborhood $U\ni\bm{x}$ has a smooth inverse.
+Therefore for any compact set $K'\subset U$ we have that %???compact
+\[\int_{K'}h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^{-1}(\bm{y}))\cdot d\bm{y}.\]
+It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 \pagestyle{empty}
 
