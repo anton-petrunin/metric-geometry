@@ -1,0 +1,296 @@
+\chapter{Volume bounds} 
+
+
+\section{Riemannian metrics}
+
+We are going to consider mostly Riemannian spaces;
+that is smooth manifolds with metric defined by a metric tensor.
+These are specially nice length metrics on manifolds.
+However most of the statements we are going to discuss have counterpart for general length metrics on manifolds.
+
+Let $M$ be a smooth manifold.
+A \emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$ that depends smoothly on the point $p$.
+That is, if we fix a local coordinates on $M$ and write $g$ in this coordinates, then each component of $g$ is a smooth function. 
+
+A Riemannian manifold is a smooth manifold $M$ with a choice \emph{metric tensor} $g$ on it.
+
+The metric tensor $g$ can be used to define length of curves and volume of regions in $M$.
+
+\parbf{Lengths and distances.}
+If $\gamma\:[a,b]\to M$ is a piecewise smooth curve then 
+\[\length_g\gamma=\int_a^b\sqrt{g(\gamma'(t),\gamma'(t))}\cdot dt.\]
+Further we can define a metric on $M$ as least lower bound to lengths of piecewise smooth curves connecting two given points;
+the described distance between points $x$ and $y$ will be denoted by $\dist{x}{y}{g}$ or $\distfun_x(y)_g$.
+The distance function from a point $x$ will be denoted by $(\distfun_x)_g$ or $\distfun_x$ if the choice of $g$ is evident.
+
+The following claim requires a proof, but we will assume that it is obvious.
+
+\begin{thm}{Claim}
+Let $(M,g)$ be a Riemannian manifold.
+Then the metric $(x,y)\mapsto \dist{x}{y}{g}$ defines a length metric. Moreover this metric completely determines the metric tensor $g$.
+\end{thm}
+
+\parbf{Volume.}
+If a region $R$ is covered by one chart $\iota\:U\to M$,
+then its volume can be defined as an integral 
+\[\vol R
+\df
+\int_{\iota^{-1}(R)}\sqrt{\det{g}}.\]
+In the general case we subdivide $R$ into (a countable collection of) regions $R_1,R_2\dots$ and define
+\[\vol R\df \vol R_1+\vol R_2+\dots\]
+
+\section{Besikovitch inequality}
+
+\begin{thm}{Theorem}\label{thm:besikovitch}
+Let $g$ be a metric tensor on a unit $n$-dimensional cube $\square^n$.
+Suppose that the $g$-distances between the opposite faces of $\square^n$ are at leat $1$; that is, any piecewise smooth curve that connects opposite faces has $g$-length at least $1$.
+Then $\vol(\square^n, g)\ge 1$.
+\end{thm}
+
+\parit{Proof.}
+We will consider the case $n=2$; the other cases are proved the same way.
+
+Denote by $A$, $A'$, and $B$, $B'$ the opposite faces of the square~$\square$.
+Consider two function 
+\begin{align*}
+f_A(x)&\df\min\{\,\distfun_A(x)_g,1\,\},
+\\
+f_B(x)&\df\min\{\,\distfun_B(x)_g,1\,\}.
+\end{align*}
+Define $f\:\square\to\square$ as a map with coordinate funcions $f_A$ and $f_B$;
+that is, $f(x)\df(f_A(x), f_B(x))$.
+
+Observe that $f$ maps each face to itself.
+Indeed, 
+\[x\in A \quad\Longrightarrow\quad \distfun_A(x)_g=0 \quad\Longrightarrow\quad f_A(x)=0 \quad\Longrightarrow\quad f(x)\in A.\]
+Similarly if $x\in B$, then $f(x)\in B$.
+Further, 
+\[x\in A'
+\quad\Longrightarrow\quad 
+\distfun_A(x)_g\ge 1 
+\quad\Longrightarrow\quad 
+f_A(x)=1 
+\quad\Longrightarrow\quad 
+f(x)\in A'.\]
+Similarly if $x\in B'$, then $f(x)\in B'$.
+
+Therefore 
+\[f_t(x)= t\cdot x + (1-t)\cdot f(x)\]
+defines a homotopy of maps of pair of spaces $(\square,\partial \square)$ from $f$ to the identity map.
+It follows that degree of $f$ is $1$; that is, $f$ sends the fundamental class of $(\square,\partial \square)$ to itself.
+In particular $f$ is onto.
+
+Suppose that Jacobian  matrix $\Jac_pf$ of $f$ is defined at $p\in \square$.
+Choose an orthonormal basis in $\T_p$ with respect to $g$ and the standard basis in the target $\square$.
+Observe that the differentials $d_pf_A$ and $d_pf_B$ written in these basises are the rows of $\Jac_pf$.
+Evidently $|d_pf_A|\le 1$ and $|d_pf_B|\le 1$.
+Since the determinant of a matrix is the volume of the parallelepiped spanned on its rows, we get 
+\[|\det(\Jac_pf)|\le |d_pf_A|\cdot|d_pf_B|\le 1.\]
+Since $f\:\square\to\square$ is a Lipschitz onto map, the \emph{area formula} implies that 
+\[\vol(\square,g)\ge \vol\square=1.\]
+\qedsf
+
+The following generalization can be proved along the same lines.
+
+\begin{thm}{Theorem}\label{thm:besikovitch+}
+Let $(M,g)$ be Riemannian manifold and its boundary admits a homeomorphism $\partial\square^n\to\partial M$. 
+Suppose $d_1,\dots, d_n$ the distances between the the images of pairs of opposite faces of $\square^n$ in $\partial M$.
+Then 
+\[\vol(M,g)\ge d_1\cdots d_n.\]
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:besikovitch=}
+Suppose that we have equality in \ref{thm:besikovitch}.
+Show that $(\square^n,g)$ is isometric to $\square^n$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:hexagon}
+Suppose $g$ is a metric tensor on a regular hexagon $\varhexagon
+   $ such that $g$-distances between the opposite sides are at least $1$.
+Is there a positive lower bound on $\area(\varhexagon,g)$?
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:gadograph}
+Let $V$ be a compact set in $\EE^d$ bounded by a hypersurface $\Sigma$.
+Suppose $g$ is a Riemannian metric on $V$ such that 
+\[\dist{p}{q}{g}\ge\dist{p}{q}{\EE^d}\]
+for any two points $p,q\in \Sigma$.
+Show that
+\[\vol(V,g)\ge \vol(V)_{\EE^d}.\]
+ 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:involution-of-sphere}
+Suppose that sphere with Riemannian matric $(\mathbb{S}^2,g)$ admits an involution $\iota$ such that $\dist{x}{\iota(x)}{g}\ge 1$.
+
+Show that $\area(\mathbb{S}^2,g)\ge \tfrac1{1000}$;
+try to show that $\area(\mathbb{S}^2,g)\ge \tfrac12$ or $\area(\mathbb{S}^2,g)\ge 1$.
+\end{thm}
+
+Christopher Croke conjectured that the optimal bound for this exercise is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[see Conjecture 0.3 in][]{croke}.
+
+\begin{thm}{Advanced exercise}\label{ex:involution-of-3sphere}
+Construct a metric $g$ on $\mathbb{S}^3$ with arbitrary small $\vol(\mathbb{S}^3,g)$ and such that it admits an involution $\iota$ such that $\dist{x}{\iota(x)}{g}\ge 1$.
+\end{thm}
+
+\section{Systolic inequlaity}
+
+Let $\spc{M}$ be a compact Riemannian manifold.
+The \emph{systole} of $\spc{M}$ (brifly $\sys\spc{M}$) is defined to be the least length of a noncontractible closed curve in $\spc{M}$.
+
+Let $\Lambda$ be a set of smooth closed $n$-dimensional manifolds.
+We say that a systolic inequality holds for $\Lambda$ if there is a constant $c$ such that for any $M\in \Lambda$ and any metric tenor $g$ on $M$ we have
+\[[\sys(M,g)]^n\le c\cdot \vol(M,g).\]
+
+\begin{thm}{Exercise}\label{ex:sysT2}
+Use \ref{thm:besikovitch} to show that systolic inequality holds for the 2-torus $\TT^2$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:sysRP2}
+Use \ref{thm:besikovitch} to show that systolic inequality holds for the real projective palane $\RP^2$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:sysSg}
+Use \ref{thm:besikovitch+} to show that systolic inequality holds for the set of all closed surfaces of positive genus.
+\end{thm}
+
+\parbf{Remarks.}
+The optimal constants in the systolic inequality are known in the following three cases:
+\begin{itemize}
+\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution \cite{pu}.
+\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \emph{Loewner's torus inequality}.
+\item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for certain nonsmooth metrics \cite{bavard}.
+\end{itemize}
+The proofs of these results use the so called \emph{uniformization theorem}   available in the 2-dimensional case only.
+These proofs are beautiful, but they too far from metric geometry.
+A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
+
+\begin{thm}{Exercise}\label{ex:sysS2xS1}
+Show that systolic inequality does \emph{not} hold for $\mathbb{S}^2\times\mathbb{S}^1$.
+\end{thm}
+
+
+\begin{thm}{Therorem}\label{thm:sys(torus)}
+Systolic intequality holds for the 3-dimensional torus $\TT^3$. 
+\end{thm}
+
+The proof of this theorem and its generalization will take most of the remaining lectures.
+In the following section we introduce a key notion in the proof.
+
+\section{Filling radius}
+
+The following definition was introduced by Mikhael Gromov \cite{gromov-1983}.
+
+Let $\spc{M}$ be a closed $n$-dimensional Reimannian manifold.
+Applying Kuratowski embedding (\ref{lem:kuratowski}) $x\mapsto \distfun_x$, we may think that $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$ --- the space of functions on $\spc{M}$ equipped with the metric induced by the sup-norm.
+
+Define the \emph{filling radius} of $\spc{M}$ (briefly $\FillRad\spc{M}$) as the least upper bound on values $r>0$ such that $\spc{M}$ bounds in its $r$-neighborhood in $\ell^\infty(\spc{M})$.
+In other words, if $\iota_r$ denotes inclusion of $\spc{M}$ in its $r$-neighborhood $B_r(\spc{M})\subset \ell^\infty(\spc{M})$,
+then 
+\[\FillRad\spc{M}\df\inf\set{r>0}{(\iota_r)_*[\spc{M}]=0\in H_n(B_r(\spc{M}))},\]
+where $[\spc{M}]$ denotes the fundamental class of $\spc{M}$.
+
+We assume that the homologies are taken with coefficients in $\ZZ_2$.
+In this case $[\spc{M}]\ne0\in H_n(\spc{M})$.
+If we choose coefficients $\ZZ$, then it does not hold for nonorientable manifolds.
+
+
+\begin{thm}{Exercise}\label{ex:fillrad<diam/2}
+Show that the inequality
+\[\FillRad \spc{M}\le \tfrac12\cdot\diam \spc{M}\]
+holds for any compact Riemannian manifold $\spc{M}$.
+\end{thm}
+
+\parbf{Remark.}
+The optimal bound for the above exercise was found by Mikhail Katz \cite{katz}.
+Namely he proved that
+\[\FillRad \spc{M}\le \tfrac13\cdot\diam \spc{M}\]
+and equality holds if $\spc{M}$ is real projective space with canonical metric.
+The proof is beautiful, elementary, and very readable.
+
+\medskip
+
+The following theorem is the main ingredient in the proof of \ref{thm:sys(torus)}.
+This theorem will be the main subject of the following lecture.
+
+\begin{thm}{Theorem}\label{thm:FillRad<vol}
+Given an integer $n>0$, there is a constant $c(n)$ such that inequality
+\[(\FillRad \spc{M})^n\le c(n)\cdot \vol \spc{M}\]
+holds for any compact $n$-dimensional Riemannian manifold $\spc{M}$.
+\end{thm}
+
+In the following section we show why this theorem is related to \ref{thm:FillRad<vol}.
+
+\section{Systole and filling radius}
+
+\begin{thm}{Theorem}\label{thm:sys<FillRad}
+Suppose $\spc{T}= (\TT^n,g)$ is a Riemnnian manifold on $n$-dimensional torus $\TT^n$.
+Then 
+\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
+\end{thm}
+
+Note that \ref{thm:sys<FillRad} and \ref{thm:FillRad<vol}  imply \ref{thm:sys(torus)}.
+
+\parit{Proof.}
+As usual we consider $\spc{T}$ as a subspace in $\ell^\infty(\spc{T})$.
+
+Set $s=\sys\spc{T}$ and $\FillRad\spc{T}=r$.
+Arguing by contradiction, assume $6\cdot r< s$;
+so $\eps=\tfrac1{100}\cdot(s-6\cdot r)>0$.
+
+Choose a simplicial complex $\Sigma$ and a map $\sigma\:\Sigma\to \ell^\infty(\spc{T})$ such that the restriction $\sigma|_{\partial\Sigma}$
+represents the fundamental class $[\spc{T}]$ of $\spc{T}$
+and $\sigma(\Sigma)\subset B_{r+\eps}(\spc{T})$.
+
+
+Passing to barycentric subdivision few times, we may assume that the $\sigma$-image of any simplex in $\Sigma$ has diameter less than $\eps$.
+We may perturb the map slightly to ensure that each edge $e$ of $\Sigma$ is mapped to a geodesic and still $\sigma|_{\partial\Sigma}$
+represents the fundamental class $[\spc{T}]$ of $\spc{T}$.
+
+Let us construct a continuous map
+$f\:\Sigma\to  \spc{T}$ which agrees with $\sigma$ on $\partial \Sigma$.
+Once it is done we get that $[\spc{T}]=0\in H_n(\spc{T})$ --- a contradiction.
+
+Set $f(x)=\sigma(x)$ for every $x\in \partial \Sigma$;
+on the remaining part of $\Sigma$ we will construct $f$ recurcevely on the skeletons $\Sigma^0$, $\Sigma^1$, $\Sigma^2$ and so on.
+
+For every vertex $v$, set $f(v)$ to be the closest point in $\spc{T}$ to $\sigma(v)$.
+Note that if $v\in\partial\Sigma$, then $f(v)=\sigma(v)$.
+This way we defined $f$ on $\Sigma^0$.
+
+Let $e$ be an edge in $\Sigma$ between vertexes $v$ and $w$.
+Note that 
+\begin{align*}
+\dist{f(v)}{f(w)}{}
+&\le\dist{f(v)}{\sigma(v)}{}
++\dist{\sigma(v)}{\sigma(w)}{}
++\dist{\sigma(w)}{f(w)}{}\le
+\\
+&\le (r+\eps)+\eps +(r+\eps)<
+\\
+&<\tfrac s3.
+\end{align*}
+Map $e$ to a shortest path $[f(v)\,f(w)]$ in $\spc{T}$;
+if $e$ is an edge in $\partial \Sigma$ then no need to change $f$ on it.
+This extends $f$ to $\Sigma^1$ such that each edge is mapped to a geodesic of length less that $\tfrac s3$.
+
+Now for each triangle $uvw$ in $\Sigma$, the closed curve formed by $f$-images of its sides has length less than $s$.
+That is, it is shorter than any noncontractible closed curve,
+and therefore it is null-homotopic in $\spc{T}$.
+Hence we can extend $f$ to the $\Sigma^2$.
+
+Finally, since $\spc{T}$ is aspherical, there is no obstruction to extending $f$ to the rest of $\Sigma$.
+\qeds
+
+Observe that we use only that $\spc{T}$ is aspherical closed manifold;
+this statement will be generalized yet further.
+
+\begin{thm}{Exercise}\label{ex:fillrad-inj}
+Modify the proof of \ref{thm:sys<FillRad} to prove the following:
+
+Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with injectivity radius $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then there is geodesic $[pq]_{\spc{M}}$ is uniquely defined.
+Show that
+\[\FillRad\spc{M}\ge \tfrac{r}{n+1}.\]
+ 
+\end{thm}
+
