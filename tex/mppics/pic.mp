@@ -318,7 +318,7 @@ path p[];
 u:=1.4cm;
 a:=30;
 b:=30;
-c:=37;
+c:=56;
 r:=1/4;
 
 p0=(.5+r,0)*u--(.5+r,r)*u--(.5-r,r)*u--(.5-r,0)*u--cycle;
@@ -504,6 +504,62 @@ label.lft(btex $y$ etex, z.y);
 label.rt(btex $z$ etex, z.z);
 label.rt(btex $\partial \bar S$ etex, z.z2);
 label.lft(btex $\partial \bar S$ etex, z.x2);
+endfig;
+
+beginfig(23) 
+save u;
+u:=1cm;
+path p[];
+
+p0=circle(origin,.7*u);
+p1=circle(origin,2*u);
+p2=point .4 of p0{(point 0 of p0) rotated 30}..{(point 0 of p1) rotated 30}point 0 of p1;
+z3= point .3 of p2;
+z4= point .7 of p2;
+p3=z3..z4 rotated 60..z3 rotated 120..z4 rotated 180..z3 rotated -120..z4;
+
+hatchfill p0--reverse(p1)--cycle withcolor (77, 2mm, -.5bp);
+draw p0;
+draw p1;
+draw p2;
+draw subpath (.3,.7) of p2 penbold;
+draw p3 penbold;
+
+label.rt(btex $\gamma_1$ etex, point 2 of p0);
+label.lft(btex $\gamma_1$ etex, point 2 of p1);
+whitelabel.top(btex $N$ etex, (0,4)+point 3 of p1);
+whitelabel.bot(btex $\gamma_2$ etex, point .3 of p2);
+whitelabel.rt(btex $\gamma_3$ etex, point 3 of p3);
+
+endfig;
+
+beginfig(25) 
+save u;
+u:=.7cm;
+path p[];
+
+p1=circle(origin,2*u);
+p2=point .3 of p1{-(point .3 of p1)}..(0,1.3)*u..{point 1.7 of p1}point 1.7 of p1;
+
+hatchfill p1 withcolor (77, 2mm, -.5bp);
+draw p1;
+draw subpath (1.7,2.3) of p1  penbold;
+draw p2 penbold;
+
+Dot point .5 of p1, point 1.5 of p1, point 2.5 of p1, point 3.5 of p1;
+
+dOt point .3 of p1, -(point .3 of p1),point 1.7 of p1;
+
+label.rt(btex $\alpha$ etex, point 0 of p1);
+label.lft(btex $\alpha$ etex, point 2 of p1);
+label.top(btex $\beta$ etex, point 1 of p1);
+label.bot(btex $\beta$ etex, point 3 of p1);
+whitelabel.bot(btex $\gamma_1$ etex, point 1 of p2);
+whitelabel.bot(btex $\DD$ etex, origin);
+
+label.urt(btex $\gamma_1(0)$ etex, point .3 of p1);
+label.ulft(btex $\gamma_1(1)$ etex, point 1.7 of p1);
+label.llft(btex $\gamma_1(0)$ etex, -(point .3 of p1));
 endfig;
 
 beginfig(100) 

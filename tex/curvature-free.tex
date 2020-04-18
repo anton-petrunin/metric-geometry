@@ -157,7 +157,7 @@ Use \ref{thm:besikovitch+} to show that systolic inequality holds for the set of
 \parbf{Remarks.}
 The optimal constants in the systolic inequality are known in the following three cases:
 \begin{itemize}
-\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution \cite{pu}.
+\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was prove by Pao Ming Pu \cite{pu}.\label{page:pu}
 \item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \emph{Loewner's torus inequality}.
 \item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for certain nonsmooth metrics \cite{bavard}.
 \end{itemize}
@@ -288,9 +288,11 @@ this statement will be generalized yet further.
 \begin{thm}{Exercise}\label{ex:fillrad-inj}
 Modify the proof of \ref{thm:sys<FillRad} to prove the following:
 
-Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with injectivity radius $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then there is geodesic $[pq]_{\spc{M}}$ is uniquely defined.
+Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with \emph{injectivity radius} at least $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then there is geodesic $[pq]_{\spc{M}}$ is uniquely defined.
 Show that
 \[\FillRad\spc{M}\ge \tfrac{r}{n+1}.\]
  
 \end{thm}
+
+Note that this exercise together with bound on filling radius in \ref{thm:FillRad<vol} imply that lower bound on injectivity radius implies a lower bound on volume.
 

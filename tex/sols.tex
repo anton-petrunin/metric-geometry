@@ -1363,7 +1363,7 @@ That is, a covering of $\square_{\mathcal{S}}$ is not aspherical and therefore $
 \parbf{Exercise~\ref{ex:example-pi_infty-new}.}
 The solution goes along the same lines as the proof of Lemma~\ref{lem:example-pi_infty}, but few changes are needed.
 
-The cycle $\gamma$ is taken in the complement $\mathcal{S}\backslash\{v\}$ (or,alternatively, in the link of $v$ in $\mathcal{S}$).
+The cycle $\gamma$ is taken in the complement $\mathcal{S}\backslash\{v\}$ (or, alternatively, in the link of $v$ in $\mathcal{S}$).
 Instead of a vertex, one has to take edge $e$ in $\tilde Q$ that corresponds to $v$; so we show existence of large cycle in $\tilde Q$ that is not contractible in $\tilde Q\backslash e$.
 The last change is not principle:
 it is more visual to think that $G$ is made from the squares parallel to the squares of the cubical complex which meet the edges of the complex orthogonally at their midpoints (in this case formally speaking $G$ is not a subcomplex of the cubical analog).
@@ -1520,4 +1520,84 @@ From the latter statement and local convexity of $\bar S$,
 it follows that the solid triangle $[xyz]$ lies in~$\bar S$.
 In particular, all points on $[pq]$ sufficiently close to $p$ lie in $\bar S$ --- a contradiction.
 
+\parbf{Exercise~\ref{ex:sysT2}.}
+Set $s=\sys(\TT^2,g)$.
 
+\begin{wrapfigure}{r}{45 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-23}
+\end{wrapfigure}
+
+Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma_1$.
+We get an anulus with a Riemnnian metric on it $(N,g)$.
+Denote by $A$ and $A'$ the two components of its boundary.
+
+%???+PIC
+
+Assume that $\gamma_2$ is a shortest path that runs from $A$ to $A'$ in $(N,g)$.
+The image of $\gamma_2$ in $\TT^2$ connects two points in $\gamma_1$;
+further we will use the same notation for $\gamma_2$ and its image in $\TT^2$.
+Connect $\gamma_2(0)$ to $\gamma_2(1)$ by a shorter arc in $\gamma_1$.
+Note that the obtained closed curve is noncontractible in $\TT^2$.
+Therefore its length is at least $s$.
+The arc of $\gamma_1$ has length at most half of $\length\gamma_1$.
+Whence $\length \gamma_2\ge \tfrac s2$.
+In particular the distance from $A$ to $A'$ in $(N,g)$ is at least $\tfrac s2$.
+
+Let us cut $(N,g)$ by $\gamma_2$, we obtain a square $(\square,g)$ with Riemnnian metric on it.
+Let us keep the notation $A$ and $A'$ for the pair of opposite sides in $(\square,g)$ that correspond to $A$ and $A'$ in $(N,g)$.
+From above we have that distance from $A$ to $A'$ is at least $\tfrac s2$.
+
+Denote by $B$ and $B'$ the remaining pair of opposite sides $(\square,g)$.
+Suppose that $\gamma_3$ is a path connecting these sides.
+Map it the curves $\gamma_i$ back to the torus and let us keep for them the same notation.
+The path $\gamma_3$ connects two points on $\gamma_2$.
+Since $\gamma_2$ is shortest, the arc of $\gamma_2$ between this pair of points can not be longer than $\gamma_3$.
+This arc together with $\gamma_3$ forms a closed noncontractible curve, so its length has to be at least $s$.
+It follows that $\length\gamma_3\ge \tfrac s2$.
+That is distance from $B$ to $B'$ in  $(\square,g)$ is at least $\tfrac s2$.
+
+Applying Besikovitch inequality, we get that 
+\[\area(\TT^2,g)=\area(\square,g)\ge \tfrac14\cdot s^2.\]
+
+\parit{Comment.}
+Alternatively one may notice that any curve in $(N,g)$ that is bordant to $A$ has length at least $\tfrac s2$.
+Therefore the level sets defined by $\distfun_A(x)_{(N,g)}=t$ have length at least $\tfrac s2$ if $0\le t\le \tfrac s2$.
+Applying coarea fromula we get that
+\[\area(\TT^2,g)=\area(N,g)\ge \tfrac12\cdot s^2.\]
+This estimate is twice better then the one above, but it is still far from the optimal bound $\tfrac2{\sqrt{3}}\cdot s^2$ in proved by Loewner inequality
+
+\begin{wrapfigure}{r}{44 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-25}
+\end{wrapfigure}
+
+\parbf{Exercise~\ref{ex:sysRP2}.}
+Set $s\z=\sys (\RP^2,g)$.
+Cut $(\RP^2,g)$ along a shortest noncontractible curve $\gamma$.
+We obtain $(\DD^2,g)$ --- a disc with metric tensor which we still denote by $g$.
+Divide $\gamma$ into two equal arcs $\alpha$ and $\beta$.
+Denote by $A$ and $A'$ the two connected components of the inverse image of $\alpha$.
+Similarly denote by $B$ and $B'$ the two connected components of the inverse image of $\beta$.
+
+Let $\gamma_1$ be a path from $A$ to $A'$;
+map it to $\RP^2$ and keep the same notation for it.
+Note that $\gamma_1$ together with a subarc of $\alpha$ forms a closed noncontractible curve in $\RP^2$.
+Since $\length\alpha=\tfrac s2$, we have that $\length\gamma_1\ge \tfrac s2$.
+It follows that the distance between $A$ and $A'$ in $(\DD^2,g)$ is at least $\tfrac s2$.
+The same way we show that the distance between $B$ and $B'$ in $(\DD^2,g)$ is at least $\tfrac s2$.
+
+Note that $(\DD^2,g)$ can be paraneterized by a square with sides $A$, $B$, $A'$ and $B'$ and apply \ref{thm:besikovitch} to show that 
+\[\area(\RP^2,g)=\area(\DD^2,g)\ge \tfrac14\cdot s^2.\]
+
+\parit{Comment.}
+For the optimal constant was found by Pao Ming Pu see the discussion on page \pageref{page:pu}.
+His proof shows that any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has area at least as large as the unit hemisphere.
+It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessary a disc);
+this is the so called the \emph{filling area conjecture} \cite[(e$'$)]{gromov-1983}.
+
+
+
+\parbf{Exercise~\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
