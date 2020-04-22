@@ -1520,20 +1520,67 @@ From the latter statement and local convexity of $\bar S$,
 it follows that the solid triangle $[xyz]$ lies in~$\bar S$.
 In particular, all points on $[pq]$ sufficiently close to $p$ lie in $\bar S$ --- a contradiction.
 
-\parbf{Exercise~\ref{ex:sysT2}.}
-Set $s=\sys(\TT^2,g)$.
+\parbf{Exercise~\ref{ex:besikovitch=}.}
+Let us use the same notation as in the proof of \ref{thm:besikovitch}.
+
+Consider the map $s\:x\mapsto(\distfun_A(x),\distfun_B(x))$.
+From the proof of \ref{thm:besikovitch} we get that $\Im s\supset \square$.
+Observe that in the case of equality we have that $\Im s= \square$.
+Indeed,
+the same argument shows that 
+\[\vol(s^{-1}(\square),g)\ge \vol\square=1.\]
+The set $s^{-1}(\RR^1\backslash \square)$ is an open subset of $\square$.
+If it is nonempty, then it has positive volume.
+In this case
+\[\vol(\square,g)>\vol(s^{-1}(\square),g)\ge 1\]
+--- a contradiction.
+
+Summarizing above discussion, there is a geodesic path of $g$-length $1$ connecting a point on one face of cube to the opposite face.
+
+Moreover, for any pair of opposite faces and a point $p\in\square$, there is a geodesic path of $g$-length $1$ from one face to the other that pass thru $p$.
+The latter can be shown by cutting $\square$ into two rectangles by a level surface of $\distfun_A$ thru $p$,
+applying the above statement to both rectangles and taking the concatination of the obtained geodesic paths with end at $p$.
+(The level surface might cut a rectangle with some topology, so have to apply \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}).
+
+Let $\gamma$ be such geodesic path from $A$ to $A'$.
+Observe that $\gamma'(t)\z=\nabla_{\gamma(t)}\distfun_A$.
+Therefore $\distfun_A$ is differentiable at every point $p\in \square$.
+It follows that the map $s$ is differentiable.
+
+Further checking the equality case in each inequality in the proof of \ref{thm:besikovitch}, we get that $s$ is a bijection and the equalities
+\[|d_{p}\distfun_A|= 1,\quad|d_{p}\distfun_B|=1,\quad \text{and}\quad \langle d_{p}\distfun_A,d_{p}\distfun_B\rangle= 0\]
+hold for almost all $p\in\square$.
+Since $d_{p}\distfun_A$ and $d_{p}\distfun_B$ are well defined, we get that the equalities hold everywhere.
+That is $s$ is an isometry.
 
 \begin{wrapfigure}{r}{45 mm}
 \vskip-4mm
 \centering
-\includegraphics{mppics/pic-23}
+\includegraphics{mppics/pic-27}
 \end{wrapfigure}
+
+\parbf{Exercise~\ref{ex:hexagon}.}
+Consider the hexagon with flat matric and curved sides shown on the diagram.
+Observe that its area can be made arbitrary small while keeping the distances from the opposite sides at least 1.
+
+\parbf{Exercise~\ref{ex:gadograph}.}
+Without loss of generality, we may assume that $V$ lies in a unit cube $\square$.
+Consider a noncontinuous metric tensor $\bar g$ on $\square$ that coincides with $g$ inside $V$ and with the canonical flat metric tensor outside of $V$.
+
+Observe that the $\bar g$-distances between opposite faces of $\square$ are at least 1.
+Indeed this is true for the Euclidean metric and the assumption $\dist{p}{q}{g}\ge\dist{p}{q}{\EE^d}$  guarantees that one can not make a shortcut in~$V$.
+Therefore the $\bar g$-distances between every pair of opposite faces is at least as large as 1 which is the Euclidean distance.
+
+This metric tensor $\bar g$ is not continuous at $\Sigma$, but the same argument as in \ref{thm:besikovitch} can be applied to show that $\vol(\square,\bar g)\ge \vol\square$.
+Whence the statement follows.
+
+
+\parbf{Exercise~\ref{ex:sysT2}.}
+Set $s=\sys(\TT^2,g)$.
 
 Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma_1$.
 We get an anulus with a Riemnnian metric on it $(N,g)$.
 Denote by $A$ and $A'$ the two components of its boundary.
-
-%???+PIC
 
 Assume that $\gamma_2$ is a shortest path that runs from $A$ to $A'$ in $(N,g)$.
 The image of $\gamma_2$ in $\TT^2$ connects two points in $\gamma_1$;
@@ -1544,6 +1591,12 @@ Therefore its length is at least $s$.
 The arc of $\gamma_1$ has length at most half of $\length\gamma_1$.
 Whence $\length \gamma_2\ge \tfrac s2$.
 In particular the distance from $A$ to $A'$ in $(N,g)$ is at least $\tfrac s2$.
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-23}
+\end{wrapfigure}
 
 Let us cut $(N,g)$ by $\gamma_2$, we obtain a square $(\square,g)$ with Riemnnian metric on it.
 Let us keep the notation $A$ and $A'$ for the pair of opposite sides in $(\square,g)$ that correspond to $A$ and $A'$ in $(N,g)$.
@@ -1596,8 +1649,78 @@ Note that $(\DD^2,g)$ can be paraneterized by a square with sides $A$, $B$, $A'$
 For the optimal constant was found by Pao Ming Pu see the discussion on page \pageref{page:pu}.
 His proof shows that any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has area at least as large as the unit hemisphere.
 It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessary a disc);
-this is the so called the \emph{filling area conjecture} \cite[(e$'$)]{gromov-1983}.
+this is the so called the \emph{filling area conjecture} mentioned in \cite[5.5.B$'$(e$'$)]{gromov-1983}.
 
+\parbf{Exercise~\ref{ex:sysSg}.} Cut the surface along a shortest noncontractible curve $\gamma$. 
+We might get a surface with one or two components of the boundary.
+In these two cases repeat the arguments in \ref{ex:sysRP2} or \ref{ex:sysT2} using \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}.
 
 
 \parbf{Exercise~\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
+
+\parbf{Exercise~\ref{ex:fillrad<diam/2}.} 
+As usual we consider $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$;
+more precisely we identify $\spc{M}$ with its image under the map  $x\mapsto \distfun_x$.
+Set 
+\[R=\tfrac12\cdot\diam\spc{M}.\]
+
+Consider point $p$ in $\ell^\infty(\spc{M})$ that corresponds to the constant function $p(x)=R$.
+Since $0\le \distfun_x(z)\le  2\cdot R$ and $0=\distfun_x(x)$, we get that
+\[\sup\set{|p(z)-\distfun_x(z)|}{z\in\spc{M}}=R.\]
+In other words, the point $p\in \ell^\infty(\spc{M})$ lies on distance $R$ from any point on $\spc{M}\subset \ell^\infty(\spc{M})$.
+
+The linear homotopy $h_t\:\spc{M}\to \ell^\infty(\spc{M})$ defined by
+\[h_t(x)=(1-t)\cdot x+t\cdot p\]
+contracts $\spc{M}$ to the point $p$.
+Note that $\dist{h_t(x)}{x}{\ell^\infty(\spc{M})}\le R$ for any $t\in[0,1]$.
+In particular the fundamental class of $\spc{M}$ bounds in the closed $R$-neighborhood of $\spc{M}$ in $\ell^\infty(\spc{M})$.
+Whence the statement follows.
+
+\parbf{Exercise~\ref{ex:fillrad-inj}.} 
+Choose $R>\FillRad(\spc{M})$.
+Fix small $\eps>0$ and set $R'=R+\eps$.
+
+Let $\sigma\:W\to \ell^\infty(\spc{M})$ be a map of a simplicial complex as in the proof of \ref{thm:sys<FillRad}.
+That is, the restriction $\sigma|_{\partial W}$
+represents the fundamental class $[\spc{T}]$ of $\spc{T}$,
+the image $\sigma(W)\subset B_{R}(\spc{T})$,
+and $\sigma$-image of any simplex in $W$ has diameter less then $\eps>0$.
+
+We may assume that vertexes of $W$ can be divided into $n+2$ levels, say $0,1,\dots,n+1$, so that each simplex has vertexes of different levels.
+This can be achieved by applying barycentric subdivision once.
+Indeed every vertex in the barycentric subdivision corresponds to a simplex in the original triangulation; so we can define level as the dimension of the corresponding simplex.
+
+Let us map each vertex $v$ of $W$ to a point in $\spc{M}$ closest to $\sigma(v)$; it defines the map on the 0-skeleton $W^0$.
+
+To extend the map to the higher skeletons we will apply the following \emph{cone construction}.
+Suppose the map is defined on the base $\triangle_v$ of a simplex $\triangle$ and the opposite vertex $v$.
+Note that every point $x$ of $\triangle$ lies on a line segment $[vy]$ with $y\in \triangle_v$, say $x=(1-t)\cdot v+t\cdot y$.
+If $f(\triangle_v)$ lies on the distance less than $r$ from $f(v)$,
+then $f(v)$ is connected to $f(y)$ by a uniqe geodesic path $\gamma_y\:[0,1]\to \spc{M}$ that depends continuously on $y$.
+In this case we can set $f(x)=\gamma_y(t)$.
+
+We have to arrange the construction in such a way that the simplexes will fit together and to make sure that the image of tha base is $r$-far from the vertex.
+
+To do so let us apply the the cone construction to the edges between 1-level vertex $v_1$ to the 0-level base $v_0$.
+This way we mapped the edge $[v_1v_0]$ to a geodesic path shorter than $2\cdot R'$.
+(If $2\cdot R'<r$, then it is unique, but it is not yet important.)
+It defines the map on all edges of $W$ between vertexes on level $0$ and $1$.
+
+Now let us extend the map to each triangle with vertex $v_2$ on level 2 and base edge $[v_1v_0]$ with vertexes of level 1 and 0.
+The $f$image of the base has length less than $2\cdot R'$ 
+and the distance from $f(v_2)$ to $f(v_1)$ and $f(v_0)$ is also less than $2\cdot R'$.
+Therefore for every $y\in [v_1v_0]$, we have $\dist{f(v)}{f(y)}{\spc{M}}<3\cdot R'$.
+So if $3\cdot R'<r$, then we can apply cone construction to extend the map to each triangle with level of the vertexes $0,1,$ and $2$.
+
+Further let us extend the map to each triangle with vertex $v_3$ on level 3 and base edge $\triangle$ with vertexes $v_0,v_1,v_2$ of level 0,1, and 2.
+Any point $x$ in the base lies in a triangle with vertexes $v_3,v_2$ and a point $z$ on the edge $[v_0v_1]$.
+From above we have that $\dist{f(v_3)}{f(z)}{\spc{M}}<3\cdot R'$, $\dist{f(v_2)}{f(z)}{\spc{M}}<3\cdot R'$, and $\dist{f(v_3)}{f(v_2)}{\spc{M}}<2\cdot R'$,
+By triangle inequality $\dist{f(v_3)}{f(x)}{\spc{M}}<4\cdot R'$.
+Therefore, if $4\cdot R'<r$ we can extend $f$ to each triangle with the levels of vertexes $0,1,$ and $2$.
+
+Continuing this way we get that we can extend the map to whole $W$ if 
+$(n+1)\cdot R'<r$.
+In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
+That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
+\[\FillRad \spc{M}\ge r.\]
+

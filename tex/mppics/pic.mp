@@ -562,6 +562,27 @@ label.ulft(btex $\gamma_1(1)$ etex, point 1.7 of p1);
 label.llft(btex $\gamma_1(0)$ etex, -(point .3 of p1));
 endfig;
 
+beginfig(27) 
+save u;
+u:=2cm;
+path p[];
+
+z.a0=(0,1)*u rotated 5;
+z.b0=(0,1)*u rotated -5;
+z.c0=(0,.2)*u rotated 60;
+z.a1=z.a0 rotated 120;
+z.a2=z.a0 rotated -120;
+z.b1=z.b0 rotated 120;
+z.b2=z.b0 rotated -120;
+z.c1=z.c0 rotated 120;
+z.c2=z.c0 rotated -120;
+
+p0=z.a0..tension 2..z.c0..tension 2..z.b1--z.a1..tension 2..z.c1..tension 2..z.b2--z.a2..tension 2..z.c2..tension 2..z.b0--cycle;
+
+hatchfill p0 withcolor (77, 1mm, -.5bp);
+draw p0 pensemibold;
+endfig;
+
 beginfig(100) 
 save u;
 u:=.3cm;

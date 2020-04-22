@@ -1,3 +1,64 @@
+\parit{Proof.}
+Set $n+1=\dim \spc{M}$.
+Choose $R>\width\spc{M}$.
+Let $\psi\:\spc{M}\to \spc{N}$ be a map to an $n$-dimensional simpleicial complex $\spc{N}$ provided by \ref{prop:width=suprad(inv)}.
+
+Given $x\in \spc{M}$ set $[x]=\psi^{-1}\{\psi(x)\}$.
+Given $x\in \spc{M}$, consider the function $f_x\;\spc{M}\to\RR$ defined by
+\[f_x(y)=\distfun_{[x]}(y)-R.\]
+Note that $\diam [x]\le 2\cdot R$; therefore
+\[\distfun_{[x]}(y)+2\cdot R\ge\distfun_x(x)\ge \distfun_{[x]}(y);\]
+moreover if $x=y$, then the second inequality is an equality.
+Whence \[\sup\set{|f_x(y)-\distfun_x(y)|}{y\in\spc{X}}=R\] 
+for any $x\in \spc{M}$.
+In other words, the map $f\:x\mapsto f_x\in\ell^\infty(\spc{M})$ moves each point by distance $R$.
+In particular the homotopy $h_t\:\spc{M}\to\ell^\infty(\spc{M})$ 
+defined by $h_t(x)=(1-t)\cdot x+ t\cdot f_x$ deforms $\spc{M}$ into a 
+Since $f$ is factorized thru $\spc{N}$
+
+
+
+Set $n=\dim \spc{M}$.
+Choose $R>\width\spc{M}$.
+
+Suppose $\{V_1,\dots, V_k\}$ is an open cover of $\spc{M}$ that meets the definition of width;
+that is, the multiplicity of the cover is at most $n$ and for each $V_i$ there is a point $p_i\in  V_i$ such that $V_i\subset \oBall(p_i,R)$.
+
+Further for each simplex $\triangle$ in $\spc{N}$ with the vertexes $v_{i_1},\dots,v_{i_m}$ choose a point 
+
+Let $\spc{N}$ be the nerve of the covering;
+denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
+Since multiplicity of $\{V_i\}$ is at most $n$, we have that $\dim\spc{N}\le n-1$. 
+Let $\bm{\psi}\:\spc{M}\to\spc{N}$ be the map provides by \ref{prop:space->nerve}.
+
+Consider the map $g\:\spc{N}\to\ell^\infty(\spc{M})$ that sends $v_i$ to $p_i$ and affine on each simplex.
+Consider the linear homotopy \[h_t(x)\z=(1-t)\cdot x+ t\cdot g\circ \bm{\psi}(x).\]
+Observe that $h_t(x)$ lies in a $R$-neighborhood of $\spc{M}$ in $\ell^\infty(\spc{M})$.
+Indeed, if $\psi_i(x)>0$, then $\dist{p_i}{x}{}<R$.
+In particular, if $n(x)$ denotes the number of functions $\psi_i$ such that $\psi_i(x)>0$, then  
+\[\sum_{\set{i}{\psi_i(x)>0}} \dist{p_i}{x}{}\le n(x)\cdot R.\]
+That is average distance from $x$ to $p_i$ such that  $\psi_i(x)>0$ is at most $R$.
+Therefore the distance from $x$ to one of the points $p_i$ is at most $R$.
+In particular 
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Essential manifolds}
 
 

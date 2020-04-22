@@ -47,6 +47,8 @@ isbn=false]{biblatex}
 \DeclareFieldFormat{multipostnote}{#1}
 \DeclareFieldFormat{pages}{#1}
 
+\addto\captionsenglish{\renewcommand{\chaptername}{Lecture}}
+
 
 %LIST STILES
 \renewcommand{\@listI}{%
@@ -134,12 +136,14 @@ isbn=false]{biblatex}
 \def\InjRad{\operatorname{\rm InjRad}\nolimits}
 \def\Inn{\operatorname{\rm Inn}\nolimits}
 \def\Int{\operatorname{\rm Int}\nolimits}
-\def\id{\operatorname{\rm id}}
-\def\length{\operatorname{\rm length}}
-\def\pack{\operatorname{\rm pack}}
-\def\Ric{\operatorname{\rm Ric}}
-\def\Rm{\operatorname{\rm Rm}}
-\def\Tor{\operatorname{\rm Tor}}
+\def\id{\operatorname{\rm id}\nolimits}
+\def\length{\operatorname{\rm length}\nolimits}
+\def\pack{\operatorname{\rm pack}\nolimits}
+\def\Ric{\operatorname{\rm Ric}\nolimits}
+\def\Rm{\operatorname{\rm Rm}\nolimits}
+\def\Tor{\operatorname{\rm Tor}\nolimits}
+\def\VolPro{\operatorname{\rm VolPro}\nolimits}
+\def\width{\operatorname{\rm width}\nolimits}
 \newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
 \renewcommand*{\lg}{%
 \mathrel{\vcenter{\offinterlineskip

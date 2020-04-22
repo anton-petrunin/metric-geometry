@@ -23,7 +23,8 @@ Further we can define a metric on $M$ as least lower bound to lengths of piecewi
 the described distance between points $x$ and $y$ will be denoted by $\dist{x}{y}{g}$ or $\distfun_x(y)_g$.
 The distance function from a point $x$ will be denoted by $(\distfun_x)_g$ or $\distfun_x$ if the choice of $g$ is evident.
 
-The following claim requires a proof, but we will assume that it is obvious.
+The following claim states that the constructed metric remembers everything about the metric tensor and the underlying smooth manifold;
+this claim requires a proof, but we will assume that it is obvious.
 
 \begin{thm}{Claim}
 Let $(M,g)$ be a Riemannian manifold.
@@ -93,8 +94,8 @@ Since $f\:\square\to\square$ is a Lipschitz onto map, the \emph{area formula} im
 The following generalization can be proved along the same lines.
 
 \begin{thm}{Theorem}\label{thm:besikovitch+}
-Let $(M,g)$ be Riemannian manifold and its boundary admits a homeomorphism $\partial\square^n\to\partial M$. 
-Suppose $d_1,\dots, d_n$ the distances between the the images of pairs of opposite faces of $\square^n$ in $\partial M$.
+Let $(M,g)$ be Riemannian manifold and its boundary admits a degree 1 map $\partial M\to\partial\square^n$. 
+Suppose $d_1,\dots, d_n$ the distances between the the inverse images of pairs of opposite faces of $\square^n$ in $\partial M$.
 Then 
 \[\vol(M,g)\ge d_1\cdots d_n.\]
 \end{thm}
@@ -221,7 +222,7 @@ holds for any compact $n$-dimensional Riemannian manifold $\spc{M}$.
 
 In the following section we show why this theorem is related to \ref{thm:FillRad<vol}.
 
-\section{Systole and filling radius}
+\section{Filling radius bounds systole}
 
 \begin{thm}{Theorem}\label{thm:sys<FillRad}
 Suppose $\spc{T}= (\TT^n,g)$ is a Riemnnian manifold on $n$-dimensional torus $\TT^n$.
@@ -234,31 +235,31 @@ Note that \ref{thm:sys<FillRad} and \ref{thm:FillRad<vol}  imply \ref{thm:sys(to
 \parit{Proof.}
 As usual we consider $\spc{T}$ as a subspace in $\ell^\infty(\spc{T})$.
 
-Set $s=\sys\spc{T}$ and $\FillRad\spc{T}=r$.
-Arguing by contradiction, assume $6\cdot r< s$;
-so $\eps=\tfrac1{100}\cdot(s-6\cdot r)>0$.
+Set $s=\sys\spc{T}$ and choose $R>\FillRad\spc{T}$.
+Arguing by contradiction, assume $6\cdot R< s$;
+so $\eps=\tfrac1{100}\cdot(s-6\cdot R)>0$.
 
-Choose a simplicial complex $\Sigma$ and a map $\sigma\:\Sigma\to \ell^\infty(\spc{T})$ such that the restriction $\sigma|_{\partial\Sigma}$
+Choose a simplicial complex $W$ and a map $\sigma\:W\to \ell^\infty(\spc{T})$ such that the restriction $\sigma|_{\partial W}$
 represents the fundamental class $[\spc{T}]$ of $\spc{T}$
-and $\sigma(\Sigma)\subset B_{r+\eps}(\spc{T})$.
+and $\sigma(W)\subset B_{R}(\spc{T})$.
 
 
-Passing to barycentric subdivision few times, we may assume that the $\sigma$-image of any simplex in $\Sigma$ has diameter less than $\eps$.
-We may perturb the map slightly to ensure that each edge $e$ of $\Sigma$ is mapped to a geodesic and still $\sigma|_{\partial\Sigma}$
+Passing to barycentric subdivision few times, we may assume that the $\sigma$-image of any simplex in $W$ has diameter less than $\eps$.
+We may perturb the map slightly to ensure that each edge $e$ of $W$ is mapped to a geodesic and still $\sigma|_{\partial W}$
 represents the fundamental class $[\spc{T}]$ of $\spc{T}$.
 
 Let us construct a continuous map
-$f\:\Sigma\to  \spc{T}$ which agrees with $\sigma$ on $\partial \Sigma$.
-Once it is done we get that $[\spc{T}]=0\in H_n(\spc{T})$ --- a contradiction.
+$f\:W\to  \spc{T}$ which agrees with $\sigma$ on $\partial W$.
+Once it is done we get that the fundamental class of $\spc{T}$ vanish in $ H_n(\spc{T})$ --- a contradiction.
 
-Set $f(x)=\sigma(x)$ for every $x\in \partial \Sigma$;
-on the remaining part of $\Sigma$ we will construct $f$ recurcevely on the skeletons $\Sigma^0$, $\Sigma^1$, $\Sigma^2$ and so on.
+Set $f(x)=\sigma(x)$ for every $x\in \partial W$;
+on the remaining part of $W$ we will construct $f$ recurcevely on the skeletons $W^0$, $W^1$, $W^2$ and so on.
 
 For every vertex $v$, set $f(v)$ to be the closest point in $\spc{T}$ to $\sigma(v)$.
-Note that if $v\in\partial\Sigma$, then $f(v)=\sigma(v)$.
-This way we defined $f$ on $\Sigma^0$.
+Note that if $v\in\partial W$, then $f(v)=\sigma(v)$.
+This way we defined $f$ on~$W^0$.
 
-Let $e$ be an edge in $\Sigma$ between vertexes $v$ and $w$.
+Let $e$ be an edge in $W$ between vertexes $v$ and $w$.
 Note that 
 \begin{align*}
 \dist{f(v)}{f(w)}{}
@@ -266,24 +267,32 @@ Note that
 +\dist{\sigma(v)}{\sigma(w)}{}
 +\dist{\sigma(w)}{f(w)}{}\le
 \\
-&\le (r+\eps)+\eps +(r+\eps)<
+&\le R+\eps +R<
 \\
 &<\tfrac s3.
 \end{align*}
 Map $e$ to a shortest path $[f(v)\,f(w)]$ in $\spc{T}$;
-if $e$ is an edge in $\partial \Sigma$ then no need to change $f$ on it.
-This extends $f$ to $\Sigma^1$ such that each edge is mapped to a geodesic of length less that $\tfrac s3$.
+if $e$ is an edge in $\partial W$ then no need to change $f$ on it.
+This extends $f$ to $W^1$ such that each edge is mapped to a geodesic of length less that $\tfrac s3$.
 
-Now for each triangle $uvw$ in $\Sigma$, the closed curve formed by $f$-images of its sides has length less than $s$.
+Now for each triangle $uvw$ in $W$, the closed curve formed by $f$-images of its sides has length less than $s$.
 That is, it is shorter than any noncontractible closed curve,
 and therefore it is null-homotopic in $\spc{T}$.
-Hence we can extend $f$ to the $\Sigma^2$.
+Hence we can extend $f$ to the $W^2$.
 
-Finally, since $\spc{T}$ is aspherical, there is no obstruction to extending $f$ to the rest of $\Sigma$.
+Finally, since $\spc{T}$ is aspherical, there is no obstruction to extending $f$ to the rest of $W$.
 \qeds
 
-Observe that we use only that $\spc{T}$ is aspherical closed manifold;
-this statement will be generalized yet further.
+Observe that we use only that $\spc{T}$ is aspherical closed manifold.
+That is, we actually proved the following more general theorem.
+
+\begin{thm}{Theorem}\label{thm:sys<FillRad+}
+Suppose $\spc{M}$ is an asherical $n$-dimensional Riemnnian space.
+Then 
+\[\sys\spc{M}\le 6 \cdot \FillRad \spc{M}.\]
+\end{thm}
+
+This statement will be generalized yet further in the following section.
 
 \begin{thm}{Exercise}\label{ex:fillrad-inj}
 Modify the proof of \ref{thm:sys<FillRad} to prove the following:
@@ -295,4 +304,13 @@ Show that
 \end{thm}
 
 Note that this exercise together with bound on filling radius in \ref{thm:FillRad<vol} imply that lower bound on injectivity radius implies a lower bound on volume.
+This statement was proved first by Marcel Berger \cite{berger} and it is not at all trivial.
+
+\section{Essential manifolds}
+
+Note that the real projective space $\RP^n$ is not aspherical.
+Therefore \ref{thm:sys<FillRad+} is not applicable for $\RP^n$.
+The goal of this section is to extend \ref{thm:sys<FillRad+} to $\RP^n$ and many other spaces.
+
+...
 
