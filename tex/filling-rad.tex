@@ -3,19 +3,26 @@
 This chapter 
 is devoted to a proof of \ref{thm:FillRad<vol};
 that is, we will show that \emph{Riemannian manifolds with small volume have small filling radius}.
+Note that once it is proved, \ref{thm:sys<FillRad} implies \ref{thm:sys(torus)}.
+Moreover \ref{thm:sys<FillRad++} implies the following:
+
+\begin{thm}{Therorem}\label{thm:sys(torus)}
+Systolic intequality holds for any essential manifold. 
+\end{thm}
+
 This theorem was proved originally by Mikhael Gromov \cite{gromov-1983}.
-We follow closely a simplified proof given by Alexander Nabutovsky, which is based on a sequence of other simplifications and improvements; see \cite{nabutovsky} and the references there in.
+We follow closely a simplified proof given by Alexander Nabutovsky, which is based on a sequence of other simplifications and improvements; see \cite{nabutovsky} and the references therein.
 
 \section{Nerves and partition of unity}
 
 Let $\{V_1,\dots,V_k\}$ be a finite open cover of a compact metric space $\spc{X}$.
-Consider the abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertexes $v_{i_1},\dots, v_{i_k}$ is included in $\spc{N}$ if 
+Consider an abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertexes $v_{i_1},\dots, v_{i_m}$ is included in $\spc{N}$ if 
 the intersection $V_{i_1}\cap\dots\cap V_{i_m}$ is nonempty.
 We obtain a simplicial complex $\spc{N}$ called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
 
 Note that $\spc{N}$ is a finite simplicial complex and it has dimension at most $n$ if and only if the covering $\{V_1,\dots,V_k\}$ has multiplicity is at most $n+1$;
 that is, at most $n+1$ different sets $V_{i_1},\dots, V_{i_{n+1}}$ have a nonempty intersection.
-The nerve $\spc{N}$ is a subcomplex of a simplex with the vertixes $v_1,\dots,v_k\}$.
+The nerve $\spc{N}$ is a subcomplex of a simplex with the vertixes $\{v_1,\dots,v_k\}$.
 
 \begin{thm}{Proposition}\label{thm:part-unit}
  Let $\{V_1,\dots,V_k\}$ is a finite open covering of a compact metric space ${\spc{X}}$.
@@ -30,7 +37,7 @@ a \emph{partition of unity subordinate to the open cover}\index{partition of uni
 
 \parit{Proof.}
 Consider the functions $\phi_i\:{\spc{X}}\to\RR$ defined as
-$$\phi_i(x)=\distfun_{{\spc{X}}\backslash V_i} x.$$
+$$\phi_i(x)=\distfun_{({\spc{X}}\backslash V_i)} x.$$
 Note $\phi_i$ is $1$-Lipschitz
 for any $i$
 and $\phi_i(x)>0$ if and only if $x\in V_i$.
@@ -48,16 +55,16 @@ the set
 $$\set{v_i}{\psi_i(x)>0}$$
 describe vertexes of a simplices in the nerve.
 Therefore 
-$$\bm{\psi}\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
+$$\psi\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
 can be thought of as a Lipschitz map from ${\spc{X}}$ to the nerve $\spc{N}$ of $\{V_i\}$;
 where the point $x$ is mapped to the point with barycentric coordinates $\psi_i(x)$.
 In other words we proved the following:
 
 \begin{thm}{Proposition}\label{prop:space->nerve}
-Let $\spc{N}$ be a nerve of an open covering $\{V_1,\dots,V_k\}$ of a compact metric space $\spc{X}$.
+Let $\spc{N}$ be a nerve of an open covering $\{V_1,\z\dots,V_k\}$ of a compact metric space $\spc{X}$.
 Denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
 
-Then there is a Lipschitz map from $\bm{\psi}\:\spc{X}\to\spc{N}$ such that $\bm{\psi}(V_i)\z\subset\Star_{v_i}$ for every $i$.
+Then there is a Lipschitz map from $\psi\:\spc{X}\to\spc{N}$ such that $\psi(V_i)\z\subset\Star_{v_i}$ for every $i$.
 \end{thm}
 
 
@@ -68,7 +75,7 @@ The radius of $A$ (briefly $\rad A$) is defined as the least upper bound on the 
 
 \begin{thm}{Definition}\label{def:width}
 Let $\spc{X}$ be a metric space.
-The $n$-width of $\spc{X}$ (briefly $\width_n\spc{X}$) is defined as least upper bound on values $R>0$ such that $\spc{X}$ admits a finite open covering $\{V_i\}$ with multiplicity at most $n+1$ and $\rad V_i< R$ for any $i$.
+The $n$-th width of $\spc{X}$ (briefly $\width_n\spc{X}$) is defined as least upper bound on values $R>0$ such that $\spc{X}$ admits a finite open covering $\{V_i\}$ with multiplicity at most $n+1$ and $\rad V_i< R$ for each $i$.
 \end{thm}
 
 \parit{Remarks.}
@@ -77,49 +84,50 @@ The $n$-width of $\spc{X}$ (briefly $\width_n\spc{X}$) is defined as least upper
 \[\width_0\spc{X}=\rad\spc{X}.\]
 \item 
 Usually width is defined using diameter instead of radius, but the result differ at most twice.
-Namely if $r$ is the radius width and $d$ --- the diameter width of the same dimension, then 
+Namely if $r$ is an $n$-th radius-width and $d$ --- $n$-th diameter-width of the same dimension, then 
 $r\le d\le 2\cdot r$.
 
 \item The definition of width reminds the definition of Lebesgue covering dimension.
 In fact one says that a space has \emph{macroscopic dimesion} $\le n$ on the space $R$ if it admits an open cover as in the definiton.
 \end{itemize}
 
-\begin{thm}{Exercise}
-Suppose $\spc{X}$ be a simply connected metric space such that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $R$-neighborhood.
+\begin{thm}{Exercise}\label{ex:macrodimension}
+Suppose $\spc{X}$ be a metric space such that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $R$-neighborhood.
 Show that $\spc{X}$ is has macroscopic dimension at most 1 on scale $100\cdot R$.
 
-Proove a quasiconverse; that is, if a simply connected metric space $\spc{X}$ has macroscopic dimension at most 1 on scale $R$, then any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $100\cdot R$-neighborhood.
+What about quasiconverse? That is, suppose a simply connected metric space $\spc{X}$ has macroscopic dimension at most 1 on scale $R$, is it true that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $100\cdot R$-neighborhood?
 \end{thm}
 
 
-The following proposition provides an equivalent definition.
+The following proposition provides an equivalent definition;
+we will not use it, but it provides a good reason for the name width.
 
 \begin{thm}{Proposition}\label{prop:width=suprad(inv)}
 Suppose $\spc{X}$ is a compact metric space.
-Then $\width_n\spc{X}<R$ if and only if there is a finite $n$-dimensional somplicial complex $\spc{S}$ and a continuous map $\bm{\psi}\:\spc{X}\to \spc{N}$
-such that $\rad[\bm{\psi}^{-1}(s)]\z<R$
+Then $\width_n\spc{X}<R$ if and only if there is a finite $n$-dimensional somplicial complex $\spc{S}$ and a continuous map $\psi\:\spc{X}\to \spc{N}$
+such that $\rad[\psi^{-1}(s)]\z<R$
 for any $s\in \spc{N}$.
 \end{thm}
 
 \parit{Proof; ``only if'' part.}
 Suppose $\width_n\spc{X}<R$.
 Consider a covering $\{V_1,\dots,V_k\}$ of $\spc{X}$ guaranteed by the definition of width.
-Let $\spc{N}$ be its nerve and $\bm{\psi}\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
+Let $\spc{N}$ be its nerve and $\psi\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
 
 Note that if $x\in \spc{N}$ lies in a symplex with a vertex $v_i$,
-then $\bm{\psi}^{-1}(x)\subset V_i$;
-in particulr $\bm{\psi}^{-1}(x)$ can be covered by a ball of radius $R$ in $\spc{X}$.
+then $\psi^{-1}(x)\subset V_i$;
+in particulr $\psi^{-1}(x)$ can be covered by a ball of radius $R$ in $\spc{X}$.
 
 \parit{``If'' part.}
 Choose $x\in \spc{N}$.
-Since the inverse image $\bm{\psi}^{-1}(x)$ is compact, $\bm{\psi}$ is continuous, and $\rad[\bm{\psi}^{-1}(x)]<R$,
-here is a neighborhood $U\ni x$ such that the  $\rad[\bm{\psi}^{-1}(U)]<R$.
+Since the inverse image $\psi^{-1}(x)$ is compact, $\psi$ is continuous, and $\rad[\psi^{-1}(x)]<R$,
+here is a neighborhood $U\ni x$ such that the  $\rad[\psi^{-1}(U)]<R$.
 
-It follows that there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\bm{\psi}^{-1}(U_i)\subset\spc{X}$ has radius smaller than $R$ for each $i$.
+It follows that there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\psi^{-1}(U_i)\subset\spc{X}$ has radius smaller than $R$ for each $i$.
 Since $\spc{N}$ has dimension $n$, we can inscribe%
 \footnote{Recall that a covering $\{W_i\}$ is inscribed in the covering $\{U_i\}$ if for every $W_i$ is a subset of some $U_j$.} 
 in $\{U_i\}$ an finite open cover $\{W_i\}$ with multiplicity at most $n+1$.
-It remains to observe that $V_i=\bm{\psi}(W_i)$ defines a finite open cover of $\spc{X}$ with radius less than $R$ and multiplicity at most $n+1$. 
+It remains to observe that $V_i=\psi(W_i)$ defines a finite open cover of $\spc{X}$ with radius less than $R$ and multiplicity at most $n+1$. 
 \qeds
 
 Further we will apply the notion of width to compact Riemannian polyhedrons;
@@ -127,7 +135,7 @@ If $n$ is the dimension of a compact Riemannian polyhedron $\spc{P}$, then
 we suppose that
 \[\width\spc{P}\df\width_{n-1}\spc{P}.\]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:FillRad<width}
 Show that for any closed Riemannian manifold $\spc{M}$ we have
 \[\FillRad \spc{M}\le 100\cdot \width\spc{M};\]
 try to show that in fact
@@ -138,7 +146,7 @@ try to show that in fact
 
 
 
-\section{Volume bounds width}
+\section{Volume profile}
 
 A \emph{Riemannian polyhedron} is defined as a finite connected simplicial complex with a metric tensor on each simplex such that the restriction of the metric on each simplex to a subsymplex coinsides with the metric on the subsmplex.
 The dimension of Riemannian polyhedron is defined as the largest dimension it its triangulation.
@@ -149,44 +157,34 @@ Let us define volume profile of $\spc{P}$ as a function $\VolPro_{\spc{P}}\:\RR_
 \[\VolPro_{\spc{P}}(r)\df \sup\set{\vol \oBall(p,r)}{p\in\spc{P}}.\]
 Note that $\VolPro_{\spc{P}}$ is a nondecreasing function and $\VolPro_{\spc{P}}(r)\z\to\vol\spc{P}$ as $r\to\infty$.
 
-\begin{thm}{Exercise}
-Suppose $\spc{M}$ be a 1-dimensional Riemannian polhedron.
-Suppose $\VolPro_{\spc{P}}(r_0)<r_0$ for some $r_0>0$.
-Show that 
-\[\diam \spc{P}<r_0.\]
-Note tha it is equivalent to $\width \spc{P}<r_0$.
+\begin{thm}{Theorem}\label{thm:width<volpro}
+There is a constant $c_n>0$ such that the following holds true:
+
+If $\spc{P}$ is an $n$-dimensional Reimannian polyhedron such that 
+\[r> c_n\cdot \sqrt[n]{\VolPro_{\spc{P}}(r)}\] 
+for some $r>0$, then 
+\[\width\spc{P}\le  r.\]
 \end{thm}
 
+Since $\VolPro_{\spc{P}}(r)\le \vol\spc{P}$ for any $r$,
+Theorem \ref{thm:width<volpro} implies the following:
 
-An $(n-1)$-dimensional subpolyhedron $\spc{Q}\subset\spc{P}$ is called $R$-separating if each
-connected component of its complement $\spc{P}\backslash \spc{Q}$ can be covered by a metric ball of radius $R$.
-
-\begin{thm}{Lemma}
-Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
-Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\subset\spc{P}$ such that for any $r_0<r_1\le R$ we have
-\[\VolPro_{\spc{Q}}(r_0)< \tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps.\]
-
+\begin{thm}{Theorem}\label{thm:width<vol}
+There is a constant $c_n>0$ such that 
+\[\width\spc{P}\le c_n\cdot \sqrt[n]{\vol\spc{P}}\] 
+for any  $n$-dimensional Reimannian polyhedron $\spc{P}$.
 \end{thm}
 
-\begin{thm}{Lemma}
-Let $\spc{Q}$ be a $R$-separating subpolyhedron in an $n$-dimensional Riemannian polyhedron $\spc{P}$.
-Suppose $\width\spc{Q}\le R$.
-Then $\width\spc{P}\le R$
-\end{thm}
+Together with \ref{ex:FillRad<width}, the last theorem implies \ref{thm:FillRad<vol} which is the goal of this lecture.
 
-\parit{Proof.}
-Start with an open covering $\{V_1,\dots,V_k\}$ of $\spc{Q}$ of multiplicity $\le n$ with radiuses of the sets in the intrinsic metric $\le R$.
-Convert $\{V_1,\dots,V_k\}$ into an an open covering of
-a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
-Finally, add all the components of $\spc{P}\backslash \spc{Q}$ to the covering;
-it increases the multiplicity by 1.
-\qeds
+\section{Proof}
 
-The following technical statement will be used without a proof.
+In the proof of \ref{thm:width<volpro}, we will use the following three technical statements,
+the proofs are omitted, but they are not hard. 
 
-\begin{thm}{Claim}
+\begin{thm}{Smoothing procedure}
 Let $\spc{P}$ be a Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function.
-Then for any $\eps>0$ there is a  1-Lipschitz function $f_\eps\:\spc{P}\to \RR$ that is smooth on each simplex of the triangulation and $\eps$-close to $f$.
+Then for any $\delta>0$ there is a  1-Lipschitz function $\tilde f\:\spc{P}\to \RR$ that is smooth on each simplex of the triangulation and $\delta$-close to $f$.
 \end{thm}
 
 \begin{thm}{Sard's theorem}
@@ -198,6 +196,103 @@ Then for almost all values $a$ each component of the inverse image $f^{-1}(a)$ i
 \begin{thm}{Coarea inequality}
 Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function that is smooth on each simplex.
 Then 
-\[\vol_n (f^{-1}[a,b]) \le \int_a^b\vol_{n-1}[f^{-1}(x)]\cdot dx.\]
+\[\vol_n (f^{-1}[a,b]) \le \int_a^b\vol_{n-1}(f^{-1}\{x\})\cdot dx.\]
 \end{thm}
+
+Theorem \ref{thm:width<volpro} will be proved by induction on the dimension of $\spc{P}$;
+the following exercise provides a base for the induction.
+Note that $\spc{P}$ is connected by definition and if it is 1-dimensional, then 
+\[\width\spc{P}=\width_0\spc{P}=\rad\spc{P}.\]
+
+\begin{thm}{Exercise}\label{ex:1D-case}
+Suppose $\spc{P}$ be a 1-dimensional Riemannian polhedron.
+Suppose $\VolPro_{\spc{P}}(r)<r$ for some $r>0$.
+Show that 
+\[\width \spc{P}<r.\]
+
+\end{thm}
+
+
+An $(n-1)$-dimensional subpolyhedron $\spc{Q}\subset\spc{P}$ is called $R$-separating if each
+connected component of the complement $\spc{P}\backslash \spc{Q}$ has radius smaller than $R$.
+
+\begin{thm}{Lemma}\label{lem:separating}
+Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
+Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\subset\spc{P}$ such that for any $r_0<r_1\le R$ we have
+\[\VolPro_{\spc{Q}}(r_0)< \tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps.\]
+
+\end{thm}
+
+\parit{Proof.}
+Choose small $\delta>0$.
+Applying the smoothing procedure, we can exchange each distance function $\distfun_p$ on $\spc{P}$ by $\delta$-close smooth 1-Lipschitz function, which will be denoted by $\widetilde \distfun_p$.
+
+By Sard's theorem, almost all level sets $\tilde S_c(p)$ defined by $\widetilde \distfun_p=c$ are smooth Riemannian polyhedrons of dimension $n-1$.
+
+Since $\delta$ is small, the coarea inequality implies that 
+for some  $c\z\in(r_0+\delta, r_1-\delta)$ we have
+\begin{align*}
+\vol_{n-1}\tilde S_c(p)&\le \tfrac1{r_1-r_0-2\cdot\delta}\cdot\vol_n[\oBall(p,r_1)]<
+\\
+&<\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\tfrac\eps2.
+\end{align*}
+
+Now suppose $\spc{Q}$ is an $R$-separating subpolyhedron in $\spc{P}$ with almost minimal volume, say its volume is at most $\tfrac\eps2$-far from the greatest lower bound.
+Note that cutting from $\spc{Q}$ everything inside $\tilde S_c$ and adding $\tilde S_c$ keeps it to be $R$-separating subpolyhedron.
+It follows that
+\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]-\tfrac\eps2\le \vol_{n-1}S_c.\]
+Therefore 
+\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]\le\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps\eqlbl{eq:volQ<ProP}\]
+Recall that $\spc{Q}$ is equipped with the induced length metric;
+therefore $\dist{p}{q}{\spc{Q}}\ge \dist{p}{q}{\spc{P}}$ for any $p,q\in \spc{Q}$;
+in particular, 
+\[\oBall(p,r_0)_{\spc{Q}}\subset \spc{Q}\cap \oBall(p,r_0)_{\spc{P}}.\]
+Hence \ref{eq:volQ<ProP} implies the lemma.
+\qeds
+
+\begin{thm}{Lemma}\label{lem:separating-width}
+Let $\spc{Q}$ be a $R$-separating subpolyhedron in an $n$-dimensional Riemannian polyhedron $\spc{P}$.
+Suppose $\width\spc{Q}\le R$.
+Then $\width\spc{P}\le R$
+\end{thm}
+
+\parit{Proof.}
+Start with an open covering $\{V_1,\dots,V_k\}$ of $\spc{Q}$ of multiplicity $\le n$ with radiuses of the sets in the intrinsic metric $\le R$.
+
+Note that $\{V_1,\dots,V_k\}$ can be converted into an an open covering of
+a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
+This is can be done by setting 
+\[V_i'=\bigcup_{x\in V_i}\oBall(x,r_x),\]
+where $r_x=\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
+
+Finally, add all the components of $\spc{P}\backslash \spc{Q}$ to the covering;
+it increases the multiplicity by 1.
+The statement follows since $\dim \spc{P}= \dim \spc{Q}\z+1$.
+\qeds
+
+\parit{Proof of \ref{thm:width<volpro}.}
+We apply induction on the dimension $n=\dim\spc{P}$;
+the base case $n=1$ is provided by \ref{ex:1D-case},  for $c_1=1$.
+
+Suppose that the constant $c_{n-1}$ is known, choose sufficiently small $c_n$
+\[c_n>2\cdot c_{n-1}.\]
+
+Assume $c_n\cdot \sqrt[n]{\VolPro\spc{P}(r)}< r$.
+Fix small $\eps>0$.
+By taking $r_0=\tfrac r2$ and $r_1=r$ in \ref{lem:separating}, we have an $r$-separating subpolhedron $\spc{Q}$ in $\spc{P}$ such that 
+\begin{align*}
+\VolPro_\spc{Q}(r_0) &< \tfrac 1 {r_0}\cdot \VolPro_\spc{P}(r)+\eps<
+\\
+&<\tfrac 1 {r_0}\cdot \left(\frac{2\cdot r_0}{c_n}\right)^n+\eps=
+\\
+&=\left(\frac2{c_n}\right)^n\cdot r_0^{n-1}+\eps<
+\\
+&<\left(\frac1{c_{n-1}}\right)^{n-1}\cdot r_0^{n-1};
+\end{align*}
+that is, $c_{n-1}\cdot \sqrt[n-1]{\VolPro\spc{Q}(r_0)}< r_0$.
+By the induction hypothesis 
+\[\width\spc{Q}\le r_0<r.\]
+
+Applying \ref{lem:separating-width}, we get $\width\spc{P}<r$
+\qeds
 

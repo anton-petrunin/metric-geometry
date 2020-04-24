@@ -134,6 +134,15 @@ Christopher Croke conjectured that the optimal bound for this exercise is $\tfra
 Construct a metric $g$ on $\mathbb{S}^3$ with arbitrary small $\vol(\mathbb{S}^3,g)$ and such that it admits an involution $\iota$ such that $\dist{x}{\iota(x)}{g}\ge 1$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:GH-vol}
+Let a sequence of Riemannian spaces $\spc{M}_n$ converges to a Riemannian spaces $\spc{M}_\infty$ as $n\to\infty$ in the sense of Gromov--Hausdorff.
+Assume that corresponding Hausdorff approximations can be chousen to be homeomorphisms.
+Show that 
+\[\varliminf_{n\to\infty}\vol\spc{M}_n\ge \vol\spc{M}_\infty.\]
+
+\end{thm}
+
+
 \section{Systolic inequlaity}
 
 Let $\spc{M}$ be a compact Riemannian manifold.
@@ -141,7 +150,7 @@ The \emph{systole} of $\spc{M}$ (brifly $\sys\spc{M}$) is defined to be the leas
 
 Let $\Lambda$ be a set of smooth closed $n$-dimensional manifolds.
 We say that a systolic inequality holds for $\Lambda$ if there is a constant $c$ such that for any $M\in \Lambda$ and any metric tenor $g$ on $M$ we have
-\[[\sys(M,g)]^n\le c\cdot \vol(M,g).\]
+\[\sys(M,g)\le c\cdot \sqrt[n]{\vol(M,g)}.\]
 
 \begin{thm}{Exercise}\label{ex:sysT2}
 Use \ref{thm:besikovitch} to show that systolic inequality holds for the 2-torus $\TT^2$.
@@ -215,8 +224,8 @@ The following theorem is the main ingredient in the proof of \ref{thm:sys(torus)
 This theorem will be the main subject of the following lecture.
 
 \begin{thm}{Theorem}\label{thm:FillRad<vol}
-Given an integer $n>0$, there is a constant $c(n)$ such that inequality
-\[(\FillRad \spc{M})^n\le c(n)\cdot \vol \spc{M}\]
+Given an integer $n>0$, there is a constant $c_n$ such that inequality
+\[\FillRad \spc{M}\le c_n\cdot \sqrt[n]{\vol \spc{M}}\]
 holds for any compact $n$-dimensional Riemannian manifold $\spc{M}$.
 \end{thm}
 
@@ -283,17 +292,6 @@ Hence we can extend $f$ to the $W^2$.
 Finally, since $\spc{T}$ is aspherical, there is no obstruction to extending $f$ to the rest of $W$.
 \qeds
 
-Observe that we use only that $\spc{T}$ is aspherical closed manifold.
-That is, we actually proved the following more general theorem.
-
-\begin{thm}{Theorem}\label{thm:sys<FillRad+}
-Suppose $\spc{M}$ is an asherical $n$-dimensional Riemnnian space.
-Then 
-\[\sys\spc{M}\le 6 \cdot \FillRad \spc{M}.\]
-\end{thm}
-
-This statement will be generalized yet further in the following section.
-
 \begin{thm}{Exercise}\label{ex:fillrad-inj}
 Modify the proof of \ref{thm:sys<FillRad} to prove the following:
 
@@ -306,11 +304,96 @@ Show that
 Note that this exercise together with bound on filling radius in \ref{thm:FillRad<vol} imply that lower bound on injectivity radius implies a lower bound on volume.
 This statement was proved first by Marcel Berger \cite{berger} and it is not at all trivial.
 
-\section{Essential manifolds}
+\section{Generalizer}
 
-Note that the real projective space $\RP^n$ is not aspherical.
-Therefore \ref{thm:sys<FillRad+} is not applicable for $\RP^n$.
-The goal of this section is to extend \ref{thm:sys<FillRad+} to $\RP^n$ and many other spaces.
+Observe that in the proof of \ref{thm:sys<FillRad}, we use only that $\spc{T}$ is aspherical closed manifold.
+That is, we actually proved the following more general theorem.
 
-...
+\begin{thm}{Theorem}\label{thm:sys<FillRad+}
+Suppose $\spc{T}$ is a closed aspherical Riemnnian space.
+Then 
+\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
+\end{thm}
+
+
+To generalize the statement yet further, we need the following definition.
+
+\begin{thm}{Definition}
+A closed manifold $\spc{T}$ is called \emph{essential} if it admits a continuous map $\iota\:\spc{T}\to \spc{K}$ to an aspherical topological space $\spc{K}$ such that $\iota$ sends the fundamental class of $\spc{T}$ to a nonzero homology class in $\spc{K}$.\footnote{We assume that the coefficients are $\ZZ_2$, but one can play with them if necessary.}
+\end{thm}
+
+Assume that the manifold $\spc{T}$ is essential and $\iota \:\spc{T}\to \spc{K}$ as in the definition.
+Following the proof of \ref{thm:sys<FillRad}, we can extend the map $\iota\z\circ\sigma|_{\partial W}$ to a map $W\to \spc{K}$, which would mean that $\iota|_{\spc{T}}$ bounds in $\spc{K}$ --- a contradiction.
+So we proved the following yet more general theorem.
+
+\begin{thm}{Theorem}\label{thm:sys<FillRad++}
+Suppose $\spc{T}$ is an essential Riemnnian space.
+Then 
+\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
+\end{thm}
+
+Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $\spc{T}$.
+The real projective space $\RP^n$ provides an interesting example of an essential manifold which is not aspherical.
+Indeed, the $\RP^\infty$ is aspherical and for the natural embedding $\iota\:\RP^n\hookrightarrow\RP^\infty$ sends $\iota(\RP^n)$ does not bound in $\RP^\infty$.
+The following Exercise provides more examples of that type.
+
+\begin{thm}{Exercise}\label{ex:connected-sum-essential}
+Show that connected sum of an essential manifold with any closed manifold is essential.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:product-essential}
+Show that product of two essential manifolds is essential.
+
+Show that product of nonessential closed manifold of dimension at least 1 with any closed manifold is not essential.
+\end{thm}
+
+Let us describe a more conceptual way to define essential manifolds.
+
+Suppose $\pi$ is a group,
+then we say that a connected topological space $\spc{K}$ is \emph{$K(\pi,1)$} (or, more precicely, \emph{Eilenberg--MacLane space of type $K(\pi,1)$})
+if $\pi_1(\spc{K})=\pi$ and $\pi_n(\spc{K})=0$ for $n\ne 1$.
+
+A $K(\pi,1)$ space can be constructed the following way.
+Suppose the group $\pi$ is given via set of generators and a set of relations. 
+\begin{itemize}
+\item Start with the wedge sum of unit circles, one for each generator.
+We obtain a space $\spc{K}^1$ with free fundamental group.
+
+\item Attach a disc for to kill each relation in the fundamental group of the space.
+This way we obtain a 2-dimensional CW-complex $\spc{K}^2$ with fundamental group $\pi$.
+
+\item If $\pi_2(\spc{K}^2)\ne0$, attach a $3$-disc to each noncontractible 2-spheroid in $\spc{K}^2$.
+This way we obtain a 3-dimensional CW-complex $\spc{K}^3$ such that  $\pi_1\spc{K}^3=\pi$ and $\pi_2\spc{K}^3=0$.
+
+
+\item Do the same to kill $\pi_3(\spc{K}^2)\ne0$ and continue; it might take infinite number of steps.
+\end{itemize}
+At the end of the day you get $K(\pi,1)$ space $\spc{K}=\spc{K}^\infty$.
+
+\begin{thm}{Observations}
+
+\begin{subthm}{}
+The group $\pi$ defines a $K(\pi,1)$ space up to a weak homotopy equivalence.
+In particular, the homologies of a $K(\pi,1)$ space are completely determined by $\pi$.
+\end{subthm}
+
+
+\begin{subthm}{}
+Suppose $\spc{K}$ is a $K(\pi,1)$ space and $\spc{L}$ is a connected finite CW-complex.
+Then any homomorphism $\pi_1\spc{L}\to\pi_1\spc{K}$ is induced by a continuous map $\spc{L}\to\spc{K}$.
+Moreover, two maps $\phi_0,\phi_1\:\spc{L}\to\spc{K}$ are homotopic if and only if they induce the same homomorphism $\pi_1\spc{L}\to\pi_1\spc{K}$.
+\end{subthm}
+
+\end{thm}
+
+The following proposition provides an alternative definition of essential manifold, it follows from the observations above.
+
+\begin{thm}{Proposition}
+Suppose $\spc{T}$ is a closed manifold, 
+$\spc{K}$ is a $K(\pi,1)$ space and a map $\iota\:\spc{T}\to \spc{K}$ induces an isomorphism of fundamental groups.
+Then $\spc{T}$ is essential if and only if $\iota$ sends the fundamental class of $\spc{T}$ to a nonzero homology class in $\spc{K}$.
+\end{thm}
+
+
+
 
