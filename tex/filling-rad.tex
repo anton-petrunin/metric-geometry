@@ -98,7 +98,7 @@ it is defined as the  least number $n$ such that $\width_n\spc{X}<R$.
 
 \begin{thm}{Exercise}\label{ex:macrodimension}
 Suppose $\spc{X}$ is a compact metric space such that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $R$-neighborhood.
-Show that $\spc{X}$ is has macroscopic dimension at most 1 on scale $100\cdot R$.
+Show that $\spc{X}$ has macroscopic dimension at most 1 on scale $100\cdot R$.
 
 What about quasiconverse? That is, suppose a simply connected compact metric space $\spc{X}$ has macroscopic dimension at most 1 on scale $R$, is it true that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $100\cdot R$-neighborhood?
 \end{thm}
@@ -214,7 +214,7 @@ Note that Riemannian polyhedron is connected by definition and if $\spc{P}$ is 1
 \[\width\spc{P}=\width_0\spc{P}=\rad\spc{P}.\]
 
 \begin{thm}{Exercise}\label{ex:1D-case}
-Suppose $\spc{P}$ be a 1-dimensional Riemannian polhedron.
+Suppose $\spc{P}$ be a 1-dimensional Riemannian polyhedron.
 Suppose $\VolPro_{\spc{P}}(r)<r$ for some $r>0$.
 Show that 
 \[\width \spc{P}<r.\]
@@ -280,26 +280,24 @@ The statement follows since $\dim \spc{P}= \dim \spc{Q}\z+1$.
 \qeds
 
 \parit{Proof of \ref{thm:width<volpro}.}
-We apply induction on the dimension $n=\dim\spc{P}$;
-the base case $n=1$ is provided by \ref{ex:1D-case},  for $c_1=1$.
+We apply induction on the dimension $n=\dim\spc{P}$ to show that one can take $c_n=2^n$;
+the base case $n=1$ is given in \ref{ex:1D-case}.
 
-Suppose that the constant $c_{n-1}$ is known, choose sufficiently small $c_n$
-\[c_n>2\cdot c_{n-1}.\]
-
-Assume $c_n\cdot \sqrt[n]{\VolPro\spc{P}(r)}< r$.
+Suppose that the  $(n-1)$-dimensional case is proved.
+Consider an $n$-dimensional Riemannian polyhedron $\spc{P}$ and suppose
+\[2^n\cdot \sqrt[n]{\VolPro\spc{P}(r)}< r\]
+for some $r>0$.
 Fix small $\eps>0$.
-By taking $r_0=\tfrac r2$ and $r_1=r$ in \ref{lem:separating}, we have an $r$-separating subpolhedron $\spc{Q}$ in $\spc{P}$ such that 
+Applying \ref{lem:separating} with $r_0=\tfrac12\cdot r$ and $r_1=r$, we have an $r$-separating subpolhedron $\spc{Q}$ in $\spc{P}$ such that 
 \begin{align*}
-\VolPro_\spc{Q}(r_0) &< \tfrac 1 {r_0}\cdot \VolPro_\spc{P}(r)+\eps<
+\VolPro_\spc{Q}(r_0) &< \tfrac 2r\cdot \VolPro_\spc{P}(r)+\eps<
 \\
-&<\tfrac 1 {r_0}\cdot \left(\frac{2\cdot r_0}{c_n}\right)^n+\eps=
+&<\frac {2} {r}\cdot\left(\frac{r}{2^n}\right)^n=
 \\
-&=\left(\frac2{c_n}\right)^n\cdot r_0^{n-1}+\eps<
-\\
-&<\left(\frac1{c_{n-1}}\right)^{n-1}\cdot r_0^{n-1};
+&=\left(\frac{r_0}{2^{n-1}}\right)^{n-1};
 \end{align*}
-that is, $c_{n-1}\cdot \sqrt[n-1]{\VolPro\spc{Q}(r_0)}< r_0$.
-By the induction hypothesis 
+that is, $2^{n-1}\cdot \sqrt[n-1]{\VolPro\spc{Q}(r_0)}< r_0$.
+Since $\dim\spc{Q}=n-1$ and $c_{n-1}\z=2^{n-1}$, the induction hypothesis implies that
 \[\width\spc{Q}\le r_0<r.\]
 
 Applying \ref{lem:separating-width}, we get $\width\spc{P}<r$
@@ -307,11 +305,14 @@ Applying \ref{lem:separating-width}, we get $\width\spc{P}<r$
 
 \section{Remarks}
 
-The notion of nerve was introduced by Pavel Alexandrov \cite{alexandrov-1928}.
+%The notion of nerve was introduced by Pavel Alexandrov \cite{alexandrov-1928}.
 
 Theorem \ref{thm:FillRad<vol} was proved originally by Mikhael Gromov \cite{gromov-1983}.
 The presented proof is a result of a sequence of simplifications and improvements given by Larry Guth, Panos Papasoglu, and Alexander Nabutovsky \cite{guth, papasoglu, nabutovsky}.
-The technique for all these proofs came from earlier study of minimal surfaces.
+In \cite{nabutovsky} the calculations were optimized which gave a better constant in  \ref{thm:width<volpro}:
+\[c_n=\sqrt[n]{n!}= \tfrac ne+o(n).\]
+
+The technique for all these proofs have origin in the theory of minimal surfaces.
 
 In the end of \cite{nabutovsky} you can find a direct proof of the inequality 
 \[\sys \spc{M}\le 4\cdot \width\spc{M}\]
