@@ -307,7 +307,10 @@ p0=circle(origin,1*u);
 fill p0 withcolor 0;
 
 for i=1/2**4 step 1/2**4 until 4:
-draw point i of p0 --2*point i of p0;
+draw point i of p0 --4*point i of p0;
+
+clip currentpicture to (-2,-2)*u--(2,-2)*u--(2,2)*u--(-2,2)*u--cycle;
+
 endfor
 
 endfig;
