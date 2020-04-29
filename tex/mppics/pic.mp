@@ -1432,4 +1432,70 @@ whitelabel.llft(btex $F_i'$ etex,point 2.5 of p0);
 endfig;
 
 
+beginfig(1305)
+save u,p,k;
+path p[];
+u:=1cm;
+k=.2;
+
+z.a0=(0,1)*u;
+z.a1=k*z.a0 rotated 60;
+z.a2=z.a0 rotated 120;
+z.a3=k*z.a0 rotated 180;
+z.a4=z.a0 rotated -120;
+z.a5=k*z.a0 rotated -60;
+
+p1=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..cycle;
+
+hatchfill p1  withcolor (20, 1mm, -.5bp);
+draw p1;
+
+endfig;
+
+beginfig(1310)
+save u,p;
+path p[];
+u:=.5cm;
+
+z.p=origin;
+z.x=(5,0)*u;
+z.m=.6[z.p,z.x];
+z.y=z.x zscaled (0,1);
+z.x1=z.x rotated 10;
+z.x2=z.x rotated 25;
+z.x3=z.x rotated 40;
+z.x4=z.x rotated 50;
+z.x5=z.x rotated 65;
+z.x6=z.x rotated 80;
+
+p1=z.p--z.x..z.x1{-z.x1}..z.x2{z.x2}..z.x3{-z.x3}..z.x4{z.x4}..z.x5{-z.x5}..z.x6{z.x6}..z.y--cycle;
+
+draw p1;
+
+dOt z.p,z.m,z.x,z.y;
+
+label.llft (btex $\tau$ etex, point 4.5 of p1);
+label.llft (btex $p$ etex, z.p);
+label.bot (btex $x$ etex, z.x);
+label.lft (btex $y$ etex, z.y);
+label.bot (btex $m$ etex, z.m);
+
+endfig;
+
+beginfig(1315)
+save u,p,a,b;
+path p[];
+u:=1cm;
+a:=3.5*u;
+b:=.3*u;
+
+p0=(a,b){right}..{left}(a,-b)--(-a,-b){left}..{right}(-a,b)--cycle;
+p1=point 1.5 of p0..tension 2..point 3.5 of p0..tension 2..cycle; 
+
+draw p0;
+draw subpath (0,1) of p1;
+draw subpath (1,2) of p1 dashed evenly;
+
+endfig;
+
 end

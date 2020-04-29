@@ -1575,6 +1575,99 @@ This metric tensor $\bar g$ is not continuous at $\Sigma$, but the same argument
 Whence the statement follows.
 
 
+\parbf{Exercise~\ref{ex:involution-of-sphere}.}
+Let $x\in \mathbb{S}^2$ be a point that minimize the distance $|x-x'|_g$.
+Consider a minimizing geodesic $\gamma$ from $x$ to $x'$.
+We can assume that 
+\[|x-x'|_g=\length \gamma=1.\]
+
+Let $\gamma'$ be the antipodal arc to $\gamma$.
+Note that $\gamma'$ intersects $\gamma$ only at the common endpoints $x$ and $x'$.
+Indeed, if $p'=q$ for some $p,q\in\gamma$, then $|p-q|\ge 1$.
+Since $\length \gamma=1$, the points $p$ and $q$ must be the ends of $\gamma$.
+
+It follows that $\gamma$ together with $\gamma'$ forms a closed simple curve in $\mathbb{S}^2$
+that divides the sphere into two disks $D$ and $D'$.
+
+Let us divide $\gamma$ into two equal arcs $\gamma_1$ and $\gamma_2$; each of length $\tfrac12$.
+Suppose that $p,q\in\gamma_1$, then 
+\begin{align*}
+|p-q'|_g&\ge |q-q'|_g-|p-q|_g\ge
+\\
+&\ge 1-\tfrac12=\tfrac12.
+\end{align*}
+That is, the minimal distance from $\gamma_1$ to $\gamma_1'$ is at least~$\tfrac12$.
+The same way we get that the minimal distance from $\gamma_2$ to $\gamma_2'$ is at least~$\tfrac12$.
+By Besicovitch inequality, we get that 
+\[\area(D,g)\ge \tfrac14\quad\text{and}\quad \area(D',g)\ge \tfrac14.\]
+Therefore 
+\[\area(\mathbb{S}^2,g)\ge\tfrac12.\]
+
+\parit{A better estimate.}
+Let us indicate how to improve the obtained bound to
+\[\area(\mathbb{S}^2,g)\ge1.\]
+
+Suppose $x$, $x'$, $\gamma$ and $\gamma'$ are as above.
+Consider the function
+\[f(z)=\min_t \{\,|\gamma'(t)-z|_g+t\,\}.\]
+Observe that $f$ is 1-Lipschitz.
+
+Show that two points $\gamma'(c)$ and $\gamma(1-c)$ lie on one connected component of the level set $L_c=\set{z\in\mathbb{S}^2}{f(z)=c}$;
+in particular 
+\[\length L_c\ge 2\cdot|\gamma'(c)-\gamma(1-c)|_g.\]
+By the triangle inequality, we have that
+\begin{align*}
+|\gamma'(c)-\gamma(1-c)|_g&\ge 1-|\gamma(c)-\gamma(1-c)|_g=
+\\
+&=1-|1-2\cdot c|.
+\end{align*}
+
+It remains to apply the coarea formula
+\[\area(\mathbb{S}^2,g)\ge \int\limits_0^1\length L_c\cdot dc.\]
+
+\parit{Comments.}
+The bound $\tfrac12$ was proved by Marcel Berger \cite{berger}. 
+Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke}.
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1305}
+\end{wrapfigure}
+
+\parbf{Exercise~\ref{ex:involution-of-3sphere}.}
+Given $\eps>0$, construct a disk $\Delta$ in the plane with 
+\[\length\partial \Delta<10\ \ \text{and}\ \ \area \Delta<\eps\]
+that admits an continuous involution $\iota$ such that 
+\[|\iota(x)-x|\ge 1\]
+for any $x\in\partial \Delta$.
+
+An example of $\Delta$ can be guessed from the picture;
+the invoultion $\iota$ makes a length preserving half turn of its boundary $\partial \Delta$.
+
+
+Take the product $\Delta\times \Delta\subset \RR^4$;
+it is homeomorphic to the 4-ball.
+Note that 
+$$\vol_3[\partial(\Delta\times \Delta)]=2\cdot\area \Delta\cdot\length \partial \Delta<20\cdot\eps.$$
+The boundary $\partial(\Delta\times \Delta)$ is homeomorphic to $\mathbb{S}^3$
+and the restriction of the involution $(x,y)\z\mapsto (\iota(x),\iota(y))$ has the needed property.
+
+All we have to do now is to smooth $\partial(\Delta\times \Delta)$ a little bit.
+
+\parit{Comment.} This example is given by Christopher Croke \cite{croke}.
+Note that according to \ref{thm:sys(torus)+}, 
+the involution $\iota$ cannot be made isometric.
+
+\parbf{Exercise~\ref{ex:GH-vol}.}
+Note that if $\spc{M}_\infty$ is $e^{\pm\eps}$-bilipschitz to a cube, then applying Besicovitch inequality, we get that 
+\[\varliminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
+
+Applying Vitali covering theorem, given $\eps>0$, we can cover whole volume of $\spc{M}_\infty$ by $e^{\pm\eps}$-bilipschitz cubes.
+Applying the above observation and summing up the results, we get that 
+\[\varliminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
+The statement follows since $\eps$ is arbitrary positive number.
+
 \parbf{Exercise~\ref{ex:sysT2}.}
 Set $s=\sys(\TT^2,g)$.
 
@@ -1723,4 +1816,148 @@ $(n+1)\cdot R'<r$.
 In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
 That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
 \[\FillRad \spc{M}\ge r.\]
+
+\parbf{Exercise~\ref{ex:connected-sum-essential}.}
+Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
+Observe that shrinking $N$ to a point produces a map $f\:N\#M\to M$ of degree 1; that is, the fundamental class of $N\#M$ maps to the fundamental class of $M$.
+
+Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to K$ that sends fundamental class of $M$ to nonzero homology class in $K$.
+From above, the composition $\iota\circ f\:N\#M\to K$  sends fundamental class of $N\#M$ to to the same homology class in $K$.
+
+\parit{Comment.} Note that we only used that there is a map $N\#M\to K$ of degree 1. If essential manifold is defined using homologies with integer coefficients, then existence of map of nonzero degree is sufficient.
+
+\parbf{Exercise~\ref{ex:macrodimension}.}
+The following claim resembles Besikovitch inequality;
+it is key to the proof:
+\begin{itemize}
+ \item[$({*})$] Let $a$ be a positive real number.
+ Assume that a closed curve $\gamma$ in a metric space $\spc{X}$ can be sudivided into 4 arcs $\alpha$, $\beta$, $\alpha'$, and $\beta'$ in such a way that 
+ \begin{itemize}
+ \item $|x-x'|>a$ for any $x\in\alpha$ and $x'\in \alpha'$
+ and
+ \item $|y-y'|>a$ for any $y\in\beta$ and $y'\in \beta'$.
+ \end{itemize}
+ Then $\gamma$ is not contractable in its $\tfrac a2$-neighborhood.
+\end{itemize}
+
+To prove $({*})$, consider two functions defined on $\spc{X}$ as follows:
+\begin{align*}
+w_1(x)&=\min \{\,a,\distfun_{\alpha}(x)\,\}
+\\
+w_2(x)&=\min \{\,a,\distfun_{\beta}(x)\,\}
+\end{align*}
+and the map $\bm{w}\:\spc{X}\to [0,a]\times[0,a]$, defined by
+\[\bm{w}\:x\mapsto(w_1(x),w_2(x)).\]
+
+Note that 
+\begin{align*}
+\bm{w}(\alpha)&=0\times [0,a],
+&
+\bm{w}(\beta)&=[0,a]\times 0,
+\\
+\bm{w}(\alpha')&=a\times [0,a],
+&
+\bm{w}(\beta')&=[0,a]\times a,
+\end{align*} 
+Therefore, the composition $\bm{w}\circ\gamma$ is a degree 1 map 
+\[\mathbb{S}^1\to \partial([0,a]\times[0,a]).\] 
+It follows that if $h\:\DD\to \spc{X}$ shrinks $\gamma$, then there is a point $z\in\DD$ such that 
+$\bm{w}\circ h(z)=(\tfrac a2,\tfrac a2)$.
+Therefore $h(z)$ lies at distance at least $\tfrac a2$ from $\alpha$, $\beta$, $\alpha'$, $\beta'$
+and therefore from $\gamma$.
+Hence the claim $({*})$ follows.
+
+\medskip
+
+Comming back to the problem, let $\{W_i\}$ be an open covering of the real line with multiplicity $2$ and $\rad W_i<R$ for each $i$;
+for example one may take $W_i=((i-\tfrac23)\cdot R,(i+\tfrac23)\cdot R)$.
+
+Choose a point $p\in \spc{X}$.
+Denote by $\{V_j\}$ the connected components of $\distfun_p^{-1}(W_i)$ for all $i$.
+Note that $\{V_j\}$ is an open finite cover of $\spc{X}$ with multiplicity at most 2.
+It remains to show that $\rad V_j<100\cdot R$ for each $j$.
+
+\begin{wrapfigure}{o}{31 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-1310}
+\end{wrapfigure}
+
+Aarguing by contradiction assume there is a pair of points  $x,y\in V_i$ 
+such that $|x\z-y|_{\spc{X}}\ge 100\cdot R$.
+Connect $x$ to $y$ with a curve $\tau$ in $V_j$.
+Consider the closed curve $\sigma$ formed by $\tau$ and two geodesics $[px]$, $[py]$.
+
+
+Note that $|p-x|>40$.
+Therefore there is a point $m$ on $[px]$ such that $|m-x|=20$.
+
+By the triangle inequality, the subsdivision of $\sigma$ into the arcs $[pm]$, $[mx]$, $\tau$ and $[yp]$ satisfy the conditions of the claim $({*})$ for $a=10\cdot R$.
+Hence the statement follows.
+
+\parit{The quasiconverse} does not hold.
+As an example take a surface that looks like a long cylinder with two hats,
+it is a smooth surface diffeomorphic to a sphere.
+\begin{figure}[h!]
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-1315}
+\end{figure}
+Assuming the the cylinder is thin, it has macroscopic dimension 1 at a given scale.
+However a circle formed by a section of cylinder around its midpoint by a plane parallel to the base is a circle that can not be contracted in its small neighborhood.
+
+\medskip
+
+The problem is due to Mikhael Gromov \cite[Appendix 1(E$_{2}$)]{gromov-1983}.
+
+\parbf{Exercise~\ref{ex:FillRad<width}.}
+Suppose $n=\dim \spc{M}$.
+Let $\spc{N}$ be the nerve of a covering $\{V_i\}$ of $\spc{M}$ and $\psi\:\spc{M}\to\spc{N}$ be the map provided by \ref{prop:space->nerve}.
+
+Assume we chose $\{V_i\}$ as in the definition of width (\ref{def:width}).
+For each $i$ choose a point $p_i\in \spc{M}$ such that $V_i\subset \oBall(p_i,R)$.
+Observe that in this case $\dim\spc{N}<n$;
+therefore $\psi$ maps the fundamental class $[\spc{M}]$ to zero in $H_n(\spc{N})$.
+
+As usual we think that $\spc{M}$ is isometrically embedded into $\ell^\infty( \spc{M})$, and we assume that $v_i$ is a vertex of $\spc{N}$ that corresponds to $V_i$.
+Consider the map $f\:\spc{N}\to \ell^\infty( \spc{M})$ that is affine on each simplex and $f\:v_i\mapsto p_i$ for each $i$.
+Observe that $\dist{x}{f\circ\psi(x)}{\ell^\infty( \spc{M})}< R$.
+It follows since (1) $f\circ\psi$ maps $x$ to the (linear) convex hull of $p_i$ such that $\dist{x}{p_i}{}<R$ and (2) the $R$-ball around $x$ is convex in $\ell^\infty( \spc{M})$.
+
+The linear homotopy $s_t(x)=(1-t)\cdot x+t\cdot f\circ\psi(x)$ deforms the identity map on $M$ to $f\circ\psi$.
+Since $\dist{x}{f\circ\psi(x)}{\ell^\infty( \spc{M})}< R$,
+this homotopy does not escapes from $R$-neighborhood of $\spc{M}$.
+Since $\psi$ kills the fundamental class of $\spc{M}$ so does $f\circ\psi$.
+Hence $\FillRad \spc{M}<R$.
+
+
+\parbf{Exercise~\ref{ex:1D-case}.}
+Assume that $\spc{P}$ is connected.
+
+Let us show that $\diam\spc{P}<R$.
+If this is not the case, then there are points $p,q\in\spc{P}$ on distance $R$ from each other.
+Let $\gamma$ be a geodesic from $p$ to $q$.
+Clearly $\length\gamma\ge R$ and $\gamma$ lies in $\oBall(p,R)$ except for the endpoint $q$.
+Therefore $\length[\oBall(p,R)_{\spc{P}}]\ge R$.
+Since $\VolPro_{\spc{P}}(R)\z\ge \length[\oBall(p,R)_{\spc{P}}]$,
+the latter contradicts $\VolPro_{\spc{P}}(R)<R$.
+
+In general case, we get that each connected component of $\spc{P}$ has radius smaller that $R$.
+Whence the width of $\spc{P}$ is smaller that $R$.
+
+\parit{Second part.} Again, we can assume that $\spc{P}$ is connected.
+
+The examples of line segment or a circle show that the constant $c=\tfrac12$ cannot be improved.
+It remains to show that the inequality holds with $c=\tfrac12$.
+
+Choose $p\in\spc{P}$ such that the value
+\[\rho(p)=\max\set{\dist{p}{q}{\spc{P}}}{q\in\spc{P}}\]
+is minimal.
+Suppose $\rho(p)\ge\tfrac 12\cdot R$.
+Observe that there is a point $x\in \spc{P}\backslash\{p\}$ that lies on any shortest path starting from $p$ and length $\ge\tfrac 12\cdot R$.
+Otherwise for any $r\in(0,\tfrac 12\cdot R)$ there would be at least two points on distance $r$ from $p$;
+by coarea inequality we get that the total length of $\spc{P}\cap \oBall(p,\tfrac 12\cdot R)$ is at least $R$ --- a contradiction.
+
+Moving $p$ toward to $x$ reduce $\rho(p)$ which contradicts the choice of~$p$.
+
 

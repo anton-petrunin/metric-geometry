@@ -222,11 +222,11 @@ Note that if a 1-dimensional Riemannian polyhedron $\spc{P}$ is connected, then
 
 \begin{thm}{Exercise}\label{ex:1D-case}
 Suppose $\spc{P}$ be a 1-dimensional Riemannian polyhedron.
-Suppose $\VolPro_{\spc{P}}(r)<r$ for some $r>0$.
+Suppose $\VolPro_{\spc{P}}(R)<R$ for some $R>0$.
 Show that 
-\[\width \spc{P}<r.\]
+\[\width \spc{P}<R.\]
 Try to show that $c=\tfrac 12$ is the optimal constant such that 
-\[\width \spc{P}<c\cdot r.\]
+\[\width \spc{P}<c\cdot R.\]
 \end{thm}
 
 
@@ -330,3 +330,9 @@ In the end of \cite{nabutovsky} you can find a direct proof of the inequality
 for essential manifold $\spc{M}$.
 The proof was suggested by Roman Karasev;
 it makes possible to prove a systolic inequality without using filling radius.
+In particular we get the systolic inequality 
+\[\sys \spc{M}\le 4\cdot n\cdot\sqrt[n]{\vol\spc{M}}\]
+holds for any $n$-dimensional essential Riemannian manifold.
+The $n$-dimensional real projective space with canonical metric has systole $\pi$ and volume $v_n={(n+1)\cdot\pi^\frac{n+1}{2}}/[{2\cdot \Gamma(\tfrac{n+3}{2})]}$, therefore the optimal constant 
+can not be smaller than $c_n=\pi/\sqrt[n]{v_n}$ which grows as $\sqrt n$.
+It is expected that $c_n$ is optimal constant, but this problem is a wide open.
