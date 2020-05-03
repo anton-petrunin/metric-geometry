@@ -1,20 +1,94 @@
-\chapter{Urysohn space}
+\chapter{Universal space}
 
-We discuss a construction introduced by Pavel Urysohn~\cite{urysohn}.
-It produces a separable metric space that includes a subspace  isometric to any separable metric space; in addition it is homogenius in a very strong sense, see \ref{thm:compact-homogeneous}.%
-\footnote{The idea of this construction was reused in graph theory; it produces the so called \emph{Rado graph},
-also known as \emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; it is discussed by Peter Cameron~\cite{cameron}.}
-This construction answers a question of Maurice Fréchet.
-Note that Fréchet lemma (\ref{lem:frechet} and \ref{ex:frechet}) says that $\ell^\infty$ includes an isometric copy of any separable metric space, but $\ell^\infty$ is not separable and it is only 1-point homogeneous.
+In this lecture we introduce a construction of Maurice René Fréchet \cite{frechet} and its variation given by Kazimierz Kuratowski~\cite{kuratowski}.
+It says that any metric space is isometric to a subset of a normed space.
+
+Further we discuss a construction of Pavel Urysohn~\cite{urysohn} which answers a question of Maurice Fréchet.
+It produces a separable metric space that includes a subspace  isometric to any separable metric space; in addition it is homogenius in a very strong sense, see \ref{thm:compact-homogeneous}.
+
+(The idea of this construction was reused in graph theory; it produces the so called \emph{Rado graph},
+also known as \emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.)
 
 We follow presentation given by Mikhael Gromov \cite{gromov-2007}.
 
+\section{Embedding in a normed space}
+
+Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \emph{norm} if it satisfies the following condition for any two vectors $v,w\in \spc{V}$ and a scalar $\alpha$:
+\begin{itemize}
+\item $|v|\ge 0$;
+\item $|\alpha\cdot v|=|\alpha|\cdot |v|$;
+\item $|v|+|w|\ge|v+w|$.
+\end{itemize}
+
+It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
+Therefore any normed space is an example of metric space (in fact it is a geodesic space).
+The following lemma says in particular that any separable metric space is isometric to a subset of a normed space.
+
+Recall that \emph{diameter} of a metric space $\spc{X}$ (briefly $\diam \spc{X}$) is defined as least upper bound on the distances between pairs of its points;
+that is,
+\[\diam \spc{X}=\sup\set{\dist{x}{y}{\spc{X}}}{x,y\in \spc{X}}.\]
+
+\begin{thm}{Lemma}\label{lem:frechet}
+Suppose $\spc{X}$ is a \emph{bounded} \emph{separable} metric space;
+that is, $\diam\spc{X}$ is finite and $\spc{X}$ contains a countable, dense set $\{w_n\}$.
+Given $x\in \spc{X}$, set $a_n(x)=\dist{w_n}{x}{\spc{X}}$.
+Then 
+\[\iota\:x\mapsto (a_1(x), a_2(x),\dots)\]
+defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
+\end{thm}
+
+\parit{Proof.}
+By the triangle inequality 
+\[|a_n(x)-a_n(y)|\le \dist{x}{y}{\spc{X}}.\]
+Therefore $\iota$ is \emph{short}; that is, $\iota$ is distance-nonexpanding.
+
+Again by triangle inequality we have 
+\[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
+Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
+Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
+In other words 
+\[\sup_n\{\,|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\,\}\ge \dist{x}{y}{\spc{X}};\]
+hence $\iota$ is distance-nondecreasing.
+\qeds
+
+The following exercise generalizes the lemma to arbitrary separable spaces.
+
+\begin{thm}{Exercise}\label{ex:frechet}
+Suppose $\{w_n\}$ is a countable, dense set in a metric space $\spc{X}$.
+Choose $x_0\in \spc{X}$;
+given $x\in \spc{X}$, set 
+\[a_n(x)=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}.\]
+Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:compact-length}
+Show that any compact metric space $\spc{K}$ is isometric to a subspace of a compact geodesic space. 
+\end{thm}
 
 
+\begin{thm}{Lemma}\label{lem:kuratowski}
+Let $\spc{X}$ be arbitrary metric space.
+Denote by $\ell^\infty(\spc{X})$ the space of all bounded functions on $\spc{X}$ equipped with sup-norm.
 
+Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defied by 
+\[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
+is distance-preserving.
+\end{thm}
 
+Note that this claim implies that \emph{any metric space is isometric to a subset of a normed vector space}.
 
-\section{Construction}
+\parit{Remarks.}
+The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he defined metric space \cite{frechet}.
+The statement in \ref{lem:kuratowski} can be proved by nearly identical construction;
+this variation was given by Kazimierz Kuratowski~\cite{kuratowski}.
+
+Note that this exercise says that $\ell^\infty$ is universal in the following sense: it includes an isometric copy of any separable metric space.
+Note that $\ell^\infty$ is not separable.
+Maurice René Fréchet asked if there is a separable universal space.
+Pavel Urysohn answed to this question by constructing a separable univeral space with number of interesting properties.
+His construction will be discussed in the remaining sections of this lecture.
+
+\section{Urysohn space}
 Suppose a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$.
 In this case we may say that $\spc{X}'$ is an \emph{extension} of $\spc{X}$.
 If $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a \emph{$d$-extension}.
@@ -23,13 +97,13 @@ If the complement $\spc{X}'\backslash \spc{X}$ contains a single point, say $p$,
 In this case, to define metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
 \[f(x)=\dist{p}{x}{\spc{X}'}.\]
 
-The function $f$ can not be taken arbitrary --- the triangle inequality implies that 
+The function $f$ cannot be taken arbitrary --- the triangle inequality implies that 
 \[f(x)+f(y)\ge \dist{x}{y}{\spc{X}}\ge |f(x)-f(y)|\]
 for any $x,y\in \spc{X}$.
 In particular $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
 For a $d$-extension we need to assume in addition that $\diam\spc{X}\z\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
 
-Any function $f$ of that type will be called \emph{extension function}\label{page:extension function} or \emph{$d$-extension function} correspondingly.
+Any function $f$ of that type will be called \emph{extension function}\label{page:extension function} or \emph{$d$-extension function} respectively.
 
 \begin{thm}{Definition}\label{def:universal}
 A metric space $\spc{U}$ is called \emph{universal}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -41,14 +115,14 @@ If in addition $\spc{U}$ is separable and complete, then it is called \emph{Urys
 
 
 \begin{thm}{Proposition}\label{prop:univeral-separable}
-Given a positive $d$, there is a separable $d$-universal metric space.
+Given $d>0$, there is a separable $d$-universal metric space.
 Moreover, a separable universal space metric exists.
 \end{thm}
 
 \parit{Proof.}
 Let $\spc{X}$ be a compact metric space such that $\diam\spc{X}\le d$.
 Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
-Note that the map $\spc{X} \to \spc{X}^d$ defined by $x\mapsto\distfun_x$ is a distance preserving embedding,
+Note that the map $\spc{X} \to \spc{X}^d$ defined by $x\mapsto\distfun_x$ is a distance-preserving embedding,
 so we can (and will) treat $\spc{X}$ as a subspace of $\spc{X}^d$, or, equivalently, $\spc{X}^d$ is an extension of $\spc{X}$.
 
 Let us iterate this construction.
@@ -97,7 +171,7 @@ Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\
 \[f_n(p_n)=\max\set{\bigl|\dist{p_n}{x}{}- f(x)\bigr|}{x\in \spc{F}}.\]
 Observe that $f_n$ is a an $d$-extension function for large $n$ and
 $f_n(p_n)\z<\tfrac1{2^n}$.
-By applying approximate universal property recursively we get~\ref{eq:|pn-pn|}.
+Therefore applying approximate universal property recursively we get~\ref{eq:|pn-pn|}.
 
 By \ref{eq:|pn-pn|}, $(p_n)$ is a Cauchy sequence and its limit meets the condition in the definition of universal space (\ref{def:universal}).
 \qeds
@@ -108,14 +182,14 @@ Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply
 Urysohn space, and $d$-Urysohn space for any $d>0$, exist.
 \end{thm}
 
-\section{Separable universality}
+\section{Universality}
 
 \begin{thm}{Proposition}\label{prop:sep-in-urys}
 Let $\spc{U}$ be an Urysohn space.
-Then any separable metric space $\spc{S}$ admits a distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
+Then any separable metric space $\spc{S}$ admits a distance-preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
 
 Moreover, for any finite subspace $\spc{F}\subset \spc{S}$,
-any distance preserving embedding $\spc{F}\hookrightarrow \spc{U}$ can be extended to an distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
+any distance-preserving embedding $\spc{F}\hookrightarrow \spc{U}$ can be extended to a distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
 
 If $\spc{U}$ is $d$-Urysohn,
 then the statements hold provided $\diam\spc{S}\le d$.  
@@ -136,7 +210,7 @@ Since $\spc{U}$ is universal, there is a point $s_i'\in \spc{U}$ such that
 \[\dist{s_i'}{s_j'}{\spc{U}}=\dist{s_i}{s_j}{\spc{S}}\]
 for any $j<i$.
 
-We constructed a distance preserving map $s_i\mapsto s_i'$, it remains to extend it to a continuous map on whole $\spc{S}$.
+We constructed a distance-preserving map $s_i\mapsto s_i'$, it remains to extend it to a continuous map on whole $\spc{S}$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:geodesics-urysohn}
@@ -154,7 +228,7 @@ a distance-preserving map on whole $\spc{S}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sc-urysohn}
-Show that Urysohn space is simply connected.
+Show that ($d$-) Urysohn space is simply connected.
 \end{thm}
 
 \section{Uniqueness and homogeneity}
@@ -173,7 +247,7 @@ The following construction use the same idea as in the proof of \ref{prop:sep-in
 \parit{Proof.}
 The required isometry $\spc{U}\leftrightarrow \spc{U}'$ will be denoted by $u \leftrightarrow u'$.
 
-Choose dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}$.
+Choose dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}'$.
 Let us define recursively $a_1',b_1, a_2', b_2,\dots$ --- on the odd step we define the images of $a_1,a_2,\dots$ and on the even steps we define invese images of $b'_1,b'_2,\dots$.
 The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can construct two sequences $a_1',a_2',\dots\in \spc{U}'$ and $b_1,b_2,\dots\in \spc{U}$ such that
 \begin{align*}
@@ -185,39 +259,42 @@ The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can co
 \end{align*}
 for all $i$ and $j$.
 
-Let us extend the constructed distance preserving bijection defined by $a_i\leftrightarrow a_i'$ and $b_i\leftrightarrow b_i'$ continuousely to whole $\spc{U}$.
-Observe that the image of this bijection is dense in $\spc{U}'$ therefore the constructed map $\spc{U}\to \spc{U}'$ is a bijection.
+It remains to observe that the constructed distance-preserving bijection defined by $a_i\leftrightarrow a_i'$ and $b_i\leftrightarrow b_i'$ extends
+continuousely to an isometry $\spc{U}\leftrightarrow \spc{U}'$. 
 \qeds
 
-Further the Urysohn space will be denoted by $\spc{U}$, and the $d$-Urysohn space will be denoted by $\spc{U}_d$.
-Observe that \ref{thm:urysohn-unique} implies that the spaces $\spc{U}$ and $\spc{U}_d$ are finite-set homogeneous; that is,
+Observe that \ref{thm:urysohn-unique} implies that the Urysohn space (as well as the $d$-Urysohn space) is finite-set homogeneous; that is,
 \begin{itemize}
- \item any distance preserving map from a finite subset to to the whole space can be extended to an isometry.
+ \item any distance-preserving map from a finite subset to to the whole space can be extended to an isometry.
 \end{itemize}
-It is unknown if there is a separable universal space that is finite-set homogeneous (this question appeared already in \cite{urysohn} and reappeared in \cite[p. 83]{gromov-2007} with a missing key word).
+
+\begin{thm}{Open question}
+Is there a \emph{noncomplete} universal space that is finite-set homogeneous?
+\end{thm}
+
+This is question of Pavel Urysohn; it appeared already in \cite[\S2(6)]{urysohn} and reappeared in \cite[p. 83]{gromov-2007} with a missing key word.
 In fact I do not see an example of a 1-point homogeneous universal space.
 
-
 \begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
-Let $S$ be a sphere of radius $\tfrac d2$ in $\spc{U}_d$;
+Let $S_r$ be a sphere of radius $r$ in the $d$-Urysohn space $\spc{U}_d$;
 that is, 
-\[S=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=\tfrac d2}\]
+\[S_r=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=r}\]
 for some point $p\in \spc{U}_d$.
-Show that $S$ is isometric to $\spc{U}_d$.
+Show that $S_r$ is isometric to $\spc{U}_d$ if $d\ge r\ge \tfrac d2$.
 
 Use it to show that $\spc{U}_d$ is not countable-set homogeneous;
-that is, there is an distance preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that can not be extended to an isometry of $\spc{U}_d$.
+that is, there is an distance-preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that cannot be extended to an isometry of $\spc{U}_d$.
 \end{thm}
 
 In fact the Urysohn space is compact-set homogeneous; more precisely the following theorem holds.
-A proof can be obtained by modifying the proofs of \ref{prop:completion-univeral} and \ref{thm:urysohn-unique}
-the same way as it is done in \ref{ex:compact-extension}.
 
 \begin{thm}{Theorem}\label{thm:compact-homogeneous}
 Let $K$ be a compact set in an ($d$-)Uryson space $\spc{U}$.
-Then any distance preserving map $K\to \spc{U}$ can be exteded to an isometry of $\spc{U}$.
+Then any distance-preserving map $K\to \spc{U}$ can be exteded to an isometry of $\spc{U}$.
 \end{thm}
 
+A proof can be obtained by modifying the proofs of \ref{prop:completion-univeral} and \ref{thm:urysohn-unique}
+the same way as it is done in \ref{ex:compact-extension}.
 
 
 

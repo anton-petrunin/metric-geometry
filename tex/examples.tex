@@ -1,0 +1,165 @@
+\chapter{Examples}
+
+\section{Hausdorff measure}
+
+Hausdorff measure is one of many analogs of volume that works in arbitrary metric space.
+
+Let $\spc{X}$ be a metric space.
+A function $\mu$ with values in $[0,\infty]$,
+defined on all subsets of $\spc{X}$
+is called \emph{outer measure} if
+\begin{itemize}
+\item $\mu\,\emptyset=0$;
+\item If $A\subset B\subset \spc{X}$, then $\mu\, A\le \mu\, B$; 
+\item For any sequence $A_1, A_2,\dots$ of subsets of $\spc{X}$ we have
+$$\mu\left(\bigcup_n A_n\right) \le \sum_n \mu\, A_n.$$
+\end{itemize}
+
+A subset $E\subset \spc{X}$ is called \index{$\mu$-measurable}\emph{$\mu$-measurable} if 
+$$\mu\, A = \mu(A \cap E) + \mu(A \backslash E)$$
+for every subset $A\subset\spc{X}$.
+
+The following is a classical lemma in measure theory \cite[2.1.3 and 2.3.2(9)]{federer}.
+
+\begin{thm}{Carath\'eodory's lemma}\label{lem:caratheodory}
+Let  $\mu$ be an outer measure on a metric space $\spc{X}$.
+Then the $\mu$-measurable sets form a sigma-algebra.
+
+Moreover, if 
+\[\mu(A\cup B)=\mu\, A+\mu\, B
+\eqlbl{eq:caratheodory}\]
+for any two sets $A$ and $B$ 
+such that there $\dist{a}{b}{}>\eps$ for any $a\in A$, $b\in B$, and fixed $\eps>0$, then any Borel set in $\spc{X}$ is $\mu$-measurable.
+\end{thm}
+
+\parbf{Carath\'eodory's construction.}\index{Carath\'eodory's construction}
+Fix a function $\rho$, that returns a value in $[0,\infty]$
+for any closed subset of $\spc{X}$.
+Define outer measure $\mu_\rho$ of set $W$ in $\spc{X}$ in the following way:
+$$\mu_\rho W
+\df
+\lim_{\eps\to0}
+\,
+\inf
+\set{\sum_{n\in\NN}\rho A_n}
+{\begin{aligned}
+&\bigcup_{n\in\NN}A_n\supset W, \text{all}\  
+A_n
+\ \text{are closed,}\ 
+\\
+&
+\text{and}\ \diam A_n<\eps\ \text{for each}\ n.
+ \end{aligned}
+}.$$
+Note that
+the value of the infimum above is non-decreasing in $\eps$;
+in particular the limit is defined.
+
+An outer measure $\mu$ on $\spc{X}$ is called \emph{Borel regular} if any Borel set in $\spc{X}$ is $\mu$-measurable and for any set $A\subset \spc{X}$ there is a Borel set $B$ such that $A\subset B$ and $\mu\, A=\mu\, B$. 
+
+From Carath\'eodory's lemma (\ref{lem:caratheodory}), we get the following.
+
+\begin{thm}{Corollary}
+The Carath\'eodory's construction always produce a Borel regular outer measure.
+\end{thm}
+
+The Carath\'eodory's construction can be applied to different choices of the function $\rho$.
+One of the most popular choice is $\rho A=(\diam A)^\alpha$.
+It produces the so called \emph{$\alpha$-dimensional Hausdorff measure}\index{Hausdorff measure} $\mu_\alpha$.
+If we need to emphasize that the measure is defined on the space $\spc{X}$, we use $\spc{X}$ as the index.
+For example, we may write $\mu_\alpha(A)_\spc{X}$ for the $\alpha$-dimensional Hausdorff measure of set $A$ in $\spc{X}$.
+
+The following proposition trivially follows from the definitions
+
+\begin{thm}{Proposition}\label{prop:bilip-measure}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$
+and
+ $f\: \spc{X}\to \spc{Y}$ be a $\Lip$-Lipschitz map. 
+Then 
+\[\mu_\alpha [f(A)]\le \Lip^\alpha\cdot\mu_\alpha\, A.\]
+
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\spc{M}$ an $n$-dimensional Riemannian manifold.
+Show that 
+\[\omega_n\cdot\mu_n\,A=\vol_n A\]
+for any Borel set $A\subset \spc{M}$, where $\omega_n$ denotes the volume of a unit ball in the $n$-dimensional Euclidean space.
+\end{thm}
+
+The following exercise proves an weak analog of the Besikovitch inequality that works for arbitrary metric spaces.
+
+\begin{thm}{Exercise}
+Let $M$ be manifold with boundary and $\rho$ is a pseudometric on $M$.
+Suppose $\partial M$ admits a degree 1 map $\partial M\to\partial\square^n$. 
+Suppose $d_1,\dots, d_n$ the $\rho$-distances between the the inverse images of pairs of opposite faces of $\square^n$ in $M$.
+Then 
+\[\mu_n(M,\rho)\ge \tfrac1{2^n}\cdot d_1\cdots d_n.\]
+\end{thm}
+
+\begin{thm}{Exercise}\label{}
+Let $X$ be a contractible metric space with zero $(n+1)$-dimensional Hausdorff measure.
+Assume that $\Delta_1,\Delta_2\subset X$ are two embedded $n$-disks having the same boundary.
+Show that $\Delta_1=\Delta_2$.
+\end{thm}
+
+\section{On semicontinuity}
+
+Recall that according to \ref{ex:GH-vol}, volume is semicontinuos on the space of Riemannian manifolds with respect to stable Gromov--Hausdorff convergence.
+Analogous statement for $n$-dimensional Hausdorff measure on a $n$-dimensional manifolds does not hold.
+
+\begin{thm}{Claim}
+ 
+\end{thm}
+
+First let us show that for any $\alpha>0$, the $\alpha$-dimensional Hausdorff measure is not semicontinuous in the space of all compact metric spaces.
+
+Choose a decreasing sequence $\eps_n\to 0$.
+Consider the space $\spc{C}$ of infinite binary sequences with distance between two sequences $\bm{a}=(a_0,a_1,\dots)$ and $\bm{b}=(b_0,b_1,\dots)$ defined by 
+\[\dist{\bm{a}}{\bm{b}}{\spc{C}}=\eps_n,\]
+where $n$ is the minimal index such that $a_n\ne b_n$.
+Note that $\spc{C}$ is homeomorphic to the Cantor set and 
+given $\alpha>0$,
+the sequence $\eps_n$ can be chosen so that its $\alpha$-dimensional Hausdorff measure is infinite.
+
+Note that $\spc{C}$ is a Hausdorff limit of its subsets $\spc{C}_n$ formed by sequences that constantly zero starting from $n$-th element.
+The sets $\spc{C}_n$ is finite in particular its $\alpha$-dimensional Hausdorff measure vanish for $\alpha>0$.
+This example shows that for any $\alpha>0$, the $\alpha$-dimensional Hausdorff measure is not semicontinuous in the space of all compact metric spaces.
+
+An analogous example can be produced comapct length spaces.
+To do this consider a metric binary rooted tree $\spc{T}$ in which edges connecting level $n-1$ to the level $n$ of length $\eps_{n-1}-\eps_n$.
+Note that the completion $\bar{\spc{T}}$ of $\spc{T}$ has a subset (its crown) isometric to $\spc{C}$.
+Note further that $\bar{\spc{T}}$ is a Hausdorff limit of its subsets $\spc{T}_n$ --- the subtrees up to level $n$.
+Note that $\spc{T}_n$ is can be covered by a finite line segments, in particular it has finite $1$-dimensional Hausdorff measure and therefore vanishing $\alpha$-dimensional Hausdorff for any $\alpha>1$.
+Since the limit $\bar{\spc{T}}$ contains $\spc{C}$, we can choose a sequence $\eps_n$ so that $\mu_\alpha\spc{C}$ is arbitrary large (or even infinite).
+It shows that for any $\alpha>1$, the $\alpha$-dimensional Hausdorff measure is not semicontinuous in the space of all compact length spaces.
+
+This construction can be modified further to obtain an increasing sequence of metric tensors $g_n$ on a disc $\DD$ such that (1) $\vol(\DD,g_n)<1$ for each $n$, (2) the induced metrics $\dist{*}{*}{g_n}$ converge to a metric $\rho$ on $\DD$, and given any Cantor space $\spc{C}$ as described above (3) there is a bilipschitz map $\spc{C}\to(\DD,\rho)$.
+Note that the last condition implies that $\mu_2(\DD,rho)$ can be made arbitrary large, or infinite.
+Therefore for any $\alpha\ge 2$, the $\alpha$-dimensional Hausdorff measure is not semicontinuous in the space of all compact length spaces homeomorphic to a manifold and equipped with stable convergence.
+
+Now we want to extend nonsemicontinuity even further.
+Note that the tree $\bar{\spc{T}}$ admits a length-preserving embedding to the Euclidean space; we may assume that all 
+
+
+
+\section{Sub-Riemannian metrics}
+
+Choose a metric space $\spc{X}$.
+Note that the function $\alpha\mapsto \mu_\alpha(A)_\spc{X}$ is nondecreasing;
+moreover there is a critical value $\alpha_0\in[0,\infty]$ such that $\mu_\alpha(A)_\spc{X}=0$ if $\alpha<\alpha_0$ and $\mu_\alpha(A)_\spc{X}=\infty$ if $\alpha>\alpha_0$.
+This value is called \emph{Hausdorff dimension} of $\spc{X}$, or briefly $\alpha_0=\dim_H\spc{X}$.
+
+A the following statement is classical, a proof can be found in ???.
+
+\begin{thm}{Theorem}
+The Hausdorff dimension of any metric space can not be smaller than its Lebesgue covering dimension.
+In particular, if a metric space $\spc{X}$ is homeomorphic to an $n$-dimensional manifold, then $\dim_H\spc{X}\ge n$.
+ 
+\end{thm}
+
+Note that the construction described in the previous section can be used to produce a metric on manifold of dimension $n\ge 2$ with arbitrary Hausdorff dimension $\alpha\ge n$.
+
+In this section we will discuss another interesting source of such examples.
+
+

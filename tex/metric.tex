@@ -1,12 +1,35 @@
 \chapter{Definitions}
 
+In this lecture we give some conventions used further
+and remind some the definitions related to metric spaces.
+
+
 \section{Metric spaces}
 \label{sec:metric spaces}
-
 
 The distance between two points $x$ and $y$ in a metric space $\spc{X}$ will be denoted by $\dist{x}{y}{}$ or $\dist{x}{y}{\spc{X}}$.
 The latter notation is used if we need to emphasize 
 that the distance is taken in the space~${\spc{X}}$.
+Let us recall the definition of metric. 
+
+\begin{thm}{Definition}\label{def:metric}
+A \emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
+\begin{enumerate}[(i)]
+\item $\dist{x}{y}{\spc{X}}\ge 0$,
+\item\label{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
+\item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
+\item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
+\end{enumerate}
+A set $\spc{X}$ with a metric on it is called \emph{metric space};
+most of the time we keep the same notation for the metric space and its underlying set.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $p$, $q$, $x$, and $y$ be points in a metric space $\spc{X}$.
+Show that
+\[\dist{p}{q}{\spc{X}}+\dist{x}{y}{\spc{X}}\le\dist{p}{x}{}\spc{X}+\dist{p}{y}{\spc{X}}+\dist{q}{x}{\spc{X}}+\dist{q}{y}{\spc{X}}.\]
+\end{thm}
+
 
 The function 
 \[\distfun_x\:y\mapsto \dist{x}{y}{}\]
@@ -26,42 +49,34 @@ we write
 
 \section{Variations of definition}
 
-Recall that a metric is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
-\begin{enumerate}[(i)]
-\item $\dist{x}{y}{\spc{X}}\ge 0$,
-\item\label{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
-\item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
-\item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
-\end{enumerate}
-
 \parbf{Pseudometrics.}
-A generalization of a metric in which the distance between two distinct points can be zero is called \emph{pseudometric}.
-In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from the list.
+A metric for which the distance between two distinct points can be zero is called a \emph{pseudometric}.
+In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from \ref{def:metric}.
 
-The following two observations show that
+The following observation show that
 nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
 
 Assume $\spc{X}$ is a pseudometric space.
-Set
-$x\sim y$ if $\dist{x}{y}{}=0$. 
+Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
+$x\sim y$ if and only if $\dist{x}{y}{}=0$. 
 Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
 Thus, $\dist{*}{*}{}$ defines a metric on the
 quotient set $\spc{X}/{\sim}$.
-In this way we obtain a metric space $\spc{X}'$.
+This way we obtain a metric space $\spc{X}'$.
 The space $\spc{X}'$ is called the 
 \emph{corresponding metric space} for the pseudometric space $\spc{X}$.
 Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
 
 \parbf{$\bm{\infty}$-metrics.}
 One may also consider metrics with values in $\RR\cup\{\infty\}$;
-we might call them $\infty$-metrics or simply metrics.
+we might call them \emph{$\infty$-metrics}, but most of the time we use the term \emph{metric}.
 
 Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
 
 Indeed, set $x\approx y$ if and only if $\dist{x}{y}{}<\infty$;
 this is an other equivalence relation on $\spc{X}$.
 The equivalence class of a point $x\in\spc{X}$ will be called the \emph{metric component}\index{metric component} 
- of $x$; it will be denoted as $\spc{X}_x$.
+ of $x$; it will be denoted by $\spc{X}_x$.
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
 It follows that any $\infty$-metric space is a \emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
@@ -81,7 +96,7 @@ Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of t
 
 \section{Completeness}
 
-Recall that a metric space $\spc{X}$ is called \emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
+A metric space $\spc{X}$ is called \emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:almost-min}
 Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
@@ -92,22 +107,25 @@ for any point $y\in \oBall(x,\rho(x))$.
 
 Most of the time we will assume that a metric space is complete.
 The following construction produces a complete metric space $\bar{\spc{X}}$ for any given metric space $\spc{X}$.
-The space $\bar{\spc{X}}$ is called \emph{completion} of $\spc{X}$;
-the original space $\spc{X}$ forms a dense subset in $\bar{\spc{X}}$.
+
 
 \parbf{Completion.}
 Given metric space $\spc{X}$, 
-consider the set of all Cauchy sequences in $\spc{X}$.
-Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on the set $\spc{C}$ of all Cauchy sequences
+consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
+Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
-The corresponding metric space is called a completion of $\spc{X}$.
+The corresponding metric space $\bar{\spc{X}}$ is called a \emph{completion} of $\spc{X}$.
 
-It is left as an exercise that completion of $\spc{X}$ is complete.
-
-Note that for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
+Note that the original space $\spc{X}$ forms a dense subset in its completion $\bar{\spc{X}}$.
+More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
 It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
-It is easy to check that this map is distance preserving.
+It is easy to check that this map is distance-preserving.
 In partucular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+
+\begin{thm}{Exercise}
+Show that completion of a metric space is complete.
+\end{thm}
+
 
 \section{Compactness}
 
@@ -121,11 +139,11 @@ A metric space $\spc{K}$ is compact if and only if one of the following equivale
 \end{subthm}
 
 \begin{subthm}{}
- For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called Lebesgue number of the covering.)
+ For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called a \emph{Lebesgue number} of the covering.)
 \end{subthm}
 
 \begin{subthm}{}
- Every sequence in $\spc{K}$ has a convergent subsequence.
+ Every sequence of points in $\spc{K}$ has a subsequence that converges in $\spc{K}$.
 \end{subthm}
 
 \begin{subthm}{totally-bounded}
@@ -134,17 +152,15 @@ The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\e
 
 \end{thm}
 
-
-Alternatively totally bounded spaces can be defined the following way.
-
-A metric space $\spc{K}$ is \emph{totally bounded} if for any $\eps>0$ there is a finite \emph{$\eps$-net}; that is, a finite set of points $x_1,\dots,x_n\in \spc{K}$ such that any other point $x$ lies on the distance less than $\eps$ from one of $x_i$.
+A subset $N$ of a metric space $\spc{K}$ is called \emph{$\eps$-net} if any other point $x$ lies on the distance less than $\eps$ from a point in $N$.
+Note that totally bounded spaces can be defined as spaces that admit a finite $\eps$-net for any $\eps>0$.
 
 \begin{thm}{Exercise}\label{ex:compact-net}
 Show that a space $\spc{K}$ is totally bounded if and only if it contains a compact $\eps$-net for any $\eps>0$. 
 \end{thm}
 
 
-Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ for any $i\ne j$.
+Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ if $i\ne j$.
 
 If $n=\pack_\eps\spc{X}<\infty$, then
 the collection of points $x_1,\dots,x_n$ is called a \emph{maximal $\eps$-packing}.
@@ -160,10 +176,16 @@ Show that any maximal $\eps$-packing is an $\eps$-net.
 \begin{thm}{Exercise}\label{ex:non-contracting-map}
 Let $\spc{K}$  be a compact metric space and
 \[f\:\spc{K}\z\to \spc{K}\] 
-be a distance non-decreasing map.
-Prove that $f$ is an isometry.
+be a distance-nondecreasing map.
+Prove that $f$ is an \emph{isometry};
+that is, $f$ is a distance-preserving bijection.
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:gross}
+Show that for any compact length-metric space $X$ there is unique number $\ell=\ell(X)$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
+that is, for any $x_1,\dots,x_n\in X$ there is $z\in X$ such that
+\[\tfrac1n\cdot\sum_i|x_i-z|_X=\ell.\]
+\end{thm}
 
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
 This condition is equivalent to each of the following statements:
@@ -193,8 +215,6 @@ for any pair $s,t\in \II$.
 We say that  $\gamma\:\II\to \spc{X}$ is a geodesic from point $p$ to point $q$ if 
 $\II=[a,b]$ and $p=\gamma(a)$, $q=\gamma(b)$.
 In this case the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$} and with an abuse of notations  we also call it a \index{geodesic}\emph{geodesic}.
-Given a geodesic $[pq]$, we can parametrize it by distance to $p$;
-this parametrization will be denoted by $\geod_{[p q]}(t)$.
 
 
 We may write $[p q]_{\spc{X}}$ 
@@ -215,10 +235,6 @@ A metric space is called \index{geodesic}\emph{geodesic} if any pair of its poin
 
 
 A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parametrization by $[0,1]$.
-Given a geodesic $[p q]$,
-we denote by $\geodpath_{[pq]}$ the corresponding geodesic path;
-that is,
-$$\geodpath_{[pq]}(t)\z\df\geod_{[pq]}(t\cdot\dist[{{}}]{p}{q}{}).$$
 
 A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
 A constant-speed parametrization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
@@ -320,6 +336,9 @@ If for any $\eps>0$ and any pair of points $x$ and $y$ in a metric space $\spc{X
 \[\length\alpha< \dist{x}{y}{}+\eps,\]
 then $\spc{X}$ is called a \index{length space}\emph{length space} and the metric on $\spc{X}$ is called a \index{length metric}\emph{length metric}.\label{page:length metric}
 
+If $\spc{X}$ is an $\infty$-metric space, then we assume that $x$ and $y$ lie in one metric component; that is, $\dist{x}{y}{\spc{X}}<\infty$.
+In other words an $\infty$-metric space $\spc{X}$ is a length space if each metric component of $\spc{X}$ is a length space.
+
 Note that any geodesic space is a length space.
 As can be seen from the following example, the converse does not hold.
 
@@ -341,7 +360,7 @@ Directly from the definition, it follows that if a path $\alpha\:[0,1]\to\spc{X}
 \[\length\alpha\ge \dist{x}{y}{}.\]
 Set 
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
-where the greatest lower bound is taken for all paths connecing $x$ and $y$.
+where the greatest lower bound is taken for all paths connecing $x$ and~$y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
 The metric $\yetdist{*}{*}{}$ is called \emph{induced length metric}.
 
@@ -355,7 +374,8 @@ Let $A$ be a subset of a metric space $\spc{X}$.
 Given two points $x,y\in A$,
 consider the value
 \[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
-where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.%
+where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.
+In other words $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
 \footnote{This notation slightly conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
 
 Let $\spc{X}$ be a metric space and $x,y\in\spc{X}$.
@@ -485,75 +505,10 @@ a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{exercise from BH}
-Construct a geodesic space that is locally compact,
-but whose completion is neither geodesic nor locally compact.
+Construct a geodesic space $\spc{X}$ that is locally compact,
+but whose completion $\bar{\spc{X}}$ is neither geodesic nor locally compact.
 \end{thm}
 
-\section{Subsets in normed spaces}
-
-Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \emph{norm} if it satisfies the following condition for any two vectors $v,w\in \spc{V}$ and a scalar $\alpha$:
-\begin{itemize}
-\item $|v|\ge 0$;
-\item $|\alpha\cdot v|=|\alpha|\cdot |v|$;
-\item $|v|+|w|\ge|v+w|$.
-\end{itemize}
-
-It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
-Therefore any normed space is an example of metric space (which is in fact geodesic).
-The following lemma says in particular that any metric space is isometric to a subset of a normed space.
-
-\begin{thm}{Lemma}\label{lem:frechet}
-Suppose $\spc{X}$ is a bounded separable space;
-that is, $\diam\spc{X}$ is finite and $\spc{X}$ contains a countable, dense set $\{w_n\}$.
-Given $x\in \spc{X}$, set $a_n(x)=\dist{w_n}{x}{\spc{X}}$.
-Then 
-\[\iota\:x\mapsto (a_1(x), a_2(x),\dots)\]
-defines a distance preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
-\end{thm}
-
-\parit{Proof.}
-By the triangle inequality 
-\[|a_n(x)-a_n(y)|\le \dist{x}{y}{\spc{X}}.\]
-Therefore $\iota$ is short.
-
-Again by triangle inequality we have 
-\[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
-Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
-Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
-In other words 
-\[\sup_n\{\,|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}|\,\}\ge \dist{x}{y}{\spc{X}};\]
-hence $\iota$ is distance non-decreasing.
-\qeds
-
-The following exercise generalizes the lemma to arbitrary separable spaces.
-
-\begin{thm}{Exercise}\label{ex:frechet}
-Suppose $\{w_n\}$ is a countable, dense set in a metric space $\spc{X}$.
-Choose $x_0\in \spc{X}$;
-given $x\in \spc{X}$, set 
-\[a_n(x)=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}.\]
-Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
-\end{thm}
-
-
-\begin{thm}{Exercise}\label{ex:compact-length}
-Show that any compact metric space is isometric $\spc{K}$ to a subspace of a compact geodesic space. 
-\end{thm}
-
-The lemma above was proved by Maurice René Fréchet in the paper where he defined metric space \cite{frechet}.
-Nearly identical construction was rediscovered later by Kazimierz Kuratowski~\cite{kuratowski}.
-Namely he made the following claim:
-
-\begin{thm}{Lemma}\label{lem:kuratowski}
-Let $\spc{X}$ be arbitrary metric space.
-Denote by $\ell^\infty(\spc{X})$ the space of all bounded functions of $\spc{X}$ equipped with sup-norm.
-
-Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defied by 
-\[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
-is distance preserving.
-\end{thm}
-
-Note that this claim implies that \emph{any metric space is isometric to a subset of a normed vector space}.
 
 
 

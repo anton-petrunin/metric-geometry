@@ -1,0 +1,53 @@
+\chapter{Space of measures}
+
+In his lecture we consider a metric on a space of probability measures on a metric space.
+
+\section{Definition}
+
+Assume we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
+Suppose that cost of transporting a unit of dirt from one point to another is given.
+We are free to chose a destination point for dirt from a given place.
+How to minimize the total cost?
+
+To formalize this question, suppose that shapes of piles at the beginning and at the end are described by probability measures $\mu$ and $\nu$ on a metric space $\spc{X}$ and the cost of transportation 
+of unit $\delta$-measure from point $p$ to point $q$ is given by formula
+\[\cost(p,q)=\tfrac12\cdot\dist[2]{p}{q}{\spc{X}}.\]
+(The distance $\dist{p}{q}{\spc{X}}$ looks to be a more natural choice for the cost function.
+But the quadratic cost has nicer properties.)
+
+Now we need to formalize the meaning of the choice we have --- the plan that says where each piece of dirt goes.
+A probability measure $\pi$ on on the square $\spc{X}\times\spc{X}$ will be called a \emph{plan} for $\mu$ and $\nu$ if the following conditions holds:
+\begin{itemize}
+\item For all measurable sets $A \subset \spc{X}$, we have 
+\[\pi [A \times \spc{X}] = \mu A,\quad\text{and}\quad \pi [  \spc{X}\times A] = \nu A.\]
+\end{itemize}
+
+First note that a plan $\pi$ for given measures $\mu$ and $\nu$ always exists.
+For example one may take the measure $\pi$ defined uniquely defined by 
+\[\pi(A\times B)=\mu A\cdot \mu B.\]
+for any Borel subsets $A,B\subset\spc{X}$.
+This plan say that each piece of dirt distributed equally in the new pile; as we will see this plane is usually far from optimum.
+
+Denote by $\Pi(\mu,\nu)$ the set of all plans for $\mu$ and $\nu$.
+From above $\Pi(\mu,\nu)\ne\emptyset$.
+
+Set
+\[\cost(\mu,\nu)
+\df
+\inf_{\pi\in\Pi(\mu,\nu)}
+\left\{\,\int_{(x,y)\in\spc{X}\times\spc{X}}\cost(x,y)\cdot\pi\,\right\}.\]
+
+The following theorem gives an alternative way to define it.
+
+\begin{thm}{Theorem}
+Let $\mu$ and $\nu$ be two probability measures of a metric space $\spc{X}$.
+Then 
+\[\cost(\mu,\nu)
+\df
+\sup\set{\int_{x\in\spc{X}}\phi(x)\cdot\mu+\int_{y\in\spc{X}}\psi(y)\cdot\nu}{\phi(x)+\psi(y)\le \cost(x,y)},\]
+where the functions $\phi$ and $\psi$ are assumed to be continuous.\footnote{In fact one }
+\end{thm}
+
+
+
+

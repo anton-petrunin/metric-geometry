@@ -58,7 +58,7 @@ by that reason it is called a selection theorem.
 \parit{Proof; ``only if'' part.}
 Note that the map $\iota\:\spc{X}\to \mathcal{H}(\spc{X})$, defined as $\iota\:x\mapsto\{x\}$
 (that is, point $x$ mapped to the one-point subset $\{x\}$ of $\spc{X}$)
-is distance preserving.
+is distance-preserving.
 Therefore $\spc{X}$ is isometric to the set $\iota(\spc{X})$ in $\mathcal{H}(\spc{X})$.
 
 Note that for a nonempty subset $A\subset \spc{X}$, we have $\diam A=0$ if and only if $A$ is a one-point set.
@@ -153,14 +153,23 @@ Hausdorff metric defines convergence of compact sets which is more important tha
 
 \begin{thm}{Exercise}\label{ex:Hausdorff-bry}
 Let $X$ and $Y$ be two compact subsets in $\RR^2$.
-Assume $|X-Y|_{\mathcal{H}(\RR^2)}<\eps$, 
-is it true that
+Assume $|X-Y|_{\mathcal{H}(\RR^2)}<\eps$.
+
+\begin{subthm}{ex:Hausdorff-bry:conv}
+Show that $|\Conv X-\Conv Y|_{\mathcal{H}(\RR^2)}<\eps$, where $\Conv X$ denoted a convex hull of $X$.
+\end{subthm}
+
+
+\begin{subthm}{ex:Hausdorff-bry:bry}
+Is it true that
 $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$,
 where $\partial X$ denotes the boundary of $X$.
 
 Does the converse holds? That is, assume $X$ and $Y$ be two compact subsets in $\RR^2$
 and $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$; 
 is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
+\end{subthm}
+
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:Huas-perimeter-area}
@@ -251,6 +260,14 @@ of (isometry classes of) compact metric spaces $\spc{X}_n$
 compact metric space $\spc{X}_\infty$ if $|\spc{X}_n - \spc{X}_\infty|_{\spc{M}} \to 0$ as $n\z\to\infty$;
 in this case we write $\spc{X}_n\GHto \spc{X}_\infty$.
 
+\begin{thm}{Exercise}
+Let $\spc{X}_\infty, \spc{X}_1, \spc{X}_2$ be compact metric spaces.
+Suppose $\spc{X}_n\GHto \spc{X}_\infty$.
+Show that $\Inj\spc{X}_n\GHto \Inj\spc{X}_\infty$.
+(Recall that $\Inj\spc{X}$ denotes the injective envelop of $\spc{X}$ that is defined on page \pageref{page:InjX}.)
+\end{thm}
+
+
 \section{Reformulations}
 
 Let us discuss few alternative ways to define the Gromov--Hausdorff metric.
@@ -278,7 +295,7 @@ is from Definition~\ref{def:GH}).
 
 More formally, fix isometries $f\: \spc{X} \to \spc{X}'$ and
 $g\: \spc{Y} \to \spc{Y}'$, then define the distance between $x \in \spc{X}$ and $y \in \spc{Y}$ by
-$|x-y|_{\spc{W}} = |f (x)- g(y)|_{\spc{Z}}+\eps$ for small enuf $\eps>0$.%
+$|x-y|_{\spc{W}} = |f (x)\z- g(y)|_{\spc{Z}}+\eps$ for small enuf $\eps>0$.%
 \footnote{We add $\eps$ to ensure that $d(x, y) > 0$ for any $x\in \spc{X}$ and $y\in \spc{Y}$;
 so $|x-y|_{\spc{W}}$ is indeed a metric.}
 This yields a metric on $\spc{W}=\spc{X}\sqcup \spc{Y}$ for which
@@ -293,7 +310,7 @@ Let $\spc{X}$ and $\spc{Y}$ be comact metric spaces.
 Then
 $$|\spc{X}-\spc{Y}|_{\spc{M}} = \inf \{|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\ell^\infty)}\}$$ 
 where the infimum is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\ell^\infty$
-which isometric to  $\spc{X}$ and $\spc{Y}$ correspondingly.  
+which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
 \end{thm}
 
 
@@ -307,7 +324,7 @@ Let $\spc{W}$ be an arbitrary metric space with the underlying set $\spc{X}\sqcu
 Note $\spc{W}$ is compact since it is union of two compact subsets $\spc{X},\spc{Y}\subset \spc{W}$.
 In particular, $\spc{W}$ is separable.
 
-By Lemma \ref{lem:frechet}, there is an distance preserving embedding $\iota\:\spc{W}\z\to \ell^\infty$.
+By Lemma \ref{lem:frechet}, there is a distance-preserving embedding $\iota\:\spc{W}\z\to \ell^\infty$.
 It remains to apply Proposition~\ref{prop:GH=X+Y}.
 \qeds
 
@@ -412,10 +429,10 @@ $$a>|\spc{X}-\spc{Y}|_{\spc{M}}
 b>|\spc{Y}-\spc{Z}|_{\spc{M}}.$$
 Choose two metrics on $\spc{U}=\spc{X}\sqcup \spc{Y}$ and $\spc{V}=\spc{Y}\sqcup \spc{Z}$ so that
 $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{U})}<a$ and $|\spc{Y}-\spc{Z}|_{\mathcal{H}(\spc{V})}<b$ 
-and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance preserving.
+and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance-preserving.
 
 Consider the metric on $\spc{W}=\spc{X}\sqcup \spc{Z}$ 
-so that inclusions $\spc{X}\hookrightarrow \spc{W}$ and $\spc{Z}\hookrightarrow \spc{W}$ are distance preserving
+so that inclusions $\spc{X}\hookrightarrow \spc{W}$ and $\spc{Z}\hookrightarrow \spc{W}$ are distance-preserving
 and 
 $$|x-z|_{\spc{W}}=\inf_{y\in \spc{Y}}\{|x-y|_{\spc{U}}+|y-z|_{\spc{V}}\}.$$
 Note that $|{*}-{*}|_{\spc{W}}$ is indeed a metric and 
@@ -449,15 +466,15 @@ $$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$
 for some (and therefore any) sequence of points $(x_n)$ in $S$
 which converges to $x$ in $\spc{X}$.
 (Note that if $x_n\to x$, then $(x_n)$ is Cauchy.
-Since $f_\infty$ is distance preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
+Since $f_\infty$ is distance-preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
 therefore it converges.)
 
-This way we obtain a distance preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
+This way we obtain a distance-preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
 It remains to show that $f_\infty$ is surjective; that is, $f_\infty(\spc{X})=\spc{Y}$.
 
-Note that in the same way we can obtain a distance preserving map $g_\infty\:\spc{Y}\z\to \spc{X}$.
+Note that in the same way we can obtain a distance-preserving map $g_\infty\:\spc{Y}\z\to \spc{X}$.
 If $f_\infty$ is not surjective, then neither is $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$.
-So $f_\infty \circ g_\infty$ is a distance preserving map from a compact space to itself which is not an isometry.
+So $f_\infty \circ g_\infty$ is a distance-preserving map from a compact space to itself which is not an isometry.
 The later contradicts Exercise~\ref{ex:non-contracting-map}. 
 \qeds
 
@@ -517,7 +534,7 @@ Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at 
 Show that $\spc{Q}(C,D)$ is totally bounded.
 \end{thm}
 
-Recall that we write $\spc{X}\le\spc{Y}$ if there is a distance non-decreasing map $\spc{X}\to\spc{Y}$.
+Recall that we write $\spc{X}\le\spc{Y}$ if there is a distance-nondecreasing map $\spc{X}\to\spc{Y}$.
 
 \begin{thm}{Exercise}\label{pr:under}
 
@@ -552,7 +569,7 @@ Let $(\spc{X}_n)$ be a Cauchy sequence in $\spc{M}$.
 Passing to a subsequence if necessary, 
 we can assume that $|\spc{X}_n-\spc{X}_{n+1}|_{\spc{M}}<\tfrac1{2^n}$ for each $n$.
 In particular, for each $n$ one can equip $\spc{W}_n=\spc{X}_n \sqcup \spc{X}_{n+1}$ with a metric such that
-inclusions $\spc{X}_n\hookrightarrow \spc{W}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{W}_n$ are distance preserving,
+inclusions $\spc{X}_n\hookrightarrow \spc{W}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{W}_n$ are distance-preserving,
 and $$|\spc{X}_n-\spc{X}_{n+1}|_{\mathcal{H}(\spc{W}_n)}\z<\tfrac1{2^n}$$
 for each $n$.
 
@@ -608,7 +625,7 @@ In the following exercises \emph{converge} means \emph{converge in the sense of 
 
 \begin{thm}{Exercise}\label{ex:GH-SC}
 \begin{subthm}{ex:GH-SC:circle}
-Show that a sequence of compact simply connected length spaces can not converge to a circle.
+Show that a sequence of compact simply connected length spaces cannot converge to a circle.
 \end{subthm}
 
 \begin{subthm}{ex:GH-SC:nonsc-limit}
@@ -618,7 +635,7 @@ Construct a sequence of compact simply connected length spaces that converges to
 
 \begin{thm}{Exercise}\label{ex:sphere-to-ball}
 \begin{subthm}{ex:sphere-to-ball:2}
-Show that a sequence of lenght metrics on the 2-sphere can not converge to a the unit disc.
+Show that a sequence of lenght metrics on the 2-sphere cannot converge to a the unit disc.
 \end{subthm}
 
 \begin{subthm}{ex:sphere-to-ball:3}
