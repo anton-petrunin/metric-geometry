@@ -1498,4 +1498,33 @@ draw subpath (1,2) of p1 dashed evenly;
 
 endfig;
 
+beginfig(1405)
+save u,p;
+path p[];
+u:=1.4cm;
+
+z.x0=(0,0)*u;
+z.x1=(1,0)*u;
+z.x2=(1.8,0)*u;
+
+z.y0=(-.1,.5)*u;
+z.y1=(.7,.6)*u;
+z.y2=(1.9,.6)*u;
+
+p0=z.x0..z.x1{1,1}..z.x2;
+p1=z.y0..z.y1{1,-1}..z.y2;
+
+draw p0;
+draw p1;
+
+for i=0 step 2/7-.0001 until 2:
+draw point i of p0--point i of p1;
+dOt point i of p0,point i of p1;
+endfor
+
+label.lrt (btex $\gamma_0$ etex, point 1 of p0);
+label.urt (btex $\gamma_1$ etex, point 1 of p1);
+label.lft (btex $\alpha$ etex, .5[point 0 of p0,point 0 of p1]);
+label.rt (btex $\beta$ etex, .5[point 2 of p0,point 2 of p1]);
+endfig;
 end

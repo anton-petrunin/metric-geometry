@@ -176,7 +176,7 @@ we get the following:
 
 \begin{thm}{Corollary}\label{thm:width<vol}
 For any $n$-dimensional Reimannian polyhedron $\spc{P}$, we have
-\[\width\spc{P}\le c_n\cdot \sqrt[n]{\vol\spc{P}}.\]
+\[\width\spc{P}\le n\cdot \sqrt[n]{\vol\spc{P}}.\]
 
 \end{thm}
 
@@ -339,21 +339,26 @@ If $2\cdot r<\sys\spc{M}$, then there is a homotopy $\gamma_t$ from
 $\gamma_0$ to $\gamma_1$ such that $\alpha(t)= \gamma_t(0)$ and $\beta(t)\mapsto \gamma_t(1)$.
 \end{thm}
 
-%???+PIC+redo
-
 \parit{Proof.}
 Set $s=\sys\spc{M}$; 
 since $2\cdot r<s$, we have that $\eps=\tfrac1{10}(s-2\cdot r)>0$.
 
 Note that we can assume that $\gamma_0$ and $\gamma_1$ are rectifiable;
-if not we can homotopy each into a broken geodesic line.
+if not we can homotopy each into a broken geodesic line kipping the assumptions true. 
 
-Choose two sequences of points $x_i=\gamma_0(t_i)$ and $y_i=\gamma_1(t_i)$
-for a fine partition $0=t_0<t_1<\dots<t_n=1$.
-We can assume that each arc $x_{i-1}$ to $x_i$ on $\gamma_0$ and from $y_{i-1}$ to $y_i$ on $\gamma_1$ has length smaller than $\eps$.
-Therefore every quadrilateral $x_{i-1}y_{i-1}y_ix_i$ formed by concatenation  of $[x_{i-1}y_{i-1}]$, arc of $\gamma_1$, $[y_ix_i]$, and arc of $\gamma_0$ has length smaller than $s$.
+\begin{wrapfigure}{r}{34mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1405}
+\end{wrapfigure}
+
+Choose a fine partition $0\z=t_0\z<t_1\z<\z\dots\z<t_n=1$.
+Consider a sequence of geodesic paths $\alpha_i$ from $\gamma_0(t_i)$ to $\gamma_1(t_i)$;
+we can assume that $\alpha_0=\alpha$ and $\alpha_n=\beta$.
+We can assume that each arc $\gamma_j|_{[t_{i-1},t_i]}$ has length smaller than $\eps$.
+Therefore every quadrilateral formed by concatenation  of $\alpha_{i-1}$, $\gamma_1|_{[t_{i-1},t_i]}$, reversed $\alpha_i$, and reversed arc $\gamma_0|_{[t_{i-1},t_i]}$ has length smaller than $s$.
 It follows that this curve is contractible.
-Applying this observation for each quadrilateral $x_{i-1}y_{i-1}y_ix_i$ we get the statement.
+Applying this observation for each quadrilateral, we get the statement.
 \qeds
 
 
@@ -403,12 +408,22 @@ Since $6\cdot R<s$, \ref{lem:sys-homotopy} implies that this homotopy can be ext
 By \ref{lem:aspherical-homotopy}, it can be extended to whole $\spc{M}$.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:fillrad-inj}
+\begin{thm}{Exercise}\label{ex:sys<width}
 Analyze the proof of \ref{thm:sys<width} and improve its inequality to 
  \[\sys\spc{M}\le 4 \cdot \width \spc{M}.\]
 \end{thm}
 
-%???+inj
+\begin{thm}{Exercise}\label{ex:fillrad-inj}
+Modify the proof of \ref{thm:sys<width} to prove the following:
+
+Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with \emph{injectivity radius} at least $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then there is geodesic $[pq]_{\spc{M}}$ is uniquely defined.
+Show that
+\[\width\spc{M}\ge \tfrac{r}{2\cdot(n+1)}.\]
+
+Use \ref{thm:width<vol} to conclude that  
+\[\vol\spc{M}\ge \eps_n \cdot r^n \]
+for some $\eps_n>0$ that depends only on $n$.
+\end{thm} 
 
 \section{Essential manifolds}
 
@@ -424,7 +439,7 @@ $f\circ\psi\:\spc{M}\to \spc{M}$ to the identity on the 2-skeleton of $\spc{M}$;
 further since $\spc{K}$ is aspherical we can homotopy the composition
 $\iota\z\circ f\circ\psi$ to  $\iota$. 
 Existence of this extension implies that that $\iota$ kills the fundamental class of $\spc{M}$ --- a contradiction.
-So, taking \ref{ex:fillrad-inj} into account, we proved the following yet more general theorem.
+So, taking \ref{ex:sys<width} into account, we proved the following yet more general theorem.
 
 \begin{thm}{Theorem}\label{thm:sys<width++}
 Suppose $\spc{M}$ is an essential Riemnnian space.
@@ -466,6 +481,7 @@ $c_n=\sqrt[n]{n!}= \tfrac ne+o(n)$ in \ref{thm:width<vol} instead of $n$.
 As a result, we have a stronger statement in \ref{thm:sys+}:
 \[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol\spc{M}}.\]
 
-A wide open conjecture says that the optimal constant is $\pi/\sqrt[n]{v_n/2}$ where $v_n$ denotes the volume of $n$-dimensional unit sphere;
-this ratio grows as $O(\sqrt n)$.
-This is the systole ratio for $n$-dimensional real projective space with canonical metric.
+A wide open conjecture says that the optimal constant is $\pi/\sqrt[n]{\omega_n/2}$ where $\omega_n$ denotes the volume of $n$-dimensional unit sphere.
+This is the systole ratio for the $n$-dimensional real projective space with canonical metric; it  grows as $O(\sqrt n)$.
+
+

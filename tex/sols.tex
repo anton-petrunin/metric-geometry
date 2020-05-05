@@ -477,7 +477,7 @@ for all large $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:GH-po}.}
+\parbf{Exercise~\ref{ex:GH-po:a}.}
 In order to check that $\dist{*}{*}{\spc{M}'}$ is a metric, it is sufficient to show that
 \[\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0 
 \quad\Longrightarrow\quad
@@ -516,7 +516,6 @@ Therefore $f_\infty$ and $g_\infty$ are isometries as well.
 %Note that $h$ is a distance non-deceasing map from a compact space to an itself.
 %By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
 
-(The proof of the second part is coming.) %???
 
 \parbf{Exercise~\ref{pr:doubling}.}
 Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by $\mu$.
@@ -570,7 +569,7 @@ That is, $f$ is a distance-nondecreasing map $\spc{X}\to \spc{Y}$.
 Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
 It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
-The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$. %???
+The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
 
 \begin{wrapfigure}{r}{40 mm}
 \vskip-0mm
@@ -669,8 +668,6 @@ Then
 Since $x_\omega\notin [p_\omega q_\omega]$, we have that $\ell_\omega>0$ --- a contradiction.
 
 To prove the last property consider sequence of centers of tripods $m_n$ for points $x_n,y_n,z_n\in \spc{T}_n$ and observe that its ultralimit $m_\omega$ is a the ceter of tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.
-
-%\parbf{Exercise~\ref{ex:Asym(Lob)}.} Coming soon. %???
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1701,9 +1698,8 @@ Applying the above observation and summing up the results, we get that
 \[\liminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
 The statement follows since $\eps$ is arbitrary positive number.
 
-%??? + example Without assuming stability of convergence, we may approximate a
-
 \parit{Comment.} A more general result was obtaind by Sergei Ivanov~\cite{ivanov-1997}.
+Note that the statement does not hold without stability of the convergence. In fact any compact metric space can be approximated by Riemannian surface with arbitrary small area.
 
 \parbf{Exercise~\ref{ex:sysT2}.}
 Set $s=\sys(\TT^2,g)$.
@@ -1806,53 +1802,54 @@ Note that $\dist{h_t(x)}{x}{\ell^\infty(\spc{M})}\le R$ for any $t\in[0,1]$.
 In particular the fundamental class of $\spc{M}$ bounds in the closed $R$-neighborhood of $\spc{M}$ in $\ell^\infty(\spc{M})$.
 Whence the statement follows.
 
-\parbf{Exercise~\ref{ex:fillrad-inj}.} 
-Choose $R>\FillRad(\spc{M})$.
-Fix small $\eps>0$ and set $R'=R+\eps$.
+%\parbf{Exercise~\ref{ex:fillrad-inj}.} 
+%Arguing by contradiction, assume $(n+1)\cdot R<r$ for some $R>\width\spc{M}$.
 
-Let $\sigma\:W\to \ell^\infty(\spc{M})$ be a map of a simplicial complex as in the proof of \ref{thm:sys<FillRad}.
-That is, the restriction $\sigma|_{\partial W}$
-represents the fundamental class $[\spc{T}]$ of $\spc{T}$,
-the image $\sigma(W)\subset B_{R}(\spc{T})$,
-and $\sigma$-image of any simplex in $W$ has diameter less then $\eps>0$.
+%Choose a covering $\{V_i\}$ of $\spc{M}$ as in the definition of width (\ref{def:width}), so the dimension of the nerve $\spc{N}$ of the covering is at most $n-1$ and $V_i\subset \oBall(p_i,R)$ for each $i$.
+%Suppose $\psi\:\spc{M}\to\spc{N}$ is a map provided by \ref{prop:space->nerve}.
 
-We may assume that vertexes of $W$ can be divided into $n+2$ levels, say $0,1,\dots,n+1$, so that each simplex has vertexes of different levels.
-This can be achieved by applying barycentric subdivision once.
-Indeed every vertex in the barycentric subdivision corresponds to a simplex in the original triangulation; so we can define level as the dimension of the corresponding simplex.
+%As usual we denote by $v_i$ the vertex in $\spc{N}$ that corresponds to $V_i$.
+%Let us construct a continuous map $f\:\spc{N}\to \spc{M}$ such that $f\circ \psi$ is homotopic to the identity --- note that once it is done the problem is solved.
 
-Let us map each vertex $v$ of $W$ to a point in $\spc{M}$ closest to $\sigma(v)$; it defines the map on the 0-skeleton $W^0$.
 
-To extend the map to the higher skeletons we will apply the following {}\emph{cone construction}.
-Suppose the map is defined on the base $\triangle_v$ of a simplex $\triangle$ and the opposite vertex $v$.
-Note that every point $x$ of $\triangle$ lies on a line segment $[vy]$ with $y\in \triangle_v$, say $x=(1-t)\cdot v+t\cdot y$.
-If $f(\triangle_v)$ lies on the distance less than $r$ from $f(v)$,
-then $f(v)$ is connected to $f(y)$ by a uniqe geodesic path $\gamma_y\:[0,1]\to \spc{M}$ that depends continuously on $y$.
-In this case we can set $f(x)=\gamma_y(t)$.
 
-We have to arrange the construction in such a way that the simplexes will fit together and to make sure that the image of tha base is $r$-far from the vertex.
+%Let $\sigma\:W\to \ell^\infty(\spc{M})$ be a map of a simplicial complex as in the proof of \ref{thm:sys<FillRad}.
+%That is, the restriction $\sigma|_{\partial W}$ represents the fundamental class $[\spc{T}]$ of $\spc{T}$, the image $\sigma(W)\subset B_{R}(\spc{T})$, and $\sigma$-image of any simplex in $W$ has diameter less then $\eps>0$.
 
-To do so let us apply the the cone construction to the edges between 1-level vertex $v_1$ to the 0-level base $v_0$.
-This way we mapped the edge $[v_1v_0]$ to a geodesic path shorter than $2\cdot R'$.
-(If $2\cdot R'<r$, then it is unique, but it is not yet important.)
-It defines the map on all edges of $W$ between vertexes on level $0$ and $1$.
+%We may assume that vertexes of $W$ can be divided into $n+2$ levels, say $0,1,\dots,n+1$, so that each simplex has vertexes of different levels.
+%This can be achieved by applying barycentric subdivision once.
+%Indeed every vertex in the barycentric subdivision corresponds to a simplex in the original triangulation; so we can define level as the dimension of the corresponding simplex.
 
-Now let us extend the map to each triangle with vertex $v_2$ on level 2 and base edge $[v_1v_0]$ with vertexes of level 1 and 0.
-The $f$image of the base has length less than $2\cdot R'$ 
-and the distance from $f(v_2)$ to $f(v_1)$ and $f(v_0)$ is also less than $2\cdot R'$.
-Therefore for every $y\in [v_1v_0]$, we have $\dist{f(v)}{f(y)}{\spc{M}}<3\cdot R'$.
-So if $3\cdot R'<r$, then we can apply cone construction to extend the map to each triangle with level of the vertexes $0,1,$ and $2$.
+%Let us map each vertex $v$ of $W$ to a point in $\spc{M}$ closest to $\sigma(v)$; it defines the map on the 0-skeleton $W^0$.
 
-Further let us extend the map to each triangle with vertex $v_3$ on level 3 and base edge $\triangle$ with vertexes $v_0,v_1,v_2$ of level 0,1, and 2.
-Any point $x$ in the base lies in a triangle with vertexes $v_3,v_2$ and a point $z$ on the edge $[v_0v_1]$.
-From above we have that $\dist{f(v_3)}{f(z)}{\spc{M}}<3\cdot R'$, $\dist{f(v_2)}{f(z)}{\spc{M}}<3\cdot R'$, and $\dist{f(v_3)}{f(v_2)}{\spc{M}}<2\cdot R'$,
-By triangle inequality $\dist{f(v_3)}{f(x)}{\spc{M}}<4\cdot R'$.
-Therefore, if $4\cdot R'<r$ we can extend $f$ to each triangle with the levels of vertexes $0,1,$ and $2$.
+%To extend the map to the higher skeletons we will apply the following {}\emph{cone construction}.
+%Suppose the map is defined on the base $\triangle_v$ of a simplex $\triangle$ and the opposite vertex $v$.
+%Note that every point $x$ of $\triangle$ lies on a line segment $[vy]$ with $y\in \triangle_v$, say $x=(1-t)\cdot v+t\cdot y$.
+%If $f(\triangle_v)$ lies on the distance less than $r$ from $f(v)$, then $f(v)$ is connected to $f(y)$ by a uniqe geodesic path $\gamma_y\:[0,1]\to \spc{M}$ that depends continuously on $y$.
+%In this case we can set $f(x)=\gamma_y(t)$.
 
-Continuing this way we get that we can extend the map to whole $W$ if 
-$(n+1)\cdot R'<r$.
-In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
-That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
-\[\FillRad \spc{M}\ge r.\]
+%We have to arrange the construction in such a way that the simplexes will fit together and to make sure that the image of tha base is $r$-far from the vertex.
+
+%To do so let us apply the the cone construction to the edges between 1-level vertex $v_1$ to the 0-level base $v_0$.
+%This way we mapped the edge $[v_1v_0]$ to a geodesic path shorter than $2\cdot R'$.
+%(If $2\cdot R'<r$, then it is unique, but it is not yet important.)
+%It defines the map on all edges of $W$ between vertexes on level $0$ and $1$.
+
+%Now let us extend the map to each triangle with vertex $v_2$ on level 2 and base edge $[v_1v_0]$ with vertexes of level 1 and 0.
+%The $f$image of the base has length less than $2\cdot R'$  and the distance from $f(v_2)$ to $f(v_1)$ and $f(v_0)$ is also less than $2\cdot R'$.
+%Therefore for every $y\in [v_1v_0]$, we have $\dist{f(v)}{f(y)}{\spc{M}}<3\cdot R'$.
+%So if $3\cdot R'<r$, then we can apply cone construction to extend the map to each triangle with level of the vertexes $0,1,$ and $2$.
+
+%Further let us extend the map to each triangle with vertex $v_3$ on level 3 and base edge $\triangle$ with vertexes $v_0,v_1,v_2$ of level 0,1, and 2.
+%Any point $x$ in the base lies in a triangle with vertexes $v_3,v_2$ and a point $z$ on the edge $[v_0v_1]$.
+%From above we have that $\dist{f(v_3)}{f(z)}{\spc{M}}<3\cdot R'$, $\dist{f(v_2)}{f(z)}{\spc{M}}<3\cdot R'$, and $\dist{f(v_3)}{f(v_2)}{\spc{M}}<2\cdot R'$,
+%By triangle inequality $\dist{f(v_3)}{f(x)}{\spc{M}}<4\cdot R'$.
+%Therefore, if $4\cdot R'<r$ we can extend $f$ to each triangle with the levels of vertexes $0,1,$ and $2$.
+
+%Continuing this way we get that we can extend the map to whole $W$ if  $(n+1)\cdot R'<r$.
+%In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
+%That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
+%\[\FillRad \spc{M}\ge r.\]
 
 \parbf{Exercise~\ref{ex:connected-sum-essential}.}
 Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.

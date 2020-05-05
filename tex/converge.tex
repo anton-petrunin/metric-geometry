@@ -70,7 +70,7 @@ Since $\spc{X}$ is isometric to $\iota(\spc{X})$,
 ``only if'' part follows.
 \qeds
 
-To prove ``if'' part we will need the following two lemmas.%???CHANGE THE PROOF???
+To prove ``if'' part we will need the following two lemmas.
 
 \begin{thm}{Lemma}\label{lem:decreasing-converges}
 Let $K_1\supset K_2\supset\dots$ be a sequence of nonempty compact sets in a metric space $\spc{X}$
@@ -501,18 +501,22 @@ $$|x-x'|_{\spc{X}}\le|f(x)-f(x')|_{\spc{Y}}+\eps$$
 for any $x,x'\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:GH-po}
+\begin{subthm}{ex:GH-po:a}
 Show that 
 $$\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=\inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
 \quad\text{and}\quad
 \spc{Y}\le \spc{X}+\eps}$$
 defines a metric on the space of (isometry classes) of compact metric spaces.
+\end{subthm}
 
+\begin{subthm}{ex:GH-po:b}
 Moreover $\dist{*}{*}{\spc{M}'}$ is equivalent to the Gromov--Haudorff metric;
 that is,
 $$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
 \quad\iff\quad 
 \dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$ 
 as $n\to\infty$.
+\end{subthm}
 \end{thm}
 
 
