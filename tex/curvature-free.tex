@@ -1,20 +1,20 @@
-\chapter{Volume bounds} 
+\chapter{Besikovitch inequality} 
 
 
-\section{Riemannian metrics}
+\section{Riemannian spaces}
 
-We are going to consider mostly Riemannian spaces;
-that is smooth manifolds with metric defined by a metric tensor.
+Riemannian spaces are smooth manifolds with metric defined by a metric tensor.
 These are specially nice length metrics on manifolds.
 However most of the statements we are going to discuss have counterpart for general length metrics on manifolds.
 
 Let $M$ be a smooth manifold.
-A \emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$ that depends smoothly on the point $p$.
+A \index{metric tensor}\emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$ that depends smoothly on the point $p$.
 That is, if we fix a local coordinates on $M$ and write $g$ in this coordinates, then each component of $g$ is a smooth function. 
 
-A Riemannian manifold is a smooth manifold $M$ with a choice \emph{metric tensor} $g$ on it.
+A Riemannian manifold $(M,g)$ is a smooth manifold $M$ with a choice metric tensor $g$ on it.
+The metric tensor $g$ can be used to define length of curves, distances, and volume of regions in $M$.
+In particular any Riemannian manifold is a metric space which might be called \index{Riemannian space}\emph{Riemannian space}.
 
-The metric tensor $g$ can be used to define length of curves and volume of regions in $M$.
 
 \parbf{Lengths and distances.}
 If $\gamma\:[a,b]\to M$ is a piecewise smooth curve then 
@@ -23,8 +23,8 @@ Further we can define a metric on $M$ as least lower bound to lengths of piecewi
 the described distance between points $x$ and $y$ will be denoted by $\dist{x}{y}{g}$ or $\distfun_x(y)_g$.
 The distance function from a point $x$ will be denoted by $(\distfun_x)_g$ or $\distfun_x$ if the choice of $g$ is evident.
 
-The following claim states that the constructed metric remembers everything about the metric tensor and the underlying smooth manifold;
-this claim requires a proof, but we will assume that it is obvious.
+The following claim follows from Myers--Steenrod theorem \cite{myers-steenrod};
+it shows that the metric on the Reimannian manifold {}\emph{remembers} everything about the Reimannian manifold.
 
 \begin{thm}{Claim}
 Let $(M,g)$ be a Riemannian manifold.
@@ -87,22 +87,24 @@ Observe that the differentials $d_pf_A$ and $d_pf_B$ written in these basises ar
 Evidently $|d_pf_A|\le 1$ and $|d_pf_B|\le 1$.
 Since the determinant of a matrix is the volume of the parallelepiped spanned on its rows, we get 
 \[|\det(\Jac_pf)|\le |d_pf_A|\cdot|d_pf_B|\le 1.\]
-Since $f\:\square\to\square$ is a Lipschitz onto map, the \emph{area formula} implies that 
+Since $f\:\square\to\square$ is a Lipschitz onto map, the {}\emph{area formula} implies that 
 \[\vol(\square,g)\ge \vol\square=1.\]
 \qedsf
 
-The following generalization can be proved along the same lines.
 
 \begin{thm}{Theorem}\label{thm:besikovitch+}
 Let $(M,g)$ be Riemannian manifold and its boundary admits a degree 1 map $\partial M\to\partial\square^n$. 
 Suppose $d_1,\dots, d_n$ the distances between the the inverse images of pairs of opposite faces of $\square^n$ in $\partial M$.
 Then 
 \[\vol(M,g)\ge d_1\cdots d_n.\]
+
+Moreover, in the case of equality, $(\square^n,g)$ is isometric to the product $[0,d_1]\times\dots\times[0,d_n]$.
 \end{thm}
 
+The first part of the stated generalization can be proved along the same lines as \ref{thm:besikovitch}.
+
 \begin{thm}{Exercise}\label{ex:besikovitch=}
-Suppose that we have equality in \ref{thm:besikovitch}.
-Show that $(\square^n,g)$ is isometric to $\square^n$.
+Prove the second part of \ref{thm:besikovitch+}.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:hexagon}
@@ -133,7 +135,7 @@ Construct a metric $g$ on $\mathbb{S}^3$ with arbitrary small $\vol(\mathbb{S}^3
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:GH-vol}
-Suppose a sequence of Riemannian spaces $\spc{M}_n$ \emph{stably converges} in the sense of Gromov--Hausdorff  to a Riemannian spaces $\spc{M}_\infty$ as $n\to\infty$;
+Suppose a sequence of Riemannian spaces $\spc{M}_n$ \index{stable convergence}\emph{stably converges} in the sense of Gromov--Hausdorff  to a Riemannian spaces $\spc{M}_\infty$ as $n\to\infty$;
 that is, the corresponding Hausdorff approximations can be chousen to be homeomorphisms.
 Show that 
 \[\liminf_{n\to\infty}\vol\spc{M}_n\ge \vol\spc{M}_\infty.\]
@@ -147,12 +149,118 @@ assume further that any geodesic that enters $K$ exits $K$ the same way the Eucl
 Show that $g$ is flat; that is, $(\RR^m,g)$ is isometric to the Euclidean space. 
 \end{thm}
 
-\section{Systolic inequlaity}
+\section{Hausdorff measure}
 
-Let $\spc{M}$ be a compact Riemannian manifold.
-The \emph{systole} of $\spc{M}$ (brifly $\sys\spc{M}$) is defined to be the least length of a noncontractible closed curve in $\spc{M}$.
+Hausdorff measure is one of the most standard analogs of volume that can be defined on subset of general to metric space.
 
-Let $\Lambda$ be a set of smooth closed $n$-dimensional manifolds.
+Let $\spc{X}$ be a metric space.
+A function $\mu$ with values in $[0,\infty]$,
+defined on all subsets of $\spc{X}$
+is called \index{outer measure}\emph{outer measure} if
+\begin{itemize}
+\item $\mu\,\emptyset=0$;
+\item If $A\subset B\subset \spc{X}$, then $\mu\, A\le \mu\, B$; 
+\item For any sequence $A_1, A_2,\dots$ of subsets of $\spc{X}$ we have
+$$\mu\left(\bigcup_n A_n\right) \le \sum_n \mu\, A_n.$$
+\end{itemize}
+
+A subset $E\subset \spc{X}$ is called \index{$\mu$-measurable}\emph{$\mu$-measurable} if 
+$$\mu\, A = \mu(A \cap E) + \mu(A \backslash E)$$
+for every subset $A\subset\spc{X}$.
+
+The following is a classical lemma in measure theory \cite[2.1.3 and 2.3.2(9)]{federer}.
+
+\begin{thm}{Carath\'eodory's lemma}\label{lem:caratheodory}
+Let  $\mu$ be an outer measure on a metric space $\spc{X}$.
+Then the $\mu$-measurable sets form a sigma-algebra.
+
+Moreover, if 
+\[\mu(A\cup B)=\mu\, A+\mu\, B
+\eqlbl{eq:caratheodory}\]
+for any two sets $A$ and $B$ 
+such that there $\dist{a}{b}{}>\eps$ for any $a\in A$, $b\in B$, and fixed $\eps>0$, then any Borel set in $\spc{X}$ is $\mu$-measurable.
+\end{thm}
+
+\parbf{Carath\'eodory's construction.}\index{Carath\'eodory's construction}
+Fix a function $\rho$, that returns a value in $[0,\infty]$
+for any closed subset of $\spc{X}$.
+Define outer measure $\mu_\rho$ of set $W$ in $\spc{X}$ in the following way:
+$$\mu_\rho W
+\df
+\lim_{\eps\to0}
+\,
+\inf
+\set{\sum_{n\in\NN}\rho A_n}
+{\begin{aligned}
+&\bigcup_{n\in\NN}A_n\supset W, \text{all}\  
+A_n
+\ \text{are closed,}\ 
+\\
+&
+\text{and}\ \diam A_n<\eps\ \text{for each}\ n.
+ \end{aligned}
+}.$$
+Note that
+the value of the infimum above is non-decreasing in $\eps$;
+in particular the limit is defined.
+
+An outer measure $\mu$ on $\spc{X}$ is called \index{Borel regular measure}\emph{Borel regular} if any Borel set in $\spc{X}$ is $\mu$-measurable and for any set $A\subset \spc{X}$ there is a Borel set $B$ such that $A\subset B$ and $\mu\, A=\mu\, B$. 
+
+From Carath\'eodory's lemma (\ref{lem:caratheodory}), we get the following.
+
+\begin{thm}{Corollary}
+The Carath\'eodory's construction always produce a Borel regular outer measure.
+\end{thm}
+
+The Carath\'eodory's construction can be applied to different choices of the function $\rho$.
+One of the most popular choice is $\rho A=(\diam A)^\alpha$.
+It produces the so called \index{Hausdorff measure}\emph{$\alpha$-dimensional Hausdorff measure} $\mu_\alpha$.
+If we need to emphasize that the measure is defined on the space $\spc{X}$, we use $\spc{X}$ as the index.
+For example, we may write $\mu_\alpha(A)_\spc{X}$ for the $\alpha$-dimensional Hausdorff measure of set $A$ in $\spc{X}$.
+
+The following proposition trivially follows from the definitions
+
+\begin{thm}{Proposition}\label{prop:bilip-measure}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$
+and
+ $f\: \spc{X}\to \spc{Y}$ be a $\Lip$-Lipschitz map. 
+Then 
+\[\mu_\alpha [f(A)]\le \Lip^\alpha\cdot\mu_\alpha\, A.\]
+
+\end{thm}
+
+The following exercise proves an weak analog of the Besikovitch inequality that works for arbitrary metric spaces.
+
+\begin{thm}{Exercise}\label{ex:besikovitch++}
+Let $M$ be manifold with boundary and $\rho$ is a pseudometric on $M$.
+Suppose $\partial M$ admits a degree 1 map $\partial M\to\partial\square^n$. 
+Suppose $d_1,\dots, d_n$ the $\rho$-distances between the the inverse images of pairs of opposite faces of $\square^n$ in $M$.
+Then 
+\[\mu_n(M,\rho)\ge d_1\cdots d_n.\]
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:huas/vol}
+Let $\spc{M}$ an $n$-dimensional Riemannian manifold.
+Show that 
+\[\omega_n\cdot\mu_n\,A=\vol_n A\]
+for any Borel set $A\subset \spc{M}$, where $\omega_n$ denotes the volume of a ball in the $n$-dimensional Euclidean space with diameter 1.
+\end{thm}
+
+Note that $\omega_n<1$ for $n\ge 2$.
+Therefore by \ref{ex:huas/vol}, the conclusions in \ref{ex:besikovitch++} (as well as its assumptions) are weaker than in \ref{thm:besikovitch+}.
+
+\begin{thm}{Exercise}\label{}
+Let $X$ be a contractible metric space with zero $(n+1)$-dimensional Hausdorff measure.
+Assume that $\Delta_1,\Delta_2\subset X$ are two embedded $n$-disks having the same boundary.
+Show that $\Delta_1=\Delta_2$.
+\end{thm}
+
+\section{Systolic inequality}
+
+Let $\spc{M}$ be a compact Riemannian space.
+The \index{systole}\emph{systole} of $\spc{M}$ (briefly $\sys\spc{M}$) is defined to be the least length of a noncontractible closed curve in $\spc{M}$.
+
+Let $\Lambda$ be a set of closed $n$-dimensional manifolds.
 We say that a systolic inequality holds for $\Lambda$ if there is a constant $c$ such that for any $M\in \Lambda$ and any metric tenor $g$ on $M$ we have
 \[\sys(M,g)\le c\cdot \sqrt[n]{\vol(M,g)}.\]
 
@@ -168,245 +276,25 @@ Use \ref{thm:besikovitch} to show that systolic inequality holds for the real pr
 Use \ref{thm:besikovitch+} to show that systolic inequality holds for the set of all closed surfaces of positive genus.
 \end{thm}
 
-\parbf{Remarks.}
-The optimal constants in the systolic inequality are known in the following three cases:
-\begin{itemize}
-\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was prove by Pao Ming Pu \cite{pu}.\label{page:pu}
-\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \emph{Loewner's torus inequality}.
-\item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for certain nonsmooth metrics \cite{bavard}.
-\end{itemize}
-The proofs of these results use the so called \emph{uniformization theorem}   available in the 2-dimensional case only.
-These proofs are beautiful, but they too far from metric geometry.
-A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
-
 \begin{thm}{Exercise}\label{ex:sysS2xS1}
 Show that no systolic inequality holds for $\mathbb{S}^2\times\mathbb{S}^1$.
 \end{thm}
 
-
-\begin{thm}{Therorem}\label{thm:sys(torus)}
-A systolic intequality holds for the torus $\TT^n$. 
-\end{thm}
-
-The proof of this theorem and its generalization will take most of the remaining lectures.
-In the following section we introduce a key notion in the proof.
-
-\section{Filling radius}
-
-The following definition was introduced by Mikhael Gromov \cite{gromov-1983}.
-
-Let $\spc{M}$ be a closed $n$-dimensional Reimannian manifold.
-Applying Kuratowski embedding (\ref{lem:kuratowski}) $x\mapsto \distfun_x$, we may think that $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$ --- the space of functions on $\spc{M}$ equipped with the metric induced by the sup-norm.
-
-Define the \emph{filling radius} of $\spc{M}$ (briefly $\FillRad\spc{M}$) as the least upper bound on values $r>0$ such that $\spc{M}$ bounds in its $r$-neighborhood in $\ell^\infty(\spc{M})$.
-In other words, if $\iota_r$ denotes inclusion of $\spc{M}$ in its $r$-neighborhood $B_r(\spc{M})\subset \ell^\infty(\spc{M})$,
-then 
-\[\FillRad\spc{M}\df\inf\set{r>0}{(\iota_r)_*[\spc{M}]=0\in H_n(B_r(\spc{M}))},\]
-where $[\spc{M}]$ denotes the fundamental class of $\spc{M}$.
-
-We assume that the homologies are taken with coefficients in $\ZZ_2$.
-In this case $[\spc{M}]\ne0\in H_n(\spc{M})$.
-If we choose coefficients $\ZZ$, then it does not hold for nonorientable manifolds.
+In the following lecture we will show that systolic inequality holds for many manifolds, in particular for torus of arbitrary dimension.
 
 
-\begin{thm}{Exercise}\label{ex:fillrad<diam/2}
-Show that the inequality
-\[\FillRad \spc{M}\le \tfrac12\cdot\diam \spc{M}\]
-holds for any compact Riemannian manifold $\spc{M}$.
-\end{thm}
-
-\parbf{Remark.}
-The optimal bound for the above exercise was found by Mikhail Katz \cite{katz}.
-Namely he proved that
-\[\FillRad \spc{M}\le \tfrac13\cdot\diam \spc{M}\]
-and equality holds if $\spc{M}$ is real projective space with canonical metric.
-The proof is beautiful, elementary, and very readable.
-
-\medskip
-
-The following theorem is the main ingredient in the proof of \ref{thm:sys(torus)+}.
-This theorem will be the main subject of the following lecture.
-
-\begin{thm}{Theorem}\label{thm:FillRad<vol}
-Given an integer $n>0$, there is a constant $c_n$ such that inequality
-\[\FillRad \spc{M}\le c_n\cdot \sqrt[n]{\vol \spc{M}}\]
-holds for any compact $n$-dimensional Riemannian manifold $\spc{M}$.
-\end{thm}
-
-In the following section we show why this theorem is related to \ref{thm:FillRad<vol}.
-
-\section{Filling radius bounds systole}
-
-\begin{thm}{Theorem}\label{thm:sys<FillRad}
-Suppose $\spc{T}= (\TT^n,g)$ is a Riemnnian manifold on $n$-dimensional torus $\TT^n$.
-Then 
-\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
-\end{thm}
-
-Note that \ref{thm:sys<FillRad} and \ref{thm:FillRad<vol}  imply \ref{thm:sys(torus)}.
-
-\parit{Proof.}
-As usual we consider $\spc{T}$ as a subspace in $\ell^\infty(\spc{T})$.
-
-Set $s=\sys\spc{T}$ and choose $R>\FillRad\spc{T}$.
-Arguing by contradiction, assume $6\cdot R< s$;
-so $\eps=\tfrac1{100}\cdot(s-6\cdot R)>0$.
-
-Choose a simplicial complex $W$ and a map $\sigma\:W\to \ell^\infty(\spc{T})$ such that the restriction $\sigma|_{\partial W}$
-represents the fundamental class $[\spc{T}]$ of $\spc{T}$
-and $\sigma(W)\subset B_{R}(\spc{T})$.
+\section{Remarks}
 
 
-Passing to barycentric subdivision few times, we may assume that the $\sigma$-image of any simplex in $W$ has diameter less than $\eps$.
-We may perturb the map slightly to ensure that each edge $e$ of $W$ is mapped to a geodesic and still $\sigma|_{\partial W}$
-represents the fundamental class $[\spc{T}]$ of $\spc{T}$.
-
-Let us construct a continuous map
-$f\:W\to  \spc{T}$ which agrees with $\sigma$ on $\partial W$.
-Once it is done we get that the fundamental class of $\spc{T}$ vanish in $ H_n(\spc{T})$ --- a contradiction.
-
-Set $f(x)=\sigma(x)$ for every $x\in \partial W$;
-on the remaining part of $W$ we will construct $f$ recurcevely on the skeletons $W^0$, $W^1$, $W^2$ and so on.
-
-For every vertex $v$, set $f(v)$ to be the closest point in $\spc{T}$ to $\sigma(v)$.
-Note that if $v\in\partial W$, then $f(v)=\sigma(v)$.
-This way we defined $f$ on~$W^0$.
-
-Let $e$ be an edge in $W$ between vertexes $v$ and $w$.
-Note that 
-\begin{align*}
-\dist{f(v)}{f(w)}{}
-&\le\dist{f(v)}{\sigma(v)}{}
-+\dist{\sigma(v)}{\sigma(w)}{}
-+\dist{\sigma(w)}{f(w)}{}\le
-\\
-&\le R+\eps +R<
-\\
-&<\tfrac s3.
-\end{align*}
-Map $e$ to a shortest path $[f(v)\,f(w)]$ in $\spc{T}$;
-if $e$ is an edge in $\partial W$ then no need to change $f$ on it.
-This extends $f$ to $W^1$ such that each edge is mapped to a geodesic of length less that $\tfrac s3$.
-
-Now for each triangle $uvw$ in $W$, the closed curve formed by $f$-images of its sides has length less than $s$.
-That is, it is shorter than any noncontractible closed curve,
-and therefore it is null-homotopic in $\spc{T}$.
-Hence we can extend $f$ to the $W^2$.
-
-Finally, since $\spc{T}$ is aspherical, there is no obstruction to extending $f$ to the rest of $W$.
-\qeds
-
-\begin{thm}{Exercise}\label{ex:fillrad-inj}
-Modify the proof of \ref{thm:sys<FillRad} to prove the following:
-
-Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with \emph{injectivity radius} at least $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then there is geodesic $[pq]_{\spc{M}}$ is uniquely defined.
-Show that
-\[\FillRad\spc{M}\ge \tfrac{r}{n+1}.\]
- 
-\end{thm}
-
-Note that this exercise together with bound on filling radius in \ref{thm:FillRad<vol} imply that lower bound on injectivity radius implies a lower bound on volume.
-This statement was proved first by Marcel Berger \cite{berger} and it is not at all trivial.
-
-\section{Essential manifolds}
-
-Observe that in the proof of \ref{thm:sys<FillRad}, we use only that $\spc{T}$ is aspherical closed manifold.
-That is, we actually proved the following more general theorem.
-
-\begin{thm}{Theorem}\label{thm:sys<FillRad+}
-Suppose $\spc{T}$ is a closed aspherical Riemnnian space.
-Then 
-\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
-\end{thm}
-
-
-To generalize the statement further, we need the following definition.
-
-\begin{thm}{Definition}
-A closed manifold $\spc{T}$ is called \emph{essential} if it admits a continuous map $\iota\:\spc{T}\to \spc{K}$ to an aspherical topological space $\spc{K}$ such that $\iota$ sends the fundamental class of $\spc{T}$ to a nonzero homology class in $\spc{K}$.\footnote{We assume that the coefficients are $\ZZ_2$, but one can play with them if necessary.}
-\end{thm}
-
-Assume that the manifold $\spc{T}$ is essential and $\iota \:\spc{T}\to \spc{K}$ as in the definition.
-Following the proof of \ref{thm:sys<FillRad}, we can extend the map 
-$\sigma\:\partial W\to \spc{T}$ to the 2-skeleton $W^2$ of $W$;
-further extend the composition
-$\iota\z\circ\sigma|_{\partial W}$ to a map $W\to \spc{K}$. 
-Existence of this extension implies that that $\iota|_{\spc{T}}$ bounds in $\spc{K}$ --- a contradiction.
-So we proved the following yet more general theorem.
-
-\begin{thm}{Theorem}\label{thm:sys<FillRad++}
-Suppose $\spc{T}$ is an essential Riemnnian space.
-Then 
-\[\sys\spc{T}\le 6 \cdot \FillRad \spc{T}.\]
-\end{thm}
-
-Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $\spc{T}$.
-The real projective space $\RP^n$ provides an interesting example of an essential manifold which is not aspherical.
-Indeed, the infinite dimensional projective space $\RP^\infty$ is aspherical and for the natural embedding $\RP^n\hookrightarrow\RP^\infty$ the image $\RP^n$ does not bound in $\RP^\infty$.
-The following exercise provides more examples of that type.
-
-\begin{thm}{Exercise}\label{ex:connected-sum-essential}
-Show that connected sum of an essential manifold with any closed manifold is essential.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:product-essential}
-Show that product of two essential manifolds is essential.
-
-Show that product of nonessential closed manifold of dimension at least 1 with any closed manifold is not essential.
-\end{thm}
-
-Let us describe a more conceptual way to define essential manifolds.
-
-Suppose $\pi$ is a group,
-then we say that a connected topological space $\spc{K}$ is \emph{$K(\pi,1)$} (or, more precicely, \emph{Eilenberg--MacLane space of type $K(\pi,1)$})
-if $\pi_1(\spc{K})=\pi$ and $\pi_n(\spc{K})=0$ for $n\ne 1$;
-here $\pi_n(\spc{K})$ denotes the $n$-th homotopy group of $\spc{K}$.
-
-A CW-complex $\spc{K}$ that is a $K(\pi,1)$ space can be constructed the following way.
-Suppose the group $\pi$ is given via set of generators and a set of relations. 
+The optimal constants in the systolic inequality are known only in the following three cases:
 \begin{itemize}
-\item Start with the wedge sum of circles, one for each generator.
-We obtain the 1-skeleton $\spc{K}^1$ of the complex; its fundamental group is free.
-
-\item Attach a disc for to kill each relation in the fundamental group of the space.
-This way we obtain a 2-dimensional CW-complex $\spc{K}^2$ with fundamental group $\pi$.
-
-\item If $\pi_2(\spc{K}^2)\ne0$, chose a set of generators in $\pi_2(\spc{K}^2)$ and attach a $3$-disc to each a 2-spheroid in $\spc{K}^2$ for each generator.
-This way we obtain a 3-dimensional CW-complex $\spc{K}^3$ such that  $\pi_1\spc{K}^3=\pi$ and $\pi_2\spc{K}^3=0$.
-
-
-\item Do the same to kill $\pi_3(\spc{K}^2)\ne0$ and continue.
-The process might terminate after finite number of steps, but typically it goes forever.
+\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was prove by Pao Ming Pu \cite{pu}.\label{page:pu}
+\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \index{Loewner's torus inequality}\emph{Loewner's torus inequality}.
+\item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for certain nonsmooth metrics \cite{bavard}.
 \end{itemize}
-At the end you get $K(\pi,1)$ CW-complex  $\spc{K}=\spc{K}^\infty$.
-It proves the existence.
-The proof of the following observation is an exercise in topology.
-
-\begin{thm}{Observations}
-
-\begin{subthm}{}
-The group $\pi$ defines a $K(\pi,1)$ space up to a weak homotopy equivalence.
-In particular, the homologies of a $K(\pi,1)$ space are completely determined by $\pi$.
-\end{subthm}
+The proofs of these results use the so called {}\emph{uniformization theorem}   available in the 2-dimensional case only.
+These proofs are beautiful, but they too far from metric geometry.
+A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
 
 
-\begin{subthm}{}
-Suppose $\spc{K}$ is a $K(\pi,1)$ space and $\spc{L}$ is a connected finite CW-complex.
-Then any homomorphism $\pi_1\spc{L}\to\pi_1\spc{K}$ is induced by a continuous map $\phi\:\spc{L}\to\spc{K}$.
-Moreover, $\phi$ is uniquely defined up to homotopy equivalence.
-\end{subthm}
-
-\end{thm}
-
-The following proposition provides an alternative definition of essential manifold, it follows from the observations above.
-
-\begin{thm}{Proposition}
-Suppose $\spc{T}$ is a closed manifold, 
-$\spc{K}$ is a $K(\pi,1)$ space and a map $\iota\:\spc{T}\to \spc{K}$ induces an isomorphism of fundamental groups.
-Then $\spc{T}$ is essential if and only if $\iota$ sends the fundamental class of $\spc{T}$ to a nonzero homology class in $\spc{K}$.
-\end{thm}
-
-%\section{Remarks}
-
-%surfaces of high genus constant in filling radius inequality
 

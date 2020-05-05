@@ -1,8 +1,8 @@
 \chapter{Injective spaces}
 
-In this lecture we discuss \emph{injective spaces} also known as \emph{hyperconvex spaces}.
+In this lecture we discuss {}\emph{injective spaces} also known as {}\emph{hyperconvex spaces}.
 They are metric analog of convex sets in Euclidean space.
-The so called \emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
+The so called \index{injective envelop}\emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
 it is a direct analog of convex hull of a set in a Euclidean space.
 
 This type of spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelop was introduced by John Isbell \cite{isbell};
@@ -13,7 +13,7 @@ We follow closely the paper of John Isbell \cite{isbell}.
 \section{Admissible and extremal functions}
 
 Let $\spc{X}$ be a metric space.
-A function $r\:\spc{X}\to\RR$ is called \emph{admissible} if the following inequality
+A function $r\:\spc{X}\to\RR$ is called \index{admissible function}\emph{admissible} if the following inequality
 \[r(x)+r(y)\ge \dist{x}{y}{}\eqlbl{eq:admissible}\]
 holds for any $x,y\in \spc{X}$.
 
@@ -35,7 +35,7 @@ for any $x,y\in \spc{X}$.
 Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and the definition of geodesic.
 \qeds
 
-A minimal admissible function will be called \emph{extremal}.
+A minimal admissible function will be called \index{extremal function}\emph{extremal}.
 More precisely, an admissible function $r\:\spc{X}\to\RR$ is extremal 
 if 
 \[s\le r\quad\Longrightarrow\quad s=r\]
@@ -119,7 +119,7 @@ Follows by Zorn's lemma.
 \section{Injective spaces}
 
 \begin{thm}{Definition}\label{def:injective}
-A metric space $\spc{Y}$ is called \emph{injective} if for any metric space $\spc{X}$,
+A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$,
 any its subspace $\spc{A}$
 any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$;
 that is, $f=F|_{\spc{A}}$.
@@ -140,6 +140,7 @@ geodesic, and
 contractible.
 \end{subthm}
 \end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:injective-spaces}
 Show that the following spaces are injective:
@@ -186,7 +187,7 @@ for any $x\in \spc{Y}$.
 \end{subthm}
 
 \begin{subthm}{thm:injective=hyperconvex:balls}
-$\spc{Y}$ is \emph{hyperconvex};
+$\spc{Y}$ is \index{hyperconvex space}\emph{hyperconvex};
 that is, if $\{\cBall[x_\alpha,r_\alpha]\}_{\alpha\in\IndexSet}$ is a family of closed balls in $\spc{Y}$ such that 
  \[r_\alpha+r_\beta\ge \dist{x_\alpha}{x_\beta}{}\]
  for any $\alpha,\beta\in \IndexSet$,
@@ -240,7 +241,13 @@ $\cBall[f(x),r(x)]$ have a common point --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}
-Show that the Urysohn space is \emph{finitely hypercovex} but not \emph{countably hyperconvex};
+Suppose a length space $\spc{W}$ have two subspaces $\spc{X}$ and $\spc{Y}$ such that $\spc{X}\cup\spc{Y}=\spc{W}$ and $\spc{X}\cup\spc{Y}$ is one-point set.
+Assume $\spc{X}$ and $\spc{Y}$ are injective.
+Show that  $\spc{W}$ is injective
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the Urysohn space is {}\emph{finitely hypercovex} but not {}\emph{countably hyperconvex};
 that is, the condition in \ref{thm:injective=hyperconvex:balls} holds for any finite family of balls, but may not hold for a countable family.
 Conclude that the Urysohn space is not injective.
 \end{thm}
@@ -370,7 +377,7 @@ Show that for any two points $f,g\in\Inj \spc{X}$ lie on a geodesic $[pq]$ with 
 
 \section{Injective envelop}
 
-An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \emph{injective envelop} if $\spc{E}$ is a an injective space and there is no injective proper subspace of $\spc{E}$ that contains $\spc{X}$.
+An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelop}\emph{injective envelop} if $\spc{E}$ is a an injective space and there is no injective proper subspace of $\spc{E}$ that contains $\spc{X}$.
 
 Two injective envelopes $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are called  equivalent if there is an isometry $\iota\: \spc{E}\to\spc{F}$ such that $f=\iota\circ e$.
 

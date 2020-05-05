@@ -1,0 +1,471 @@
+\chapter{Width}
+
+This lecture is based on a paper of Alexander Nabutovsky \cite{nabutovsky}.
+
+\section{Nerves and partition of unity}
+
+Let $\{V_1,\dots,V_k\}$ be a finite open cover of a compact metric space $\spc{X}$.
+Consider an abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertexes $v_{i_1},\dots, v_{i_m}$ is included in $\spc{N}$ if 
+the intersection $V_{i_1}\cap\dots\cap V_{i_m}$ is nonempty.
+The obtained simplicial complex $\spc{N}$ called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
+
+Note that $\spc{N}$ is a finite simplicial complex;
+it is a subcomplex of a simplex with the vertixes $\{v_1,\dots,v_k\}$.
+The nerve $\spc{N}$ has dimension at most $n$ if and only if the covering $\{V_1,\dots,V_k\}$ has multiplicity is at most $n+1$;
+that is, any point $x\in\spc{X}$ belongs to
+at most $n+1$ sets of the covering.
+
+\begin{thm}{Proposition}\label{thm:part-unit}
+ Let $\{V_1,\dots,V_k\}$ be a finite open covering of a compact metric space ${\spc{X}}$.
+Then there are Lipschitz functions $\psi_i\:{\spc{X}}\z\to[0,1]$ such that
+if $\psi_i(x)>0$ then $x\in V_i$ and
+$$\sum_i\psi_i(x)=1$$
+for any $x\in {\spc{X}}$.
+\end{thm}
+
+\parit{Proof.}
+Consider functions $\phi_i\:{\spc{X}}\to\RR$ defined as
+$$\phi_i(x)=\distfun_{({\spc{X}}\backslash V_i)} x.$$
+Note $\phi_i$ is $1$-Lipschitz
+for any $i$
+and $\phi_i(x)>0$ if and only if $x\in V_i$.
+Since $\{V_i\}$ is a covering, we have that
+$$\sum_i\phi_i(x)>0\ \ \text{for any}\ \ x\in {\spc{X}}.$$
+
+Set 
+$$\psi_k(x)=\frac{\phi_k(x)}{\sum_i\phi_i(x)}.$$
+Observe that by construction the functions $\psi_i$ meet the conditions in the proposition.
+\qedsf
+
+A collection of functions $\{\psi_i\}$ that meets the conditions in \ref{thm:part-unit} is called 
+a \index{partition of unity}\emph{partition of unity subordinate to the open covering} $\{V_1,\dots,V_k\}$.
+
+Suppose $\{\psi_i\}$ is  
+a partition of unity subordinate to the open covering $\{V_1,\dots,V_k\}$.
+Note that for any point $x\in {\spc{X}}$, the set
+$$\set{v_i}{\psi_i(x)>0}$$
+describe vertexes of a simplex in the nerve.
+Therefore 
+$$\psi\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
+describes a Lipschitz map from ${\spc{X}}$ to the nerve $\spc{N}$ of $\{V_i\}$;
+here the point $x$ is mapped to the point with barycentric coordinates $\psi_i(x)$.
+In other words we proved the following:
+
+\begin{thm}{Proposition}\label{prop:space->nerve}
+Let $\spc{N}$ be a nerve of an open covering $\{V_1,\z\dots,V_k\}$ of a compact metric space $\spc{X}$.
+Denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
+
+Then there is a Lipschitz map $\psi\:\spc{X}\to\spc{N}$ such that $\psi(V_i)\z\subset\Star_{v_i}$ for every $i$;
+that is, for any $x\in V_i$ the point $\psi(x)$ lies the interior of some simplex with vertex $v_i$.
+\end{thm}
+
+
+\section{Width}
+
+Suppose $A$ is a subset of a metric space $\spc{X}$.
+The radius of $A$ (briefly $\rad A$) is defined as the least upper bound on the values $R>0$ such that $\oBall(x,R)\supset A$ for some $x\in \spc{X}$.
+
+\begin{thm}{Definition}\label{def:width}
+Let $\spc{X}$ be a metric space.
+The $n$-th width of $\spc{X}$ (briefly $\width_n\spc{X}$) is defined as the least upper bound on values $R>0$ such that $\spc{X}$ admits a finite open covering $\{V_i\}$ with multiplicity at most $n+1$ and $\rad V_i< R$ for each $i$.
+\end{thm}
+
+\parit{Remarks.}
+\begin{itemize}
+\item Observe that 
+\[\width_0\spc{X}\ge\width_1\spc{X}\ge\dots\]
+for any compact matric space $\spc{X}$.
+Moreover, if $\spc{X}$ is connected, then 
+\[\width_0\spc{X}=\rad\spc{X}.\]
+\item 
+Usually width is defined using diameter instead of radius, but the result differ at most twice.
+Namely if $r$ is the radius-width and $d$ --- diameter-width for the same $n$, then 
+$r\le d\le 2\cdot r$.
+
+\item Note that \index{Lebesgue covering dimension}\emph{Lebesgue covering dimension} of $\spc{X}$ can be defined as the least number $n$ such that $\width_n\spc{X}=0$.
+Another closely related notion is the so called \index{macroscopic dimesion on scale $R$}\emph{macroscopic dimesion on scale $R$};
+it is defined as the  least number $n$ such that $\width_n\spc{X}<R$.
+\end{itemize}
+
+\begin{thm}{Exercise}\label{ex:macrodimension}
+Suppose $\spc{X}$ is a compact metric space such that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $R$-neighborhood.
+Show that $\spc{X}$ has macroscopic dimension at most 1 on scale $100\cdot R$.
+
+What about quasiconverse? That is, suppose a simply connected compact metric space $\spc{X}$ has macroscopic dimension at most 1 on scale $R$, is it true that any closed curve $\gamma$ in $\spc{X}$ can be contracted in its $100\cdot R$-neighborhood?
+\end{thm}
+
+
+The following proposition provides an equivalent definition;
+we will not use it, but it provides a good reason for the name \index{width}\emph{width}.
+
+\begin{thm}{Proposition}\label{prop:width=suprad(inv)}
+Suppose $\spc{X}$ is a compact metric space.
+Then $\width_n\spc{X}<R$ if and only if there is a finite $n$-dimensional simplicial complex $\spc{N}$ and a continuous map $\psi\:\spc{X}\to \spc{N}$
+such that $\rad[\psi^{-1}(s)]\z<R$
+for any $s\in \spc{N}$.
+\end{thm}
+
+\parit{Proof; ``only if'' part.}
+Suppose $\width_n\spc{X}<R$.
+Consider a covering $\{V_1,\dots,V_k\}$ of $\spc{X}$ guaranteed by the definition of width.
+Let $\spc{N}$ be its nerve and $\psi\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
+
+Since the multiplicity of the covering is at most $n+1$, we ahve $\dim \spc{N}\le n$.
+
+Note that if $x\in \spc{N}$ lies in a star of a vertex $v_i$,
+then $\psi^{-1}\{x\}\z\subset V_i$;
+in particular $\rad[\psi^{-1}\{x\}]<R$.
+
+\parit{``If'' part.}
+Choose $x\in \spc{N}$.
+Since the inverse image $\psi^{-1}\{x\}$ is compact, $\psi$ is continuous, and $\rad[\psi^{-1}\{x\}]<R$,
+there is a neighborhood $U\ni x$ such that the  $\rad[\psi^{-1}(U)]<R$.
+
+Since $\spc{X}$ is compact,  there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\psi^{-1}(U_i)\subset\spc{X}$ has radius smaller than $R$ for each $i$.
+Since $\spc{N}$ has dimension $n$, we can inscribe%
+\footnote{Recall that a covering $\{W_i\}$ is inscribed in the covering $\{U_i\}$ if for every $W_i$ is a subset of some $U_j$.} 
+in $\{U_i\}$ a finite open cover $\{W_i\}$ with multiplicity at most $n+1$.
+It remains to observe that $V_i=\psi^{-1}(W_i)$ defines a finite open cover of $\spc{X}$ with radius less than $R$ and multiplicity at most $n+1$. 
+\qeds
+
+\section{Riemannian polyhedrons}
+
+A \index{Riemannian polyhedron}\emph{Riemannian polyhedron} is defined as a finite simplicial complex with a metric tensor on each simplex such that the restriction of the metric on each simplex to a subsymplex coinsides with the metric on the subsmplex.
+The dimension of Riemannian polyhedron is defined as the largest dimension it its triangulation.
+For Riemannian polhedron one can define length of curves and volume the same way as for Riemannian manifolds.
+
+
+Further we will apply the notion of width to compact Riemannian polyhedrons.
+If $\spc{P}$ is an $n$-dimensional compact Riemannian polyhedron, then 
+we suppose that
+\[\width\spc{P}\df\width_{n-1}\spc{P}.\]
+
+Let $\spc{P}$ be an $n$-dimensional Riemnnian polyhedron.
+Let us define \index{volume profile}\emph{volume profile} of $\spc{P}$ as a function 
+returning volume of largest $r$-ball in $\spc{P}$;
+that is, $\VolPro_{\spc{P}}\:\RR_+\to\RR_+$ is defined by 
+\[\VolPro_{\spc{P}}(r)\df \sup\set{\vol_n \oBall(p,r)}{p\in\spc{P}}.\]
+Note that $\VolPro_{\spc{P}}$ is a nondecreasing function and $\VolPro_{\spc{P}}(r)\z\to\vol_n\spc{P}$ as $r\to\infty$.
+
+Note that if $\spc{P}$ is a 1-dimensional connected Riemannian polyhedron, then 
+\[\width\spc{P}=\width_0\spc{P}=\rad\spc{P}.\]
+
+\begin{thm}{Exercise}\label{ex:1D-case}
+Suppose $\spc{P}$ be a 1-dimensional Riemannian polyhedron.
+Suppose $\VolPro_{\spc{P}}(R)<R$ for some $R>0$.
+Show that 
+\[\width \spc{P}<R.\]
+Try to show that $c=\tfrac 12$ is the optimal constant such that 
+\[\width \spc{P}<c\cdot R.\]
+\end{thm}
+
+\section{Volume profile bounds width}
+
+The following theorem and its corollary is the main goal of this lecture.
+
+\begin{thm}{Theorem}\label{thm:width<volpro}
+Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron. 
+If the inequality 
+\[R> n\cdot \sqrt[n]{\VolPro_{\spc{P}}(R)}\]
+holds for {}\emph{some} $R>0$, then 
+\[\width\spc{P}\le  R.\]
+\end{thm}
+
+Since $\VolPro_{\spc{P}}(r)\le \vol\spc{P}$ for any $r$,
+we get the following:
+
+\begin{thm}{Corollary}\label{thm:width<vol}
+For any $n$-dimensional Reimannian polyhedron $\spc{P}$, we have
+\[\width\spc{P}\le c_n\cdot \sqrt[n]{\vol\spc{P}}.\]
+
+\end{thm}
+
+In the proof of \ref{thm:width<volpro}, we will use the following three technical statements,
+the proofs are omitted, but they are not hard. 
+
+\begin{thm}{Smoothing procedure}
+Let $\spc{P}$ be a Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function.
+Then for any $\delta>0$ there is a  1-Lipschitz function $\tilde f\:\spc{P}\to \RR$ that is smooth on each simplex of the triangulation and $\delta$-close to $f$.
+\end{thm}
+
+\begin{thm}{Sard's theorem}
+Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a function that is smooth on each simplex.
+Then for almost all values $a$, each component of the inverse image $f^{-1}\{a\}$ equipped with the induced metric is a Reimannian polyhedron of dimension at most $n-1$.
+\end{thm}
+
+
+\begin{thm}{Coarea inequality}
+Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function that is smooth on each simplex.
+Set $V=\vol_n (f^{-1}[a,b])$.
+Then 
+\[\int_a^b\vol_{n-1}(f^{-1}\{x\})\cdot dx\ge V .\]
+In particular there is a subset of positive measure $A\subset [a,b]$ such that the inequality 
+\[\vol_{n-1}(f^{-1}\{x\})\ge \frac V{b-a}\]
+holds for any $x\in A$.
+\end{thm}
+
+\begin{thm}{Definition}
+Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
+An $(n-1)$-dimensional subpolyhedron $\spc{Q}\subset\spc{P}$ is called \index{separating subpolyhedron}\emph{$R$-separating} if $\rad U<R$ for each connected component $U$ of the complement $\spc{P}\backslash \spc{Q}$.
+\end{thm}
+
+
+
+\begin{thm}{Lemma}\label{lem:separating}
+Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
+Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\subset\spc{P}$ such that for any $r_0<r_1\le R$ we have
+\[\VolPro_{\spc{Q}}(r_0)< \tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps.\]
+
+\end{thm}
+
+\parit{Proof.}
+Choose a small $\delta>0$.
+Applying the smoothing procedure, we can exchange each distance function $\distfun_p$ on $\spc{P}$ by $\delta$-close smooth 1-Lipschitz function, which will be denoted by $\widetilde \distfun_p$.
+
+By Sard's theorem, almost all level sets 
+\[\tilde S_c(p)=\set{x\in \spc{P}}{\widetilde \distfun_p(x)=c}\]
+are smooth Riemannian polyhedrons of dimension at most $n-1$.
+Since $\delta$ is small, the coarea inequality implies that 
+for we can choose $c\z\in(r_0+\delta, r_1-\delta)$ such that $\tilde S_c(p)$ is a subpolyhedron and 
+\begin{align*}
+\vol_{n-1}\tilde S_c(p)&\le \tfrac1{r_1-r_0-2\cdot\delta}\cdot\vol_n[\oBall(p,r_1)]<
+\\
+&<\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\tfrac\eps2.
+\end{align*}
+
+Suppose $\spc{Q}$ is an $R$-separating subpolyhedron in $\spc{P}$ with almost minimal volume, say its volume is at most $\tfrac\eps2$-far from the greatest lower bound.
+Note that cutting from $\spc{Q}$ everything inside $\tilde S_c(p)$ and adding $\tilde S_c(p)$ keeps it to be $R$-separating subpolyhedron.
+Since $\spc{Q}$ has almost minimal volume, we have
+\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]-\tfrac\eps2\le \vol_{n-1}S_c(p).\]
+Therefore 
+\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]\le\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps\eqlbl{eq:volQ<ProP}\]
+Recall that $\spc{Q}$ is equipped with the induced length metric;
+therefore $\dist{p}{q}{\spc{Q}}\ge \dist{p}{q}{\spc{P}}$ for any $p,q\in \spc{Q}$;
+in particular, 
+\[\oBall(p,r_0)_{\spc{Q}}\subset \spc{Q}\cap \oBall(p,r_0)_{\spc{P}}\]
+for any $p\in \spc{Q}$ and $r\ge 0$.
+Hence \ref{eq:volQ<ProP} implies the lemma.
+\qeds
+
+\begin{thm}{Lemma}\label{lem:separating-width}
+Let $\spc{Q}$ be an $R$-separating subpolyhedron in an $n$-dimensional Riemannian polyhedron $\spc{P}$.
+Suppose $\width\spc{Q}\le R$.
+Then $\width\spc{P}\le R$
+\end{thm}
+
+\parit{Proof.}
+Start with an open covering $\{V_1,\dots,V_k\}$ of $\spc{Q}$ of multiplicity $\le n$ with radiuses of the sets in the intrinsic metric $\le R$.
+
+Note that $\{V_1,\dots,V_k\}$ can be converted into an an open covering of
+a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
+This is can be done by setting 
+\[V_i'=\bigcup_{x\in V_i}\oBall(x,r_x),\]
+where $r_x=\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
+
+Adding to  $\{V_i'\}$ all the components of $\spc{P}\backslash \spc{Q}$,
+we increase the multiplicity by at most 1 and obtain a covering of $\spc{P}$.
+The statement follows since $\dim \spc{P}= \dim \spc{Q}\z+1$.
+\qeds
+
+\parit{Proof of \ref{thm:width<volpro}.}
+We apply induction on the dimension $n=\dim\spc{P}$.
+The base case $n=1$ is given in \ref{ex:1D-case}.
+
+Suppose that the  $(n-1)$-dimensional case is proved.
+Consider an $n$-dimensional Riemannian polyhedron $\spc{P}$ and suppose
+\[n\cdot \sqrt[n]{\VolPro\spc{P}(R)}< R\]
+for some $R>0$.
+Let $\spc{Q}$ be an $R$-separating subpolyhedron in $\spc{P}$ provided by \ref{lem:separating} for a small $\eps>0$.
+Applying  \ref{lem:separating} for $r=\tfrac{n-1}n\cdot R$ and $R$, we have that 
+\begin{align*}
+\VolPro_\spc{Q}(r) &< \frac 1{R-r}\cdot \VolPro_\spc{P}(R)+\eps<
+\\
+&<\frac {n}{R}\cdot\left(\frac{R}{n}\right)^n=
+\\
+&=\left(\frac{r}{n-1}\right)^{n-1};
+\end{align*}
+that is, $(n-1)\cdot \sqrt[n-1]{\VolPro\spc{Q}(r)}< r$.
+Since $\dim\spc{Q}\le n-1$, by the induction hypothesis, we get that
+\[\width\spc{Q}\le r<R.\]
+It remains to apply \ref{lem:separating-width}.
+\qeds
+
+
+
+
+
+\section{Width bounds systole}
+
+\begin{thm}{Theorem}\label{thm:sys<width}
+Suppose $\spc{M}$ is a aspherical $n$-dimensional Riemnnian manifold.
+Then 
+\[\sys\spc{M}\le 6 \cdot \width \spc{M}.\]
+\end{thm}
+
+\begin{thm}{Lemma}\label{lem:aspherical-homotopy}
+Let $M$ be an aspherical space and $L$ be a connected CW-complex.
+Denote by $L^k$ the k-skeleton of $L$.
+Then any continuous map $f\:L^2\to M$ can be extended to a continuous map $\bar f\:L\to M$
+
+Moreover, if $p\in L$ is a 0-cell and $q\in M$.
+Then a continuous maps of pairs $\phi_0,\phi_1\:(L,p)\to(M,q)$ are homotopic if and only if $\phi_0$ and $\phi_1$ induce the same homomorphism on fundamental groups $\pi_1(L,p)\to\pi_1(M,q)$.
+\end{thm}
+
+\parit{Proof.}
+Since $M$ is aspherical, any continuous map $\partial\mathbb{D}^n\:\to M$ for $n\ge 3$
+is hull-homotopic;
+that is, it can be extended to a map $\mathbb{D}^n\:\to M$.
+
+It makes possible to extend $f$ to $L^3$, $L^4$, and so on.
+Therefore $f$ can be extended to whole $L$.
+
+The only-if part on the second part of lemma is trivilal; let us show the if part.
+
+Sine $L$ is connected, we can assume that $p$ forms the only 0-cell in $L$;
+otherwise we can collapse a maximal sub-tree of the 1-skeleton in $L$ to $p$.
+Therefore $L^1$ is formed by loops that generates $\pi_1(L,p)$.
+
+By assumption, the restrictions of $\phi_0$ and $\phi_1$ to $L^1$ are homotopic.
+In other words the homotopy $\Phi\:[0,1]\times L$ is defined on the 2-skeleton of $[0,1]\times L$.
+It remains to apply the first part of the lemma.
+\qeds
+
+
+
+\begin{thm}{Lemma}\label{lem:sys-homotopy}
+Suppose $\gamma_0,\gamma_1$ are two paths between points in a Riemannian space $\spc{M}$ such that $\dist{\gamma_0(t)}{\gamma_1(t)}{\spc{M}}<r$ for any $t\in[0,1]$.
+Let $\alpha$ be a geodesic path from $\gamma_0(0)$ to $\gamma_1(0)$ and $\beta$ be a geodesic path from $\gamma_0(1)$ to $\gamma_1(1)$. 
+If $2\cdot r<\sys\spc{M}$, then there is a homotopy $\gamma_t$ from
+$\gamma_0$ to $\gamma_1$ such that $\alpha(t)= \gamma_t(0)$ and $\beta(t)\mapsto \gamma_t(1)$.
+\end{thm}
+
+%???+PIC+redo
+
+\parit{Proof.}
+Set $s=\sys\spc{M}$; 
+since $2\cdot r<s$, we have that $\eps=\tfrac1{10}(s-2\cdot r)>0$.
+
+Note that we can assume that $\gamma_0$ and $\gamma_1$ are rectifiable;
+if not we can homotopy each into a broken geodesic line.
+
+Choose two sequences of points $x_i=\gamma_0(t_i)$ and $y_i=\gamma_1(t_i)$
+for a fine partition $0=t_0<t_1<\dots<t_n=1$.
+We can assume that each arc $x_{i-1}$ to $x_i$ on $\gamma_0$ and from $y_{i-1}$ to $y_i$ on $\gamma_1$ has length smaller than $\eps$.
+Therefore every quadrilateral $x_{i-1}y_{i-1}y_ix_i$ formed by concatenation  of $[x_{i-1}y_{i-1}]$, arc of $\gamma_1$, $[y_ix_i]$, and arc of $\gamma_0$ has length smaller than $s$.
+It follows that this curve is contractible.
+Applying this observation for each quadrilateral $x_{i-1}y_{i-1}y_ix_i$ we get the statement.
+\qeds
+
+
+\parit{Proof of \ref{thm:sys<width}.}
+Let $\spc{N}$ be the nerve of a covering $\{V_i\}$ of $\spc{M}$ and $\psi\:\spc{M}\to\spc{N}$ be the map provided by \ref{prop:space->nerve}.
+As usual, we denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
+
+Set $R=\width \spc{M}$ and $s=\sys\spc{M}$.
+Assume we chose $\{V_i\}$ as in the definition of width (\ref{def:width}).
+For each $i$ choose a point $p_i\in \spc{M}$ such that $V_i\subset \oBall(p_i,R)$.
+Observe that in this case $\dim\spc{N}<n$;
+therefore $\psi$ kills the fundamental class of $\spc{M}$.
+
+Let us construct a continuous map  $f\:\spc{N}\to  \spc{M}$ such that
+$f\circ\psi$ is homotopic to the identity map on $\spc{M}$.
+
+Note that once $f$ is constructed, the theorem is proved, .
+Indeed, since $\psi$ kills the fundamental class of $\spc{M}$, so does $f\circ\psi$.
+Therefore $[\spc{M}]=0$ --- a contradiction.
+
+First set $f(v_i)=p$.
+It defines the map $f$ on the 0-skeleton $\spc{N}^0$ of the nerve $\spc{N}$.
+Further we will be define $f$ step by step on the skeletons of higher dimensions $\spc{N}^1,\spc{N}^2, \dots$
+
+Let us map each edge $[v_iv_j]$ in $\spc{N}$ to a geodesic $[p_ip_j]$.
+It defines the map on the 1-skeleton $\spc{N}^1$ of the nerve $\spc{N}$.
+Note that image of each edge is shorter that $2\cdot R$.
+
+Suppose $[v_iv_jv_k]$ is a triangle in $\spc{N}$.
+Note that perimeter of the triangle $[p_ip_jp_k]$ can not exceed $6\cdot R$.
+Since $6\cdot R<s$, the contour of $[p_ip_jp_k]$ is contractible.
+Therefore we can extend $f$ to each triangle of~$\spc{N}$.
+It defines the map $f$ on $\spc{N}^2$.
+
+Finally, since $\spc{M}$ is aspherical, by \ref{lem:aspherical-homotopy}, the map $f$ can be extended to $\spc{N}^3$, $\spc{N}^4$ and so on.
+
+It remains to show that $f\circ\psi$ is homotopic to the identity map.
+Choose a CW structure on $\spc{M}$ with sufficiently small cell, so that each cell lies in one of $V_i$.
+Note that $\psi$ is homotopic to a map $\psi_1$ that sends $\spc{M}^k$ to $\spc{N}^k$ for any $k$.
+Moreover we may assume that (1) if a 0-cell $x$ of $\spc{M}$ maps to a $v_i$, then $x\in V_i$ and (2) each 1-cell  of $\spc{M}$ maps to an edge of $\spc{N}$.
+Choose a 1-cell $e$ in $\spc{M}$; by the construction, $f\circ\psi_1$ maps $e$ to a geodesic $[p_ip_j]$ and $e$ lies $\oBall(p_i,R)$.
+Observe that $[p_ip_j]$ is shorter than $2\cdot R$.
+It follows that the distance between points on $[p_ip_j]$ and $e$ can not exceed $3\cdot R$.
+Choose a geodesic path $\alpha_i$ from every 0 cell $x_i$  of $\spc{M}$ to $p_j=f\circ\psi_1(x_i)$.
+It defines a homotopy on $\spc{M}^0$.
+Since $6\cdot R<s$, \ref{lem:sys-homotopy} implies that this homotopy can be extended to $\spc{M}^1$.
+By \ref{lem:aspherical-homotopy}, it can be extended to whole $\spc{M}$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:fillrad-inj}
+Analyze the proof of \ref{thm:sys<width} and improve its inequality to 
+ \[\sys\spc{M}\le 4 \cdot \width \spc{M}.\]
+\end{thm}
+
+%???+inj
+
+\section{Essential manifolds}
+
+To generalize \ref{thm:sys<width} bit further, we need the following definition.
+
+\begin{thm}{Definition}
+A closed manifold $\spc{M}$ is called \index{essential manifold}\emph{essential} if it admits a continuous map $\iota\:\spc{M}\to \spc{K}$ to an aspherical topological space $\spc{K}$ such that $\iota$ sends the fundamental class of $\spc{M}$ to a nonzero homology class in $\spc{K}$.\footnote{We assume that the coefficients are $\ZZ_2$, but one can play with them if necessary.}
+\end{thm}
+
+Assume that the manifold $\spc{M}$ is essential and $\iota \:\spc{M}\to \spc{K}$ as in the definition.
+Following the proof of \ref{thm:sys<width}, we can homotope the map 
+$f\circ\psi\:\spc{M}\to \spc{M}$ to the identity on the 2-skeleton of $\spc{M}$;
+further since $\spc{K}$ is aspherical we can homotopy the composition
+$\iota\z\circ f\circ\psi$ to  $\iota$. 
+Existence of this extension implies that that $\iota$ kills the fundamental class of $\spc{M}$ --- a contradiction.
+So, taking \ref{ex:fillrad-inj} into account, we proved the following yet more general theorem.
+
+\begin{thm}{Theorem}\label{thm:sys<width++}
+Suppose $\spc{M}$ is an essential Riemnnian space.
+Then 
+\[\sys\spc{M}\le 4 \cdot \width \spc{M}.\]
+\end{thm}
+
+As a corollary form \ref{thm:sys<width++} and \ref{thm:width<vol} we get the so called \index{Gromov's systolic inequality}\emph{Gromov's systolic inequality}:
+
+\begin{thm}{Theorem}\label{thm:sys+}
+Suppose $\spc{M}$ is an essential $n$-dimensional Riemannian space.
+Then 
+\[\sys\spc{M}\le 4 \cdot n\cdot \sqrt[n]{\vol\spc{M}}.\]
+\end{thm}
+
+
+Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $\spc{M}$.
+The real projective space $\RP^n$ provides an interesting example of an essential manifold which is not aspherical.
+Indeed, the infinite dimensional projective space $\RP^\infty$ is aspherical and for the natural embedding $\RP^n\hookrightarrow\RP^\infty$ the image $\RP^n$ does not bound in $\RP^\infty$.
+The following exercise provides more examples of that type.
+
+\begin{thm}{Exercise}\label{ex:connected-sum-essential}
+Show that connected sum of an essential manifold with any closed manifold is essential.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:product-essential}
+Show that product of two essential manifolds is essential.
+
+Show that product of nonessential closed manifold of dimension at least 1 with any closed manifold is not essential.
+\end{thm}
+
+\section{Remarks}
+
+Theorem \ref{thm:sys+} was proved originally by Mikhael Gromov \cite{gromov-1983} with much worse constant.
+The given proof is a result of a sequence of simplifications given by Larry Guth \cite{guth},  Panos Papasoglu \cite{papasoglu}, Alexander Nabutovsky and Roman Karasev \cite{nabutovsky}.
+
+In \cite{nabutovsky} the calculations were optimized better which gave the constants 
+$c_n=\sqrt[n]{n!}= \tfrac ne+o(n)$ in \ref{thm:width<vol} instead of $n$.
+As a result, we have a stronger statement in \ref{thm:sys+}:
+\[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol\spc{M}}.\]
+
+A wide open conjecture says that the optimal constant is $\pi/\sqrt[n]{v_n/2}$ where $v_n$ denotes the volume of $n$-dimensional unit sphere;
+this ratio grows as $O(\sqrt n)$.
+This is the systole ratio for $n$-dimensional real projective space with canonical metric.

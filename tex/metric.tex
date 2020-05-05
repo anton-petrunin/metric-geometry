@@ -13,14 +13,14 @@ that the distance is taken in the space~${\spc{X}}$.
 Let us recall the definition of metric. 
 
 \begin{thm}{Definition}\label{def:metric}
-A \emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
+A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
 \begin{enumerate}[(i)]
 \item $\dist{x}{y}{\spc{X}}\ge 0$,
 \item\label{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
 \item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
 \item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
 \end{enumerate}
-A set $\spc{X}$ with a metric on it is called \emph{metric space};
+A set $\spc{X}$ with a metric on it is called \index{metric space}\emph{metric space};
 most of the time we keep the same notation for the metric space and its underlying set.
 \end{thm}
 
@@ -50,7 +50,7 @@ we write
 \section{Variations of definition}
 
 \parbf{Pseudometrics.}
-A metric for which the distance between two distinct points can be zero is called a \emph{pseudometric}.
+A metric for which the distance between two distinct points can be zero is called a \index{pseudometric}\emph{pseudometric}.
 In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from \ref{def:metric}.
 
 The following observation show that
@@ -69,17 +69,17 @@ Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$.
 
 \parbf{$\bm{\infty}$-metrics.}
 One may also consider metrics with values in $\RR\cup\{\infty\}$;
-we might call them \emph{$\infty$-metrics}, but most of the time we use the term \emph{metric}.
+we might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but most of the time we use the term {}\emph{metric}.
 
 Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
 
 Indeed, set $x\approx y$ if and only if $\dist{x}{y}{}<\infty$;
 this is an other equivalence relation on $\spc{X}$.
-The equivalence class of a point $x\in\spc{X}$ will be called the \emph{metric component}\index{metric component} 
+The equivalence class of a point $x\in\spc{X}$ will be called the \index{metric component}\emph{metric component} 
  of $x$; it will be denoted by $\spc{X}_x$.
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
-It follows that any $\infty$-metric space is a \emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
+It follows that any $\infty$-metric space is a {}\emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
 
 \begin{thm}{Exercise}
 Given two sets $A$ and $B$ on the plane, set 
@@ -96,7 +96,7 @@ Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of t
 
 \section{Completeness}
 
-A metric space $\spc{X}$ is called \emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
+A metric space $\spc{X}$ is called \index{complete space}\emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:almost-min}
 Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
@@ -114,7 +114,7 @@ Given metric space $\spc{X}$,
 consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
 Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
-The corresponding metric space $\bar{\spc{X}}$ is called a \emph{completion} of $\spc{X}$.
+The corresponding metric space $\bar{\spc{X}}$ is called a \index{completion}\emph{completion} of $\spc{X}$.
 
 Note that the original space $\spc{X}$ forms a dense subset in its completion $\bar{\spc{X}}$.
 More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
@@ -127,7 +127,7 @@ Show that completion of a metric space is complete.
 \end{thm}
 
 
-\section{Compactness}
+\section{Compact spaces}
 
 Let us recall few equivalent definitions of compact metric spaces.
 
@@ -139,7 +139,7 @@ A metric space $\spc{K}$ is compact if and only if one of the following equivale
 \end{subthm}
 
 \begin{subthm}{}
- For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called a \emph{Lebesgue number} of the covering.)
+ For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.)
 \end{subthm}
 
 \begin{subthm}{}
@@ -147,12 +147,12 @@ A metric space $\spc{K}$ is compact if and only if one of the following equivale
 \end{subthm}
 
 \begin{subthm}{totally-bounded}
-The space $\spc{K}$ is complete and \emph{totally bounded}; that is, for any $\eps>0$, the space $\spc{K}$ admits a finite cover by open $\eps$-balls.
+The space $\spc{K}$ is complete and \index{totally bounded space}\emph{totally bounded}; that is, for any $\eps>0$, the space $\spc{K}$ admits a finite cover by open $\eps$-balls.
 \end{subthm}
 
 \end{thm}
 
-A subset $N$ of a metric space $\spc{K}$ is called \emph{$\eps$-net} if any other point $x$ lies on the distance less than $\eps$ from a point in $N$.
+A subset $N$ of a metric space $\spc{K}$ is called \index{net}\emph{$\eps$-net} if any other point $x$ lies on the distance less than $\eps$ from a point in $N$.
 Note that totally bounded spaces can be defined as spaces that admit a finite $\eps$-net for any $\eps>0$.
 
 \begin{thm}{Exercise}\label{ex:compact-net}
@@ -163,7 +163,7 @@ Show that a space $\spc{K}$ is totally bounded if and only if it contains a comp
 Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ if $i\ne j$.
 
 If $n=\pack_\eps\spc{X}<\infty$, then
-the collection of points $x_1,\dots,x_n$ is called a \emph{maximal $\eps$-packing}.
+the collection of points $x_1,\dots,x_n$ is called a \index{maximal packing}\emph{maximal $\eps$-packing}.
 Note that $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:pack-net}
@@ -177,7 +177,7 @@ Show that any maximal $\eps$-packing is an $\eps$-net.
 Let $\spc{K}$  be a compact metric space and
 \[f\:\spc{K}\z\to \spc{K}\] 
 be a distance-nondecreasing map.
-Prove that $f$ is an \emph{isometry};
+Prove that $f$ is an \index{isometry}\emph{isometry};
 that is, $f$ is a distance-preserving bijection.
 \end{thm}
 
@@ -186,6 +186,8 @@ Show that for any compact length-metric space $X$ there is unique number $\ell=\
 that is, for any $x_1,\dots,x_n\in X$ there is $z\in X$ such that
 \[\tfrac1n\cdot\sum_i|x_i-z|_X=\ell.\]
 \end{thm}
+
+\section{Proper spaces}
 
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
 This condition is equivalent to each of the following statements:
@@ -198,7 +200,7 @@ that is, for any compact set $K\subset \RR$, its inverse image
 is compact.
 \end{itemize}
 
-A metric space $\spc{X}$ is called \emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
+A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
 in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
 \section{Geodesics}
@@ -239,12 +241,26 @@ A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed pa
 A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
 A constant-speed parametrization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
 
+\section{Metric trees}
 
+A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
+and the union of any two geodesics $[xy]$, and $[yz]$ contain the geodesic $[xz]_{\spc{T}}$.
+In other words any triangle in $\spc{T}$ is a tripod;
+that is for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
+
+\begin{thm}{Exercise}
+Show that spheres in metric trees are ultrametric spaces;
+that is, if $\Sigma$ is a sphere in a metric tree $\spc{T}$, then
+\[\dist{x}{z}{\spc{T}}
+\le
+\max\{\,\dist{x}{y}{\spc{T}},\dist{y}{z}{\spc{T}}\,\}\]
+for any $x,y,z\in\Sigma$.
+\end{thm}
 
 \section{Length}
 
-A \emph{curve} is defined as a continuous map from a real interval to a space.
-If the real interval is $[0,1]$, then the curve is called a \emph{path}.
+A \index{curve}\emph{curve} is defined as a continuous map from a real interval to a space.
+If the real interval is $[0,1]$, then the curve is called a \index{path}\emph{path}.
 
 \begin{thm}{Definition}
 Let $\spc{X}$ be a metric space and
@@ -254,7 +270,7 @@ We define the \index{length}\emph{length} of $\alpha$ as
 \length \alpha \df \sup_{t_0\le t_1\le\ldots\le t_n}\sum_i \dist{\alpha(t_i)}{\alpha(t_{i-1})}{}.
 \]
 
-A curve $\alpha$ is called \emph{rectifiable} if $\length \alpha<\infty$.
+A curve $\alpha$ is called \index{rectifiable curve}\emph{rectifiable} if $\length \alpha<\infty$.
 \end{thm}
 
 
@@ -362,7 +378,7 @@ Set
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
 where the greatest lower bound is taken for all paths connecing $x$ and~$y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
-The metric $\yetdist{*}{*}{}$ is called \emph{induced length metric}.
+The metric $\yetdist{*}{*}{}$ is called \index{induced length metric}\emph{induced length metric}.
 
 \begin{thm}{Exercise}\label{ex:compact=>complete}
 Suppose $(\spc{X},\dist{*}{*}{})$ is a complete metric space.

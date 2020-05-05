@@ -5,7 +5,7 @@
 Alexandrov geometry can use ``back to Euclid'' as a slogan.
 Alexandrov spaces are defined via axioms similar to those given by Euclid,
 but certain  equalities are changed to inequalities. 
-Depending on the sign of the inequalities, we get Alexandrov spaces with \emph{curvature bounded above} or \emph{curvature bounded below}.
+Depending on the sign of the inequalities, we get Alexandrov spaces with {}\emph{curvature bounded above} or {}\emph{curvature bounded below}.
 The definitions of the two classes of spaces are similar, but their properties and known applications are quite different.
 
 
@@ -126,7 +126,7 @@ the angle measure of
 $\trig{\tilde p}{\tilde q}{\tilde r}$ at $\tilde p$ 
 will be called the \index{model angle}\emph{model angle} of the triple $p$, $q$, $r$ and will be denoted by
 $\angk p q r_{\EE^2}$%
-\index{$\tangle$!$\angk{{*}}{{*}}{{*}}$}.
+\index{$\tilde\measuredangle$!$\angk{{*}}{{*}}{{*}}$}.
 In the same way we define $\angk p q r_{\HH^2}$ and $\angk p q r_{\SSS^2}$;
 in the latter case  we assume in addition that the model triangle $\modtrig(p q r)_{\SSS^2}$ is defined.
 
@@ -208,7 +208,7 @@ If one of the spherical model triangles is undefined,\footnote{That is, if
 \dist{q}{x}{}+\dist{q}{y}{}+\dist{x}{y}{}\ge 2\cdot\pi.\]}
 then it is assumed that $\CAT(1)$ comparison automatically holds for this quadruple.
 
-We can do the same for the \emph{model plane} of curvature $\kappa$;
+We can do the same for the \index{model plane}\emph{model plane} of curvature $\kappa$;
 that is, a sphere if $\kappa>0$, 
 Euclidean plane if $\kappa=0$ 
 and Lobachevsky plane if $\kappa<0$.
@@ -256,7 +256,7 @@ the quadruple $p,x,y,z$ \index{$\CBB(0)$ comparison}\emph{satisfies $\CBB(0)$ co
 
 If we do the same for spherical or hyperbolic model angles,
 then we arrive at the definition of $\CBB(1)$ or $\CBB(-1)$ comparison.
-Here $\CBB(\kappa)$ is an abbreviation of \emph{curvature bounded below by $\kappa$}.
+Here $\CBB(\kappa)$ is an abbreviation of {}\emph{curvature bounded below by $\kappa$}.
 If one of one of the model angles is undefined,
 then we assume that $\CBB(1)$ comparison automatically holds for this quadruple.
 
@@ -496,7 +496,6 @@ then they coincide.
 
 \begin{thm}{Lemma}
 \index{Alexandrov's lemma}
-\index{lemma!Alexandrov's lemma}
 \label{lem:alex}  
 Let $p,x,y,z$ be distinct points in a metric space such that $z\in \left]x y\right[$.
 Then 
@@ -612,7 +611,7 @@ Given a point $x\in \spc{X}$, denote by $\gamma_x$ a (necessary unique) geodesic
 
 Show that the family of maps $h_t\: \spc{X}\to \spc{X}$ defined by 
 \[h_t(x)= \gamma_x(t)\]
-is a homotopy; it is called \emph{geodesic homotopy}. 
+is a homotopy; it is called \index{geodesic homotopy}\emph{geodesic homotopy}. 
 Conclude that $\spc{X}$ is contractible.
 \end{thm}
 
@@ -658,7 +657,7 @@ all its triangles are thin (respectively, all its triangles of perimeter $<2\cdo
 Apply  the triangle inequality and thinness of triangles $\trig pxy$ and $\trig qxy$, where $p$, $q$, $x$ and $y$ are as in the definition of $\CAT(\kappa)$ comparison (page \pageref{page:CAT-comparison}).
 
 \parit{``Only if'' part.} 
-Applying $\CAT(0)$ comparison to a quadruple $p,q,x,y$ with $q\in [xy]$ shows that any triangle satisfies \emph{point-side comparison}, that is, the distance from a vertex to a  point on the opposite side is no greater than the corresponding distance in the Euclidean model triangle.  
+Applying $\CAT(0)$ comparison to a quadruple $p,q,x,y$ with $q\in [xy]$ shows that any triangle satisfies \index{point-side comparison}\emph{point-side comparison}, that is, the distance from a vertex to a  point on the opposite side is no greater than the corresponding distance in the Euclidean model triangle.  
 
 Now consider a triangle $\trig{x}{y}{z}$ and let $p\in [xy]$ and $q\in [xz]$.
 Let $\tilde p$, $\tilde q$ be the corresponding points on the sides of the model triangle $\modtrig({x}{y}{z})_{\EE^2}$.
@@ -704,7 +703,7 @@ The closest-point projection $p\mapsto p^*$ defined by \ref{SHORT.ex:closest-poi
 
 \end{thm}
 
-Recall that a set $A$ in a metric space $\spc{U}$ is called \emph{locally convex} if for any point $p\in A$ there is an open neighborhood $\spc{U}\ni p$ such that any geodesic in $\spc{U}$ with  ends in $A$ lies in~$A$. 
+Recall that a set $A$ in a metric space $\spc{U}$ is called \index{locally convex set}\emph{locally convex} if for any point $p\in A$ there is an open neighborhood $\spc{U}\ni p$ such that any geodesic in $\spc{U}$ with  ends in $A$ lies in~$A$. 
 
 \begin{thm}{Exercise}\label{ex:locally-convex}
 Let $\spc{U}$ be a proper length $\CAT(0)$ space.
@@ -725,7 +724,7 @@ These conditions will not be used in the sequel, but they might help to build ri
 The following condition might help to adapt intuition from real analysis.
 
 Let $\spc{X}$ be a metric space and $\lambda\in\RR$.
-A function $f\:\spc{X}\to \RR$ is called \emph{$\lambda$-convex} (\emph{$\lambda$-concave}) if 
+A function $f\:\spc{X}\to \RR$ is called \index{$\lambda$-convex}\emph{$\lambda$-convex} (\index{$\lambda$-concave}\emph{$\lambda$-concave}) if 
 the real-to-real function 
 \[t\mapsto f\circ\gamma(\gamma)-\tfrac{\lambda}{2}\cdot t^2\] 
 is convex (respectively concave)
@@ -760,7 +759,7 @@ $\spc{X}$ is $\CBB(0)$ if and only if
 \[\mangle\hinge pxy\ge \angk pxy\]
 and 
 \[\mangle\hinge pxy+\mangle\hinge pxz=\pi\]
-for any \emph{adjacent hinges} $\hinge pxy$ and $\hinge pxz$;
+for any {}\emph{adjacent hinges} $\hinge pxy$ and $\hinge pxz$;
 that is, the union of the sides $[px]$ and $[pz]$ of the hinges form a geodesic $[xy]$.
 \end{subthm}
 
@@ -816,7 +815,7 @@ Mainly:
 \item Gluing theorem, which tells  when the sphere obtained by gluing of two discs along their boundaries has non-negative curvature in the sense of Alexandrov.
 \end{itemize}
 These two results together gave  a very intuitive geometric tool for studying  embeddings and bending of surfaces in  Euclidean space, and changed this subject dramatically.
-They formed the foundation of the branch of geometry now called \emph{Alexandrov geometry}.
+They formed the foundation of the branch of geometry now called {}\emph{Alexandrov geometry}.
 
 The study of  spaces with curvature bounded above started later.
 The first paper on the subject was written by Alexandrov \cite{alexandrov:strong-angle}.

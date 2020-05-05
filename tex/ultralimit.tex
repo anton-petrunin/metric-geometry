@@ -19,7 +19,7 @@ Recall that $\NN$ denotes the set of natural numbers, $\NN=\{1,2,\dots\}$
 \begin{thm}{Definition}
 A finitely additive measure $\omega$ 
 on  $\NN$ 
-is called an \emph{ultrafilter}\index{ultrafilter} if it satisfies 
+is called an \index{ultrafilter}\emph{ultrafilter} if it satisfies 
 \begin{subthm}{}
 $\omega(S)=0$ or $1$ for any subset $S\subset \NN$.
 \end{subthm}
@@ -31,8 +31,8 @@ $\omega(F)=0$ for any finite subset $F\subset \NN$.
 \end{thm}
 
 If $\omega(S)=0$ for some subset $S\subset \NN$,
-we say that $S$ is \emph{$\omega$-small}. 
-If $\omega(S)=1$, we say that $S$ contains \emph{$\omega$-almost all} elements of $\NN$.
+we say that $S$ is \index{$\omega$-small}\emph{$\omega$-small}. 
+If $\omega(S)=1$, we say that $S$ contains \index{$\omega$-almost all}\emph{$\omega$-almost all} elements of $\NN$.
 
 \parbf{Classical definition.}
 More commonly, a nonprinciple ultrafilter is defined as a collection, say $\mathfrak{F}$, of sets in $\NN$ such that
@@ -44,8 +44,8 @@ More commonly, a nonprinciple ultrafilter is defined as a collection, say $\math
 \end{enumerate}
 Setting $P\in\mathfrak{F}\Leftrightarrow\omega(P)=1$ makes these two definitions equivalent.
 
-A nonempty collection of sets $\mathfrak{F}$ that does not include the empty set and satisfies only conditions \ref{filter:supset} and \ref{filter:cap} is called a \emph{filter}; 
-if in addition $\mathfrak{F}$ satisfies Condition~\ref{filter:ultra} it is called an \emph{ultrafilter}.
+A nonempty collection of sets $\mathfrak{F}$ that does not include the empty set and satisfies only conditions \ref{filter:supset} and \ref{filter:cap} is called a \index{filter}\emph{filter}; 
+if in addition $\mathfrak{F}$ satisfies Condition~\ref{filter:ultra} it is called an \index{ultrafilter}\emph{ultrafilter}.
 From Zorn's lemma, it follows that every filter contains an ultrafilter.
 Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly this $\mathfrak{F}$ is nonprinciple.
 
@@ -53,7 +53,7 @@ Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all compl
 \parbf{Stone--\v{C}ech compactification.}
 Given a set $S\subset \NN$, consider subset $\Omega_S$ of all ultrafilters $\omega$ such that $\omega(S)=1$.
 It is straightforward to check that the sets $\Omega_S$ for all $S\subset \NN$ form a topology on the set of ultrafilters on $\NN$. 
-The obtained space is called \emph{Stone--\v{C}ech compactification} of $\NN$;
+The obtained space is called \index{Stone--\v{C}ech compactification}\emph{Stone--\v{C}ech compactification} of $\NN$;
 it is usually denoted as $\beta\NN$.
 
 There is a natural embedding $\NN\hookrightarrow\beta\NN$ defined as
@@ -69,7 +69,7 @@ and a map $f\:\NN\to \spc{X}$ there is unique continuous map $\bar f\:\beta\NN\t
 
 Fix an ultrafilter $\omega$.
 Assume $(x_n)$ is a sequence of points in a metric space $\spc{X}$. 
-Let us define the \emph{$\omega$-limit}\index{$\omega$!$\omega$-limit} of $(x_n)$ as the point $x_\omega$ 
+Let us define the \index{$\omega$-limit}\emph{$\omega$-limit} of $(x_n)$ as the point $x_\omega$ 
 such that for any $\eps>0$, $\omega$-almost all elements of $(x_n)$ lie in $\oBall(x_\omega,\eps)$; 
 that is,
 \[\omega\set{n\in\NN}{\dist{x_\omega}{x_n}{}<\eps}=1.\]
@@ -175,7 +175,7 @@ defined by
 \lim_{n\to\omega} \dist{x_n}{y_n}{}=0\]
 and the distance is defined by \ref{eq:olim-dist}.
 
-The space $\spc{X}_\omega$ is called \emph{$\omega$-limit}\index{$\omega$-limit space} of $\spc{X}_n$.
+The space $\spc{X}_\omega$ is called \index{$\omega$-limit space}\emph{$\omega$-limit} of $\spc{X}_n$.
 Typically  $\spc{X}_\omega$ will denote the  
 $\omega$-limit of sequence $\spc{X}_n$;
 we may also write  
@@ -229,25 +229,10 @@ By Observation~\ref{obs:ultralimit-is-complete}, $\spc{X}^\omega$ is complete.
 Applying Lemma~\ref{lem:mid>geod} we get the statement.
 \qeds
 
-A geodesic space $\spc{T}$ is called a \emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
-and the union of any two geodesics $[xy]$, and $[yz]$ contain the geodesic $[xz]_{\spc{T}}$.
-In other words any triangle in $\spc{T}$ is a tripod;
-that is for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
 
 \begin{thm}{Exercise}\label{ex:lim(tree)}
 Show that an ultralimit of metric trees is a metric tree. 
 \end{thm}
-
-\begin{thm}{Exercise}
-Show that spheres in metric trees are ultrametric spaces;
-that is, if $\Sigma$ is a sphere in a metric tree $\spc{T}$, then
-\[\dist{x}{z}{\spc{T}}
-\le
-\max\{\,\dist{x}{y}{\spc{T}},\dist{y}{z}{\spc{T}}\,\}\]
-for any $x,y,z\in\Sigma$.
-\end{thm}
-
-
 
 \section{Ultrapower}
 
@@ -319,9 +304,9 @@ Choose a point $p\in \spc{X}$ and denote by $p_n$ the corresponding point in $\s
 Consider the $\omega$-limit $\spc{X}_\omega$ of $\spc{X}_n$ (one may denote it by $\lambda_\omega\cdot \spc{X}$);
 set $p_\omega$ to be the $\omega$-limit of $p_n$.
 
-If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \emph{$\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
+If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\omega$-tangent space}\emph{$\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
 
-If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in called \emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$.
+If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in called \index{$\omega$-asymptotic space}\emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:Asym(Lob)}
@@ -332,7 +317,7 @@ Show that $\spc{T}$ is a complete metric tree.
 \end{subthm}
 
 \begin{subthm}{ex:Asym(Lob):continuum}
-Show that $\spc{T}$ has \emph{continuum degree} at any point;
+Show that $\spc{T}$ has {}\emph{continuum degree} at any point;
 that is, for any point $t\in \spc{T}$ the set of connected components of the complement $\spc{T}\backslash\{t\}$ has cardinality continuum.
 \end{subthm}
 

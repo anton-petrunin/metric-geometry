@@ -13,7 +13,7 @@ $$\distfun_A(x)
 
 \begin{thm}{Definition}\label{def:hausdorff-convergence}
 Let $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
-Then the \emph{Hausdorff distance} between $A$ and $B$ is defined as 
+Then the \index{Hausdorff distance}\emph{Hausdorff distance} between $A$ and $B$ is defined as 
 $$|A-B|_{\mathcal{H}(\spc{X})}
 \df
 \sup_{x\in \spc{X}}\{\,|\distfun_A(x)-\distfun_B(x)|\,\}.
@@ -89,7 +89,8 @@ such that $\distfun_{K_\infty}(x_n)\ge\eps$.
 Note that $x_n\in K_1$ for each $n$.
 Since $K_1$ is compact, 
 there is 
-a \emph{partial limit}\index{partial limit}\footnote{Partial limit is a limit of a subsequence.}
+a \index{partial limit}\emph{partial limit}%
+\footnote{Partial limit is a limit of a subsequence.}
  $x_\infty$ of $x_n$.
 Clearly $\distfun_{K_\infty}(x_\infty)\ge \eps$.
 
@@ -181,7 +182,7 @@ as $n\to\infty$.
 \end{thm}
 
 The above exercise can be used in a proof of isoperimetrical inequality in the plane;
-it states that \emph{among the plane figures bounded by closed curves of length at most $\ell$ the round disc has maximal area}.
+it states that {}\emph{among the plane figures bounded by closed curves of length at most $\ell$ the round disc has maximal area}.
 
 Indeed it is sufficient to consider only convex figures of given perimeter; if a figure is not convex pass to its convex hull and observe that it has larger area and smaller perimeter.
 Further the exercise guarantees existence of a figure $D_\ell$ with perimeter $\ell$ and maximal area.
@@ -191,7 +192,7 @@ The latter is easy to show, see for example Steiner's 4-joint method \cite{blasc
 
 \section{A variation}\label{sec:H-variation}
 
-It seems that \emph{Hausdorff convergence} was first introduced by Felix Hausdorff~\cite{hausdorff},
+It seems that Hausdorff convergence was first introduced by Felix Hausdorff~\cite{hausdorff},
 and a couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
 
 The following refinement of the definition was introduced by  Zden\v{e}k Frol\'{\i}k in \cite{frolik},
@@ -222,7 +223,7 @@ Show that the sequence  $(A_n)_{n=1}^\infty$ has a convergent subsequence in the
 \section{Gromov--Hausdorff metric}
 
 The goal of this section is to cook up a metric space out of metric spaces.
-More precisely, we want to define the so called  Gromov--Hausdorff metric on the set of \emph{isometry classes} of compact metric spaces.
+More precisely, we want to define the so called  Gromov--Hausdorff metric on the set of {}\emph{isometry classes} of compact metric spaces.
 (Being isometric is an equivalence relation, 
 and an isometry class is an equivalence class with respect to this equivalence relation.)
 
@@ -235,9 +236,9 @@ to $[\spc{Y}]$ should be denoted as $|[\spc{X}]-[\spc{Y}]|_{\spc{M}}$;
 but we will often write it as $|\spc{X}-\spc{Y}|_{\spc{M}}$ and say (not quite correctly) 
 ``$|\spc{X}-\spc{Y}|_{\spc{M}}$ is the Gromov--Hausdorff distance from  $\spc{X}$ 
 to  $\spc{Y}$''.
-In other words, from now on the term \emph{metric space} might stands for \emph{isometry class of this metric space}.
+In other words, from now on the term {}\emph{metric space} might stands for {}\emph{isometry class of this metric space}.
 
-The metric on $\spc{M}$ is maximal metric such that \emph{the distance between subspaces in a metric space is not greater than the Hausdorff distance between them}.
+The metric on $\spc{M}$ is maximal metric such that {}\emph{the distance between subspaces in a metric space is not greater than the Hausdorff distance between them}.
 Here is a formal definition:
 
 \begin{thm}{Definition}\label{def:GH}
@@ -252,11 +253,11 @@ respectively and such that $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})} < r$.
 (Here $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
 \end{thm}
 
-Bit later (see \ref{thm:GH-is-a-metric}) we will show that \emph{Hausdorff metric} is indeed a metric.
+Bit later (see \ref{thm:GH-is-a-metric}) we will show that Hausdorff metric is indeed a metric.
 
 We say that a sequence
 of (isometry classes of) compact metric spaces $\spc{X}_n$ 
-\emph{converges in the sense of Gromov--Hausdorff}\index{converges in the sense of Gromov--Hausdorff} to the (isometry classes of)
+\emph{Gromov--Hausdorff convergence}\index{converges in the sense of Gromov--Hausdorff} to the (isometry classes of)
 compact metric space $\spc{X}_\infty$ if $|\spc{X}_n - \spc{X}_\infty|_{\spc{M}} \to 0$ as $n\z\to\infty$;
 in this case we write $\spc{X}_n\GHto \spc{X}_\infty$.
 
@@ -519,15 +520,15 @@ as $n\to\infty$.
 
 Let $\spc{Q}$ be a set of (isometry classes) of compact metric spaces.
 Suppose that there is a sequence $\eps_n\to 0$ such that for any positive integer $n$ each space $\spc{X}$ in $\spc{Q}$ admits an $\eps_n$-net with at most $n$ points.
-Then we say that $\spc{Q}$ is \emph{uniformly totally bonded}.
+Then we say that $\spc{Q}$ is \index{uniformly totally bonded}\emph{uniformly totally bonded}.
 
 Observe that in this case $\diam\spc{X}<\eps_1$ for any  $\spc{X}$ in $\spc{Q}$; that is diameters of spaces in $\spc{Q}$ are bounded above.
 
 Fix a real constant $C$.
-A measure $\mu$ on a metric space $\spc{X}$ is called \emph{$C$-doubling} if
+A measure $\mu$ on a metric space $\spc{X}$ is called \index{doubling space}\emph{$C$-doubling} if
 \[\mu[\oBall(p,2\cdot r)< C\cdot\mu[\oBall(p,r)]\]
 for any point $p\in \spc{X}$ and any positive real $r$.
-A measure is called \emph{doubling} if it is \emph{$C$-doubling} for a some real constant $C$.
+A measure is called \index{doubling measure}\emph{doubling} if it is {}\emph{$C$-doubling} for a some real constant $C$.
 
 \begin{thm}{Exercise}\label{pr:doubling}
 Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at most $D$ that admit a $C$-doubling measure.
@@ -621,7 +622,7 @@ That is, $\spc{Q}$ has compact $\eps$-net for any $\eps>0$.
 The ince $\spc{Q}$ is a closed set 
 \qeds
 
-In the following exercises \emph{converge} means \emph{converge in the sense of Gromov--Hausdorff}.
+In the following exercises {}\emph{converge} means {}\emph{converge in the sense of Gromov--Hausdorff}.
 
 \begin{thm}{Exercise}\label{ex:GH-SC}
 \begin{subthm}{ex:GH-SC:circle}
@@ -678,7 +679,7 @@ The first convergence is evident and the second could be guessed from the diagra
 \includegraphics{mppics/pic-300}
 \end{figure}
 
-Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \emph{pointed Gromov--Haudorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
+Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Haudorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
 For example the sequence $(\spc{X}_n,p_n)=(\RR_+,0)$ converges to $(\RR_+,0)$, while $(\spc{X}_n,p_n)=(\RR_+,n)$ converges to $(\RR,0)$.
 
 This convergence works nicely for proper metric spaces.
