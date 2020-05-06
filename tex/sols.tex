@@ -1,6 +1,6 @@
 \chapter{Semisolutions}
 
-\parbf{Exercise~\ref{ex:almost-min}.}
+\parbf{\ref{ex:almost-min}.}
 Assume the statement is wrong. 
 Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that 
 \[\dist{x}{x'}{}< \rho(x)
@@ -13,8 +13,8 @@ Clearly
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
 \quad\hbox{and}\quad
 \rho(x_n)\le \frac{\rho(x_0)}{(1+\eps)^n}.\] 
-Therefore $(x_n)$ is Cauchy.
-Since $\spc{X}$, the sequence $(x_n)$;
+Therefore $(x_n)$ is a Cauchy sequence.
+Since $\spc{X}$ is complete, the sequence $(x_n)$ converges;
 denote its limit by $x_\infty$.
 Since $\rho$ is a continuous function we get
 \begin{align*}\rho(x_\infty)&=\lim_{n\to\infty}\rho(x_n)=
@@ -22,9 +22,9 @@ Since $\rho$ is a continuous function we get
 \end{align*}
 
 The latter contradicts that $\rho>0$.
-\qeds
 
-\parbf{Exercise~\ref{ex:non-contracting-map}.}
+
+\parbf{\ref{ex:non-contracting-map}.}
 Given any pair of point $x_0,y_0\in \spc{K}$, 
 consider two sequences $x_0,x_1,\dots$ and $y_0,y_1,\dots$
 such that $x_{n+1}=f(x_n)$ and $y_{n+1}\z=f(y_n)$ for each $n$.
@@ -33,7 +33,7 @@ Since $\spc{K}$ is compact,
 we can choose an increasing sequence of integers $n_k$
 such that both sequences $(x_{n_i})_{i=1}^\infty$ and $(y_{n_i})_{i=1}^\infty$
 converge.
-In particular, both are Cauchy sequences;
+In particular, both are Cauchy;
 that is,
 \[
 |x_{n_i}-x_{n_j}|_{\spc{K}}, |y_{n_i}-y_{n_j}|_{\spc{K}}\to 0
@@ -68,17 +68,18 @@ for any pair of points $(x_0,y_0)$ in $\spc{K}$.
 That is, $f$ is distance-preserving, in particular injective.
 
 From $({*})$, we also get that $f(\spc{K})$ is everywhere dense.
-Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective. Hence the result follows.\qeds
+Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective. Hence the result follows.
 
-
+\parit{Remarks.}
 This is a basic lemma in the introduction to Gromov--Hausdorff distance \cite[see 7.3.30 in][]{burago-burago-ivanov}.
+This proof is not quite standard,
 I learned this proof from Travis Morrison, 
 a student in my MASS class at Penn State, Fall 2011.
 
 Note that as an easy corollary one can see that any surjective non-expanding map from a compact metric space to itself is an isometry.
 
 
-\parbf{Exercise~\ref{ex:gross}.}
+\parbf{\ref{ex:gross}.}
 If such number does not exist then the ranges of average distance functions have empty intersection.
 Since $X$ is a compact length-metric space, the range of any continuous function on $X$ is a closed interval.
 By 1-dimesional Helly's theorem, there is a pair of such range intervals that do not intersect.
@@ -91,14 +92,14 @@ Note that
 $$\tfrac1m\cdot\sum_j f(y_j)=\tfrac1{m\cdot n}\cdot\sum_{i,j}|x_i-y_j|_X=\tfrac1n\cdot\sum_i h(x_i);$$
 that is, the average value of $f(y_j)$ coincides with the average value of $h(x_i)$, 
 which contradicts $({*})$.
-\qeds
 
+\parit{Remarks.}
 This is a result of Oliver Gross \cite{gross}. 
 The value $\ell$ is called the \index{rendezvous value}\emph{rendezvous value} of $X$;
 in fact it is uniquely defined.
 
-\parbf{Exercise~\ref{ex:no-geod}.}
-We assume that the space is not trivial, otherwise a one-point space is an example.
+\parbf{\ref{ex:no-geod}.}
+We assume that the space is nontrivial, otherwise a one-point space is an example.
 
 Consider the unit ball $(B,\rho_0)$
 in the space $c_0$ of all sequences converging to zero equipped with the sup-norm.
@@ -107,8 +108,8 @@ Consider another metric $\rho_1$ which is different from $\rho_0$ by the conform
 \[\phi(\bm{x})=2+\tfrac{1}2\cdot x_1+\tfrac{1}4\cdot x_2+\tfrac{1}8\cdot x_3+\dots,\]
 where $\bm{x}=(x_1,x_2\,\dots)\in B$.
 That is, if $\bm{x}(t)$, $t\in[0,\ell]$, is a curve parametrized by $\rho_0$-length 
-then its $\rho_1$-length is 
-\[\length_{\rho_1}\bm{x}=\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
+then its $\rho_1$-length is defined by
+\[\length_{\rho_1}\bm{x}\df\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
 Note that the metric $\rho_1$ is bi-Lipschitz to~$\rho_0$.
 
 Assume $\bm{x}(t)$ and $\bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denoted by $x_m(t)$ and $x_m'(t)$ respectively.
@@ -128,11 +129,21 @@ Consider the curve $\bm{x}'(t)$ as above with
 Note that $\bm{x}'(t)$ and $\bm{x}(t)$ have the same end points, and by the above
 \[\length_{\rho_1}\bm{x}'<\length_{\rho_1}\bm{x}.\]
 That is, for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same end points.
-In particular, $(B,\rho_1)$ has no geodesics.\qeds
+In particular, $(B,\rho_1)$ has no geodesics.
 
+\parit{Remarks.}
 This example was suggested by Fedor Nazarov~\cite{nazarov}.
 
-\parbf{Exercise~\ref{ex:compact=>complete}.}
+\parbf{\ref{ex:compact+connceted}.}
+Choose a sequence $\varepsilon_n\to 0$ and a $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
+Assume $N_0$ is a one-point set, so $\eps_0>\diam K$.
+Connect each point $x\in N_{k+1}$ to a point $y\in N_{k}$ by a curve of length at most $\eps_k$.
+
+Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path connected.
+
+\parit{Source:} This problem was stated by Eugene Bilokopytov \cite{bilokopytov}.
+
+\parbf{\ref{ex:compact=>complete}.}
 Choose a Cauchy sequence $(x_n)$ in $(\spc{X},\|*-*\|)$; it sufficient to show that a subsequence of $(x_n)$ converges.
 
 Note that the sequence $(x_n)$ is Cauchy in $(\spc{X},|*-*|)$;
@@ -147,18 +158,18 @@ It follows that
 \\
 &\le \tfrac1{2^n}.
 \end{align*}
-In particular $x_n$ converges.\qeds
+In particular $x_n$ converges.
 
-Source: \cite[Lemma 2.3]{petrunin-stadler}.
+\parit{Source:} \cite[Lemma 2.3]{petrunin-stadler}.
 
 
-\begin{wrapfigure}{o}{20 mm}
+\begin{wrapfigure}{r}{20 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1}
 \end{wrapfigure}
 
-\parbf{Exercise~\ref{exercise from BH}.}
+\parbf{\ref{exercise from BH}.}
 Consider the following subset of $\RR^2$ equipped with the induced length metric
 \[
 \spc{X}
@@ -169,24 +180,25 @@ Consider the following subset of $\RR^2$ equipped with the induced length metric
 \]
 Note that $\spc{X}$ is locally compact and geodesic.
 
-Its completion $\bar{\spc{X}}$ is isometric to the closure of $\spc{X}$ equipped with the induced length metric;
-$\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,0)$ and $q=(0,1)$.
+Its completion $\bar{\spc{X}}$ is isometric to the closure of $\spc{X}$ equipped with the induced length metric.
+Note that $\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,0)$ and $q=(0,1)$.
 
-The point $p$ admits no compact neighborhood in $\bar{\spc{X}}$ 
-and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. \qeds
+Observe that the point $p$ admits no compact neighborhood in $\bar{\spc{X}}$ 
+and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. 
 
-This exercise and its solution is taken from \cite{bridson-haefliger}.
+\parit{Source:} \cite[I.3.6(4)]{bridson-haefliger}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\parbf{Exercise~\ref{ex:compact-length}.} By Frechet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
+\parbf{\ref{ex:compact-length}.} By Frechet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
 
 Denote by $\spc{L}=\Conv\spc{K}$ --- it is defined as the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
 (In other words, $\spc{L}$ is the intersection of all convex closed sets that contain $\spc{K}$.)
 Observe that $\spc{L}$ is a length space.
 
-Let us show that since $\spc{K}$ is compact, so is $\spc{L}$.
+It remains to show that $\spc{L}$ is compact.
+
 By construction $\spc{L}$ is closed subset of $\ell^\infty$, in particular it is a complete space.
 By \ref{totally-bounded}, it remains to show that $\spc{L}$ is totally bounded.
 
@@ -198,17 +210,42 @@ Denote by $\bar B_\eps$ the closed $\eps$-ball in $\ell^\infty$ centered at the 
 Choose a finite $\eps$-net $N$ in $\spc{K}$ for some $\eps>0$.
 Note that $P=\Conv N$ is a convex polyhedron, in particular $\Conv N$ is compact.
 
-Observe that $N+\bar B_\eps$ is closed $\eps$-neighborhood of $N$;
-therefore $N+\bar B_\eps\supset K$.
-Therefore $P+\bar B_\eps\supset \spc{L}$;
-in particular $P$ is a $2\cdot\eps$-net in $\spc{L}$.
-That is, $\spc{L}$ admits a compact $\eps$-net for any $\eps>0$.
-Therefore $\spc{L}$ is totally bounded (see \ref{ex:compact-net}).
+Observe that $N+\bar B_\eps$ is closed $\eps$-neighborhood of $N$.
+It follows that $N+\bar B_\eps\supset K$ and therefore $P+\bar B_\eps\supset \spc{L}$.
+In particular $P$ is a $2\cdot\eps$-net in $\spc{L}$;
+since $P$ is compact and $\eps>0$ is arbitrary, $\spc{L}$ is totally bounded (see \ref{ex:compact-net}).
 
-\parbf{Exercise~\ref{ex:geodesics-urysohn}.}
+\parit{Remark.}
+Another solution follows since injective envelop of compact space is compact; see \ref{ex:inj=complete-geodesic-contractible:geodesic}, \ref{ex:Inj(compact)}, and \ref{prop:InjX-is-injective}.
+
+\parbf{\ref{ex:geodesics-urysohn}.}
 Construct a separable space that has infinite number of geodesics between a pair of points, say a square will $\ell^\infty$-metric in $\RR^2$ and apply universality of Urysohn space (\ref{prop:sep-in-urys}).
 
-\parbf{Exercise~\ref{ex:sc-urysohn}.}
+\parbf{\ref{ex:compact-extension}.} 
+First let us prove the following claim:
+
+\begin{itemize}
+\item 
+Suppose $f\: K\to\RR$ is an extension function defined on a compact subset $K$ of the Urysohn space $\spc{U}$.
+Then there is a point $p\in \spc{U}$ such that 
+$\dist{p}{x}{}=f(x)$ for any $x\in K$.
+\end{itemize}
+
+Without loss of generality we may assume that $f(x)>0$ for any $x\in K$.
+Since $K$ is compact, we may fix $\eps>0$ such that $f(x)>\eps$.
+
+Consider the sequenc $\eps_n=\tfrac\eps{100\cdot 2^n}$.
+Choose a sequence of $\eps_n$-nets $N_n\subset K$.
+Applying universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
+Observe that the sequence $(p_n)$ is Cauchy and its limit $p$ meets 
+$\dist{p}{x}{}=f(x)$ for any $x\in K$.
+
+Now, choose a sequence of points $(x_n)$ in $\spc{S}$.
+Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, and further to $K\cup\{x_1,x_2\}$, and so on.
+As a result we extend the distance-preserving map $f$ to whole sequence $(x_n)$.
+It remains to extend it continuisly to whole space~$\spc{S}$.
+
+\parbf{\ref{ex:sc-urysohn}.}
 It is sufficient to show that any compact subspace $\spc{K}$ of Urysohn space can be contracted to a point.
 
 Note that any compact space $\spc{K}$ can be extended to a contractible compact space $\spc{K}'$; for example we may embed $\spc{K}$ into $\ell^\infty$ and pass to its convex hull, as it was done in \ref{ex:compact-length}.
@@ -216,9 +253,8 @@ Note that any compact space $\spc{K}$ can be extended to a contractible compact 
 By \ref{thm:compact-homogeneous}, there is an isometric embedding of $\spc{K}'$ that agrees with inclusion of $\spc{K}$.
 Since $\spc{K}$ is contractible in $\spc{K}'$, it is contractible in $\spc{U}$.
 
-\medskip
-
-In fact one can contract whole Urysohn space using the following construction.
+\parit{A better way.}
+One can contract whole Urysohn space using the following construction.
 
 Note that points in the space $\spc{X}_\infty$ constructed in the proof of \ref{prop:univeral-separable} can be multiplied number $t\in [0,1]$ --- simply multiply each function by factor $t$.
 That defines a map 
@@ -232,41 +268,15 @@ Further note that the map $(t,p)\mapsto \lambda_t(p)$ is continuous ---  in part
 
 As a bonus, observe that for any point $p\in \spc{U}_d$ the curve $t\mapsto \lambda_t(p)$ is a geodesic path from $p$ to $x_0$.
 
-Source: \cite[(d) on page 82]{gromov-2007}.
+\parit{Source:} \cite[(d) on page 82]{gromov-2007}.
 
-
-\parbf{Exercise~\ref{ex:compact-extension}.} 
-The following claim is a key to the proof.
-
-\begin{thm}{Claim}
-Suppose $f\: K\to\RR$ is an extension function defined on a compact subset $K$ of the Urysohn space $\spc{U}$.
-Then there is a point $p\in \spc{U}$ such that 
-$\dist{p}{x}{}=f(x)$ for any $x\in K$.
-\end{thm}
-
-\parit{Proof.}
-Without loss of generality we may assume that $f(x)>0$ for any $x\in K$.
-Since $K$ is compact, we may fix $\eps>0$ such that $f(x)>\eps$.
-
-Consider the sequenc $\eps_n=\tfrac\eps{100\cdot 2^n}$.
-Choose a sequence of $\eps_n$-nets $N_n\subset K$.
-Applying universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
-Observe that the sequence $(p_n)$ is Cauchy and its limit $p$ meets 
-$\dist{p}{x}{}=f(x)$ for any $x\in K$.
-\qeds
-
-Choose a sequence of points $(x_n)$ in $\spc{S}$.
-Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, and further to $K\cup\{x_1,x_2\}$, and so on.
-As a result we extend the distance-preserving map $f$ to whole sequence $(x_n)$.
-It remains to extend it continuisly to whole space $\spc{S}$.
-
-\parbf{Exercise~\ref{ex:sphere-in-urysohn}.}
+\parbf{\ref{ex:sphere-in-urysohn}.}
 Observe that $S_r$ satisfies the definition of $d$-Urysohn space and apply the uniqueness (\ref{thm:urysohn-unique}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:+-c}.}
-If $c<0$ then $r>s$.
+\parbf{\ref{ex:+-c}.}
+Note that if $c<0$, then $r>s$.
 The latter is impossible since $r$ is extremal and $s$ is admissible.
 
 Observe that the function $\bar r=\min\{\,r,s+c\}$ is admissible.
@@ -284,7 +294,7 @@ Further if $\bar r(x)=s(x)+c$ then
 Since $r$ is extremal, we have $r=\bar r$;
 that is $r\le s+c$.
 
-\parbf{Exercise~\ref{ex:inj=complete-geodesic-contractible}.}
+\parbf{\ref{ex:inj=complete-geodesic-contractible}.}
 Choose an injective space $\spc{Y}$.
 
 \textit{\ref{SHORT.ex:inj=complete-geodesic-contractible:complete}.}
@@ -321,21 +331,7 @@ Since $k$ is distance-preserving and $\spc{Y}$ is injective,
 there is a short map $f\:\ell^\infty(\spc{Y})\to \spc{Y}$ such that the composition $f\circ k$ is the identity map on $\spc{Y}$.
 The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotopy. 
 
-\parbf{Exercise~\ref{ex:ultrametric}.}
-Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
-Let $f\:\spc{A}\to \spc{Y}$ be an isometry.
-Then $F(y)=f(x)$ or $F(y)=f(z)$.
-If  $f(y)=f(x)$, then
-\begin{align*}
-\dist{y}{z}{\spc{X}}&\ge  \dist{F(y)}{f(z)}{\spc{Y}}=
-\\
- &=\dist{x}{z}{\spc{X}}.
-\end{align*}
-Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
-
-It remains to observe that the strong triangle inequality holds in both cases.
-
-\parbf{Exercise~\ref{ex:injective-spaces}.}
+\parbf{\ref{ex:injective-spaces}.}
 Suppose a short map $f\:A\to\spc{Y}$ is defined on a subset of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
 
@@ -362,12 +358,26 @@ Denote by $x$ its end (it exists since $\spc{Y}$ is complete).
 It remains to observe that $\dist{x}{f(a)}{}\le \dist{p}{a}{}$ for any $a\in\spc{A}$;
 that is, one one can take $f(p)=x$.
 
+\parbf{\ref{ex:ultrametric}.}
+Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
+Let $f\:\spc{A}\to \spc{Y}$ be an isometry.
+Then $F(y)=f(x)$ or $F(y)=f(z)$.
+If  $f(y)=f(x)$, then
+\begin{align*}
+\dist{y}{z}{\spc{X}}&\ge  \dist{F(y)}{f(z)}{\spc{Y}}=
+\\
+ &=\dist{x}{z}{\spc{X}}.
+\end{align*}
+Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
+
+It remains to observe that the strong triangle inequality holds in both cases.
+
 \parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
 In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
 Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
 It remains to apply \ref{SHORT.ex:injective-spaces:R}.
 
-\parbf{Exercise~\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
+\parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
 Let $f$ be an extremal function.
 Observe that at least two of the numbers $f(a)+f(b)$, $f(b)+f(c)$, and $f(c)+f(a)$ are $1$.
 It follows that for some $x\in[0,\tfrac12]$, we have 
@@ -411,7 +421,7 @@ It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the 
 
 
 
-\parbf{Exercise~\ref{ex:4-on-a-line}.}
+\parbf{\ref{ex:4-on-a-line}.}
 Recall that 
 \[\dist{f}{g}{\Inj\spc{X}}=\sup\set{|f(x)-g(x)|}{x\in\spc{X}}\]
 and 
@@ -438,7 +448,7 @@ Since $\Inj\spc{X}$ is injective (\ref{}), by \ref{} it has to be geodesic. It r
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:Hausdorff-bry}}; \ref{SHORT.ex:Hausdorff-bry:conv}.
+\parbf{\ref{ex:Hausdorff-bry}}; \ref{SHORT.ex:Hausdorff-bry:conv}.
 Denote by $X_r$ the $r$ neighborhood of a set $X\z\subset \RR^2$.
 Observe  that 
 \[(\Conv X)_r=\Conv(X_r),\]
@@ -455,9 +465,10 @@ $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}\approx 1$.
 For the second part take $X$ to be a unit disc and $Y=\partial X$ to be its boundary circle.
 Note that $\partial X=\partial Y$ in particular $\dist{\partial X}{\partial Y}{\mathcal{H}(\RR^2)}=0$ while $\dist{ X}{ Y}{\mathcal{H}(\RR^2)}=1$.
 
+\parit{Remark.}
 A more interesting example for the second part can be build on {}\emph{lakes of Wada} --- and example of three open bounded topological disks in the plane that have identical boundary.
 
-\parbf{Exercise~\ref{ex:Huas-perimeter-area}.}
+\parbf{\ref{ex:Huas-perimeter-area}.}
 Let $A$ be a compact convex set in the plane.
 Denote by $A^r$ the closed $r$-neighborhood of $A$.
 Recall that by Steiner's formula we have
@@ -477,7 +488,7 @@ for all large $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:GH-po:a}.}
+\parbf{\ref{ex:GH-po:a}.}
 In order to check that $\dist{*}{*}{\spc{M}'}$ is a metric, it is sufficient to show that
 \[\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0 
 \quad\Longrightarrow\quad
@@ -499,7 +510,7 @@ Note that the map $f_\infty\:\spc{X}\to \spc{Y}$ is  distance-nondecreasing.
 The same way we can construct a distance-nondecreasing map 
 $g_\infty\:\spc{Y}\to \spc{X}$.
 
-By Exercise~\ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometrises.
+By \ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometrises.
 Therefore $f_\infty$ and $g_\infty$ are isometries as well.
 
 %Observe that 
@@ -517,7 +528,7 @@ Therefore $f_\infty$ and $g_\infty$ are isometries as well.
 %By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
 
 
-\parbf{Exercise~\ref{pr:doubling}.}
+\parbf{\ref{pr:doubling}.}
 Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by $\mu$.
 Without loss of generality we may assume that $\mu(\spc{X})\z=1$.
 
@@ -527,10 +538,10 @@ for any point $x\in \spc{X}$.
 It follows that 
 \[\pack_{\frac D{2^n}}\spc{X}\le C^n.\]
 
-By Exercise~\ref{ex:pack-net}, for any $\eps\ge\frac D{2^{n-1}}$, the space $\spc{X}$ admits an $\eps$-net with at most $C^n$ points.
+By \ref{ex:pack-net}, for any $\eps\ge\frac D{2^{n-1}}$, the space $\spc{X}$ admits an $\eps$-net with at most $C^n$ points.
 Whence $\spc{Q}(C,D)$ is uniformly totally bounded.
 
-\parbf{Exercise~\ref{pr:under}.} 
+\parbf{\ref{pr:under}.} 
 Since $\spc{Y}$ is compact, it has a finite $\eps$-net for any $\eps>0$.
 For each $\eps>0$ choose a finite $\eps$-net $\{y_1,\dots,y_{n_\eps}\}$ in $\spc{Y}$.
 
@@ -565,7 +576,7 @@ In particular, if $C>10$, then
 for any $x,x'\in \spc{X}$.
 That is, $f$ is a distance-nondecreasing map $\spc{X}\to \spc{Y}$.
 
-\parbf{Exercise~\ref{ex:GH-SC},} \ref{SHORT.ex:GH-SC:circle}.
+\parbf{\ref{ex:GH-SC},} \ref{SHORT.ex:GH-SC:circle}.
 Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
 It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
@@ -587,11 +598,11 @@ Note that $\spc{V}$ is simply connected, but $\spc{W}$ is not --- it is a good e
 
 If we delete from the earrings all small circles, then the obtained double cone becomes simply connected and it remains to be close to $\spc{W}$ in the sense of Gromov--Hausdorff.
 
-\parit{Comment.}
+\parit{Remark.}
 Note that from part \ref{SHORT.ex:GH-SC:nonsc-limit}, the limit does not admit a nontrivial covering.
 So if we define fundamental group right --- as the inverse image of groups of deck transformations for all its coverings, then one may say that Gromov--Haudorff limit of simply connected length spaces is simply connected.
 
-\parbf{Exercise~\ref{ex:sphere-to-ball},}
+\parbf{\ref{ex:sphere-to-ball},}
 \textit{\ref{SHORT.ex:sphere-to-ball:2}.}
 Suppose that a metric on $\mathbb{S}^2$ is close to the disc $\DD^2$.
 Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
@@ -613,13 +624,13 @@ that is, two copies of the ball with identified corresponding points on their bo
 The obtained space is homeomorphic to $\mathbb{S}^3$.
 Note that the burrows can be made 
 so that the obtained space is sufficiently close to the original ball 
-in the Gromov--Hausdorff metric.\qeds
+in the Gromov--Hausdorff metric.
 
-Source: \cite[Exercises 7.5.13 and 7.5.17]{burago-burago-ivanov}. 
+\parit{Source:} \cite[Exercises 7.5.13 and 7.5.17]{burago-burago-ivanov}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:ultrapower}.}
+\parbf{\ref{ex:ultrapower}.}
 Part \ref{SHORT.ex:ultrapower:a} follows directly from the definitions.
 Further we consider $\spc{X}$ as a subset of $\spc{X}^\omega$.
 
@@ -646,7 +657,7 @@ Further if $(x_n)$ is not  $\omega$-bounded, then
 \[\lim_{n\to\omega}\dist{p}{x_n}{\spc{X}}=\infty;\]
 that is $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
 
-\parbf{Exercise~\ref{ex:lim(tree)}.}
+\parbf{\ref{ex:lim(tree)}.}
 Observe that if a path $\gamma$ in a metric tree from $p$ to $q$ pass thru a point $x$ on distance $\ell$ from $[pq]$, then 
 \[\length\gamma\ge \dist{p}{q}{}+2\cdot \ell.\eqlbl{eq:+ell}\]
 
@@ -661,9 +672,9 @@ Then
 \begin{align*}
 \dist{p_\omega}{q_\omega}{}&=\length\gamma\ge \lim_{n\to\omega}(\dist{p_n}{x_n}{}+\dist{q_n}{x_n}{})\ge
 \\
-&\ge \lim_{n\to\omega}(\dist{p_n}{q_n}{}+2\ell_n)=
+&\ge \lim_{n\to\omega}(\dist{p_n}{q_n}{}+2\cdot\ell_n)=
 \\
-\dist{p_\omega}{q_\omega}{}+2\cdot\ell_\omega.
+&=\dist{p_\omega}{q_\omega}{}+2\cdot\ell_\omega.
 \end{align*}
 Since $x_\omega\notin [p_\omega q_\omega]$, we have that $\ell_\omega>0$ --- a contradiction.
 
@@ -671,7 +682,7 @@ To prove the last property consider sequence of centers of tripods $m_n$ for poi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\parbf{Exercise~\ref{ex:tringle-inq-angles}.}
+\parbf{\ref{ex:tringle-inq-angles}.}
 Let us show that $\gamma\le\alpha+\beta$; the rest of inequalities can be done the same way.
 Since $\gamma\le\pi$, we may assume that $\alpha+\beta< \pi$.
 
@@ -716,7 +727,7 @@ Clearly $s\le\max\{t,\tau\}$, so $t,\tau,s$ may be taken sufficiently small.
 Note that for the Euclidean space the statement implies that central angle defines a metric on unit sphere.
 This statement is not quite trivial; moreover, it is straightforward to modify Euclidean proof so it will work in Alexandrov settings. 
 
-\parbf{Exercise~\ref{ex:sba-2+2-short};} \textit{``only if'' part.}
+\parbf{\ref{ex:sba-2+2-short};} \textit{``only if'' part.}
 Let us start with two model triangles $[\tilde x\tilde y\tilde p]=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
 
 Suppose $[\tilde x \tilde y]$ intersects $[\tilde p\tilde q]$ at a point $\tilde z$.
@@ -795,7 +806,7 @@ In particular if $[\tilde x\tilde y\tilde p']=\modtrig(xyp)$ and $[\tilde x\tild
 \end{align*}
 Whence the ``if'' part follows.
 
-\parbf{Exercise~\ref{ex:(3+1)-expanding}.}
+\parbf{\ref{ex:(3+1)-expanding}.}
 Set $\tilde\alpha=\angk pxy$, $\tilde\beta=\angk pyz$ and $\tilde\gamma=\angk pzx$.
 
 If $\spc{X}$ is $\Alex0$, then
@@ -865,7 +876,7 @@ Since increasing a side in a triangle increase the opposite angle, we have that
 \quad\tilde\gamma\le\gamma.\]
 Whence the ``if'' part follows.
 
-\parbf{Exercise~\ref{ex:CAT+CBB}.}
+\parbf{\ref{ex:CAT+CBB}.}
 Set $\tilde \alpha=\angk pxq$, $\tilde\beta=\angk pyq$ and $\tilde\gamma=\angk pxy$.
 
 Note that the quadruple $p,x,y,z$ is euclidean if 
@@ -898,7 +909,7 @@ and therefore
 \[\tilde \gamma\le \mangle\hinge{\tilde p}{\tilde x}{\tilde y}.\]
 Since $\mangle\hinge{\tilde p}{\tilde x}{\tilde y}=\tilde\alpha+\tilde\beta$ we get \ref{eq:a+b>=c}.
 
-\parbf{Exercise~\ref{ex:product-CBB}.}
+\parbf{\ref{ex:product-CBB}.}
 We will use the charcterization of $\CBB(0)$ space provided by \ref{ex:(3+1)-expanding}; the rest is nearly identical to the proof of \ref{ex:product-CAT}.
 
 Fix a quadruple in $\spc{U}\times \spc{V}$:
@@ -942,7 +953,7 @@ The inequalities in  \ref{ex:(3+1)-expanding} imply that
 \end{align*}
 It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$, $\tilde x$, and $\tilde y$ keeping the distance $\dist{\tilde p}{\tilde z}{\EE^4}$ and nondecreasing the rest of distances. 
 
-\parbf{Exercise~\ref{ex:CBB-geodesic}.}
+\parbf{\ref{ex:CBB-geodesic}.}
 Suppose that there are distinct geodesics.
 Then there are two points $p$ and $q$ on different geodesics such that $\dist{p}{x}{}=\dist{q}{x}{}$.
 Without loss of generality we may assume that $\dist{z}{x}{}<\dist{p}{x}{}$;
@@ -956,12 +967,12 @@ By comparison, we have
 It follows that $\angk zpq=0$.
 Since $\dist{z}{p}{}=\dist{z}{q}{}$, it implies that $p=q$ --- a contradiction.
 
-\parbf{Exercise~\ref{ex:contractible}.}
+\parbf{\ref{ex:contractible}.}
 Use \ref{ex:noncreasing-CAT}, to show that the map $(t,x)\mapsto \gamma_x(t)$ is continuous; that is $h_t(x)=\gamma_x(t)$ defines a homotopy.
 
 It remains to observe that $h_1(x)=x$ and $h_0(x)=p$ for any $x$.
 
-\parbf{Exercise~\ref{ex:CAT-mnfld=>ext.geod}.}
+\parbf{\ref{ex:CAT-mnfld=>ext.geod}.}
 Suppose that a geodesic $[pq]$ is not expendable behind~$q$.
 Denote by $h_t$ the geodesic homotopy with the center at $p$; see \ref{ex:contractible}.
 
@@ -969,7 +980,7 @@ Since $[pq]$ is not extendable, $q\notin \Im h_t$ for any $t<1$.
 In particular the local homology groups vanish at $p$;
 the latter does not hold for a manifold --- a contradiction.
 
-\parbf{Exercise~\ref{ex:fat-triangle}.}
+\parbf{\ref{ex:fat-triangle}.}
 Apply \ref{ex:noncreasing-CBB} twice.
 
 More precisely, consider a triangle $[xyz]$ in the space; let $[\tilde x\tilde y\tilde z]\z=\modtrig(xyz)$.
@@ -984,7 +995,7 @@ By \ref{ex:noncreasing-CBB}, we have
 Whence \ref{eq:pq=<pq} follows.
 
 
-\parbf{Exercise~\ref{ex:convex-dist}.}
+\parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;
 that is, 
 \[
@@ -1020,7 +1031,7 @@ It remains to sum it up and apply the triangle inequality.
 
 \parit{Remark.} Note that in the Euclidean space the proof is just as hard.
 
-\parbf{Exercise~\ref{ex:convex-nbhd}.}
+\parbf{\ref{ex:convex-nbhd}.}
 Let $p,q\in A_r$;
 that is, there are points $p^*,q^*\in A$ such that $\dist{p}{p^*}{},\dist{q}{q^*}{}\le r$.
 Consider a geodesic path $\gamma$ from $p$ to $q$ and a geodesic path $\gamma^*$ from $p^*$ to $q^*$.
@@ -1034,7 +1045,7 @@ Since $A$ is convex $\gamma^*$ runs in $A$.
 Therefore $f(t)\ge \distfun_A\circ\gamma(t)$;
 that is, $\gamma$  runs in $A_r$.
 
-\parbf{Exercise~\ref{ex:closest-point}}; \ref{SHORT.ex:closest-point:a}.
+\parbf{\ref{ex:closest-point}}; \ref{SHORT.ex:closest-point:a}.
 Assume there are two point $x,y\in K$ that minimize the distance to $p$;
 suppose $\ell=\dist{p}{x}{}=\dist{p}{y}{}$.
 Since $K$ is convex, the geodesic $[xy]$ lies in $K$.
@@ -1055,7 +1066,7 @@ Finally observe that
 
 If some of the points $p$, $q$, $p^*$, $q^*$ coincide, then the proof is easier.
 
-\parbf{Exercise~\ref{ex:locally-convex}.} Fix a closed, connected, locally convex set~$K$.
+\parbf{\ref{ex:locally-convex}.} Fix a closed, connected, locally convex set~$K$.
 
 Let us show that $f=\distfun_K$ is convex in a neighborhood $\Omega\supset K$; that is, $\distfun_K$ is convex along any geodesic completely contained in~$\Omega$.
 It is sufficient to show that for any a point $p\in K$ the function $f$ is convex in a ball $B_p= \oBall(p, r_p)$ if $K\cap \cBall[p,2\cdot r_p]$ is convex.
@@ -1099,15 +1110,15 @@ Note that $f(x)\z=f(\alpha(s))=0$ and $f\ge 0$,
 therefore $f(z)= 0$ for any $z\in [x\,\alpha(s)]$.
 In other words, $[x\,\alpha(s)]\subset K$ --- a contradiction.
 
-\parit{Comment.}
+\parit{Remark.}
 The statement generalizes a theorem of Heinrich Tietze \cite{tietze}; our proof is nearly identical to the original.
 
-\parbf{Exercise~\ref{ex:reshetnyak-doubling}.}
+\parbf{\ref{ex:reshetnyak-doubling}.}
 If $A$ is not convex, then there is a geodesic $[xy]$ with the ends in $A$ and the remaining points outside of $A$.
 Observe that in the doubling, say $\spc{W}$, two copies of this geodesics connect the same pair of points $x$ and $y$.
 By \ref{ex:CAT-geodesic}, $\spc{W}$ is not $\CAT(0)$.
 
-\parbf{Exercise~\ref{ex:supporting-planes}.}
+\parbf{\ref{ex:supporting-planes}.}
 By approximation, it is sufficient to consider the case when 
 $A$ and $B$ have smooth boundary. 
 
@@ -1134,7 +1145,7 @@ Since $\left[zz_0\right[\cap A\cap B\ne\emptyset$,
 the latter contradicts the fact that $z_0$ is minimum point of $f$ on $A\cap B$.
 
 
-\parbf{Exercise~\ref{ex:compact-walls}.}
+\parbf{\ref{ex:compact-walls}.}
 Fix two open balls $B_1\z=\oBall(0,r_1)$ and $B_2=\oBall(0,r_2)$
 such that 
 \[B_1\subset A^i\subset B_2\]
@@ -1146,16 +1157,16 @@ Observe that
 Therefore if $x\in X$, then $X$ contains the convex hull $\Conv(B_1\cup\{x\}$;
 therefore all intersections of the walls have $\eps$-wide corners for $\eps\z=2\cdot \arcsin\tfrac{r_1}{r_2}$.
 
-\parbf{Exercise~\ref{ex:centrally-simmetric-walls}.}
+\parbf{\ref{ex:centrally-simmetric-walls}.}
 Note that any centrally symmetric convex closed set in Euclidean space is a product of a compact centrally symmetric convex set and a subspace.
 
 It follows that there is $R<\infty$
 such that if $X$ is an intersection of an arbitrary number of walls, then for any point $p\in X$ there is an isometry of $X$ 
 that moves  $p$ to a point in the ball $\oBall(0,R)$.
 
-It remains to apply the argument in Exercise~\ref{ex:compact-walls}.
+It remains to apply the argument in \ref{ex:compact-walls}.
 
-\parbf{Exercise~\ref{cor:balls:dim=1}.} 
+\parbf{\ref{cor:balls:dim=1}.} 
 Note that we can assume that the balls have zero radiuses.
 
 Observe that at each collision the balls exchange their velocities.
@@ -1172,7 +1183,7 @@ Grant Sanderson has couple of funny movies on a partial case of this problem \ci
 
 Recall that in the 3-dimensional case the number of collisions grows exponentially in $n$; the two-dimensional case is open \cite{burago-ivanov}.
 
-\parbf{Exercise~\ref{ex:null-homotopic}.}
+\parbf{\ref{ex:null-homotopic}.}
 Note that the existence of a null-homotopy is equivalent to the following.
 There are two one-parameter families of paths $\alpha_\tau$ and $\beta_\tau$, $\tau\in[0,1]$ 
 such that: 
@@ -1194,7 +1205,7 @@ Hence the result.
 \includegraphics{mppics/pic-11}
 \end{wrapfigure}
 
-\parbf{Exercise~\ref{ex:geod-circle}.}
+\parbf{\ref{ex:geod-circle}.}
 The following proof works for compact locally simply connected metric spaces;
 it includes compact length, locally $\CAT(0)$ spaces. 
 
@@ -1231,7 +1242,7 @@ One also need to apply \ref{ex:null-homotopic}, to show that curves $\gamma_1$ a
 The statement of the exercise fails if the requirement that $\spc{X}$ be compact is replaced by the assumption that it is proper. For example, the surface of revolution of the graph of $y=e^x$ around the $x$-axis is locally $\CAT(0)$ but has no closed geodesics.
 
 
-\parbf{Exercise~\ref{ex:branching-cover}.}
+\parbf{\ref{ex:branching-cover}.}
 Consider a closed $\eps$-neighborhood $A$ of the geodesic.
 Note that $A_\eps$ is convex.
 By the Reshetnyak gluing theorem, the double $\spc{W}_\eps$ of $\spc{U}$ along $A_\eps$ is $\CAT(0)$.
@@ -1246,7 +1257,7 @@ By the globalization theorem, $\spc{W}'_\eps$ is $\CAT(0)$.
 
 It remains to note that $\tilde {\spc{U}}$ can be obtained as a limit of $\spc{W}'_\eps$ as $\eps\to 0$, and apply Proposition~\ref{prop:cat-limit}.
 
-\parbf{Exercise~\ref{ex:geod-CBA}.}
+\parbf{\ref{ex:geod-CBA}.}
 Recall that by Proposition~\ref{cor:loc-geod-are-min}, any local geodesic shorter in $\spc{U}$ is a geodesic.
 
 Consider a sequence of directions $\xi_n$ 
@@ -1270,7 +1281,7 @@ Note that the unit disc in the plane with attached half-line to each point is a 
 However, the space of geodesic directions on the boundary of the disc is not complete --- there is no geodesic tangent to the boundary of the disc.
 This provides a counterexample to the statement of the exercise if  $\spc{U}$ is not assumed to be proper.
 
-\parbf{Exercise~\ref{ex:tan(CAT)isCAT}.} Given a constant speed geodesic $\alpha$ starting at $p$, consider sequence of points $x_n=\alpha(\tfrac1n)$.
+\parbf{\ref{ex:tan(CAT)isCAT}.} Given a constant speed geodesic $\alpha$ starting at $p$, consider sequence of points $x_n=\alpha(\tfrac1n)$.
 Note that $n\cdot\dist{p}{x_n}{}$ is constant.
 Therefore if we consider $x_n$ as a point in $n\cdot \spc{X}$, then this sequence has an $\omega$-limit $\iota(\alpha)$ in $\T_p^\omega$.
 
@@ -1287,7 +1298,7 @@ For example, let $\text{Ш}$ be a {}\emph{comb} with a spine formed by a real li
 Then for $p=0$ on the spine, $\T_p\text{Ш}$ is formed by three half-lines meeting at one point, while $\T_p^\omega\text{Ш}$ is isometric to $\text{Ш}$.
 
 
-\parbf{Exercise~\ref{ex:tan(CAT)is-length}.}
+\parbf{\ref{ex:tan(CAT)is-length}.}
 Observe that it is sufficient to show that the space of directions $\Sigma_p$ is a \index{length space!$\pi$-length space}\emph{$\pi$-length space}; the latter means that the defining condition of length space holds for pairs of points on distance less than~$\pi$.
 
 Since $\Sigma_p$ is complete,
@@ -1311,7 +1322,7 @@ By comparison
 \]
 Whence \ref{eq:dir-mid} holds for the direction $\mu$ of $[pm]$.
 
-\parbf{Exercise~\ref{ex:unique-geod=CAT}.}
+\parbf{\ref{ex:unique-geod=CAT}.}
 Assume $\spc{P}$ is not $\CAT(0)$.
 Then by \ref{thm:PL-CAT}, a link $\Sigma$ of some simplex contains a closed geodesic $\alpha$ with length $4\cdot\ell<2\cdot\pi$.
 We can assume that $\Sigma$ has minimal possible dimension;
@@ -1340,7 +1351,7 @@ It remains to repeat the above construction for the pair $\bar\alpha_1$, $\bar\a
 \parit{Remark.}
 By \ref{ex:CAT-geodesic}, the given condition is a necessary and sufficient.
 
-\parbf{Exercise~\ref{ex:flag>=pi/2}.}
+\parbf{\ref{ex:flag>=pi/2}.}
 Use induction on the dimension  to prove that if in a spherical simplex $\triangle$ every edge is at least $\tfrac\pi2$, then 
 all dihedral angles of $\triangle$ are at least~$\tfrac\pi2$.
 
@@ -1353,7 +1364,7 @@ Indeed, the two-dimensional sphere with removed interior of a small rhombus is a
 On the other hand the boundary of the rhombus is closed local geodesic in this space.
 Therefore the space cannot be $\CAT(1)$.
 
-\parbf{Exercise~\ref{ex:tree}.}
+\parbf{\ref{ex:tree}.}
 The space $\spc{T}_n$ has a natural cone structure with the vertex formed by the  completely degenerate tree --- all its edges have zero length.
 
 Note that the space $\Sigma$
@@ -1371,7 +1382,7 @@ Direct inspection shows that this is impossible.
 Therefore, by Proposition~\ref{prop:no-trig} our complex is flag.
 It remains to apply the flag condition (\ref{thm:flag}), and then \ref{ex:cone+susp}.
 
-\parbf{Exercise~\ref{ex:flag-aspherical}.}
+\parbf{\ref{ex:flag-aspherical}.}
 If the complex $\mathcal{S}$ is flag, then its cubical analog $\square_{\mathcal{S}}$ is locally $\CAT(0)$ and therefore aspherical.
 
 Assume now that the complex $\mathcal{S}$ is not flag. 
@@ -1384,13 +1395,13 @@ the universal cover of $\square_{\mathcal{T}}$, is $\CAT(0)$.
 Let $\tilde\square_{\mathcal{S}}$ be the inverse image of $\square_{\mathcal{S}}$ in $\tilde\square_{\mathcal{T}}$.
 
 Choose a cube $Q$ with minimal dimension in $\tilde\square_{\mathcal{T}}$ which is not present in $\tilde\square_{\mathcal{S}}$.
-By Exercise~\ref{ex:locally-convex}, $Q$ is a convex set in $\tilde\square_{\mathcal{T}}$.
+By \ref{ex:locally-convex}, $Q$ is a convex set in $\tilde\square_{\mathcal{T}}$.
 The closest point projection $\tilde\square_{\mathcal{T}}\to Q$ is a retraction.
 It follows that the boundary $\partial Q$ is not contractible in $\tilde\square_{\mathcal{T}}\backslash\Int Q$.
 Therefore the spheroid $\partial Q$ is not contractible in $\tilde\square_{\mathcal{S}}$.
 That is, a covering of $\square_{\mathcal{S}}$ is not aspherical and therefore $\square_{\mathcal{S}}$ is not as well.
 
-\parbf{Exercise~\ref{ex:example-pi_infty-new}.}
+\parbf{\ref{ex:example-pi_infty-new}.}
 The solution goes along the same lines as the proof of Lemma~\ref{lem:example-pi_infty}, but few changes are needed.
 
 The cycle $\gamma$ is taken in the complement $\mathcal{S}\backslash\{v\}$ (or, alternatively, in the link of $v$ in $\mathcal{S}$).
@@ -1398,7 +1409,7 @@ Instead of a vertex, one has to take edge $e$ in $\tilde Q$ that corresponds to 
 The last change is not principle:
 it is more visual to think that $G$ is made from the squares parallel to the squares of the cubical complex which meet the edges of the complex orthogonally at their midpoints (in this case formally speaking $G$ is not a subcomplex of the cubical analog).
 
-\parbf{Exercise~\ref{ex:cube-infty=>cube-2}}; \ref{SHORT.cube-infty}$\Rightarrow$\ref{SHORT.cube-2}.
+\parbf{\ref{ex:cube-infty=>cube-2}}; \ref{SHORT.cube-infty}$\Rightarrow$\ref{SHORT.cube-2}.
 By \ref{ex:inj=complete-geodesic-contractible:contractible}, $Q$ is contractible.
 Therefore the globalization theorem and flag condition (\ref{thm:hadamard-cartan} and \ref{thm:flag}) imply that it is sufficient to show that each link in $Q$ is flag.
 Further, by \ref{prop:no-trig} it is sufficient to show that link of each cube in $Q$ satisfies no-triangle condition.
@@ -1447,7 +1458,7 @@ It follows that the triple $(x,y,z)$ does not have a median;
 that is, $(Q,\ell^1)$ is not a median space --- a contradiction.
 
 
-\parbf{Exercise~\ref{ex:hemisphere}.}
+\parbf{\ref{ex:hemisphere}.}
 Let $\alpha$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
 
 Assume $\ell<\pi$.
@@ -1492,7 +1503,7 @@ By the Crofton formula we have that
 &\ge2\cdot\pi.
 \end{align*}
 
-\parbf{Exercise~\ref{ex:inner-support}.}
+\parbf{\ref{ex:inner-support}.}
 Since  $\Omega$ is not two-convex, 
 we can choose a simple closed curve $\gamma$ that lies in the intersection of a plane $W_0$ and $\Omega$, 
 and is contractible in $\Omega$ but not contractible in $\Omega\cap W_0$.
@@ -1518,7 +1529,7 @@ The dome has to touch $R$ at some point~$p$.
 The plane $W$ tangent to the dome at $p$ has the required property --- the point $p$ is an isolated point of the complement $W\backslash \Omega$.
 Further, by construction a small circle around $p$ in $W$ is contractible in $\Omega$.
 
-\parbf{Exercise~\ref{ex:convex+saddle+broken=>PL}.}
+\parbf{\ref{ex:convex+saddle+broken=>PL}.}
 The proof is simple and visual, but it is hard to write it formally in a non-tedious way.
 
 \medskip
@@ -1550,7 +1561,7 @@ From the latter statement and local convexity of $\bar S$,
 it follows that the solid triangle $[xyz]$ lies in~$\bar S$.
 In particular, all points on $[pq]$ sufficiently close to $p$ lie in $\bar S$ --- a contradiction.
 
-\parbf{Exercise~\ref{ex:besikovitch=}.}
+\parbf{\ref{ex:besikovitch=}.}
 Let us use the same notation as in the proof of \ref{thm:besikovitch}.
 
 Consider the map $s\:x\mapsto(\distfun_A(x),\distfun_B(x))$.
@@ -1589,11 +1600,11 @@ That is $s$ is an isometry.
 \includegraphics{mppics/pic-27}
 \end{wrapfigure}
 
-\parbf{Exercise~\ref{ex:hexagon}.}
+\parbf{\ref{ex:hexagon}.}
 Consider the hexagon with flat matric and curved sides shown on the diagram.
 Observe that its area can be made arbitrary small while keeping the distances from the opposite sides at least 1.
 
-\parbf{Exercise~\ref{ex:gadograph}.}
+\parbf{\ref{ex:gadograph}.}
 Without loss of generality, we may assume that $V$ lies in a unit cube $\square$.
 Consider a noncontinuous metric tensor $\bar g$ on $\square$ that coincides with $g$ inside $V$ and with the canonical flat metric tensor outside of $V$.
 
@@ -1605,7 +1616,7 @@ This metric tensor $\bar g$ is not continuous at $\Sigma$, but the same argument
 Whence the statement follows.
 
 
-\parbf{Exercise~\ref{ex:involution-of-sphere}.}
+\parbf{\ref{ex:involution-of-sphere}.}
 Let $x\in \mathbb{S}^2$ be a point that minimize the distance $|x-x'|_g$.
 Consider a minimizing geodesic $\gamma$ from $x$ to $x'$.
 We can assume that 
@@ -1655,7 +1666,7 @@ By the triangle inequality, we have that
 It remains to apply the coarea formula
 \[\area(\mathbb{S}^2,g)\ge \int\limits_0^1\length L_c\cdot dc.\]
 
-\parit{Comments.}
+\parit{Remarks.}
 The bound $\tfrac12$ was proved by Marcel Berger \cite{berger}. 
 Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke}.
 
@@ -1665,7 +1676,7 @@ Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the rou
 \includegraphics{mppics/pic-1305}
 \end{wrapfigure}
 
-\parbf{Exercise~\ref{ex:involution-of-3sphere}.}
+\parbf{\ref{ex:involution-of-3sphere}.}
 Given $\eps>0$, construct a disk $\Delta$ in the plane with 
 \[\length\partial \Delta<10\ \ \text{and}\ \ \area \Delta<\eps\]
 that admits an continuous involution $\iota$ such that 
@@ -1685,11 +1696,11 @@ and the restriction of the involution $(x,y)\z\mapsto (\iota(x),\iota(y))$ has t
 
 All we have to do now is to smooth $\partial(\Delta\times \Delta)$ a little bit.
 
-\parit{Comment.} This example is given by Christopher Croke \cite{croke}.
+\parit{Remark.} This example is given by Christopher Croke \cite{croke}.
 Note that according to \ref{thm:sys(torus)+}, 
 the involution $\iota$ cannot be made isometric.
 
-\parbf{Exercise~\ref{ex:GH-vol}.}
+\parbf{\ref{ex:GH-vol}.}
 Note that if $\spc{M}_\infty$ is $e^{\pm\eps}$-bilipschitz to a cube, then applying Besicovitch inequality, we get that 
 \[\liminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
 
@@ -1698,10 +1709,10 @@ Applying the above observation and summing up the results, we get that
 \[\liminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
 The statement follows since $\eps$ is arbitrary positive number.
 
-\parit{Comment.} A more general result was obtaind by Sergei Ivanov~\cite{ivanov-1997}.
+\parit{Remark.} A more general result was obtaind by Sergei Ivanov~\cite{ivanov-1997}.
 Note that the statement does not hold without stability of the convergence. In fact any compact metric space can be approximated by Riemannian surface with arbitrary small area.
 
-\parbf{Exercise~\ref{ex:sysT2}.}
+\parbf{\ref{ex:sysT2}.}
 Set $s=\sys(\TT^2,g)$.
 
 Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma_1$.
@@ -1740,7 +1751,7 @@ That is distance from $B$ to $B'$ in  $(\square,g)$ is at least $\tfrac s2$.
 Applying Besikovitch inequality, we get that 
 \[\area(\TT^2,g)=\area(\square,g)\ge \tfrac14\cdot s^2.\]
 
-\parit{Comment.}
+\parit{Remark.}
 Alternatively one may notice that any curve in $(N,g)$ that is bordant to $A$ has length at least $\tfrac s2$.
 Therefore the level sets defined by $\distfun_A(x)_{(N,g)}=t$ have length at least $\tfrac s2$ if $0\le t\le \tfrac s2$.
 Applying coarea fromula we get that
@@ -1753,7 +1764,7 @@ This estimate is twice better then the one above, but it is still far from the o
 \includegraphics{mppics/pic-25}
 \end{wrapfigure}
 
-\parbf{Exercise~\ref{ex:sysRP2}.}
+\parbf{\ref{ex:sysRP2}.}
 Set $s\z=\sys (\RP^2,g)$.
 Cut $(\RP^2,g)$ along a shortest noncontractible curve $\gamma$.
 We obtain $(\DD^2,g)$ --- a disc with metric tensor which we still denote by $g$.
@@ -1771,96 +1782,20 @@ The same way we show that the distance between $B$ and $B'$ in $(\DD^2,g)$ is at
 Note that $(\DD^2,g)$ can be paraneterized by a square with sides $A$, $B$, $A'$ and $B'$ and apply \ref{thm:besikovitch} to show that 
 \[\area(\RP^2,g)=\area(\DD^2,g)\ge \tfrac14\cdot s^2.\]
 
-\parit{Comment.}
+\parit{Remark.}
 For the optimal constant was found by Pao Ming Pu see the discussion on page \pageref{page:pu}.
 His proof shows that any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has area at least as large as the unit hemisphere.
 It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessary a disc);
 this is the so called the {}\emph{filling area conjecture} mentioned in \cite[5.5.B$'$(e$'$)]{gromov-1983}.
 
-\parbf{Exercise~\ref{ex:sysSg}.} Cut the surface along a shortest noncontractible curve $\gamma$. 
+\parbf{\ref{ex:sysSg}.} Cut the surface along a shortest noncontractible curve $\gamma$. 
 We might get a surface with one or two components of the boundary.
 In these two cases repeat the arguments in \ref{ex:sysRP2} or \ref{ex:sysT2} using \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}.
 
 
-\parbf{Exercise~\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
+\parbf{\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
 
-\parbf{Exercise~\ref{ex:fillrad<diam/2}.} 
-As usual we consider $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$;
-more precisely we identify $\spc{M}$ with its image under the map  $x\mapsto \distfun_x$.
-Set 
-\[R=\tfrac12\cdot\diam\spc{M}.\]
-
-Consider point $p$ in $\ell^\infty(\spc{M})$ that corresponds to the constant function $p(x)=R$.
-Since $0\le \distfun_x(z)\le  2\cdot R$ and $0=\distfun_x(x)$, we get that
-\[\sup\set{|p(z)-\distfun_x(z)|}{z\in\spc{M}}=R.\]
-In other words, the point $p\in \ell^\infty(\spc{M})$ lies on distance $R$ from any point on $\spc{M}\subset \ell^\infty(\spc{M})$.
-
-The linear homotopy $h_t\:\spc{M}\to \ell^\infty(\spc{M})$ defined by
-\[h_t(x)=(1-t)\cdot x+t\cdot p\]
-contracts $\spc{M}$ to the point $p$.
-Note that $\dist{h_t(x)}{x}{\ell^\infty(\spc{M})}\le R$ for any $t\in[0,1]$.
-In particular the fundamental class of $\spc{M}$ bounds in the closed $R$-neighborhood of $\spc{M}$ in $\ell^\infty(\spc{M})$.
-Whence the statement follows.
-
-%\parbf{Exercise~\ref{ex:fillrad-inj}.} 
-%Arguing by contradiction, assume $(n+1)\cdot R<r$ for some $R>\width\spc{M}$.
-
-%Choose a covering $\{V_i\}$ of $\spc{M}$ as in the definition of width (\ref{def:width}), so the dimension of the nerve $\spc{N}$ of the covering is at most $n-1$ and $V_i\subset \oBall(p_i,R)$ for each $i$.
-%Suppose $\psi\:\spc{M}\to\spc{N}$ is a map provided by \ref{prop:space->nerve}.
-
-%As usual we denote by $v_i$ the vertex in $\spc{N}$ that corresponds to $V_i$.
-%Let us construct a continuous map $f\:\spc{N}\to \spc{M}$ such that $f\circ \psi$ is homotopic to the identity --- note that once it is done the problem is solved.
-
-
-
-%Let $\sigma\:W\to \ell^\infty(\spc{M})$ be a map of a simplicial complex as in the proof of \ref{thm:sys<FillRad}.
-%That is, the restriction $\sigma|_{\partial W}$ represents the fundamental class $[\spc{T}]$ of $\spc{T}$, the image $\sigma(W)\subset B_{R}(\spc{T})$, and $\sigma$-image of any simplex in $W$ has diameter less then $\eps>0$.
-
-%We may assume that vertexes of $W$ can be divided into $n+2$ levels, say $0,1,\dots,n+1$, so that each simplex has vertexes of different levels.
-%This can be achieved by applying barycentric subdivision once.
-%Indeed every vertex in the barycentric subdivision corresponds to a simplex in the original triangulation; so we can define level as the dimension of the corresponding simplex.
-
-%Let us map each vertex $v$ of $W$ to a point in $\spc{M}$ closest to $\sigma(v)$; it defines the map on the 0-skeleton $W^0$.
-
-%To extend the map to the higher skeletons we will apply the following {}\emph{cone construction}.
-%Suppose the map is defined on the base $\triangle_v$ of a simplex $\triangle$ and the opposite vertex $v$.
-%Note that every point $x$ of $\triangle$ lies on a line segment $[vy]$ with $y\in \triangle_v$, say $x=(1-t)\cdot v+t\cdot y$.
-%If $f(\triangle_v)$ lies on the distance less than $r$ from $f(v)$, then $f(v)$ is connected to $f(y)$ by a uniqe geodesic path $\gamma_y\:[0,1]\to \spc{M}$ that depends continuously on $y$.
-%In this case we can set $f(x)=\gamma_y(t)$.
-
-%We have to arrange the construction in such a way that the simplexes will fit together and to make sure that the image of tha base is $r$-far from the vertex.
-
-%To do so let us apply the the cone construction to the edges between 1-level vertex $v_1$ to the 0-level base $v_0$.
-%This way we mapped the edge $[v_1v_0]$ to a geodesic path shorter than $2\cdot R'$.
-%(If $2\cdot R'<r$, then it is unique, but it is not yet important.)
-%It defines the map on all edges of $W$ between vertexes on level $0$ and $1$.
-
-%Now let us extend the map to each triangle with vertex $v_2$ on level 2 and base edge $[v_1v_0]$ with vertexes of level 1 and 0.
-%The $f$image of the base has length less than $2\cdot R'$  and the distance from $f(v_2)$ to $f(v_1)$ and $f(v_0)$ is also less than $2\cdot R'$.
-%Therefore for every $y\in [v_1v_0]$, we have $\dist{f(v)}{f(y)}{\spc{M}}<3\cdot R'$.
-%So if $3\cdot R'<r$, then we can apply cone construction to extend the map to each triangle with level of the vertexes $0,1,$ and $2$.
-
-%Further let us extend the map to each triangle with vertex $v_3$ on level 3 and base edge $\triangle$ with vertexes $v_0,v_1,v_2$ of level 0,1, and 2.
-%Any point $x$ in the base lies in a triangle with vertexes $v_3,v_2$ and a point $z$ on the edge $[v_0v_1]$.
-%From above we have that $\dist{f(v_3)}{f(z)}{\spc{M}}<3\cdot R'$, $\dist{f(v_2)}{f(z)}{\spc{M}}<3\cdot R'$, and $\dist{f(v_3)}{f(v_2)}{\spc{M}}<2\cdot R'$,
-%By triangle inequality $\dist{f(v_3)}{f(x)}{\spc{M}}<4\cdot R'$.
-%Therefore, if $4\cdot R'<r$ we can extend $f$ to each triangle with the levels of vertexes $0,1,$ and $2$.
-
-%Continuing this way we get that we can extend the map to whole $W$ if  $(n+1)\cdot R'<r$.
-%In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
-%That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
-%\[\FillRad \spc{M}\ge r.\]
-
-\parbf{Exercise~\ref{ex:connected-sum-essential}.}
-Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
-Observe that shrinking $N$ to a point produces a map $f\:N\#M\to M$ of degree 1; that is, the fundamental class of $N\#M$ maps to the fundamental class of $M$.
-
-Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to K$ that sends fundamental class of $M$ to nonzero homology class in $K$.
-From above, the composition $\iota\circ f\:N\#M\to K$  sends fundamental class of $N\#M$ to to the same homology class in $K$.
-
-\parit{Comment.} Note that we only used that there is a map $N\#M\to K$ of degree 1. If essential manifold is defined using homologies with integer coefficients, then existence of map of nonzero degree is sufficient.
-
-\parbf{Exercise~\ref{ex:macrodimension}.}
+\parbf{\ref{ex:macrodimension}.}
 The following claim resembles Besikovitch inequality;
 it is key to the proof:
 \begin{itemize}
@@ -1903,7 +1838,7 @@ Hence the claim $({*})$ follows.
 
 \medskip
 
-Comming back to the problem, let $\{W_i\}$ be an open covering of the real line with multiplicity $2$ and $\rad W_i<R$ for each $i$;
+Coming back to the problem, let $\{W_i\}$ be an open covering of the real line with multiplicity $2$ and $\rad W_i<R$ for each $i$;
 for example one may take $W_i=((i-\tfrac23)\cdot R,(i+\tfrac23)\cdot R)$.
 
 Choose a point $p\in \spc{X}$.
@@ -1940,14 +1875,9 @@ it is a smooth surface diffeomorphic to a sphere.
 Assuming the the cylinder is thin, it has macroscopic dimension 1 at a given scale.
 However a circle formed by a section of cylinder around its midpoint by a plane parallel to the base is a circle that cannot be contracted in its small neighborhood.
 
-\medskip
+\parit{Sourse:} \cite[Appendix 1(E$_{2}$)]{gromov-1983}.
 
-The problem is due to Mikhael Gromov \cite[Appendix 1(E$_{2}$)]{gromov-1983}.
-
-
-
-
-\parbf{Exercise~\ref{ex:1D-case}.}
+\parbf{\ref{ex:1D-case}.}
 Assume that $\spc{P}$ is connected.
 
 Let us show that $\diam\spc{P}<R$.
@@ -1976,4 +1906,11 @@ by coarea inequality we get that the total length of $\spc{P}\cap \oBall(p,\tfra
 
 Moving $p$ toward to $x$ reduce $\rho(p)$ which contradicts the choice of~$p$.
 
+\parbf{\ref{ex:connected-sum-essential}.}
+Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
+Observe that shrinking $N$ to a point produces a map $f\:N\#M\to M$ of degree 1; that is, the fundamental class of $N\#M$ maps to the fundamental class of $M$.
 
+Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to K$ that sends fundamental class of $M$ to nonzero homology class in $K$.
+From above, the composition $\iota\circ f\:N\#M\to K$  sends fundamental class of $N\#M$ to to the same homology class in $K$.
+
+\parit{Remark.} Note that we only used that there is a map $N\#M\to K$ of degree 1. If essential manifold is defined using homologies with integer coefficients, then existence of map of nonzero degree is sufficient.

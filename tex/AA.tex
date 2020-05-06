@@ -1,3 +1,85 @@
+\parbf{Exercise~\ref{ex:fillrad<diam/2}.} 
+As usual we consider $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$;
+more precisely we identify $\spc{M}$ with its image under the map  $x\mapsto \distfun_x$.
+Set 
+\[R=\tfrac12\cdot\diam\spc{M}.\]
+
+Consider point $p$ in $\ell^\infty(\spc{M})$ that corresponds to the constant function $p(x)=R$.
+Since $0\le \distfun_x(z)\le  2\cdot R$ and $0=\distfun_x(x)$, we get that
+\[\sup\set{|p(z)-\distfun_x(z)|}{z\in\spc{M}}=R.\]
+In other words, the point $p\in \ell^\infty(\spc{M})$ lies on distance $R$ from any point on $\spc{M}\subset \ell^\infty(\spc{M})$.
+
+The linear homotopy $h_t\:\spc{M}\to \ell^\infty(\spc{M})$ defined by
+\[h_t(x)=(1-t)\cdot x+t\cdot p\]
+contracts $\spc{M}$ to the point $p$.
+Note that $\dist{h_t(x)}{x}{\ell^\infty(\spc{M})}\le R$ for any $t\in[0,1]$.
+In particular the fundamental class of $\spc{M}$ bounds in the closed $R$-neighborhood of $\spc{M}$ in $\ell^\infty(\spc{M})$.
+Whence the statement follows.
+
+%\parbf{Exercise~\ref{ex:fillrad-inj}.} 
+%Arguing by contradiction, assume $(n+1)\cdot R<r$ for some $R>\width\spc{M}$.
+
+%Choose a covering $\{V_i\}$ of $\spc{M}$ as in the definition of width (\ref{def:width}), so the dimension of the nerve $\spc{N}$ of the covering is at most $n-1$ and $V_i\subset \oBall(p_i,R)$ for each $i$.
+%Suppose $\psi\:\spc{M}\to\spc{N}$ is a map provided by \ref{prop:space->nerve}.
+
+%As usual we denote by $v_i$ the vertex in $\spc{N}$ that corresponds to $V_i$.
+%Let us construct a continuous map $f\:\spc{N}\to \spc{M}$ such that $f\circ \psi$ is homotopic to the identity --- note that once it is done the problem is solved.
+
+
+
+%Let $\sigma\:W\to \ell^\infty(\spc{M})$ be a map of a simplicial complex as in the proof of \ref{thm:sys<FillRad}.
+%That is, the restriction $\sigma|_{\partial W}$ represents the fundamental class $[\spc{T}]$ of $\spc{T}$, the image $\sigma(W)\subset B_{R}(\spc{T})$, and $\sigma$-image of any simplex in $W$ has diameter less then $\eps>0$.
+
+%We may assume that vertexes of $W$ can be divided into $n+2$ levels, say $0,1,\dots,n+1$, so that each simplex has vertexes of different levels.
+%This can be achieved by applying barycentric subdivision once.
+%Indeed every vertex in the barycentric subdivision corresponds to a simplex in the original triangulation; so we can define level as the dimension of the corresponding simplex.
+
+%Let us map each vertex $v$ of $W$ to a point in $\spc{M}$ closest to $\sigma(v)$; it defines the map on the 0-skeleton $W^0$.
+
+%To extend the map to the higher skeletons we will apply the following {}\emph{cone construction}.
+%Suppose the map is defined on the base $\triangle_v$ of a simplex $\triangle$ and the opposite vertex $v$.
+%Note that every point $x$ of $\triangle$ lies on a line segment $[vy]$ with $y\in \triangle_v$, say $x=(1-t)\cdot v+t\cdot y$.
+%If $f(\triangle_v)$ lies on the distance less than $r$ from $f(v)$, then $f(v)$ is connected to $f(y)$ by a uniqe geodesic path $\gamma_y\:[0,1]\to \spc{M}$ that depends continuously on $y$.
+%In this case we can set $f(x)=\gamma_y(t)$.
+
+%We have to arrange the construction in such a way that the simplexes will fit together and to make sure that the image of tha base is $r$-far from the vertex.
+
+%To do so let us apply the the cone construction to the edges between 1-level vertex $v_1$ to the 0-level base $v_0$.
+%This way we mapped the edge $[v_1v_0]$ to a geodesic path shorter than $2\cdot R'$.
+%(If $2\cdot R'<r$, then it is unique, but it is not yet important.)
+%It defines the map on all edges of $W$ between vertexes on level $0$ and $1$.
+
+%Now let us extend the map to each triangle with vertex $v_2$ on level 2 and base edge $[v_1v_0]$ with vertexes of level 1 and 0.
+%The $f$image of the base has length less than $2\cdot R'$  and the distance from $f(v_2)$ to $f(v_1)$ and $f(v_0)$ is also less than $2\cdot R'$.
+%Therefore for every $y\in [v_1v_0]$, we have $\dist{f(v)}{f(y)}{\spc{M}}<3\cdot R'$.
+%So if $3\cdot R'<r$, then we can apply cone construction to extend the map to each triangle with level of the vertexes $0,1,$ and $2$.
+
+%Further let us extend the map to each triangle with vertex $v_3$ on level 3 and base edge $\triangle$ with vertexes $v_0,v_1,v_2$ of level 0,1, and 2.
+%Any point $x$ in the base lies in a triangle with vertexes $v_3,v_2$ and a point $z$ on the edge $[v_0v_1]$.
+%From above we have that $\dist{f(v_3)}{f(z)}{\spc{M}}<3\cdot R'$, $\dist{f(v_2)}{f(z)}{\spc{M}}<3\cdot R'$, and $\dist{f(v_3)}{f(v_2)}{\spc{M}}<2\cdot R'$,
+%By triangle inequality $\dist{f(v_3)}{f(x)}{\spc{M}}<4\cdot R'$.
+%Therefore, if $4\cdot R'<r$ we can extend $f$ to each triangle with the levels of vertexes $0,1,$ and $2$.
+
+%Continuing this way we get that we can extend the map to whole $W$ if  $(n+1)\cdot R'<r$.
+%In this case the fundamental class of $\spc{M}$ bounds in $\spc{M}$  which is not possible.
+%That is, $(n+1)\cdot R'\ge r$; since $\eps>0$ and $R>\FillRad \spc{M}$ are arbitrary, we get
+%\[\FillRad \spc{M}\ge r.\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Let us describe a more conceptual way to define essential manifolds.
 
 Suppose $\pi$ is a group,
