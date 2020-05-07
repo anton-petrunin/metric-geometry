@@ -1,4 +1,4 @@
-\chapter{Width}
+\chapter{Width and systole}
 
 This lecture is based on a paper of Alexander Nabutovsky \cite{nabutovsky}.
 
@@ -218,6 +218,9 @@ Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\s
 
 \end{thm}
 
+The idea of the proof is borrowed from the theory minimal surfaces.
+Namely if a point $p$ lies on a area minimizing surface $\Sigma$, then $\area(\Sigma\cap \oBall(p,r))\le \tfrac12\cdot \area\mathbb{S}^2\cdot r^2$ for all small $r>0$.
+
 \parit{Proof.}
 Choose a small $\delta>0$.
 Applying the smoothing procedure, we can exchange each distance function $\distfun_p$ on $\spc{P}$ by $\delta$-close smooth 1-Lipschitz function, which will be denoted by $\widetilde \distfun_p$.
@@ -425,8 +428,7 @@ Use \ref{thm:width<vol} to conclude that
 for some $\eps_n>0$ that depends only on $n$.
 \end{thm} 
 
-The second statement in the exercise might look self evident from the first sight,
-but actually it is not; it is a theorem of Marcel Berger \cite{berger-n}.
+The second statement in the exercise is a theorem of Marcel Berger \cite{berger-n}.
 
 
 \section{Essential manifolds}
@@ -485,7 +487,9 @@ $c_n=\sqrt[n]{n!}= \tfrac ne+o(n)$ in \ref{thm:width<vol} instead of $n$.
 As a result, we have a stronger statement in \ref{thm:sys+}:
 \[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol\spc{M}}.\]
 
-A wide open conjecture says that the optimal constant is $\pi/\sqrt[n]{\omega_n/2}$ where $\omega_n$ denotes the volume of $n$-dimensional unit sphere.
-This is the systole ratio for the $n$-dimensional real projective space with canonical metric; it  grows as $O(\sqrt n)$.
+A wide open conjecture says that for any $n$-dimensional essential manifold we have
+\[\frac{\sys\spc{M}}{\sqrt[n]{\vol\spc{M}}}\le\frac{\sys\RP^n}{\sqrt[n]{\vol\RP^n}},\eqlbl{eq:RPn}\]
+where we assume that the $n$-dimensional real projective space $\RP^n$ is equipped with canonical metric.
+In other words, the ratio in the right hand side of \ref{eq:RPn} is the optimal constant in the Gromov's systolic inequality; this  ratio grows as $O(\sqrt n)$.
 
 
