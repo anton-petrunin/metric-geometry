@@ -9,7 +9,7 @@ anchorcolor=black,
 filecolor=black,
 menucolor=black,
 urlcolor=black,
-pdftitle={Lectures in metric geometry},
+pdftitle={Lectures on pure metric geometry},
 pdfsubject={Geometry},
 pdfauthor={Anton Petrunin}
 ]{hyperref}
@@ -17,52 +17,41 @@ pdfauthor={Anton Petrunin}
 
 \begin{document}
  
-\title{Lectures on metric geometry}
+\title{Lectures on pure metric geometry}
 \author{Anton Petrunin}
 \date{}
 \maketitle
 
-These lecture notes for a graduate course given at Penn State, Spring 2020.
+
+After reviewing basic definitions in metric geometry we discuss 
+Uryson's \emph{universal space},
+\emph{injective spaces} that are metric analogs of convex sets,
+an \emph{ultralimits} of metric spaces that provides a very general way to pass to a limit without any assumptions on the sequence of spaces.
+These topics are simple, usefull, and conceptual,
+but they are not included in the (today the only) textbook in metric geometry written by Dmitry Burago, Yuri Burago, and Sergey Ivanov \cite{burago-burago-ivanov}.
+
+These a lectures are taken from a graduate course given at Penn State, Spring 2020.
+The complete lecture notes (14 lectures) can be found on the authors website.
 Considerable part of the text is a compilation from \cite{alexander-kapovitch-petrunin-2019, alexander-kapovitch-petrunin-2025, petrunin-yashinski, petrunin-2009, petrunin-zamorabarrera} and its drafts.
 
 \thispagestyle{empty}
 \tableofcontents
 \thispagestyle{empty}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\include{hwa}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\part{Pure metric geometry}
 \include{metric}
 \include{uryson}
 \include{injective}
-\include{converge}
+%\include{converge}
 %\include{wasserstein}
 \include{ultralimit}
 
-\part{Alexandrov geometry}
-\include{alexandrov}
-\include{billiards}
-\include{globalization}
-\include{poly}
-\include{exotic}
-\include{subsets}
-\part{Metrics on manifolds}
-\include{curvature-free}
-\include{systole}
-%\include{filling-rad}
-%\include{examples}
-%\include{AA}
 \appendix
 \chapter{Semisolutions}
 \input{metric-sol}
 \input{uryson-sol}
 \input{injective-sol}
-\input{converge-sol}
 \input{ultralimit-sol}
-\input{sols}
 
-%\include{tickets}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\small\sloppy
 \input{lectures.ind}
