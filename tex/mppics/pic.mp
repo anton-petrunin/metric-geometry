@@ -1498,6 +1498,21 @@ draw subpath (1,2) of p1 dashed evenly;
 
 endfig;
 
+beginfig(1320)
+save u,p;
+path p[];
+u:=1.4cm;
+
+p0=(0,0)*u--(0,1)*u--(1,1)*u--(1,0)*u--cycle;
+draw p0;
+
+label.lft (btex $A$ etex, point .5 of p0);
+label.top (btex $B$ etex, point 1.5 of p0);
+label.rt (btex $A'$ etex, point 2.5 of p0);
+label.bot (btex $B'$ etex, point 3.5 of p0);
+
+endfig;
+
 beginfig(1405)
 save u,p;
 path p[];
