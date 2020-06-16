@@ -10,6 +10,7 @@ and remind some the definitions related to metric spaces.
 The distance between two points $x$ and $y$ in a metric space $\spc{X}$ will be denoted by $\dist{x}{y}{}$ or $\dist{x}{y}{\spc{X}}$.
 The latter notation is used if we need to emphasize 
 that the distance is taken in the space~${\spc{X}}$.
+
 Let us recall the definition of metric. 
 
 \begin{thm}{Definition}\label{def:metric}
@@ -20,16 +21,10 @@ A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y
 \item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
 \item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
 \end{enumerate}
+\end{thm}
+
 A set $\spc{X}$ with a metric on it is called \index{metric space}\emph{metric space};
 most of the time we keep the same notation for the metric space and its underlying set.
-\end{thm}
-
-\begin{thm}{Exercise}
-Let $p$, $q$, $x$, and $y$ be points in a metric space $\spc{X}$.
-Show that
-\[\dist{p}{q}{\spc{X}}+\dist{x}{y}{\spc{X}}\le\dist{p}{x}{}\spc{X}+\dist{p}{y}{\spc{X}}+\dist{q}{x}{\spc{X}}+\dist{q}{y}{\spc{X}}.\]
-\end{thm}
-
 
 The function 
 \[\distfun_x\:y\mapsto \dist{x}{y}{}\]
@@ -46,6 +41,11 @@ Again, if we need to emphasize that these balls are taken in the metric space $\
 we write 
 \[\oBall(x,R)_{\spc{X}}\quad\text{and}\quad\cBall[x,R]_{\spc{X}}.\]
 
+\begin{thm}{Exercise}
+Show that
+\[\dist{p}{q}{\spc{X}}+\dist{x}{y}{\spc{X}}\le\dist{p}{x}{\spc{X}}+\dist{p}{y}{\spc{X}}+\dist{q}{x}{\spc{X}}+\dist{q}{y}{\spc{X}}\]
+for any points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
+\end{thm}
 
 \section{Variations of definition}
 
@@ -73,8 +73,8 @@ we might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but mo
 
 Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
 
-Indeed, set $x\approx y$ if and only if $\dist{x}{y}{}<\infty$;
-this is an other equivalence relation on $\spc{X}$.
+Indeed, let us write $x\approx y$ if  $\dist{x}{y}{}<\infty$;
+this is another equivalence relation on $\spc{X}$.
 The equivalence class of a point $x\in\spc{X}$ will be called the \index{metric component}\emph{metric component} 
  of $x$; it will be denoted by $\spc{X}_x$.
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
@@ -110,7 +110,7 @@ The following construction produces a complete metric space $\bar{\spc{X}}$ for 
 
 
 \parbf{Completion.}
-Given metric space $\spc{X}$, 
+Given a metric space $\spc{X}$, 
 consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
 Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
@@ -181,11 +181,8 @@ Prove that $f$ is an \index{isometry}\emph{isometry};
 that is, $f$ is a distance-preserving bijection.
 \end{thm}
 
-\begin{thm}{Advanced exercise}\label{ex:gross}
-Show that for any compact length-metric space $X$ there is unique number $\ell=\ell(X)$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
-that is, for any $x_1,\dots,x_n\in X$ there is $z\in X$ such that
-\[\tfrac1n\cdot\sum_i|x_i-z|_X=\ell.\]
-\end{thm}
+A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
+in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
 \section{Proper spaces}
 
@@ -194,14 +191,15 @@ This condition is equivalent to each of the following statements:
 \begin{itemize}
 \item For some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
 the closed ball $\cBall[p,R]_{\spc{X}}$ is compact. 
-\item The function $\distfun_p\:\spc{X}\to\RR$ is proper for some (and therefore any) point $p\in \spc{X}$;
+\item The function $\distfun_p\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} for some (and therefore any) point $p\in \spc{X}$;
 that is, for any compact set $K\subset \RR$, its inverse image 
 \[\distfun_p^{-1}(K)=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}\in K}\]
 is compact.
 \end{itemize}
 
-A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
-in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
+\begin{thm}{Exercise}\label{ex:loc-compact-not-proper}
+Give an example of space which is locally compact but not proper.
+\end{thm}
 
 \section{Geodesics}
 \label{sec:geods}
@@ -209,13 +207,13 @@ in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compa
 Let $\spc{X}$ be a metric space 
 and $\II$\index{$\II$} a real interval. 
 A~globally isometric map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
-\footnote{Various authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.}; 
+\footnote{Various authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.
+Also note that the meaning of the term \emph{geodesic} is different from what is used in Riemannian geometry, altho they are closely related.}; 
 in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if 
 \[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
 for any pair $s,t\in \II$.
 
-We say that  $\gamma\:\II\to \spc{X}$ is a geodesic from point $p$ to point $q$ if 
-$\II=[a,b]$ and $p=\gamma(a)$, $q=\gamma(b)$.
+If $\gamma\:[a,b]\to \spc{X}$ is a geodesic and $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from point $p$ to point $q$.
 In this case the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$} and with an abuse of notations  we also call it a \index{geodesic}\emph{geodesic}.
 
 
@@ -233,20 +231,19 @@ We also use the following shortcut notation:
 In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need not  be unique.  
 However, once we write $[p q]$ we assume mean that we have made a choice of geodesic.
 
-A metric space is called \index{geodesic}\emph{geodesic} if any pair of its points can be joined by a geodesic. 
-
-
 A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parametrization by $[0,1]$.
 
 A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
 A constant-speed parametrization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
 
-\section{Metric trees}
+\section{Geodesic spaces and metric trees}
+
+A metric space is called \index{geodesic}\emph{geodesic} if any pair of its points can be joined by a geodesic.
 
 A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
 and the union of any two geodesics $[xy]$, and $[yz]$ contain the geodesic $[xz]_{\spc{T}}$.
 In other words any triangle in $\spc{T}$ is a tripod;
-that is for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
+that is, for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
 
 \begin{thm}{Exercise}
 Show that spheres in metric trees are ultrametric spaces;
@@ -259,7 +256,7 @@ for any $x,y,z\in\Sigma$.
 
 \section{Length}
 
-A \index{curve}\emph{curve} is defined as a continuous map from a real interval to a space.
+A \index{curve}\emph{curve} is defined as a continuous map from a real interval to a metric space.
 If the real interval is $[0,1]$, then the curve is called a \index{path}\emph{path}.
 
 \begin{thm}{Definition}
@@ -352,15 +349,15 @@ If for any $\eps>0$ and any pair of points $x$ and $y$ in a metric space $\spc{X
 \[\length\alpha< \dist{x}{y}{}+\eps,\]
 then $\spc{X}$ is called a \index{length space}\emph{length space} and the metric on $\spc{X}$ is called a \index{length metric}\emph{length metric}.\label{page:length metric}
 
-If $\spc{X}$ is an $\infty$-metric space, then we assume that $x$ and $y$ lie in one metric component; that is, $\dist{x}{y}{\spc{X}}<\infty$.
+If $\spc{X}$ is an $\infty$-metric space, then in the above definition we assume in addition that $x$ and $y$ lie in one metric component; that is, $\dist{x}{y}{\spc{X}}<\infty$.
 In other words an $\infty$-metric space $\spc{X}$ is a length space if each metric component of $\spc{X}$ is a length space.
 
 Note that any geodesic space is a length space.
-As can be seen from the following example, the converse does not hold.
+The following example shows that the converse does not hold.
 
 
 \begin{thm}{Example}
-Let $\spc{X}$ be obtained by gluing a countable collection of disjoint intervals $\{\II_n\}$ of length $1+\tfrac1n$, where for each $\II_n$ the left end is glued to $p$ and the right end to~$q$.
+Suppose a space $\spc{X}$ is obtained by gluing a countable collection of disjoint intervals $\{\II_n\}$ of length $1+\tfrac1n$, where for each $\II_n$ the left end is glued to $p$ and the right end to~$q$.
 
 Observe that the space $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{}=1$ but there is no geodesic connecting $p$ to~$q$.
 \end{thm}
@@ -395,9 +392,9 @@ Let $A$ be a subset of a metric space $\spc{X}$.
 Given two points $x,y\in A$,
 consider the value
 \[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
-where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in $A$.
+where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in~$A$.
 In other words $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
-\footnote{This notation slightly conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
+\footnote{The notation $\dist{*}{*}{A}$ conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
 
 Let $\spc{X}$ be a metric space and $x,y\in\spc{X}$.
 
@@ -470,18 +467,14 @@ In this case \ref{eq:eps-midpoint} holds for $\eps_n=\eps=0$.
 Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, Lemma~\ref{lem:mid>geod} immediately implies
 
 \begin{thm}{Proposition}\label{prop:length+proper=>geodesic}
-A proper length space is geodesic.
+Any proper length space is geodesic.
 \end{thm}
 
 \begin{thm}{Hopf--Rinow theorem}\label{thm:Hopf-Rinow}
 Any complete, locally compact length space is proper.
 \end{thm}
 
-It is instructive to solve the following exercise before reading the proof.
-
-\begin{thm}{Exercise}
-Give an example of space which is locally compact but not proper.
-\end{thm}
+Before reading the proof, it is instructive to solve \ref{ex:loc-compact-not-proper}.
 
 \parit{Proof.}
 Let $\spc{X}$ be a locally compact length space.
@@ -493,9 +486,7 @@ $$\rho(x)>0
 x\in \spc{X}.\eqlbl{eq:rho>0}$$
 It is sufficient to show that $\rho(x)=\infty$ for some (and therefore any) point $x\in \spc{X}$.
 
-Assume the contrary; that is, $\rho(x)<\infty$. We claim that
-
-\begin{clm}{} $B=\cBall[x,\rho(x)]$ is compact for any~$x$.
+\begin{clm}{} If $\rho(x)<\infty$, then $B=\cBall[x,\rho(x)]$ is compact.
 \end{clm}
 
 Indeed, $\spc{X}$ is a length space;
@@ -514,10 +505,10 @@ Then
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
 Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$, a contradiction.\claimqeds
 
-Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact.
+Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
 From \ref{eq:rho>0}, we have $\eps>0$.
 
-Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B$.
+Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
 Clearly 
 $\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
@@ -530,7 +521,11 @@ Construct a geodesic space $\spc{X}$ that is locally compact,
 but whose completion $\bar{\spc{X}}$ is neither geodesic nor locally compact.
 \end{thm}
 
-
+\begin{thm}{Advanced exercise}\label{ex:gross}
+Show that for any compact length-metric space $X$ there is number $\ell=\ell(X)$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
+that is, for any $x_1,\dots,x_n\in X$ there is $z\in X$ such that
+\[\tfrac1n\cdot\sum_i|x_i-z|_X=\ell.\]
+\end{thm}
 
 
 
