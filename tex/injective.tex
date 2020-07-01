@@ -1,14 +1,10 @@
 \chapter{Injective spaces}
 
-In this lecture we discuss {}\emph{injective spaces} also known as {}\emph{hyperconvex spaces}.
-They are metric analog of convex sets in Euclidean space.
+{}\emph{Injective spaces} (also known as {}\emph{hyperconvex spaces}) are metric analog of convex sets.
 The so called \index{injective envelop}\emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
 it is a direct analog of convex hull of a set in a Euclidean space.
 
-This type of spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelop was introduced by John Isbell \cite{isbell};
-it was rediscovered number of times since then.
-
-We follow closely the paper of John Isbell \cite{isbell}.
+This lecture is based on a paper of John Isbell \cite{isbell}.
 
 \section{Admissible and extremal functions}
 
@@ -32,7 +28,7 @@ for any $x,y\in \spc{X}$.
 \end{thm}
 
 \parit{Proof.} For \ref{SHORT.obs:admissible:nonnegative}, take $x=y$ in \ref{eq:admissible}.
-Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and the definition of geodesic.
+Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and existence of a geodesic $[xy]$.
 \qeds
 
 A minimal admissible function will be called \index{extremal function}\emph{extremal}.
@@ -60,7 +56,8 @@ the distance function $r\z=\distfun_p$ is extremal.
 Any extremal function $r$ on $\spc{X}$ is 1-Lipschitz;
 that is,
 \[|r(p)-r(q)|\le \dist{p}{q}{}\]
-for any $p,q\in\spc{X}$.\footnote{In other words, any extremal function is an extension function; see the definition on page \pageref{page:extension function}.}
+for any $p,q\in\spc{X}$.
+In other words, any extremal function is an extension function; see the definition on page \pageref{page:extension function}.
 \end{subthm}
 
 \begin{subthm}{lem:opposite}
@@ -84,7 +81,7 @@ By the triangle inequality, \ref{eq:admissible} holds.
 Further if $s\le r$ is another admissible function then $s(p)=0$ and \ref{eq:admissible} implies that $s(x)\z\ge\dist{p}{x}{}$.
 Whence $s=r$.
 
-\parit{\ref{lem:extremal-lipschitz}.}
+\parit{\ref{SHORT.lem:extremal-lipschitz}.}
 By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is an extremal function.
 Since $r$ is extremal,
 \[r\ge \distfun_p-r(p).\]
@@ -97,7 +94,7 @@ The same way we can show that
 \[r(p)-r(q)\le \dist{p}{q}{}\]
 Whence the statement follows.
 
-\parit{\ref{lem:opposite}.}
+\parit{\ref{SHORT.lem:opposite}.}
 Again, by \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is an extremal function.
 Arguing by contradiction, assume 
 \[r(q)\ge \distfun_p(q)-r(p)+\delta\]
@@ -240,13 +237,13 @@ $\cBall[f(x),r(x)]$ have a common point --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}
-Suppose a length space $\spc{W}$ have two subspaces $\spc{X}$ and $\spc{Y}$ such that $\spc{X}\cup\spc{Y}=\spc{W}$ and $\spc{X}\cup\spc{Y}$ is one-point set.
+Suppose a length space $\spc{W}$ have two subspaces $\spc{X}$ and $\spc{Y}$ such that $\spc{X}\cup\spc{Y}=\spc{W}$ and $\spc{X}\cap\spc{Y}$ is a one-point set.
 Assume $\spc{X}$ and $\spc{Y}$ are injective.
 Show that  $\spc{W}$ is injective
 \end{thm}
 
 \begin{thm}{Exercise}
-Show that the Urysohn space is {}\emph{finitely hypercovex} but not {}\emph{countably hyperconvex};
+Show that the Urysohn space is {}\emph{finitely hyperconvex} but not {}\emph{countably hyperconvex};
 that is, the condition in \ref{thm:injective=hyperconvex:balls} holds for any finite family of balls, but may not hold for a countable family.
 Conclude that the Urysohn space is not injective.
 \end{thm}
@@ -318,7 +315,8 @@ Arguing by contradiction, suppose that there is an admissible function $s\:\spc{
 Consider another function $\bar r\:\Inj \spc{X}\to\RR$ such that $\bar r(f)=r(f)$ if $f\ne p$ and $\bar r(p)\df s(p)$.
 
 Let us show that $\bar r$ is admissible; that is, 
-\[\bar r(f)+\bar r(g)\ge\dist{f}{g}{\Inj \spc{X}}\eqlbl{r-admissible}\]
+\[\dist{f}{g}{\Inj \spc{X}}\le\bar r(f)+\bar r(g)
+\eqlbl{r-admissible}\]
 for any $f,g\in \Inj \spc{X}$.
 
 Since $r$ is admissible and $\bar r= r$ on $(\Inj \spc{X})\backslash \{p\}$, it is sufficient to prove \ref{r-admissible} if $f\ne g=p$.
@@ -409,6 +407,8 @@ Since $e\:\spc{X}\hookrightarrow \spc{E}$ is an injective envelop, the compositi
 Whence $w$ is an isometry.
 \qeds
 
+\section{Remarks}
 
-
+Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelop was introduced by John Isbell \cite{isbell}.
+It was rediscovered couple of times since then.
 

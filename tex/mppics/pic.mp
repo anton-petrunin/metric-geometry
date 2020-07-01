@@ -618,6 +618,37 @@ label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
 
 endfig;
 
+beginfig(405)
+save u,p,a;
+path p[];
+u:=1cm;
+a:=60;
+
+z.a=(1,0)*u;
+z.b=-z.a;
+z.shift=(3,0)*u;
+
+p0=z.a{.7,1}..z.b{-.4,-1}..cycle;
+
+draw p0;
+draw z.a--z.b;
+hatchfill  p0 withcolor (a, 1mm, -.5bp);
+
+draw (subpath (0,1) of p0) xscaled -1 shifted z.shift;
+draw (subpath (1,2) of p0) shifted z.shift;
+draw (z.a--z.b) shifted z.shift;
+hatchfill  ((subpath (0,1) of p0) xscaled -1 shifted z.shift)--cycle withcolor (180-a, 1mm, -.5bp);
+hatchfill  ((subpath (1,2) of p0) shifted z.shift)--cycle withcolor (a, 1mm, -.5bp);
+
+whitelabel.top(btex $L_1$ etex, origin);
+whitelabel.bot(btex $L_2$ etex, origin);
+whitelabel.top(btex $L_1'$ etex, z.shift);
+whitelabel.bot(btex $L_2$ etex, z.shift);
+
+label.bot(btex $D$ etex, point 1.6 of p0);
+label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
+endfig;
+
 beginfig(700) 
 save u;
 u:=1cm;

@@ -1,6 +1,6 @@
 \chapter{Space of sets}
 
-\section{Hausdorff convergence}
+\section{Hausdorff distance}
 
 Let $\spc{X}$ be a metric space.
 Given a subset $A\subset \spc{X}$,
@@ -14,7 +14,7 @@ $$\distfun_A(x)
 \begin{thm}{Definition}\label{def:hausdorff-convergence}
 Let $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
 Then the \index{Hausdorff distance}\emph{Hausdorff distance} between $A$ and $B$ is defined as 
-$$|A-B|_{\mathcal{H}(\spc{X})}
+$$|A-B|_{\Haus\spc{X}}
 \df
 \sup_{x\in \spc{X}}\{\,|\distfun_A(x)-\distfun_B(x)|\,\}.
 $$
@@ -22,17 +22,18 @@ $$
 \end{thm}
  
 Suppose $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
-It is straightforward to check that $|A-B|_{\mathcal{H}(\spc{X})}\le R$ if and only if 
+It is straightforward to check that $|A-B|_{\Haus\spc{X}}\le R$ if and only if 
 $\distfun_A(b)\le R$ for any $b\in B$
 and 
 $\distfun_B(a)\le R$ for any $a\in A$.
-In other words, $|A-B|_{\mathcal{H}(\spc{X})}< R$ if and only if 
+In other words, $|A-B|_{\Haus\spc{X}}< R$ if and only if 
 $B$ lies in a $R$-neighborhood of $A$, 
 and 
 $A$ lies in a $R$-neighborhood of $B$.
+The latter property can be used as an alternative definition of the Hausdorff distance $|A-B|_{\Haus\spc{X}}$.
 
 Note that the set of all nonempty compact subsets of a metric space $\spc{X}$ equipped with the Hausdorff metric forms a metric space.
-This new metric space will be denoted as $\mathcal{H}(\spc{X})$.
+This new metric space will be denoted as $\Haus\spc{X}$.
 
 
 \begin{thm}{Exercise}\label{ex:diam}
@@ -41,29 +42,58 @@ Given a subset $A\subset \spc{X}$ define its diameter as
 $$\diam A\df\sup_{a,b\in A} |a-b|.$$
 
 Show that 
-$$\diam\:\mathcal{H}(\spc{X})\to \RR$$ 
+$$\diam\:\Haus\spc{X}\to \RR$$ 
 is a $2$-Lipschitz function;
-that is, $|\diam A-\diam B|\le 2\cdot\dist{A}{B}{\mathcal{H}(\spc{X})}$.
+that is,
+\[|\diam A-\diam B|\le 2\cdot\dist{A}{B}{\Haus\spc{X}}\]
+for any two compact nonempty sets $A,B\subset\spc{X}$.
 \end{thm}
 
+
+\begin{thm}{Exercise}\label{ex:Hausdorff-bry}
+Let $X$ and $Y$ be two compact subsets in $\RR^2$.
+Assume $|X-Y|_{\Haus\RR^2}<\eps$.
+
+\begin{subthm}{ex:Hausdorff-bry:conv}
+Show that $|\Conv X-\Conv Y|_{\Haus\RR^2}<\eps$, where $\Conv X$ denoted a convex hull of $X$.
+\end{subthm}
+\begin{subthm}{ex:Hausdorff-bry:bry}
+Is it true that
+$|\partial X-\partial Y|_{\Haus\RR^2}<\eps$,
+where $\partial X$ denotes the boundary of $X$.
+
+Does the converse holds? That is, assume $X$ and $Y$ be two compact subsets in $\RR^2$
+and $|\partial X-\partial Y|_{\Haus\RR^2}<\eps$; 
+is it true that $|X-Y|_{\Haus\RR^2}\z<\eps$?
+\end{subthm}
+
+\end{thm}
+
+\section{Hausdorff convergence}
 
 \begin{thm}{Blaschke selection theorem}\label{thm:compact+Hausdorff}
-Let $\spc{X}$ be a metric space.
-Then the space $\mathcal{H}(\spc{X})$ is compact if and only if $\spc{X}$ is compact.
+A metric space $\spc{X}$ is compact if and only if
+so is $\Haus\spc{X}$.
 \end{thm}
 
-Note that the theorem implies that from any sequence of compact sets in $\spc{X}$ one can select a subsequence converging in the sense of Hausdorff; 
+Hausdorff metric can be used to define convergence.
+Namely, suppose $K_1,K_2,\dots$ and $K_\infty$ is a sequence of compact sets in a metric space $\spc{X}$.
+If $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$, then we say that 
+the sequence $(K_n)$ {}\emph{converges} to $K_\infty$ \index{convergence in the sense of Hausdorff}\emph{in the sense of Hausdorff};
+or we can say that $K_\infty$ is \emph{Hausdorff limit} of the sequence $(K_n)$.
+
+Note that the theorem implies that from any sequence of compact sets in $\spc{X}$ one can select a subsequence that converges in the sense of Hausdorff; 
 by that reason it is called a selection theorem. 
 
 \parit{Proof; ``only if'' part.}
-Note that the map $\iota\:\spc{X}\to \mathcal{H}(\spc{X})$, defined as $\iota\:x\mapsto\{x\}$
+Note that the map $\iota\:\spc{X}\to \Haus\spc{X}$, defined as $\iota\:x\mapsto\{x\}$
 (that is, point $x$ mapped to the one-point subset $\{x\}$ of $\spc{X}$)
 is distance-preserving.
-Therefore $\spc{X}$ is isometric to the set $\iota(\spc{X})$ in $\mathcal{H}(\spc{X})$.
+Therefore $\spc{X}$ is isometric to the set $\iota(\spc{X})$ in $\Haus\spc{X})$.
 
 Note that for a nonempty subset $A\subset \spc{X}$, we have $\diam A=0$ if and only if $A$ is a one-point set.
 Therefore, from Exercise~\ref{ex:diam}, it follows 
-that $\iota(\spc{X})$ is closed in $\mathcal{H}(\spc{X})$.
+that $\iota(\spc{X})$ is closed in $\Haus\spc{X}$.
 
 Hence $\iota(\spc{X})$  is compact, as it is a closed subset of a compact space. 
 Since $\spc{X}$ is isometric to $\iota(\spc{X})$,
@@ -75,7 +105,7 @@ To prove ``if'' part we will need the following two lemmas.
 \begin{thm}{Lemma}\label{lem:decreasing-converges}
 Let $K_1\supset K_2\supset\dots$ be a sequence of nonempty compact sets in a metric space $\spc{X}$
 then $K_\infty=\bigcap_n K_n$ is the Hausdorff limit of $K_n$;
-that is, $|K_\infty-K_n|_{\mathcal{H}(\spc{X})}\to0$ as $n\to\infty$.
+that is, $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$.
 \end{thm}
 
 \parit{Proof.}
@@ -101,14 +131,14 @@ a contradiction.\qeds
 
 
 \begin{thm}{Lemma}\label{lem:complete+Hausdorff}
-If $\spc{X}$ is a compact metric space, then $\mathcal{H}(\spc{X})$
+If $\spc{X}$ is a compact metric space, then $\Haus\spc{X}$
 is complete.
 \end{thm}
 
 \parit{Proof.}
-Let $(Q_n)$ be a Cauchy sequence in $\mathcal{H}(\spc{X})$.
+Let $(Q_n)$ be a Cauchy sequence in $\Haus\spc{X}$.
 Passing to a subsequence of $Q_n$ we may assume that 
-$$|Q_n-Q_{n+1}|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}\eqlbl{eq:eps=1/10}$$
+$$|Q_n-Q_{n+1}|_{\Haus\spc{X}}\le \tfrac1{10^n}\eqlbl{eq:eps=1/10}$$
 for each $n$.
 
 Set 
@@ -117,14 +147,14 @@ K_n&= \set{x\in \spc{X}}{\distfun_{Q_n}(x)\le \tfrac1{10^n}}
 \end{align*}
 Since $\spc{X}$ is compact so is each $K_n$.
 
-Clearly, $|Q_n-K_n|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}$ and from \ref{eq:eps=1/10}, we get
+Clearly, $|Q_n-K_n|_{\Haus\spc{X}}\le \tfrac1{10^n}$ and from \ref{eq:eps=1/10}, we get
 $K_n\supset K_{n+1}$ 
 for each $n$.
 Set 
 $$K_\infty=\bigcap_{n=1}^\infty K_n.$$
 Applying Lemma \ref{lem:decreasing-converges},
-we get that $|K_n-K_\infty|_{\mathcal{H}(\spc{X})}\to 0$ as $n\to\infty$.
-Since $|Q_n-K_n|_{\mathcal{H}(\spc{X})}\le \tfrac1{10^n}$, we get $|Q_n-K_\infty|_{\mathcal{H}(\spc{X})}\to 0$ as $n\to\infty$ --- hence the lemma.
+we get that $|K_n-K_\infty|_{\Haus\spc{X}}\to 0$ as $n\to\infty$.
+Since $|Q_n-K_n|_{\Haus\spc{X}}\le \tfrac1{10^n}$, we get $|Q_n-K_\infty|_{\Haus\spc{X}}\to 0$ as $n\to\infty$ --- hence the lemma.
 \qeds
 
 \begin{thm}{Exercise}
@@ -137,66 +167,86 @@ Use this to show that in Lemma~\ref{lem:complete+Hausdorff} compactness of $\spc
 
 \parit{Proof of ``if'' part in \ref{thm:compact+Hausdorff}.}
 According to Lemma~\ref{lem:complete+Hausdorff},
-$\mathcal{H}(\spc{X})$ is complete.
-It remains to show that $\mathcal{H}(\spc{X})$ is totally bounded (\ref{totally-bounded});
-that is, given $\eps>0$ there is a finite $\eps$-net in $\mathcal{H}(\spc{X})$.
+$\Haus\spc{X}$ is complete.
+It remains to show that $\Haus\spc{X}$ is totally bounded (\ref{totally-bounded});
+that is, given $\eps>0$ there is a finite $\eps$-net in $\Haus\spc{X}$.
 
 Choose a finite $\eps$-net $A$ in $\spc{X}$.
 Denote by $\mathcal{A}$ the set of all subsets of $A$.
-Note that  $\mathcal{A}$ is finite set in $\mathcal{H}(\spc{X})$.
+Note that  $\mathcal{A}$ is finite set in $\Haus\spc{X}$.
 For each compact set $K\subset \spc{X}$, consider the subset $K'$ of all points $a\in A$
 such that $\distfun_K(a)\le \eps$.
-Then $K' \in \mathcal{A}$ and $|K-K'|_{\mathcal{H}(\spc{X})}\le\eps$.
-In other words $\mathcal{A}$ is a finite $\eps$-net in $\mathcal{H}(\spc{X})$.
+Then $K' \in \mathcal{A}$ and $|K-K'|_{\Haus\spc{X}}\le\eps$.
+In other words $\mathcal{A}$ is a finite $\eps$-net in $\Haus\spc{X}$.
 \qeds
 
-Hausdorff metric defines convergence of compact sets which is more important than metric itself.
-
-\begin{thm}{Exercise}\label{ex:Hausdorff-bry}
-Let $X$ and $Y$ be two compact subsets in $\RR^2$.
-Assume $|X-Y|_{\mathcal{H}(\RR^2)}<\eps$.
-
-\begin{subthm}{ex:Hausdorff-bry:conv}
-Show that $|\Conv X-\Conv Y|_{\mathcal{H}(\RR^2)}<\eps$, where $\Conv X$ denoted a convex hull of $X$.
-\end{subthm}
-
-
-\begin{subthm}{ex:Hausdorff-bry:bry}
-Is it true that
-$|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$,
-where $\partial X$ denotes the boundary of $X$.
-
-Does the converse holds? That is, assume $X$ and $Y$ be two compact subsets in $\RR^2$
-and $|\partial X-\partial Y|_{\mathcal{H}(\RR^2)}<\eps$; 
-is it true that $|X-Y|_{\mathcal{H}(\RR^2)}\z<\eps$?
-\end{subthm}
-
+\begin{thm}{Exercise}\label{ex:Haus-length}
+Let $\spc{X}$ be a complete metric space.
+Show that $\spc{X}$ is a length space if and only if so is $\Haus\spc{X}$.
 \end{thm}
 
+\section{An application}
+
+The following statement is calle \index{isoperimetrical inequality}\emph{isoperimetrical inequality in the plane}.
+
+\begin{thm}{Theorem}
+Among the plane figures bounded by closed curves of length at most $\ell$ the round disc has maximal area.
+\end{thm}
+
+In this section we will sketch a proof of the isoperimetrical inequality that uses the Hausdorff convergence.
+It is based on the following exercise.
+
 \begin{thm}{Exercise}\label{ex:Huas-perimeter-area}
-Let $\spc{C}$ be a subspace of $\mathcal{H}(\RR^2)$ formed by all compact convex subsets in $\RR^2$.
+Let $\spc{C}$ be a subspace of $\Haus\RR^2$ formed by all compact convex subsets in $\RR^2$.
 Show that perimeter\footnote{If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.} and area are continuous on~$\spc{C}$.
 That is, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then 
 \[\perim X_n\to \perim X_\infty\quad\text{and}\quad\area X_n\to\area X_\infty\]
 as $n\to\infty$.
 \end{thm}
 
-The above exercise can be used in a proof of isoperimetrical inequality in the plane;
-it states that {}\emph{among the plane figures bounded by closed curves of length at most $\ell$ the round disc has maximal area}.
-
-Indeed it is sufficient to consider only convex figures of given perimeter; if a figure is not convex pass to its convex hull and observe that it has larger area and smaller perimeter.
-Further the exercise guarantees existence of a figure $D_\ell$ with perimeter $\ell$ and maximal area.
-It remains to show that $D_\ell$ is a round disc.
-The latter is easy to show, see for example Steiner's 4-joint method \cite{blaschke}.
+\parit{Sketch.}
+It is sufficient to consider only convex figures of given perimeter; if a figure is not convex pass to its convex hull and observe that it has larger area and smaller perimeter.
 
 
-\section{A variation}\label{sec:H-variation}
+Note that the exercise guarantees existence of a figure $D$ with perimeter $\ell$ and maximal area.
+
+It remains to show that $D$ is a round disc.
+This turns out to be an easy problem;
+further we indicate one way to do it.
+An example way to prove that $D$ is a round disc is given by the so called {}\emph{Steiner's 4-joint method}; see \cite{blaschke}.
+
+
+Let us cut $D$ along a chord $[ab]$ into two lens, $L_1$ and $L_2$.
+Denote by $L_1'$ the reflection of $L_1$ across the perpendicular bisector of $[ab]$.
+Note that $D$ and $D'=L_1'\cup L_2$ have the same perimeter and area.
+That is, $D'$ has perimeter $\ell$ and maximal possible area;
+in particular $D'$ is convex.
+The following exercise will finish the proof.
+\qeds
+
+{
+
+\begin{wrapfigure}{o}{50 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-405}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Suppose $D$ is a convex figure such that for any chord $[ab]$ of $D$ the above construction produces a convex figure $D'$.
+Show that $D$ is a round disc.
+\end{thm}
+
+
+}
+
+\section{Remarks}\label{sec:H-variation}
 
 It seems that Hausdorff convergence was first introduced by Felix Hausdorff~\cite{hausdorff},
 and a couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
 
 The following refinement of the definition was introduced by  Zden\v{e}k Frol\'{\i}k in \cite{frolik},
-and later rediscovered by Robert Wijsman in~\cite{wijsman}.  
+later it was rediscovered by Robert Wijsman in~\cite{wijsman}.  
 This refinement takes an intermediate place between the original Hausdorff convergence and {}\emph{closed convergence}, also introduced by Hausdorff in \cite{hausdorff};
 so we still call it Hausdorff convergence.
 
@@ -249,8 +299,8 @@ relation.
  
 Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\spc{M}} < r$ if and only if there exist a metric
 space $\spc{Z}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$ that are isometric to $\spc{X}$ and $\spc{Y}$
-respectively and such that $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})} < r$. 
-(Here $|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\spc{Z})}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
+respectively and such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{Z}} < r$. 
+(Here $|\spc{X}'-\spc{Y}'|_{\Haus\spc{Z}}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
 \end{thm}
 
 Bit later (see \ref{thm:GH-is-a-metric}) we will show that Hausdorff metric is indeed a metric.
@@ -285,7 +335,7 @@ and $\spc{Y}$ is the infimum of $r > 0$ such that there exists a metric
 $|{*}-{*}|_{\spc{W}}$ on the disjoint union $\spc{W}=\spc{X}\sqcup \spc{Y}$ 
 such that the restrictions of $|{*}-{*}|_{\spc{W}}$ to $\spc{X}$ and $\spc{Y}$
 coincide with $|{*}-{*}|_\spc{X}$ and $|{*}-{*}|_{\spc{Y}}$ 
-and $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{W})} < r$. 
+and $|\spc{X}-\spc{Y}|_{\Haus\spc{W}} < r$. 
 \end{thm}
 
 
@@ -300,7 +350,7 @@ $|x-y|_{\spc{W}} = |f (x)\z- g(y)|_{\spc{Z}}+\eps$ for small enuf $\eps>0$.%
 \footnote{We add $\eps$ to ensure that $d(x, y) > 0$ for any $x\in \spc{X}$ and $y\in \spc{Y}$;
 so $|x-y|_{\spc{W}}$ is indeed a metric.}
 This yields a metric on $\spc{W}=\spc{X}\sqcup \spc{Y}$ for which
-$|\spc{X}- \spc{Y}|_{\mathcal{H}(\spc{W})} \z< r$.
+$|\spc{X}- \spc{Y}|_{\Haus\spc{W}} \z< r$.
 \qeds
 
 \parbf{Fixed ambient space.}
@@ -309,7 +359,7 @@ The following proposition says that the space $\spc{Z}$ in Definition~\ref{def:G
 \begin{thm}{Proposition}\label{prop:GH-with-fixed-Z}
 Let $\spc{X}$ and $\spc{Y}$ be comact metric spaces.
 Then
-$$|\spc{X}-\spc{Y}|_{\spc{M}} = \inf \{|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\ell^\infty)}\}$$ 
+$$|\spc{X}-\spc{Y}|_{\spc{M}} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\ell^\infty}\}$$ 
 where the infimum is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\ell^\infty$
 which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
 \end{thm}
@@ -319,7 +369,7 @@ which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.
 
 \parit{Proof of \ref{prop:GH-with-fixed-Z}.}
 By the definition, we have that 
-\[|\spc{X}-\spc{Y}|_{\spc{M}} \leq \inf \{|\spc{X}'-\spc{Y}'|_{\mathcal{H}(\ell^\infty)}\}.\]
+\[|\spc{X}-\spc{Y}|_{\spc{M}} \leq \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\ell^\infty}\}.\]
 
 Let $\spc{W}$ be an arbitrary metric space with the underlying set $\spc{X}\sqcup \spc{Y}$.
 Note $\spc{W}$ is compact since it is union of two compact subsets $\spc{X},\spc{Y}\subset \spc{W}$.
@@ -384,7 +434,7 @@ therefore $|x-y|_{\spc{W}}\le 2\cdot\eps$.
 On the other hand for any $x\in \spc{X}$, we have $|x-y|_{\spc{W}}\le\eps$
 for $y=f(x)\in \spc{Y}$.
 
-It follows that $|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{W})}\le 2\cdot\eps$.
+It follows that $|\spc{X}-\spc{Y}|_{\Haus\spc{W}}\le 2\cdot\eps$.
 \qedsf
 
 The Gromov--Hausdorff metric defines Gromov--Hausdorff convegence
@@ -429,7 +479,7 @@ $$a>|\spc{X}-\spc{Y}|_{\spc{M}}
 \quad\text{and}\quad
 b>|\spc{Y}-\spc{Z}|_{\spc{M}}.$$
 Choose two metrics on $\spc{U}=\spc{X}\sqcup \spc{Y}$ and $\spc{V}=\spc{Y}\sqcup \spc{Z}$ so that
-$|\spc{X}-\spc{Y}|_{\mathcal{H}(\spc{U})}<a$ and $|\spc{Y}-\spc{Z}|_{\mathcal{H}(\spc{V})}<b$ 
+$|\spc{X}-\spc{Y}|_{\Haus\spc{U}}<a$ and $|\spc{Y}-\spc{Z}|_{\Haus\spc{V}}<b$ 
 and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance-preserving.
 
 Consider the metric on $\spc{W}=\spc{X}\sqcup \spc{Z}$ 
@@ -437,7 +487,7 @@ so that inclusions $\spc{X}\hookrightarrow \spc{W}$ and $\spc{Z}\hookrightarrow 
 and 
 $$|x-z|_{\spc{W}}=\inf_{y\in \spc{Y}}\{|x-y|_{\spc{U}}+|y-z|_{\spc{V}}\}.$$
 Note that $|{*}-{*}|_{\spc{W}}$ is indeed a metric and 
-$$|\spc{X}-\spc{Z}|_{\mathcal{H}(\spc{W})}<a+b.$$
+$$|\spc{X}-\spc{Z}|_{\Haus\spc{W}}<a+b.$$
 Property {\it (\ref{GH-4})} follows since the last inequality holds for any $a>|\spc{X}\z-\spc{Y}|_{\spc{M}}$ and $b>|\spc{Y}-\spc{Z}|_{\spc{M}}$.
 
 
@@ -575,7 +625,7 @@ Passing to a subsequence if necessary,
 we can assume that $|\spc{X}_n-\spc{X}_{n+1}|_{\spc{M}}<\tfrac1{2^n}$ for each $n$.
 In particular, for each $n$ one can equip $\spc{W}_n=\spc{X}_n \sqcup \spc{X}_{n+1}$ with a metric such that
 inclusions $\spc{X}_n\hookrightarrow \spc{W}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{W}_n$ are distance-preserving,
-and $$|\spc{X}_n-\spc{X}_{n+1}|_{\mathcal{H}(\spc{W}_n)}\z<\tfrac1{2^n}$$
+and $$|\spc{X}_n-\spc{X}_{n+1}|_{\Haus\spc{W}_n}\z<\tfrac1{2^n}$$
 for each $n$.
 
 Set $\spc{W}$ to be the disjoint union of all $\spc{X}_n$.
@@ -597,7 +647,7 @@ Since each $\spc{X}_i$ is compact, we get that $\bar{\spc{W}}$ admits a compact 
 Whence $\bar{\spc{W}}$ is compact.
 
 According to Blaschke selection theorem (\ref{thm:compact+Hausdorff}),
-we can pass to a subsequence of $(\spc{X}_n)$ that converges in $\mathcal{H}(\bar{\spc{W}})$ and therefore in $\spc{M}$.
+we can pass to a subsequence of $(\spc{X}_n)$ that converges in $\Haus\bar{\spc{W}}$ and therefore in $\spc{M}$.
 \qeds
 
 \parit{Proof of \ref{thm:gromov-compactness}; ``only if'' part.}
@@ -655,7 +705,7 @@ Suppose $\spc{X}_n\GHto \spc{X}_\infty$, then there is a metric on the disjoint 
 \[\bm{X}=\bigsqcup_{n\in \NN\cup\{\infty\}} \spc{X}_n\]
 such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and $\spc{X}_n\Hto \spc{X}_\infty$ as subsets in $\bm{X}$.
 
-Indeed, since $\spc{X}_n\GHto \spc{X}_\infty$, there is a metric on $\spc{V}_n=\spc{X}_n\sqcup \spc{X}_\infty$ such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and $\dist{\spc{X}_n}{\spc{X}_\infty}{\mathcal{H}(\spc{V}_n)}<\eps_n$ for some sequence $\eps_n\to 0$.
+Indeed, since $\spc{X}_n\GHto \spc{X}_\infty$, there is a metric on $\spc{V}_n=\spc{X}_n\sqcup \spc{X}_\infty$ such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric and $\dist{\spc{X}_n}{\spc{X}_\infty}{\Haus\spc{V}_n}<\eps_n$ for some sequence $\eps_n\to 0$.
 Arguing as in the proof of (\ref{GH-4}) in Theorem~\ref{thm:GH-is-a-metric}
 we define metric on $\bm{X}$ by setting 
 \begin{align*}
