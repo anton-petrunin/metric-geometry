@@ -324,7 +324,7 @@ In other words, for arbitrary  compact metric spaces $\spc{X}$, $\spc{Y}$ and $\
 
 Note that \ref{SHORT.GH-1}, ``if''-part of \ref{SHORT.GH-2}, and \ref{SHORT.GH-3} follow directly from Definition \ref{def:GH}.
 Part \ref{GH-4} will be proved in Section~\ref{sec:gluing+triangle}.
-The ``only-if''-part of \ref{SHORT.GH-2} will be proved in Section???.
+The ``only-if''-part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:alm-isom}.
 
 \begin{thm}{Exercise}\label{ex:d_GH-and-diam}
 Let $\spc{X}$ and $\spc{Y}$ be two compact metric spaces.
@@ -355,6 +355,19 @@ Show that
 for all large $r$.
 \end{thm}
 
+\begin{thm}{Exercise}
+Let $\spc{X}$ and $\spc{Y}$ be two compact metric spaces.
+Show that
+\[\dist{\spc{X}}{\spc{Y}}{\GH}<\eps\]
+if and only if there is a subset $R\subset \spc{X}\times\spc{Y}$ such that the following conditions hold:
+\begin{itemize}
+ \item For any $x\in  \spc{X}$ there is $y\in \spc{Y}$ such that $(x,y)\in R$.
+ \item For any $y\in  \spc{Y}$ there is $x\in \spc{X}$ such that $(x,y)\in R$.
+  \item For any two pairs $(x,y), (x',y')\in R$ we have
+  \[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{X}}\bigr|<2\cdot\eps.\]
+\end{itemize}
+
+\end{thm}
 
 
 \section{Metrics on disjoined union}
@@ -456,40 +469,7 @@ $$a+b\ge|\spc{X}-\spc{Y}|_{\GH}.$$
 Whence the statement follows.
 \qeds
 
-\section{Fixed ambient space}
 
-The following proposition says that the space $\spc{Z}$ in Definition~\ref{def:GH} can be exchanged to a fixed space, namely $\ell^\infty$ --- the space of bounded infinite sequences with the metric defined by $\sup$-norm.
-
-\begin{thm}{Proposition}\label{prop:GH-with-fixed-Z}
-Let $\spc{X}$ and $\spc{Y}$ be comact metric spaces.
-Then
-$$|\spc{X}-\spc{Y}|_{\GH} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\ell^\infty}\}$$ 
-where the infimum is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\ell^\infty$
-which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
-\end{thm}
-
-
-
-
-\parit{Proof of \ref{prop:GH-with-fixed-Z}.}
-By the definition, we have that 
-\[|\spc{X}-\spc{Y}|_{\GH} \leq \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\ell^\infty}\}.\]
-
-Let $\spc{W}$ be an arbitrary metric space with the underlying set $\spc{X}\sqcup \spc{Y}$.
-Note $\spc{W}$ is compact since it is union of two compact subsets $\spc{X},\spc{Y}\subset \spc{W}$.
-In particular, $\spc{W}$ is separable.
-
-By Lemma \ref{lem:frechet}, there is a distance-preserving embedding $\iota\:\spc{W}\z\to \ell^\infty$.
-It remains to apply Proposition~\ref{prop:GH=X+Y}.
-\qeds
-
-\begin{thm}{Exercise}
-Let $\spc{U}$ be the Urysohn space.
-Given two compact set $A$ and $B$ in $\spc{U}$ define 
-\[\|A-B\|=\inf\{|A-\iota(B)|_{\Haus\spc{U}}\},\]
-where the infimum is taken for all isometrics $\iota$ of $\spc{U}$.
-Show that $\|{*}\z-{*}\|$ defines a pseudometric on nonempty compact subsets of $\spc{U}$ and its corresponding metric space is isometric to $\GH$.
-\end{thm}
 
 
 
@@ -649,6 +629,45 @@ as $n\to\infty$.
 \end{thm}
 
 
+\section{Universal ambient space}
+
+Recall that a metric space is called universal if it contains an isometric copy of any separable metric space (in particular any compact metric space).
+Examples of universal spaces include Urysohn space and $\ell^\infty$ --- the space of bounded infinite sequences with the metric defined by $\sup$-norm; see \ref{prop:sep-in-urys} and \ref{ex:frechet}.
+
+The following proposition says that the space $\spc{W}$ in Definition~\ref{def:GH} can be exchanged to a fixed universal space.
+
+\begin{thm}{Proposition}\label{prop:GH-with-fixed-Z}
+Let $\spc{U}$ be a universal space.
+Then for any compact metric spaces $\spc{X}$ and $\spc{Y}$ we have
+$$|\spc{X}-\spc{Y}|_{\GH} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}\}$$ 
+where the infimum is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{U}$
+which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
+\end{thm}
+
+
+
+
+\parit{Proof of \ref{prop:GH-with-fixed-Z}.}
+By the definition, we have that 
+\[|\spc{X}-\spc{Y}|_{\GH} \leq \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}\}.\]
+
+Let $\spc{W}$ be an arbitrary metric space with the underlying set $\spc{X}\sqcup \spc{Y}$.
+Since $\spc{X}$ and $\spc{Y}$ are compct, so is $\spc{W}$.
+In particular, $\spc{W}$ is separable.
+
+Since $\spc{U}$ is universal, there is a distance-preserving embedding of $\spc{W}$ in $\spc{U}$.
+It remains to apply Proposition~\ref{prop:GH=X+Y}.
+\qeds
+
+\begin{thm}{Exercise}
+Let $\spc{U}$ be the Urysohn space.
+Given two compact set $A$ and $B$ in $\spc{U}$ define 
+\[\|A-B\|=\inf\{|A-\iota(B)|_{\Haus\spc{U}}\},\]
+where the infimum is taken for all isometrics $\iota$ of $\spc{U}$.
+Show that $\|{*}\z-{*}\|$ defines a pseudometric%
+\footnote{The value $\|A-B\|$ is called \emph{Hausdorff distance up to isometry} in $\spc{U}$.}
+on nonempty compact subsets of $\spc{U}$ and its corresponding metric space is isometric to $\GH$.
+\end{thm}
 \section{Uniformly totally bonded families}
 
 Let $\spc{Q}$ be a set of (isometry classes) of compact metric spaces.
