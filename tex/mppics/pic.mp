@@ -597,26 +597,6 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,
 
 endfig;
 
-beginfig(300) 
-
-save u,v,n;
-v:=1.8;
-u:=1cm;
-n:=6;
-
-for i=1 step 1 until n:
-draw (-i,v/i)*u--(4,v/i)*u penhair;
-Dot (-i,v/i)*u;
-endfor
-
-draw (-n,0)*u--(4,0)*u pensemibold;
-
-label.top(btex $\spc{X}_1$ etex, (.5*4,v)*u);
-label.top(btex $\spc{X}_2$ etex, (.5*3,v/2)*u);
-label(btex $\dots$ etex, (0,v/n)*.5*u);
-label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
-
-endfig;
 
 beginfig(405)
 save u,p,a;
@@ -648,6 +628,67 @@ whitelabel.bot(btex $L_2$ etex, z.shift);
 label.bot(btex $D$ etex, point 1.6 of p0);
 label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
 endfig;
+
+beginfig(500) 
+
+save u,v,n;
+v:=1.8;
+u:=1cm;
+n:=6;
+
+for i=1 step 1 until n:
+draw (-i,v/i)*u--(4,v/i)*u penhair;
+Dot (-i,v/i)*u;
+endfor
+
+draw (-n,0)*u--(4,0)*u pensemibold;
+
+label.top(btex $\spc{X}_1$ etex, (.5*4,v)*u);
+label.top(btex $\spc{X}_2$ etex, (.5*3,v/2)*u);
+label(btex $\dots$ etex, (0,v/n)*.5*u);
+label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
+
+endfig;
+
+
+beginfig(505)
+save u,p,n;
+path p[];
+u:=.5cm;
+n:=10;
+
+z.r=(n,0)*u;
+z.l=-z.r;
+z.ur=(1,0)*u rotated 60 shifted z.r;
+z.lr=z.ur yscaled -1;
+z.ul=z.ur xscaled -1;
+z.ll=-z.ur;
+
+z.shift=(0,-3)*u;
+z4=(0,4)*u;
+
+draw z.ur--z.r--z.l--z.ul;
+draw z.lr--z.r;
+draw z.ll--z.l;
+
+dOt z.ur,z.ul,z.lr,z.ll;
+
+p0=(z.r--z.l--z.l-z4--z.r-z4--cycle) shifted z.shift;
+hatchfill p0 withcolor (45, 2mm, -.5bp);
+hatchfill p0 withcolor (-45, 2mm, -.5bp);
+draw p0;
+dOt z.r shifted z.shift,z.l shifted z.shift,(z.l-z4) shifted z.shift,(z.r-z4) shifted z.shift;
+
+whitelabel(btex $\ell^1$ etex, z.shift-z4/2);
+label.ulft(btex $1$ etex, .5[z.r,z.ur]);
+label.llft(btex $1$ etex, .5[z.r,z.lr]);
+label.urt(btex $1$ etex, .5[z.l,z.ul]);
+label.lrt(btex $1$ etex, .5[z.l,z.ll]);
+label.top(btex $s$ etex, origin);
+label.top(btex $s$ etex, z.shift);
+label.lft(btex $4$ etex, z.l+z.shift-z4/2);
+endfig;
+
 
 beginfig(700) 
 save u;

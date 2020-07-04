@@ -40,14 +40,67 @@ for all large $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\parbf{\ref{ex:GH-inj}.}
+Let $\spc{U}$ be as in \ref{prop:GH=X+Y}.
+Suppose that $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$;
+we need to show that 
+\[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot \eps.\]
+
+Denote by $\hat{\spc{U}}$ the injective envelop of $\spc{U}$.
+Recall that $\spc{U}$, $\spc{X}$, and $\spc{Y}$ can be considered as subspaces of $\hat{\spc{U}}$, $\hat{\spc{X}}$, and $\hat{\spc{Y}}$ respectively.
+
+According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to distance preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
+Therefore we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
+
+
+Given $f\in \hat{\spc{U}}$,
+let us find $g\in \hat{\spc{X}}$ such that 
+\[|f(u)-g(u)|<2\cdot\eps\eqlbl{|g-f|}\]
+for any $u\in\spc{U}$.
+Note that the restriction $f|_{\spc{X}}$ is admissible on ${\spc{X}}$.
+By \ref{obs:extremal:below}, there is $g\in \hat{\spc{X}}$ such that 
+\[g(x)\le f(x)\eqlbl{g(x)=<f(x)}\]
+for any $x\in\spc{X}$.
+
+
+Recall that any extremal function is $1$-Lipschitz;
+in particular $f$ and $g$ are $1$-Lipschitz on $\spc{U}$.
+Therefore \ref{g(x)=<f(x)} and $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$ imply that
+\[g(u)< f(u)+2\cdot \eps\]
+for any $u\in\spc{U}$.
+By \ref{ex:+-c}, we also have 
+\[g(u)> f(u)-2\cdot \eps\]
+for any $u\in\spc{U}$.
+Whence \ref{|g-f|} follows.
+
+It follows that $\hat{\spc{Y}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{X}}$ in $\hat{\spc{U}}$.
+The same way we show that $\hat{\spc{X}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{Y}}$ in $\hat{\spc{U}}$.
+The later means that
+$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\spc{U}}<2\cdot\eps$,
+and therefore
+$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
+
+\parit{Comment.} 
+This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]{lang-pavon-zust}.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-505}
+\end{figure}
+They also show that the constant 2 is optimal.
+To see this look at the injective envelops of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metrric spaces is 1, while the distance between their injective envelops approaches 2 as $s\to\infty$. 
+
+
+
+
 \parbf{\ref{ex:GH-po:a}.}
-In order to check that $\dist{*}{*}{\spc{M}'}$ is a metric, it is sufficient to show that
-\[\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0 
+In order to check that $\dist{*}{*}{\GH'}$ is a metric, it is sufficient to show that
+\[\dist{\spc{X}}{\spc{Y}}{\GH'}=0 
 \quad\Longrightarrow\quad
 \spc{X}\iso\spc{Y};\]
 the remaining conditions are trivial.
 
-If $\dist{\spc{X}}{\spc{Y}}{\spc{M}'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
+If $\dist{\spc{X}}{\spc{Y}}{\GH'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
 \[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
 
 Choose a countable dense set $S$ in $\spc{X}$.
@@ -68,12 +121,12 @@ Therefore $f_\infty$ and $g_\infty$ are isometries as well.
 %Observe that 
 %$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
 %\quad\Longrightarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0$$
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$$
 %follows from Proposition~\ref{prop:GH-e-isom} and Exercise~\ref{ex:alm-isom:inverse}.
 %To prove that 
 %$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
 %\quad\Longleftarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\spc{M}'}\to 0,$$
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0,$$
 %Suppose that $f_n\:\spc{X}_n\to\spc{X}_\infty$ and $g_n\:\spc{X}_\infty\to\spc{X}_n$ are $\eps_n$-almost distance-nondecreasing maps for $\eps_n\to 0$.
 %Arguing as above, pass to a partial limit $h$ of the sequence $f_n\circ g_n\:\spc{X}_\infty\to\spc{X}_\infty$.
 %Note that $h$ is a distance non-deceasing map from a compact space to an itself.
