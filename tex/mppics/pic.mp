@@ -586,6 +586,47 @@ hatchfill p0 withcolor (77, 1mm, -.5bp);
 draw p0 pensemibold;
 endfig;
 
+beginfig(29)
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=origin;
+z.b=(1,0)*u;
+z.c=z.b rotated 60;
+z.aa=z.b+z.c;
+z.bb=z.c-z.b;
+z.cc=-z.bb;
+
+p1=z.cc..z.a..z.c..z.aa..cycle;
+p2=z.aa..z.b..z.a..z.bb..cycle;
+p3=z.bb..z.c..z.b..z.cc..cycle;
+
+p4=
+subpath (3,4) of p1
+--
+reverse(subpath (1,3) of p3)
+--
+reverse(subpath (1,2) of p1)
+--
+(subpath (2,4) of p2)
+--
+cycle;
+
+p5=subpath(3,4) of p2--subpath(0,1) of p2
+--
+reverse(subpath (0,2) of p3)
+--
+cycle;
+
+hatchfill p4  withcolor (20, 1mm, -.5bp);
+hatchfill p5  withcolor (120, 1mm, -.5bp);
+draw p1;
+draw p2;
+draw p3;
+
+endfig;
+
 beginfig(100) 
 save u;
 u:=.3cm;
