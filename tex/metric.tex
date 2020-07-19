@@ -2,8 +2,8 @@
 
 In this lecture we give some conventions used further
 and remind some the definitions related to metric spaces.
+We assume some prior knowledge of basic definitions related to metric spaces.
 For a more detailed introduction, we recommend first couple of chapters in the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov}.
-
 
 \section{Metric spaces}
 \label{sec:metric spaces}
@@ -16,12 +16,20 @@ Let us recall the definition of metric.
 
 \begin{thm}{Definition}\label{def:metric}
 A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
-\begin{enumerate}[(i)]
-\item $\dist{x}{y}{\spc{X}}\ge 0$,
-\item\label{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
-\item $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
-\item $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
-\end{enumerate}
+
+\begin{subthm}{metric>=0}
+$\dist{x}{y}{\spc{X}}\ge 0$,
+\end{subthm}
+
+\begin{subthm}{metric=0} $\dist{x}{y}{\spc{X}}= 0$ $\iff$ $x=y$,
+\end{subthm}
+
+\begin{subthm}{metric:sym} $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
+\end{subthm}
+
+\begin{subthm}{metric:triangle} $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
+\end{subthm}
+
 \end{thm}
 
 Recall that a \index{metric space}\emph{metric space} is a set with a metric on it.
@@ -51,7 +59,7 @@ for any points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
 
 \section{Variations of definition}
 
-\parbf{Pseudometrics.}
+\parbf{Pseudometris.}
 A metric for which the distance between two distinct points can be zero is called a \index{pseudometric}\emph{pseudometric}.
 In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from \ref{def:metric}.
 
@@ -122,7 +130,7 @@ Note that the original space $\spc{X}$ forms a dense subset in its completion $\
 More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
 It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
-In partucular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+In particular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
 
 \begin{thm}{Exercise}
 Show that completion of a metric space is complete.
@@ -223,10 +231,10 @@ to emphasize that the geodesic $[p q]$ is in the space  ${\spc{X}}$.
 In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need not  be unique.  
 However, once we write $[p q]$ we assume mean that we have made a choice of geodesic.
 
-A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parametrization by the unit interval $[0,1]$.
+A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parameterization by the unit interval $[0,1]$.
 
 A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
-A constant-speed parametrization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
+A constant-speed parameterization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
 
 \section{Geodesic spaces and metric trees}
 
@@ -248,7 +256,7 @@ In other words any triangle in $\spc{T}$ is a tripod;
 that is, for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
 
 Recall that the set 
-\[S(p,r)=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
+\[S_r(p)=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
 is called \emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
 
 \begin{thm}{Exercise}
@@ -257,7 +265,7 @@ That is,
 \[\dist{x}{z}{\spc{T}}
 \le
 \max\{\,\dist{x}{y}{\spc{T}},\dist{y}{z}{\spc{T}}\,\}\]
-for any $x,y,z\in S(p,r)_{\spc{T}}$.
+for any $x,y,z\in S_r(p)_{\spc{T}}$.
 \end{thm}
 
 
@@ -378,7 +386,7 @@ Directly from the definition, it follows that if a path $\alpha\:[0,1]\to\spc{X}
 \[\length\alpha\ge \dist{x}{y}{}.\]
 Set 
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
-where the greatest lower bound is taken for all paths connecing $x$ and~$y$.
+where the greatest lower bound is taken for all paths connecting $x$ and~$y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
 The metric $\yetdist{*}{*}{}$ is called \index{induced length metric}\emph{induced length metric}.
 
@@ -483,7 +491,7 @@ Before reading the proof, it is instructive to solve \ref{ex:loc-compact-not-pro
 
 \parit{Proof.}
 Let $\spc{X}$ be a locally compact length space.
-Given $x\in \spc{X}$, denote by $\rho(x)$ the supremum of all $R>0$ such that
+Given $x\in \spc{X}$, denote by $\rho(x)$ the least upper bound of all $R>0$ such that
 the closed ball $\cBall[x,R]$ is compact.
 Since $\spc{X}$ is locally compact, 
 $$\rho(x)>0
@@ -526,6 +534,14 @@ Construct a geodesic space $\spc{X}$ that is locally compact,
 but whose completion $\bar{\spc{X}}$ is neither geodesic nor locally compact.
 \end{thm}
 
+
+\begin{thm}{Advanced exercise}\label{ex:gross}
+Show that for any compact length-metric space $\spc{X}$ there is number $\ell$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
+that is, for any $x_1,\dots,x_n\in \spc{X}$ there is $z\in \spc{X}$ such that
+\[\tfrac1n\cdot\sum_i|x_i-z|_{\spc{X}}=\ell.\]
+\end{thm}
+
+
 Recall that \index{Borel measure}\emph{Borel measure} is a measure on a metric space that is defined on all open sets (and thus on all Borel sets).
 The space of Borel probability measures on a metric space $\spc{X}$ can be equipped with the following metric 
 \[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
@@ -536,13 +552,6 @@ The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein s
 Let $\spc{X}$ be a compact metric space.
 Show that $\Wass_1\spc{X}$ is a compact length metric space.
 \end{thm}
-
-\begin{thm}{Advanced exercise}\label{ex:gross}
-Show that for any compact length-metric space $X$ there is number $\ell$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
-that is, for any $x_1,\dots,x_n\in X$ there is $z\in X$ such that
-\[\tfrac1n\cdot\sum_i|x_i-z|_X=\ell.\]
-\end{thm}
-
 
 
 

@@ -3,7 +3,7 @@
 \parbf{\ref{ex:gross}.}
 If such number does not exist then the ranges of average distance functions have empty intersection.
 Since $X$ is a compact length-metric space, the range of any continuous function on $X$ is a closed interval.
-By 1-dimesional Helly's theorem, there is a pair of such range intervals that do not intersect.
+By 1-dimensional Helly's theorem, there is a pair of such range intervals that do not intersect.
 That is, for two point-arrays $(x_1,\dots,x_n)$ and $(y_1,\dots,y_m)$
 and their average distance functions 
 \[f(z)=\tfrac1n\cdot\sum_i|x_i-z|_X\quad\text{and}\quad h(z)=\tfrac1m\cdot\sum_j|y_j-z|_X,\] we have 
@@ -22,7 +22,7 @@ This is a result of Oliver Gross \cite{gross}.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\parbf{\ref{ex:compact-length}.} By Frechet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
+\parbf{\ref{ex:compact-length}.} By Fréchet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
 
 Denote by $\spc{L}=\Conv\spc{K}$ --- it is defined as the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
 (In other words, $\spc{L}$ is the intersection of all convex closed sets that contain $\spc{K}$.)
@@ -66,7 +66,7 @@ $\dist{p}{x}{}=f(x)$ for any $x\in K$.
 Without loss of generality we may assume that $f(x)>0$ for any $x\in K$.
 Since $K$ is compact, we may fix $\eps>0$ such that $f(x)>\eps$.
 
-Consider the sequenc $\eps_n=\tfrac\eps{100\cdot 2^n}$.
+Consider the sequence $\eps_n=\tfrac\eps{100\cdot 2^n}$.
 Choose a sequence of $\eps_n$-nets $N_n\subset K$.
 Applying universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
 Observe that the sequence $(p_n)$ is Cauchy and its limit $p$ meets 
@@ -75,7 +75,7 @@ $\dist{p}{x}{}=f(x)$ for any $x\in K$.
 Now, choose a sequence of points $(x_n)$ in $\spc{S}$.
 Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, and further to $K\cup\{x_1,x_2\}$, and so on.
 As a result we extend the distance-preserving map $f$ to whole sequence $(x_n)$.
-It remains to extend it continuisly to whole space~$\spc{S}$.
+It remains to extend it continuously to whole space~$\spc{S}$.
 
 \parbf{\ref{ex:sc-urysohn}.}
 It is sufficient to show that any compact subspace $\spc{K}$ of Urysohn space can be contracted to a point.
@@ -92,7 +92,7 @@ Note that points in the space $\spc{X}_\infty$ constructed in the proof of \ref{
 That defines a map 
 \[\lambda_t\:\spc{X}_\infty\to \spc{X}_\infty\]
 that scales all distances by factor $t$.
-The map $\lambda_t$ can be extended to the completion of $\spc{X}_\infty$, which is isometic to $\spc{U}_d$ (or $\spc{U}$).
+The map $\lambda_t$ can be extended to the completion of $\spc{X}_\infty$, which is isometric to $\spc{U}_d$ (or $\spc{U}$).
 
 Observe that 
 the map $\lambda_1$ is the identity  and $\lambda_0$ maps whole space to a single point, say $x_0$ --- this is the only point of $\spc{X}_0$.
