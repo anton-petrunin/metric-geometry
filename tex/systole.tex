@@ -237,7 +237,8 @@ Note that cutting from $\spc{Q}$ everything inside $\tilde S_c(p)$ and adding $\
 Since $\spc{Q}$ has almost minimal volume, we have
 \[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]-\tfrac\eps2\le \vol_{n-1}S_c(p).\]
 Therefore 
-\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]\le\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps\eqlbl{eq:volQ<ProP}\]
+\[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]\le\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\eps.
+\eqlbl{eq:volQ<ProP}\]
 Recall that $\spc{Q}$ is equipped with the induced length metric;
 therefore $\dist{p}{q}{\spc{Q}}\ge \dist{p}{q}{\spc{P}}$ for any $p,q\in \spc{Q}$;
 in particular, 
@@ -427,7 +428,8 @@ Use \ref{thm:width<vol} to conclude that $\vol\spc{M}\ge \eps_n \cdot r^n$
 for some $\eps_n>0$ that depends only on $n$.
 \end{thm} 
 
-The second statement in the exercise is a theorem of Marcel Berger~\cite{berger-n}.
+The second statement in the exercise is a theorem of Marcel Berger~\cite{berger-n};
+an inequality with optimal constant (with equality for round sphere) was obtained bu Marcel Berger and Jerry Kazdan \cite{berger-kazdan}. 
 
 
 \section{Essential manifolds}
@@ -467,7 +469,7 @@ Then
 \[\sys\spc{M}\le 4 \cdot \width \spc{M}.\]
 \end{thm}
 
-As a corollary form \ref{thm:sys<width++} and \ref{thm:width<vol} we get the so called \index{Gromov's systolic inequality}\emph{Gromov's systolic inequality}:
+As a corollary form \ref{thm:sys<width++} and \ref{thm:width<vol} we get the so called \index{systolic inequality!Gromov's systolic inequality}\emph{Gromov's systolic inequality}:
 
 \begin{thm}{Theorem}\label{thm:sys+}
 Suppose $\spc{M}$ is an essential $n$-dimensional Riemannian space.

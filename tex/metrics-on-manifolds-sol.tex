@@ -193,7 +193,7 @@ Alternatively one may notice that any curve in $(N,g)$ that is bordant to $A$ ha
 Therefore the level sets defined by $\distfun_A(x)_{(N,g)}=t$ have length at least $\tfrac s2$ if $0\le t\le \tfrac s2$.
 Applying coarea fromula we get that
 \[\area(\TT^2,g)=\area(N,g)\ge \tfrac12\cdot s^2.\]
-This estimate is twice better then the one above, but it is still far from the optimal bound $\tfrac2{\sqrt{3}}\cdot s^2$ in proved by Loewner inequality
+This estimate is twice better then the one above, but it is still far from the optimal bound $\tfrac2{\sqrt{3}}\cdot s^2$ in proved by Loewner.
 
 \begin{wrapfigure}{r}{44 mm}
 \vskip-4mm
@@ -233,10 +233,21 @@ In these two cases repeat the arguments in \ref{ex:sysRP2} or \ref{ex:sysT2} usi
 \parbf{\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
 
 \parbf{\ref{ex:besikovitch++}.}
+Apply the same construction as in the original Besicovitch inequality, assuming that the target rectangle
+$[0,d_1]\times\dots\times [0,d_n]$ equipped with the metric induced by the $\ell^\infty$ norm;
+apply \ref{prop:bilip-measure} where it is appropriate.
 
-\parbf{\ref{ex:huas/vol}.}
+\parbf{\ref{ex:huas/vol}.} Observe and use that 
+(1) both measures are invariant with respect to motions of the space,
+(2) the $\mu_n$-measure of the unit ball is~$2^n$. 
 
-\parbf{\ref{ex:2top-discs}.}
+\parbf{\ref{ex:2top-discs}.} Suppose that $\Delta_1\ne\Delta_2$.
+Consider the map $f\:\mathbb{S}^n\to \spc{X}$ such that the restriction to north and south hemispheres describe $\Delta_1$ and $\Delta_2$ respectively.
+Show that if $\Delta_1\ne\Delta_2$, then $\mathbb{S}^n$ can be parametrized by the boundary of unit cube in such a way that for any pair $A$, $A'$ of opposite faces their images $f(A)$, $f(A')$ do not overlap.
+
+Since $\spc{X}$ the map $f$ can be extended to the map of whole cube.
+It remains to apply \ref{ex:besikovitch++}.
+
 
 \parbf{\ref{ex:macrodimension}.}
 The following claim resembles Besikovitch inequality;
@@ -366,7 +377,7 @@ Choose $p\in\spc{P}$ such that the value
 \[\rho(p)=\max\set{\dist{p}{q}{\spc{P}}}{q\in\spc{P}}\]
 is minimal.
 Suppose $\rho(p)\ge\tfrac 12\cdot R$.
-Observe that there is a point $x\in \spc{P}\backslash\{p\}$ that lies on any shortest path starting from $p$ and length $\ge\tfrac 12\cdot R$.
+Observe that there is a point $x\z\in \spc{P}\backslash\{p\}$ that lies on any shortest path starting from $p$ and length $\ge\tfrac 12\cdot R$.
 Otherwise for any $r\in(0,\tfrac 12\cdot R)$ there would be at least two points on distance $r$ from $p$;
 by coarea inequality we get that the total length of $\spc{P}\cap \oBall(p,\tfrac 12\cdot R)$ is at least $R$ --- a contradiction.
 
@@ -383,7 +394,7 @@ The fist problem can be solved by passing to a baricentric subsdivision of $\spc
 denote by $v_{ij}$ and $v_{ijk}$ the new vertexes in the subdivision that correspond to edge $[v_iv_j]$ and triangle $[v_iv_jv_k]$ respectively.
 
 Further for each vertex $v_{ij}$ choose a point $p_{ij}\in V_i\cap V_j$ and set $f(v_{ij})=p_{ij}$.
-Similarly for each vertex $v_{ijk}$ choose a point $p_{ijk}\in V_i\cap V_j\cap V_k$ and set $f(v_{ijk})=p_{ijk}$.
+Similarly for each vertex $v_{ijk}$ choose a point $p_{ijk}\z\in V_i\cap V_j\cap V_k$ and set $f(v_{ijk})=p_{ijk}$.
 
 Note that 
 \[|p_i-p_{ij}|<R,\quad |p_i-p_{ijk}|<R,\quad\text{and}\quad |p_{ij}-p_{ijk}|<2\cdot R.\]
@@ -394,6 +405,18 @@ The second problem disappears if one takes estimate the distances bit more caref
 But one has to either redo this for the new construction, or, alternatively, show that two constructions produce homotopic maps on the 1-skeleton. 
  
 \parbf{\ref{ex:fillrad-inj}.}
+Choose a fine covering of $\spc{M}$ with multiplicity $<n+1$.
+Choose $\psi$ from $\spc{M}$ to the nerve $\spc{N}$ of the covering the same way as in the proof of \ref{thm:sys<width}.
+
+It remains to construct $f\:\spc{N}\to\spc{M}$ and show that $f\circ\psi$ is homotopic to the identity map.
+To do this, apply the same strategy as in the proof of \ref{thm:sys<width} together with the so called \index{geodesic cone construction}\emph{geodesic cone construction}
+described below.
+
+Let $\triangle$ be a simplex in a barycentric subdivision of $\spc{N}$.
+Suppose that a map $f$ is defined on one facet $\triangle'$ of $\triangle$ to $\spc{M}$ and $\oBall(p,r)\supset f(\triangle')$.
+Then one can extend $f$ to whole $\triangle$ such that the remaining vertex $v$ maps to $p$.
+Namely connect each point $f(x)$ to $p$ by geodesic path $\gamma_x$ (by assumption it is uniquely defined) and map $t\cdot x+(1-t)\cdot v$ to $\gamma_x(t)$.
+  
 
 \parbf{\ref{ex:connected-sum-essential}.}
 Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
