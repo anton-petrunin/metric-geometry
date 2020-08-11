@@ -1,18 +1,20 @@
 \chapter{Besikovitch inequality} 
 
+As it will be indicated in Section~\ref{sec:hausdorff-measure},
+most of the statements of this and the following lecture have counterpart for general length metrics on manifolds.
+
+For simplicity we discuss mostly Riemannian spaces --- these are specially nice length metrics on manifolds; they are smooth manifolds with metric defined by a metric tensor.
+These spaces are also most important in applications.
 
 \section{Riemannian spaces}
 
-Riemannian spaces are smooth manifolds with metric defined by a metric tensor.
-These are specially nice length metrics on manifolds.
-However most of the statements we are going to discuss have counterpart for general length metrics on manifolds.
 
 Let $M$ be a smooth manifold.
 A \index{metric tensor}\emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$ that depends smoothly on the point $p$.
 That is, if we fix a local coordinates on $M$ and write $g$ in this coordinates, then each component of $g$ is a smooth function. 
 
 A Riemannian manifold $(M,g)$ is a smooth manifold $M$ with a choice metric tensor $g$ on it.
-The metric tensor $g$ can be used to define length of curves, distances, and volume of regions in $M$.
+We are going to show that the metric tensor $g$ can be used to define length of curves, distances, and volume of regions in $M$.
 In particular any Riemannian manifold is a metric space which might be called \index{Riemannian space}\emph{Riemannian space}.
 
 
@@ -95,7 +97,8 @@ Observe that the differentials $d_pf_A$ and $d_pf_B$ written in these basises ar
 Evidently $|d_pf_A|\le 1$ and $|d_pf_B|\le 1$.
 Since the determinant of a matrix is the volume of the parallelepiped spanned on its rows, we get 
 \[|\det(\Jac_pf)|\le |d_pf_A|\cdot|d_pf_B|\le 1.\]
-Since $f\:\square\to\square$ is a Lipschitz onto map, the {}\emph{area formula} implies that 
+Since $f\:\square\to\square$ is a Lipschitz onto map, the {}\emph{area formula}%
+\footnote{The needed formula easily follows from \cite[3.2.3]{federer}.} implies that 
 \[\vol(\square,g)\ge \vol\square=1.\]
 \qedsf
 
@@ -157,41 +160,29 @@ Let $\spc{M}$ be a compact Riemannian space.
 The \index{systole}\emph{systole} of $\spc{M}$ (briefly $\sys\spc{M}$) is defined to be the least length of a noncontractible closed curve in $\spc{M}$.
 
 Let $\Lambda$ be a set of closed $n$-dimensional manifolds.
-We say that a systolic inequality holds for $\Lambda$ if there is a constant $c$ such that for any $M\in \Lambda$ and any metric tenor $g$ on $M$ we have
+We say that a \index{systolic inequality}\emph{systolic inequality} holds for $\Lambda$ if there is a constant $c$ such that for any $M\in \Lambda$ and any metric tenor $g$ on $M$ we have
 \[\sys(M,g)\le c\cdot \sqrt[n]{\vol(M,g)}.\]
 
 \begin{thm}{Exercise}\label{ex:sysT2}
-Use \ref{thm:besikovitch} to show that systolic inequality holds for the 2-torus $\TT^2$.
+Use \ref{thm:besikovitch} to show that systolic inequality holds for any Riemannian metric on the 2-torus $\TT^2$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sysRP2}
-Use \ref{thm:besikovitch} to show that systolic inequality holds for the real projective palane $\RP^2$.
+Use \ref{thm:besikovitch} to show that systolic inequality holds for any Riemannian metric on  the real projective plane $\RP^2$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sysSg}
-Use \ref{thm:besikovitch+} to show that systolic inequality holds for the set of all closed surfaces of positive genus.
+Use \ref{thm:besikovitch+} to show that systolic inequality holds for any Riemannian metric on any closed surfaces of positive genus.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sysS2xS1}
-Show that no systolic inequality holds for $\mathbb{S}^2\times\mathbb{S}^1$.
+Show that no systolic inequality holds for Riemannian metrics on $\mathbb{S}^2\times\mathbb{S}^1$.
 \end{thm}
 
 In the following lecture we will show that systolic inequality holds for many manifolds, in particular for torus of arbitrary dimension.
 
-\section{Remarks}
+\section{Hausdorff measure}\label{sec:hausdorff-measure}
 
-
-The optimal constants in the systolic inequality are known only in the following three cases:
-\begin{itemize}
-\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was proved by Pao Ming Pu \cite{pu}.\label{page:pu}
-\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \index{Loewner's torus inequality}\emph{Loewner's torus inequality}.
-\item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for a certain nonsmooth metric The statement was proved by Christophe Bavard \cite{bavard}.
-\end{itemize}
-The proofs of these results use the so called {}\emph{uniformization theorem}   available in the 2-dimensional case only.
-These proofs are beautiful, but they too far from metric geometry.
-A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
-
-\parbf{Hausdorff measure.}
 The results discussed in this lecture admit number generalizations to general length metrics on manifolds (not necessary induced by a metric tensor).
 Instead of volume one may use the so called 
 \emph{Hausdorff measure} which we are about to discuss briefly.
@@ -215,10 +206,10 @@ $$\mu_\alpha W
 & \bigcup_{n\in\NN}A_n\supset W.
 \end{aligned}
 }.$$
-For properties of Hausdorff measure we refer to a classical book of  Herbert Federer \cite{federer};
+For properties of Hausdorff measure we refer to the classical book of  Herbert Federer \cite{federer};
 in particular it shown that $\mu_\alpha$ is indeed a measure and $\mu_\alpha$-measurable sets include all Borel sets.
 
-The following proposition trivially follows from the definitions
+The following proposition follows immediately from the definitions
 
 \begin{thm}{Proposition}\label{prop:bilip-measure}
 Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$
@@ -229,7 +220,7 @@ Then
 
 \end{thm}
 
-The following exercise proves an weak analog of the Besikovitch inequality that works for arbitrary metric spaces.
+The following exercise provides a weak analog of the Besikovitch inequality that works for arbitrary metric spaces.
 
 \begin{thm}{Exercise}\label{ex:besikovitch++}
 Let $M$ be manifold with boundary and $\rho$ is a pseudometric on $M$.
@@ -242,21 +233,33 @@ Then
 \begin{thm}{Exercise}\label{ex:huas/vol}
 Let $\spc{M}$ an $n$-dimensional Riemannian manifold.
 Show that 
-\[\omega_n\cdot\mu_n\,A=\vol_n A\]
-for any Borel set $A\subset \spc{M}$, where $\omega_n$ denotes the volume of a ball in the $n$-dimensional Euclidean space with diameter 1.
+\[\tfrac{\omega_n}{2^n}\cdot\mu_n\,A=\vol_n A\]
+for any Borel set $A\subset \spc{M}$, where $\omega_n$ denotes the volume of a unit ball in the $n$-dimensional Euclidean.
 \end{thm}
 
-Note that $\omega_n<1$ for $n\ge 2$.
+Note that $\tfrac{\omega_n}{2^n}<1$ for $n\ge 2$.
 Therefore by \ref{ex:huas/vol}, the conclusions in \ref{ex:besikovitch++} (as well as its assumptions) are weaker than in \ref{thm:besikovitch+}.
 
 One may define systolic inequality on $n$-dimensional manifolds taking $\mu_n$ instead of volume. 
 The exercises \ref{ex:sysT2}--\ref{ex:sysS2xS1} admit straightforward generalization for this setting.
 
-\begin{thm}{Exercise}\label{}
+\begin{thm}{Exercise}\label{ex:2top-discs}
 Let $X$ be a contractible metric space with zero $(n\z+1)$-dimensional Hausdorff measure.
 Assume that $\Delta_1,\Delta_2\subset X$ are two embedded $n$-disks having the same boundary.
 Show that $\Delta_1=\Delta_2$.
 \end{thm}
+
+\section{Remarks}
+
+The optimal constants in the systolic inequality are known only in the following three cases:
+\begin{itemize}
+\item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was proved by Pao Ming Pu \cite{pu}.\label{page:pu}
+\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \index{Loewner's torus inequality}\emph{Loewner's torus inequality}.
+\item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for a certain nonsmooth metric The statement was proved by Christophe Bavard \cite{bavard}.
+\end{itemize}
+The proofs of these results use the so called {}\emph{uniformization theorem}   available in the 2-dimensional case only.
+These proofs are beautiful, but they too far from metric geometry.
+A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
 
 An analog of Exercise \ref{ex:GH-vol} does not hold for general metrics on a manifold with Hausdorff measure instead of volume.
 In fact there is a nondecreasing sequence of metric tensors $g_n$ on $M$, such that (1) $\vol(M,g_n)<1$ for any $n$ and (2) $\distfun_{g_n}$ converges to a metric on $M$ with arbitrary large Hausdorff measure of any given dimension; such example was constructed by Dmitri Burago, Sergei Ivanov, and David Shoenthal \cite{burago-ivanov-shoenthal}.

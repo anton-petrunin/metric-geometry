@@ -156,6 +156,12 @@ Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma_1$.
 We get an anulus with a Riemnnian metric on it $(N,g)$.
 Denote by $A$ and $A'$ the two components of its boundary.
 
+\begin{wrapfigure}{o}{45 mm}
+\vskip2mm
+\centering
+\includegraphics{mppics/pic-23}
+\end{wrapfigure}
+
 Assume that $\gamma_2$ is a shortest path that runs from $A$ to $A'$ in $(N,g)$.
 The image of $\gamma_2$ in $\TT^2$ connects two points in $\gamma_1$;
 further we will use the same notation for $\gamma_2$ and its image in $\TT^2$.
@@ -165,12 +171,6 @@ Therefore its length is at least $s$.
 The arc of $\gamma_1$ has length at most half of $\length\gamma_1$.
 Whence $\length \gamma_2\ge \tfrac s2$.
 In particular the distance from $A$ to $A'$ in $(N,g)$ is at least $\tfrac s2$.
-
-\begin{wrapfigure}{r}{45 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-23}
-\end{wrapfigure}
 
 Let us cut $(N,g)$ by $\gamma_2$, we obtain a square $(\square,g)$ with Riemnnian metric on it.
 Let us keep the notation $A$ and $A'$ for the pair of opposite sides in $(\square,g)$ that correspond to $A$ and $A'$ in $(N,g)$.
@@ -231,6 +231,12 @@ In these two cases repeat the arguments in \ref{ex:sysRP2} or \ref{ex:sysT2} usi
 
 
 \parbf{\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
+
+\parbf{\ref{ex:besikovitch++}.}
+
+\parbf{\ref{ex:huas/vol}.}
+
+\parbf{\ref{ex:2top-discs}.}
 
 \parbf{\ref{ex:macrodimension}.}
 The following claim resembles Besikovitch inequality;
@@ -366,6 +372,29 @@ by coarea inequality we get that the total length of $\spc{P}\cap \oBall(p,\tfra
 
 Moving $p$ toward to $x$ reduce $\rho(p)$ which contradicts the choice of~$p$.
 
+\parbf{\ref{ex:sys<width}.}
+The inequality $6\cdot R<s$ used twice:
+\begin{itemize}
+\item to shrink the triangle $[p_ip_jp_k]$ to a point;
+\item to extend the constructed homotopy on $\spc{M}^0$ to $\spc{M}^1$.
+\end{itemize}
+
+The fist problem can be solved by passing to a baricentric subsdivision of $\spc{N}^2$;
+denote by $v_{ij}$ and $v_{ijk}$ the new vertexes in the subdivision that correspond to edge $[v_iv_j]$ and triangle $[v_iv_jv_k]$ respectively.
+
+Further for each vertex $v_{ij}$ choose a point $p_{ij}\in V_i\cap V_j$ and set $f(v_{ij})=p_{ij}$.
+Similarly for each vertex $v_{ijk}$ choose a point $p_{ijk}\in V_i\cap V_j\cap V_k$ and set $f(v_{ijk})=p_{ijk}$.
+
+Note that 
+\[|p_i-p_{ij}|<R,\quad |p_i-p_{ijk}|<R,\quad\text{and}\quad |p_{ij}-p_{ijk}|<2\cdot R.\]
+Therefore perimeter of the triangle $[p_ip{ij}p_{ijk}]$ in the subdivision is less that $4\cdot R$.
+
+It solves the first problem.
+The second problem disappears if one takes estimate the distances bit more carefully taking into account that if an edge $e$ is mapped to $[p_ip_j]$ then the one of the vertexes of $e$ lies in $\oBall(p_i,R)$ and the other in  $\oBall(p_j,R)$.
+But one has to either redo this for the new construction, or, alternatively, show that two constructions produce homotopic maps on the 1-skeleton. 
+ 
+\parbf{\ref{ex:fillrad-inj}.}
+
 \parbf{\ref{ex:connected-sum-essential}.}
 Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
 Observe that shrinking $N$ to a point produces a map of degree 1 from $N\#M$ to $M$; that is, there is a map $f\:N\#M\to M$ that sends the fundamental class of $N\#M$ maps to the fundamental class of $M$.
@@ -374,3 +403,13 @@ Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to 
 From above, the composition $\iota\circ f\:N\#M\to K$ sends fundamental class of $N\#M$ to the same homology class in $K$.
 
 \parit{Remark.} Note that we only used that there is a map $N\#M\to M$ of degree 1. If essential manifold is defined using homologies with integer coefficients, then existence of map of nonzero degree is sufficient.
+
+\parbf{\ref{ex:product-essential}.}
+Suppose $\spc{M}_1$ and $\spc{M}_2$ are essential.
+Let $\iota_1\:\spc{M}_1\to\spc{K}_1$ and $\iota_2\:\spc{M}_2\to\spc{K}_2$ are the maps to aspherical spaces as in the definition (\ref{def:essential}).
+Show that the map
+$(\iota_1,\iota_2)\:\spc{M}_1\times\spc{M}_2\to\spc{K}_1\times\spc{K}_2$
+meets the definition.
+
+For the converse, use \ref{prop:essentioal-K(pi,1)}.
+
