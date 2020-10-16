@@ -1,52 +1,209 @@
-\chapter{Besikovitch inequality} 
+\chapter{Besicovitch inequality} 
 
 As it will be indicated in Section~\ref{sec:hausdorff-measure},
-most of the statements of this and the following lecture have counterpart for general length metrics on manifolds.
+most of the statements of this and the following lecture have counterparts for general length metrics on manifolds.
 
-For simplicity we discuss mostly Riemannian spaces --- these are specially nice length metrics on manifolds; they are smooth manifolds with metric defined by a metric tensor.
+For simplicity we discuss mostly Riemannian spaces --- these are specially nice and smooth length metrics on manifolds.
 These spaces are also most important in applications.
 
 \section{Riemannian spaces}
 
-
 Let $M$ be a smooth manifold.
-A \index{metric tensor}\emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$ that depends smoothly on the point $p$.
-That is, if we fix a local coordinates on $M$ and write $g$ in this coordinates, then each component of $g$ is a smooth function. 
+A \index{metric tensor}\emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$.
+Usually it is assumed that the metric tensor depends smoothly on the point $p$,
+but for our purposes continuity will be always sufficient;
+that is, one can fix a local coordinates at every point of $M$ so that the components of $g$ are continuous functions.
+(Few times we will need piecewise continuous metric tensors.)
 
-A Riemannian manifold $(M,g)$ is a smooth manifold $M$ with a choice metric tensor $g$ on it.
-We are going to show that the metric tensor $g$ can be used to define length of curves, distances, and volume of regions in $M$.
+A Riemannian manifold $(M,g)$ is a smooth manifold $M$ with a choice of metric tensor $g$ on it.
+
+The metric tensor $g$ can be used to define length of curves, distances, and volume of regions in $M$.
 In particular any Riemannian manifold is a metric space which might be called \index{Riemannian space}\emph{Riemannian space}.
 
-
-\parbf{Lengths and distances.}
-If $\gamma\:[a,b]\to M$ is a piecewise smooth curve, then 
+If $\gamma\:[a,b]\to M$ is a Lipschitz curve, then its \index{length}\emph{$g$-length} is defined by
 \[\length_g\gamma=\int_a^b\sqrt{g(\gamma'(t),\gamma'(t))}\cdot dt.\]
-Further we can define a metric on $M$ as least lower bound to lengths of piecewise smooth curves connecting two given points;
+Further we can define a metric on $M$ as least lower bound to lengths of Lipschitz curves connecting two given points;
 the described distance between points $x$ and $y$ will be denoted by $\dist{x}{y}{g}$ or $\distfun_x(y)_g$.
 The distance function from a point $x$ will be denoted by $(\distfun_x)_g$ or $\distfun_x$ if the choice of $g$ is evident.
 
-The following claim follows from Myers--Steenrod theorem \cite{myers-steenrod};
-it says that the metric on the Reimannian manifold {}\emph{remembers} everything about the Reimannian manifold.
+It is not hard to show that metric on the Reimannian manifold {}\emph{remembers} everything about the Reimannian manifold;
+it is a part of the so-called Myers--Steenrod theorem \cite{myers-steenrod}.
 
-\begin{thm}{Claim}
-Let $(M,g)$ be a Riemannian manifold.
-Then the metric $(x,y)\mapsto \dist{x}{y}{g}$ defines a length metric. Moreover this metric completely determines the manifold $M$ with its smooth structure and the metric tensor $g$.
+The following observation will be used to extend a few results from Euclidean space to Riemannian spaces.
+
+\begin{thm}{Observation}\label{obs:lip-chart}
+For any point $p$ in a Riemannian space $\spc{M}$ and any $\eps>0$ there is a $e^{\mp\eps}$-bi-Lipschitz bijection \index{chart}\emph{(chart)} $s\:W\to V$ from an open subset $W$ of the $n$-dimensional Euclidean space to some neighborhood $V\ni p$.
 \end{thm}
 
-\parbf{Volume.}
-If a region $R$ is covered by one chart $\iota\:U\to M$,
+\parit{Proof.}
+Choose $p\in U$ and a chart $s\:U\to \spc{M}$ that covers $p$.
+Note that there is a linear transformation $L$ such that for the metric tensor for the chart $s\circ L_i$ is coincides with the standard Euclidean tensor at the point $q=L^{-1}(p)$.
+
+Observe that the restriction of $s\circ L$ to a small neighborhood of $q$ is $e^{\mp\eps}$-bi-Lipschitz.
+Since $p$ is arbitrary, the observation follows.
+\qeds
+
+\section{Volume and Hausdorff measure}
+
+Let $\spc{M}=(M,g)$ be an $n$-dimensional Riemannian space.
+If a region $R\subset M$ is covered by one chart $\iota\:U\to \spc{M}$,
 then its volume can be defined as an integral 
-\[\vol R
+\[\vol_n R
 \df
 \int_{\iota^{-1}(R)}\sqrt{\det{g}}.\]
-In the general case we subdivide $R$ into (a countable collection of) regions $R_1,R_2\dots$ and define
-\[\vol R\df \vol R_1+\vol R_2+\dots\]
+In the general case we subdivide $R$ into a countable collection of regions $R_1,R_2\dots$ such that each region $R_i$ is covered by a chart $\iota_i\:U_i\to \spc{M}$ and define
+\[\vol_n R\df \vol_n R_1+\vol_n R_2+\dots\]
+The chain rule for multiple integrals implies that the right hand side does not depend on the choice of subdivision and the choice of charts.
 
-\section{Besikovitch inequality}
+In a similar fashion, we define integral along $\spc{M}$.
+Any Borel function $u\:\spc{M}\to \RR$, can be presented as a sum $u_1+u_2+\cdots$ such that the support of each function $u_i$ can be covered by one chart $\iota_i\:U_i\to \spc{M}$
+and set 
+\[\int_{p\in\spc{M}} u(p)
+\df
+\sum_i\left[\int_{x\in U_i} u_i\circ s(x)\cdot\sqrt{\det{g}}\right]
+\]
+
+Let $\spc{X}$ be a metric space and $R\subset \spc{X}$.
+The \index{Hausdorff measure}\emph{$\alpha$-dimensional Hausdorff measure} of $R$ is defined as 
+$$\mu_\alpha R
+\df
+\lim_{\eps\to0}
+\,
+\inf
+\set{\sum_{n\in\NN}(\diam A_n)^\alpha}
+{\begin{aligned}
+&\diam A_n<\eps\ \text{for}
+\\
+&\text{for each}\ n,\text{all}\  A_n
+\\
+&\text{are closed, and} 
+\\
+& \bigcup_{n\in\NN}A_n\supset R.
+\end{aligned}
+}.$$
+For properties of Hausdorff measure we refer to the classical book of  Herbert Federer \cite{federer};
+in particular it shown that $\mu_\alpha$ is indeed a measure and $\mu_\alpha$-measurable sets include all Borel sets.
+
+The following observation follows from \ref{obs:lip-chart};
+we will use it to extend some results in Geometric measure theory to Riemannian spaces.
+
+\begin{thm}{Observation}\label{obs:lipcart+}
+Suppose that a Borel set $R$ in an $n$-dimensional Riemannian space $\spc{M}$ is subdivided into a countable collection of subsets $R_i$ such that each $R_i$ is covered by an $e^{\mp\eps}$-bi-Lipschitz charts
+$s_i\:W_i\to \spc{M}$.
+Then
+\begin{align*}
+\vol R&\lege e^{\pm n\cdot\eps}\cdot\sum_i\vol[s_i^{-1}(R_i)]
+\intertext{and}
+\mu_n R&\lege e^{\pm n\cdot\eps}\cdot\sum_i\mu_n[s_i^{-1}(R_i)]
+\end{align*}
+
+\end{thm}
+
+According to Haar's theorem, %ref???
+a measure on $m$-dimensional Euclidean space that is invariant with respect to parallel translations is proportional to volume.
+Observe that 
+\begin{itemize}
+\item A ball in $n$-dimensional Euclidean space of diameter $1$ has unit Hausdorff measure.
+\item A unit cube in $n$-dimensional Euclidean space has volume.
+\end{itemize}
+Whence we get that for any Borel region $R\subset \RR^n$, we have 
+\[\vol_n R=\tfrac{\omega_n}{2^n}\cdot\mu_n R,\eqlbl{eq:vol/mu}\]
+where $\omega_n$ denotes the volume of a unit ball in the $n$-dimensional Euclidean space.
+
+Applying \ref{eq:vol/mu} together with \ref{obs:lipcart+}, we get that the inequality 
+\[\vol_n R\lege e^{\pm2\cdot n\cdot \eps}\cdot\tfrac{\omega_n}{2^n}\cdot\mu_n R\]
+holds for any $\eps>0$.
+Since $\eps>0$ is arbitrary, we get the following:
+
+\begin{thm}{Proposition}
+The identity \ref{eq:vol/mu} holds for any Borel region $R$ in an $n$-dimensional Riemannian space. 
+\end{thm}
+
+This proposition can be used to define volume of any dimension $k$ by setting
+\[\vol_k\df\tfrac{\omega_k}{2^k}\cdot\mu_k.\]
+
+\section{Area and coarea formulas}
+
+Suppose that $f\:\spc{M}\to\spc{N}$ is a Lipshitz map between $n$-dimensional Riemannian spaces $\spc{M}$ and $\spc{N}$.
+Then by Rademacher's theorem %ref???
+the differential $d_p f\:\T_p\spc{M}\to\T_{f(p)}\spc{N}$ is defined at almost all $p\in \spc{M}$.
+The differential is a linear map, which can be defined by multiplication by Jacobian matrix $\Jac_pf$ in orthonormal basises of $\T_p$ and $\T_{f(p)}\spc{N}$.
+
+The identity in the following proposition is called \emph{area formula}.
+
+\begin{thm}{Proposition}
+Let $f\:\spc{M}\to\spc{N}$ be a Lipshitz map between $n$-dimensional Riemannian spaces $\spc{M}$.
+Then for  any function $u\:\spc{M}\z\to \RR$ the following equality holds:
+\[\int_{p\in \spc{M}} u(p)\cdot |\det\Jac_pf|=\int_{q\in \spc{N}}\sum_{p\in f^{-1}(q)} u(p).\]
+
+\end{thm}
+
+\parit{Proof.}
+If $\spc{M}$ and $\spc{N}$ are isometric $n$-dimensional Euclidean space, then the statement follows from the standard area formula;
+see \cite[3.2.3]{federer}.
+
+Note that Jacobian of a $e^{\mp\eps}$-bi-Lipschitz map between $n$-dimensional Riemannian spaces (if defined) has determinant in the range $e^{\mp n\cdot\eps}$.
+By \ref{obs:lipcart+}, we get approximate version of the area formula 
+\[\int_{p\in \spc{M}} u(p)\cdot |\det\Jac_pf|
+\lege e^{\pm 3\cdot n\cdot \eps}\int_{q\in \spc{N}}\sum_{p\in f^{-1}(q)} u(p)\]
+for any positive $u$.
+
+Since $\eps>0$ is arbitrary, we get that the area formula holds for any positive $u$.
+Finally, since both sides of the area formula are linear in $u$, it holds for any $u$.
+\qeds
+
+The following inequality is called \emph{area inequality}.
+
+\begin{thm}{Corollary}\label{cor:area-inequality}
+Let $f\:\spc{M}\to\spc{N}$ be a locally Lipschitz map between $n$-dimensional Riemannian spaces.
+Then for any measurable subset $A\subset M$ we have
+\[\int_{p\in A} |\det(\Jac_p f)|\ge \vol[f(A)].\]
+
+In particular, if $|\det(\Jac_p f)|\le 1$ almost everywhere in $A$, then 
+\[\vol A \ge \vol[f(A)].\]
+\end{thm}
+
+\parit{Proof.} Choose $u$ to be the characteristic function of $A$ and apply the area formula.
+\qeds
+
+Suppose that $f\:\spc{M}\to\RR$ is a Lipshitz function defined on an $n$-dimensional Riemannian space $\spc{M}$.
+Then by Rademacher's theorem the differential $d_pf\:\T_p\spc{M}\to\RR$  and the gradient 
+$\nabla_pf\in\T_p\spc{M}$ are defined at almost all $p\in \spc{M}$.
+
+The identity in the following proposition is a partial case of the so-called \emph{coarea formula}.
+
+
+\begin{thm}{Proposition}\label{prop:coarea}
+Let $f\:\spc{M}\to\RR$ be a Lipshitz function defined on an $n$-dimensional Riemannian space $\spc{M}$.
+Suppose that the level sets $L_x\df f^{-1}(x)$ are equipped with $(n-1)$-dimensional volume $\vol_{n-1}\df\tfrac{\omega_{n-1}}{2^{n-1}}\cdot \mu_{n-1}$.
+Then for any function $u\:\spc{M}\to \RR$ the following equality holds
+\[\int_{p\in \spc{M}} u(p)\cdot |\nabla_pf|=\int_{x\in \RR}dx\cdot \int_{p\in L_x} u(p).\]
+\end{thm}
+
+\parit{Instead of proof.}
+If $\spc{M}$ is isometric to Euclidean space, then the statement follows from \cite[3.2.12]{federer}.
+The reduction to the Euclidean space is done the same way as in the proof of the area formula.
+\qeds
+
+The following inequality is a partial case of the so-called  \emph{coarea inequality}.
+
+\begin{thm}{Corollary}\label{cor:coarea}
+Let $\spc{M}$, $f$, and $L_x$ be as in \ref{prop:coarea}.
+
+Suppose that $f$ is 1-Lipschitz.
+Then for any measurable subset $A\subset M$ we have
+\[\vol_n A\ge \int_{x\in\RR} \vol_{n-1}[A\cap L_x]\cdot dx.\]
+\end{thm}
+
+\parit{Proof.} Choose $u$ to be the characteristic function of $A$ and apply the coarea formula.
+\qeds
+
+
+\section{Besicovitch inequality}
 
 \begin{thm}{Theorem}\label{thm:besikovitch}
 Let $g$ be a metric tensor on a unit $n$-dimensional cube $\square^n$.
-Suppose that the $g$-distances between the opposite faces of $\square^n$ are at leat $1$; that is, any piecewise smooth curve that connects opposite faces has $g$-length at least $1$.
+Suppose that the $g$-distances between the opposite faces of $\square^n$ are at least $1$; that is, any Lipschitz curve that connects opposite faces has $g$-length at least $1$.
 Then $\vol(\square^n, g)\ge 1$.
 \end{thm}
 
@@ -68,7 +225,7 @@ f_A(x)&\df\min\{\,\distfun_A(x)_g,1\,\},
 \\
 f_B(x)&\df\min\{\,\distfun_B(x)_g,1\,\}.
 \end{align*}
-Define $f\:\square\to\square$ as a map with coordinate funcions $f_A$ and $f_B$;
+Define $f\:\square\to\square$ as a map with coordinate functions $f_A$ and $f_B$;
 that is, $f(x)\df(f_A(x), f_B(x))$.
 
 Observe that $f$ maps each face to itself.
@@ -87,7 +244,7 @@ Similarly if $x\in B'$, then $f(x)\in B'$.
 
 Therefore 
 \[f_t(x)= t\cdot x + (1-t)\cdot f(x)\]
-defines a homotopy of maps of pair of spaces $(\square,\partial \square)$ from $f$ to the identity map.
+defines a homotopy of maps of the pair of spaces $(\square,\partial \square)$ from $f$ to the identity map.
 It follows that degree of $f$ is $1$; that is, $f$ sends the fundamental class of $(\square,\partial \square)$ to itself.
 In particular $f$ is onto.
 
@@ -97,14 +254,13 @@ Observe that the differentials $d_pf_A$ and $d_pf_B$ written in these basises ar
 Evidently $|d_pf_A|\le 1$ and $|d_pf_B|\le 1$.
 Since the determinant of a matrix is the volume of the parallelepiped spanned on its rows, we get 
 \[|\det(\Jac_pf)|\le |d_pf_A|\cdot|d_pf_B|\le 1.\]
-Since $f\:\square\to\square$ is a Lipschitz onto map, the {}\emph{area formula}%
-\footnote{The needed formula easily follows from \cite[3.2.3]{federer}.} implies that 
+Since $f\:\square\to\square$ is a Lipschitz onto map, the {}area inequality \ref{cor:area-inequality} implies that 
 \[\vol(\square,g)\ge \vol\square=1.\]
 \qedsf
 
 
 \begin{thm}{Theorem}\label{thm:besikovitch+}
-Let $(M,g)$ be Riemannian manifold and its boundary admits a degree 1 map $\partial M\to\partial\square^n$. 
+Let $(M,g)$ be a Riemannian manifold and its boundary admits a degree 1 map $\partial M\to\partial\square^n$. 
 Suppose $d_1,\dots, d_n$ the distances between the inverse images of pairs of opposite faces of $\square^n$ in $\partial M$.
 Then 
 \[\vol(M,g)\ge d_1\cdots d_n.\]
@@ -124,18 +280,39 @@ Suppose $g$ is a metric tensor on a regular hexagon $\varhexagon
 Is there a positive lower bound on $\area(\varhexagon,g)$?
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:cylinder}
+Let $g$ be a Riemannian metric on the cylinder $\mathbb{S}^1\z\times [0,1]$.
+Suppose that 
+\begin{itemize}
+\item 
+$g$-distance between pairs of points on the boundary circles $\mathbb{S}^1\times\{0\}$ and $\mathbb{S}^1\times\{1\}$ is at least 1, and 
+\item
+any curve $\gamma$ in $\mathbb{S}^1\times [0,1]$ that is homotopic to $\mathbb{S}^1\times\{0\}$ has $g$-length at least $1$.
+\end{itemize}
+
+\begin{subthm}{}
+Use Besicovitch inequality to show that $(\mathbb{S}^1\times [0,1],g)$ has area at least $\tfrac12$. 
+\end{subthm}
+
+\begin{subthm}{}
+ Modify the proof of Besicovitch inequality using coarea inequality (\ref{cor:coarea}) to show that $(\mathbb{S}^1\times [0,1],g)$ has area at least $1$. 
+\end{subthm}
+
+\end{thm}
+
+
 \begin{thm}{Exercise}\label{ex:gadograph}
-Let $V$ be a compact set in $\EE^d$ bounded by a hypersurface $\Sigma$.
+Let $V$ be a compact set in the $n$-dimensional Euclidean space $\EE^n$ bounded by a hypersurface $\Sigma$.
 Suppose $g$ is a Riemannian metric on $V$ such that 
-\[\dist{p}{q}{g}\ge\dist{p}{q}{\EE^d}\]
+\[\dist{p}{q}{g}\ge\dist{p}{q}{\EE^n}\]
 for any two points $p,q\in \Sigma$.
 Show that
-\[\vol(V,g)\ge \vol(V)_{\EE^d}.\]
+\[\vol_n(V,g)\ge \vol_n(V)_{\EE^n}.\]
  
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:involution-of-sphere}
-Suppose that sphere with Riemannian matric $(\mathbb{S}^2,g)$ admits an involution $\iota$ such that $\dist{x}{\iota(x)}{g}\ge 1$.
+Suppose that sphere with Riemannian metric $(\mathbb{S}^2,g)$ admits an involution $\iota$ such that $\dist{x}{\iota(x)}{g}\ge 1$.
 
 Show that $\area(\mathbb{S}^2,g)\ge \tfrac1{1000}$;
 try to show that $\area(\mathbb{S}^2,g)\ge \tfrac12$ or $\area(\mathbb{S}^2,g)\ge 1$.
@@ -164,7 +341,7 @@ We say that a \index{systolic inequality}\emph{systolic inequality} holds for $\
 \[\sys(M,g)\le c\cdot \sqrt[n]{\vol(M,g)}.\]
 
 \begin{thm}{Exercise}\label{ex:sysT2}
-Use \ref{thm:besikovitch} to show that systolic inequality holds for any Riemannian metric on the 2-torus $\TT^2$.
+Use \ref{thm:besikovitch} or \ref{ex:cylinder} to show that systolic inequality holds for any Riemannian metric on the 2-torus $\TT^2$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sysRP2}
@@ -181,35 +358,12 @@ Show that no systolic inequality holds for Riemannian metrics on $\mathbb{S}^2\t
 
 In the following lecture we will show that systolic inequality holds for many manifolds, in particular for torus of arbitrary dimension.
 
-\section{Hausdorff measure}\label{sec:hausdorff-measure}
+\section{Generalization}\label{sec:hausdorff-measure}
 
-The results discussed in this lecture admit number generalizations to general length metrics on manifolds (not necessary induced by a metric tensor).
-Instead of volume one may use the so called 
-\emph{Hausdorff measure} which we are about to discuss briefly.
-Hausdorff measure is only one of many analogs of volume that can be defined in a general to metric space.
+The results discussed in this lecture admit number generalizations to general length metrics on manifolds (not necessarily induced by a metric tensor).
+Instead of volume one may use the Hausdorff measure $\mu_n$, where $n$ is the dimension of the manifold.
 
-Let $\spc{X}$ be a metric space and $W\subset \spc{X}$.
-The \index{Hausdorff measure}\emph{$\alpha$-dimensional Hausdorff measure} of $W$ is defined as 
-$$\mu_\alpha W
-\df
-\lim_{\eps\to0}
-\,
-\inf
-\set{\sum_{n\in\NN}(\diam A_n)^\alpha}
-{\begin{aligned}
-&\diam A_n<\eps\ \text{for}
-\\
-&\text{for each}\ n,\text{all}\  A_n
-\\
-&\text{are closed, and} 
-\\
-& \bigcup_{n\in\NN}A_n\supset W.
-\end{aligned}
-}.$$
-For properties of Hausdorff measure we refer to the classical book of  Herbert Federer \cite{federer};
-in particular it shown that $\mu_\alpha$ is indeed a measure and $\mu_\alpha$-measurable sets include all Borel sets.
-
-The following proposition follows immediately from the definitions
+The following proposition follows immediately from the definitions.
 
 \begin{thm}{Proposition}\label{prop:bilip-measure}
 Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$
@@ -220,7 +374,7 @@ Then
 
 \end{thm}
 
-The following exercise provides a weak analog of the Besikovitch inequality that works for arbitrary metric spaces.
+The following exercise provides a weak analog of the Besicovitch inequality that works for arbitrary metric spaces.
 
 \begin{thm}{Exercise}\label{ex:besikovitch++}
 Let $M$ be manifold with boundary and $\rho$ is a pseudometric on $M$.
@@ -230,18 +384,12 @@ Then
 \[\mu_n(M,\rho)\ge d_1\cdots d_n.\]
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:huas/vol}
-Let $\spc{M}$ an $n$-dimensional Riemannian manifold.
-Show that 
-\[\tfrac{\omega_n}{2^n}\cdot\mu_n\,A=\vol_n A\]
-for any Borel set $A\subset \spc{M}$, where $\omega_n$ denotes the volume of a unit ball in the $n$-dimensional Euclidean.
-\end{thm}
 
+Recall that $\tfrac{\omega_n}{2^n}\cdot\mu_n=\vol_n$ for $n$-dimensional Riemannian spaces.
 Note that $\tfrac{\omega_n}{2^n}<1$ for $n\ge 2$.
-Therefore by \ref{ex:huas/vol}, the conclusions in \ref{ex:besikovitch++} (as well as its assumptions) are weaker than in \ref{thm:besikovitch+}.
+Therefore the conclusions in \ref{ex:besikovitch++} (as well as its assumptions) are weaker than in \ref{thm:besikovitch+}.
 
-One may define systolic inequality on $n$-dimensional manifolds taking $\mu_n$ instead of volume. 
-The exercises \ref{ex:sysT2}--\ref{ex:sysS2xS1} admit straightforward generalization for this setting.
+It is straightforward to define systolic inequality on $n$-dimensional manifolds with the Hausdorff measure $\mu_n$ instead of volume and prove analogs of the exercises \ref{ex:sysT2}--\ref{ex:sysS2xS1}.
 
 \begin{thm}{Exercise}\label{ex:2top-discs}
 Let $\spc{X}$ be a contractible metric space with zero $(n\z+1)$-dimensional Hausdorff measure.
@@ -254,12 +402,12 @@ Show that $\Delta_1=\Delta_2$.
 The optimal constants in the systolic inequality are known only in the following three cases:
 \begin{itemize}
 \item For real projective plane $\RP^2$ the constant is $\tfrac\pi2$ --- the equality holds for a quotient of a round sphere by isometric involution. The statement was proved by Pao Ming Pu \cite{pu}.\label{page:pu}
-\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so called \index{Loewner's torus inequality}\emph{Loewner's torus inequality}.
+\item For torus $\TT^2$ the constant is $\tfrac2{\sqrt{3}}$ --- the equality holds for a flat torus obtained from a regular hexagon by identifying opposite sides; this is the so-called \index{Loewner's torus inequality}\emph{Loewner's torus inequality}.
 \item For the Klein bottle $\RP^2\#\RP^2$  the constant is $\tfrac\pi{2\cdot\sqrt2}$ --- the equality holds for a certain nonsmooth metric The statement was proved by Christophe Bavard \cite{bavard}.
 \end{itemize}
-The proofs of these results use the so called {}\emph{uniformization theorem}   available in the 2-dimensional case only.
-These proofs are beautiful, but they too far from metric geometry.
+The proofs of these results use the so-called {}\emph{uniformization theorem}   available in the 2-dimensional case only.
+These proofs are beautiful, but they are too far from metric geometry.
 A good survey on the subject is written by Christopher Croke and Mikhail Katz \cite{croke-katz}.
 
-An analog of Exercise \ref{ex:GH-vol} does not hold for general metrics on a manifold with Hausdorff measure instead of volume.
+An analog of Exercise \ref{ex:GH-vol} with Hausdorff measure instead of volume does not hold for general metrics on a manifold.
 In fact there is a nondecreasing sequence of metric tensors $g_n$ on $M$, such that (1) $\vol(M,g_n)<1$ for any $n$ and (2) $\distfun_{g_n}$ converges to a metric on $M$ with arbitrary large Hausdorff measure of any given dimension; such example was constructed by Dmitri Burago, Sergei Ivanov, and David Shoenthal \cite{burago-ivanov-shoenthal}.

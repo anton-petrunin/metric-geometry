@@ -1,5 +1,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\parbf{\ref{ex:linear}.}
+Choose a nonprinciple ultrafilder $\omega$ and set $L(\bm{s})=s_\omega$.
+It remains to observe that $L$ is linear.
+
+\parbf{\ref{ex:lim(tree)}.}
+Observe that if a path $\gamma$ in a metric tree from $p$ to $q$ pass thru a point $x$ on distance $\ell$ from $[pq]$, then 
+\[\length\gamma\ge \dist{p}{q}{}+2\cdot \ell.\eqlbl{eq:+ell}\]
+
+Suppose that $\spc{T}_n$ is a sequence of metric trees that $\omega$-converges to $\spc{T}_\omega$.
+By \ref{obs:ultralimit-is-geodesic}, the space $\spc{T}_\omega$.
+
+The uniqueness will follow from \ref{eq:+ell}.
+Indeed, if for a geodesic $[p_\omega q_\omega]$ there is another geodesic $\gamma_\omega$ connecting its ends,
+then it have to pass thru a point $x_\omega\notin [p_\omega q_\omega]$.
+Choose a sequences $p_n,q_n,x_n\in\spc{T}_n$ such that $p_n\to p_\omega$, $q_n\to q_\omega$, $x_n\to x_\omega$ and $n\to\omega$.
+Then 
+\begin{align*}
+\dist{p_\omega}{q_\omega}{}&=\length\gamma\ge \lim_{n\to\omega}(\dist{p_n}{x_n}{}+\dist{q_n}{x_n}{})\ge
+\\
+&\ge \lim_{n\to\omega}(\dist{p_n}{q_n}{}+2\cdot\ell_n)=
+\\
+&=\dist{p_\omega}{q_\omega}{}+2\cdot\ell_\omega.
+\end{align*}
+Since $x_\omega\notin [p_\omega q_\omega]$, we have that $\ell_\omega>0$ --- a contradiction.
+
+To prove the last property consider sequence of centers of tripods $m_n$ for points $x_n,y_n,z_n\in \spc{T}_n$ and observe that its ultralimit $m_\omega$ is a the center of tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.
+
 \parbf{\ref{ex:ultrapower}.}
 Part \ref{SHORT.ex:ultrapower:a} follows directly from the definitions.
 Further we consider $\spc{X}$ as a subset of $\spc{X}^\omega$.
@@ -26,26 +53,3 @@ The same argument as in \ref{SHORT.ex:ultrapower:compact} shows that any $\omega
 Further if $(x_n)$ is not  $\omega$-bounded, then 
 \[\lim_{n\to\omega}\dist{p}{x_n}{\spc{X}}=\infty;\]
 that is $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
-
-\parbf{\ref{ex:lim(tree)}.}
-Observe that if a path $\gamma$ in a metric tree from $p$ to $q$ pass thru a point $x$ on distance $\ell$ from $[pq]$, then 
-\[\length\gamma\ge \dist{p}{q}{}+2\cdot \ell.\eqlbl{eq:+ell}\]
-
-Suppose that $\spc{T}_n$ is a sequence of metric trees that $\omega$-converges to $\spc{T}_\omega$.
-By \ref{obs:ultralimit-is-geodesic}, the space $\spc{T}_\omega$.
-
-The uniqueness will follow from \ref{eq:+ell}.
-Indeed, if for a geodesic $[p_\omega q_\omega]$ there is another geodesic $\gamma_\omega$ connecting its ends,
-then it have to pass thru a point $x_\omega\notin [p_\omega q_\omega]$.
-Choose a sequences $p_n,q_n,x_n\in\spc{T}_n$ such that $p_n\to p_\omega$, $q_n\to q_\omega$, $x_n\to x_\omega$ and $n\to\omega$.
-Then 
-\begin{align*}
-\dist{p_\omega}{q_\omega}{}&=\length\gamma\ge \lim_{n\to\omega}(\dist{p_n}{x_n}{}+\dist{q_n}{x_n}{})\ge
-\\
-&\ge \lim_{n\to\omega}(\dist{p_n}{q_n}{}+2\cdot\ell_n)=
-\\
-&=\dist{p_\omega}{q_\omega}{}+2\cdot\ell_\omega.
-\end{align*}
-Since $x_\omega\notin [p_\omega q_\omega]$, we have that $\ell_\omega>0$ --- a contradiction.
-
-To prove the last property consider sequence of centers of tripods $m_n$ for points $x_n,y_n,z_n\in \spc{T}_n$ and observe that its ultralimit $m_\omega$ is a the center of tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.

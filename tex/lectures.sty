@@ -23,16 +23,6 @@
 \vskip0.5em}%
 }
 
-\usepackage[russian,
-slovak,
-german,
-english]{babel}
-\usepackage[T1,T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
-%\DeclareUnicodeCharacter{0301}{*************************************}
-
-
 \usepackage[
 sorting=debug,
 bibencoding=auto,
@@ -50,6 +40,16 @@ isbn=false]{biblatex}
 \renewbibmacro{in:}{}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{library.bib}
+
+\usepackage[russian,
+slovak,
+german,
+english]{babel}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
+%\DeclareUnicodeCharacter{0301}{*************************************}
+
 
 \DeclareFieldFormat{postnote}{#1}
 \DeclareFieldFormat{multipostnote}{#1}
@@ -120,6 +120,8 @@ isbn=false]{biblatex}
 \def\eps{\varepsilon}%  
 \def\ge{\geqslant}%
 \def\le{\leqslant}%
+\def\lege{\lessgtr}
+\def\gele{\gtrless}
 \def\phi{\varphi}%
 \def\<{\langle}%
 \def\>{\rangle}%

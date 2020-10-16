@@ -5,11 +5,10 @@ This lecture is based on a paper of Alexander Nabutovsky \cite{nabutovsky}.
 \section{Partition of unity}
 
 \begin{thm}{Proposition}\label{thm:part-unit}
- Let $\{V_1,\dots,V_k\}$ be a finite open covering of a compact metric space ${\spc{X}}$.
-Then there are Lipschitz functions $\psi_i\:{\spc{X}}\z\to[0,1]$ such that
-if $\psi_i(x)>0$ then $x\in V_i$ and
-$$\sum_i\psi_i(x)=1$$
-for any $x\in {\spc{X}}$.
+ Let $\{V_i\}$ be a locally finite open covering of a metric space ${\spc{X}}$.
+Then there are Lipschitz functions $\psi_i\:{\spc{X}}\z\to[0,1]$ such that (1) if $\psi_i(x)>0$, then $x\in V_i$ and (2) for any $x\in {\spc{X}}$ we have
+$$\sum_i\psi_i(x)=1.$$
+
 \end{thm}
 
 \parit{Proof.}
@@ -28,24 +27,24 @@ Observe that by construction the functions $\psi_i$ meet the conditions in the p
 \qedsf
 
 A collection of functions $\{\psi_i\}$ that meets the conditions in \ref{thm:part-unit} is called 
-a \index{partition of unity}\emph{partition of unity subordinate to the open covering} $\{V_1,\dots,V_k\}$.
+a \index{partition of unity}\emph{partition of unity subordinate to the open covering} $\{V_i\}$.
 
 \section{Nerves}
 
 Let $\{V_1,\dots,V_k\}$ be a finite open cover of a compact metric space $\spc{X}$.
 Consider an abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertexes $v_{i_1},\dots, v_{i_m}$ is included in $\spc{N}$ if 
 the intersection $V_{i_1}\cap\dots\cap V_{i_m}$ is nonempty.
-The obtained simplicial complex $\spc{N}$ called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
-
 \begin{figure}[h!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1402}
 \end{figure}
+The obtained simplicial complex $\spc{N}$ called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
+Evidently $\spc{N}$ is a finite simplicial complex ---
+it is a subcomplex of a simplex with the vertexes $\{v_1,\dots,v_k\}$.
 
-Note that $\spc{N}$ is a finite simplicial complex;
-it is a subcomplex of a simplex with the vertixes $\{v_1,\dots,v_k\}$.
-The nerve $\spc{N}$ has dimension at most $n$ if and only if the covering $\{V_1,\dots,V_k\}$ has multiplicity is at most $n+1$;
+
+Note that the nerve $\spc{N}$ has dimension at most $n$ if and only if the covering $\{V_1,\dots,V_k\}$ has \emph{multiplicity} is at most $n+1$;
 that is, any point $x\in\spc{X}$ belongs to
 at most $n+1$ sets of the covering.
 
@@ -56,9 +55,11 @@ $$\set{v_i}{\psi_i(x)>0}$$
 is formed by vertexes of a simplex in the nerve.
 Therefore 
 $$\psi\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
-describes a Lipschitz map from ${\spc{X}}$ to the nerve $\spc{N}$ of $\{V_i\}$;
-here the point $x$ is mapped to the point in $\spc{N}$ with barycentric coordinates $\psi_1(x),\dots,\psi_k(x)$.
-In other words we proved the following:
+describes a Lipschitz map from ${\spc{X}}$ to the nerve $\spc{N}$ of $\{V_i\}$.
+In other words, $\psi$ maps a point $x$ to the point in $\spc{N}$ with \emph{barycentric coordinates} $(\psi_1(x),\dots,\psi_k(x))$.
+
+Recall that star $\Star_{v_i}$ of a vertex $v_i$ is defined as the union of the interiors of all simplicies that have $v_i$ as a vertex.
+Since $\psi_i(x)>0$ implies that $x\in V_i$, we get the following:
 
 \begin{thm}{Proposition}\label{prop:space->nerve}
 Let $\spc{N}$ be a nerve of an open covering $\{V_1,\z\dots,V_k\}$ of a compact metric space $\spc{X}$.
@@ -82,17 +83,17 @@ The $n$-th width of $\spc{X}$ (briefly $\width_n\spc{X}$) is defined as the leas
 \parbf{Remarks.}
 \begin{itemize}
 \item Observe that 
-\[\width_0\spc{X}\ge\width_1\spc{X}\ge\dots\]
+\[\width_0\spc{X}\ge\width_1\spc{X}\ge\width_2\spc{X}\ge\dots\]
 for any compact metric space $\spc{X}$.
 Moreover, if $\spc{X}$ is connected, then 
 \[\width_0\spc{X}=\rad\spc{X}.\]
 \item 
-Usually width is defined using diameter instead of radius, but the result differ at most twice.
-Namely if $r$ is the radius-width and $d$ --- diameter-width for the same $n$, then 
+Usually width is defined using diameter instead of radius, but the results differ at most twice.
+Namely if $r$ is the $n$-th radius-width and $d$ --- the $n$-th diameter-width, then 
 $r\le d\le 2\cdot r$.
 
 \item Note that \index{Lebesgue covering dimension}\emph{Lebesgue covering dimension} of $\spc{X}$ can be defined as the least number $n$ such that $\width_n\spc{X}=0$.
-Another closely related notion is the so called \index{macroscopic dimesion}\emph{macroscopic dimesion on scale $R$};
+Another closely related notion is the so-called \index{macroscopic dimesion}\emph{macroscopic dimesion on scale $R$};
 it is defined as the  least number $n$ such that $\width_n\spc{X}<R$.
 \end{itemize}
 
@@ -117,27 +118,38 @@ for any $s\in \spc{N}$.
 
 \section{Riemannian polyhedrons}
 
-A \index{Riemannian polyhedron}\emph{Riemannian polyhedron} is defined as a finite simplicial complex with a metric tensor on each simplex such that the restriction of the metric tensor to a subsymplex coinsides with the metric on the subsmplex.
-The dimension of Riemannian polyhedron is defined as the largest dimension it its triangulation.
-For Riemannian polhedron one can define length of curves and volume the same way as for Riemannian manifolds.
+A \index{Riemannian polyhedron}\emph{Riemannian polyhedron} is defined as a finite simplicial complex with a metric tensor on each simplex such that the restriction of the metric tensor to a subsimplex coincides with the metric on the subsimplex.
+
+The \emph{dimension} of a Riemannian polyhedron is defined as the largest dimension in its triangulation.
+For Riemannian polyhedron one can define length of curves and volume the same way as for Riemannian manifolds.
 
 Further we will apply the notion of width only to compact Riemannian polyhedrons.
 If $\spc{P}$ is an $n$-dimensional Riemannian polyhedron, then 
 we suppose that
 \[\width\spc{P}\df\width_{n-1}\spc{P}.\]
 
+A polyhedron $\spc{Q}$ is called \emph{pure}; that is, any simplex of $\spc{Q}$ lies in a simplex of maximal dimension $n=\dim \spc{Q}$.
+
+
+\begin{thm}{Exercise}
+Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron and $\spc{Q}$ be a maximal pure subpolyhedron of  $\spc{P}$.
+Show that 
+\[\width\spc{Q}=\width\spc{P}.\]
+
+\end{thm}
+
 Let $\spc{P}$ be an $n$-dimensional Riemnnian polyhedron.
 Let us define \index{volume profile}\emph{volume profile} of $\spc{P}$ as a function 
-returning largest volume of $r$-ball in $\spc{P}$;
-that is, $\VolPro_{\spc{P}}\:\RR_+\to\RR_+$ is defined by 
+returning largest volume of $r$-ball in~$\spc{P}$;
+that is, the volume profile of $\spc{P}$ is a function $\VolPro_{\spc{P}}\:\RR_+\to\RR_+$ defined by 
 \[\VolPro_{\spc{P}}(r)\df \sup\set{\vol_n \oBall(p,r)}{p\in\spc{P}}.\]
 Note that 
-$\VolPro_{\spc{P}}$ is a nondecreasing function and
-\[\VolPro_{\spc{P}}(r)\le\vol_n\spc{P}.\]
+$r\mapsto \VolPro_{\spc{P}}(r)$ is nondecreasing  and
+\[\VolPro_{\spc{P}}(r)\le\vol\spc{P}.\]
 Moreover, if $\spc{P}$ is connected, then equality holds
-for all large $r$.
+for $r\ge \rad \spc{P}$.
 
-Note that if $\spc{P}$ is a 1-dimensional connected Riemannian polyhedron, then 
+Note that if $\spc{P}$ is a connected 1-dimensional Riemannian polyhedron, then 
 \[\width\spc{P}=\width_0\spc{P}=\rad\spc{P}.\]
 
 \begin{thm}{Exercise}\label{ex:1D-case}
@@ -145,7 +157,7 @@ Suppose $\spc{P}$ be a 1-dimensional Riemannian polyhedron.
 Suppose $\VolPro_{\spc{P}}(R)<R$ for some $R>0$.
 Show that 
 \[\width \spc{P}<R.\]
-Try to show that $c=\tfrac 12$ is the optimal constant such that 
+Try to show that $c=\tfrac 12$ is the optimal constant for which the following inequality holds: 
 \[\width \spc{P}<c\cdot R.\]
 \end{thm}
 
@@ -159,37 +171,36 @@ holds for {}\emph{some} $R>0$, then
 \[\width\spc{P}\le  R.\]
 \end{thm}
 
-Since $\VolPro_{\spc{P}}(R)\le \vol\spc{P}$ for any $R>0$,
+Since $\VolPro_{\spc{P}}(R)\le \vol_n\spc{P}$ for any $R>0$,
 we get the following:
 
 \begin{thm}{Corollary}\label{thm:width<vol}
 For any $n$-dimensional Reimannian polyhedron $\spc{P}$, we have
-\[\width\spc{P}\le n\cdot \sqrt[n]{\vol\spc{P}}.\]
+\[\width\spc{P}\le n\cdot \sqrt[n]{\vol_n\spc{P}}.\]
 
 \end{thm}
 
-In the proof of \ref{thm:width<volpro}, we will use the following three technical statements,
-the proofs are left as exercises.
-
+In the proof of \ref{thm:width<volpro}, we will use the following three technical statements.
 The following statement can be obtained by modifying a smoothing procedure for functions defined on Euclidean space.  
 
-\begin{thm}{Smoothing procedure}
+\begin{thm}{Smoothing procedure}\label{smoothing-procedure}
 Let $\spc{P}$ be a Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function.
-Then for any $\delta>0$ there is a  1-Lipschitz function $\tilde f\:\spc{P}\to \RR$ that is smooth on each simplex of the triangulation and $\delta$-close to $f$.
+Then for any $\delta>0$ there is a \emph{smooth} 1-Lipschitz function $\tilde f\:\spc{P}\to \RR$;
+that is, $f$ is smooth on each simplex of the triangulation and $\delta$-close to $f$.
 \end{thm}
 
 The following statement can be proved by applying the classical Sard's theorem to each simplex of a Reimannian polyhedron.
 
-\begin{thm}{Sard's theorem}
-Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a function that is smooth on each simplex.
+\begin{thm}{Sard's theorem}\label{sard}
+Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a smooth function.
 Then for almost all values $a$, each component of the inverse image $f^{-1}\{a\}$ equipped with the induced metric is a Reimannian polyhedron of dimension at most $n-1$.
 \end{thm}
 
-The proof of the following statement goes along the same lines as the proof of the classical coarea formula \cite[3.2.11]{federer}. 
+The following statement can be proved by applying the coarea inequality (\ref{cor:coarea}) to the restriction of $f$ to each simplex of the polyhedron and summing up the results.
 
 \begin{thm}{Coarea inequality}
-Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a 1-Lipschitz function that is smooth on each simplex.
-Set $V=\vol_n (f^{-1}[a,b])$ and $A(t)=vol_{n-1}(f^{-1}\{t\})$.
+Let $\spc{P}$ be an $n$-dimensional Reimannian polyhedron and $f\:\spc{P}\to \RR$ be a smooth 1-Lipschitz function.
+Set $V\z=\vol_n (f^{-1}[a,b])$ and $A(t)=\vol_{n-1}(f^{-1}\{t\})$.
 Then 
 \[\int_a^bA(t)\cdot dt\ge V .\]
 In particular there is a subset of positive measure $S\subset [a,b]$ such that the inequality 
@@ -211,7 +222,7 @@ Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\s
 
 \end{thm}
 
-The idea of the proof is borrowed from the theory minimal surfaces.
+The idea of the proof is borrowed from the theory of minimal surfaces.
 Namely it reminds the proof of the following statement: 
 \emph{if a point $p$ lies on an compact area minimizing surface $\Sigma$ and $\partial\Sigma \cap \oBall(p,r)=\emptyset$, then
 \[\area(\Sigma\cap \oBall(p,r))\le \tfrac12\cdot \area\mathbb{S}^2\cdot r^2.\]
@@ -220,20 +231,23 @@ Namely it reminds the proof of the following statement:
 
 \parit{Proof.}
 Choose small $\delta>0$.
-Applying the smoothing procedure, we can exchange each distance function $\distfun_p$ on $\spc{P}$ by $\delta$-close smooth 1-Lipschitz function, which will be denoted by $\widetilde \distfun_p$.
+Applying the smoothing procedure (\ref{smoothing-procedure}), we can exchange each distance function $\distfun_p$ on $\spc{P}$ by $\delta$-close smooth 1-Lipschitz function, which will be denoted by $\widetilde \distfun_p$.
 
-By Sard's theorem, almost all level sets 
+By Sard's theorem (\ref{sard}), almost all level sets 
 \[\tilde S_c(p)=\set{x\in \spc{P}}{\widetilde \distfun_p(x)=c}\]
 are smooth Riemannian polyhedrons of dimension at most $n-1$.
-Since $\delta$ is small, the coarea inequality implies that we can choose $c\z\in(r_0\z+\delta, r_1-\delta)$ such that $\tilde S_c(p)$ is a subpolyhedron and 
+Since $\delta$ is small, the coarea inequality implies that  
 \begin{align*}
 \vol_{n-1}\tilde S_c(p)&\le \tfrac1{r_1-r_0-2\cdot\delta}\cdot\vol_n[\oBall(p,r_1)]<
 \\
 &<\tfrac1{r_1-r_0}\cdot \VolPro_{\spc{P}}(r_1)+\tfrac\eps2.
 \end{align*}
+we for some $c\z\in(r_0\z+\delta, r_1-\delta)$;
+moreover we can assume that the level set $\tilde S_c(p)$ is a subpolyhedron.
 
-Suppose $\spc{Q}$ is an $R$-separating subpolyhedron in $\spc{P}$ with almost minimal volume, say its volume is at most $\tfrac\eps2$-far from the greatest lower bound.
-Note that cutting from $\spc{Q}$ everything inside $\tilde S_c(p)$ and adding $\tilde S_c(p)$ keeps it to be $R$-separating subpolyhedron.
+Suppose $\spc{Q}$ is an $R$-separating subpolyhedron in $\spc{P}$ with almost minimal volume;
+say its volume is at most $\tfrac\eps2$-far from the greatest lower bound.
+Note that cutting from $\spc{Q}$ everything inside $\tilde S_c(p)$ and adding $\tilde S_c(p)$ keeps it as a $R$-separating subpolyhedron.
 Since $\spc{Q}$ has almost minimal volume, we have
 \[\vol_{n-1}[\spc{Q}\cap \oBall(p,r_0)_{\spc{P}}]-\tfrac\eps2\le \vol_{n-1}S_c(p).\]
 Therefore 
@@ -249,7 +263,6 @@ Hence \ref{eq:volQ<ProP} implies the lemma.
 
 \begin{thm}{Lemma}\label{lem:separating-width}
 Let $\spc{Q}$ be an $R$-separating subpolyhedron in an $n$-dimensional Riemannian polyhedron $\spc{P}$.
-Suppose $\width\spc{Q}\le R$.
 Then 
 \[\width\spc{Q}\le R
 \quad\Longrightarrow\quad
@@ -257,7 +270,7 @@ Then
 \end{thm}
 
 \parit{Proof.}
-Start with an open covering $\{V_1,\dots,V_k\}$ of $\spc{Q}$ of multiplicity $\le n$ with radiuses of the sets in the intrinsic metric $\le R$.
+Start with an open covering $\{V_1,\dots,V_k\}$ of $\spc{Q}$ of multiplicity at most $n$ with radiuses of the sets in the intrinsic metric $\le R$.
 
 Note that $\{V_1,\dots,V_k\}$ can be converted into an open covering of
 a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
@@ -265,7 +278,7 @@ This can be done by setting
 \[V_i'=\bigcup_{x\in V_i}\oBall(x,r_x),\]
 where $r_x=\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
 
-Adding to  $\{V_i'\}$ all the components of $\spc{P}\backslash \spc{Q}$,
+By adding to  $\{V_i'\}$ all the components of $\spc{P}\backslash \spc{Q}$,
 we increase the multiplicity by at most 1 and obtain a covering of $\spc{P}$.
 The statement follows since $\dim \spc{P}= \dim \spc{Q}\z+1$.
 \qeds
@@ -299,8 +312,10 @@ It remains to apply \ref{lem:separating-width}.
 
 \section{Width bounds systole}
 
+Recall that a topological space $\spc{K}$ is called \emph{aspherical} if any continuous map $\mathbb{S}^k\to \spc{K}$ for $k\ge 2$ is null-homotopic.
+
 \begin{thm}{Theorem}\label{thm:sys<width}
-Suppose $\spc{M}$ is a aspherical $n$-dimensional Riemnnian manifold.
+Suppose $\spc{M}$ is a compact aspherical $n$-dimensional Riemnnian manifold.
 Then 
 \[\sys\spc{M}\le 6 \cdot \width \spc{M}.\]
 \end{thm}
@@ -319,10 +334,10 @@ Since $\spc{K}$ is aspherical, any continuous map $\partial\mathbb{D}^n\to \spc{
 is hull-homotopic;
 that is, it can be extended to a map $\mathbb{D}^n\:\to \spc{K}$.
 
-It makes possible to extend $f$ to $\spc{W}^3$, $\spc{W}^4$, and so on.
+It makes it possible to extend $f$ to $\spc{W}^3$, $\spc{W}^4$, and so on.
 Therefore $f$ can be extended to whole $\spc{W}$.
 
-The only-if part on the second part of lemma is trivilal;
+The only-if part of the second part of lemma is trivial;
 it remains to show the if part.
 
 Sine $\spc{W}$ is connected, we can assume that $p$ forms the only 0-cell in $\spc{W}$;
@@ -369,20 +384,21 @@ Applying this observation for each quadrilateral, we get the statement.
 Let $\spc{N}$ be the nerve of a covering $\{V_i\}$ of $\spc{M}$ and $\psi\:\spc{M}\to\spc{N}$ be the map provided by \ref{prop:space->nerve}.
 As usual, we denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
 
-Set $R=\width \spc{M}$ and $s=\sys\spc{M}$.
-Assume we choose $\{V_i\}$ as in the definition of width (\ref{def:width}).
-For each $i$ choose a point $p_i\in \spc{M}$ such that $V_i\subset \oBall(p_i,R)$.
-Observe that in this case $\dim\spc{N}<n$;
+Suppose that $\psi\:\spc{M}\to \spc{N}$ is provided by \ref{prop:space->nerve}.
+Observe that $\dim\spc{N}<n$;
 therefore $\psi$ kills the fundamental class of $\spc{M}$.
 
 Let us construct a continuous map  $f\:\spc{N}\to  \spc{M}$ such that
 $f\circ\psi$ is homotopic to the identity map on $\spc{M}$.
-
 Note that once $f$ is constructed, the theorem is proved.
 Indeed, since $\psi$ kills the fundamental class of $\spc{M}$, so does $f\circ\psi$.
 Therefore $[\spc{M}]=0$ --- a contradiction.
 
-First set $f(v_i)=p_i$ for each $i$.
+Set $R=\width \spc{M}$ and $s=\sys\spc{M}$.
+Assume we choose $\{V_i\}$ as in the definition of width (\ref{def:width}).
+For each $i$ choose a point $p_i\in \spc{M}$ such that $V_i\subset \oBall(p_i,R)$.
+
+Set $f(v_i)=p_i$ for each $i$.
 It defines the map $f$ on the 0-skeleton $\spc{N}^0$ of the nerve $\spc{N}$.
 Further, $f$ will be defined step by step on the skeletons $\spc{N}^1,\spc{N}^2, \dots$ of $\spc{N}$.
 
@@ -420,16 +436,16 @@ Analyze the proof of \ref{thm:sys<width} and improve its inequality to
 \begin{thm}{Exercise}\label{ex:fillrad-inj}
 Modify the proof of \ref{thm:sys<width} to prove the following:
 
-Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with \emph{injectivity radius} at least $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then the geodesic $[pq]_{\spc{M}}$ is uniquely defined.
+Suppose that $\spc{M}$ is a closed $n$-dimensional Reimannian manifold with \emph{injectivity radius} at least $r$; that is, if $\dist{p}{q}{\spc{M}}<r$, then a minimizing geodesic $[pq]_{\spc{M}}$ is uniquely defined.
 Show that
 \[\width\spc{M}\ge \tfrac{r}{2\cdot(n+1)}.\]
 
-Use \ref{thm:width<vol} to conclude that $\vol\spc{M}\ge \eps_n \cdot r^n$
+Use \ref{thm:width<vol} to conclude that $\vol_n\spc{M}\ge \eps_n \cdot r^n$
 for some $\eps_n>0$ that depends only on $n$.
 \end{thm} 
 
 The second statement in the exercise is a theorem of Marcel Berger~\cite{berger-n};
-an inequality with optimal constant (with equality for round sphere) was obtained bu Marcel Berger and Jerry Kazdan \cite{berger-kazdan}. 
+an inequality with optimal constant (with equality for round sphere) was obtained by Marcel Berger and Jerry Kazdan \cite{berger-kazdan}. 
 
 
 \section{Essential manifolds}
@@ -450,15 +466,15 @@ Show that connected sum of an essential manifold with any closed manifold is ess
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:product-essential}
-Show that product of two essential manifolds is essential.
+Show that the product of two essential manifolds is essential.
 
-Show that product of nonessential closed manifold with any closed manifold is not essential.
+Show that the product of nonessential closed manifold with any closed manifold is not essential.
 \end{thm}
 
 Assume that the manifold $\spc{M}$ is essential and $\iota \:\spc{M}\to \spc{K}$ as in the definition.
 Following the proof of \ref{thm:sys<width}, we can homotope the map 
 $f\circ\psi\:\spc{M}\to \spc{M}$ to the identity on the 2-skeleton of $\spc{M}$;
-further since $\spc{K}$ is aspherical we can homotopy the composition
+further since $\spc{K}$ is aspherical, we can homotopy the composition
 $\iota\z\circ f\circ\psi$ to  $\iota$. 
 Existence of this extension implies that $\iota$ kills the fundamental class of $\spc{M}$ --- a contradiction.
 So, taking \ref{ex:sys<width} into account, we proved the following generalization of \ref{thm:sys<width}:
@@ -469,12 +485,12 @@ Then
 \[\sys\spc{M}\le 4 \cdot \width \spc{M}.\]
 \end{thm}
 
-As a corollary form \ref{thm:sys<width++} and \ref{thm:width<vol} we get the so called \index{systolic inequality!Gromov's systolic inequality}\emph{Gromov's systolic inequality}:
+As a corollary from \ref{thm:sys<width++} and \ref{thm:width<vol} we get the so-called \index{systolic inequality!Gromov's systolic inequality}\emph{Gromov's systolic inequality}:
 
 \begin{thm}{Theorem}\label{thm:sys+}
 Suppose $\spc{M}$ is an essential $n$-dimensional Riemannian space.
 Then 
-\[\sys\spc{M}\le 4 \cdot n\cdot \sqrt[n]{\vol\spc{M}}.\]
+\[\sys\spc{M}\le 4 \cdot n\cdot \sqrt[n]{\vol_n\spc{M}}.\]
 \end{thm}
 
 
@@ -486,13 +502,13 @@ Panos Papasoglu \cite{papasoglu},
 Alexander Nabutovsky and Roman Karasev \cite{nabutovsky}.
 
 In \cite{nabutovsky} the calculations were optimized better which gave the constants 
-$c_n=\sqrt[n]{n!}= \tfrac ne+o(n)$ in \ref{thm:width<vol} instead of $n$.
+$c_n=\sqrt[n]{n!/2}= \tfrac ne+o(n)$ instead of $n$ in \ref{thm:width<vol}.
 As a result, we have a stronger statement in \ref{thm:sys+}:
-\[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol\spc{M}}.\]
+\[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol_n\spc{M}}.\]
 
 A wide open conjecture says that for any $n$-dimensional essential manifold we have
-\[\frac{\sys\spc{M}}{\sqrt[n]{\vol\spc{M}}}\le\frac{\sys\RP^n}{\sqrt[n]{\vol\RP^n}},\eqlbl{eq:RPn}\]
-where we assume that the $n$-dimensional real projective space $\RP^n$ is equipped with canonical metric.
+\[\frac{\sys\spc{M}}{\sqrt[n]{\vol_n\spc{M}}}\le\frac{\sys\RP^n}{\sqrt[n]{\vol\RP^n}},\eqlbl{eq:RPn}\]
+where we assume that the $n$-dimensional real projective space $\RP^n$ is equipped with a canonical metric.
 In other words, the ratio in the right hand side of \ref{eq:RPn} is the optimal constant in the Gromov's systolic inequality; this  ratio grows as $O(\sqrt n)$.
 (The ratio for $n$-dimensional flat torus grows as $O(\sqrt n)$ as well.)
 

@@ -13,14 +13,14 @@ In this case
 \[\vol(\square,g)>\vol(s^{-1}(\square),g)\ge 1\]
 --- a contradiction.
 
-Summarizing above discussion, there is a geodesic path of $g$-length $1$ connecting a point on one face of cube to the opposite face.
+Summarizing the above discussion, there is a geodesic path of $g$-length $1$ connecting a point on one face of the cube to the opposite face.
 
-Moreover, for any pair of opposite faces and a point $p\in\square$, there is a geodesic path of $g$-length $1$ from one face to the other that pass thru $p$.
+Moreover, for any pair of opposite faces and a point $p\in\square$, there is a geodesic path of $g$-length $1$ from one face to the other that passes thru $p$.
 The latter can be shown by cutting $\square$ into two rectangles by a level surface of $\distfun_A$ thru $p$,
-applying the above statement to both rectangles and taking the concatination of the obtained geodesic paths with end at $p$.
+applying the above statement to both rectangles and taking the concatenation of the obtained geodesic paths with end at $p$.
 (The level surface might cut a rectangle with some topology, so have to apply \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}).
 
-Let $\gamma$ be such geodesic path from $A$ to $A'$.
+Let $\gamma$ be such a geodesic path from $A$ to $A'$.
 Observe that $\gamma'(t)\z=\nabla_{\gamma(t)}\distfun_A$.
 Therefore $\distfun_A$ is differentiable at every point $p\in \square$.
 It follows that the map $s$ is differentiable.
@@ -38,7 +38,7 @@ That is $s$ is an isometry.
 \end{wrapfigure}
 
 \parbf{\ref{ex:hexagon}.}
-Consider the hexagon with flat matric and curved sides shown on the diagram.
+Consider the hexagon with flat metric and curved sides shown on the diagram.
 Observe that its area can be made arbitrary small while keeping the distances from the opposite sides at least 1.
 
 \parbf{\ref{ex:gadograph}.}
@@ -121,7 +121,7 @@ that admits an continuous involution $\iota$ such that
 for any $x\in\partial \Delta$.
 
 An example of $\Delta$ can be guessed from the picture;
-the invoultion $\iota$ makes a length preserving half turn of its boundary $\partial \Delta$.
+the involution $\iota$ makes a length preserving half turn of its boundary $\partial \Delta$.
 
 
 Take the product $\Delta\times \Delta\subset \RR^4$;
@@ -141,19 +141,19 @@ the involution $\iota$ cannot be made isometric.
 Note that if $\spc{M}_\infty$ is $e^{\pm\eps}$-bilipschitz to a cube, then applying Besicovitch inequality, we get that 
 \[\liminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
 
-Applying Vitali covering theorem, given $\eps>0$, we can cover whole volume of $\spc{M}_\infty$ by $e^{\pm\eps}$-bilipschitz cubes.
+Applying Vitali covering theorem, given $\eps>0$, we can cover the whole volume of $\spc{M}_\infty$ by $e^{\pm\eps}$-bilipschitz cubes.
 Applying the above observation and summing up the results, we get that 
 \[\liminf_{n\to\infty} \vol \spc{M}_n\ge e^{-n\cdot \eps}\cdot\vol \spc{M}_\infty.\]
-The statement follows since $\eps$ is arbitrary positive number.
+The statement follows since $\eps$ is an arbitrary positive number.
 
 \parit{Remark.} A more general result was obtaind by Sergei Ivanov~\cite{ivanov-1997}.
-Note that the statement does not hold without stability of the convergence. In fact any compact metric space can be approximated by Riemannian surface with arbitrary small area.
+Note that the statement does not hold without stability of the convergence. In fact any compact metric space can be approximated by Riemannian surface with an arbitrary small area.
 
 \parbf{\ref{ex:sysT2}.}
 Set $s=\sys(\TT^2,g)$.
 
 Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma_1$.
-We get an anulus with a Riemnnian metric on it $(N,g)$.
+We get an annulus with a Riemnnian metric on it $(N,g)$.
 Denote by $A$ and $A'$ the two components of its boundary.
 
 \begin{wrapfigure}{o}{45 mm}
@@ -183,17 +183,17 @@ The path $\gamma_3$ connects two points on $\gamma_2$.
 Since $\gamma_2$ is shortest, the arc of $\gamma_2$ between this pair of points cannot be longer than $\gamma_3$.
 This arc together with $\gamma_3$ forms a closed noncontractible curve, so its length has to be at least $s$.
 It follows that $\length\gamma_3\ge \tfrac s2$.
-That is distance from $B$ to $B'$ in  $(\square,g)$ is at least $\tfrac s2$.
+That is, the distance from $B$ to $B'$ in  $(\square,g)$ is at least $\tfrac s2$.
 
-Applying Besikovitch inequality, we get that 
+Applying Besicovitch inequality, we get that 
 \[\area(\TT^2,g)=\area(\square,g)\ge \tfrac14\cdot s^2.\]
 
 \parit{Remark.}
 Alternatively one may notice that any curve in $(N,g)$ that is bordant to $A$ has length at least $\tfrac s2$.
 Therefore the level sets defined by $\distfun_A(x)_{(N,g)}=t$ have length at least $\tfrac s2$ if $0\le t\le \tfrac s2$.
-Applying coarea fromula we get that
+Applying the coarea formula, we get that
 \[\area(\TT^2,g)=\area(N,g)\ge \tfrac12\cdot s^2.\]
-This estimate is twice better then the one above, but it is still far from the optimal bound $\tfrac2{\sqrt{3}}\cdot s^2$ in proved by Loewner.
+This estimate is twice better then the one above, but it is still far from the optimal bound $\tfrac2{\sqrt{3}}\cdot s^2$ proved by Charles Loewner.
 
 \begin{wrapfigure}{r}{44 mm}
 \vskip-4mm
@@ -216,21 +216,21 @@ Since $\length\alpha=\tfrac s2$, we have that $\length\gamma_1\ge \tfrac s2$.
 It follows that the distance between $A$ and $A'$ in $(\DD^2,g)$ is at least $\tfrac s2$.
 The same way we show that the distance between $B$ and $B'$ in $(\DD^2,g)$ is at least $\tfrac s2$.
 
-Note that $(\DD^2,g)$ can be paraneterized by a square with sides $A$, $B$, $A'$ and $B'$ and apply \ref{thm:besikovitch} to show that 
+Note that $(\DD^2,g)$ can be parameterized by a square with sides $A$, $B$, $A'$ and $B'$ and apply \ref{thm:besikovitch} to show that 
 \[\area(\RP^2,g)=\area(\DD^2,g)\ge \tfrac14\cdot s^2.\]
 
 \parit{Remark.}
 For the optimal constant was found by Pao Ming Pu see the discussion on page \pageref{page:pu}.
 His proof shows that any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has area at least as large as the unit hemisphere.
-It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessary a disc);
-this is the so called the {}\emph{filling area conjecture} mentioned in \cite[5.5.B$'$(e$'$)]{gromov-1983}.
+It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessarily a disc);
+this is the so-called the {}\emph{filling area conjecture} mentioned in \cite[5.5.B$'$(e$'$)]{gromov-1983}.
 
 \parbf{\ref{ex:sysSg}.} Cut the surface along a shortest noncontractible curve $\gamma$. 
 We might get a surface with one or two components of the boundary.
 In these two cases repeat the arguments in \ref{ex:sysRP2} or \ref{ex:sysT2} using \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}.
 
 
-\parbf{\ref{ex:sysS2xS1}.} Consider the product of small 2-sphere with a unit circle.
+\parbf{\ref{ex:sysS2xS1}.} Consider the product of a small 2-sphere with a unit circle.
 
 \parbf{\ref{ex:besikovitch++}.}
 Apply the same construction as in the original Besicovitch inequality, assuming that the target rectangle
@@ -245,22 +245,22 @@ apply \ref{prop:bilip-measure} where it is appropriate.
 Consider the map $f\:\mathbb{S}^n\to \spc{X}$ such that the restriction to north and south hemispheres describe $\Delta_1$ and $\Delta_2$ respectively.
 Show that if $\Delta_1\ne\Delta_2$, then $\mathbb{S}^n$ can be parametrized by the boundary of unit cube in such a way that for any pair $A$, $A'$ of opposite faces their images $f(A)$, $f(A')$ do not overlap.
 
-Since $\spc{X}$ the map $f$ can be extended to the map of whole cube.
+Since $\spc{X}$ is contractible, the map $f$ can be extended to a map of the whole cube.
 It remains to apply \ref{ex:besikovitch++}.
 
 
 \parbf{\ref{ex:macrodimension}.}
-The following claim resembles Besikovitch inequality;
+The following claim resembles Besicovitch inequality;
 it is key to the proof:
 \begin{itemize}
  \item[$({*})$] Let $a$ be a positive real number.
- Assume that a closed curve $\gamma$ in a metric space $\spc{X}$ can be sudivided into 4 arcs $\alpha$, $\beta$, $\alpha'$, and $\beta'$ in such a way that 
+ Assume that a closed curve $\gamma$ in a metric space $\spc{X}$ can be subdivided into 4 arcs $\alpha$, $\beta$, $\alpha'$, and $\beta'$ in such a way that 
  \begin{itemize}
  \item $|x-x'|>a$ for any $x\in\alpha$ and $x'\in \alpha'$
  and
  \item $|y-y'|>a$ for any $y\in\beta$ and $y'\in \beta'$.
  \end{itemize}
- Then $\gamma$ is not contractable in its $\tfrac a2$-neighborhood.
+ Then $\gamma$ is not contractible in its $\tfrac a2$-neighborhood.
 \end{itemize}
 
 To prove $({*})$, consider two functions defined on $\spc{X}$ as follows:
@@ -306,7 +306,7 @@ It remains to show that $\rad V_j<100\cdot R$ for each $j$.
 \includegraphics{mppics/pic-1310}
 \end{wrapfigure}
 
-Aarguing by contradiction assume there is a pair of points  $x,y\in V_i$ 
+Arguing by contradiction assume there is a pair of points  $x,y\in V_i$ 
 such that $|x\z-y|_{\spc{X}}\ge 100\cdot R$.
 Connect $x$ to $y$ with a curve $\tau$ in $V_j$.
 Consider the closed curve $\sigma$ formed by $\tau$ and two geodesics $[px]$, $[py]$.
@@ -315,7 +315,7 @@ Consider the closed curve $\sigma$ formed by $\tau$ and two geodesics $[px]$, $[
 Note that $|p-x|>40$.
 Therefore there is a point $m$ on $[px]$ such that $|m-x|=20$.
 
-By the triangle inequality, the subsdivision of $\sigma$ into the arcs $[pm]$, $[mx]$, $\tau$ and $[yp]$ satisfy the conditions of the claim $({*})$ for $a=10\cdot R$.
+By the triangle inequality, the subdivision of $\sigma$ into the arcs $[pm]$, $[mx]$, $\tau$ and $[yp]$ satisfy the conditions of the claim $({*})$ for $a=10\cdot R$.
 Hence the statement follows.
 
 \parit{The quasiconverse} does not hold.
@@ -329,14 +329,14 @@ it is a smooth surface diffeomorphic to a sphere.
 Assuming the cylinder is thin, it has macroscopic dimension 1 at a given scale.
 However a circle formed by a section of cylinder around its midpoint by a plane parallel to the base is a circle that cannot be contracted in its small neighborhood.
 
-\parit{Sourse:} \cite[Appendix 1(E$_{2}$)]{gromov-1983}.
+\parit{Source:} \cite[Appendix 1(E$_{2}$)]{gromov-1983}.
 
 \parbf{\ref{ex:width=suprad(inv)},} \textit{``only if'' part.}
 Suppose $\width_n\spc{X}<R$.
 Consider a covering $\{V_1,\dots,V_k\}$ of $\spc{X}$ guaranteed by the definition of width.
 Let $\spc{N}$ be its nerve and $\psi\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
 
-Since the multiplicity of the covering is at most $n+1$, we ahve $\dim \spc{N}\le n$.
+Since the multiplicity of the covering is at most $n+1$, we have $\dim \spc{N}\le n$.
 
 Note that if $x\in \spc{N}$ lies in a star of a vertex $v_i$,
 then $\psi^{-1}\{x\}\z\subset V_i$;
@@ -347,7 +347,7 @@ Choose $x\in \spc{N}$.
 Since the inverse image $\psi^{-1}\{x\}$ is compact, $\psi$ is continuous, and $\rad[\psi^{-1}\{x\}]<R$,
 there is a neighborhood $U\ni x$ such that the  $\rad[\psi^{-1}(U)]<R$.
 
-Since $\spc{X}$ is compact,  there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\psi^{-1}(U_i)\subset\spc{X}$ has radius smaller than $R$ for each $i$.
+Since $\spc{X}$ is compact,  there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\psi^{-1}(U_i)\subset\spc{X}$ has a radius smaller than $R$ for each $i$.
 Since $\spc{N}$ has dimension $n$, we can inscribe%
 \footnote{Recall that a covering $\{W_i\}$ is inscribed in the covering $\{U_i\}$ if for every $W_i$ is a subset of some $U_j$.} 
 in $\{U_i\}$ a finite open cover $\{W_i\}$ with multiplicity at most $n+1$.
@@ -365,8 +365,8 @@ Therefore $\length[\oBall(p,R)_{\spc{P}}]\ge R$.
 Since $\VolPro_{\spc{P}}(R)\z\ge \length[\oBall(p,R)_{\spc{P}}]$,
 the latter contradicts $\VolPro_{\spc{P}}(R)<R$.
 
-In general case, we get that each connected component of $\spc{P}$ has radius smaller that $R$.
-Whence the width of $\spc{P}$ is smaller that $R$.
+In general case, we get that each connected component of $\spc{P}$ has a radius smaller than $R$.
+Whence the width of $\spc{P}$ is smaller than $R$.
 
 \parit{Second part.} Again, we can assume that $\spc{P}$ is connected.
 
@@ -381,7 +381,7 @@ Observe that there is a point $x\z\in \spc{P}\backslash\{p\}$ that lies on any s
 Otherwise for any $r\in(0,\tfrac 12\cdot R)$ there would be at least two points on distance $r$ from $p$;
 by coarea inequality we get that the total length of $\spc{P}\cap \oBall(p,\tfrac 12\cdot R)$ is at least $R$ --- a contradiction.
 
-Moving $p$ toward to $x$ reduce $\rho(p)$ which contradicts the choice of~$p$.
+Moving $p$ toward $x$ reduces $\rho(p)$ which contradicts the choice of~$p$.
 
 \parbf{\ref{ex:sys<width}.}
 The inequality $6\cdot R<s$ used twice:
@@ -390,7 +390,7 @@ The inequality $6\cdot R<s$ used twice:
 \item to extend the constructed homotopy on $\spc{M}^0$ to $\spc{M}^1$.
 \end{itemize}
 
-The fist problem can be solved by passing to a baricentric subsdivision of $\spc{N}^2$;
+The fist problem can be solved by passing to a barycentric subdivision of $\spc{N}^2$;
 denote by $v_{ij}$ and $v_{ijk}$ the new vertexes in the subdivision that correspond to edge $[v_iv_j]$ and triangle $[v_iv_jv_k]$ respectively.
 
 Further for each vertex $v_{ij}$ choose a point $p_{ij}\in V_i\cap V_j$ and set $f(v_{ij})=p_{ij}$.
@@ -409,7 +409,7 @@ Choose a fine covering of $\spc{M}$ with multiplicity $<n+1$.
 Choose $\psi$ from $\spc{M}$ to the nerve $\spc{N}$ of the covering the same way as in the proof of \ref{thm:sys<width}.
 
 It remains to construct $f\:\spc{N}\to\spc{M}$ and show that $f\circ\psi$ is homotopic to the identity map.
-To do this, apply the same strategy as in the proof of \ref{thm:sys<width} together with the so called \index{geodesic cone construction}\emph{geodesic cone construction}
+To do this, apply the same strategy as in the proof of \ref{thm:sys<width} together with the so-called \index{geodesic cone construction}\emph{geodesic cone construction}
 described below.
 
 Let $\triangle$ be a simplex in a barycentric subdivision of $\spc{N}$.
@@ -419,13 +419,14 @@ Namely connect each point $f(x)$ to $p$ by geodesic path $\gamma_x$ (by assumpti
   
 
 \parbf{\ref{ex:connected-sum-essential}.}
-Suppose $M$ is an essential manifold and $N$ is arbitrary closed manifold.
+Suppose $M$ is an essential manifold and $N$ is an arbitrary closed manifold.
 Observe that shrinking $N$ to a point produces a map of degree 1 from $N\#M$ to $M$; that is, there is a map $f\:N\#M\to M$ that sends the fundamental class of $N\#M$ maps to the fundamental class of $M$.
 
-Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to K$ that sends fundamental class of $M$ to nonzero homology class in $K$.
-From above, the composition $\iota\circ f\:N\#M\to K$ sends fundamental class of $N\#M$ to the same homology class in $K$.
+Since $M$ is essential, there is an aspherical space $K$ and a map $\iota\:M\to K$ that sends the fundamental class of $M$ to a nonzero homology class in $K$.
+From above, the composition $\iota\circ f\:N\#M\to K$ sends the fundamental class of $N\#M$ to the same homology class in $K$.
 
-\parit{Remark.} Note that we only used that there is a map $N\#M\to M$ of degree 1. If essential manifold is defined using homologies with integer coefficients, then existence of map of nonzero degree is sufficient.
+\parit{Remark.} Note that we only used that there is a map $N\#M\to M$ of degree 1.
+If essential manifold is defined using homologies with integer coefficients, then the existence of a map of nonzero degree is sufficient.
 
 \parbf{\ref{ex:product-essential}.}
 Suppose $\spc{M}_1$ and $\spc{M}_2$ are essential.
