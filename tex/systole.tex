@@ -448,32 +448,10 @@ an inequality with optimal constant (with equality for round sphere) was obtaine
 \section{Essential manifolds}
 
 To generalize \ref{thm:sys<width} further, we need the following definition.
+In this section we assume that homology are taken with the coefficients $\ZZ_2$, but one can play with other coefficients as well.
 
 \begin{thm}{Definition}\label{def:essential}
 A closed manifold $\spc{M}$ is called \index{essential manifold}\emph{essential} if it admits a continuous map $\iota\:\spc{M}\to \spc{K}$ to an aspherical CW-complex $\spc{K}$ such that $\iota$ sends the fundamental class of $\spc{M}$ to a nonzero homology class in $\spc{K}$.
-\end{thm}
-
-We assume that the coefficients are $\ZZ_2$, but other coefficients work as well.
-
-
-
-Given a group $G$, there is a path connected aspherical space $\spc{K}$ with fundamental group $G$; 
-moreover 
-\begin{itemize}
-\item $\spc{K}$ can be chosen to be a CW-complex;
-\item $\spc{K}$ is uniquely defined up to a weak homotopy equivalence;
-\item if $\spc{W}$ is a connected finite CW-complex.
-Then any homomorphism $\pi_1(\spc{W},w)\to\pi_1(\spc{K},k)$ is induced by a continuous map $\phi\:(\spc{W},w)\to(\spc{K},k)$.
-Moreover, $\phi$ is uniquely defined up to homotopy equivalence.
-\end{itemize}
-The space $\spc{K}$ is called an \emph{Eilenberg--MacLane space of type $K(G,1)$}, or simply a $K(G,1)$ space.
-
-The following proposition describes the original definition of essential manifold.
-
-\begin{thm}{Proposition}\label{prop:essentioal-K(pi,1)}
-Suppose that $\spc{M}$ is a closed manifold, 
-$\spc{K}$ is a $K(\pi_1(\spc{M}),1)$ space and a map $\iota\:\spc{M}\to \spc{K}$ induces an isomorphism of fundamental groups.
-Then $\spc{M}$ is essential if and only if $\iota$ sends the fundamental class of $\spc{M}$ to a nonzero homology class in $\spc{K}$.
 \end{thm}
 
 Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $\spc{M}$.
@@ -488,8 +466,6 @@ Show that the connected sum of an essential manifold with any closed manifold is
 
 \begin{thm}{Exercise}\label{ex:product-essential}
 Show that the product of two essential manifolds is essential.
-
-Show that the product of nonessential closed manifold with any closed manifold is \emph{not} essential.
 \end{thm}
 
 Assume that the manifold $\spc{M}$ is essential and $\iota \:\spc{M}\to \spc{K}$ as in the definition.
