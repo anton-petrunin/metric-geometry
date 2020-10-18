@@ -111,6 +111,8 @@ english]{babel}
 \def\CP{\CC\mathrm{P}}%
 \def\Ad{\mathrm{Ad}}%
 \def\Jac{\mathrm{Jac}}%
+\def\jac{\mathrm{jac}}%
+\def\haus{\mathrm{haus}}%
 \def\Re{\mathrm{Re}}%
 \def\Sc{\mathrm{Sc}}%
 \def\SO{\mathrm{SO}}%
@@ -250,21 +252,15 @@ english]{babel}
 
 
 %THEOREM
-\newcounter{thm}[section]
-
-\renewcommand{\thethm}{\thesection.\arabic{thm}}
-\def\claim#1{%
-\par%
-\medskip%
-\noindent%
-\refstepcounter{thm}%
-\hbox{\bf\boldmath \thesection.\arabic{thm}. #1.}
+\newcounter{thm}[chapter]
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+\newcommand\claim[2][{}]{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \thechapter.\arabic{thm}. #2.#1}
 \it\ %\ignorespaces
 }
 \def\endclaim{
-\par
-\medskip}
+\par\medskip}
 \newenvironment{thm}{\claim}{\endclaim}
+
 
 %SUBTHEOREM 
 \newcounter{subthm}[thm]
@@ -310,6 +306,9 @@ english]{babel}
 \newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno{\text{\numform{eqtn}\label{#1}}}}
 
 \newcommand{\qcomma}{\ooalign{\hss,\kern.03em\hss\cr?}}
+
+\makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
+\renewcommand{\thesection}{\Alph{section}}
 
 \hyphenation{ 
 Alex-an-drov 

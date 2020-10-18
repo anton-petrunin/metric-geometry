@@ -528,11 +528,11 @@ draw p2;
 draw subpath (.3,.7) of p2 penbold;
 draw p3 penbold;
 
-label.rt(btex $\gamma_1$ etex, point 2 of p0);
-label.lft(btex $\gamma_1$ etex, point 2 of p1);
-whitelabel.top(btex $N$ etex, (0,4)+point 3 of p1);
-whitelabel.bot(btex $\gamma_2$ etex, point .3 of p2);
-whitelabel.rt(btex $\gamma_3$ etex, point 3 of p3);
+%label.rt(btex $\gamma_1$ etex, point 2 of p0);
+%label.lft(btex $\gamma_1$ etex, point 2 of p1);
+%whitelabel.top(btex $N$ etex, (0,4)+point 3 of p1);
+whitelabel.bot(btex $\alpha$ etex, point .2 of p2);
+whitelabel.rt(btex $\beta$ etex, point 3 of p3);
 
 endfig;
 
