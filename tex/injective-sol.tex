@@ -3,9 +3,9 @@ Note that if $c<0$, then $r>s$.
 The latter is impossible since $r$ is extremal and $s$ is admissible.
 
 Observe that the function $\bar r=\min\{\,r,s+c\}$ is admissible.
-Indeed if $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$ then 
+Indeed if $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
 \[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
-Further if $\bar r(x)=s(x)+c$ then 
+Further if $\bar r(x)=s(x)+c$, then 
 \begin{align*}
 \bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
 \\
@@ -57,10 +57,10 @@ The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotop
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
+Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map whole $\spc{X}$ to a single point.
 
 \parit{\ref{SHORT.ex:injective-spaces:R}.}
 Suppose $\spc{Y}=\RR$.
-Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map whole $\spc{X}$ to a single point.
 Set 
 \[F(x)=\inf\set{f(a)-\dist{a}{x}{}}{a\in A}.\] 
 Observe that $F$ is short and $F(a)=f(a)$ for any $a\in A$.
@@ -81,6 +81,14 @@ Denote by $x$ its endpoint; it exists since $\spc{Y}$ is complete.
 It remains to observe that $\dist{x}{f(a)}{}\le \dist{p}{a}{}$ for any $a\in\spc{A}$;
 that is, one can take $f(p)=x$.
 
+\parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
+In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
+Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
+It remains to apply \ref{SHORT.ex:injective-spaces:R}.
+
+More generally, \emph{any $\ell^\infty$-product of injective spaces is injective}.
+
+
 \parbf{\ref{ex:ultrametric}.}
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
 Let $f\:\spc{A}\to \spc{Y}$ be an isometry.
@@ -95,10 +103,25 @@ Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
 
 It remains to observe that the strong triangle inequality holds in both cases.
 
-\parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
-In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
-Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
-It remains to apply \ref{SHORT.ex:injective-spaces:R}.
+\parbf{\ref{ex:one-point-gluing}.}
+Apply \ref{thm:injective=hyperconvex:balls}.
+
+\parbf{\ref{ex:urysohn-hyperconvex}.}
+Denote by $\spc{U}_d$ the $d$-Urysohn space;
+so $\spc{U}_\infty$ is the Urysohn space.
+
+The extension property implies finite hyperconvexity.
+It remains to show that $\spc{U}_d$ is not countably hyperconvex.
+
+Suppose that $d<\infty$.
+Then $\diam\spc{U}_d=d$ and moreover for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
+It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}_d}\le \tfrac d2$ for any $x\in\spc{U}_d$.
+Whence $\spc{U}_d$ is not countably hyperconvex.
+
+Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
+
+\parbf{\ref{ex:Inj(compact)}.}
+Observe and use that $\Inj\spc{X}$ contains 1-Lipschitz uniformly bounded functions.
 
 \parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
 Let $f$ be an extremal function.
@@ -126,8 +149,7 @@ Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x
 \includegraphics{mppics/pic-4}
 \end{wrapfigure}
 
-It follows that $\Inj\spc{X}$ is isometric to a tripod;
-that is, $\Inj\spc{X}$ is formed by three segments of length $\tfrac12$ glued at one end.
+It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
 
 \parit{\ref{SHORT.ex:tripod+square:square}.}
 Assume $f$ is an extremal function.
@@ -168,4 +190,11 @@ Applying \ref{lem:opposite}, we can find a point $q\in\spc{X}$ such that
 \dist{f}{q}{\Inj\spc{X}},\]
 whence the result.
 
-Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=complete-geodesic-contractible:geodesic} it has to be geodesic. It remains to note that the concatenation of geodesics $[pq]$, $[gf]$, and $[fq]$ forms a required geodesic $[pq]$.
+Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=complete-geodesic-contractible:geodesic} it has to be geodesic. It remains to note that the concatenation of geodesics $[pq]$, $[gf]$, and $[fq]$ is a required geodesic $[pq]$.
+
+\parbf{\ref{ex:d-p-inclusion}.}
+Show that there is a pair of short maps 
+$\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$ 
+such that their composition is identity of $\spc{X}$.
+Make a conclusion.
+

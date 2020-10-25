@@ -1,8 +1,8 @@
 \chapter{Injective spaces}
 
 {}\emph{Injective spaces} (also known as {}\emph{hyperconvex spaces}) are metric analog of convex sets.
-The so called \index{injective envelop}\emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
-it is a direct analog of convex hull of a set in a Euclidean space.
+The so-called \index{injective envelop}\emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
+it is a direct analog of the convex hull of a set in a Euclidean space.
 
 This lecture is based on a paper of John Isbell \cite{isbell}.
 
@@ -80,7 +80,7 @@ For any admissible function $s$ there is an extremal function $r$ such that $r\l
 By the triangle inequality, \ref{eq:admissible} holds;
 that is, $r=\distfun_p$ is an admissible function.
 
-Further if $s\le r$ is another admissible function then $s(p)=0$ and \ref{eq:admissible} implies that $s(x)\z\ge\dist{p}{x}{}$.
+Further if $s\le r$ is another admissible function, then $s(p)=0$ and \ref{eq:admissible} implies that $s(x)\z\ge\dist{p}{x}{}$.
 Whence $s=r$.
 
 \parit{\ref{SHORT.lem:extremal-lipschitz}.}
@@ -93,7 +93,7 @@ or, equivalently,
 \[r(q)-r(p)\le \dist{p}{q}{}\]
 for any $p,q\in\spc{X}$.
 The same way we can show that
-\[r(p)-r(q)\le \dist{p}{q}{}\]
+$r(p)-r(q)\le \dist{p}{q}{}$.
 Whence the statement follows.
 
 \parit{\ref{SHORT.lem:opposite}.}
@@ -178,7 +178,7 @@ $\spc{Y}$ is injective
 
 
 \begin{subthm}{thm:injective=hyperconvex:extremal}
-If $r\:\spc{Y}\to\RR$ is an extremal function then there is a point $p\in \spc{Y}$ such that 
+If $r\:\spc{Y}\to\RR$ is an extremal function, then there is a point $p\in \spc{Y}$ such that 
 \[\dist{p}{x}{}\le r(x)\]
 for any $x\in \spc{Y}$.
 \end{subthm}
@@ -200,7 +200,7 @@ then all the balls in the family $\{\cBall[x_\alpha,r_\alpha]\}_{\alpha\in\Index
 Since $\spc{Y}$ is injective for any extension function $r\:\spc{Y}\to\RR$ there is a point $p\in \spc{Y}$ such that 
 \[\dist{p}{x}{}\le r(x)\]
 for any $x\in \spc{Y}$.
-By \ref{lem:extremal-lipschitz}, any extremal function is an extension function, whence the implication follow.
+By \ref{lem:extremal-lipschitz}, any extremal function is an extension function, whence the implication follows.
 
 \parit{\ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}.}
 By \ref{obs:admissible:balls}, part \ref{SHORT.thm:injective=hyperconvex:balls} is equivalent to the following statement:
@@ -211,7 +211,7 @@ for any $x\in \spc{Y}$.
 \end{itemize}
 Indeed, set $r(x)\df\inf\set{r_\alpha}{x_\alpha=x}$.
 (If $x_\alpha\ne x$ for any $\alpha$, then $r(x)=\infty$.)
-The condition in \ref{SHORT.thm:injective=hyperconvex:balls} imply that $r$ is admissible.
+The condition in \ref{SHORT.thm:injective=hyperconvex:balls} implies that $r$ is admissible.
 It remains to observe that $p\in \cBall[x_\alpha,r_\alpha]$ for every $\alpha$ if and only if \ref{eq:|p-x|=<r(x)} holds.
 
 By \ref{obs:extremal:below}, for any admissible function $r$ there is an extremal function $\bar r\le r$;
@@ -226,7 +226,7 @@ By Zorn's lemma we may assume that $\spc{A}$ is a maximal subset; that is, the d
 Fix a point $p$ in the complement $\spc{X}\backslash \spc{A}$.
 To extend $f$ to $p$, we need to choose $f(p)$ in the intersection of the balls 
 $\cBall[f(x),r(x)]$, where $r(x)=\dist{p}{x}{}$.
-Therefore this intersection for all $x\in \spc{A}$ have to be empty.
+Therefore this intersection for all $x\in \spc{A}$ has to be empty.
 
 Since $f$ is short, we have that 
 \begin{align*}
@@ -238,18 +238,20 @@ Therefore by \ref{SHORT.thm:injective=hyperconvex:balls} the balls
 $\cBall[f(x),r(x)]$ have a common point --- a contradiction. 
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:one-point-gluing}
 Suppose a length space $\spc{W}$ have two subspaces $\spc{X}$ and $\spc{Y}$ such that $\spc{X}\cup\spc{Y}=\spc{W}$ and $\spc{X}\cap\spc{Y}$ is a one-point set.
 Assume $\spc{X}$ and $\spc{Y}$ are injective.
 Show that  $\spc{W}$ is injective
 \end{thm}
 
-\begin{thm}{Exercise}
-Show that the Urysohn space is {}\emph{finitely hyperconvex} but not {}\emph{countably hyperconvex};
+\begin{thm}{Exercise}\label{ex:urysohn-hyperconvex}
+Show that the $d$-Urysohn space is {}\emph{finitely hyperconvex} but not {}\emph{countably hyperconvex};
 that is, the condition in \ref{thm:injective=hyperconvex:balls} holds for any finite family of balls, but may not hold for a countable family.
+Conclude that the $d$-Urysohn space is not injective.
 
-Conclude that the Urysohn space is not injective.
+Try to do the same for the Urysohn space.
 \end{thm}
+
 
 
 \section{Space of extremal functions}
@@ -285,21 +287,20 @@ Show that $\Inj\spc{X}$ is compact if and only if so is $\spc{X}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:tripod+square}
-Suppose that $\spc{X}$ is
+Describe the set of all extremal functions on a metric space $\spc{X}$ and the metric space $\Inj \spc{X}$ in each of the following case:
 
 \begin{subthm}{ex:tripod+square:tripod} 
-a metric space with exactly tree points $a,b,c$ such that 
+$\spc{X}$ is a metric space with exactly tree points $a,b,c$ such that 
 \[\dist{a}{b}{\spc{X}}=\dist{b}{c}{\spc{X}}=\dist{c}{a}{\spc{X}}=1.\]
 \end{subthm}
 
 \begin{subthm}{ex:tripod+square:square}
- a metric space with exactly four points $p,q,x,y$ such that 
+$\spc{X}$ is  a metric space with exactly four points $p,q,x,y$ such that 
 \[\dist{p}{x}{\spc{X}}=\dist{p}{y}{\spc{X}}=\dist{q}{x}{\spc{X}}=\dist{q}{x}{\spc{X}}=1\]
 and
 \[\dist{p}{q}{\spc{X}}=\dist{x}{y}{\spc{X}}=2.\]
 \end{subthm}
 
-Describe the set of all extremal functions on $\spc{X}$ and the metric space $\Inj \spc{X}$ in each case.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:InjX-is-injective}
@@ -309,8 +310,8 @@ For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is  injective.
 \begin{thm}{Lemma}\label{lem:r|X-extremal}
 Let $\spc{X}$ be a metric space.
 Suppose that $r$ is an extremal function on $\Inj \spc{X}$.
-Then the restriction $r|_\spc{X}$ is an extremal function on $\spc{X}$.
-In other words, $r|_\spc{X}\in \Inj \spc{X}$
+Then $r|_\spc{X}\in \Inj \spc{X}$;
+that is, the restriction of $r$ to $\spc{X}$ is an extremal function.
 \end{thm}
 
 \parit{Proof.}
@@ -349,8 +350,8 @@ that is, $r$ is not extremal --- a contradiction.
 \parit{Proof of \ref{prop:InjX-is-injective}.}
 Choose an extremal function $r\:\Inj\spc{X}\to\RR$.
 Set $s\z\df r|_{\spc{X}}$.
-By \ref{lem:r|X-extremal}, $s$ is extremal;
-that is, $s\in \Inj\spc{X}$.
+By \ref{lem:r|X-extremal}, $s\in \Inj\spc{X}$;
+that is, $s$ is extremal.
 By \ref{thm:injective=hyperconvex:extremal},
 it is sufficient to show that  
 \[r(f)\ge\dist{s}{f}{\Inj\spc{X}}
@@ -377,19 +378,19 @@ hence \ref{eq:r(f)>=| r-f|} follows.
 
 \begin{thm}{Exercise}\label{ex:4-on-a-line}
 Let $\spc{X}$ be a compact metric space.
-Show that for any two points $f,g\in\Inj \spc{X}$ lie on a geodesic $[pq]$ with the ends on  $\spc{X}$.
+Show that for any two points $f,g\in\Inj \spc{X}$ lie on a geodesic $[pq]$ with $p,q\in \spc{X}$.
 \end{thm}
 
 \section{Injective envelop}
 
-An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelop}\emph{injective envelop} if $\spc{E}$ is a an injective space and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
+An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelop}\emph{injective envelop} if $\spc{E}$ is an injective space and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
 
 Two injective envelopes $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are called  equivalent if there is an isometry $\iota\: \spc{E}\to\spc{F}$ such that $f=\iota\circ e$.
 
 \begin{thm}{Theorem}\label{thm:inj-envelop}
 For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is an injective envelop.
 
-Moreover, any other injective envelop of $\spc{X}$ is equivalent to $\Inj\spc{X}$.
+Moreover, any other injective envelope of $\spc{X}$ is equivalent to $\Inj\spc{X}$.
 \end{thm}
 
 \parit{Proof.} 
@@ -400,7 +401,7 @@ Suppose that $w\:f\mapsto f'$; observe that $f(x)\ge f'(x)$ for any $x\in \spc{X
 Since $f$ is extremal, $f=f'$;
 that is, $w$ is the identity map and therefore $S=\Inj\spc{X}$.
 
-Assume we have another injective envelop $e\:\spc{X}\hookrightarrow \spc{E}$.
+Assume we have another injective envelope $e\:\spc{X}\hookrightarrow \spc{E}$.
 Then there are short maps $v\:\spc{E}\to \Inj\spc{X}$ and $w\:\Inj\spc{X}\to \spc{E}$ such that $x=v\circ e(x)$ and $e(x)=w(x)$ for any $x\in\spc{X}$.
 From above, the composition $v\circ w$ is the identity on $\Inj\spc{X}$.
 In particular $w$ is distance-preserving.
@@ -418,7 +419,7 @@ Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to an di
 
 \section{Remarks}
 
-Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelop was introduced by John Isbell \cite{isbell}.
-It was rediscovered couple of times since then;
-as a result injective envelop has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
+Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelope was introduced by John Isbell \cite{isbell}.
+It was rediscovered a couple of times since then;
+as a result the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
 

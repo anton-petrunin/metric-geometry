@@ -7,7 +7,7 @@ Observe that in the case of equality we have that $\Im s= \square$.
 Indeed,
 the same argument shows that 
 \[\vol(s^{-1}(\square),g)\ge \vol\square=1.\]
-The set $s^{-1}(\RR^1\backslash \square)$ is an open subset of $\square$.
+The set $s^{-1}(\RR^2\backslash \square)$ is an open subset of $\square$.
 If it is nonempty, then it has positive volume.
 In this case
 \[\vol(\square,g)>\vol(s^{-1}(\square),g)\ge 1\]
@@ -139,9 +139,9 @@ By the triangle inequality, we have that
 It remains to apply the coarea inequality \ref{cor:coarea}
 \[\area(\mathbb{S}^2,g)\ge \int\limits_0^1\length L_c\cdot dc.\]
 
-\parit{Remarks.}
+
 The bound $\tfrac12$ was proved by Marcel Berger \cite{berger}. 
-Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke}.
+Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke} --- if you solved this part of problem, then publish.
 
 \begin{wrapfigure}{r}{20 mm}
 \vskip-0mm
@@ -160,7 +160,7 @@ An example of $\Delta$ can be guessed from the picture;
 the involution $\iota$ makes a length preserving half turn of its boundary $\partial \Delta$.
 
 
-Take the product $\Delta\times \Delta\subset \RR^4$;
+Take the product $\Delta\times \Delta\subset \EE^4$;
 it is homeomorphic to the 4-ball.
 Note that 
 $$\vol_3[\partial(\Delta\times \Delta)]=2\cdot\area \Delta\cdot\length \partial \Delta<20\cdot\eps.$$
@@ -181,6 +181,9 @@ By the Vitali covering theorem, given $\eps>0$, we can cover the whole volume of
 Applying the above observation and summing up the results, we get that 
 \[\liminf_{n\to\infty} \vol (M,g_n)\ge e^{-n\cdot \eps}\cdot\vol (M,g_\infty).\]
 The statement follows since $\eps$ is an arbitrary positive number.
+
+To solve the second part of problem, start with $g_\infty$ and construct $g_n$ by  adding many tiny bubbles.
+The volume can be increased arbitrary with arbitrary small change of metric.
 
 \parit{Remark.}
 A more general result was obtained by Sergei Ivanov~\cite{ivanov-1997}.
@@ -438,7 +441,7 @@ meets the definition.
 \parit{Remark.}
 Choose a group $G$.
 Note that there is an aspherical connected space CW-complex $\spc{K}$ with fundamental group $G$.
-The space $\spc{K}$ is called an \emph{Eilenberg--MacLane space of type $K(G,1)$}, or simply a $K(G,1)$ space.
+The space $\spc{K}$ is called an \index{K(G,1) space}\emph{Eilenberg--MacLane space of type $K(G,1)$}, or briefly a $K(G,1)$ space.
 Moreover it is not hard to check that
 \begin{itemize}
 \item $\spc{K}$ is uniquely defined up to a weak homotopy equivalence;

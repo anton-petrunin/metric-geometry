@@ -1,3 +1,15 @@
+\parbf{\ref{ex:quad-inq}.}
+Add four triangle inequalities.
+
+\parbf{\ref{ex:pseudo-infty-metric}.}
+Note that if $\mu(A)=\mu(B)=0$, then $|A-B|=0$.
+Therefore \ref{metric=0} does not hold for bounded measurable sets.
+It is straightforward to check that for bounded measurable sets the remaining conditions in~\ref{def:metric}; whence \ref{SHORT.ex:pseudo-infty-metric:pseudo}.
+
+Note that distance from the empty set and whole plane is infinite; so the value $|A-B|$ might be infinite.
+It is straightforward to check the remaining conditions in~\ref{def:metric}; whence \ref{SHORT.ex:pseudo-infty-metric:infty}.
+
+
 \parbf{\ref{ex:almost-min}.}
 Assume the statement is wrong. 
 Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that 
@@ -21,9 +33,24 @@ Since $\rho$ is a continuous function we get
 
 The latter contradicts that $\rho>0$.
 
+\parbf{\ref{ex:complete-completion}.}
+Let $\bar {\spc{X}}$ be a completion of $\spc{X}$.
+By the definition for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $(x_n)$ in  $\spc{X}$ that converges to $y$.
+
+Choose a Cauchy sequence $(y_m)$ in $\bar {\spc{X}}$.
+From above, we can choose points $x_{n,m}\in \spc{X}$ such that $x_{n,m}\to y_m$ for any $m$.
+Choose $z_m=x_{n_m,m}$ such that $|y_m-z_m|<\tfrac1m$.
+Observe that $z_m$ is Cauchy.
+Therefore its limit $z_\infty$ lie in $\bar{\spc{X}}$.
+Finally note that $x_m\to z_\infty$.
+
+\parbf{\ref{ex:compact-net}.}
+A compact compact $\eps$-net $N$ of $\spc{K}$ contains a finite $\eps$ net $F$.
+Show and use that $F$ is a $2\cdot\eps$-net of $\spc{K}$.
+
 
 \parbf{\ref{ex:non-contracting-map}.}
-Given any pair of point $x_0,y_0\in \spc{K}$, 
+Given a pair of points $x_0,y_0\in \spc{K}$, 
 consider two sequences $x_0,x_1,\dots$ and $y_0,y_1,\dots$
 such that $x_{n+1}=f(x_n)$ and $y_{n+1}\z=f(y_n)$ for each $n$.
 
@@ -63,7 +90,7 @@ It follows that $(\ell_n)$ is a constant sequence.
 In particular 
 \[|x_0-y_0|_{\spc{K}}=\ell_0=\ell_1=|f(x_0)-f(y_0)|_{\spc{K}}\]
 for any pair of points $(x_0,y_0)$ in $\spc{K}$.
-That is, $f$ is distance-preserving, in particular injective.
+That is, the map $f$ is distance-preserving and, in particular, injective.
 
 From $({*})$, we also get that $f(\spc{K})$ is everywhere dense.
 Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective. Hence the result follows.
@@ -71,10 +98,12 @@ Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective. Hence the resu
 \parit{Remarks.}
 This is a basic lemma in the introduction to Gromov--Hausdorff distance \cite[see 7.3.30 in][]{burago-burago-ivanov}.
 This proof is not quite standard,
-I learned this proof from Travis Morrison, 
+I learned it from Travis Morrison, 
 a student in my MASS class at Penn State, Fall 2011.
 
 Note that as an easy corollary one can see that any surjective non-expanding map from a compact metric space to itself is an isometry. 
+
+\parbf{\ref{ex:loc-compact-not-proper}.} Consider an infinite discrete space.
 
 \parbf{\ref{ex:pogorelov}.}
 The conditions \ref{SHORT.metric>=0}--\ref{SHORT.metric:sym} in Definition \ref{def:metric} are evident.
@@ -95,7 +124,7 @@ B(x,\tfrac \pi2) \backslash B(z,\tfrac\pi2).
 
 Observe that
 $B(x,\tfrac \pi2)\backslash B(y,\tfrac\pi2)$
-does not overlap
+does not overlap with
 $B(y,\tfrac\pi2)\backslash B(z,\tfrac\pi2)$ and  we get equality in $(*)$ if and only if $y$ lies on the great circle arc from $x$ to $z$.
 Therefore the second statement follows.
 
@@ -106,6 +135,15 @@ Aleksei Pogorelov \cite{pogorelov}.
 It is closely related to the construction given 
 by David Hilbert in \cite{hilbert}
 which was the motivating example for his 4-th problem.
+
+\parbf{\ref{ex:4-point-trees}.}
+Without loss of generality we may assume that the points $p,x,y,z$ are distinct.
+
+Let $S$ be the set in the tree covered by all six geodesics with the given endpoints.
+Show that $S$ looks like $H$ or like $X$; make a conclusion.
+
+\parbf{\ref{ex:spheres-in-trees}.}
+Apply \ref{ex:4-point-trees}.
 
 
 \parbf{\ref{ex:no-geod}.}
@@ -120,9 +158,9 @@ where $\bm{x}=(x_1,x_2\,\dots)\in B$.
 That is, if $\bm{x}(t)$, $t\in[0,\ell]$, is a curve parametrized by $\rho_0$-length 
 then its $\rho_1$-length is defined by
 \[\length_{\rho_1}\bm{x}\df\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
-Note that the metric $\rho_1$ is bi-Lipschitz to~$\rho_0$.
+Note that the metric $\rho_1$ is bilipschitz to~$\rho_0$.
 
-Assume $\bm{x}(t)$ and $\bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denoted by $x_m(t)$ and $x_m'(t)$ respectively.
+Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denoted by $x_m(t)$ and $x_m'(t)$ respectively.
 Note that if $x'_m(t)\le x_m(t)$ for any $t$ and 
 the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x_m(t)$, then 
 \[\length_{\rho_1}\bm{x}'\le \length_{\rho_1}\bm{x}.\]
@@ -134,9 +172,9 @@ In particular, for some values $t$, we have $y_m(t)<x_m(t)$, where
 \[y_m(t)=(1-\tfrac t\ell)\cdot x_m(0)
 +\tfrac t\ell\cdot x_m(\ell)
 -\tfrac 1{100}\cdot \min\{t,\ell-t\}.\]
-Consider the curve $\bm{x}'(t)$ as above with
+Set
 \[x'_m(t)=\min\{x_m(t),y_m(t)\}.\]
-Note that $\bm{x}'(t)$ and $\bm{x}(t)$ have the same end points, and by the above
+Note that the curves $\bm{x}'$ and $\bm{x}$ have the same end points, and by the above
 \[\length_{\rho_1}\bm{x}'<\length_{\rho_1}\bm{x}.\]
 That is, for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same end points.
 In particular, $(B,\rho_1)$ has no geodesics.
@@ -159,7 +197,7 @@ Choose a Cauchy sequence $(x_n)$ in $(\spc{X},\|*-*\|)$; it sufficient to show t
 Note that the sequence $(x_n)$ is Cauchy in $(\spc{X},|*-*|)$;
 denote its limit by $x_\infty$.
 
-After passing to a subsequence, we can assume that $\|x_n-x_{n+1}\|\z<\tfrac1{2^n}$.
+Passing to a subsequence, we can assume that $\|x_n-x_{n+1}\|\z<\tfrac1{2^n}$.
 It follows that there is a 1-Lipschitz path $\gamma$ in $(\spc{X},\|*-*\|)$ such that $x_n=\gamma(\tfrac1{2^n})$ for each $n$ and $x_\infty=\gamma(0)$.
 
 It follows that

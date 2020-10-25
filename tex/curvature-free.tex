@@ -6,12 +6,14 @@ most of the statements of this and the following lecture have counterparts for g
 For simplicity, we discuss mostly Riemannian spaces --- these are specially nice and smooth length metrics on manifolds.
 These spaces are also most important in applications.
 
+We will assume that homology are taken with the coefficients $\ZZ_2$, but you are welcome to play with other coefficients.
+
 \section{Riemannian spaces}
 
 Let $M$ be a smooth manifold.
 A \index{metric tensor}\emph{metric tensor} on $M$ is a choice of positive definite quadratic forms $g_p$ on each tangent space $\T_pM$.
 Usually one assumes that the metric tensor depends smoothly on the point $p$,
-but for our purposes continuity will always be sufficient;
+but for our purposes continuity will be sufficient;
 that is, one can fix a local coordinates at every point of $M$ so that the components of $g$ are continuous functions.
 (Few times we will need piecewise continuous metric tensors.)
 
@@ -41,20 +43,20 @@ Observe that the restriction of $s\circ L$ to a small neighborhood of $q$ is $e^
 Since $p$ is arbitrary, the observation follows.
 \qeds
 
-\section{Volume and Hausdorff measure}
+\section{Volume and Hausdorff measure}\label{sec:vol-haus}
 
 Let $\spc{M}=(M,g)$ be an $n$-dimensional Riemannian manifold.
 If a region $R\subset M$ is covered by one chart $\iota\:U\to \spc{M}$,
-then its volume is defined as 
-\[\vol_n R
+then its volume (denoted by $\vol R$ or $\vol_n R$) is defined as 
+\[\vol R
 \df
 \int_{\iota^{-1}(R)}\sqrt{\det{g}}.\]
 In the general case we subdivide $R$ into a countable collection of regions $R_1,R_2\dots$ such that each region $R_i$ is covered by a chart $\iota_i\:U_i\to \spc{M}$ and define
-\[\vol_n R\df \vol_n R_1+\vol_n R_2+\dots\]
+\[\vol R\df \vol R_1+\vol R_2+\dots\]
 The chain rule for multiple integrals implies that the right-hand side does not depend on the choice of subdivision and the choice of charts.
 
 Similarly, we define integral along $\spc{M}$.
-Any Borel function $u\:\spc{M}\to \RR$, can be presented as a sum $u_1+u_2+\cdots$ such that the support of each function $u_i$ can be covered by one chart $\iota_i\:U_i\to \spc{M}$
+Any Borel function $u\:\spc{M}\z\to \RR$, can be presented as a sum $u_1+u_2+\cdots$ such that the support of each function $u_i$ can be covered by one chart $\iota_i\:U_i\to \spc{M}$
 and set 
 \[\int_{p\in\spc{M}} u(p)
 \df
@@ -82,15 +84,14 @@ $$\haus_\alpha R
 For properties of Hausdorff measure we refer to the classical book of  Herbert Federer \cite{federer};
 in particular, $\haus_\alpha$ is indeed a measure and $\haus_\alpha$-measurable sets include all Borel sets.
 
-The following observation follows from \ref{obs:lip-chart};
-we will use it to extend some results in geometric measure theory to Riemannian manifolds.
+The following observation follows from \ref{obs:lip-chart}:
 
 \begin{thm}{Observation}\label{obs:lipcart+}
 Suppose that a Borel set $R$ in an $n$-dimensional Riemannian manifold $\spc{M}$ is subdivided into a countable collection of subsets $R_i$ such that each $R_i$ is covered by an $e^{\mp\eps}$-bi-Lipschitz charts
 $s_i\:W_i\to \spc{M}$.
 Then
 \begin{align*}
-\vol R&\lege e^{\pm n\cdot\eps}\cdot\sum_i\vol[s_i^{-1}(R_i)]
+\vol_n R&\lege e^{\pm n\cdot\eps}\cdot\sum_i\vol_n[s_i^{-1}(R_i)]
 \intertext{and}
 \haus_n R&\lege e^{\pm n\cdot\eps}\cdot\sum_i\haus_n[s_i^{-1}(R_i)]
 \end{align*}
@@ -104,22 +105,25 @@ Observe that
 \item A ball in $n$-dimensional Euclidean space of diameter $1$ has unit Hausdorff measure.
 \item A unit cube in $n$-dimensional Euclidean space has volume.
 \end{itemize}
-Therefore, for any Borel region $R\subset \RR^n$, we have 
+Therefore, for any Borel region $R\subset \EE^n$, we have 
 \[\vol_n R=\tfrac{\omega_n}{2^n}\cdot\haus_n R,\eqlbl{eq:vol/mu}\]
 where $\omega_n$ denotes the volume of a unit ball in the $n$-dimensional Euclidean space.
 
 Applying \ref{eq:vol/mu} together with \ref{obs:lipcart+}, we get that the inequality 
 \[\vol_n R\lege e^{\pm2\cdot n\cdot \eps}\cdot\tfrac{\omega_n}{2^n}\cdot\haus_n R\]
 holds for any $\eps>0$.
-Since $\eps>0$ is arbitrary, we get the following:
+Since $\eps>0$ is arbitrary, we get that \ref{eq:vol/mu} holds in $n$-dimensional Riemannian manifolds.
+More precisely:
 
 \begin{thm}{Proposition}
-The identity \ref{eq:vol/mu} holds for any Borel region $R$ in an $n$-dimensional Riemannian manifold. 
+The identity 
+\[\vol_n R=\tfrac{\omega_n}{2^n}\cdot\haus_n R\]
+holds for any Borel region $R$ in an $n$-dimensional Riemannian manifold. 
 \end{thm}
 
 This proposition can be used to define volume of any dimension $k$ by setting
 \[\vol_k\df\tfrac{\omega_k}{2^k}\cdot\haus_k.\]
-If $A$ is a subset of $k$-dimensional submanifold in, then the two definitions of $\vol_kA$ agree; but the latter definition works for a wider class of sets. 
+If $A$ is a subset of $k$-dimensional submanifold $\spc{N}\subset \spc{M}$, then the two definitions of $\vol_kA$ agree; but the latter definition works for a wider class of sets. 
 
 \section{Area and coarea formulas}
 
@@ -129,7 +133,7 @@ the differential $d_p f\:\T_p\spc{M}\to\T_{f(p)}\spc{N}$ is defined at almost al
 
 The differential is a linear map, defines the Jacobian matrix $\Jac_pf$ in orthonormal frames of $\T_p$ and $\T_{f(p)}\spc{N}$.
 The determinant of $\Jac_pf$ will be denoted by $\jac_p$;
-its absolute value does not depend on the choice of frames.
+its absolute value does not depend on the choice of the orthonormal frames.
 
 The identity in the following proposition is called \index{area formula}\emph{area formula}.
 
@@ -145,7 +149,7 @@ If $\spc{M}$ and $\spc{N}$ are isometric $n$-dimensional Euclidean space, then t
 see \cite[3.2.3]{federer}.
 
 Note that Jacobian of a $e^{\mp\eps}$-bi-Lipschitz map between $n$-dimensional Riemannian manifolds (if defined) has determinant in the range $e^{\mp n\cdot\eps}$.
-By \ref{obs:lipcart+}, we get the following approximate version of the area formula 
+Applying \ref{obs:lipcart+} and the area formula in $\EE^n$, we get the following approximate version of the area formula 
 \[\int_{p\in \spc{M}} u(p)\cdot |\jac_pf|
 \lege e^{\pm 3\cdot n\cdot \eps}\int_{q\in \spc{N}}\sum_{p\in f^{-1}(q)} u(p)\]
 holds if $u\ge0$.
@@ -180,13 +184,9 @@ The identity in the following proposition is a partial case of the so-called \in
 Let $f\:\spc{M}\to\RR$ be a Lipschitz function defined on an $n$-dimensional Riemannian manifold $\spc{M}$.
 Suppose that the level sets $L_x\df f^{-1}(x)$ are equipped with $(n-1)$-dimensional volume $\vol_{n-1}\df\tfrac{\omega_{n-1}}{2^{n-1}}\cdot \haus_{n-1}$.
 Then for any Borel function $u\:\spc{M}\to \RR$ the following equality holds
-\[\int_{p\in \spc{M}} u(p)\cdot |\nabla_pf|=\int_{x\in \RR}dx\cdot \int_{p\in L_x} u(p).\]
+\[\int_{p\in \spc{M}} u(p)\cdot |\nabla_pf|=\int_{-\infty}^{+\infty} \left(\,\int_{p\in L_x} u(p)\,\right)\cdot dx.\]
 \end{thm}
 
-\parit{Instead of proof.}
-If $\spc{M}$ is isometric to Euclidean space, then the statement follows from \cite[3.2.12]{federer}.
-The reduction to the Euclidean space is done the same way as in the proof of the area formula.
-\qeds
 
 \begin{thm}{Corollary}\label{cor:coarea}
 Let $\spc{M}$, $f$, and $L_x$ be as in \ref{prop:coarea}.
@@ -199,7 +199,12 @@ Then for any Borel subset $A\subset M$ we have
 This inequality is a partial case of the so-called  \index{coarea inequality}\emph{coarea inequality};
 its right-hand side is called \index{coarea of function}\emph{coarea of the restriction $f|_A$}. 
 
-\parit{Proof.} Choose $u$ to be the characteristic function of $A$ and apply the coarea formula.
+
+\parit{Instead of proof.}
+If $\spc{M}$ is isometric to Euclidean space, then the statement follows from \cite[3.2.12]{federer}.
+The reduction to the Euclidean space is done the same way as in the proof of the area formula.
+
+To prove the corollary, choose $u$ to be the characteristic function of $A$ and apply the coarea formula.
 \qeds
 
 
@@ -223,7 +228,7 @@ We will consider the case $n=2$; the other cases are proved the same way.
 \end{wrapfigure}
 
 Denote by $A$, $A'$, and $B$, $B'$ the opposite faces of the square~$\square$.
-Consider two function 
+Consider two functions
 \begin{align*}
 f_A(x)&\df\min\{\,\distfun_A(x)_g,1\,\},
 \\
@@ -258,7 +263,7 @@ Observe that the differentials $d_pf_A$ and $d_pf_B$ written in these frames are
 Evidently $|d_pf_A|\le 1$ and $|d_pf_B|\le 1$.
 Since the determinant of a matrix is the volume of the parallelepiped spanned on its rows, we get 
 \[|\jac_p f|\le |d_pf_A|\cdot|d_pf_B|\le 1.\]
-Since $f\:\square\to\square$ is a Lipschitz onto map, the {}area inequality \ref{cor:area-inequality} implies that 
+Since $f\:\square\to\square$ is a Lipschitz onto map, the area inequality (\ref{cor:area-inequality}) implies that 
 \[\vol(\square,g)\ge \vol\square=1.\]
 \qedsf
 
@@ -315,7 +320,7 @@ Suppose $g$ is a Riemannian metric on $V$ such that
 \[\dist{p}{q}{g}\ge\dist{p}{q}{\EE^n}\]
 for any two points $p,q\in \Sigma$.
 Show that
-\[\vol_n(V,g)\ge \vol_n(V)_{\EE^n}.\]
+\[\vol(V,g)\ge \vol(V)_{\EE^n}.\]
  
 \end{thm}
 
@@ -325,7 +330,8 @@ Suppose that sphere with Riemannian metric $(\mathbb{S}^2,g)$ admits an involuti
 Show that 
 \[\area(\mathbb{S}^2,g)\ge \tfrac1{1000}.\]
 Try to show that 
-\[\area(\mathbb{S}^2,g)\ge \tfrac12\quad\text{or}\quad \area(\mathbb{S}^2,g)\ge 1.\]
+\[\area(\mathbb{S}^2,g)\ge \tfrac12,\quad \area(\mathbb{S}^2,g)\ge 1\quad\text{or}\quad\area(\mathbb{S}^2,g)\ge \tfrac4\pi\]
+
 \end{thm}
 
 \begin{thm}{Advanced exercise}\label{ex:involution-of-3sphere}
@@ -370,7 +376,7 @@ In the following lecture we will show that systolic inequality holds for many ma
 
 \section{Generalization}\label{sec:hausdorff-measure}
 
-The following proposition follows immediately from the definitions.
+The following proposition follows immediately from the definitions of Hausdorff measure (Section \ref{sec:vol-haus}).
 
 \begin{thm}{Proposition}\label{prop:bilip-measure}
 Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$
@@ -396,11 +402,12 @@ Recall that $\tfrac{\omega_n}{2^n}\cdot\haus_n=\vol_n$ for $n$-dimensional Riema
 Note that $\tfrac{\omega_n}{2^n}<1$ if $n\ge 2$.
 Therefore, the conclusions in \ref{ex:besikovitch++} are weaker than in \ref{thm:besikovitch+}; the assumptions are weaker as well.
 
-It is straightforward to define systolic inequality on $n$-dimensional manifolds with the Hausdorff measure $\haus_n$ instead of volume and prove analogs of the exercises \ref{ex:sysT2}--\ref{ex:sysS2xS1}.
+One can redefine systolic inequality on $n$-dimensional manifolds using the Hausdorff measure $\haus_n$ instead of the volume.
+It is straightforward to prove analogs of the exercises \ref{ex:sysT2}--\ref{ex:sysS2xS1} with this definition.
 
 \begin{thm}{Exercise}\label{ex:2top-discs}
-Let $\spc{X}$ be a contractible metric space with zero $(n\z+1)$-dimensional Hausdorff measure.
-Assume that $\Delta_1,\Delta_2\subset X$ are two embedded $n$-disks having the same boundary.
+Suppose that two embedded $n$-disks $\Delta_1,\Delta_2$ in a metric space $\spc{X}$ have identical boundaries.
+Assume that $\haus_{n+1}\spc{X}=0$.
 Show that $\Delta_1=\Delta_2$.
 \end{thm}
 

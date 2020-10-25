@@ -17,7 +17,7 @@ As an example, consider the space of real sequences equipped with \index{sup nor
 
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
 Therefore any normed space is an example of metric space (in fact it is a geodesic space).
-Often we do not distinguish between normed space and the corresponding metric space.
+Often we do not distinguish between normed space and the corresponding metric space.\footnote{By Mazur--Ulam theorem, the metric remembers the affine structure of the space; a slick proof of this theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.}
 
 The following lemma says in particular that any compact metric space is isometric to a subset of a fixed normed space.
 
@@ -44,15 +44,15 @@ Therefore $\iota$ is \index{short map}\emph{short} (in other words, $\iota$ is d
 
 Again by triangle inequality we have 
 \[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
-Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrary close to $x$.
-Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrary close to $\dist{x}{y}{\spc{X}}$.
+Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrarily close to $x$.
+Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrarily close to $\dist{x}{y}{\spc{X}}$.
 In other words 
 \[\sup_n\{\,\left|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}\right|\,\}\ge \dist{x}{y}{\spc{X}}.\]
 Whence 
 \[\sup_n\{\,|a_n(x)-a_n(y)|\,\}\ge \dist{x}{y}{\spc{X}};\eqlbl{eq:a-a>=dist}\]
 that is, $\iota$ is distance non-contracting.
 
-Finally observe that \ref{eq:a-a=<dist} and \ref{eq:a-a>=dist} implies the lemma.
+Finally observe that \ref{eq:a-a=<dist} and \ref{eq:a-a>=dist} imply the lemma.
 \qeds
 
 The following exercise generalizes the lemma to arbitrary separable spaces.
@@ -75,7 +75,7 @@ Show that any compact metric space $\spc{K}$ is isometric to a subspace of a com
 Let $\spc{X}$ be arbitrary metric space.
 Denote by $\ell^\infty(\spc{X})$ the space of all bounded functions on $\spc{X}$ equipped with sup-norm.
 
-Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defied by 
+Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defined by 
 \[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
 is distance-preserving.
 \end{thm}
@@ -84,9 +84,8 @@ Note that this claim implies that {}\emph{any metric space is isometric to a sub
 
 \section{Extension property}
 
-Suppose a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$.
-In this case we may say that $\spc{X}'$ is an \index{extension}\emph{extension} of $\spc{X}$.
-If $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d$-extension}.
+If a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$, then we say that $\spc{X}'$ is an \index{extension}\emph{extension} of $\spc{X}$.
+If in addition $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d$-extension}.
 
 If the complement $\spc{X}'\backslash \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
 In this case, to define metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
@@ -103,7 +102,7 @@ Any function $f$ of that type will be called \index{extension function}\emph{ext
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets  \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
 
-If we assume in addition that $\diam \spc{U}\le d$ and instead of extension functions we consider only $d$-extension functions, then we arrive to a definition of {}\emph{$d$-extension property}.
+If we assume in addition that $\diam \spc{U}\le d$ and instead of extension functions we consider only $d$-extension functions, then we arrive at a definition of {}\emph{$d$-extension property}.
 
 If in addition $\spc{U}$ is separable and complete, then it is called \index{Urysohn space}\emph{Urysohn space} or {}\emph{$d$-Urysohn space} respectively.
 \end{thm}
@@ -121,7 +120,8 @@ so we can (and will) treat $\spc{X}$ as a subspace of $\spc{X}^d$, or, equivalen
 
 Let us iterate this construction.
 Start with a one-point space $\spc{X}_0$ and consider a sequence of spaces $(\spc{X}_n)$ defined by $\spc{X}_{n+1}\z=\spc{X}_n^d$.
-Note that the sequence is nested, that is $\spc{X}_0\subset \spc{X}_1\subset\dots$
+Note that the sequence is nested;
+that is, $\spc{X}_0\subset \spc{X}_1\subset\dots$
 and the union
 \[\spc{X}_\infty=\bigcup_n\spc{X}_n;\]
 comes with metric such that
@@ -164,9 +164,9 @@ Therefore there is a sequence of points $p_n\in \spc{U}$ such that for any $x\in
 Moreover, we can assume that 
 \[\dist{p_n}{p_{n+1}}{} < \tfrac1{2^n}\eqlbl{eq:|pn-pn|}\]
 for all large $n$.
-Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\:\spc{F}_n\to\RR$ defined by $f_n(x)=f(x)$ for any $x\in \spc{F}$, and
+Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\:\spc{F}_n\to\RR$ defined by $f_n(x)=f(x)$ if $x\ne p_n$ and
 \[f_n(p_n)=\max\set{\bigl|\dist{p_n}{x}{}- f(x)\bigr|}{x\in \spc{F}}.\]
-Observe that $f_n$ is a an extension function for large $n$ and
+Observe that $f_n$ is an extension function for large $n$ and
 $f_n(p_n)\z<\tfrac1{2^n}$.
 Therefore applying approximate extension property recursively we get~\ref{eq:|pn-pn|}.
 
@@ -176,7 +176,7 @@ By \ref{eq:|pn-pn|}, $(p_n)$ is a Cauchy sequence and its limit meets the condit
 Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply the following:
 
 \begin{thm}{Theorem}\label{thm:urysohn-exists}
-Urysohn space, and $d$-Urysohn space for any $d>0$, exist.
+Urysohn space and $d$-Urysohn space for any $d>0$ exist.
 \end{thm}
 
 \section{Universality}
@@ -193,14 +193,14 @@ An Urysohn space is universal.
 That is, if $\spc{U}$ is an Urysohn space, then any separable metric space $\spc{S}$ admits a distance-preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
 
 Moreover, for any finite subspace $\spc{F}\subset \spc{S}$,
-any distance-preserving embedding $\spc{F}\hookrightarrow \spc{U}$ can be extended to a distance preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
+any distance-preserving embedding $\spc{F}\hookrightarrow \spc{U}$ can be extended to a distance-preserving embedding $\spc{S}\hookrightarrow\spc{U}$.
 
-An $d$-Urysohn space is $d$-universal;
-that is, the above statements hold provided $\diam\spc{S}\le d$.  
+A $d$-Urysohn space is $d$-universal;
+that is, the above statements hold provided that $\diam\spc{S}\le d$.  
 \end{thm}
 
 \parit{Proof.}
-We will prove the second statement,
+We will prove the second statement;
 the first statement is its partial case for $\spc{F}=\emptyset$.
 
 The required isometry will be denoted by $x\mapsto x'$.
@@ -210,15 +210,15 @@ We may assume that $\spc{F}=\{s_1,\dots,s_n\}$, so $s_i'\in \spc{U}$ are defined
 
 The sequence $s_i'$ for $i>n$ can be defined recursively using the extension property in $\spc{U}$.
 Namely suppose that $s_1',\dots,s_{i-1}'$ are already defined.
-Since $\spc{U}$ is universal, there is a point $s_i'\in \spc{U}$ such that
+Since $\spc{U}$ has extension property, there is a point $s_i'\in \spc{U}$ such that
 \[\dist{s_i'}{s_j'}{\spc{U}}=\dist{s_i}{s_j}{\spc{S}}\]
 for any $j<i$.
 
-We constructed a distance-preserving map $s_i\mapsto s_i'$, it remains to extend it to a continuous map on whole $\spc{S}$.
+The constructed map $s_i\mapsto s_i'$ is  distance-preserving map; it remains to extend it to a distance-preserving map on whole $\spc{S}$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:geodesics-urysohn}
-Show that any two distinct points in an Urysohn space can be jointed by infinite number of geodesics.
+Show that any two distinct points in an Urysohn space can be joined by an infinite number of geodesics.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact-extension}
@@ -239,21 +239,21 @@ Show that ($d$-) Urysohn space is simply connected.
 
 \begin{thm}{Theorem}\label{thm:urysohn-unique}
 Suppose $\spc{F}\subset \spc{U}$ and $\spc{F}'\subset \spc{U}'$ be finite isometric subspaces in a pair of ($d$-)Urysohn spaces $\spc{U}$ and $\spc{U}'$.
-Then any isometry $\iota\spc{F}\to \spc{F}'$ can be extended to an isometry $\spc{U}\to \spc{U}'$.
+Then any isometry $\iota\:\spc{F}\to \spc{F}'$ can be extended to an isometry $\spc{U}\to \spc{U}'$.
 
 In particular ($d$-)Urysohn space is unique up to isometry.
 \end{thm}
 
-Note that \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
-but it does not solely imply existence of an isometry.
-The following construction use the same idea as in the proof of \ref{prop:sep-in-urys}, but we need to apply it {}\emph{back-and-forth} to ensure that the constructed distance-preserving map is onto.
+The following construction uses the same idea as in the proof of \ref{prop:sep-in-urys}, but we need to apply it {}\emph{back-and-forth} to ensure that the constructed distance-preserving map is onto.
+While \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
+it does not solely imply the existence of an isometry.
 
 \parit{Proof.}
 Choose dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}'$.
 We can assume that $\spc{F}=\{a_1,\dots,a_n\}$, $\spc{F}'=\{b_1',\dots,b_n'\}$ and $\iota(a_i)=b_i$ for $i\le n$.
 
 The required isometry $\spc{U}\leftrightarrow \spc{U}'$ will be denoted by $u \leftrightarrow u'$.
-Set $a'_i=b'_i$ is $i\le n$.
+Set $a'_i=b'_i$ if $i\le n$.
 
 Let us define recursively $a_{n+1}',b_{n+1}, a_{n+2}', b_{n+2},\dots$ --- on the odd step we define the images of $a_{n+1},a_{n+2},\dots$ and on the even steps we define inverse images of $b'_{n+1},b'_{n+2},\dots$.
 The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can construct two sequences $a_1',a_2',\dots\in \spc{U}'$ and $b_1,b_2,\dots\in \spc{U}$ such that
@@ -279,56 +279,74 @@ Observe that \ref{thm:urysohn-unique} implies that the Urysohn space (as well as
 Is there a {}\emph{noncomplete} finite-set homogeneous metric space that meets the extension property?
 \end{thm}
 
-This is question of Pavel Urysohn; it appeared already in \cite[\S2(6)]{urysohn} and reappeared in \cite[p. 83]{gromov-2007} with a missing key word.
+This is a question of Pavel Urysohn; it appeared already in \cite[§2(6)]{urysohn}
+and reappeared in \cite[p. 83]{gromov-2007} with a missing keyword.
 In fact I do not see an example of a 1-point homogeneous  space with extension property.
 
-\begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
-Let $S_r(p)$ be a sphere of radius $r$ centered at $p$ in the $d$-Urysohn space $\spc{U}_d$;
+Recall that $S_r(p)_{\spc{X}}$ denotes the sphere of radius $r$ centered at $p$ in a metric space $\spc{X}$;
 that is, 
-\[S_r(p)=\set{x\in \spc{U}_d}{\dist{p}{x}{\spc{U}_d}=r}.\]
-Show that $S_r(p)$ is isometric to $\spc{U}_d$ if $d\ge r\ge \tfrac d2$.
+\[S_r(p)_{\spc{X}}=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}=r}.\]
 
-Use it to show that $\spc{U}_d$ is not countable-set homogeneous;
+\begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
+Choose $d\in [0,\infty]$;
+Denote by $\spc{U}_d$ the $d$-Urysohn space;
+so $\spc{U}_\infty$ the Urysohn space.
+
+\begin{subthm}{ex:sphere-in-urysohn:sphere}
+Assume that $L=S_r(p)_{\spc{U}_d}\ne \emptyset$.
+Show that $L$ is isometric to $\spc{U}_{\ell}$; find $\ell$ in terms of $r$ and $d$.
+\end{subthm}
+
+\begin{subthm}{ex:sphere-in-urysohn:midpoint}
+Let $\ell=\dist{p}{q}{\spc{U}_d}$.
+Show that the subset $M\subset\spc{U}_d$ of midpoints between $p$ and $q$ is isometric to $\spc{U}_\ell$.
+\end{subthm}
+
+\begin{subthm}{ex:sphere-in-urysohn:homogeneous}
+Show that $\spc{U}_d$ is \emph{not} countable-set homogeneous;
 that is, there is a distance-preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that cannot be extended to an isometry of $\spc{U}_d$.
+\end{subthm}
 \end{thm}
 
 In fact the Urysohn space is compact-set homogeneous; more precisely the following theorem holds.
 
 \begin{thm}{Theorem}\label{thm:compact-homogeneous}
-Let $K$ be a compact set in an ($d$-)Urysohn space $\spc{U}$.
+Let $K$ be a compact set in a ($d$-)Urysohn space $\spc{U}$.
 Then any distance-preserving map $K\to \spc{U}$ can be extended to an isometry of $\spc{U}$.
 \end{thm}
 
 A proof can be obtained by modifying the proofs of \ref{prop:completion-univeral} and \ref{thm:urysohn-unique}
 the same way as it is done in \ref{ex:compact-extension}.
 
-\begin{thm}{Exercise} Which of the following metric spaces
-\begin{subthm}{}
+\begin{thm}{Exercise}\label{ex:homogeneous}
+Which of the following metric spaces
+
+\begin{subthm}{ex:homogeneous:euclidean}
 Euclidean plane,
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:homogeneous:hilbert}
  Hilbert space $\ell^2$,
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:homogeneous:ell-infty}
  $\ell^\infty$,
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:homogeneous:ell-1}
  $\ell^1$
 \end{subthm}
 are 
-1-point set homogenius, finite set homogenius, compact set homogenius, countable homogeneous?
+1-point set homogeneous, finite set homogeneous, compact set homogeneous, countable homogeneous?
 \end{thm}
 
 
 \section{Remarks}
 
-The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he defined metric space \cite{frechet};
+The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
-The question about existence of a separable universal space was posted by Maurice René Fréchet and answered by
+The question about the existence of a separable universal space was posted by Maurice René Fréchet and answered by
 Pavel Urysohn~\cite{urysohn}.
 
-The idea of Urysohn's construction was reused in graph theory; it produces the so called {}\emph{Rado graph},
+The idea of Urysohn's construction was reused in graph theory; it produces the so-called {}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.

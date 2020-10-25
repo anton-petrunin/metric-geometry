@@ -676,6 +676,46 @@ label.rt(btex $a$ etex, z.a shifted z.shift);
 label.lft(btex $b$ etex, z.b shifted z.shift);
 endfig;
 
+beginfig(410)
+save u,p,a,r;
+path p[];
+u:=1cm;
+a:=60;
+r:=10;
+
+z.a=(1,0)*u;
+z.b=-z.a;
+z.shift=(3,0)*u;
+
+p0=z.a{.7,1}..z.b{-.4,-1}..cycle;
+
+p1=circle(z.a,r);
+p2=circle(z.b,r);
+
+
+draw p0;
+draw z.a--z.b;
+
+draw p1 cutbefore (z.a--z.b) cutafter p0;
+draw p2 cutafter (z.a--z.b) cutbefore subpath (1,2) of p0;
+
+draw (subpath (0,1) of p0) xscaled -1 shifted z.shift;
+draw (subpath (1,2) of p0) shifted z.shift;
+draw (z.a--z.b) shifted z.shift;
+
+
+dOt z.a,z.b,z.a shifted z.shift,z.b shifted z.shift;
+
+label.bot(btex $D$ etex, point 1.6 of p0);
+label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
+label.rt(btex $a$ etex, z.a);
+label.lft(btex $b$ etex, z.b);
+label.llft(btex $\alpha$ etex, z.a+10*dir(195));
+label.lrt(btex $\beta$ etex, z.b+8*dir(-35));
+label.rt(btex $a$ etex, z.a shifted z.shift);
+label.lft(btex $b$ etex, z.b shifted z.shift);
+endfig;
+
 beginfig(500) 
 
 save u,v,n;
@@ -736,6 +776,45 @@ label.top(btex $s$ etex, z.shift);
 label.lft(btex $4$ etex, z.l+z.shift-z4/2);
 endfig;
 
+beginfig(605)
+save u,p;
+path p[];
+u:=1cm;
+
+z0=origin;
+z1=(1,0)*u;
+z2=2*z1;
+z3=3*z1;
+z4=4*z1;
+z.e=4.5*z1;
+
+z11=z1 + z1 rotated 90;
+z21=z2 + z1 rotated 80;
+z22=z2 + z1 rotated 100;
+z31=z3 + z1 rotated 75;
+z32=z3 + z1 rotated 90;
+z33=z3 + z1 rotated 105;
+z41=z4 + z1 rotated 69;
+z42=z4 + z1 rotated 83;
+z43=z4 + z1 rotated 97;
+z44=z4 + z1 rotated 114;
+
+draw z0--z.e pensemibold;
+draw z1--z11 pensemibold;
+draw z2--z21 pensemibold;
+draw z2--z22 pensemibold;
+draw z3--z31 pensemibold;
+draw z3--z32 pensemibold;
+draw z3--z33 pensemibold;
+draw z4--z41 pensemibold;
+draw z4--z42 pensemibold;
+draw z4--z43;
+draw z4--z44 pensemibold;
+
+Dot z0,z1,z11,z2,z21,z22,z3,z31,z32,z33,z4,z41,z42,z43,z44;
+
+label.rt(btex $\dots$ etex, z.e);
+endfig;
 
 beginfig(700) 
 save u;

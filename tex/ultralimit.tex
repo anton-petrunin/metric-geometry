@@ -1,10 +1,9 @@
 \chapter{Ultralimits}
 
 Ultralimits provide a very general way to pass to a limit that always works.
-It use a set-theoretical construction --- the so called ulrafilter.
 
 In geometry, ultralimits are used only as a canonical way to pass to a convergent subsequence.
-It is useful thing in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
+It is a useful thing in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
 
 This lecture is based on the introduction to the paper of Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
 
@@ -17,6 +16,7 @@ A finitely additive measure $\omega$
 on  $\NN$ 
 is called an \index{ultrafilter}\emph{ultrafilter} if it satisfies 
 \begin{subthm}{}
+$\omega(\NN)=1$ and 
 $\omega(S)=0$ or $1$ for any subset $S\subset \NN$.
 \end{subthm}
 An ultrafilter $\omega$ is called 
@@ -41,7 +41,7 @@ More commonly, a nonprincipal ultrafilter is defined as a collection, say $\math
 Setting $P\in\mathfrak{F}\Leftrightarrow\omega(P)=1$ makes these two definitions equivalent.
 
 A nonempty collection of sets $\mathfrak{F}$ that does not include the empty set and satisfies only conditions \ref{filter:supset} and \ref{filter:cap} is called a \index{filter}\emph{filter}; 
-if in addition $\mathfrak{F}$ satisfies Condition~\ref{filter:ultra} it is called an \index{ultrafilter}\emph{ultrafilter}.
+if in addition $\mathfrak{F}$ satisfies condition \ref{filter:ultra} it is called an \index{ultrafilter}\emph{ultrafilter}.
 From Zorn's lemma, it follows that every filter contains an ultrafilter.
 Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly this $\mathfrak{F}$ is nonprincipal.
 
@@ -116,7 +116,7 @@ it can be proved the same way.
 \begin{thm}{Proposition}\label{prop:ultra/compact}
 Let $\spc{X}$ be a compact metric space.
 Then
-any sequence of points $(x_n)$ in $\spc{X}$ has unique $\omega$-limit $x_\omega$.
+any sequence of points $(x_n)$ in $\spc{X}$ has a unique $\omega$-limit $x_\omega$.
 
 In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 \end{thm}
@@ -124,7 +124,7 @@ In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 The following lemma is an ultralimit analog of Cauchy convergence test.
 
 \begin{thm}{Lemma}\label{lem:X-X^w}
-Let $(x_n)$ be a sequence of points in a complete space $\spc{X}$. 
+Let $(x_n)$ be a sequence of points in a complete space~$\spc{X}$. 
 Assume for each subsequence $(y_n)$ of $(x_n)$, 
 the $\omega$-limit 
 \[y_\omega=\lim_{n\to\omega}y_{n}\in \spc{X}\]
@@ -136,6 +136,13 @@ then the sequence $(x_n)$ converges in the usual sense.
 then for some $\eps>0$, there is a subsequence $(y_n)$ of $(x_n)$ such that $\dist{x_n}{y_n}{}\ge\eps$ for all $n$.
 
 It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$, a contradiction.\qeds
+
+Ultralimits could shorten some proofs in the previous lecture.
+The following exercise provides an example.
+
+\begin{thm}{Exercise}\label{ex:prop:eps-isometry=isometry}
+Use ultralimits to give a shorter solution of \ref{prop:eps-isometry=isometry}.
+\end{thm}
 
 \begin{thm}{Exercise}\label{ex:linear}
 Denote by $S$ the space of bounded sequences or real numbers.
@@ -159,6 +166,7 @@ define a pseudometric by
 \eqlbl{eq:olim-dist}\]
 Note that the $\omega$-limit on the right hand side is always defined 
 and takes a value in $[0,\infty]$. 
+(The $\omega$-convergence to $\infty$ is defined analogously to the usual convergence to $\infty$).
 
 Set $\spc{X}_\omega$ to be the corresponding metric space; 
 that is, the underlying set of $\spc{X}_\omega$ is formed by classes of equivalence of sequences of points $x_n\in\spc{X}_n$ 
@@ -168,7 +176,7 @@ defined by
 \lim_{n\to\omega} \dist{x_n}{y_n}{}=0\]
 and the distance is defined by \ref{eq:olim-dist}.
 
-The space $\spc{X}_\omega$ is called \index{$\omega$-limit space}\emph{$\omega$-limit} of $\spc{X}_n$.
+The space $\spc{X}_\omega$ is called the \index{$\omega$-limit space}\emph{$\omega$-limit} of $\spc{X}_n$.
 Typically  $\spc{X}_\omega$ will denote the  
 $\omega$-limit of sequence $\spc{X}_n$;
 we may also write  
@@ -176,8 +184,8 @@ we may also write
 
 Given a sequence $x_n\in \spc{X}_n$,
 we will denote by $x_\omega$ its equivalence class which is a point in $\spc{X}_\omega$;
-equivalently we will write
-\[x_n\to x_\omega \ \ \text{as}\ \  n\to\omega\ \ \text{or}\ \ x_\omega=\lim_{n\to\omega} x_n.\]
+it can be written as
+\[x_n\to x_\omega \ \ \text{as}\ \  n\to\omega,\ \ \text{or}\ \ x_\omega=\lim_{n\to\omega} x_n.\]
 
 \begin{thm}{Observation}\label{obs:ultralimit-is-complete}
 The $\omega$-limit of any sequence of metric spaces is complete. 
@@ -189,7 +197,7 @@ Let $\spc{X}_n$ be a sequence of metric spaces and $\spc{X}_n\to\spc{X}_\omega$ 
 Fix a Cauchy sequence $x_{m}\in \spc{X}_\omega$.
 Passing to a subsequence we can assume that $\dist{x_m}{x_{m-1}}{\spc{X}_\omega}<\tfrac1{2^m}$ for any $m$.
 
-Let us choose double sequence $x_{n,m}\in \spc{X}_n$ such that for any fixed $m$ we have $x_{n,m}\to x_m$ as $n\to\omega$.
+Let us choose a double sequence $x_{n,m}\in \spc{X}_n$ such that for any fixed $m$ we have $x_{n,m}\to x_m$ as $n\to\omega$.
 Note that $\dist{x_{n,m}}{x_{n,m-1}}{}<\tfrac1{2^m}$ for $\omega$-almost all $n$.
 It follows that we can choose a nested sequence of sets 
 \[\NN= S_1\supset S_2\supset\dots\] 
@@ -247,10 +255,11 @@ Show that $\iota\:\spc{X}\to\spc{X}^\omega$ is distance-preserving embedding. (S
 
 \begin{subthm}{ex:ultrapower:compact} 
 Show that $\iota$ is onto if and only if $\spc{X}$ compact.
+Conclude that $(\spc{X}^\omega)^\omega= \spc{X}^\omega$ if and only if $\spc{X}$ compact.
 \end{subthm}
 
 \begin{subthm}{ex:ultrapower:proper} 
-Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component of $\spc{X}^\omega$; that is, a subset of $\spc{X}^\omega$ that lie on finite distance from a given point.
+Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component of $\spc{X}^\omega$; that is, a subset of $\spc{X}^\omega$ that lie at a finite distance from a given point.
 \end{subthm}
 
 \end{thm}
@@ -284,14 +293,14 @@ Then there are at least two distinct geodesics between $p$ and $q$
 in the ultrapower $\spc{X}^\omega$.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:notproper-limit}
  Construct a proper metric space $\spc{X}$ such that $\spc{X}^\omega$ is not proper; that is, there is a point $p\in \spc{X}^\omega$ and $R<\infty$ such that the closed ball $\cBall[p,R]_{\spc{X}^\omega}$ is not compact.
 \end{thm}
 
 \section{Tangent and asymptotic spaces}
 
 Choose a space $\spc{X}$ and a sequence of $\lambda_n>0$.
-Consider the sequence of scalings $\spc{X}_n=\lambda_n\cdot\spc{X}=(\spc{X},\lambda_n\cdot\dist{*}{*}{\spc{X}})$.
+Consider the sequence of \index{scaled space}\emph{scalings} $\spc{X}_n=\lambda_n\cdot\spc{X}=(\spc{X},\lambda_n\cdot\dist{*}{*}{\spc{X}})$.
 
 Choose a point $p\in \spc{X}$ and denote by $p_n$ the corresponding point in $\spc{X}_n$.
 Consider the $\omega$-limit $\spc{X}_\omega$ of $\spc{X}_n$ (one may denote it by $\lambda_\omega\cdot \spc{X}$);
@@ -299,15 +308,15 @@ set $p_\omega$ to be the $\omega$-limit of $p_n$.
 
 If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\omega$-tangent space}\emph{$\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
 
-If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in called \index{$\omega$-asymptotic space}\emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
+If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\omega$-asymptotic space}\emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
 
-In general, the tangent and asymptotic spaces depend the sequence $\lambda_n$ and an nonprincipal ultrafiler $\omega$.
+In general, the tangent and asymptotic spaces depend the sequence $\lambda_n$ and an nonprincipal ultrafilter $\omega$.
 For nice spaces different choices may give the same space.
 
 \begin{thm}{Exercise}\label{ex:ultraT}
 Construct a metric space $\spc{X}$ with a point $p$ such that the tangent space
-$\T_p^{\lambda_\omega}\spc{X}$ depends on the sequence $\lambda_n$ and/or ultrafilter $\omega$.
+$\T_p^{\lambda_\omega}\spc{X}$ depends on the sequence $\lambda_n$ and/or ultrafilter~$\omega$.
 \end{thm}
 
 
@@ -318,26 +327,24 @@ Let $\spc{L}$ be the Lobachevsky plane; $\spc{T}=\Asym\spc{L}$.
 Show that $\spc{T}$ is a complete metric tree.
 \end{subthm}
 
+\begin{subthm}{ex:Asym(Lob):homogeneous}
+Show that $\spc{T}$ is homogeneous; that is, given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
+\end{subthm}
+
 \begin{subthm}{ex:Asym(Lob):continuum}
 Show that $\spc{T}$ has {}\emph{continuum degree} at any point;
 that is, for any point $t\in \spc{T}$ the set of connected components of the complement $\spc{T}\backslash\{t\}$ has cardinality continuum.
 \end{subthm}
 
-\begin{subthm}{ex:Asym(Lob):homogeneous}
-Show that $\spc{T}$ is homogeneous; that is given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
-\end{subthm}
-
 \begin{subthm}{ex:Asym(Lob):others}
-Prove \ref{SHORT.ex:Asym(Lob):metric-tree}--\ref{SHORT.ex:Asym(Lob):homogeneous} if $\spc{L}$ is Lobachevsky space and/or for the infinite 3-regular%
-\footnote{that is, degree of any vertex is 3.}
+Prove \ref{SHORT.ex:Asym(Lob):metric-tree}--\ref{SHORT.ex:Asym(Lob):continuum} if $\spc{L}$ is Lobachevsky space and/or for the infinite 3-regular%
+\footnote{that is, the degree of any vertex is 3.}
 tree with unit edge. 
 \end{subthm}
 
-
 \end{thm}
 
-As it shown in \cite{dyubina-polterovich}, the properties \ref{SHORT.ex:Asym(Lob):metric-tree} and \ref{SHORT.ex:Asym(Lob):continuum} describe the tree $\spc{T}$ up to isometry.
-In particular, the asymptotic space of Lobachevsky plane does not depend on the choice of ultrafilter and the sequence $\lambda_n\to \infty$.
+
 
 
 \section{Remarks}
@@ -347,7 +354,7 @@ A nonprincipal ultrafilter $\omega$ is called
 there is a set $S\subset \NN$ such that $\omega(S)=1$ and $S\cap C_\alpha$ is a one-point set for each $\alpha\in\IndexSet$.
 
 The existence of a selective ultrafilter follows from the continuum hypothesis;
-it was proved by Walter Rudin \cite{rudin}.
+see \cite{rudin}.
 
 For a selective ultrafilter $\omega$, there is a stronger version of Proposition~\ref{prop:ultra/partial};
 namely we can assume that the subsequence $(x_n)_{n\in S}$ can be chosen so that $\omega(S)=1$.

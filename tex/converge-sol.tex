@@ -1,9 +1,20 @@
+\parbf{\ref{ex:diam}.}
+Suppose that $\dist{A}{B}{\Haus\spc{X}}<r$.
+Choose a pair of points $a,a'\in A$ on maximal distance from each other.
+Observe that there are points $b,b'\in B$ such that 
+$\dist{a}{b}{\spc{X}},\dist{a'}{b'}{\spc{X}}<r$.
+Whence 
+\[\dist{a}{a'}{\spc{X}}-\dist{b}{b'}{\spc{X}}\le 2\cdot r\]
+and therefore
+\[\diam A-\diam B\le 2\cdot\dist{A}{B}{\Haus\spc{X}}.\]
+
+It remains to swap $A$ and $B$ and repeat the argument.
 
 
 \parbf{\ref{ex:Hausdorff-bry}}; \ref{SHORT.ex:Hausdorff-bry:conv}.
-Denote by $X_r$ the $r$ neighborhood of a set $X\z\subset \RR^2$.
+Denote by $X^r$ the closed $r$-neighborhood of a set $X\z\subset \RR^2$.
 Observe  that 
-\[(\Conv X)_r=\Conv(X_r),\]
+\[(\Conv X)^r=\Conv(X^r),\]
 and try to use it.
 
 \parit{\ref{SHORT.ex:Hausdorff-bry:bry}.}
@@ -18,7 +29,37 @@ For the second part take $X$ to be a unit disc and $Y=\partial X$ to be its boun
 Note that $\partial X=\partial Y$ in particular $\dist{\partial X}{\partial Y}{\Haus\RR^2}=0$ while $\dist{ X}{ Y}{\Haus\RR^2}=1$.
 
 \parit{Remark.}
-A more interesting example for the second part can be build on {}\emph{lakes of Wada} --- and example of three open bounded topological disks in the plane that have identical boundary.
+A more interesting example for the second part can be built on {}\emph{lakes of Wada} --- an example of three open bounded topological disks in the plane that have identical boundaries.
+
+\parbf{\ref{ex:closure-union}.} 
+Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
+Observe that $\bigcup_{n\le N} K_n$
+is compact and apply \ref{ex:compact-net}.
+
+\parbf{\ref{ex:Haus-length}}; \textit{``if'' part.}
+Fix two compact sets $A,B\subset \spc{X}$;
+suppose that $\dist{A}{B}{\spc{X}}<r$.
+
+Choose finite $\eps$-nets $\{a_1,\dots a_m\}\subset A$ and $\{b_1,\dots b_n\}\subset B$.
+For each pair $a_i,b_j$ construct a constant-speed path $\gamma_{i,j}$ from $a_i$ to $b_j$ such that 
+\[\length \gamma_{i,j}<\dist{a_i}{b_j}{}+\eps.\]
+Set 
+\[C(t)=\set{\gamma_{i,j}(t)}{\dist{a_i}{b_j}{\spc{X}}<r+\eps}.\]
+Observe that $C(t)$ is finite, in particular it is compact.
+
+Show and use that 
+\begin{align*}
+\dist{A}{C(t)}{\spc{X}}&<t\cdot r+10\cdot\eps,
+\\
+\dist{C(t)}{B}{\spc{X}}&<(1-t)\cdot r+10\cdot\eps.
+\end{align*}
+Applying \ref{ex:closure-union} and \ref{lem:mid>geod}, we get the if part.
+
+\parit{``only-if'' part.}
+Choose points $p,q\in\spc{X}$. 
+Show that existence of $\eps$-midpoints between $\{p\}$ and $\{q\}$ in $\Haus\spc{X}$ implies existence of $\eps$-midpoints between $p$ and $q$ in $\spc{X}$.
+Apply \ref{lem:mid>geod}.
+
 
 \parbf{\ref{ex:Huas-perimeter-area}.}
 Let $A$ be a compact convex set in the plane.
@@ -32,13 +73,84 @@ Observe that if $A$ lies in a compact set $B$ bounded by a closed curve, then
 \[\perim A\le \perim B.\]
 Indeed the closest-point projection $\RR^2\to A$ is short and it maps $\partial B$ onto $\partial A$.
 
-It remains to observe that if $A_n\to A_\infty$, then for any $r>0$ we have that
+It remains to use the following observation: if $A_n\to A_\infty$, then for any $r>0$ we have that
 \[A_\infty^r\supset A_n
 \quad\text{and}\quad
 A_\infty\subset A_n^r\]
 for all large $n$.
 
+\begin{wrapfigure}{r}{57 mm}
+\vskip-3mm
+\centering
+\includegraphics{mppics/pic-410}
+\end{wrapfigure}
+
+\parbf{\ref{ex:round-disc}.}
+Note that almost all points on $\partial D$ have a defined tangent line.
+In particular for almost all pairs of points $a,b\z\in\partial D$ the two angles $\alpha$ and $\beta$ between the chord $[ab]$ and $ \partial D$ are defined.
+
+The convexity of $D'$ implies that $\alpha=\beta$;
+here we measure the angles $\alpha$ and $\beta$ on one side from $[a,b]$.
+It remains to show that the identity $\alpha=\beta$ holds only for a round disc. 
+
+
+\parbf{\ref{ex:generalized-selection}.}
+Observe that all functions $\distfun_{A_n}$ are Lipschitz and uniformly bounded on compact sets.
+Therefore passing to a subsequence we get that the sequence $\distfun_{A_n}$ converges to some function $f$.
+
+Set $A_\infty=f^{-1}\{0\}$.
+It remains to show that $f=\distfun_{A_\infty}$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\parbf{\ref{ex:d_GH-and-diam}};
+\ref{SHORT.ex:d_GH-and-diam:point}.
+Apply the definition for space $\spc{Z}$ obtained from $\spc{X}$ by adding one point on distance $\tfrac12\cdot\diam \spc{X}$ to each point of $\spc{X}$.
+
+\parit{\ref{SHORT.ex:d_GH-and-diam:scale}.}
+Given a point $x\in\spc{X}$, denote by $a\cdot x$ and $b\cdot x$ the corresponding points in $a\cdot\spc{X}$ and $b\cdot \spc{X}$ respectively.
+Show that there is a metric on $\spc{Z}\z=a\cdot\spc{X}\sqcup b\cdot\spc{X}$ such that 
+\[|a\cdot x-b\cdot x|_{\spc{Z}}=\tfrac{|b-a|}2\cdot\diam\spc{X}\]
+for any $x$ and the inclusions
+$a\cdot\spc{X}\hookrightarrow\spc{Z}$,
+$b\cdot\spc{X}\hookrightarrow\spc{Z}$ are distance preserving.
+
+\parbf{\ref{ex:rectangle}.}
+Arguing by contradiction,
+we can identify $\spc{A}_r$ and $\spc{B}_r$ with subspaces of a space $\spc{Z}$
+such that 
+\[|\spc{A}_r-\spc{B}_r|_{\Haus \spc{Z}}<\tfrac1{10}\]
+for large $r$ (see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
+
+Set $n=\lceil r \rceil$.
+Note that there are $2\cdot n$ integer points in~$\spc{A}_r$: 
+$a_1=(0,0)$, $a_2=(1,0),\dots,a_{2\cdot n}=(n,1)$.
+Choose a point $b_i\in \spc{B}_r$ that lies on minimal distance from $a_i$.
+Note that $|b_i-b_j|>\tfrac 45$ if $i\ne j$.
+It follows that $r>\tfrac 45\cdot (2\cdot n-1)$.
+The latter contradicts $n=\lceil r \rceil$ for large $r$.
+
+\parit{Remark.}
+In fact $|\spc{A}_r-\spc{B}_r|_{\GH}=\tfrac12$ for all large $r$.
+
+\parbf{\ref{ex:H-R}}; \textit{only-if part.}
+Let us identify $\spc{X}$ and $\spc{Y}$ with subspaces of a metric space $\spc{Z}$ such that 
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}<\eps.\]
+
+Set $(x,y)\in R$ if and only if $\dist{x}{y}{\spc{Z}}<\eps$.
+It remains to check that the properties hold for $R$.
+
+\parit{If part.}
+Show that we can assume that $R$ is a closed subset of $\spc{X}\times\spc{Y}$.
+Therefore 
+\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps'.\]
+for some $\eps'<\eps$.
+
+Construct a maximal metric on $\spc{Z}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{Z}$ and
+$\spc{Y}\hookrightarrow\spc{Z}$ are distance preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ for any pair $(x,y)\in R$.
+Conclude that 
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}\le\eps'<\eps.\]
+
 
 \parbf{\ref{ex:GH-inj}.}
 Let $\spc{U}$ be as in \ref{prop:GH=X+Y}.
@@ -46,10 +158,10 @@ Suppose that $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$;
 we need to show that 
 \[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot \eps.\]
 
-Denote by $\hat{\spc{U}}$ the injective envelop of $\spc{U}$.
+Denote by $\hat{\spc{U}}$ the injective envelope of $\spc{U}$.
 Recall that $\spc{U}$, $\spc{X}$, and $\spc{Y}$ can be considered as subspaces of $\hat{\spc{U}}$, $\hat{\spc{X}}$, and $\hat{\spc{Y}}$ respectively.
 
-According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to distance preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
+According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
 Therefore we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
 
 
@@ -75,7 +187,7 @@ Whence \ref{|g-f|} follows.
 
 It follows that $\hat{\spc{Y}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{X}}$ in $\hat{\spc{U}}$.
 The same way we show that $\hat{\spc{X}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{Y}}$ in $\hat{\spc{U}}$.
-The later means that
+The latter means that
 $|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\spc{U}}<2\cdot\eps$,
 and therefore
 $|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
@@ -88,50 +200,10 @@ This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]
 \includegraphics{mppics/pic-505}
 \end{figure}
 They also show that the constant 2 is optimal.
-To see this look at the injective envelops of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelops approaches 2 as $s\to\infty$. 
+To see this look at the injective envelopes of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
 
-
-
-
-\parbf{\ref{ex:GH-po:a}.}
-In order to check that $\dist{*}{*}{\GH'}$ is a metric, it is sufficient to show that
-\[\dist{\spc{X}}{\spc{Y}}{\GH'}=0 
-\quad\Longrightarrow\quad
-\spc{X}\iso\spc{Y};\]
-the remaining conditions are trivial.
-
-If $\dist{\spc{X}}{\spc{Y}}{\GH'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
-\[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
-
-Choose a countable dense set $S$ in $\spc{X}$.
-Passing to a subsequence of $f_n$ we can assume that $f_n(x)$ converges for any $x\in S$ as $n\to\infty$;
-denote its limit by $f_\infty(x)$.
-
-For each point $x\in\spc{X}$ choose a sequence $x_m\in S$ converging to $x$.
-Since $\spc{Y}$ is compact, we can assume in addition that $y_m=f_\infty(x_m)$ converges in $\spc{Y}$.
-Set $f_\infty(x)=y$.
-Note that the map $f_\infty\:\spc{X}\to \spc{Y}$ is  distance-nondecreasing.
-
-The same way we can construct a distance-nondecreasing map 
-$g_\infty\:\spc{Y}\to \spc{X}$.
-
-By \ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometries.
-Therefore $f_\infty$ and $g_\infty$ are isometries as well.
-
-%Observe that 
-%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
-%\quad\Longrightarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$$
-%follows from Proposition~\ref{prop:GH-e-isom} and Exercise~\ref{ex:alm-isom:inverse}.
-%To prove that 
-%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
-%\quad\Longleftarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0,$$
-%Suppose that $f_n\:\spc{X}_n\to\spc{X}_\infty$ and $g_n\:\spc{X}_\infty\to\spc{X}_n$ are $\eps_n$-almost distance-nondecreasing maps for $\eps_n\to 0$.
-%Arguing as above, pass to a partial limit $h$ of the sequence $f_n\circ g_n\:\spc{X}_\infty\to\spc{X}_\infty$.
-%Note that $h$ is a distance non-deceasing map from a compact space to an itself.
-%By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
-
+\parbf{\ref{ex:GH-urysohn}.}
+Apply \ref{thm:compact-homogeneous} and \ref{prop:GH-with-fixed-Z}.
 
 \parbf{\ref{pr:doubling}.}
 Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by $\mu$.
@@ -163,16 +235,16 @@ Suppose that each space in $\spc{Q}$ has an $\tfrac1{2^n}$-net with at most $M_n
 Consider the space $\spc{Y}$ of all infinite integer sequences $m_0,m_1,\dots$ such that $1\le m_n\le M_n$ for any $n$.
 Given two sequences $(\ell_n)$, and $(m_n)$ of points in $\spc{Y}$, set 
 \[\dist{(\ell_n)}{(m_n)}{\spc{Y}}=\tfrac C{2^{n}},\]
-where $n$ is minimal index such that $\ell_n\ne m_n$ and $C$ is a positive constant.
+where $n$ is the minimal index such that $\ell_n\ne m_n$ and $C$ is a positive constant.
 
 Observe that $\spc{Y}$ is compact.
-Indeed it is complete and the sequences constant starting from index $n$ form a finite $\tfrac C{2^{n}}$-net in $\spc{Y}$.
+Indeed it is complete and the sequences with constant tails, starting from index $n$, form a finite $\tfrac C{2^{n}}$-net in $\spc{Y}$.
 
 Given a space $\spc{X}$ in $\spc{Q}$,
 choose a sequence of $\tfrac1{2^n}$ nets 
 $N_n\subset\spc{X}$ for each natural $n$.
-We can assume that $|N_n|\le M_n$; let us enumerate the points in $N_n$ by $\{1,\dots,M_n\}$.
-Consider the map $f:\spc{X}\to\spc{Y}$ defined by $f:x\to (m_1(x),m_2(x),\dots)$ where $m_n(x)$ is a number of the point in $N_n$ that lies on the distance $<\tfrac1{2^n}$ from $x$.
+We can assume that $|N_n|\le M_n$; let us label the points in $N_n$ by $\{1,\dots,M_n\}$.
+Consider the map $f:\spc{X}\to\spc{Y}$ defined by $f:x\to (m_1(x),m_2(x),\dots)$ where $m_n(x)$ is the label of a point in $N_n$ that lies on the distance $<\tfrac1{2^n}$ from $x$.
 
 If $\tfrac1{2^{n-2}}\ge \dist{x}{x'}{\spc{X}}>\tfrac1{2^{n-1}}$, then $m_n(x)\ne m_n(x')$.
 It follows that $\dist{f(x)}{f(x')}{\spc{Y}}\ge \tfrac C{2^{n}}$.
@@ -181,11 +253,13 @@ In particular, if $C>10$, then
 for any $x,x'\in \spc{X}$.
 That is, $f$ is a distance-nondecreasing map $\spc{X}\to \spc{Y}$.
 
+\parbf{\ref{ex-GH-length}.} Apply \ref{ex:Haus-length}, \ref{prop:GH-with-fixed-Z}, and \ref{lem:GH-complete}.
+
 \parbf{\ref{ex:GH-SC},} \ref{SHORT.ex:GH-SC:circle}.
 Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
 It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
-The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
+The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
 
 \begin{wrapfigure}{r}{40 mm}
 \vskip-0mm
@@ -213,10 +287,11 @@ Suppose that a metric on $\mathbb{S}^2$ is close to the disc $\DD^2$.
 Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
 By Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two discs, say $D_1$ and $D_2$.
 
-By \ref{ex:GH-SC:nonsc-limit}, the Gromov--Hausdorff limit of $D_1$ and $D_2$ have to contain whole $\DD^2$, otherwise the limit would admit a nontrivial covering.
-Consider points $p_1\in D_1$ and $p_2\in D_2$ that a close to the center of $\DD^2$.
-On one hand the distance $\dist{p_1}{p_2}{n}$ have to be very small.
-On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 at least --- a contradiction.
+By \ref{ex:GH-SC:nonsc-limit}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$, otherwise the limit would admit a nontrivial covering.
+
+Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
+If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
+On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 --- a contradiction.
 
 
 
@@ -232,5 +307,51 @@ so that the obtained space is sufficiently close to the original ball
 in the Gromov--Hausdorff metric.
 
 \parit{Source:} \cite[Exercises 7.5.13 and 7.5.17]{burago-burago-ivanov}. 
+
+\parbf{\ref{ex:GH-po}}; \ref{SHORT.ex:GH-po:a}.
+In order to check that $\dist{*}{*}{\GH'}$ is a metric, it is sufficient to show that
+\[\dist{\spc{X}}{\spc{Y}}{\GH'}=0 
+\quad\Longrightarrow\quad
+\spc{X}\iso\spc{Y};\]
+the remaining conditions are trivial.
+
+If $\dist{\spc{X}}{\spc{Y}}{\GH'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
+\[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
+
+Choose a countable dense set $S$ in $\spc{X}$.
+Passing to a subsequence of $f_n$ we can assume that $f_n(x)$ converges for any $x\in S$ as $n\to\infty$;
+denote its limit by $f_\infty(x)$.
+
+For each point $x\in\spc{X}$ choose a sequence $x_m\in S$ converging to $x$.
+Since $\spc{Y}$ is compact, we can assume in addition that $y_m=f_\infty(x_m)$ converges in $\spc{Y}$.
+Set $f_\infty(x)=y$.
+Note that the map $f_\infty\:\spc{X}\to \spc{Y}$ is  distance-nondecreasing.
+
+The same way we can construct a distance-nondecreasing map 
+$g_\infty\:\spc{Y}\to \spc{X}$.
+
+By \ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometries.
+Therefore $f_\infty$ and $g_\infty$ are isometries as well.
+
+\parit{\ref{SHORT.ex:GH-po:b}.} The implication $|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
+\quad\Rightarrow\quad 
+\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$ follows from \ref{ex:GH=>eps-isom}.
+
+%???problem --- a simple proof use uniform families...
+
+
+%Observe that 
+%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
+%\quad\Longrightarrow\quad 
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$$
+%follows from Proposition~\ref{prop:GH-e-isom} and Exercise~\ref{ex:alm-isom:inverse}.
+%To prove that 
+%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
+%\quad\Longleftarrow\quad 
+%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0,$$
+%Suppose that $f_n\:\spc{X}_n\to\spc{X}_\infty$ and $g_n\:\spc{X}_\infty\to\spc{X}_n$ are $\eps_n$-almost distance-nondecreasing maps for $\eps_n\to 0$.
+%Arguing as above, pass to a partial limit $h$ of the sequence $f_n\circ g_n\:\spc{X}_\infty\to\spc{X}_\infty$.
+%Note that $h$ is a distance non-deceasing map from a compact space to an itself.
+%By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

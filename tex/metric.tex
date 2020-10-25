@@ -1,9 +1,9 @@
 \chapter{Definitions}
 
 In this lecture we give some conventions used further
-and remind some the definitions related to metric spaces.
+and remind some definitions related to metric spaces.
 We assume some prior knowledge of basic definitions related to metric spaces.
-For a more detailed introduction, we recommend first couple of chapters in the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov}.
+For a more detailed introduction, we recommend the first couple of chapters in the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov}.
 
 \section{Metric spaces}
 \label{sec:metric spaces}
@@ -47,14 +47,14 @@ Given $R\in[0,\infty]$ and $x\in \spc{X}$, the sets
 \cBall[x,R]&=\{y\in \spc{X}\mid \dist{x}{y}{}\le R\}
 \end{align*}
 are called, respectively, the  \index{open ball}\emph{open} and  the \index{closed ball}\emph{closed  balls}   of radius $R$ with center~$x$.
-Again, if we need to emphasize that these balls are taken in the metric space $\spc{X}$,
+If we need to emphasize that these balls are taken in the metric space $\spc{X}$,
 we write 
 \[\oBall(x,R)_{\spc{X}}\quad\text{and}\quad\cBall[x,R]_{\spc{X}}.\]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:quad-inq}
 Show that
 \[\dist{p}{q}{\spc{X}}+\dist{x}{y}{\spc{X}}\le\dist{p}{x}{\spc{X}}+\dist{p}{y}{\spc{X}}+\dist{q}{x}{\spc{X}}+\dist{q}{y}{\spc{X}}\]
-for any points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
+for any four points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
 \end{thm}
 
 \section{Variations of definition}
@@ -68,7 +68,7 @@ nearly any question about pseudometric spaces can be reduced to a question about
 
 Assume $\spc{X}$ is a pseudometric space.
 Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
-$x\sim y$ if and only if $\dist{x}{y}{}=0$. 
+\[x\sim y\quad\iff\quad\dist{x}{y}{}=0.\] 
 Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
 Thus, $\dist{*}{*}{}$ defines a metric on the
 quotient set $\spc{X}/{\sim}$.
@@ -83,23 +83,24 @@ we might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but mo
 
 Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
 
-Indeed, let us write $x\approx y$ if  $\dist{x}{y}{}<\infty$;
-this is another equivalence relation on $\spc{X}$.
+Set 
+\[x\approx y\quad\iff\quad\dist{x}{y}{}<\infty;\]
+it defines another equivalence relation on $\spc{X}$.
 The equivalence class of a point $x\in\spc{X}$ will be called the \index{metric component}\emph{metric component} 
  of $x$; it will be denoted by $\spc{X}_x$.
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
 It follows that any $\infty$-metric space is a {}\emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:pseudo-infty-metric}
 Given two sets $A$ and $B$ on the plane, set 
 \[\dist{A}{B}{}=\mu(A\backslash B)+\mu(B\backslash A),\]
 where $\mu$ denotes the Lebesgue measure.
-\begin{subthm}{}
+\begin{subthm}{ex:pseudo-infty-metric:pseudo}
 Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded measurable sets of the plane.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:pseudo-infty-metric:infty}
 Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of the plane.
 \end{subthm}
 \end{thm}
@@ -109,8 +110,8 @@ Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of t
 A metric space $\spc{X}$ is called \index{complete space}\emph{complete} if every Cauchy sequence of points in $\spc{X}$ converges in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:almost-min}
-Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$.
-Show that for any $\eps>0$ there is a point $x\in \spc{X}$ such that 
+Suppose that $\rho$ is a positive continuous function on a complete metric space $\spc{X}$ and $\eps>0$.
+Show that there is a point $x\in \spc{X}$ such that 
 \[\rho(x)<(1+\eps)\cdot\rho(y)\]
 for any point $y\in \oBall(x,\rho(x))$.
 \end{thm}
@@ -132,7 +133,7 @@ It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
 In particular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:complete-completion}
 Show that completion of a metric space is complete.
 \end{thm}
 
@@ -142,14 +143,14 @@ Show that completion of a metric space is complete.
 Let us recall few equivalent definitions of compact metric spaces.
 
 \begin{thm}{Definition}\label{def:compact}
-A metric space $\spc{K}$ is compact if and only if one of the following equivalent condition holds:
+A metric space $\spc{K}$ is compact if and only if one of the following equivalent conditions hold:
 
 \begin{subthm}{}
  Every open cover of $\spc{K}$ has a finite subcover.
 \end{subthm}
 
 \begin{subthm}{}
- For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lie in one element of the cover. (The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.)
+ For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover. (The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.)
 \end{subthm}
 
 \begin{subthm}{}
@@ -170,16 +171,16 @@ Show that a space $\spc{K}$ is totally bounded if and only if it contains a comp
 \end{thm}
 
 
-Let $\pack_\eps\spc{X}$ be exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ if $i\ne j$.
+Let $\pack_\eps\spc{X}$ be the exact upper bound on the number of points $x_1,\z\dots,x_n\in \spc{X}$ such that $\dist{x_i}{x_j}{}\ge\eps$ if $i\ne j$.
 
 If $n=\pack_\eps\spc{X}<\infty$, then
 the collection of points $x_1,\dots,x_n$ is called a \index{maximal packing}\emph{maximal $\eps$-packing}.
 Note that $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:pack-net}
-Show that a complete space $\spc{X}$ is compact if and only of $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
-
 Show that any maximal $\eps$-packing is an $\eps$-net.
+
+Conclude that a complete space $\spc{X}$ is compact if and only if $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
 \end{thm}
 
 
@@ -223,13 +224,13 @@ in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if
 \[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
 for any pair $s,t\in \II$.
 
-If $\gamma\:[a,b]\to \spc{X}$ is a geodesic and $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from point $p$ to point $q$.
+If $\gamma\:[a,b]\to \spc{X}$ is a geodesic and $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from $p$ to $q$.
 In this case the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$} and with an abuse of notations  we also call it a \index{geodesic}\emph{geodesic}.
 We may write $[p q]_{\spc{X}}$ 
 to emphasize that the geodesic $[p q]$ is in the space  ${\spc{X}}$.
 
 In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need not  be unique.  
-However, once we write $[p q]$ we assume mean that we have made a choice of geodesic.
+However, once we write $[p q]$ we assume that we have made a choice of geodesic.
 
 A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parameterization by the unit interval $[0,1]$.
 
@@ -255,16 +256,33 @@ and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contai
 In other words any triangle in $\spc{T}$ is a tripod;
 that is, for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
 
+
+\begin{thm}{Exercise}\label{ex:4-point-trees}
+Let $p,x,y,z$ be points in a metric tree.
+Consider three numbers 
+\begin{align*}
+a&=|p-x|+|y-z|,
+&
+b&=|p-y|+|z-x|,
+&
+c&=|p-z|+|x-y|.
+\end{align*}
+Suppose that $a\le b\le c$.
+Show that $b=c$.
+
+\end{thm}
+
 Recall that the set 
 \[S_r(p)=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
-is called \emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
+is called a \emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
 
-\begin{thm}{Exercise}
+
+\begin{thm}{Exercise}\label{ex:spheres-in-trees}
 Show that spheres in metric trees are ultrametric spaces.
 That is, 
-\[\dist{x}{z}{\spc{T}}
+\[\dist{x}{z}{}
 \le
-\max\{\,\dist{x}{y}{\spc{T}},\dist{y}{z}{\spc{T}}\,\}\]
+\max\{\,\dist{x}{y}{},\dist{y}{z}{}\,\}\]
 for any $x,y,z\in S_r(p)_{\spc{T}}$.
 \end{thm}
 
@@ -272,7 +290,7 @@ for any $x,y,z\in S_r(p)_{\spc{T}}$.
 \section{Length}
 
 A \index{curve}\emph{curve} is defined as a continuous map from a real interval $\II$ to a metric space.
-If $\II=[0,1]$, that is if the interval is unit, then the curve is called a \index{path}\emph{path}.
+If $\II=[0,1]$, that is, if the interval is unit, then the curve is called a \index{path}\emph{path}.
 
 \begin{thm}{Definition}
 Let $\spc{X}$ be a metric space and
@@ -337,25 +355,9 @@ Note that
 \[\Sigma_n\le\length\gamma_n\]
 for each $n$.
 Hence
-$$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.\eqlbl{>=Sigma-infty}$$
+$$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.$$
 
-If $\gamma_\infty$ is rectifiable, we can assume that 
-\begin{align*}
-\length\gamma_\infty<\Sigma_\infty+\eps.
-\end{align*}
-for any given $\eps>0$.
-By \ref{>=Sigma-infty} it follows that 
-$$\liminf_{n\to\infty} \length\gamma_n > \length\gamma_\infty-\eps$$
-for any $\eps>0$; whence \ref{eq:semicont-length} follows.
-
-It remains to consider the case when $\gamma_\infty$ is not rectifiable; 
-that is, $\length\gamma_\infty=\infty$.
-In this case we can choose a partition so that $\Sigma_\infty>L$ for any real number $L$.
-By \ref{>=Sigma-infty} it follows that 
-$$\liminf_{n\to\infty} \length\gamma_n > L$$
-for any given $L$; whence 
-\[\liminf_{n\to\infty}\length\gamma_n=\infty\]
-and \ref{eq:semicont-length} follows.
+Since the partition was arbitrary, by the definition of length, the inequality  \ref{eq:semicont-length} is obtained.
 \qeds
 
 \section{Length spaces}\label{sec:intrinsic}
@@ -364,8 +366,9 @@ If for any $\eps>0$ and any pair of points $x$ and $y$ in a metric space $\spc{X
 \[\length\alpha< \dist{x}{y}{}+\eps,\]
 then $\spc{X}$ is called a \index{length space}\emph{length space} and the metric on $\spc{X}$ is called a \index{length metric}\emph{length metric}.\label{page:length metric}
 
-If $\spc{X}$ is an $\infty$-metric space, then in the above definition we assume in addition that $x$ and $y$ lie in one metric component; that is, $\dist{x}{y}{\spc{X}}<\infty$.
-In other words an $\infty$-metric space $\spc{X}$ is a length space if each metric component of $\spc{X}$ is a length space.
+An $\infty$-metric space is a length space if each of its metric components is a length space.
+In other words, if $\spc{X}$ is an $\infty$-metric space, 
+then in the above definition we assume in addition that $\dist{x}{y}{\spc{X}}<\infty$.
 
 Note that any geodesic space is a length space.
 The following example shows that the converse does not hold.
@@ -381,12 +384,12 @@ Observe that the space $\spc{X}$ carries a natural complete length metric with r
 Give an example of a complete length space $\spc{X}$ such that no pair of distinct points in $\spc{X}$ can be joined by a geodesic.
 \end{thm}
 
-Directly from the definition, it follows that if a path $\alpha\:[0,1]\to\spc{X}$ connects two points $x$ and $y$ 
-(that is, if $\alpha(0)=x$ and $\alpha(1)=y$), then 
+Directly from the definition, it follows that if $\alpha\:[0,1]\to\spc{X}$ is a path from $x$ to $y$ 
+(that is, $\alpha(0)=x$ and $\alpha(1)=y$), then 
 \[\length\alpha\ge \dist{x}{y}{}.\]
 Set 
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
-where the greatest lower bound is taken for all paths connecting $x$ and~$y$.
+where the greatest lower bound is taken for all paths from $x$ to~$y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
 The metric $\yetdist{*}{*}{}$ is called \index{induced length metric}\emph{induced length metric}.
 
@@ -454,7 +457,7 @@ and $(\alpha(\tfrac12),\alpha(1))$ respectively.
 Applying the above procedure recursively,
 on the $n$-th step we define $\alpha(\tfrac{k}{2^n})$,
 for every odd integer $k$ such that $0<\tfrac k{2^n}<1$, 
-as an $\eps_{n}$-midpoint between the already defined
+as an $\eps_{n}$-midpoint of the already defined
 $\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
 
 
@@ -536,7 +539,7 @@ but whose completion $\bar{\spc{X}}$ is neither geodesic nor locally compact.
 
 
 \begin{thm}{Advanced exercise}\label{ex:gross}
-Show that for any compact length-metric space $\spc{X}$ there is number $\ell$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
+Show that for any compact length-metric space $\spc{X}$ there is a number $\ell$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
 that is, for any $x_1,\dots,x_n\in \spc{X}$ there is $z\in \spc{X}$ such that
 \[\tfrac1n\cdot\sum_i|x_i-z|_{\spc{X}}=\ell.\]
 \end{thm}
@@ -548,7 +551,7 @@ The space of Borel probability measures on a metric space $\spc{X}$ can be equip
 where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
 The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:wasserstein}
 Let $\spc{X}$ be a compact metric space.
 Show that $\Wass_1\spc{X}$ is a compact length metric space.
 \end{thm}
