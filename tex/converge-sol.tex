@@ -79,8 +79,8 @@ It remains to use the following observation: if $A_n\to A_\infty$, then for any 
 A_\infty\subset A_n^r\]
 for all large $n$.
 
-\begin{wrapfigure}{r}{57 mm}
-\vskip-3mm
+\begin{wrapfigure}{r}{27 mm}
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-410}
 \end{wrapfigure}
@@ -90,13 +90,13 @@ Note that almost all points on $\partial D$ have a defined tangent line.
 In particular for almost all pairs of points $a,b\z\in\partial D$ the two angles $\alpha$ and $\beta$ between the chord $[ab]$ and $ \partial D$ are defined.
 
 The convexity of $D'$ implies that $\alpha=\beta$;
-here we measure the angles $\alpha$ and $\beta$ on one side from $[a,b]$.
+here we measure the angles $\alpha$ and $\beta$ on one side from $[ab]$.
 It remains to show that the identity $\alpha=\beta$ holds only for a round disc. 
 
 
 \parbf{\ref{ex:generalized-selection}.}
 Observe that all functions $\distfun_{A_n}$ are Lipschitz and uniformly bounded on compact sets.
-Therefore passing to a subsequence we get that the sequence $\distfun_{A_n}$ converges to some function $f$.
+Therefore, passing to a subsequence, we get that the sequence $\distfun_{A_n}$ converges to some function $f$.
 
 Set $A_\infty=f^{-1}\{0\}$.
 It remains to show that $f=\distfun_{A_\infty}$.
@@ -124,7 +124,7 @@ for large $r$ (see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
 
 Set $n=\lceil r \rceil$.
 Note that there are $2\cdot n$ integer points in~$\spc{A}_r$: 
-$a_1=(0,0)$, $a_2=(1,0),\dots,a_{2\cdot n}=(n,1)$.
+$a_1\z=(0,0)$, $a_2=(1,0),\dots,a_{2\cdot n}=(n,1)$.
 Choose a point $b_i\in \spc{B}_r$ that lies on minimal distance from $a_i$.
 Note that $|b_i-b_j|>\tfrac 45$ if $i\ne j$.
 It follows that $r>\tfrac 45\cdot (2\cdot n-1)$.
@@ -142,7 +142,7 @@ It remains to check that the properties hold for $R$.
 
 \parit{If part.}
 Show that we can assume that $R$ is a closed subset of $\spc{X}\times\spc{Y}$.
-Therefore 
+Therefore,
 \[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps'.\]
 for some $\eps'<\eps$.
 
@@ -162,7 +162,7 @@ Denote by $\hat{\spc{U}}$ the injective envelope of $\spc{U}$.
 Recall that $\spc{U}$, $\spc{X}$, and $\spc{Y}$ can be considered as subspaces of $\hat{\spc{U}}$, $\hat{\spc{X}}$, and $\hat{\spc{Y}}$ respectively.
 
 According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
-Therefore we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
+Therefore, we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
 
 
 Given $f\in \hat{\spc{U}}$,
@@ -177,7 +177,7 @@ for any $x\in\spc{X}$.
 
 Recall that any extremal function is $1$-Lipschitz;
 in particular $f$ and $g$ are $1$-Lipschitz on $\spc{U}$.
-Therefore \ref{g(x)=<f(x)} and $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$ imply that
+Therefore, \ref{g(x)=<f(x)} and $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$ imply that
 \[g(u)< f(u)+2\cdot \eps\]
 for any $u\in\spc{U}$.
 By \ref{ex:+-c}, we also have 
@@ -226,7 +226,7 @@ Suppose $f\:\spc{X}\to \spc{Y}$ be a distance-nondecreasing map.
 Choose one point $x_i$ in each nonempty subset $B_i=f^{-1}[\oBall(y_i,\eps)]$.
 Note that the subset $B_i$ has diameter at most $2\cdot \eps$ and 
 \[\spc{X}=\bigcup_iB_i.\]
-Therefore the set of points $\{x_i\}$ forms a $2\cdot\eps$ net in $\spc{X}$.
+Therefore, the set of points $\{x_i\}$ forms a $2\cdot\eps$ net in $\spc{X}$.
 Whence \ref{SHORT.pr:under:if} follows.
 
 \parit{\ref{SHORT.pr:under:only-if}.} Let $\spc{Q}$ be a uniformly totally bounded family of spaces. 
@@ -331,27 +331,10 @@ The same way we can construct a distance-nondecreasing map
 $g_\infty\:\spc{Y}\to \spc{X}$.
 
 By \ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometries.
-Therefore $f_\infty$ and $g_\infty$ are isometries as well.
+Therefore, $f_\infty$ and $g_\infty$ are isometries as well.
 
 \parit{\ref{SHORT.ex:GH-po:b}.} The implication $|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
 \quad\Rightarrow\quad 
 \dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$ follows from \ref{ex:GH=>eps-isom}.
-
-%???problem --- a simple proof use uniform families...
-
-
-%Observe that 
-%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
-%\quad\Longrightarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$$
-%follows from Proposition~\ref{prop:GH-e-isom} and Exercise~\ref{ex:alm-isom:inverse}.
-%To prove that 
-%$$|\spc{X}_n-\spc{X}_\infty|_{\mathcal{M}}\to 0 
-%\quad\Longleftarrow\quad 
-%\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0,$$
-%Suppose that $f_n\:\spc{X}_n\to\spc{X}_\infty$ and $g_n\:\spc{X}_\infty\to\spc{X}_n$ are $\eps_n$-almost distance-nondecreasing maps for $\eps_n\to 0$.
-%Arguing as above, pass to a partial limit $h$ of the sequence $f_n\circ g_n\:\spc{X}_\infty\to\spc{X}_\infty$.
-%Note that $h$ is a distance non-deceasing map from a compact space to an itself.
-%By Exercise~\ref{ex:non-contracting-map}, $h$ is an isometry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

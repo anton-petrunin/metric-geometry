@@ -1,7 +1,7 @@
 \chapter{Injective spaces}
 
 {}\emph{Injective spaces} (also known as {}\emph{hyperconvex spaces}) are metric analog of convex sets.
-The so-called \index{injective envelop}\emph{injective envelop} is a minimal injective space that contains a given metric space as a subspace;
+The so-called \index{injective envelope}\emph{injective envelope} is a minimal injective space that contains a given metric space as a subspace;
 it is a direct analog of the convex hull of a set in a Euclidean space.
 
 This lecture is based on a paper of John Isbell \cite{isbell}.
@@ -65,7 +65,7 @@ Let $r$ be an extremal function on $\spc{X}$.
 Then for any point $p\in\spc{X}$ and any $\delta>0$, there is a point $q\in \spc{X}$
 such that 
 \[r(p)+r(q)<\dist{p}{q}{\spc{X}}+\delta.\]
-Moreover if $\spc{X}$ is compact, then there is $q$ such that 
+Moreover, if $\spc{X}$ is compact, then there is $q$ such that 
 \[r(p)+r(q)=\dist{p}{q}{\spc{X}}.\]
 \end{subthm}
 
@@ -118,7 +118,7 @@ Follows by Zorn's lemma.
 \section{Injective spaces}
 
 \begin{thm}{Definition}\label{def:injective}
-A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any its subspace $\spc{A}$
+A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any of its subspaces $\spc{A}$
 any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$;
 that is, $f=F|_{\spc{A}}$.
 \end{thm}
@@ -226,7 +226,7 @@ By Zorn's lemma we may assume that $\spc{A}$ is a maximal subset; that is, the d
 Fix a point $p$ in the complement $\spc{X}\backslash \spc{A}$.
 To extend $f$ to $p$, we need to choose $f(p)$ in the intersection of the balls 
 $\cBall[f(x),r(x)]$, where $r(x)=\dist{p}{x}{}$.
-Therefore this intersection for all $x\in \spc{A}$ has to be empty.
+Therefore, this intersection for all $x\in \spc{A}$ has to be empty.
 
 Since $f$ is short, we have that 
 \begin{align*}
@@ -234,7 +234,7 @@ r(x)+r(y)&\ge \dist{x}{y}{\spc{X}}\ge
 \\
 &\ge \dist{f(x)}{f(y)}{\spc{Y}}.
 \end{align*}
-Therefore by \ref{SHORT.thm:injective=hyperconvex:balls} the balls 
+Therefore, by \ref{SHORT.thm:injective=hyperconvex:balls} the balls 
 $\cBall[f(x),r(x)]$ have a common point --- a contradiction. 
 \qeds
 
@@ -325,7 +325,7 @@ for any $f,g\in \Inj \spc{X}$.
 
 Since $r$ is admissible and $\bar r= r$ on $(\Inj \spc{X})\backslash \{p\}$, it is sufficient to prove \ref{r-admissible} if $f\ne g=p$.
 By \ref{eq:f(p)=|f-p|}, we have $\dist{f}{p}{\Inj \spc{X}}=f(p)$.
-Therefore \ref{r-admissible} boils down to the following inequality
+Therefore, \ref{r-admissible} boils down to the following inequality
 \[r(f)+s(p)\ge f(p).\eqlbl{eq:r(f)+s(p)>=f(p)}\]
 for any $f\in\Inj \spc{X}$.
 
@@ -381,14 +381,14 @@ Let $\spc{X}$ be a compact metric space.
 Show that for any two points $f,g\in\Inj \spc{X}$ lie on a geodesic $[pq]$ with $p,q\in \spc{X}$.
 \end{thm}
 
-\section{Injective envelop}
+\section{Injective envelope}
 
-An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelop}\emph{injective envelop} if $\spc{E}$ is an injective space and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
+An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelope}\emph{injective envelope} if $\spc{E}$ is an injective space and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
 
 Two injective envelopes $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are called  equivalent if there is an isometry $\iota\: \spc{E}\to\spc{F}$ such that $f=\iota\circ e$.
 
-\begin{thm}{Theorem}\label{thm:inj-envelop}
-For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is an injective envelop.
+\begin{thm}{Theorem}\label{thm:inj-envelope}
+For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is an injective envelope.
 
 Moreover, any other injective envelope of $\spc{X}$ is equivalent to $\Inj\spc{X}$.
 \end{thm}
@@ -407,7 +407,7 @@ From above, the composition $v\circ w$ is the identity on $\Inj\spc{X}$.
 In particular $w$ is distance-preserving.
 
 The composition $w\circ v\:\spc{E}\to \spc{E}$ is a short map that fixes points in $e(\spc{X})$.
-Since $e\:\spc{X}\hookrightarrow \spc{E}$ is an injective envelop, the composition $w\circ v$ and therefore $w$ are onto.
+Since $e\:\spc{X}\hookrightarrow \spc{E}$ is an injective envelope, the composition $w\circ v$ and therefore $w$ are onto.
 Whence $w$ is an isometry.
 \qeds
 

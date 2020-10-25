@@ -15,7 +15,7 @@ that the distance is taken in the space~${\spc{X}}$.
 Let us recall the definition of metric. 
 
 \begin{thm}{Definition}\label{def:metric}
-A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
+A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\z\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
 
 \begin{subthm}{metric>=0}
 $\dist{x}{y}{\spc{X}}\ge 0$,
@@ -27,7 +27,7 @@ $\dist{x}{y}{\spc{X}}\ge 0$,
 \begin{subthm}{metric:sym} $\dist{x}{y}{\spc{X}}=\dist{y}{x}{\spc{X}}$,
 \end{subthm}
 
-\begin{subthm}{metric:triangle} $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$,
+\begin{subthm}{metric:triangle} $\dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
 \end{subthm}
 
 \end{thm}
@@ -131,7 +131,7 @@ Note that the original space $\spc{X}$ forms a dense subset in its completion $\
 More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
 It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
-In particular we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
 
 \begin{thm}{Exercise}\label{ex:complete-completion}
 Show that completion of a metric space is complete.
@@ -316,13 +316,11 @@ Then
 $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
 \end{thm}
 
-
 \begin{wrapfigure}{o}{20 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-100}
 \end{wrapfigure}
-
 
 Note that the inequality \ref{eq:semicont-length} might be strict.
 For example the diagonal $\gamma_\infty$ of the unit square 
@@ -354,7 +352,7 @@ as $n\to\infty$.
 Note that 
 \[\Sigma_n\le\length\gamma_n\]
 for each $n$.
-Hence
+Hence,
 $$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.$$
 
 Since the partition was arbitrary, by the definition of length, the inequality  \ref{eq:semicont-length} is obtained.
@@ -528,7 +526,7 @@ Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
 Clearly 
 $\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
-Therefore $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
+Therefore, $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
 a contradiction.
 \qeds
 

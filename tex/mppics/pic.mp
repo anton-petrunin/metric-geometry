@@ -699,21 +699,15 @@ draw z.a--z.b;
 draw p1 cutbefore (z.a--z.b) cutafter p0;
 draw p2 cutafter (z.a--z.b) cutbefore subpath (1,2) of p0;
 
-draw (subpath (0,1) of p0) xscaled -1 shifted z.shift;
-draw (subpath (1,2) of p0) shifted z.shift;
-draw (z.a--z.b) shifted z.shift;
 
 
-dOt z.a,z.b,z.a shifted z.shift,z.b shifted z.shift;
+dOt z.a,z.b;
 
-label.bot(btex $D$ etex, point 1.6 of p0);
-label.bot(btex $D'$ etex, z.shift+ point 1.6 of p0);
+label.top(btex $D$ etex, .5[z.a,z.b]);
 label.rt(btex $a$ etex, z.a);
 label.lft(btex $b$ etex, z.b);
 label.llft(btex $\alpha$ etex, z.a+10*dir(195));
 label.lrt(btex $\beta$ etex, z.b+8*dir(-35));
-label.rt(btex $a$ etex, z.a shifted z.shift);
-label.lft(btex $b$ etex, z.b shifted z.shift);
 endfig;
 
 beginfig(500) 
