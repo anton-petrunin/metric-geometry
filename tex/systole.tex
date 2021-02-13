@@ -5,7 +5,7 @@ This lecture is based on a paper of Alexander Nabutovsky \cite{nabutovsky}.
 \section{Partition of unity}
 
 \begin{thm}{Proposition}\label{thm:part-unit}
- Let $\{V_i\}$ be a locally finite open covering of a metric space ${\spc{X}}$.
+ Let $\{V_i\}$ be a finite open covering of a compact metric space ${\spc{X}}$.
 Then there are Lipschitz functions $\psi_i\:{\spc{X}}\z\to[0,1]$ such that (1) if $\psi_i(x)>0$, then $x\in V_i$ and (2) for any $x\in {\spc{X}}$ we have
 $$\sum_i\psi_i(x)=1.$$
 
@@ -23,6 +23,8 @@ for any $i$
 and $\phi_i(x)>0$ if and only if $x\in V_i$.
 Since $\{V_i\}$ is a covering, we have that
 $$\Phi(x)\df\sum_i\phi_i(x)>0\ \ \text{for any}\ \ x\in {\spc{X}}.$$
+Since $\spc{X}$ is compact, $\Phi>\delta$ for some $\delta>0$.
+It follows that $x\mapsto\tfrac1{\Phi(x)}$ is a bounded Lipschitz function. 
 
 Set 
 $$\psi_k(x)=\frac{\phi_k(x)}{\Phi(x)}.$$
@@ -32,17 +34,16 @@ Observe that by construction the functions $\psi_i$ meet the conditions in the p
 \section{Nerves}
 
 Let $\{V_1,\dots,V_k\}$ be a finite open cover of a compact metric space $\spc{X}$.
-Consider an abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertexes $v_{i_1},\dots, v_{i_m}$ is included in $\spc{N}$ if 
+Consider an abstract simplicial complex $\spc{N}$, with one vertex $v_i$ for each set $V_i$ such that a simplex with vertices $v_{i_1},\dots, v_{i_m}$ is included in $\spc{N}$ if 
 the intersection $V_{i_1}\cap\dots\cap V_{i_m}$ is nonempty.
 \begin{figure}[h!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1402}
 \end{figure}
-The obtained simplicial complex $\spc{N}$ called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
+The obtained simplicial complex $\spc{N}$ is called the \index{nerve}\emph{nerve of the covering $\{V_i\}$}.
 Evidently $\spc{N}$ is a finite simplicial complex ---
-it is a subcomplex of a simplex with the vertexes $\{v_1,\dots,v_k\}$.
-
+it is a subcomplex of a simplex with the vertices $\{v_1,\dots,v_k\}$.
 
 Note that the nerve $\spc{N}$ has dimension at most $n$ if and only if the covering $\{V_1,\dots,V_k\}$ has \index{multiplicity of covering}\emph{multiplicity} at most $n+1$;
 that is, any point $x\in\spc{X}$ belongs to
@@ -53,20 +54,21 @@ a partition of unity subordinate to the covering $\{V_1,\dots,V_k\}$.
 Choose a point $x\in {\spc{X}}$.
 Note that the set
 $$\{v_{i_1},\dots,v_{i_n}\}=\set{v_i}{\psi_i(x)>0}$$
-form vertexes of a simplex in the nerve $\spc{N}$.
+form vertices of a simplex in $\spc{N}$.
 Therefore 
-$$\psi\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
+$$\bm{\psi}\:x\mapsto \psi_1(x)\cdot v_1+\psi_2(x)\cdot v_2+\dots+\psi_k(x)\cdot v_n.$$
 describes a Lipschitz map from ${\spc{X}}$ to the nerve $\spc{N}$ of $\{V_i\}$.
-In other words, $\psi$ maps a point $x$ to the point in $\spc{N}$ with \index{barycentric coordinates}\emph{barycentric coordinates} $(\psi_1(x),\dots,\psi_k(x))$.
+In other words, $\bm{\psi}$ maps a point $x$ to the point in $\spc{N}$ with \index{barycentric coordinates}\emph{barycentric coordinates} $(\psi_1(x),\dots,\psi_k(x))$.
 
-Recall that the \index{star}\emph{star} of a vertex $v_i$ (briefly $\Star_{v_i}$)\index{$\Star$} is defined as the union of the interiors of all simplicies that have $v_i$ as a vertex.
-Since $\psi_i(x)>0$ implies that $x\in V_i$, we get the following:
+Recall that the \index{star}\emph{star} of a vertex $v_i$ (briefly $\Star_{v_i}$) is defined as the union of the interiors of all simplicies that have $v_i$ as a vertex.
+Recall that $\psi_i(x)>0$ implies $x\in V_i$.
+Therefore we get the following:
 
 \begin{thm}{Proposition}\label{prop:space->nerve}
 Let $\spc{N}$ be a nerve of an open covering $\{V_1,\z\dots,V_k\}$ of a compact metric space $\spc{X}$.
 Denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
 
-Then there is a Lipschitz map $\psi\:\spc{X}\to\spc{N}$ such that $\psi(V_i)\z\subset\Star_{v_i}$ for every $i$.
+Then there is a Lipschitz map $\bm{\psi}\:\spc{X}\to\spc{N}$ such that $\bm{\psi}(V_i)\z\subset\Star_{v_i}$ for every $i$.
 \end{thm}
 
 
@@ -77,22 +79,28 @@ The radius of $A$ (briefly $\rad A$) is defined as the least upper bound on the 
 
 \begin{thm}{Definition}\label{def:width}
 Let $\spc{X}$ be a metric space.
-The $n$-th width of $\spc{X}$ (briefly $\width_n\spc{X}$) is the least upper bound on values $R>0$ such that $\spc{X}$ admits a finite open covering $\{V_i\}$ with multiplicity at most $n+1$ and $\rad V_i< R$ for each $i$.
+The \index{width}\emph{$n$-th width} of $\spc{X}$ (briefly $\width_n\spc{X}$) is the least upper bound on values $R>0$ such that $\spc{X}$ admits a finite open covering $\{V_i\}$ with multiplicity at most $n+1$ and $\rad V_i< R$ for each $i$.
 \end{thm}
 
- Observe that 
+\parbf{Remarks.}
+
+\begin{itemize} 
+\item Observe that 
 \[\width_0\spc{X}\ge\width_1\spc{X}\ge\width_2\spc{X}\ge\dots\]
 for any compact metric space $\spc{X}$.
 Moreover, if $\spc{X}$ is connected, then 
 \[\width_0\spc{X}=\rad\spc{X}.\]
 
-Usually width is defined using diameter instead of radius, but the results differ at most twice.
+\item Usually width is defined using diameter instead of radius, but the results differ at most twice.
 Namely, if $r$ is the $n$-th radius-width and $d$ --- the $n$-th diameter-width, then 
 $r\le d\le 2\cdot r$.
 
-Note that \index{Lebesgue covering dimension}\emph{Lebesgue covering dimension} of $\spc{X}$ can be defined as the least number $n$ such that $\width_n\spc{X}=0$.
-Another closely related notion is the so-called \index{macroscopic dimension}\emph{macroscopic dimension on scale $R$};
+\item Note that \index{Lebesgue covering dimension}\emph{Lebesgue covering dimension} of $\spc{X}$ can be defined as the least number $n$ such that $\width_n\spc{X}=0$.
+
+\item Another closely related notion is the so-called \index{macroscopic dimension}\emph{macroscopic dimension on scale $R$};
 it is defined as the  least number $n$ such that $\width_n\spc{X}<R$.
+\end{itemize}
+
 
 
 \begin{thm}{Exercise}\label{ex:macrodimension}
@@ -103,27 +111,25 @@ What about quasiconverse? That is, suppose a simply connected compact metric spa
 \end{thm}
 
 
-The following exercise provides an equivalent definition of width;
-it also provides a good reason for the name \index{width}\emph{width}.
+The following exercise gives a good reason for the choice of term \index{width}\emph{width}; it also can be used as an alternative definition.
 
 \begin{thm}{Exercise}\label{ex:width=suprad(inv)}
 Suppose $\spc{X}$ is a compact metric space.
-Show that $\width_n\spc{X}<R$ if and only if there is a finite $n$-dimensional simplicial complex $\spc{N}$ and a continuous map $\psi\:\spc{X}\to \spc{N}$
+Show that $\width_n\spc{X}<R$ if and only if there is a finite $n$-dimensional simplicial complex $\spc{N}$ and a continuous map $\bm{\psi}\:\spc{X}\to \spc{N}$
 such that 
-\[\rad[\psi^{-1}(s)]<R\]
+\[\rad[\bm{\psi}^{-1}(s)]<R\]
 for any $s\in \spc{N}$.
 \end{thm}
 
 \section{Riemannian polyhedrons}
 
-A \index{Riemannian polyhedron}\emph{Riemannian polyhedron} is defined as a finite simplicial complex with a metric tensor on each simplex such that the restriction of the metric tensor to a subsimplex coincides with the metric on the subsimplex.
+A \index{Riemannian!polyhedron}\emph{Riemannian polyhedron} is defined as a finite simplicial complex with a metric tensor on each simplex such that the restriction of the metric tensor to a subsimplex coincides with the metric on the subsimplex.
 
-The \index{dimension of a Riemannian polyhedron}\emph{dimension} of a Riemannian polyhedron is defined as the largest dimension in its triangulation.
-For Riemannian polyhedron one can define length of curves and volume the same way as for Riemannian manifolds;
-for $n$-dimensional polyhedron, we assume that $\vol=\vol_n$.
+The {}\emph{dimension} of a Riemannian polyhedron is defined as the largest dimension in its triangulation.
+For Riemannian polyhedrons one can define length of curves and volume the same way as for Riemannian manifolds.
 
 The obtained metric space will be called \emph{Riemannian polyhedron} as well.
-A \index{triangulation of Riemannian polyhedron}\emph{triangulation} of Riemannian polyhedron  will always be assumed to have the above property on the metric tensor.
+A \index{triangulation}\emph{triangulation} of Riemannian polyhedron  will always be assumed to have the above property on the metric tensor.
 
 Further we will apply the notion of width only to compact Riemannian polyhedrons.
 If $\spc{P}$ is an $n$-dimensional Riemannian polyhedron, then 
@@ -131,7 +137,8 @@ we suppose that
 \[\width\spc{P}\df\width_{n-1}\spc{P}.\]
 
 
-Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
+Suppose that $\spc{P}$ is an $n$-dimensional Riemannian polyhedron;
+in this case we will use short cut $\vol$ for $\vol_n$.
 Let us define \index{volume profile}\emph{volume profile} of $\spc{P}$ as a function 
 returning largest volume of $r$-ball in~$\spc{P}$;
 that is, the volume profile of $\spc{P}$ is a function $\VolPro_{\spc{P}}\:\RR_+\to\RR_+$ defined by 
@@ -174,7 +181,10 @@ For any $n$-dimensional Riemannian polyhedron $\spc{P}$, we have
 
 \end{thm}
 
-In the proof of \ref{thm:width<volpro}, we will use the following three technical statements.
+The proof of \ref{thm:width<volpro} will be given at the very end of this section,
+after discussing {}\emph{separating polyhedrons}. 
+
+Let us start three technical statements.
 The first statement can be obtained by modifying a smoothing procedure for functions defined on Euclidean space. 
 
 A function $f$ defined on a Riemannian polyhedron $\spc{P}$ is called \index{piecewise smooth}\emph{piecewise smooth} if there is a triangulation of $\spc{P}$ such that restriction of $f$ to every simplex is smooth.
@@ -191,7 +201,7 @@ The following statement can be proved by applying the classical Sard's theorem t
 
 \begin{thm}{Sard's theorem}\label{sard}\index{Sard's theorem}
 Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron and $f\:\spc{P}\to \RR$ be a piecewise smooth function.
-Then for almost all values $a\in\RR$, the inverse image $f^{-1}\{a\}$ equipped with the induced metric is a Riemannian polyhedron of dimension at most $n-1$.
+Then for almost all values $a\in\RR$, the inverse image $f^{-1}\{a\}$  is a Riemannian polyhedron of dimension at most $n-1$ (we assume that $f^{-1}\{a\}$ is equipped with the induced length metric).
 \end{thm}
 
 The following statement can be proved by applying the coarea inequality (\ref{cor:coarea}) to the restriction of $f$ to each simplex of the polyhedron and summing up the results.
@@ -225,7 +235,7 @@ Then given $R>0$ and $\eps>0$ there is a $R$-separating subpolyhedron $\spc{Q}\s
 \end{thm}
 
 The proof reminds the proof of the following statement about minimal surfaces: 
-\emph{if a point $p$ lies on an compact area minimizing surface $\Sigma$ and $\partial\Sigma \cap \oBall(p,r)=\emptyset$, then
+\emph{if a point $p$ lies on an compact area-minimizing surface $\Sigma$ and $\partial\Sigma \cap \oBall(p,r)=\emptyset$, then
 \[\area(\Sigma\cap \oBall(p,r))\le \tfrac12\cdot \area\mathbb{S}^2\cdot r^2.\]
 }
 
@@ -279,7 +289,7 @@ Note that $\{V_1,\dots,V_k\}$ can be converted into an open covering of
 a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
 This can be done by setting 
 \[V_i'=\bigcup_{x\in V_i}\oBall(x,r_x),\]
-where $r_x=\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
+where $r_x\df\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
 
 By adding to  $\{V_i'\}$ all the components of $\spc{P}\backslash \spc{Q}$,
 we increase the multiplicity by at most 1 and obtain a covering of $\spc{P}$.
@@ -318,7 +328,7 @@ It remains to apply \ref{lem:separating-width}.
 
 \section{Width bounds systole}
 
-Recall that a topological space $\spc{K}$ is called \index{aspherical space}\emph{aspherical} if any continuous map $\mathbb{S}^k\to \spc{K}$ for $k\ge 2$ is null-homotopic.
+Recall that a topological space $K$ is called \index{aspherical space}\emph{aspherical} if any continuous map $\mathbb{S}^k\to K$ for $k\ge 2$ is null-homotopic.
 
 \begin{thm}{Theorem}\label{thm:sys<width}
 Suppose $\spc{M}$ is a compact aspherical $n$-dimensional Riemannian manifold.
@@ -327,18 +337,18 @@ Then
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:aspherical-homotopy}
-Let $\spc{K}$ be an aspherical space and $\spc{W}$ a connected CW-complex.
+Let $K$ be an aspherical space and $\spc{W}$ a connected CW-complex.
 Denote by $\spc{W}^k$ the k-skeleton of $\spc{W}$.
-Then any continuous map $f\:\spc{W}^2\to \spc{K}$ can be extended to a continuous map $\bar f\:\spc{W}\to \spc{K}$
+Then any continuous map $f\:\spc{W}^2\to K$ can be extended to a continuous map $\bar f\:\spc{W}\to K$
 
-Moreover, if $p\in \spc{W}$ is a 0-cell and $q\in \spc{K}$.
-Then a continuous maps of pairs $\phi_0,\phi_1\:(\spc{W},p)\to(\spc{K},q)$ are homotopic if and only if $\phi_0$ and $\phi_1$ induce the same homomorphism on fundamental groups $\pi_1(\spc{W},p)\to\pi_1(\spc{K},q)$.
+Moreover, if $p\in \spc{W}$ is a 0-cell and $q\in K$.
+Then a continuous maps of pairs $\phi_0,\phi_1\:(\spc{W},p)\to(K,q)$ are homotopic if and only if $\phi_0$ and $\phi_1$ induce the same homomorphism on fundamental groups $\pi_1(\spc{W},p)\to\pi_1(K,q)$.
 \end{thm}
 
 \parit{Proof.}
-Since $\spc{K}$ is aspherical, any continuous map $\partial\mathbb{D}^n\to \spc{K}$ for $n\ge 3$
+Since $K$ is aspherical, any continuous map $\partial\mathbb{D}^n\to K$ for $n\ge 3$
 is hull-homotopic;
-that is, it can be extended to a map $\mathbb{D}^n\:\to \spc{K}$.
+that is, it can be extended to a map $\mathbb{D}^n\:\to K$.
 
 It makes it possible to extend $f$ to $\spc{W}^3$, $\spc{W}^4$, and so on.
 Therefore $f$ can be extended to whole $\spc{W}$.
@@ -387,15 +397,15 @@ Applying this observation for each quadrilateral, we get the statement.
 
 
 \parit{Proof of \ref{thm:sys<width}.}
-Let $\spc{N}$ be the nerve of a covering $\{V_i\}$ of $\spc{M}$ and $\psi\:\spc{M}\to\spc{N}$ be the map provided by \ref{prop:space->nerve}.
+Let $\spc{N}$ be the nerve of a covering $\{V_i\}$ of $\spc{M}$ and $\bm{\psi}\:\spc{M}\to\spc{N}$ be the map provided by \ref{prop:space->nerve}.
 As usual, we denote by $v_i$ the vertex of $\spc{N}$ that corresponds to $V_i$.
 Observe that $\dim\spc{N}<n$;
-therefore, $\psi$ kills the fundamental class of $\spc{M}$.
+therefore, $\bm{\psi}$ kills the fundamental class of $\spc{M}$.
 
 Let us construct a continuous map  $f\:\spc{N}\to  \spc{M}$ such that
-$f\circ\psi$ is homotopic to the identity map on $\spc{M}$.
+$f\circ\bm{\psi}$ is homotopic to the identity map on $\spc{M}$.
 Note that once $f$ is constructed, the theorem is proved.
-Indeed, since $\psi$ kills the fundamental class $[\spc{M}]$ of $\spc{M}$, so does $f\circ\psi$.
+Indeed, since $\bm{\psi}$ kills the fundamental class $[\spc{M}]$ of $\spc{M}$, so does $f\circ\bm{\psi}$.
 Therefore, $[\spc{M}]=0$ --- a contradiction.
 
 Set $R=\width \spc{M}$ and $s=\sys\spc{M}$.
@@ -418,18 +428,17 @@ It defines the map $f$ on $\spc{N}^2$.
 
 Finally, since $\spc{M}$ is aspherical, by \ref{lem:aspherical-homotopy}, the map $f$ can be extended to $\spc{N}^3$, $\spc{N}^4$ and so on.
 
-It remains to show that $f\circ\psi$ is homotopic to the identity map.
+It remains to show that $f\circ\bm{\psi}$ is homotopic to the identity map.
 Choose a CW structure on $\spc{M}$ with sufficiently small cells, so that each cell lies in one of $V_i$.
-Note that $\psi$ is homotopic to a map $\psi_1$ that sends $\spc{M}^k$ to $\spc{N}^k$ for any $k$.
+Note that $\bm{\psi}$ is homotopic to a map $\bm{\psi}_1$ that sends $\spc{M}^k$ to $\spc{N}^k$ for any $k$.
 Moreover, we may assume that (1) if a 0-cell $x$ of $\spc{M}$ maps to a $v_i$, then $x\in V_i$ and (2) each 1-cell  of $\spc{M}$ maps to an edge or a vertex of $\spc{N}$.
-Choose a 1-cell $e$ in $\spc{M}$; by the construction, $f\circ\psi_1$ maps $e$ to a shortest path $[p_ip_j]$ and $e$ lies $\oBall(p_i,R)$.
+Choose a 1-cell $e$ in $\spc{M}$; by the construction, $f\circ\bm{\psi}_1$ maps $e$ to a shortest path $[p_ip_j]$ and $e$ lies $\oBall(p_i,R)$.
 Observe that $[p_ip_j]$ is shorter than $2\cdot R$.
 It follows that the distance between points on $[p_ip_j]$ and $e$ can not exceed $3\cdot R$.
-Choose a shortest path $\alpha_i$ from every 0 cell $x_i$  of $\spc{M}$ to $p_j=f\circ\psi_1(x_i)$.
+Choose a shortest path $\alpha_i$ from every 0 cell $x_i$  of $\spc{M}$ to $p_j=f\circ\bm{\psi}_1(x_i)$.
 It defines a homotopy on $\spc{M}^0$.
 Since $6\cdot R<s$, \ref{lem:sys-homotopy} implies that this homotopy can be extended to $\spc{M}^1$.
 By \ref{lem:aspherical-homotopy}, it can be extended to whole $\spc{M}$.
-%???
 \qeds
 
 \begin{thm}{Exercise}\label{ex:sys<width}
@@ -457,10 +466,10 @@ an inequality with optimal constant (with equality for round sphere) was obtaine
 To generalize \ref{thm:sys<width} further, we need the following definition.
 
 \begin{thm}{Definition}\label{def:essential}
-A closed manifold $\spc{M}$ is called \index{essential manifold}\emph{essential} if it admits a continuous map $\iota\:\spc{M}\to \spc{K}$ to an aspherical CW-complex $\spc{K}$ such that $\iota$ sends the fundamental class of $\spc{M}$ to a nonzero homology class in $\spc{K}$.
+A closed manifold $M$ is called \index{essential manifold}\emph{essential} if it admits a continuous map $\iota\:M\to K$ to an aspherical CW-complex $K$ such that $\iota$ sends the fundamental class of $M$ to a nonzero homology class in $K$.
 \end{thm}
 
-Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $\spc{M}$.
+Note that any closed aspherical manifold is essential --- in this case one can take $\iota$ to be the identity map on $M$.
 
 The real projective space $\RP^n$ provides an interesting example of an essential manifold which is not aspherical.
 Indeed, the infinite dimensional projective space $\RP^\infty$ is aspherical and for the natural embedding $\RP^n\hookrightarrow\RP^\infty$ the image $\RP^n$ does not bound in $\RP^\infty$.
@@ -474,12 +483,12 @@ Show that the connected sum of an essential manifold with any closed manifold is
 Show that the product of two essential manifolds is essential.
 \end{thm}
 
-Assume that the manifold $\spc{M}$ is essential and $\iota \:\spc{M}\to \spc{K}$ as in the definition.
+Assume that the manifold $M$ is essential and $\iota \:M\to K$ as in the definition.
 Following the proof of \ref{thm:sys<width}, we can homotope the map 
-$f\circ\psi\:\spc{M}\to \spc{M}$ to the identity on the 2-skeleton of $\spc{M}$;
-further since $\spc{K}$ is aspherical, we can homotope the composition
-$\iota\z\circ f\circ\psi$ to  $\iota$. 
-Existence of this extension implies that $\iota$ kills the fundamental class of $\spc{M}$ --- a contradiction.
+$f\circ\bm{\psi}\:M\to M$ to the identity on the 2-skeleton of $M$;
+further since $K$ is aspherical, we can homotope the composition
+$\iota\z\circ f\circ\bm{\psi}$ to  $\iota$. 
+Existence of this extension implies that $\iota$ kills the fundamental class of $M$ --- a contradiction.
 So, taking \ref{ex:sys<width} into account, we proved the following generalization of \ref{thm:sys<width}:
 
 \begin{thm}{Theorem}\label{thm:sys<width++}
@@ -504,10 +513,10 @@ The given proof is a result of a sequence of simplifications given by Larry Guth
 Panos Papasoglu \cite{papasoglu},
 Alexander Nabutovsky and Roman Karasev \cite{nabutovsky}.
 
-If the calculations would be done better \cite{nabutovsky}, we would get
+The calculations could be done better; namely we could get
 \[\width\spc{P}\le c_n\cdot \sqrt[n]{\vol\spc{P}},\]
 where
-$c_n=\sqrt[n]{n!/2}= \tfrac ne+o(n)$.
+$c_n=\sqrt[n]{n!/2}= \tfrac ne+o(n)$ \cite{nabutovsky}.
 As a result, we may get a stronger statement in \ref{thm:sys+}:
 \[\sys\spc{M}\le 4 \cdot c_n\cdot \sqrt[n]{\vol\spc{M}}.\]
 

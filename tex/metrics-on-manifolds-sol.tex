@@ -1,45 +1,76 @@
+\parbf{\ref{ex:non-differentiable}.}
+Choose a function $r\mapsto \alpha(r)$ such that $\alpha'(r)\cdot r\to 0$ and $\alpha(r)\to\infty$ as $r\to 0$.
+Consider the reparametrization of the Euclidean plane given by $\iota\:(r,\theta)\mapsto (r,\theta+\alpha(r))$ in the polar coordinates.
+Observe that $\iota$ is not differentiable at the origin, but the metric tensor $g$ induced by $\iota$  is continuous.
+
+\medskip
+
+For more on the subject read the paper of Eugenio Calabi and Philip Hartman \cite{calabi-hartman}. 
+
+\parbf{\ref{ex:volume-preserving+short}};
+\ref{SHORT.ex:volume-preserving+short:injective}.
+Suppose $p=f(x)=f(y)$ and the points $x,y\in \spc{M}$ are distinct.
+Since $f$ is short, we get for any $r>0$ the ball $\oBall(p,r)_{\spc{N}}$ contains the images of $\oBall(x,r)_{\spc{M}}$ and $\oBall(y,r)_{\spc{M}}$.
+Since $f$ is volume-preserving, we get
+\[
+\vol\oBall(x,r)_{\spc{M}}
++
+\vol\oBall(y,r)_{\spc{M}}
+\le
+\vol\oBall(p,r)_{\spc{N}}.
+\eqlbl{vol+vol<vol}\]
+
+By \ref{obs:lip-chart}, for any $\eps>0$ and all sufficiently small $r>0$ the volumes of the balls  $\oBall(x,r)_{\spc{M}}$, $\oBall(y,r)_{\spc{M}}$ and $\oBall(p,r)_{\spc{N}}$, lie in the range $\omega_n\cdot e^{\mp2\cdot n\cdot\eps}\cdot r^n$, where $\omega_n$ denotes the volume of the unit ball in the $n$-dimensional Euclidean space.
+The latter contradicts \ref{vol+vol<vol} for appropriate choice of $\eps$ and $r$.
+
+\parit{\ref{SHORT.ex:volume-preserving+short:bi}.}
+Denote by $\sigma(r,a)$ the volume of union of two $r$-balls in the $n$-dimensional Euclidean space such that the distance between their centers is $a$.
+Observe that the function $(a,r)\mapsto \sigma(r,a)$ is continuous and increasing in $a$ and $r$ for $a\le r$.
+Further, note that
+\[\sigma(\lambda\cdot r,\lambda\cdot a)=\lambda^n\cdot \sigma(r,a)\]
+for any $\lambda>0$.
+
+Choose a point $z\in \spc{M}$ and small $\eps>0$.
+By \ref{obs:lip-chart} there is $R>0$ such that $\oBall(z,10\cdot R)$ admits a $e^{\mp\eps}$-bilipschitz map to the $n$-dimensional Euclidean space.
+
+Choose $x,y\in \oBall(z, R)$.
+The argument used in part \ref{SHORT.ex:volume-preserving+short:injective} implies that 
+\[e^{-n\cdot\eps}\cdot \sigma(e^{-\eps}\cdot r, e^{-\eps}\cdot \dist{x}{y}{\spc{M}})
+\le 
+e^{n\cdot\eps}\cdot \sigma(e^{\eps}\cdot r, e^{\eps}\cdot \dist{f(x)}{f(y)}{\spc{N}}).
+\eqlbl{eq:v(r,a)}\]
+This inequality implies a lower bound on $\dist{f(x)}{f(y)}{\spc{N}}$ in terms of $\dist{x}{y}{\spc{M}}$.
+
+Use the listed properties of the function $(a,r)\mapsto \sigma(r,a)$ to show that for any $c<1$ there is $\eps>0$ such that \ref{eq:v(r,a)} implies that $b>c\cdot a$ for all sufficiently small $a$.
+
+Finally, since $\spc{M}$ and  $\spc{N}$ are length-metric spaces, part~\ref{SHORT.ex:volume-preserving+short:bi} implies that $f$ is locally distance preserving.
+(An inclusion map from a nonconvex open subset to the plane gives an example of volume preserving short map that is not distance preserving.)
+
+
+\medskip
+
+A more general result is discussed by Paul Creutz and Elefterios Soultanis \cite{creutz-soultanis}.
+
+
 \parbf{\ref{ex:besikovitch=}.}
-Let us use the same notation as in the proof of \ref{thm:besikovitch}.
-
-Consider the map $s\:x\mapsto(\distfun_A(x)_g,\distfun_B(x)_g)$.
-From the proof of \ref{thm:besikovitch} we get that $\Im s\supset \square$.
-Observe that in the case of equality we have that $\Im s= \square$.
-Indeed,
-the same argument shows that 
-\[\vol(s^{-1}(\square),g)\ge \vol\square=1.\]
-The set $s^{-1}(\RR^2\backslash \square)$ is an open subset of $\square$.
-If it is nonempty, then it has positive volume.
-In this case
-\[\vol(\square,g)>\vol(s^{-1}(\square),g)\ge 1\]
---- a contradiction.
-
-Summarizing the above discussion, there is a geodesic path of $g$-length $1$ connecting any point on one face of the cube to a point on the opposite face.
-
-Moreover, for any pair of opposite faces and a point $p\in\square$, there is a geodesic path of $g$-length $1$ from one face to the other that passes thru $p$.
-The latter can be shown by cutting $\square$ into two rectangles by a level set of $\distfun_A$ thru $p$,
-applying the above statement to both rectangles and taking the concatenation of the obtained geodesic paths with end at $p$.
-(The level surface might cut a rectangle with some topology, so we have to apply \ref{thm:besikovitch+} instead of \ref{thm:besikovitch}).
-
-Let $\gamma$ be such a geodesic path from $A$ to $A'$.
-Observe that $\gamma'(t)\z=\nabla_{\gamma(t)}\distfun_A$.
-Therefore $\distfun_A$ is differentiable at every point $p\in \square$.
-It follows that the map $s$ is differentiable.
-
-Further, checking the equality case in each inequality in the proof of \ref{thm:besikovitch}, we get that $s$ is a bijection and the equalities
-\[|d_{p}\distfun_A|= 1,\quad|d_{p}\distfun_B|=1,\quad \text{and}\quad \langle d_{p}\distfun_A,d_{p}\distfun_B\rangle= 0\]
-hold for almost all $p\in\square$.
-Since $d_{p}\distfun_A$ and $d_{p}\distfun_B$ are well defined, we get that the equalities hold everywhere.
-That is, $s$ is an isometry.
+From the proof of Besicovitch inequality, one can see that the restriction of $\bm{f}$ to the interior of $\spc{M}$ is
+(1) volume-preserving, and 
+(2) its differential $d_p\bm{f}\:\T_p\to \T_{\bm{f}(p)}$ is an isometry for almost all $p$.
 
 \begin{wrapfigure}{r}{45 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-27}
+\bigskip
+\includegraphics{mppics/pic-23}
 \end{wrapfigure}
+
+Since $\bm{f}$ is Lipschitz, (2) can be used to show that $\bm{f}$ is short.
+It remains to apply \ref{ex:volume-preserving+short}.
 
 \parbf{\ref{ex:hexagon}.}
 Consider the hexagon with flat metric and curved sides shown on the diagram.
-Observe that its area can be made arbitrary small while keeping the distances from the opposite sides at least 1.
+Observe that its area can be made arbitrarily small while keeping the distances from the opposite sides at least 1.
 
 \parbf{\ref{ex:cylinder};} \ref{SHORT.ex:cylinder:besicovitch}.
 Let $\alpha$ be a shortest curve that runs between the boundary components of the cylinder.
@@ -52,12 +83,6 @@ By assumption, the $g$-distance between the first pair of sides is at least 1.
 
 Consider a shortest curve $\beta$ that connects this pair of sides;
 let us keep the same notation for the projection of $\beta$ in the cylinder.
-
-\begin{wrapfigure}{o}{45 mm}
-\vskip2mm
-\centering
-\includegraphics{mppics/pic-23}
-\end{wrapfigure}
 
 Note that a cyclic concatenation $\gamma$ of $\beta$ with an arc of $\alpha$ is homotopic to a boundary circle.
 Therefore $\length_g\gamma\ge1$.
@@ -73,19 +98,18 @@ Therefore if $0\le t\le  1$, then the level sets
 Applying the coarea inequality, we get that
 \[\area(\mathbb{S}^1\times[0,1],g)\ge 1.\]
 
-\parit{Remark.}
-The optimal bound is $\tfrac2{\sqrt{3}}$;
-it is proved by Charles Loewner.
+\parbf{\ref{ex:gadograph}}; \ref{SHORT.ex:gadograph-besikovitch}.
+Argue the same way as in \ref{thm:besikovitch}, but observe in addition that $\vol \Sigma=\vol \bm{f}(\Sigma)=0$ and use it time to time.
 
-\parbf{\ref{ex:gadograph}.}
+\parit{\ref{SHORT.ex:gadograph-gadograph}.}
 Without loss of generality, we may assume that $V$ lies in a unit cube~$\square$.
-Consider a noncontinuous metric tensor $\bar g$ on $\square$ that coincides with $g$ inside $V$ and with the canonical flat metric tensor outside of $V$.
+Consider a noncontinuous metric tensor $\bar g$ on $\square$ that coincides with $g$ inside $V$ and with the canonical flat metric tensor outside of~$V$.
 
 Observe that the $\bar g$-distances between opposite faces of $\square$ are at least 1.
 Indeed this is true for the Euclidean metric and the assumption $\dist{p}{q}{g}\ge\dist{p}{q}{\EE^d}$  guarantees that one cannot make a shortcut in~$V$.
 Therefore, the $\bar g$-distances between every pair of opposite faces is at least as large as 1 which is the Euclidean distance.
 
-This metric tensor $\bar g$ is not continuous at $\Sigma$, but the same argument as in \ref{thm:besikovitch} can be applied to show that $\vol(\square,\bar g)\ge \vol\square$.
+Applying part \ref{SHORT.ex:gadograph-besikovitch}, we get that $\vol(\square,\bar g)\ge \vol\square$.
 Whence the statement follows.
 
 
@@ -100,8 +124,8 @@ Note that $\gamma'$ intersects $\gamma$ only at the common endpoints $x$ and $x'
 Indeed, if $p'=q$ for some $p,q\in\gamma$, then $|p-q|\ge 1$.
 Since $\length \gamma=1$, the points $p$ and $q$ must be the ends of $\gamma$.
 
-It follows that $\gamma$ together with $\gamma'$ forms a closed simple curve in $\mathbb{S}^2$
-that divides the sphere into two disks $D$ and $D'$.
+It follows that $\gamma$ together with $\gamma'$ forms a closed simple curve in $\mathbb{S}^2$;
+it divides the sphere into two disks $D$ and $D'$.
 
 Let us divide $\gamma$ into two equal arcs $\gamma_1$ and $\gamma_2$; each of length $\tfrac12$.
 Suppose that $p,q\in\gamma_1$, then 
@@ -136,12 +160,13 @@ By the triangle inequality, we have that
 &=1-|1-2\cdot c|.
 \end{align*}
 
-It remains to apply the coarea inequality \ref{cor:coarea}
-\[\area(\mathbb{S}^2,g)\ge \int\limits_0^1\length L_c\cdot dc.\]
+The coarea inequality (\ref{cor:coarea})
+\[\area(\mathbb{S}^2,g)\ge \int\limits_0^1\length L_c\cdot dc\]
+finishes the proof.
 
 
 The bound $\tfrac12$ was proved by Marcel Berger \cite{berger}. 
-Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke} --- if you solved this part of problem, then publish.
+Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the round sphere is the only space that achieves this \cite[Conjecture 0.3 in][]{croke} --- if you solved the last part of the problem, then publish the result.
 
 \begin{wrapfigure}{r}{20 mm}
 \vskip-0mm
@@ -174,7 +199,7 @@ Note that according to \ref{thm:sys+},
 the involution $\iota$ cannot be made isometric.
 
 \parbf{\ref{ex:GH-vol}.}
-Note that if $(M,g_\infty)$ is $e^{\pm\eps}$-bilipschitz to a cube, then applying Besicovitch inequality, we get that 
+Note that if $(M,g_\infty)$ is $e^{\mp\eps}$-bilipschitz to a cube, then applying Besicovitch inequality, we get that 
 \[\liminf_{n\to\infty} \vol (M,g_n)\ge e^{-n\cdot \eps}\cdot\vol (M,g_\infty).\]
 
 By the Vitali covering theorem, given $\eps>0$, we can cover the whole volume of $(M,g_\infty)$ by $e^{\pm\eps}$-bilipschitz cubes.
@@ -182,13 +207,13 @@ Applying the above observation and summing up the results, we get that
 \[\liminf_{n\to\infty} \vol (M,g_n)\ge e^{-n\cdot \eps}\cdot\vol (M,g_\infty).\]
 The statement follows since $\eps$ is an arbitrary positive number.
 
-To solve the second part of problem, start with $g_\infty$ and construct $g_n$ by  adding many tiny bubbles.
-The volume can be increased arbitrary with arbitrary small change of metric.
+To solve the second part of the exercise, start with $g_\infty$ and construct $g_n$ by  adding many tiny bubbles.
+The volume can be increased arbitrarily with an arbitrarily small change of metric.
 
 \parit{Remark.}
 A more general result was obtained by Sergei Ivanov~\cite{ivanov-1997}.
-Note that the statement does for Gromov--Hausdorff convergence.
-In fact any compact metric space $\spc{X}$ can be approximated by Riemannian surface in the sense of Gromov--Hausdorff with an arbitrary small area.
+Note that the statement does not hold true for Gromov--Hausdorff convergence.
+In fact any compact metric space $\spc{X}$ can be GH-approximated by a Riemannian surface with an arbitrarily small area.
 To show the latter statement, approximate $\spc{X}$ by a finite graph $\Gamma$, embed $\Gamma$ isometrically to the Euclidean space, and pass to the surface of its neighborhood.
 
 \parbf{\ref{ex:sysT2}.}
@@ -197,8 +222,11 @@ Set $s=\sys(\TT^2,g)$.
 Cut $\TT^2$ along a shortest closed noncontractible curve $\gamma$.
 We get a cylinder $(\mathbb{S}^1,g)$ with a Riemannian metric on it.
 
-Applying the argument in \ref{ex:cylinder:besicovitch}, we get that $g$-distance between the boundary components is at least $\tfrac s2$.
+Applying the argument in \ref{ex:cylinder:besicovitch}, we get that the $g$-distance between the boundary components is at least $\tfrac s2$.
 Then \ref{ex:cylinder:besicovitch} implies that the area of torus is at least $\tfrac{s^2}2$.
+
+\parit{Remark.}
+The optimal bound is $\tfrac{\sqrt{3}}{2}\cdot s^2$; see  \ref{sec:besicovitch-remarks}.
 
 \begin{wrapfigure}{r}{44 mm}
 \vskip-4mm
@@ -226,10 +254,10 @@ Note that $(\DD^2,g)$ can be parameterized by a square with sides $A$, $B$, $A'$
 \[\area(\RP^2,g)=\area(\DD^2,g)\ge \tfrac14\cdot s^2.\]
 
 \parit{Remark.}
-For the optimal constant was found by Pao Ming Pu see the remark on page \pageref{page:pu}.
-His proof shows that any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has the area at least as large as the unit hemisphere.
-It is expected that the same inequality holds for any compact surface bounded by a single curve (not necessarily a disc);
-this is the so-called the {}\emph{filling area conjecture} \cite[it is mentioned in 5.5.$\mathrm{B}'(\mathrm{e}')$ of][]{gromov-1983}.
+The optimal bound is $\tfrac2 \pi\cdot s^2$; see  \ref{sec:besicovitch-remarks}.
+In fact any Riemannian metric on the disc with the boundary globally isometric to a unit circle with angle metric has the area at least as large as the unit hemisphere.
+It is expected that the same inequality holds for any compact surface with connected boundary (not necessarily a disc);
+this is the so-called \index{filling area conjecture}\emph{filling area conjecture} \cite[it is mentioned Mikhael Gromov in 5.5.$\mathrm{B}'(\mathrm{e}')$ of][]{gromov-1983}.
 
 \parbf{\ref{ex:sysSg}.} Cut the surface along a shortest noncontractible curve $\gamma$. 
 We might get a surface with one or two components of the boundary.
@@ -245,10 +273,12 @@ apply \ref{prop:bilip-measure} where it is appropriate.
 
 \parbf{\ref{ex:2top-discs}.} Suppose that $\Delta_1\ne\Delta_2$.
 Consider the map $f\:\mathbb{S}^n\to \spc{X}$ such that the restriction to north and south hemispheres describe $\Delta_1$ and $\Delta_2$ respectively.
-Show that if $\Delta_1\ne\Delta_2$, then $\mathbb{S}^n$ can be parameterized by the boundary of unit cube in such a way that for any pair $A$, $A'$ of opposite faces their images $f(A)$, $f(A')$ do not overlap.
+Show that if $\Delta_1\ne\Delta_2$, then $\mathbb{S}^n$ can be parameterized by the boundary of the unit cube $\square$ in such a way that for any pair $A$, $A'$ of opposite faces their images $f(A)$, $f(A')$ do not overlap.
 
 Since $\spc{X}$ is contractible, the map $f$ can be extended to a map of the whole cube.
-It remains to apply \ref{ex:besikovitch++}.
+By \ref{ex:besikovitch++} 
+\[\haus_{n+1}[f(\square)]>0,\]
+a contradiction.
 
 
 \parbf{\ref{ex:macrodimension}.}
@@ -321,7 +351,7 @@ By the triangle inequality, the subdivision of $\sigma$ into the arcs $[pm]$, $[
 hence the statement.
 
 \parit{The quasiconverse} does not hold.
-As an example take a surface that looks like a long cylinder with two hats,
+As an example take a surface that looks like a long cylinder with closed ends;
 \begin{figure}[h!]
 \vskip0mm
 \centering
@@ -336,24 +366,24 @@ However, a circle formed by a section of cylinder around its midpoint by a plane
 \parbf{\ref{ex:width=suprad(inv)}}; \textit{``only if'' part.}
 Suppose $\width_n\spc{X}<R$.
 Consider a covering $\{V_1,\dots,V_k\}$ of $\spc{X}$ guaranteed by the definition of width.
-Let $\spc{N}$ be its nerve and $\psi\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
+Let $\spc{N}$ be its nerve and $\bm{\psi}\:\spc{X}\to \spc{N}$ be the map provided by \ref{prop:space->nerve}.
 
 Since the multiplicity of the covering is at most $n+1$, we have $\dim \spc{N}\le n$.
 
 Note that if $x\in \spc{N}$ lies in a star of a vertex $v_i$,
-then $\psi^{-1}\{x\}\z\subset V_i$;
-in particular, we have $\rad[\psi^{-1}\{x\}]<R$.
+then $\bm{\psi}^{-1}\{x\}\z\subset V_i$;
+in particular, we have $\rad[\bm{\psi}^{-1}\{x\}]<R$.
 
 \parit{``If'' part.}
 Choose $x\in \spc{N}$.
-Since the inverse image $\psi^{-1}\{x\}$ is compact, $\psi$ is continuous, and $\rad[\psi^{-1}\{x\}]<R$,
-there is a neighborhood $U\ni x$ such that the  $\rad[\psi^{-1}(U)]<R$.
+Since the inverse image $\bm{\psi}^{-1}\{x\}$ is compact, $\bm{\psi}$ is continuous, and $\rad[\bm{\psi}^{-1}\{x\}]<R$,
+there is a neighborhood $U\ni x$ such that the  $\rad[\bm{\psi}^{-1}(U)]<R$.
 
-Since $\spc{X}$ is compact,  there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\psi^{-1}(U_i)\subset\spc{X}$ has a radius smaller than $R$ for each $i$.
+Since $\spc{X}$ is compact,  there is a finite cover $\{U_i\}$ of $\spc{N}$ such that $\bm{\psi}^{-1}(U_i)\subset\spc{X}$ has a radius smaller than $R$ for each $i$.
 Since $\spc{N}$ has dimension $n$, we can inscribe%
 \footnote{Recall that a covering $\{W_i\}$ is inscribed in the covering $\{U_i\}$ if for every $W_i$ is a subset of some $U_j$.} 
 in $\{U_i\}$ a finite open cover $\{W_i\}$ with multiplicity at most $n+1$.
-It remains to observe that $V_i=\psi^{-1}(W_i)$ defines a finite open cover of $\spc{X}$ with  multiplicity at most $n+1$ and $\rad V_i<R$ for any $i$. 
+It remains to observe that $V_i=\bm{\psi}^{-1}(W_i)$ defines a finite open cover of $\spc{X}$ with  multiplicity at most $n+1$ and $\rad V_i<R$ for any $i$. 
 
 \parbf{\ref{ex:1D-case}.}
 Assume that $\spc{P}$ is connected.
@@ -391,8 +421,8 @@ The inequality $6\cdot R<s$ used twice:
 \item to extend the constructed homotopy on $\spc{M}^0$ to $\spc{M}^1$.
 \end{itemize}
 
-The first problem can be solved by passing to a barycentric subdivision of $\spc{N}^2$;
-denote by $v_{ij}$ and $v_{ijk}$ the new vertexes in the subdivision that correspond to edge $[v_iv_j]$ and triangle $[v_iv_jv_k]$ respectively.
+The first issue can be resolved by passing to a barycentric subdivision of $\spc{N}^2$;
+denote by $v_{ij}$ and $v_{ijk}$ the new vertices in the subdivision that correspond to edge $[v_iv_j]$ and triangle $[v_iv_jv_k]$ respectively.
 
 Further for each vertex $v_{ij}$ choose a point $p_{ij}\in V_i\cap V_j$ and set $f(v_{ij})=p_{ij}$.
 Similarly for each vertex $v_{ijk}$ choose a point $p_{ijk}\z\in V_i\cap V_j\cap V_k$ and set $f(v_{ijk})=p_{ijk}$.
@@ -406,9 +436,9 @@ The second issue disappears if one estimates the distances a bit more carefully.
  
 \parbf{\ref{ex:fillrad-inj}.}
 Choose a fine covering of $\spc{M}$ with multiplicity at most $n$.
-Choose $\psi$ from $\spc{M}$ to the nerve $\spc{N}$ of the covering the same way as in the proof of \ref{thm:sys<width}.
+Choose $\bm{\psi}$ from $\spc{M}$ to the nerve $\spc{N}$ of the covering the same way as in the proof of \ref{thm:sys<width}.
 
-It remains to construct $f\:\spc{N}\to\spc{M}$ and show that $f\circ\psi$ is homotopic to the identity map.
+It remains to construct $f\:\spc{N}\to\spc{M}$ and show that $f\circ\bm{\psi}$ is homotopic to the identity map.
 To do this, apply the same strategy as in the proof of \ref{thm:sys<width} together with the so-called \index{geodesic cone construction}\emph{geodesic cone construction}
 described below.
 
@@ -432,33 +462,33 @@ From above, the composition $\iota\circ f\:N\#M\to K$ sends the fundamental clas
 
 
 \parbf{\ref{ex:product-essential}.}
-Suppose $\spc{M}_1$ and $\spc{M}_2$ are essential.
-Let $\iota_1\:\spc{M}_1\to\spc{K}_1$ and $\iota_2\:\spc{M}_2\to\spc{K}_2$ are the maps to aspherical spaces as in the definition (\ref{def:essential}).
+Suppose $M_1$ and $M_2$ are essential.
+Let $\iota_1\:M_1\to K_1$ and $\iota_2\:M_2\to K_2$ are the maps to aspherical spaces as in the definition (\ref{def:essential}).
 Show that the map
-$(\iota_1,\iota_2)\:\spc{M}_1\times\spc{M}_2\to\spc{K}_1\times\spc{K}_2$
+$(\iota_1,\iota_2)\:M_1\times M_2\to K_1\times K_2$
 meets the definition.
 
 \parit{Remark.}
 Choose a group $G$.
-Note that there is an aspherical connected space CW-complex $\spc{K}$ with fundamental group $G$.
-The space $\spc{K}$ is called an \index{K(G,1) space}\emph{Eilenberg--MacLane space of type $K(G,1)$}, or briefly a $K(G,1)$ space.
+Note that there is an aspherical connected space CW-complex $K$ with fundamental group $G$.
+The space $K$ is called an \index{K(G,1) space@$K(G,1)$ space}\emph{Eilenberg--MacLane space of type $K(G,1)$}, or briefly a $K(G,1)$ space.
 Moreover it is not hard to check that
 \begin{itemize}
-\item $\spc{K}$ is uniquely defined up to a weak homotopy equivalence;
+\item $K$ is uniquely defined up to a weak homotopy equivalence;
 \item if $\spc{W}$ is a connected finite CW-complex.
-Then any homomorphism $\pi_1(\spc{W},w)\to\pi_1(\spc{K},k)$ is induced by a continuous map $\phi\:(\spc{W},w)\to(\spc{K},k)$.
+Then any homomorphism $\pi_1(\spc{W},w)\to\pi_1(K,k)$ is induced by a continuous map $\phi\:(\spc{W},w)\to(K,k)$.
 Moreover, $\phi$ is uniquely defined up to homotopy equivalence.
 \end{itemize}
 
 \begin{itemize}
- \item Suppose that $\spc{M}$ is a closed manifold, 
-$\spc{K}$ is a $K(\pi_1(\spc{M}),1)$ space and a map $\iota\:\spc{M}\to \spc{K}$ induces an isomorphism of fundamental groups.
-Then $\spc{M}$ is essential if and only if $\iota$ sends the fundamental class of $\spc{M}$ to a nonzero homology class of $\spc{K}$.
+ \item Suppose that $M$ is a closed manifold, 
+$K$ is a $K(\pi_1(M),1)$ space and a map $\iota\:M\to K$ induces an isomorphism of fundamental groups.
+Then $M$ is essential if and only if $\iota$ sends the fundamental class of $M$ to a nonzero homology class of $K$.
 \end{itemize}
 
-The last property described in the last statement is the original definition of essential manifold.
-It can be used to prove a converse to the exercse;
-namely \emph{the product of nonessential closed manifold with any closed manifold is \emph{not} essential}.
+The property described in the last statement is the original definition of essential manifold.
+It can be used to prove a converse to the exercise;
+namely \emph{the product of a nonessential closed manifold with any closed manifold is \emph{not} essential}.
 
 
 

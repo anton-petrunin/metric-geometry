@@ -253,7 +253,26 @@ In particular, if $C>10$, then
 for any $x,x'\in \spc{X}$.
 That is, $f$ is a distance-nondecreasing map $\spc{X}\to \spc{Y}$.
 
-\parbf{\ref{ex-GH-length}.} Apply \ref{ex:Haus-length}, \ref{prop:GH-with-fixed-Z}, and \ref{lem:GH-complete}.
+\parbf{\ref{ex-GH-length}}; \ref{SHORT.ex-GH-length:length}
+Apply
+\ref{ex:Haus-length},
+\ref{prop:GH-with-fixed-Z},
+\ref{lem:GH-complete},
+and \ref{lem:mid>geod}.
+
+\parit{\ref{SHORT.ex-GH-length:geodesic}.}
+Choose two compact metric spaces $\spc{X}$ and $\spc{Y}$.
+Show that there are subsets $\spc{X}'$, and $\spc{Y}'$ in the Urysohn space $\spc{U}$ that isometric to $\spc{X}$ and $\spc{Y}$ respectively and such that 
+\[|\spc{X}-\spc{Y}|_{\GH} = |\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}.\]
+
+Further, construct a sequence of compact sets $\spc{Z}_n\subset \spc{U}$ such that $\spc{Z}_n$ is an $\tfrac1{2^n}$-midpoint of $\spc{X}'$, and $\spc{Y}'$ in $\Haus\spc{U}$ and 
+\[|\spc{Z}_n-\spc{Z}_{n+1}|_{\Haus\spc{U}}<\tfrac1{2^n}\]
+for any $n$.
+
+Observe that the sequence $\spc{Z}_n$ converges in $\GH$, and its limit by $\spc{Z}$ is a midpoint of $\spc{X}$ and $\spc{Y}$.
+Finally apply \ref{lem:GH-complete} and \ref{lem:mid>geod}.
+
+\parit{Source:} \cite{ivanov-nikolaeva-tuzhilin}.
 
 \parbf{\ref{ex:GH-SC},} \ref{SHORT.ex:GH-SC:circle}.
 Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
@@ -292,8 +311,6 @@ By \ref{ex:GH-SC:nonsc-limit}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ h
 Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
 If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
 On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 --- a contradiction.
-
-
 
 \parit{\ref{SHORT.ex:sphere-to-ball:3}.}
 Make fine burrows in the standard 3-ball without changing its topology,
