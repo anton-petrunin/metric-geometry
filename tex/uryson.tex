@@ -1,6 +1,6 @@
 \chapter{Universal spaces}
 
-This lecture is based on the discussion of Urysohn space given in the book of Mikhael Gromov \cite{gromov-2007}.
+This lecture is based on the discussion of Urysohn space in the book of Mikhael Gromov \cite{gromov-2007}.
 
 \section{Embedding in a normed space}
 
@@ -17,7 +17,7 @@ As an example, consider the space of real sequences equipped with \index{sup nor
 
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
 Therefore, any normed space is an example of metric space (in fact it is a geodesic space).
-Often we do not distinguish between normed space and the corresponding metric space.\footnote{By Mazur--Ulam theorem, the metric remembers the affine structure of the space; a slick proof of this theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.}
+Often we do not distinguish between normed space and the corresponding metric space.\footnote{By Mazur--Ulam theorem, the metric remembers the linear structure of the space; a slick proof of this statement was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.}
 
 The following lemma says in particular that any compact metric space is isometric to a subset of a fixed normed space.
 
@@ -48,12 +48,16 @@ Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrarily close to $x$.
 Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrarily close to $\dist{x}{y}{\spc{X}}$.
 In other words 
 \[\sup_n\{\,\left|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}\right|\,\}\ge \dist{x}{y}{\spc{X}}.\]
-Whence 
+Hence 
 \[\sup_n\{\,|a_n(x)-a_n(y)|\,\}\ge \dist{x}{y}{\spc{X}};\eqlbl{eq:a-a>=dist}\]
 that is, $\iota$ is distance non-contracting.
 
 Finally observe that \ref{eq:a-a=<dist} and \ref{eq:a-a>=dist} imply the lemma.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:compact-length}
+Show that any compact metric space $\spc{K}$ is isometric to a subspace of a compact geodesic space. 
+\end{thm}
 
 The following exercise generalizes the lemma to arbitrary separable spaces.
 
@@ -65,11 +69,8 @@ given $x\in \spc{X}$, set
 Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
 \end{thm}
 
-
-\begin{thm}{Exercise}\label{ex:compact-length}
-Show that any compact metric space $\spc{K}$ is isometric to a subspace of a compact geodesic space. 
-\end{thm}
-
+The following lemma implies that {}\emph{any metric space is isometric to a subset of a normed vector space};
+its proof is nearly identical to the proof of \ref{ex:frechet}.
 
 \begin{thm}{Lemma}\label{lem:kuratowski}
 Let $\spc{X}$ be arbitrary metric space.
@@ -80,7 +81,7 @@ Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc
 is distance-preserving.
 \end{thm}
 
-Note that this claim implies that {}\emph{any metric space is isometric to a subset of a normed vector space}.
+
 
 \section{Extension property}
 
@@ -113,6 +114,9 @@ There is a separable metric space with ($d$-) extension property (for any $d\ge 
 \end{thm}
 
 \parit{Proof.}
+Choose $d\ge 0$.
+Let us construct a separable metric space with $d$-extension property.
+
 Let $\spc{X}$ be a compact metric space such that $\diam\spc{X}\le d$.
 Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
 Note that the map $\spc{X} \to \spc{X}^d$ defined by $x\mapsto\distfun_x$ is a distance-preserving embedding,
@@ -134,11 +138,12 @@ In particular $\spc{X}_\infty$ is a countable union of compact spaces;
 therefore $\spc{X}_\infty$ is separable.
 
 Any finite subspace $\spc{F}$ of $\spc{X}_\infty$ lies in some $\spc{X}_n$ for $n<\infty$.
-By construction, there is a point $p\in \spc{X}_{n+1}$ that meets the condition in Definition~\ref{def:finite+1}.
+By construction, there is a point $p\in \spc{X}_{n+1}$ that meets the condition in \ref{def:finite+1} for any extension function $f\:\spc{F}\to\RR$.
 That is, $\spc{X}_\infty$ has $d$-extension property.
 
-A construction of a separable metric space with extension property is done along the same lines, but the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$ for an increasing sequence $d_n\to\infty$;
-also the point $p$ should be taken from $\spc{X}_{n+k}$ for sufficiently large $k$.
+A construction of a separable metric space with extension property requires only minor changes.
+First, the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
+Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:completion-univeral}
@@ -146,12 +151,11 @@ If a metric space $\spc{V}$ meets the ($d$-) extension property, then so does it
 \end{thm}
 
 \parit{Proof.} 
-We assume that $\spc{V}$ meets the extension property,
-the case of $d$-extension property can be proved along the same lines.
+Let us assume $\spc{V}$ meets the extension property.
+We will show that its completion $\spc{U}$ meets the extension property as well.
+The version of proposition for $d$-extension property can be proved along the same lines.
 
-Denote by $\spc{U}$ the completion of $\spc{V}$.
 Note that $\spc{V}$ is a dense subset in a complete space $\spc{U}$.
-
 Observe that $\spc{U}$ has {}\emph{approximate extension property};
 that is, if $\spc{F}\z\subset\spc{U}$ is a finite set, $\eps>0$, and $f\:\spc{F}\to \RR$ is a extension function, then
 there exists $p\in \spc{U}$ such that
@@ -214,7 +218,9 @@ Since $\spc{U}$ has extension property, there is a point $s_i'\in \spc{U}$ such 
 \[\dist{s_i'}{s_j'}{\spc{U}}=\dist{s_i}{s_j}{\spc{S}}\]
 for any $j<i$.
 
-The constructed map $s_i\mapsto s_i'$ is  distance-preserving map; it remains to extend it to a distance-preserving map on whole $\spc{S}$.
+The constructed map $s_i\mapsto s_i'$ is distance-preserving.
+Therefore it can be continuously extended to whole $\spc{S}$.
+It remains to observe that the constructed map $\spc{S}\hookrightarrow\spc{U}$ is distance-preserving.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:geodesics-urysohn}
@@ -239,14 +245,15 @@ Show that ($d$-) Urysohn space is simply connected.
 
 \begin{thm}{Theorem}\label{thm:urysohn-unique}
 Suppose $\spc{F}\subset \spc{U}$ and $\spc{F}'\subset \spc{U}'$ be finite isometric subspaces in a pair of ($d$-)Urysohn spaces $\spc{U}$ and $\spc{U}'$.
-Then any isometry $\iota\:\spc{F}\to \spc{F}'$ can be extended to an isometry $\spc{U}\to \spc{U}'$.
+Then any isometry $\iota\:\spc{F}\leftrightarrow \spc{F}'$ can be extended to an isometry $\spc{U}\leftrightarrow \spc{U}'$.
 
 In particular ($d$-)Urysohn space is unique up to isometry.
 \end{thm}
 
-The following construction uses the same idea as in the proof of \ref{prop:sep-in-urys}, but we need to apply it {}\emph{back-and-forth} to ensure that the constructed distance-preserving map is onto.
 While \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
-it does not solely imply the existence of an isometry.
+it does not solely imply the existence of an isometry $\spc{U}\leftrightarrow \spc{U}'$.
+Its construction uses the idea of \ref{prop:sep-in-urys}, but it is applied {}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
+
 
 \parit{Proof.}
 Choose dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}'$.
@@ -279,13 +286,13 @@ Observe that \ref{thm:urysohn-unique} implies that the Urysohn space (as well as
 Is there a {}\emph{noncomplete} finite-set homogeneous metric space that meets the extension property?
 \end{thm}
 
-This is a question of Pavel Urysohn; it appeared already in \cite[§2(6)]{urysohn}
+This is a question of Pavel Urysohn; it appeared already in \cite[§$2(6)$]{urysohn} 
 and reappeared in \cite[p. 83]{gromov-2007} with a missing keyword.
 In fact I do not see an example of a 1-point homogeneous  space with extension property.
 
 Recall that $S_r(p)_{\spc{X}}$ denotes the sphere of radius $r$ centered at $p$ in a metric space $\spc{X}$;
 that is, 
-\[S_r(p)_{\spc{X}}=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}=r}.\]
+$$S_r(p)_{\spc{X}}=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}=r}.$$
 
 \begin{thm}{Exercise}\label{ex:sphere-in-urysohn}
 Choose $d\in [0,\infty]$;
@@ -319,7 +326,8 @@ A proof can be obtained by modifying the proofs of \ref{prop:completion-univeral
 the same way as it is done in \ref{ex:compact-extension}.
 
 \begin{thm}{Exercise}\label{ex:homogeneous}
-Which of the following metric spaces
+Which of the following metric spaces are 
+1-point set homogeneous, finite set homogeneous, compact set homogeneous, countable homogeneous?
 
 \begin{subthm}{ex:homogeneous:euclidean}
 Euclidean plane,
@@ -336,8 +344,6 @@ Euclidean plane,
 \begin{subthm}{ex:homogeneous:ell-1}
  $\ell^1$
 \end{subthm}
-are 
-1-point set homogeneous, finite set homogeneous, compact set homogeneous, countable homogeneous?
 \end{thm}
 
 

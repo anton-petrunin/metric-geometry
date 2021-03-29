@@ -19,7 +19,7 @@ The \index{length}\emph{$g$-length} of a Lipschitz curve $\gamma\:[a,b]\to M$  i
 The $g$-length induces a metric metric on $M$; it is defined as the greatest lower bound to lengths of Lipschitz curves connecting two given points;
 the distance between a pair of points $x,y\in M$ will be denoted by 
 \[\dist{x}{y}{g}\quad\text{or}\quad\distfun_x(y)_g.\]
-The corresponding metric space $\spc{M}$ will be called \index{Riemannian!space}\emph{Riemannian space}
+The corresponding metric space $\spc{M}$ will be called \index{Riemannian!space}\emph{Riemannian space}.
 
 \begin{thm}{Exercise}\label{ex:non-differentiable}
 Show that isometry between Riemannian spaces might be not induced by a diffeomorphism.
@@ -27,11 +27,11 @@ Show that isometry between Riemannian spaces might be not induced by a diffeomor
 Moreover, there is a continuous Riemannian metric $g$ on $\RR^2$ such that the corresponding Riemannian space admits an isometry to the Euclidean palne but the induced map $\iota\:\RR^2\to\RR^2$ is not differentiable at some point.
 \end{thm}
 
-This exercise shows that in general the smooth structure is not uniquely defined on Riemannian space.
-Therefore in general case one has to distinguish between Riemannian manifold and the corresponding Riemannian space.%
+The exercise above shows that in general the smooth structure is not uniquely defined on Riemannian space.
+Therefore in general case one has to distinguish between Riemannian manifold and the corresponding Riemannian space altho there is almost no difference.%
 \footnote{In fact a straightforward smoothing procedure shows that isometry between Riemannian spaces can be approximated by diffeomorphisms between underlying manifolds; in particular these manifolds are diffeomorphic.
 Also, if the metric tensor is smooth, then it is not hard to show that Riemannian space {}\emph{remembers} everything about the Riemannian manifold, in particular the smooth structure;
-it is a part of the so-called Myers--Steenrod theorem \cite{myers-steenrod}.}
+it is a part of the so-called Myers--Steenrod theorem \cite{myers-steenrod}.} 
 
 The following observation states the key property of Riemannian spaces;
 it will be used to extend results from Euclidean space to Riemannian spaces.
@@ -238,9 +238,16 @@ To prove the corollary, choose $u$ to be the characteristic function of $A$ and 
 
 \section{Besicovitch inequality}
 
-A closed region in a Riemannian manifold bounded by hypersurface will be called \index{Riemannian!manifold with boundary}\emph{Riemannian manifold with boundary}.
-We always assume that the hypersurface is given by a locally bilipschitz embedding.
+A closed connected region in a Riemannian manifold bounded by hypersurface will be called \index{Riemannian!manifold with boundary}\emph{Riemannian manifold with boundary}.
+We always assume that the hypersurface can be realized locally as a graph of Lipschitz function in a suitable chart.
 In this case one can define $g$-length, $g$-distance, and $g$-volume the same way as we did for usual Riemannian manifolds.
+
+\begin{thm}{Exercise}\label{ex:compact-interior}
+Suppose that $(M,g)$ is a compact Riemannian manifold with boundary. 
+Observe that the interior $(M^\circ,g)$ of $(M,g)$ is a usual Riemannian manifold.
+Show that the space of $(M,g)$ is isometric to the completion of the space of $(M^\circ,g)$.
+\end{thm}
+ 
 
 \begin{thm}{Theorem}\label{thm:besikovitch}
 Let $g$ be a continuous metric tensor on a unit $n$-dimensional cube $\square$.
@@ -320,9 +327,6 @@ Then
 \[\vol(M,g)\ge d_1\cdots d_n.\]
 
 \end{thm}
-
-Note that the interior of a Riemannian manifold with boundary is a usual Riemannian manifold.
-This observation might help to solve the following exercise.
 
 \begin{thm}{Exercise}\label{ex:besikovitch=}
 Show that if equality holds in \ref{thm:besikovitch+},

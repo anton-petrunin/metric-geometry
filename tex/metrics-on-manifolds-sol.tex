@@ -52,25 +52,38 @@ Finally, since $\spc{M}$ and  $\spc{N}$ are length-metric spaces, part~\ref{SHOR
 A more general result is discussed by Paul Creutz and Elefterios Soultanis \cite{creutz-soultanis}.
 
 
+\parbf{\ref{ex:compact-interior}.} Denote by $\spc{M}$ and $\spc{M}^\circ$ the space of $(M,g)$ and $(M^\circ,g)$;
+further denote by $\bar{\spc{M}}^\circ$ the completion of $\spc{M}^\circ$.
+Observe that the inclusion $M^\circ\hookrightarrow M$ induces a short onto map $\iota\:\bar{\spc{M}}^\circ\z\to\spc{M}$.
+
+Recall that $M$ is bounded by hypersurface that is locally a graph.
+Use it to show that any sufficiently short curve $\gamma$ in $(M,g)$ can be approximated by a curve in $\spc{M}^\circ$ with $g$-length arbitrary close to $\length_g\gamma$.
+Conclude that $\iota$ is an isometry.
+
+
 \parbf{\ref{ex:besikovitch=}.}
 From the proof of Besicovitch inequality, one can see that the restriction of $\bm{f}$ to the interior of $\spc{M}$ is
 (1) volume-preserving, and 
 (2) its differential $d_p\bm{f}\:\T_p\to \T_{\bm{f}(p)}$ is an isometry for almost all $p$.
 
-\begin{wrapfigure}{r}{45 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-27}
-\bigskip
-\includegraphics{mppics/pic-23}
-\end{wrapfigure}
-
 Since $\bm{f}$ is Lipschitz, (2) can be used to show that $\bm{f}$ is short.
-It remains to apply \ref{ex:volume-preserving+short}.
+It remains to apply \ref{ex:volume-preserving+short} and \ref{ex:compact-interior}.
 
 \parbf{\ref{ex:hexagon}.}
 Consider the hexagon with flat metric and curved sides shown on the diagram.
 Observe that its area can be made arbitrarily small while keeping the distances from the opposite sides at least 1.
+
+\begin{figure}[!ht]
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-27}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-23}
+\end{minipage}
+\vskip-4mm
+\end{figure}
 
 \parbf{\ref{ex:cylinder};} \ref{SHORT.ex:cylinder:besicovitch}.
 Let $\alpha$ be a shortest curve that runs between the boundary components of the cylinder.

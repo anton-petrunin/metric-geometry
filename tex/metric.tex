@@ -2,7 +2,8 @@
 
 In this lecture we give some conventions used further
 and remind some definitions related to metric spaces.
-We assume some prior knowledge of basic definitions related to metric spaces.
+
+We assume some prior knowledge of metric spaces.
 For a more detailed introduction, we recommend the first couple of chapters in the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov}.
 
 \section{Metric spaces}
@@ -61,7 +62,7 @@ for any four points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
 
 \parbf{Pseudometris.}
 A metric for which the distance between two distinct points can be zero is called a \index{pseudometric}\emph{pseudometric}.
-In other words, to define pseudometric, we need to remove condition (\ref{metric=0}) from \ref{def:metric}.
+In other words, to define pseudometric, we need to remove condition \ref{SHORT.metric=0} from \ref{def:metric}.
 
 The following observation shows that
 nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
@@ -195,6 +196,17 @@ that is, $f$ is a distance-preserving bijection.
 A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
 in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
+Recall that \index{Borel measure}\emph{Borel measure} is a measure on a metric space that is defined on all open sets (and thus on all Borel sets).
+The space of Borel probability measures on a metric space $\spc{X}$ can be equipped with the following metric 
+\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
+where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
+The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:wasserstein}
+Let $\spc{X}$ be a compact metric space.
+Show that $\Wass_1\spc{X}$ is a compact length metric space.
+\end{thm}
+
 \section{Proper spaces}
 
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
@@ -233,9 +245,6 @@ In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need 
 However, once we write $[p q]$ we assume that we have made a choice of geodesic.
 
 A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parameterization by the unit interval $[0,1]$.
-
-A curve $\gamma\:\II\to \spc{X}$  is called a \index{geodesic!local geodesic}\emph{local geodesic} if for any $t\in\II$ there is a neighborhood $U$ of $t$ in $\II$ such that the restriction $\gamma|_U$ is a  geodesic.
-A constant-speed parameterization of a local geodesic by the unit interval $[0,1]$ is called a \index{geodesic!local geodesic}\emph{local geodesic path}. 
 
 \section{Geodesic spaces and metric trees}
 
@@ -410,7 +419,7 @@ where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ i
 In other words $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
 \footnote{The notation $\dist{*}{*}{A}$ conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
 
-Let $\spc{X}$ be a metric space and $x,y\in\spc{X}$.
+Let $x$ and $y$ be points in a metric space $\spc{X}$.
 
 \begin{enumerate}[(i)]
 \item A point $z\in \spc{X}$ is called a \index{midpoint}\emph{midpoint} between $x$ and $y$
@@ -478,7 +487,7 @@ taking midpoints instead of $\eps_n$-midpoints.
 In this case \ref{eq:eps-midpoint} holds for $\eps_n=\eps=0$.
 \qeds
 
-Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, Lemma~\ref{lem:mid>geod} immediately implies
+Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, \ref{lem:mid>geod} immediately implies the following.
 
 \begin{thm}{Proposition}\label{prop:length+proper=>geodesic}
 Any proper length space is geodesic.
@@ -508,7 +517,7 @@ therefore for any $\eps>0$,
 the set $\cBall[x,\rho(x)-\eps]$ is a compact $\eps$-net in~$B$.
 Since $B$ is closed and hence complete, it must be compact.
 \claimqeds
-Next we claim that
+
 \begin{clm}{} $|\rho(x)-\rho(y)|\le \dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$;
 in particular $\rho\:\spc{X}\to\RR$ is a continuous function.
 \end{clm}
@@ -537,22 +546,11 @@ but whose completion $\bar{\spc{X}}$ is neither geodesic nor locally compact.
 
 
 \begin{thm}{Advanced exercise}\label{ex:gross}
-Show that for any compact length-metric space $\spc{X}$ there is a number $\ell$ such that for any finite collection of points there is a point $z$ that lies of average distance $\ell$ from the collection;
+Show that for any compact length-metric space $\spc{X}$ there is a number $\ell$ such that for any finite collection of points there is a point $z$ that lies on average distance $\ell$ from the collection;
 that is, for any $x_1,\dots,x_n\in \spc{X}$ there is $z\in \spc{X}$ such that
 \[\tfrac1n\cdot\sum_i|x_i-z|_{\spc{X}}=\ell.\]
 \end{thm}
 
-
-Recall that \index{Borel measure}\emph{Borel measure} is a measure on a metric space that is defined on all open sets (and thus on all Borel sets).
-The space of Borel probability measures on a metric space $\spc{X}$ can be equipped with the following metric 
-\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
-where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
-The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
-
-\begin{thm}{Exercise}\label{ex:wasserstein}
-Let $\spc{X}$ be a compact metric space.
-Show that $\Wass_1\spc{X}$ is a compact length metric space.
-\end{thm}
 
 
 

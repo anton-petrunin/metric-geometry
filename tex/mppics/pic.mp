@@ -511,7 +511,7 @@ endfig;
 
 beginfig(23) 
 save u;
-u:=1cm;
+u:=.9cm;
 path p[];
 
 p0=circle(origin,.7*u);
@@ -582,7 +582,7 @@ z.c2=z.c0 rotated -120;
 
 p0=z.a0..tension 2..z.c0..tension 2..z.b1--z.a1..tension 2..z.c1..tension 2..z.b2--z.a2..tension 2..z.c2..tension 2..z.b0--cycle;
 
-hatchfill p0 withcolor (77, 1mm, -.5bp);
+hatchfill p0 withcolor (77, 2mm, -.5bp);
 draw p0 pensemibold;
 endfig;
 
