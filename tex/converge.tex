@@ -539,13 +539,26 @@ for any $x,x'\in \spc{X}$.
 \section{Uniformly totally bonded families}
 
 \begin{thm}{Definition}\label{def:utb}
-Let $\spc{Q}$ be a family of (isometry classes) of compact metric spaces.
-Suppose that there is a sequence $\eps_n\to 0$ such that for any positive integer $n$ each space $\spc{X}$ in $\spc{Q}$ admits an $\eps_n$-net with at most $n$ points.
-Then we say that $\spc{Q}$ is \index{uniformly totally bonded set}\emph{uniformly totally bonded}.
+A family $\spc{Q}$ of (isometry classes) of compact metric spaces is called  \index{uniformly totally bonded family}\emph{uniformly totally bonded} if it meets the following two conditions:
+
+\begin{subthm}{}
+spaces in $\spc{Q}$ have uniformly bounded diameter; that is, there is $D\in\RR$ such that
+\[\diam\spc{X}\le D\]
+for any space $\spc{X}$ in $\spc{Q}$.
+\end{subthm}
+
+\begin{subthm}{}
+For any $\eps>0$ there is $n\in\NN$ such that any space $\spc{X}$ in $\spc{Q}$ admits an $\eps$-net with at most $n$ points.
+\end{subthm}
 \end{thm}
 
-Suppose family $\spc{Q}$ and sequence $(\eps_n)$ as in the definition.
-Observe that in this case $\diam\spc{X}<\eps_1$ for any  $\spc{X}$ in $\spc{Q}$; that is, {}\emph{spaces in a uniformly totally bonded set have uniformly bounded diameter}.
+\begin{thm}{Exercise}\label{ex:utb+pack}
+Let $\spc{Q}$ be a family of compact spaces with uniformly bounded diameter.
+Show that $\spc{Q}$ is uniformly totally bonded if for any $\eps>0$ there is $n\in\NN$ such that 
+\[\pack_\eps\spc{X}\le n\]
+for any space $\spc{X}$ in $\spc{Q}$.
+\end{thm}
+
 
 Fix a real constant $C$.
 A Borel measure $\mu$ on a metric space $\spc{X}$ is called \index{doubling space}\emph{$C$-doubling} if
