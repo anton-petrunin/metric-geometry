@@ -357,7 +357,16 @@ Therefore, $f_\infty$ and $g_\infty$ are isometries as well.
 \[|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
 \quad\Rightarrow\quad 
 \dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0\]
-follows from \ref{ex:eps-isom:GH>isom}. %??? opposite???
+follows from \ref{ex:eps-isom:GH>isom}. 
+
+Now suppose $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$.
+Show that $\{\spc{X}_n\}$ is a uniformly totally bonded family.
+
+If $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\not\to 0$,
+then we can pass to a subsequence such that $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\ge\eps$ for some $\eps>0$.
+By Gromov selection theorem, we can assume that $\spc{X}_n$ converges in the sense of Gromov--Hausdorff.
+From the first implication, the limit $\spc{X}_\infty'$ has to be isometric to $\spc{X}_\infty$;
+on the other hand $\dist{\spc{X}_\infty'}{\spc{X}_\infty}{\GH}\ge \eps$ --- a contradiction.
 
 \parbf{\ref{ex:GH-urysohn}.}
 Apply \ref{thm:compact-homogeneous} and \ref{prop:GH-with-fixed-Z}.
