@@ -95,14 +95,16 @@ It follows that any $\infty$-metric space is a {}\emph{disjoint union} of genuin
 
 \begin{thm}{Exercise}\label{ex:pseudo-infty-metric}
 Given two sets $A$ and $B$ on the plane, set 
-\[\dist{A}{B}{}=\mu(A\backslash B)+\mu(B\backslash A),\]
-where $\mu$ denotes the Lebesgue measure.
+\[\dist{A}{B}{}=\mu(A\bigtriangleup B),\]
+where $\mu$ denotes the Lebesgue measure and $\bigtriangleup$ denotes symmetric difference
+\[A\bigtriangleup B\df(A\cup B)\setminus(B\cap A).\]
+
 \begin{subthm}{ex:pseudo-infty-metric:pseudo}
-Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded measurable sets of the plane.
+Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded closed subsets.
 \end{subthm}
 
 \begin{subthm}{ex:pseudo-infty-metric:infty}
-Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open sets of the plane.
+Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open subsets.
 \end{subthm}
 \end{thm}
 
@@ -196,17 +198,6 @@ that is, $f$ is a distance-preserving bijection.
 A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
 in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
-Recall that \index{Borel measure}\emph{Borel measure} is a measure on a metric space that is defined on all open sets (and thus on all Borel sets).
-The space of Borel probability measures on a metric space $\spc{X}$ can be equipped with the following metric 
-\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
-where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
-The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
-
-\begin{thm}{Exercise}\label{ex:wasserstein}
-Let $\spc{X}$ be a compact metric space.
-Show that $\Wass_1\spc{X}$ is a compact length metric space.
-\end{thm}
-
 \section{Proper spaces}
 
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
@@ -282,7 +273,7 @@ Show that $b=c$.
 \end{thm}
 
 Recall that the set 
-\[S_r(p)=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
+\[S_r(p)_{\spc{X}}=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
 is called a \emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
 
 

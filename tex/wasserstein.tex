@@ -1,41 +1,125 @@
-\chapter{Space of measures}
+\chapter{Metric plus measure}
 
-In his lecture we consider a metric on a space of probability measures on a metric space.
+This lecture devoted to interactions between metric measures.
 
-\section{Definition}
+\section{Space of measures}
+
+A measure on a metric space is called \index{Borel measure}\emph{Borel} if it is defined on all open sets (and thus on all Borel sets).
+
+Let us consider the space of Borel probability measures on a metric space $\spc{X}$.
+Recall that a sequence of Borel measures $\mu_n$ \index{weak convergence}\emph{weakly converges} to a measure $\mu$ if for any continuous function $f$ with compact support we have
+\[\int_{\spc{X}} f\cdot \mu_n\to\int_{\spc{X}} f\cdot \mu\]
+as $n\to \infty$.
+The weak convergence defines a topology on the space ...
+This space comes with topology defined by weak convergence;
+that is ...
+
+can be equipped with the following metric 
+\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
+where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
+The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:wasserstein}
+Let $\spc{X}$ be a compact metric space.
+Show that $\Wass_1\spc{X}$ is a compact length metric space.
+\end{thm}
+
+\section{Metric-measure space}
+
+\section{Wasserstein's metric}
 
 Assume we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
-Suppose that cost of transporting a unit of dirt from one point to another is given.
+Suppose that cost of transporting a unit of dirt equals to the traveled distance.%
+\footnote{This is the simplest cost function one can imagine.
+One may consider other cost functions; for example, if the cost proportional to the square of the distance, then the problem has more applications.}
 We are free to chose a destination point for dirt from a given place.
 How to minimize the total cost?
 
-To formalize this question, suppose that shapes of piles at the beginning and at the end are described by probability measures $\mu$ and $\nu$ on a metric space $\spc{X}$ and the cost of transportation 
-of unit $\delta$-measure from point $p$ to point $q$ is given by formula
-\[\cost(p,q)=\tfrac12\cdot\dist[2]{p}{q}{\spc{X}}.\]
-(The distance $\dist{p}{q}{\spc{X}}$ looks to be a more natural choice for the cost function.
-But the quadratic cost has nicer properties.)
-
-Now we need to formalize the meaning of the choice we have --- the plan that says where each piece of dirt goes.
-A probability measure $\pi$ on the square $\spc{X}\times\spc{X}$ will be called a \index{plan}\emph{plan} for $\mu$ and $\nu$ if the following conditions holds:
+Let us formalize this question.
+Suppose that the piles at the beginning are described by probability measures $\mu$ and $\nu$ on a metric space~$\spc{X}$.
+To describe where each piece of dirt goes, we will use the so called \emph{plan} for $\mu$ and $\nu$.
+It is a probability measure $\pi$ on the square $\spc{X}\times\spc{X}$ such that the following condition holds:
 \begin{itemize}
 \item For all measurable sets $A \subset \spc{X}$, we have 
 \[\pi [A \times \spc{X}] = \mu A,\quad\text{and}\quad \pi [  \spc{X}\times A] = \nu A.\]
 \end{itemize}
 
 First note that a plan $\pi$ for given measures $\mu$ and $\nu$ always exists.
-For example one may take the measure $\pi$ defined uniquely defined by 
-\[\pi(A\times B)=\mu A\cdot \mu B.\]
+For example one may take the plane $\pi$ that is uniquely defined  defined by the identity
+\[\pi(A\times B)=\mu A\cdot \mu B\]
 for any Borel subsets $A,B\subset\spc{X}$.
-This plan say that each piece of dirt distributed equally in the new pile; as we will see this plane is usually far from optimum.
+This plan says that each piece of dirt distributed equally in the new pile; as we will see this plan is usually far from optimum.
 
 Denote by $\Pi(\mu,\nu)$ the set of all plans for $\mu$ and $\nu$.
 From above $\Pi(\mu,\nu)\ne\emptyset$.
-
-Set
-\[\cost(\mu,\nu)
+It is straightforwrd to check that the following formula defines a metric on the space of probability measures on $\spc{X}$.
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
 \df
 \inf_{\pi\in\Pi(\mu,\nu)}
-\left\{\,\int_{(x,y)\in\spc{X}\times\spc{X}}\cost(x,y)\cdot\pi\,\right\}.\]
+\left\{\,\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi\,\right\}.\]
+This metric is called \emph{Wasserstein distance of order 1} and the obtained metric space will be denoted by $\Wass_1\spc{X}$.
+
+\section{Optimal plan}
+
+A plan $\pi$ for given measures $\mu$ and $\nu$ is called \index{optimal plan}\emph{optimal} if 
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
+=\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi.\]
+
+\begin{thm}{Theorem}
+Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
+Then there is an optimal plan $\pi$ for $\mu$ and~$\nu$.
+
+Moreover any optimal plan is cycliccaly monotonic;
+that is, for any sequence of pairs $(x_0,y_0),\dots,(x_n,y_n)\in\spc{X}\times\spc{X}$ we have
+\[\dist{x_1}{y_1}{}+\dots+\dist{x_n}{y_n}{}
+\le
+\dist{x_1}{y_2}{}+\dots+\dist{x_{n-1}}{y_n}{}+\dist{x_{n}}{y_1}{}.\]
+\end{thm}
+
+\parit{Proof.}
+By the definition of Wasserstein distance, we can choose a sequence of plans $\pi_n$ for $\mu$ and $\nu$ such that 
+\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi_n\to .\dist{\mu}{\nu}{\Wass_1\spc{X}}\]
+as $n\to \infty$.
+Denote by $\pi$ a weak partial limit of $\pi_n$;
+it exists by ???.
+Note that $\pi$ is an optimal plan.
+
+Suppose that cyclic monotonicity fails;
+that is, there is a sequence of pairs $(x_1,y_1),\dots,(x_n,y_n)\in\spc{X}\times\spc{X}$ such that
+\[\dist{x_1}{y_1}{}+\dots+\dist{x_n}{y_n}{}
+>
+\dist{x_1}{y_2}{}+\dots+\dist{x_{n-1}}{y_n}{}+\dist{x_{n}}{y_1}{}.\]
+In this case it would be more optimal to transport measure from a neighborhood of $x_i$ to a neighborhood of $y_{i+1}$ (
+here and further we assume that the indexes are taken modulo $n$, so $n+1=1$).
+The latter contradicts optimality of $\pi$.
+
+The following argument makes it precise.
+Choose small $\eps>0$.
+For each $n$,
+choose disjoint sets $X_i$ and $Y_i$ in $\eps$-neighborhood of $x_i$ and $y_i$
+such that for some $\delta>0$ we have 
+\[\pi [X_i\times Y_i]=\delta\]
+for each $i$.
+
+Let us modify the plan $\pi$ in the union $X_1\times Y_1\cup \dots X_n\times Y_n$ and such that 
+$\pi'(X_i\times Y_{i+1})=\delta$ for each $i$;
+
+
+Observe that
+\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot(\pi'-\pi)>\]
+\qeds
+
+
+\section{Kantorovich duality}
+
+
+\begin{thm}{Theorem}
+Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
+Then
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}=\sup\int_{\spc{X}} f\cdot(\mu-\nu),\]
+where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\z\to\RR$.
+\end{thm}
+
 
 The following theorem gives an alternative way to define it.
 

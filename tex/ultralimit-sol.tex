@@ -25,8 +25,11 @@ Choose a nonprincipal ultrafilter $\omega$ and set $L(\bm{s})=s_\omega$.
 It remains to observe that $L$ is linear.
 
 \parbf{\ref{ex:lim(tree)}.}
-Observe that if a path $\gamma$ in a metric tree from $p$ to $q$ pass thru a point $x$ on distance $\ell$ from $[pq]$, then 
-\[\length\gamma\ge \dist{p}{q}{}+2\cdot \ell.\eqlbl{eq:+ell}\]
+Let $\gamma$ be a path from $p$ to $q$ in a metric tree $\spc{T}$.
+Assume that $\gamma$ passes thru a point $x$ on distance $\ell$ from $[pq]$.
+Then 
+\[\length\gamma\ge \dist{p}{q}{}+2\cdot \ell.
+\eqlbl{eq:+ell}\]
 
 Suppose that $\spc{T}_n$ is a sequence of metric trees that $\omega$-converges to $\spc{T}_\omega$.
 By \ref{obs:ultralimit-is-geodesic}, the space $\spc{T}_\omega$ is geodesic.
@@ -50,8 +53,9 @@ Consider the sequence of centers of tripods $m_n$ for a given sequences of point
 Observe that its ultralimit $m_\omega$ is the center of the tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.
 
 \parbf{\ref{ex:ultrapower}.}
-Part \ref{SHORT.ex:ultrapower:a} follows directly from the definitions.
 Further we consider $\spc{X}$ as a subset of $\spc{X}^\omega$.
+
+\parit{\ref{SHORT.ex:ultrapower:a}.} Follows directly from the definitions.
 
 \parit{\ref{SHORT.ex:ultrapower:compact}.}
 Suppose $\spc{X}$ compact.
@@ -76,6 +80,8 @@ Further if $(x_n)$ is not  $\omega$-bounded, then
 \[\lim_{n\to\omega}\dist{p}{x_n}{\spc{X}}=\infty;\]
 that is, $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
 
+\parbf{\ref{ex:isom-ultrapower}.} Show and use that the spaces $\spc{X}^\omega$ and $(\spc{X}^\omega)^\omega$ have discrete metric and both have cardinality continuum.
+
 \parbf{\ref{ex:two-geodesics-in-ultrapower}.}
 Apply \ref{lem:X-X^w} and \ref{obs:ultrapower-is-geodesic}.
 
@@ -87,21 +93,21 @@ Apply \ref{lem:X-X^w} and \ref{obs:ultrapower-is-geodesic}.
 \end{figure}
 on the diagram. Observe that $\spc{T}$ is proper.
 
-Consider the vertex $\omega=\lim_{n\to\omega}n$ in the ultrapower $\spc{T}^\omega$.
+Consider the vertex $v_\omega=\lim_{n\to\omega}v_n$ in the ultrapower $\spc{T}^\omega$.
 Observe that $\omega$ has infinite degree.
 Conclude that $\spc{T}^\omega$ is not locally compact.
 
 \parbf{\ref{ex:ultraT}.} Consider a product space $[0,1]\times[0,\tfrac12]\times[0,\tfrac14]\times\dots$.
 
 \parbf{\ref{ex:Asym(Lob)}}; \ref{SHORT.ex:Asym(Lob):metric-tree}.
-Show that there is $\delta>0$ such that sides of any geodesic triangle intersect a disc of radius $\delta$.
+Show that there is $\delta>0$ such that sides of any geodesic triangle intersect a disk of radius $\delta$.
 Conclude that any geodesic triangle in $\Asym\spc{L}$ is a tripod.
 Make a conclusion.
 
-\parit{\ref{SHORT.ex:Asym(Lob):homogeneous}.} Observe that $L$ is homogeneous and use it.
+\parit{\ref{SHORT.ex:Asym(Lob):homogeneous}.} Observe that $L$ is one-point homogeneous and use it.
 
 \parit{\ref{SHORT.ex:Asym(Lob):continuum}.} 
-By \ref{SHORT.ex:Asym(Lob):others}, it is sufficient to show that $p_\omega$ has a continuum degree.
+By \ref{SHORT.ex:Asym(Lob):homogeneous}, it is sufficient to show that $p_\omega$ has a continuum degree.
 
 Choose distinct geodesics $\gamma_1,\gamma_2\:[0,\infty)\to L$ that start at a point $p$.
 Show that the limits of $\gamma_1$ and $\gamma_2$ run in the different connected components of $(\Asym\spc{L})\backslash \{p_\omega\}$.
@@ -116,7 +122,7 @@ It follows that the degree of any vertex is at most continuum.
 The proof for the Lobachevsky space goes along the same lines.
 
 For the infinite 3-regular tree, part \ref{SHORT.ex:Asym(Lob):metric-tree} follows from \ref{ex:lim(tree)}.
-The 3-regular tree is not homogeneous, but it is vertex-homogeneous; the latter is sufficient to prove \ref{SHORT.ex:Asym(Lob):homogeneous}.
+The 3-regular tree is not one-point homogeneous, but it is vertex homogeneous; the latter is sufficient to prove \ref{SHORT.ex:Asym(Lob):homogeneous}.
 No changes needed in \ref{SHORT.ex:Asym(Lob):continuum}.
 
 \parit{Remark.}

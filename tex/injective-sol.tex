@@ -2,8 +2,9 @@
 Note that if $c<0$, then $r>s$.
 The latter is impossible since $r$ is extremal and $s$ is admissible.
 
-Observe that the function $\bar r=\min\{\,r,s+c\}$ is admissible.
-Indeed if $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
+Observe that the function $\bar r=\min\{\,r,s+c\,\}$ is admissible.
+Indeed, choose $x,y\in \spc{X}$.
+If $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
 \[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
 Further if $\bar r(x)=s(x)+c$, then 
 \begin{align*}
@@ -25,11 +26,11 @@ Fix a Cauchy sequence $(x_n)$ in $\spc{Y}$;
 we need to show that it has a limit $x_\infty\in \spc{Y}$.
 Consider metric on $\spc{X}=\NN\cup\{\infty\}$ defined by 
 \begin{align*}
-\dist{m}{n}{\spc{X}}&=\dist{x_m}{x_n}{\spc{Y}},
+\dist{m}{n}{\spc{X}}&\df\dist{x_m}{x_n}{\spc{Y}},
 \\
-\dist{m}{\infty}{\spc{X}}&=\lim_{n\to\infty}\dist{x_m}{x_n}{\spc{Y}}.
+\dist{m}{\infty}{\spc{X}}&\df\lim_{n\to\infty}\dist{x_m}{x_n}{\spc{Y}}.
 \end{align*}
-Since the sequence is Cauchy, so is the sequence $\ell_n=\dist{p}{x_n}{\spc{Y}}$.
+Since the sequence is Cauchy, so is the sequence $\ell_n=\dist{x_m}{x_n}{\spc{Y}}$ for any $m$.
 Therefore, the last limit is defined.
 
 By construction the map $n\mapsto x_n$ is distance-preserving on $\NN\subset \spc{X}$.
@@ -58,6 +59,7 @@ The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotop
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
 Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map whole $\spc{X}$ to a single point.
+By Zorn's lemma, it is sufficient to enlarge $A$ by a single point $x\notin A$.
 
 \parit{\ref{SHORT.ex:injective-spaces:R}.}
 Suppose $\spc{Y}=\RR$.
@@ -86,7 +88,10 @@ In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
 Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
 It remains to apply \ref{SHORT.ex:injective-spaces:R}.
 
-More generally, \emph{any $\ell^\infty$-product of injective spaces is injective}.
+More generally, \emph{any $\ell^\infty$-product of injective spaces is injective};
+in particular, if $\spc{Y}$ and $\spc{Z}$ are injective then the product $\spc{Y}\times\spc{Z}$ equipped with the metric 
+\[\dist{(y,z)}{(y',z')}{\spc{Y}\times\spc{Z}}=\max\{\,\dist{y}{y'}{\spc{Y}},\dist{z}{z'}{\spc{Z}}\,\}\]
+is injective as well.
 
 
 \parbf{\ref{ex:ultrametric}.}
@@ -100,8 +105,7 @@ If  $f(y)\z=f(x)$, then
  &=\dist{x}{z}{\spc{X}}.
 \end{align*}
 Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
-
-It remains to observe that the strong triangle inequality holds in both cases.
+The strong triangle inequality holds in both cases.
 
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
@@ -121,7 +125,7 @@ Whence $\spc{U}_d$ is not countably hyperconvex.
 Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
 
 \parbf{\ref{ex:Inj(compact)}.}
-Observe and use that $\Inj\spc{X}$ contains 1-Lipschitz uniformly bounded functions.
+Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded functions.
 
 \parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
 Let $f$ be an extremal function.
@@ -159,7 +163,8 @@ in particular, two values $a=f(x)-1$ and $b=f(p)-1$ completely describe the func
 Since $f$ is extremal, we also have that 
 \[(1\pm a)+(1\pm b)\ge 1\]
 for all 4 choices of signs;
-that is, $|a|+|b|\le 1$.
+equivalently, 
+\[|a|+|b|\le 1.\]
 
 It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the $(a,b)$-plane with the metric induced by the $\ell^\infty$-norm.
 

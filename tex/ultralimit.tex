@@ -1,20 +1,21 @@
 \chapter{Ultralimits}
 
-Ultralimits provide a very general way to pass to a limit that always works.
+Ultralimits provide a very general way to pass to a limit.
+This procedure works for \emph{any} sequence of metric spaces, its result reminds limit in the sense of Gromov Gausdorff, but has some strange features; for example, the limit of constant sequence does \emph{not} coincide with this constant (see \ref{ex:ultrapower:compact}).
 
 In geometry, ultralimits are used only as a canonical way to pass to a convergent subsequence.
 It is a useful thing in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
 
 This lecture is based on the introduction to the paper of Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
 
-\section{Ultrafilters}
+\section{Faces of ultrafilters}
 
 Recall that $\NN$ denotes the set of natural numbers, $\NN=\{1,2,\dots\}$
 
 \begin{thm}{Definition}
 A finitely additive measure $\omega$ 
 on  $\NN$ 
-is called an \index{ultrafilter}\emph{ultrafilter} if it satisfies 
+is called an \index{ultrafilter}\emph{ultrafilter} if it satisfies the following condition:
 \begin{subthm}{}
 $\omega(\NN)=1$ and 
 $\omega(S)=0$ or $1$ for any subset $S\subset \NN$.
@@ -43,7 +44,7 @@ Setting $P\in\mathfrak{F}\Leftrightarrow\omega(P)=1$ makes these two definitions
 A nonempty collection of sets $\mathfrak{F}$ that does not include the empty set and satisfies only conditions \ref{filter:supset} and \ref{filter:cap} is called a \index{filter}\emph{filter}; 
 if in addition $\mathfrak{F}$ satisfies condition \ref{filter:ultra} it is called an \index{ultrafilter}\emph{ultrafilter}.
 From Zorn's lemma, it follows that every filter contains an ultrafilter.
-Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly this $\mathfrak{F}$ is nonprincipal.
+Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly this ultrafilter $\mathfrak{F}$ is nonprincipal.
 
 
 \parbf{Stone--\v{C}ech compactification.}
@@ -76,18 +77,18 @@ In this case, we will write
 \ \ \text{or}\ \ 
 x_n\to x_\omega\ \text{as}\ n\to\omega.\]
 
-For example if $\omega$ is the principal ultrafilter such that $\omega(\{n\})=1$ for some $n\in\NN$, then
+For example, if $\omega$ is the {}\emph{principal} ultrafilter such that $\omega\{n\}=1$ for some $n\in\NN$, then
 $x_\omega=x_n$.
 
 Alternatively, the sequence $(x_n)$ can be regarded as a map $\NN\to\spc{X}$.
-In this case the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification of $\NN$.
+In this case the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
 Then the $\omega$-limit $x_\omega$ can be regarded as the image of $\omega$.
 
 Note that $\omega$-limits of a sequence and its subsequence may differ.
-For example, in general
+For example, sequence $y_n=-(-1)^n$ is a subsequence of $x_n=(-1)^n$, but for any ultrafilter $\omega$, we have
 \[\lim_{n\to\omega}x_n
 \ne
-\lim_{n\to\omega}x_{2\cdot n}.\] 
+\lim_{n\to\omega}y_n.\] 
 
 \begin{thm}{Proposition}\label{prop:ultra/partial}
 Let $\omega$ be a nonprincipal ultrafilter.
@@ -141,7 +142,7 @@ Ultralimits could shorten some proofs in the previous lecture.
 The following exercise provides an example.
 
 \begin{thm}{Exercise}\label{ex:prop:eps-isometry=isometry}
-Use ultralimits to give a shorter solution of \ref{prop:eps-isometry=isometry}.
+Use ultralimits to give a shorter proof of \ref{GH-2} (page~\pageref{page:GH-2-proof}).
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:linear}
@@ -193,27 +194,27 @@ The $\omega$-limit of any sequence of metric spaces is complete.
 
 \parit{Proof.}
 Let $\spc{X}_n$ be a sequence of metric spaces and $\spc{X}_n\to\spc{X}_\omega$ as $n\to\omega$.
-
-Fix a Cauchy sequence $x_{m}\in \spc{X}_\omega$.
-Passing to a subsequence we can assume that $\dist{x_m}{x_{m-1}}{\spc{X}_\omega}<\tfrac1{2^m}$ for any $m$.
+Choose a Cauchy sequence $x_1,x_2,\dots\in\spc{X}_\omega$.
+Passing to a subsequence, we can assume that $\dist{x_k}{x_{m}}{\spc{X}_\omega}<\tfrac1{k}$ for any $k<m$.
 
 Let us choose a double sequence $x_{n,m}\in \spc{X}_n$ such that for any fixed $m$ we have $x_{n,m}\to x_m$ as $n\to\omega$.
-Note that $\dist{x_{n,m}}{x_{n,m-1}}{}<\tfrac1{2^m}$ for $\omega$-almost all $n$.
+Note that for any $k<m$ the inequality $\dist{x_{n,k}}{x_{n,m}}{}<\tfrac1{k}$ holds for $\omega$-almost all $n$.
 It follows that we can choose a nested sequence of sets 
 \[\NN= S_1\supset S_2\supset\dots\] 
 such that 
 \begin{itemize}
 \item $\omega(S_m)=1$ for each $m$, 
-\item $k\ge m$ for any $k\in S_m$, and
-\item if $n\in S_m$, then 
-\[\dist{x_{n,m}}{x_{n,m-1}}{}<\tfrac1{2^m}\]
+\item $\bigcap_m S_m=\emptyset$, and
+\item $\dist{x_{n,k}}{x_{n,l}}{}<\tfrac1{k}$ for $k<l\le m$ and $n\in S_m$.
 \end{itemize}
 
-Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $m(n)\in S_{m}$.
-Denote by $y\in \spc{X}_\omega$ its $\omega$-limit.
+Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $n\in S_{m(n)}$.
+Denote by $y_\omega\in \spc{X}_\omega$ the $\omega$-limit of $y_n$.
 
-Observe that by construction $x_n\to y$ as $n\to \infty$.
-Hence the statement follows.
+Observe that $|y_m-x_{n,m}|<\tfrac1{m}$ for $\omega$-almost all $n$.
+It follows that $|x_m-y_\omega|\le \tfrac1{m}$ for any $m$.
+Therefore, $x_n\to y_\omega$ as $n\to \infty$.
+That is, any Cauchy sequence in $\spc{X}_\omega$ converges.
 \qeds
 
 \begin{thm}{Observation}\label{obs:ultralimit-is-geodesic}
@@ -224,9 +225,9 @@ The $\omega$-limit of any sequence of length spaces is geodesic.
 If $\spc{X}_n$ is a sequence length spaces, then for any sequence of pairs $x_n, y_n\in X_n$ there is a sequence of $\tfrac1n$-midpoints $z_n$.
 
 Let $x_n\to x_\omega$, $y_n\to y_\omega$ and $z_n\to z_\omega$ as $n\to \omega$.
-Note that $z_\omega$ is a midpoint of $x_\omega$ and $y_\omega$ in $\spc{X}^\omega$.
+Note that $z_\omega$ is a midpoint of $x_\omega$ and $y_\omega$ in $\spc{X}_\omega$.
 
-By Observation~\ref{obs:ultralimit-is-complete}, $\spc{X}^\omega$ is complete.
+By Observation~\ref{obs:ultralimit-is-complete}, $\spc{X}_\omega$ is complete.
 Applying Lemma~\ref{lem:mid>geod} we get the statement.
 \qeds
 
@@ -255,7 +256,6 @@ Show that $\iota\:\spc{X}\to\spc{X}^\omega$ is distance-preserving embedding. (S
 
 \begin{subthm}{ex:ultrapower:compact} 
 Show that $\iota$ is onto if and only if $\spc{X}$ compact.
-Conclude that $(\spc{X}^\omega)^\omega= \spc{X}^\omega$ if and only if $\spc{X}$ compact.
 \end{subthm}
 
 \begin{subthm}{ex:ultrapower:proper} 
@@ -264,12 +264,33 @@ Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component
 
 \end{thm}
 
+Note that \ref{SHORT.ex:ultrapower:compact} implies that the inclusion $\spc{X}\hookrightarrow\spc{X}^\omega$ is not onto if the space $\spc{X}$ is not compact. However, the spaces $\spc{X}$ and $\spc{X}^\omega$ might be isometric; here is an example:
+
+\begin{thm}{Exercise}\label{ex:isom-ultrapower}
+Let $\spc{X}$ be a countable set with discrete metric;
+that is $\dist{x}{y}{\spc{X}}=1$ if $x\ne y$.
+Show that 
+
+\begin{subthm}{ex:isom-ultrapower:no}
+$\spc{X}^\omega$ is not isometric to $\spc{X}$.
+\end{subthm}
+
+\begin{subthm}{ex:isom-ultrapower:yes}
+$\spc{X}^\omega$ is  isometric to $(\spc{X}^\omega)^\omega$.
+\end{subthm}
+
+\end{thm}
+
+
+
 \begin{thm}{Observation}\label{obs:ultrapower-is-geodesic}
 Let $\spc{X}$ be a complete metric space. 
 Then $\spc{X}^\omega$ is geodesic space if and only if $\spc{X}$ is a length space.
 \end{thm}
 
 \parit{Proof.}
+The ``if''-part follows from \ref{obs:ultralimit-is-geodesic}; it remains to prove the ``only-if''-part
+
 Assume $\spc{X}^\omega$ is geodesic space.
 Then any pair of points $x,y\in \spc{X}$ has a midpoint $z_\omega\in\spc{X}^\omega$.
 Fix a sequence of points $z_n\in  \spc{X}$ such that $z_n\to z_\omega$ as $n\to \omega$.
@@ -282,8 +303,6 @@ as
 $n\to\omega$.
 In particular, for any $\eps>0$, the point $z_n$ is an $\eps$-midpoint of $x$ and $y$ for $\omega$-almost all $n$.
 It remains to apply \ref{lem:mid>geod}.
-
-The ``if''-part follows from \ref{obs:ultralimit-is-geodesic}.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:two-geodesics-in-ultrapower}
@@ -306,19 +325,19 @@ Choose a point $p\in \spc{X}$ and denote by $p_n$ the corresponding point in $\s
 Consider the $\omega$-limit $\spc{X}_\omega$ of $\spc{X}_n$ (one may denote it by $\lambda_\omega\cdot \spc{X}$);
 set $p_\omega$ to be the $\omega$-limit of $p_n$.
 
-If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\omega$-tangent space}\emph{$\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
+If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\lambda_\omega$-tangent space}\emph{$\lambda_\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
 
-If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\omega$-asymptotic space}\emph{$\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.}  and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
+If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
 
-In general, the tangent and asymptotic spaces depend the sequence $\lambda_n$ and an nonprincipal ultrafilter $\omega$.
-For nice spaces different choices may give the same space.
+The following exercise states that the tangent and asymptotic spaces depend the sequence $\lambda_n$ and an nonprincipal ultrafilter $\omega$.
 
 \begin{thm}{Exercise}\label{ex:ultraT}
 Construct a metric space $\spc{X}$ with a point $p$ such that the tangent space
 $\T_p^{\lambda_\omega}\spc{X}$ depends on the sequence $\lambda_n$ and/or ultrafilter~$\omega$.
 \end{thm}
 
+For nice spaces different choices may give the same space.
 
 \begin{thm}{Exercise}\label{ex:Asym(Lob)}
 Let $\spc{L}$ be the Lobachevsky plane; $\spc{T}=\Asym\spc{L}$.
@@ -328,7 +347,7 @@ Show that $\spc{T}$ is a complete metric tree.
 \end{subthm}
 
 \begin{subthm}{ex:Asym(Lob):homogeneous}
-Show that $\spc{T}$ is homogeneous; that is, given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
+Show that $\spc{T}$ is one-point homogeneous; that is, given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
 \end{subthm}
 
 \begin{subthm}{ex:Asym(Lob):continuum}
@@ -339,7 +358,7 @@ that is, for any point $t\in \spc{T}$ the set of connected components of the com
 \begin{subthm}{ex:Asym(Lob):others}
 Prove \ref{SHORT.ex:Asym(Lob):metric-tree}--\ref{SHORT.ex:Asym(Lob):continuum} if $\spc{L}$ is Lobachevsky space and/or for the infinite 3-regular%
 \footnote{that is, the degree of any vertex is 3.}
-tree with unit edge. 
+metric tree with unit edge length. 
 \end{subthm}
 
 \end{thm}

@@ -1,8 +1,6 @@
 \chapter{Injective spaces}
 
 {}\emph{Injective spaces} (also known as {}\emph{hyperconvex spaces}) are metric analog of convex sets.
-The so-called \index{injective envelope}\emph{injective envelope} is a minimal injective space that contains a given metric space as a subspace;
-it is a direct analog of the convex hull of a set in a Euclidean space.
 
 This lecture is based on a paper of John Isbell \cite{isbell}.
 
@@ -28,14 +26,15 @@ for any $x,y\in \spc{X}$.
 \end{thm}
 
 \parit{Proof.} For \ref{SHORT.obs:admissible:nonnegative}, take $x=y$ in \ref{eq:admissible}.
+
 Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and existence of a geodesic $[xy]$.
 \qeds
 
 A minimal admissible function will be called \label{page:extremal function}\index{extremal function}\emph{extremal}.
 More precisely, an admissible function $r\:\spc{X}\to\RR$ is extremal 
-if 
-\[s\le r\quad\Longrightarrow\quad s=r\]
-for any admissible function $s\:\spc{X}\to\RR$.
+if for any admissible function $s\:\spc{X}\to\RR$ we have
+\[s\le r\quad\Longrightarrow\quad s=r.\]
+
 
 \begin{thm}{Key exercise}\label{ex:+-c}
 Let $r$ be an extremal function and $s$ an admissible function on a metric space $\spc{X}$.
@@ -106,10 +105,13 @@ By \ref{ex:+-c}, we get that
 for any $q$.
 Taking $q=p$, we get $r(p)\le r(p)-\delta$, a contradiction.
 
-If $\spc{X}$ is compact, then passing to a partial limit of the obtained points $q$ as $\delta\to 0$; we get that 
+Suppose $\spc{X}$ is compact.
+Denote by $q_n$ the point provided by the first part of \ref{SHORT.lem:opposite} for $\delta=\tfrac1n$.
+Let $q$ be a partial limit of $q_n$. 
+Then 
 \[r(p)+r(q)\le\dist{p}{q}{\spc{X}}.\]
 Since $r$ is admissible, the opposite inequality holds;
-whence the second statement follows.
+whence the second part of \ref{SHORT.lem:opposite} follows.
 
 \parit{\ref{SHORT.obs:extremal:below}.}
 Follows by Zorn's lemma. 
@@ -156,6 +158,7 @@ coordinate plane with the metric induced by the $\ell^\infty$-norm.
 
 \end{thm}
 
+The following exercise deals with metric spaces that in some sense dual to the injective spaces. 
 
 \begin{thm}{Exercise}\label{ex:ultrametric}
 Suppose that a metric space $\spc{X}$ satisfies the following property:
@@ -197,7 +200,8 @@ then all the balls in the family $\{\cBall[x_\alpha,r_\alpha]\}_{\alpha\in\Index
 \ref{SHORT.thm:injective=hyperconvex:injective}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:injective}.
 
 \parit{\ref{SHORT.thm:injective=hyperconvex:injective}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:extremal}.}
-Since $\spc{Y}$ is injective for any extension function $r\:\spc{Y}\to\RR$ there is a point $p\in \spc{Y}$ such that 
+Let us apply the definition of injective space to a one-point extension of $\spc{Y}$.
+It follows that for any extension function $r\:\spc{Y}\to\RR$ there is a point $p\in \spc{Y}$ such that 
 \[\dist{p}{x}{}\le r(x)\]
 for any $x\in \spc{Y}$.
 By \ref{lem:extremal-lipschitz}, any extremal function is an extension function, whence the implication follows.
@@ -419,7 +423,8 @@ Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to an di
 
 \section{Remarks}
 
-Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi} and injective envelope was introduced by John Isbell \cite{isbell}.
+Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi}.
+Injective envelope was introduced by John Isbell \cite{isbell}.
 It was rediscovered a couple of times since then;
 as a result the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
 

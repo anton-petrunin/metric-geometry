@@ -755,8 +755,8 @@ draw z.ll--z.l;
 dOt z.ur,z.ul,z.lr,z.ll;
 
 p0=(z.r--z.l--z.l-z4--z.r-z4--cycle) shifted z.shift;
-hatchfill p0 withcolor (45, 2mm, -.5bp);
-hatchfill p0 withcolor (-45, 2mm, -.5bp);
+hatchfill p0 withcolor (45, 4mm, -.5bp);
+hatchfill p0 withcolor (-45, 4mm, -.5bp);
 draw p0;
 dOt z.r shifted z.shift,z.l shifted z.shift,(z.l-z4) shifted z.shift,(z.r-z4) shifted z.shift;
 
@@ -802,12 +802,18 @@ draw z3--z32 pensemibold;
 draw z3--z33 pensemibold;
 draw z4--z41 pensemibold;
 draw z4--z42 pensemibold;
-draw z4--z43;
+draw z4--z43 pensemibold;
 draw z4--z44 pensemibold;
 
 Dot z0,z1,z11,z2,z21,z22,z3,z31,z32,z33,z4,z41,z42,z43,z44;
 
 label.rt(btex $\dots$ etex, z.e);
+
+label.bot(btex $v_0$ etex, z0);
+label.bot(btex $v_1$ etex, z1);
+label.bot(btex $v_2$ etex, z2);
+label.bot(btex $v_3$ etex, z3);
+label.bot(btex $v_4$ etex, z4);
 endfig;
 
 beginfig(700) 

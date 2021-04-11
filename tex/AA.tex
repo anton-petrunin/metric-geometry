@@ -1,3 +1,206 @@
+\parbf{\ref{ex:wasserstein}.}
+Choose a finite $\eps$-net $F\subset\spc{X}$.
+Show that the space $P_F$ of probability measures with support in $F$ is a compact net in $\Wass_1\spc{X}$.
+Observe that $\Wass_1\spc{X}$ is complete; 
+by \ref{ex:compact-net}, it follows that $\Wass_1\spc{X}$ is compact.
+
+Show that 
+
+Choose an integer $n$.
+Consider the set of probability measures $P_n$ of the form 
+\[\tfrac1n\cdot\sum_{i=1}^n\delta_{x_i},\]
+where $\delta_{x_i}$ denotes the delta-measure supported at $x_i\in\spc{X}$. 
+
+Show that $P_n$ is a compact subset of $\Wass_1\spc{X}$.
+Moreover, for any $\eps>0$ there is $n$ such that $P_n$ is 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Metrics on disjoint union}
+
+Definition~\ref{def:GH} deals with a huge class of metric spaces,
+namely, all metric spaces $\spc{Z}$ that contain subspaces isometric to $\spc{X}$ and $\spc{Y}$.
+The following proposition shows that it is possible to reduce this class to metrics on the disjoint unions of $\spc{X}$ and $\spc{Y}$. 
+
+\begin{thm}{Proposition}\label{prop:GH=X+Y}
+The Gromov--Hausdorff distance between two compact metric spaces $\spc{X}$
+and $\spc{Y}$ is the greatest lower bound of $r>0$ such that there exists a metric
+$|{*}-{*}|_{\spc{W}}$ on the disjoint union $\spc{W}=\spc{X}\sqcup \spc{Y}$ 
+such that $|\spc{X}-\spc{Y}|_{\Haus\spc{W}} < r$
+and 
+the restrictions of $|{*}-{*}|_{\spc{W}}$ to $\spc{X}$ and $\spc{Y}$
+coincide with $|{*}-{*}|_\spc{X}$ and $|{*}-{*}|_{\spc{Y}}$ 
+respectively. 
+\end{thm}
+
+\parit{Proof.}
+Let $r>0$, $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{Z}$ be as in Definition~\ref{def:GH}.
+
+If  $\spc{X}'$ and $\spc{Y}'$ are disjoint, then we can identify $\spc{X}$ with  $\spc{X}'$ and $\spc{Y}$ with $\spc{Y}'$ and take $\spc{W}$ to be the subspace in $\spc{Z}$ formed by the union $\spc{X}'\cup\spc{Y}'$.
+
+To do the general case,
+choose isometries $f\: \spc{X} \to \spc{X}'$ and
+$g\: \spc{Y} \z\to \spc{Y}'$, then define the metric by
+\begin{align*}
+|x-y|_{\spc{W}} &= |f (x)\z- g(y)|_{\spc{Z}}+\eps,
+\\
+|x-x'|_{\spc{W}} &= |x- x'|_{\spc{X}},
+\\
+|y-y'|_{\spc{W}} &= |y- y'|_{\spc{Y}},
+\end{align*}
+for any $x,x' \in \spc{X}$, $y,y' \in \spc{Y}$, and small fixed $\eps>0$.
+We need to add $\eps$ to ensure that $|x-y|_{\spc{W}} > 0$ for any $x\in \spc{X}$ and $y\in \spc{Y}$;
+so $|x-y|_{\spc{W}}$ is indeed a metric.
+
+Since $\eps$ is small,
+this yields a metric on $\spc{W}=\spc{X}\sqcup \spc{Y}$ for which
+$|\spc{X}- \spc{Y}|_{\Haus\spc{W}} \z< r$.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thm}{Exercise}\label{ex:alm-isom}
+\begin{subthm}{ex:alm-isom:compositon}
+Let $f\:\spc{X}\to \spc{Y}$ and $g\:\spc{Y}\to \spc{Z}$ be two $\eps$-isometries.
+Show that $g\circ f\: \spc{X}\to \spc{Z}$ is a $(3\cdot\eps)$-isometry.
+\end{subthm}
+
+\begin{subthm}{ex:alm-isom:inverse}
+Assume $f\: \spc{X} \z\to \spc{Y}$ is an $\eps$-isometry.
+Show that there is a $(3\cdot\eps)$-isometry 
+$g\: \spc{Y}\to \spc{X}$.
+\end{subthm}
+
+\begin{subthm}{ex:GH=>eps-isom}
+ Assume $|\spc{X}-\spc{Y}|_{\GH}<\eps$, show that there is a $(2\cdot\eps)$-isometry 
+$f\: \spc{X}\to \spc{Y}$.
+\end{subthm}
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:alm-isom=>GH}
+Suppose that $f\: \spc{X}\to \spc{Y}$ be an $\eps$-isometry.
+Then 
+\[|\spc{X}-\spc{Y}|_{\GH}\le 2\cdot \eps.\]
+\end{thm}
+
+\parit{Proof.} Consider the set $\spc{W}=\spc{X}\sqcup \spc{Y}$.
+Note that the following defines a metric on $\spc{W}$:
+\begin{align*}
+|x-x'|_{\spc{W}}&=|x-x'|_{\spc{X}},
+\\
+|y-y'|_{\spc{W}}&=|y-y'|_{\spc{Y}},
+\\
+|x-y|_{\spc{W}}&=\eps+\inf_{x'\in \spc{X}}\{|x-x'|_{\spc{X}}+|f(x')-y|_{\spc{Y}}\}
+\end{align*}
+for any $x,x'\in \spc{X}$ and $y,y'\in \spc{Y}$.
+
+Since $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$,
+for any $y\in \spc{Y}$ there is $x\in \spc{X}$ such that $|f(x)-y|_{\spc{Y}}\z\le\eps$;
+therefore $|x-y|_{\spc{W}}\le 2\cdot\eps$.
+On the other hand for any $x\in \spc{X}$, we have $|x-y|_{\spc{W}}\le\eps$
+for $y=f(x)\in \spc{Y}$.
+
+It follows that $|\spc{X}-\spc{Y}|_{\Haus\spc{W}}\le 2\cdot\eps$.
+\qedsf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parit{Proof of \ref{GH-4}.}
+Choose arbitrary $a,b \in \mathbb{R}$ such that
+$$a>|\spc{X}-\spc{Y}|_{\GH}
+\quad\text{and}\quad
+b>|\spc{Y}-\spc{Z}|_{\GH}.$$
+Choose two metrics on $\spc{U}=\spc{X}\sqcup \spc{Y}$ and $\spc{V}=\spc{Y}\sqcup \spc{Z}$ as in \ref{prop:GH=X+Y};
+that is,
+$|\spc{X}\z-\spc{Y}|_{\Haus\spc{U}}<a$ and $|\spc{Y}-\spc{Z}|_{\Haus\spc{V}}<b$ 
+and the inclusions $\spc{X}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{U}$, $\spc{Y}\hookrightarrow \spc{V}$ and $\spc{Z}\hookrightarrow \spc{V}$ are distance-preserving.
+
+Let $\spc{W}$ be the gluing of $\spc{U}$ and $\spc{V}$ along $\spc{X}$.
+Observe that the $a$-neighborhood of $\spc{X}$ in $\spc{W}$ contains $\spc{Y}$ and $b$-neighborhood of $\spc{Y}$ contains $\spc{Z}$.
+Therefore, $(a+b)$-neighborhood of $\spc{X}$ in $\spc{W}$ contains $\spc{Z}$.
+The same way we can show that $(a+b)$-neighborhood of $\spc{Z}$ in $\spc{W}$ contains $\spc{X}$.
+It follows that 
+$$a+b\ge|\spc{X}-\spc{Y}|_{\GH}.$$
+Whence the statement follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \parbf{Exercise~\ref{ex:fillrad<diam/2}.} 
 As usual we consider $\spc{M}$ as a subset of $\ell^\infty(\spc{M})$;
 more precisely we identify $\spc{M}$ with its image under the map  $x\mapsto \distfun_x$.

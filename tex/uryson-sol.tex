@@ -19,31 +19,13 @@ In fact the value $\ell$ is uniquely defined;
 it is called the \index{rendezvous value}\emph{rendezvous value} of ${\spc{X}}$.
 This is a result of Oliver Gross \cite{gross}.
 
-\parbf{\ref{ex:wasserstein}.}
-Choose a finite $\eps$-net $F\subset\spc{X}$.
-Show that the space $P_F$ of probability measures with support in $F$ is a compact net in $\Wass_1\spc{X}$.
-Observe that $\Wass_1\spc{X}$ is complete; 
-by \ref{ex:compact-net}, it follows that $\Wass_1\spc{X}$ is compact.
-
-Show that 
-
-Choose an integer $n$.
-Consider the set of probability measures $P_n$ of the form 
-\[\tfrac1n\cdot\sum_{i=1}^n\delta_{x_i},\]
-where $\delta_{x_i}$ denotes the delta-measure supported at $x_i\in\spc{X}$. 
-
-Show that $P_n$ is a compact subset of $\Wass_1\spc{X}$.
-Moreover, for any $\eps>0$ there is $n$ such that $P_n$ is 
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \parbf{\ref{ex:compact-length}.} By Fréchet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
 
 Denote by $\spc{L}=\Conv\spc{K}$ --- it is defined as the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
-(In other words, $\spc{L}$ is the intersection of all convex closed sets that contain $\spc{K}$.)
+(In other words, $\spc{L}$ is the minimal closed set containing $\spc{K}$ such that if $x,y\in \spc{L}$, then 
+$t\cdot x+(1-t)\cdot y\in \spc{L}$ for any $t\in[0,1]$.)
 
 Observe that $\spc{L}$ is a length space.
 It remains to show that $\spc{L}$ is compact.
@@ -65,10 +47,14 @@ In particular $P$ is a $2\cdot\eps$-net in $\spc{L}$;
 since $P$ is compact and $\eps>0$ is arbitrary, $\spc{L}$ is totally bounded (see \ref{ex:compact-net}).
 
 \parit{Remark.}
-Another solution follows since the injective envelope of a compact space is compact; see \ref{ex:inj=complete-geodesic-contractible:geodesic}, \ref{ex:Inj(compact)}, and \ref{prop:InjX-is-injective}.
+Alternatively, one may use that \emph{the injective envelope of a compact space is compact}; see \ref{ex:inj=complete-geodesic-contractible:geodesic}, \ref{ex:Inj(compact)}, and \ref{prop:InjX-is-injective}.
+
+\parbf{\ref{ex:frechet}.}
+Modify the proof of \ref{lem:frechet}.
 
 \parbf{\ref{ex:geodesics-urysohn}.}
-Choose a separable space $\spc{X}$ that has an infinite number of geodesics between a pair of points, say a square will $\ell^\infty$-metric in $\RR^2$.
+Choose a separable space $\spc{X}$ that has an infinite number of geodesics between a pair of points with given distance between them;
+say a square in $\RR^2$ with $\ell^\infty$-metric will do.
 Apply to $\spc{X}$ universality of Urysohn space (\ref{prop:sep-in-urys}).
 
 \parbf{\ref{ex:compact-extension}.} 
@@ -91,7 +77,7 @@ Observe that the sequence $(p_n)$ is Cauchy and its limit $p$ meets
 $\dist{p}{x}{}=f(x)$ for any $x\in K$.
 
 Now, choose a sequence of points $(x_n)$ in $\spc{S}$.
-Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, and further to $K\cup\{x_1,x_2\}$, and so on.
+Applying the claim, we may extend the map from $K$ to $K\cup\{x_1\}$, further to $K\cup\{x_1,x_2\}$, and so on.
 As a result we extend the distance-preserving map $f$ to the whole sequence $(x_n)$.
 It remains to extend it continuously to the whole space~$\spc{S}$.
 
@@ -118,10 +104,12 @@ Further note that the map $(t,p)\mapsto \lambda_t(p)$ is continuous ---  in part
 
 As a bonus, observe that for any point $p\in \spc{U}_d$ the curve $t\mapsto \lambda_t(p)$ is a geodesic path from $p$ to $x_0$.
 
-\parit{Source:} \cite[(d) on page 82]{gromov-2007}.
+\parit{Source:} \cite[$\text{(d)}$ on page 82]{gromov-2007}.
 
 \parbf{\ref{ex:sphere-in-urysohn}}; \ref{SHORT.ex:sphere-in-urysohn:sphere} and \ref{SHORT.ex:sphere-in-urysohn:midpoint}.
 Observe that $L$ and $M$ satisfy the definition of $d$-Urysohn space and apply the uniqueness (\ref{thm:urysohn-unique}).
+Note that
+\[\ell=\diam L=\min\{2\cdot r, d\}.\]
 
 \parit{\ref{SHORT.ex:sphere-in-urysohn:homogeneous}.} 
 Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
@@ -129,7 +117,7 @@ Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
 \parbf{\ref{ex:homogeneous}}; \ref{SHORT.ex:homogeneous:euclidean}.
 The euclidean plane is homogeneous in every sense.
 
-\parit{\ref{SHORT.ex:homogeneous:hilbert}.} The ilbert space $\ell^2$ is finite set homogeneous, but not compact set homogeneous, nor countable homogeneous.
+\parit{\ref{SHORT.ex:homogeneous:hilbert}.} The Hilbert space $\ell^2$ is finite set homogeneous, but not compact set homogeneous, nor countable homogeneous.
 
 \parit{\ref{SHORT.ex:homogeneous:ell-infty}.} The space $\ell^\infty$ is 1-point homogeneous, but not 2-point homogeneous.
 Try to show that there is no isometry of $\ell^\infty$ such that

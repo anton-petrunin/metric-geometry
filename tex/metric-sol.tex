@@ -1,13 +1,14 @@
 \parbf{\ref{ex:quad-inq}.}
-Add four triangle inequalities.
+Add four triangle inequalities (\ref{metric:triangle}).
 
-\parbf{\ref{ex:pseudo-infty-metric}.}
+\parbf{\ref{ex:pseudo-infty-metric}};\ref{SHORT.ex:pseudo-infty-metric:pseudo}.
 Note that if $\mu(A)=\mu(B)=0$, then $|A-B|=0$.
-Therefore, \ref{metric=0} does not hold for bounded measurable sets.
-It is straightforward to check that for bounded measurable sets the remaining conditions in~\ref{def:metric}; whence \ref{SHORT.ex:pseudo-infty-metric:pseudo}.
+Therefore, \ref{metric=0} does not hold for bounded closed subsets.
+It is straightforward to check that for bounded measurable sets the remaining conditions in~\ref{def:metric} hold true.
 
-Note that distance from the empty set and whole plane is infinite; so the value $|A-B|$ might be infinite.
-It is straightforward to check the remaining conditions in~\ref{def:metric}; whence \ref{SHORT.ex:pseudo-infty-metric:infty}.
+\parit{\ref{SHORT.ex:pseudo-infty-metric:infty}.}
+Note that distance from the empty set to the whole plane is infinite; so the value $|A-B|$ might be infinite.
+It is straightforward to check the remaining conditions in~\ref{def:metric}.
 
 
 \parbf{\ref{ex:almost-min}.}
@@ -23,7 +24,7 @@ Clearly
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
 \quad\hbox{and}\quad
 \rho(x_n)\le \frac{\rho(x_0)}{(1+\eps)^n}.\] 
-Therefore, $(x_n)$ is a Cauchy sequence.
+Therefore, $(x_n)$ is Cauchy.
 Since $\spc{X}$ is complete, the sequence $(x_n)$ converges;
 denote its limit by $x_\infty$.
 Since $\rho$ is a continuous function we get
@@ -35,19 +36,18 @@ The latter contradicts that $\rho>0$.
 
 \parbf{\ref{ex:complete-completion}.}
 Let $\bar {\spc{X}}$ be a completion of $\spc{X}$.
-By the definition for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $(x_n)$ in  $\spc{X}$ that converges to $y$.
+By the definition, for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $(x_n)$ in  $\spc{X}$ that converges to $y$.
 
 Choose a Cauchy sequence $(y_m)$ in $\bar {\spc{X}}$.
 From above, we can choose points $x_{n,m}\in \spc{X}$ such that $x_{n,m}\to y_m$ for any $m$.
 Choose $z_m=x_{n_m,m}$ such that $|y_m-z_m|<\tfrac1m$.
 Observe that $z_m$ is Cauchy.
 Therefore, its limit $z_\infty$ lie in $\bar{\spc{X}}$.
-Finally note that $x_m\to z_\infty$.
+Finally show that $x_m\to z_\infty$.
 
 \parbf{\ref{ex:compact-net}.}
-A compact $\eps$-net $N$ of $\spc{K}$ contains a finite $\eps$ net $F$.
+A compact $\eps$-net $N$ in $\spc{K}$ contains a finite $\eps$ net $F$.
 Show and use that $F$ is a $2\cdot\eps$-net of $\spc{K}$.
-
 
 \parbf{\ref{ex:non-contracting-map}.}
 Given a pair of points $x_0,y_0\in \spc{K}$, 
@@ -97,11 +97,12 @@ Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective --- hence the r
 
 \parit{Remarks.}
 This is a basic lemma in the introduction to Gromov--Hausdorff distance \cite[see 7.3.30 in][]{burago-burago-ivanov}.
-This proof is not quite standard,
+The presented proof is not quite standard,
 I learned it from Travis Morrison, 
 a student in my MASS class at Penn State, Fall 2011.
 
-Note that as an easy corollary one can see that any surjective non-expanding map from a compact metric space to itself is an isometry. 
+Note that this exercise implies that \emph{any surjective non-expanding map from a compact metric space to itself is an isometry}
+. 
 
 \parbf{\ref{ex:loc-compact-not-proper}.} Consider an infinite discrete space.
 
@@ -134,20 +135,21 @@ This construction was given by
 Aleksei Pogorelov \cite{pogorelov}.
 It is closely related to the construction given 
 by David Hilbert \cite{hilbert}
-which was the motivating example for his 4-th problem.
+which was the motivating example for his 4-th problem. 
 
 \parbf{\ref{ex:4-point-trees}.}
 Without loss of generality we may assume that the points $p,x,y,z$ are distinct.
 
-Let $S$ be the set in the tree covered by all six geodesics with the given endpoints.
-Show that $S$ looks like $H$ or like $X$; make a conclusion.
+Let $K$ be the set in the tree covered by all six geodesics with the given endpoints.
+Show that $K$ looks like an H or like an X; make a conclusion.
 
 \parbf{\ref{ex:spheres-in-trees}.}
 Apply \ref{ex:4-point-trees}.
 
 
 \parbf{\ref{ex:no-geod}.}
-We assume that the space is nontrivial, otherwise a one-point space is an example.
+Formally speaking, one-point space is an example,
+but there is not a trivial example as well.
 
 Consider the unit ball $(B,\rho_0)$
 in the space $c_0$ of all sequences converging to zero equipped with the sup-norm.
@@ -160,7 +162,7 @@ then its $\rho_1$-length is defined by
 \[\length_{\rho_1}\bm{x}\df\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
 Note that the metric $\rho_1$ is bilipschitz to~$\rho_0$.
 
-Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denoted by $x_m(t)$ and $x_m'(t)$ respectively.
+Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denote by $x_m(t)$ and $x_m'(t)$ respectively.
 Note that if $x'_m(t)\le x_m(t)$ for any $t$ and 
 the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x_m(t)$, then 
 \[\length_{\rho_1}\bm{x}'\le \length_{\rho_1}\bm{x}.\]
@@ -168,22 +170,15 @@ Moreover, this inequality is strict if $x'_m(t)< x_m(t)$ for some~$t$.
 
 Fix a curve $\bm{x}(t)$, $t\in[0,\ell]$, parametrized by  $\rho_0$-length.
 We can choose $m$ large, so that $x_m(t)$ is sufficiently close to $0$ for any~$t$.
-In particular, for some values $t$, we have $y_m(t)<x_m(t)$, where
-\[y_m(t)=(1-\tfrac t\ell)\cdot x_m(0)
-+\tfrac t\ell\cdot x_m(\ell)
--\tfrac 1{100}\cdot \min\{t,\ell-t\}.\]
-Set
-\[x'_m(t)=\min\{x_m(t),y_m(t)\}.\]
-Note that the curves $\bm{x}'$ and $\bm{x}$ have the same end points, and by the above
-\[\length_{\rho_1}\bm{x}'<\length_{\rho_1}\bm{x}.\]
-That is, for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same end points.
+In this case it is easy to construct a function $t\mapsto x'_m$ that meets the above properties.
+It follows that for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same end points.
 In particular, $(B,\rho_1)$ has no geodesics.
 
 \parit{Remarks.}
 This solution was suggested by Fedor Nazarov~\cite{nazarov}.
 
 \parbf{\ref{ex:compact+connceted}.}
-Choose a sequence $\varepsilon_n\to 0$ and a $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
+Choose a sequence of positive numbers $\varepsilon_n\to 0$ and a $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
 Assume $N_0$ is a one-point set, so $\eps_0>\diam K$.
 Connect each point $x\in N_{k+1}$ to a point $y\in N_{k}$ by a curve of length at most $\eps_k$.
 
@@ -206,7 +201,7 @@ It follows that
 \\
 &\le \tfrac1{2^n}.
 \end{align*}
-In particular $x_n$ converges.
+In particular $x_n$ converges to $x_\infty$ in $(\spc{X},\|*-*\|)$.
 
 \parit{Source:} \cite[Lemma 2.3]{petrunin-stadler}.
 

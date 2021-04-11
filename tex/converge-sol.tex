@@ -12,24 +12,25 @@ It remains to swap $A$ and $B$ and repeat the argument.
 
 
 \parbf{\ref{ex:Hausdorff-bry}}; \ref{SHORT.ex:Hausdorff-bry:conv}.
-Denote by $X^r$ the closed $r$-neighborhood of a set $X\z\subset \RR^2$.
+Denote by $A^r$ the closed $r$-neighborhood of a set $A\z\subset \RR^2$.
 Observe  that 
-\[(\Conv X)^r=\Conv(X^r),\]
+\[(\Conv A)^r=\Conv(A^r),\]
 and try to use it.
 
 \parit{\ref{SHORT.ex:Hausdorff-bry:bry}.}
 The answer is ``no'' in both parts.
 
-For the first part let $X$ be a unit disc and $Y$ a finite $\eps$-net in $X$.
-Evidently $|X-Y|_{\Haus\RR^2}<\eps$, 
+For the first part let $A$ be a unit disk and $B$ a finite $\eps$-net in $A$.
+Evidently $|A-B|_{\Haus\RR^2}<\eps$, 
 but
-$|\partial X-\partial Y|_{\Haus\RR^2}\approx 1$.
+$|\partial A-\partial B|_{\Haus\RR^2}\approx 1$.
 
-For the second part take $X$ to be a unit disc and $Y=\partial X$ to be its boundary circle.
-Note that $\partial X=\partial Y$ in particular $\dist{\partial X}{\partial Y}{\Haus\RR^2}=0$ while $\dist{ X}{ Y}{\Haus\RR^2}=1$.
+For the second part take $A$ to be a unit disk and $B=\partial A$ to be its boundary circle.
+Note that $\partial A=\partial B$ in particular $\dist{\partial A}{\partial B}{\Haus\RR^2}=0$ while $\dist{ A}{B}{\Haus\RR^2}=1$.
 
 \parit{Remark.}
-A more interesting example for the second part can be built on {}\emph{lakes of Wada} --- an example of three open bounded topological disks in the plane that have identical boundaries.
+There is the so-called {}\emph{lakes of Wada} --- an example of three (and more) open bounded topological disks in the plane that have identical boundaries.
+It can be used to construct a more interesting examples for \ref{SHORT.ex:Hausdorff-bry:bry}.
 
 \parbf{\ref{ex:closure-union}.} 
 Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
@@ -37,8 +38,8 @@ Observe that $\bigcup_{n\le N} K_n$
 is compact and apply \ref{ex:compact-net}.
 
 \parbf{\ref{ex:Haus-length}}; \textit{``if'' part.}
-Fix two compact sets $A,B\subset \spc{X}$;
-suppose that $\dist{A}{B}{\spc{X}}<r$.
+Choose two compact sets $A,B\subset \spc{X}$;
+suppose that $\dist{A}{B}{\Haus\spc{X}}<r$.
 
 Choose finite $\eps$-nets $\{a_1,\dots a_m\}\subset A$ and $\{b_1,\dots b_n\}\subset B$.
 For each pair $a_i,b_j$ construct a constant-speed path $\gamma_{i,j}$ from $a_i$ to $b_j$ such that 
@@ -53,7 +54,7 @@ Show and use that
 \\
 \dist{C(t)}{B}{\spc{X}}&<(1-t)\cdot r+10\cdot\eps.
 \end{align*}
-Applying \ref{ex:closure-union} and \ref{lem:mid>geod}, we get the if part.
+Apply \ref{ex:closure-union} and \ref{lem:mid>geod}.
 
 \parit{``only-if'' part.}
 Choose points $p,q\in\spc{X}$. 
@@ -91,12 +92,12 @@ In particular for almost all pairs of points $a,b\z\in\partial D$ the two angles
 
 The convexity of $D'$ implies that $\alpha=\beta$;
 here we measure the angles $\alpha$ and $\beta$ on one side from $[ab]$.
-It remains to show that the identity $\alpha=\beta$ holds only for a round disc. 
+Show that if the identity $\alpha=\beta$ holds for almost all chords, then $D$ is a round disk. 
 
 
 \parbf{\ref{ex:generalized-selection}.}
 Observe that all functions $\distfun_{A_n}$ are Lipschitz and uniformly bounded on compact sets.
-Therefore, passing to a subsequence, we get that the sequence $\distfun_{A_n}$ converges to some function $f$.
+Therefore, passing to a subsequence, we may assume that the sequence $\distfun_{A_n}$ converges to some function $f$.
 
 Set $A_\infty=f^{-1}\{0\}$.
 It remains to show that $f=\distfun_{A_\infty}$.
@@ -120,7 +121,7 @@ Arguing by contradiction,
 we can identify $\spc{A}_r$ and $\spc{B}_r$ with subspaces of a space $\spc{Z}$
 such that 
 \[|\spc{A}_r-\spc{B}_r|_{\Haus \spc{Z}}<\tfrac1{10}\]
-for large $r$ (see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
+for large $r$; see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
 
 Set $n=\lceil r \rceil$.
 Note that there are $2\cdot n$ integer points in~$\spc{A}_r$: 
@@ -128,32 +129,12 @@ $a_1\z=(0,0)$, $a_2=(1,0),\dots,a_{2\cdot n}=(n,1)$.
 Choose a point $b_i\in \spc{B}_r$ that lies on minimal distance from $a_i$.
 Note that $|b_i-b_j|>\tfrac 45$ if $i\ne j$.
 It follows that $r>\tfrac 45\cdot (2\cdot n-1)$.
-The latter contradicts $n=\lceil r \rceil$ for large $r$.
+The latter contradicts $n=\lceil r \rceil$ for large~$r$.
 
 \parit{Remark.}
-In fact $|\spc{A}_r-\spc{B}_r|_{\GH}=\tfrac12$ for all large $r$.
-
-\parbf{\ref{ex:H-R}}; \textit{only-if part.}
-Let us identify $\spc{X}$ and $\spc{Y}$ with subspaces of a metric space $\spc{Z}$ such that 
-\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}<\eps.\]
-
-Set $(x,y)\in R$ if and only if $\dist{x}{y}{\spc{Z}}<\eps$.
-It remains to check that the properties hold for $R$.
-
-\parit{If part.}
-Show that we can assume that $R$ is a closed subset of $\spc{X}\times\spc{Y}$.
-Therefore,
-\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps'.\]
-for some $\eps'<\eps$.
-
-Construct a maximal metric on $\spc{Z}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{Z}$ and
-$\spc{Y}\hookrightarrow\spc{Z}$ are distance preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ for any pair $(x,y)\in R$.
-Conclude that 
-\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}\le\eps'<\eps.\]
-
+In fact $|\spc{A}_r-\spc{B}_r|_{\GH}=\tfrac12$ for all large $r$; try to show it.
 
 \parbf{\ref{ex:GH-inj}.}
-Let $\spc{U}$ be as in \ref{prop:GH=X+Y}.
 Suppose that $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$;
 we need to show that 
 \[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot \eps.\]
@@ -164,7 +145,6 @@ Recall that $\spc{U}$, $\spc{X}$, and $\spc{Y}$ can be considered as subspaces o
 According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
 Therefore, we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
 
-
 Given $f\in \hat{\spc{U}}$,
 let us find $g\in \hat{\spc{X}}$ such that 
 \[|f(u)-g(u)|<2\cdot\eps\eqlbl{|g-f|}\]
@@ -173,7 +153,6 @@ Note that the restriction $f|_{\spc{X}}$ is admissible on ${\spc{X}}$.
 By \ref{obs:extremal:below}, there is $g\in \hat{\spc{X}}$ such that 
 \[g(x)\le f(x)\eqlbl{g(x)=<f(x)}\]
 for any $x\in\spc{X}$.
-
 
 Recall that any extremal function is $1$-Lipschitz;
 in particular $f$ and $g$ are $1$-Lipschitz on $\spc{U}$.
@@ -188,11 +167,11 @@ Whence \ref{|g-f|} follows.
 It follows that $\hat{\spc{Y}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{X}}$ in $\hat{\spc{U}}$.
 The same way we show that $\hat{\spc{X}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{Y}}$ in $\hat{\spc{U}}$.
 The latter means that
-$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\spc{U}}<2\cdot\eps$,
+$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\hat{\spc{U}}}<2\cdot\eps$,
 and therefore
 $|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
 
-\parit{Comment.} 
+\parit{Remark.} 
 This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]{lang-pavon-zust}.
 \begin{figure}[h!]
 \vskip-0mm
@@ -200,13 +179,80 @@ This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]
 \includegraphics{mppics/pic-505}
 \end{figure}
 They also show that the constant 2 is optimal.
-To see this look at the injective envelopes of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
+To see this, look at the injective envelopes of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
 
-\parbf{\ref{ex:GH-urysohn}.}
-Apply \ref{thm:compact-homogeneous} and \ref{prop:GH-with-fixed-Z}.
+\parbf{\ref{ex:H-R}}; \textit{only-if part.}
+Let us identify $\spc{X}$ and $\spc{Y}$ with subspaces of a metric space $\spc{Z}$ such that 
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}<\eps.\]
+
+Set $x\approx y$ if and only if $\dist{x}{y}{\spc{Z}}<\eps$.
+It remains to check that $\approx$ is an $\eps$-approximation.
+
+\parit{If part.}
+Show that we can assume that 
+\[R=\set{(x,y)\in\spc{X}\times\spc{Y}}{x\approx y}\] is a compact subset of $\spc{X}\times\spc{Y}$.
+Conclude that
+\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps'\]
+for some $\eps'<\eps$.
+
+Show that there is a metric on $\spc{Z}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{Z}$ and
+$\spc{Y}\hookrightarrow\spc{Z}$ are distance preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ if $x\approx y$.
+Conclude that 
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}\le\eps'<\eps.\]
+
+\parbf{\ref{ex:eps-isom}};
+\ref{SHORT.ex:eps-isom:GH>isom}.
+Let $\approx$ be an $\eps$-approximation provided by \ref{ex:H-R}.
+For any $x\in\spc{X}$ choose a point $f(x)\in\spc{Y}$ such that $x\approx f(x)$.
+Show that $x\mapsto f(x)$ is an $2\cdot\eps$-isometry.
+
+\parit{\ref{SHORT.ex:eps-isom:isom>GH}.}
+Let $x\in\spc{X}$ and $y\in\spc{Y}$.
+Set $x\approx y$ if $\dist{y}{f(x)}{\spc{Y}}<\eps$.
+Show that $\approx$ is a $\eps$-approximation. 
+Apply \ref{ex:H-R}.
+
+\parbf{\ref{ex:GH-SC}}; \ref{SHORT.ex:GH-SC:circle}.
+Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
+It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
+
+The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
+
+\begin{wrapfigure}{r}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2}
+\end{wrapfigure}
+
+\parit{\ref{SHORT.ex:GH-SC:nonsc-limit}.}
+Let $\spc{V}$ be a cone over Hawaiian earring.
+Consider the {}\emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points earrings (see the diagram).
+
+The space $\spc{W}$ can be equipped with length metric for example the induced length metric from the shown embedding.
+
+Show that $\spc{V}$ is simply connected, but $\spc{W}$ is not; the latter is a good exercise in topology.
+
+If we delete from the earrings all small circles, then the obtained double cone becomes simply connected and it remains to be close to $\spc{W}$.
+That is $\spc{W}$ is a Gromov--Hausdorff limit of simply connected spaces.
+
+\parit{Remark.}
+Note that from part \ref{SHORT.ex:GH-SC:nonsc-limit}, the limit does not admit a nontrivial covering.
+So, if we define fundamental group as the inverse image of groups of deck transformations for all the coverings of the given space, then one may say that Gromov--Hausdorff limit of simply connected length spaces is simply connected.
+
+\parbf{\ref{ex:sphere-to-ball},}
+\textit{\ref{SHORT.ex:sphere-to-ball:2}.}
+Suppose that a metric on $\mathbb{S}^2$ is close to the disk $\DD^2$.
+Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
+By Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two disks, say $D_1$ and $D_2$.
+
+By \ref{ex:GH-SC:nonsc-limit}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$, otherwise the limit would admit a nontrivial covering.
+
+Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
+If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
+On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 --- a contradiction.
 
 \parbf{\ref{pr:doubling}.}
-Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by $\mu$.
+Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by~$\mu$.
 Without loss of generality we may assume that $\mu(\spc{X})\z=1$.
 
 The doubling condition implies that 
@@ -218,16 +264,15 @@ It follows that
 By \ref{ex:pack-net}, for any $\eps\ge\frac D{2^{n-1}}$, the space $\spc{X}$ admits an $\eps$-net with at most $C^n$ points.
 Whence $\spc{Q}(C,D)$ is uniformly totally bounded.
 
-\parbf{\ref{pr:under}.} 
-Since $\spc{Y}$ is compact, it has a finite $\eps$-net for any $\eps>0$.
-For each $\eps>0$ choose a finite $\eps$-net $\{y_1,\dots,y_{n_\eps}\}$ in $\spc{Y}$.
+\parbf{\ref{pr:under}}; \ref{SHORT.pr:under:if}.
+Choose $\eps>0$.
+Since $\spc{Y}$ is compact, we can choose a finite $\eps$-net $\{y_1,\dots,y_{n}\}$ in $\spc{Y}$.
 
 Suppose $f\:\spc{X}\to \spc{Y}$ be a distance-nondecreasing map.
 Choose one point $x_i$ in each nonempty subset $B_i=f^{-1}[\oBall(y_i,\eps)]$.
 Note that the subset $B_i$ has diameter at most $2\cdot \eps$ and 
 \[\spc{X}=\bigcup_iB_i.\]
-Therefore, the set of points $\{x_i\}$ forms a $2\cdot\eps$ net in $\spc{X}$.
-Whence \ref{SHORT.pr:under:if} follows.
+Therefore, the set of points $\{x_i\}$ is a $2\cdot\eps$-net in $\spc{X}$.
 
 \parit{\ref{SHORT.pr:under:only-if}.} Let $\spc{Q}$ be a uniformly totally bounded family of spaces. 
 Suppose that each space in $\spc{Q}$ has an $\tfrac1{2^n}$-net with at most $M_n$ points; we may assume that $M_0=1$.
@@ -242,7 +287,7 @@ Indeed it is complete and the sequences with constant tails, starting from index
 
 Given a space $\spc{X}$ in $\spc{Q}$,
 choose a sequence of $\tfrac1{2^n}$ nets 
-$N_n\subset\spc{X}$ for each natural $n$.
+$N_n\subset\spc{X}$ for each $n$.
 We can assume that $|N_n|\le M_n$; let us label the points in $N_n$ by $\{1,\dots,M_n\}$.
 Consider the map $f:\spc{X}\to\spc{Y}$ defined by $f:x\to (m_1(x),m_2(x),\dots)$ where $m_n(x)$ is the label of a point in $N_n$ that lies on the distance $<\tfrac1{2^n}$ from $x$.
 
@@ -274,43 +319,7 @@ Finally apply \ref{lem:GH-complete} and \ref{lem:mid>geod}.
 
 \parit{Source:} \cite{ivanov-nikolaeva-tuzhilin}.
 
-\parbf{\ref{ex:GH-SC},} \ref{SHORT.ex:GH-SC:circle}.
-Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
-It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
-The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
-
-\begin{wrapfigure}{r}{40 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-2}
-\end{wrapfigure}
-
-\parit{\ref{SHORT.ex:GH-SC:nonsc-limit}.}
-Let $\spc{V}$ be a cone over Hawaiian earring.
-Consider the {}\emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points earrings (see the diagram).
-
-The space $\spc{W}$ can be equipped with length metric for example the induced length metric from the shown embedding.
-
-Note that $\spc{V}$ is simply connected, but $\spc{W}$ is not --- it is a good exercise in topology.
-
-If we delete from the earrings all small circles, then the obtained double cone becomes simply connected and it remains to be close to $\spc{W}$ in the sense of Gromov--Hausdorff.
-
-\parit{Remark.}
-Note that from part \ref{SHORT.ex:GH-SC:nonsc-limit}, the limit does not admit a nontrivial covering.
-So if we define fundamental group right --- as the inverse image of groups of deck transformations for all its coverings, then one may say that Gromov--Hausdorff limit of simply connected length spaces is simply connected.
-
-\parbf{\ref{ex:sphere-to-ball},}
-\textit{\ref{SHORT.ex:sphere-to-ball:2}.}
-Suppose that a metric on $\mathbb{S}^2$ is close to the disc $\DD^2$.
-Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
-By Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two discs, say $D_1$ and $D_2$.
-
-By \ref{ex:GH-SC:nonsc-limit}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$, otherwise the limit would admit a nontrivial covering.
-
-Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
-If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
-On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 --- a contradiction.
 
 \parit{\ref{SHORT.ex:sphere-to-ball:3}.}
 Make fine burrows in the standard 3-ball without changing its topology,
@@ -335,14 +344,8 @@ the remaining conditions are trivial.
 If $\dist{\spc{X}}{\spc{Y}}{\GH'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
 \[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
 
-Choose a countable dense set $S$ in $\spc{X}$.
-Passing to a subsequence of $f_n$ we can assume that $f_n(x)$ converges for any $x\in S$ as $n\to\infty$;
-denote its limit by $f_\infty(x)$.
-
-For each point $x\in\spc{X}$ choose a sequence $x_m\in S$ converging to $x$.
-Since $\spc{Y}$ is compact, we can assume in addition that $y_m=f_\infty(x_m)$ converges in $\spc{Y}$.
-Set $f_\infty(x)=y$.
-Note that the map $f_\infty\:\spc{X}\to \spc{Y}$ is  distance-nondecreasing.
+Arguing the same way as in the proof of the ``only if''-part in \ref{GH-2} (page~\pageref{page:GH-2-proof}),
+we get a distance-nondecreasing map $f_\infty\:\spc{X}\to \spc{Y}$.
 
 The same way we can construct a distance-nondecreasing map 
 $g_\infty\:\spc{Y}\to \spc{X}$.
@@ -350,8 +353,13 @@ $g_\infty\:\spc{Y}\to \spc{X}$.
 By \ref{ex:non-contracting-map}, the compositions $f_\infty\circ g_\infty\:\spc{Y}\to \spc{Y}$ and $g_\infty\z\circ f_\infty\:\spc{X}\to \spc{X}$ are isometries.
 Therefore, $f_\infty$ and $g_\infty$ are isometries as well.
 
-\parit{\ref{SHORT.ex:GH-po:b}.} The implication $|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
+\parit{\ref{SHORT.ex:GH-po:b}.} The implication 
+\[|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
 \quad\Rightarrow\quad 
-\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$ follows from \ref{ex:GH=>eps-isom}.
+\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0\]
+follows from \ref{ex:eps-isom:GH>isom}. %??? opposite???
+
+\parbf{\ref{ex:GH-urysohn}.}
+Apply \ref{thm:compact-homogeneous} and \ref{prop:GH-with-fixed-Z}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
