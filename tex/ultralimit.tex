@@ -1,12 +1,12 @@
 \chapter{Ultralimits}
 
 Ultralimits provide a very general way to pass to a limit.
-This procedure works for \emph{any} sequence of metric spaces, its result reminds limit in the sense of Gromov Gausdorff, but has some strange features; for example, the limit of constant sequence does \emph{not} coincide with this constant (see \ref{ex:ultrapower:compact}).
+This procedure works for \emph{any} sequence of metric spaces, its result reminds limit in the sense of Gromov Gausdorff, but has some strange features; for example, the limit of a constant sequence does \emph{not} coincide with this constant (see \ref{ex:ultrapower:compact}).
 
 In geometry, ultralimits are used only as a canonical way to pass to a convergent subsequence.
 It is a useful thing in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
 
-This lecture is based on the introduction to the paper of Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
+This lecture is based on the introduction to the paper by Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
 
 \section{Faces of ultrafilters}
 
@@ -44,7 +44,7 @@ Setting $P\in\mathfrak{F}\Leftrightarrow\omega(P)=1$ makes these two definitions
 A nonempty collection of sets $\mathfrak{F}$ that does not include the empty set and satisfies only conditions \ref{filter:supset} and \ref{filter:cap} is called a \index{filter}\emph{filter}; 
 if in addition $\mathfrak{F}$ satisfies condition \ref{filter:ultra} it is called an \index{ultrafilter}\emph{ultrafilter}.
 From Zorn's lemma, it follows that every filter contains an ultrafilter.
-Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly this ultrafilter $\mathfrak{F}$ is nonprincipal.
+Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all complements of finite sets; clearly, this ultrafilter $\mathfrak{F}$ is nonprincipal.
 
 
 \parbf{Stone--\v{C}ech compactification.}
@@ -59,12 +59,12 @@ Using the described embedding, we can (and will) consider $\NN$ as a subset of $
 
 The space $\beta\NN$ is the maximal compact Hausdorff space that contains $\NN$  as an everywhere dense subset.
 More precisely, for any compact Hausdorff space $\spc{X}$ 
-and a map $f\:\NN\to \spc{X}$ there is unique continuous map $\bar f\:\beta\NN\to X$ such that the restriction $\bar f|_\NN$ coincides with $f$. 
+and a map $f\:\NN\to \spc{X}$ there is a unique continuous map $\bar f\:\beta\NN\to X$ such that the restriction $\bar f|_\NN$ coincides with $f$. 
 
 \section{Ultralimits of points}
 \label{ultralimits}\index{ultralimit}
 
-Further we will need the existence of a nonprincipal  ultrafilter $\omega$,
+Further, we will need the existence of a nonprincipal  ultrafilter $\omega$,
 which we fix once and for all.
 
 Assume $(x_n)$ is a sequence of points in a metric space $\spc{X}$. 
@@ -81,7 +81,7 @@ For example, if $\omega$ is the {}\emph{principal} ultrafilter such that $\omega
 $x_\omega=x_n$.
 
 Alternatively, the sequence $(x_n)$ can be regarded as a map $\NN\to\spc{X}$.
-In this case the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
+In this case, the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
 Then the $\omega$-limit $x_\omega$ can be regarded as the image of $\omega$.
 
 Note that $\omega$-limits of a sequence and its subsequence may differ.
@@ -106,7 +106,7 @@ Note that $\omega(S_\eps)=1$ for any $\eps>0$.
 Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite.
 Therefore, we can choose an increasing sequence $(n_k)$
 such that $n_k\in S_{\frac1k}$ for each $k\in \NN$.
-Clearly $x_{n_k}\to x_\omega$ as $k\to\infty$.
+Clearly, $x_{n_k}\to x_\omega$ as $k\to\infty$.
 \qeds
 
 The following proposition 
@@ -122,7 +122,7 @@ any sequence of points $(x_n)$ in $\spc{X}$ has a unique $\omega$-limit $x_\omeg
 In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 \end{thm}
 
-The following lemma is an ultralimit analog of Cauchy convergence test.
+The following lemma is an ultralimit analog of the Cauchy convergence test.
 
 \begin{thm}{Lemma}\label{lem:X-X^w}
 Let $(x_n)$ be a sequence of points in a complete space~$\spc{X}$. 
@@ -146,7 +146,7 @@ Use ultralimits to give a shorter proof of \ref{GH-2} (page~\pageref{page:GH-2-p
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:linear}
-Denote by $S$ the space of bounded sequences or real numbers.
+Denote by $S$ the space of bounded sequences of real numbers.
 Show that there is a linear functional $L\:S\to\RR$ such that
 for any sequence $\bm{s}=(s_1,s_2,\dots)\in S$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$.
 \end{thm}
@@ -165,7 +165,7 @@ define a pseudometric by
 =
 \lim_{n\to\omega} \dist{x_n}{y_n}{\spc{X}_n}.
 \eqlbl{eq:olim-dist}\]
-Note that the $\omega$-limit on the right hand side is always defined 
+Note that the $\omega$-limit on the right-hand side is always defined 
 and takes a value in $[0,\infty]$. 
 (The $\omega$-convergence to $\infty$ is defined analogously to the usual convergence to $\infty$).
 
@@ -222,7 +222,7 @@ The $\omega$-limit of any sequence of length spaces is geodesic.
 \end{thm}
 
 \parit{Proof.}
-If $\spc{X}_n$ is a sequence length spaces, then for any sequence of pairs $x_n, y_n\in X_n$ there is a sequence of $\tfrac1n$-midpoints $z_n$.
+If $\spc{X}_n$ is a sequence of length spaces, then for any sequence of pairs $x_n, y_n\in X_n$ there is a sequence of $\tfrac1n$-midpoints $z_n$.
 
 Let $x_n\to x_\omega$, $y_n\to y_\omega$ and $z_n\to z_\omega$ as $n\to \omega$.
 Note that $z_\omega$ is a midpoint of $x_\omega$ and $y_\omega$ in $\spc{X}_\omega$.
@@ -330,14 +330,14 @@ If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in 
 If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
 
-The following exercise states that the tangent and asymptotic spaces depend the sequence $\lambda_n$ and an nonprincipal ultrafilter $\omega$.
+The following exercise states that the tangent and asymptotic spaces depend on the sequence $\lambda_n$ and a nonprincipal ultrafilter $\omega$.
 
 \begin{thm}{Exercise}\label{ex:ultraT}
 Construct a metric space $\spc{X}$ with a point $p$ such that the tangent space
 $\T_p^{\lambda_\omega}\spc{X}$ depends on the sequence $\lambda_n$ and/or ultrafilter~$\omega$.
 \end{thm}
 
-For nice spaces different choices may give the same space.
+For nice spaces, different choices may give the same space.
 
 \begin{thm}{Exercise}\label{ex:Asym(Lob)}
 Let $\spc{L}$ be the Lobachevsky plane; $\spc{T}=\Asym\spc{L}$.

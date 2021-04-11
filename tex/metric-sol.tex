@@ -18,7 +18,7 @@ Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that
 \quad\text{and}\quad
 \rho(x')\le\frac{\rho(x)}{1+\eps}.\]
 Consider a sequence of points $(x_n)$ such that $x_{n+1}\z=x_n'$.
-Clearly 
+Clearly, 
 \[\dist{x_{n+1}}{x_n}{}
 \le
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
@@ -35,7 +35,7 @@ Since $\rho$ is a continuous function we get
 The latter contradicts that $\rho>0$.
 
 \parbf{\ref{ex:complete-completion}.}
-Let $\bar {\spc{X}}$ be a completion of $\spc{X}$.
+Let $\bar {\spc{X}}$ be completion of $\spc{X}$.
 By the definition, for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $(x_n)$ in  $\spc{X}$ that converges to $y$.
 
 Choose a Cauchy sequence $(y_m)$ in $\bar {\spc{X}}$.
@@ -43,7 +43,7 @@ From above, we can choose points $x_{n,m}\in \spc{X}$ such that $x_{n,m}\to y_m$
 Choose $z_m=x_{n_m,m}$ such that $|y_m-z_m|<\tfrac1m$.
 Observe that $z_m$ is Cauchy.
 Therefore, its limit $z_\infty$ lie in $\bar{\spc{X}}$.
-Finally show that $x_m\to z_\infty$.
+Finally, show that $x_m\to z_\infty$.
 
 \parbf{\ref{ex:compact-net}.}
 A compact $\eps$-net $N$ in $\spc{K}$ contains a finite $\eps$ net $F$.
@@ -87,7 +87,7 @@ Since $f$ is non-contracting, the sequence $(\ell_n)$ is nondecreasing.
 By $({*})$,  $\ell_{m_i}\to\ell_0$ as $m_i\to\infty$.
 It follows that $(\ell_n)$ is a constant sequence.
 
-In particular 
+In particular, 
 \[|x_0-y_0|_{\spc{K}}=\ell_0=\ell_1=|f(x_0)-f(y_0)|_{\spc{K}}\]
 for any pair of points $(x_0,y_0)$ in $\spc{K}$.
 That is, the map $f$ is distance-preserving and, in particular, injective.
@@ -138,7 +138,7 @@ by David Hilbert \cite{hilbert}
 which was the motivating example for his 4-th problem. 
 
 \parbf{\ref{ex:4-point-trees}.}
-Without loss of generality we may assume that the points $p,x,y,z$ are distinct.
+Without loss of generality, we may assume that the points $p,x,y,z$ are distinct.
 
 Let $K$ be the set in the tree covered by all six geodesics with the given endpoints.
 Show that $K$ looks like an H or like an X; make a conclusion.
@@ -169,20 +169,20 @@ the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x
 Moreover, this inequality is strict if $x'_m(t)< x_m(t)$ for some~$t$.
 
 Fix a curve $\bm{x}(t)$, $t\in[0,\ell]$, parametrized by  $\rho_0$-length.
-We can choose $m$ large, so that $x_m(t)$ is sufficiently close to $0$ for any~$t$.
-In this case it is easy to construct a function $t\mapsto x'_m$ that meets the above properties.
-It follows that for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same end points.
+We can choose large $m$ so that $x_m(t)$ is sufficiently close to $0$ for any~$t$.
+In this case, it is easy to construct a function $t\mapsto x'_m$ that meets the above properties.
+It follows that for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same endpoints.
 In particular, $(B,\rho_1)$ has no geodesics.
 
 \parit{Remarks.}
 This solution was suggested by Fedor Nazarov~\cite{nazarov}.
 
 \parbf{\ref{ex:compact+connceted}.}
-Choose a sequence of positive numbers $\varepsilon_n\to 0$ and a $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
+Choose a sequence of positive numbers $\varepsilon_n\to 0$ and an $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
 Assume $N_0$ is a one-point set, so $\eps_0>\diam K$.
 Connect each point $x\in N_{k+1}$ to a point $y\in N_{k}$ by a curve of length at most $\eps_k$.
 
-Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path connected.
+Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path-connected.
 
 \parit{Source:} This problem was suggested by Eugene Bilokopytov \cite{bilokopytov}.
 
@@ -201,7 +201,7 @@ It follows that
 \\
 &\le \tfrac1{2^n}.
 \end{align*}
-In particular $x_n$ converges to $x_\infty$ in $(\spc{X},\|*-*\|)$.
+In particular, $x_n$ converges to $x_\infty$ in $(\spc{X},\|*-*\|)$.
 
 \parit{Source:} \cite[Lemma 2.3]{petrunin-stadler}.
 

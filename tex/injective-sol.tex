@@ -6,7 +6,7 @@ Observe that the function $\bar r=\min\{\,r,s+c\,\}$ is admissible.
 Indeed, choose $x,y\in \spc{X}$.
 If $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
 \[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
-Further if $\bar r(x)=s(x)+c$, then 
+Further, if $\bar r(x)=s(x)+c$, then 
 \begin{align*}
 \bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
 \\
@@ -33,7 +33,7 @@ Consider metric on $\spc{X}=\NN\cup\{\infty\}$ defined by
 Since the sequence is Cauchy, so is the sequence $\ell_n=\dist{x_m}{x_n}{\spc{Y}}$ for any $m$.
 Therefore, the last limit is defined.
 
-By construction the map $n\mapsto x_n$ is distance-preserving on $\NN\subset \spc{X}$.
+By construction, the map $n\mapsto x_n$ is distance-preserving on $\NN\subset \spc{X}$.
 Since $\spc{Y}$ is injective, this map can be extended to $\infty$ as a short map; set $\infty\mapsto x_\infty$.
 Since $\dist{x_n}{x_\infty}{\spc{Y}}\le \dist{n}{\infty}{\spc{X}}$ 
 and $\dist{n}{\infty}{\spc{X}}\to 0$, we get that
@@ -49,7 +49,7 @@ It remains to apply \ref{lem:mid>geod:geod}.
 Let $k\:\spc{Y}\hookrightarrow \ell^\infty(\spc{Y})$ be the Kuratowski embedding (\ref{lem:kuratowski}).
 Observe that $\ell^\infty(\spc{Y})$ is contractible;
 in particular, there is a homotopy $k_t\:\spc{Y}\hookrightarrow \ell^\infty(\spc{Y})$ such that $k_0=k$ and $k_1$ is a constant map.
-(In fact one can take $k_t=(1-t)\cdot k$.)
+(In fact, one can take $k_t=(1-t)\cdot k$.)
 
 Since $k$ is distance-preserving and $\spc{Y}$ is injective,
 there is a short map $f\:\ell^\infty(\spc{Y})\to \spc{Y}$ such that the composition $f\circ k$ is the identity map on $\spc{Y}$.
@@ -58,7 +58,7 @@ The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotop
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
-Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map whole $\spc{X}$ to a single point.
+Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map the whole $\spc{X}$ to a single point.
 By Zorn's lemma, it is sufficient to enlarge $A$ by a single point $x\notin A$.
 
 \parit{\ref{SHORT.ex:injective-spaces:R}.}
@@ -84,8 +84,8 @@ It remains to observe that $\dist{x}{f(a)}{}\le \dist{p}{a}{}$ for any $a\in\spc
 that is, one can take $f(p)=x$.
 
 \parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
-In this case $\spc{Y}=(\RR^2,\ell^\infty)$.
-Note that the map $\spc{X}\to (\RR^2,\ell^\infty)$ is short if and only if both of its coordinate projections are short.
+In this case, $\spc{Y}=(\RR^2,\ell^\infty)$.
+Note that $\spc{X}\to (\RR^2,\ell^\infty)$ is a short map if and only if both of its coordinate projections are short.
 It remains to apply \ref{SHORT.ex:injective-spaces:R}.
 
 More generally, \emph{any $\ell^\infty$-product of injective spaces is injective};
@@ -111,14 +111,14 @@ The strong triangle inequality holds in both cases.
 Apply \ref{thm:injective=hyperconvex:balls}.
 
 \parbf{\ref{ex:urysohn-hyperconvex}.}
-Denote by $\spc{U}_d$ the $d$-Urysohn space;
+Denote by $\spc{U}_d$ the $d$-Urysohn space,
 so $\spc{U}_\infty$ is the Urysohn space.
 
 The extension property implies finite hyperconvexity.
 It remains to show that $\spc{U}_d$ is not countably hyperconvex.
 
 Suppose that $d<\infty$.
-Then $\diam\spc{U}_d=d$ and moreover for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
+Then $\diam\spc{U}_d=d$ and for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
 It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}_d}\le \tfrac d2$ for any $x\in\spc{U}_d$.
 Whence $\spc{U}_d$ is not countably hyperconvex.
 
@@ -181,7 +181,7 @@ for any $f,g\in \Inj\spc{X}$ and $p\in \spc{X}$.
 
 Since $\spc{X}$ is compact we can find a point $p\in\spc{X}$ such that 
 \[\dist{f}{g}{\Inj\spc{X}}=|f(p)-g(p)|=\left|\dist{f}{p}{\Inj\spc{X}}-\dist{g}{p}{\Inj\spc{X}}\right|.\]
-Without loss of generality we may assume that 
+Without loss of generality, we may assume that 
 \[\dist{f}{p}{\Inj\spc{X}}
 =
 \dist{g}{p}{\Inj\spc{X}}

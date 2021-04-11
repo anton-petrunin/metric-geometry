@@ -126,9 +126,10 @@ The following construction produces a complete metric space $\bar{\spc{X}}$ for 
 \parbf{Completion.}
 Given a metric space $\spc{X}$, 
 consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
-Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right hand side in \ref{eq:cauchy-dist} is defined; moreover it defines a pseudometric on~$\spc{C}$
+Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right-hand side in \ref{eq:cauchy-dist} is defined;
+moreover, it defines a pseudometric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
-The corresponding metric space $\bar{\spc{X}}$ is called a \index{completion}\emph{completion} of $\spc{X}$.
+The corresponding metric space $\bar{\spc{X}}$ is called \index{completion}\emph{completion} of $\spc{X}$.
 
 Note that the original space $\spc{X}$ forms a dense subset in its completion $\bar{\spc{X}}$.
 More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
@@ -137,7 +138,7 @@ It is easy to check that this map is distance-preserving.
 In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
 
 \begin{thm}{Exercise}\label{ex:complete-completion}
-Show that completion of a metric space is complete.
+Show that the completion of a metric space is complete.
 \end{thm}
 
 
@@ -221,19 +222,19 @@ Give an example of space which is locally compact but not proper.
 Let $\spc{X}$ be a metric space 
 and $\II$\index{$\II$} a real interval. 
 A~globally isometric map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
-\footnote{Various authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.
-Also note that the meaning of the term \emph{geodesic} is different from what is used in Riemannian geometry, altho they are closely related.}; 
+\footnote{Different authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.
+Also, note that the meaning of the term \emph{geodesic} is different from what is used in Riemannian geometry, altho they are closely related.}; 
 in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if 
 \[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
 for any pair $s,t\in \II$.
 
 If $\gamma\:[a,b]\to \spc{X}$ is a geodesic and $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from $p$ to $q$.
-In this case the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$} and with an abuse of notations  we also call it a \index{geodesic}\emph{geodesic}.
+In this case, the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$}, and, with abuse of notations, we also call it a \index{geodesic}\emph{geodesic}.
 We may write $[p q]_{\spc{X}}$ 
 to emphasize that the geodesic $[p q]$ is in the space  ${\spc{X}}$.
 
 In general, a geodesic from $p$ to $q$ need not exist and if it exists, it need not  be unique.  
-However, once we write $[p q]$ we assume that we have made a choice of geodesic.
+However, once we write $[p q]$ we assume that we have chosen such geodesic.
 
 A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed parameterization by the unit interval $[0,1]$.
 
@@ -248,7 +249,7 @@ set
 \[\|x-y\|=\int_{B(x,\frac \pi2)\backslash B(y,\frac\pi2)}f.\]
 
 Show that $(\mathbb{S}^2,\|{*}-{*}\|)$ is a geodesic space
-and moreover, the geodesics in $(\mathbb{S}^2,\|{*}-{*}\|)$ run along great circles of $\mathbb{S}^2$.
+and the geodesics in $(\mathbb{S}^2,\|{*}-{*}\|)$ run along great circles of $\mathbb{S}^2$.
 \end{thm}
 
 A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
@@ -306,7 +307,7 @@ A curve $\alpha$ is called \index{rectifiable curve}\emph{rectifiable} if $\leng
 
 
 \begin{thm}{Theorem}\label{thm:length-semicont}
-Length is a lower semi-continuous with respect to pointwise convergence of curves. 
+Length is a lower semi-continuous with respect to the pointwise convergence of curves. 
 
 More precisely, assume that a sequence
 of curves $\gamma_n\:\II\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
@@ -323,8 +324,8 @@ $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semico
 \end{wrapfigure}
 
 Note that the inequality \ref{eq:semicont-length} might be strict.
-For example the diagonal $\gamma_\infty$ of the unit square 
-can be  approximated by a stairs-like
+For example, the diagonal $\gamma_\infty$ of the unit square 
+can be  approximated by stairs-like
 polygonal curves $\gamma_n$
 with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
 In this case
@@ -388,13 +389,13 @@ Directly from the definition, it follows that if $\alpha\:[0,1]\to\spc{X}$ is a 
 Set 
 \[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
 where the greatest lower bound is taken for all paths from $x$ to~$y$.
-It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover $(\spc{X},\yetdist{*}{*}{})$ is a length space.
-The metric $\yetdist{*}{*}{}$ is called \index{induced length metric}\emph{induced length metric}.
+It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover, $(\spc{X},\yetdist{*}{*}{})$ is a length space.
+The metric $\yetdist{*}{*}{}$ is called the \index{induced length metric}\emph{induced length metric}.
 
 \begin{thm}{Exercise}\label{ex:compact+connceted}
 Let $\spc{X}$ be a complete length space.
 Show that for any compact subset $K$ in $\spc{X}$
-there is a compact path connected subset $K'$ that contains $K$.  
+there is a compact path-connected subset $K'$ that contains $K$.  
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact=>complete}
@@ -429,8 +430,8 @@ Note that a $0$-midpoint is the same as a midpoint.
 \begin{thm}{Lemma}\label{lem:mid>geod}
 Let $\spc{X}$ be a complete metric space.
 \begin{subthm}{lem:mid>length}
-Assume that for any pair of points $x,y\in \spc{X}$  
- and any $\eps>0$
+Assume that for any pair of points $x,y\in \spc{X}$,  
+and any $\eps>0$,
 there is an $\eps$-midpoint~$z$.
 Then $\spc{X}$ is a length space.
 \end{subthm}
@@ -475,7 +476,7 @@ Since $\eps>0$ is arbitrary, we get \ref{SHORT.lem:mid>length}.
 To prove \ref{SHORT.lem:mid>geod:geod}, 
 one should repeat the same argument 
 taking midpoints instead of $\eps_n$-midpoints.
-In this case \ref{eq:eps-midpoint} holds for $\eps_n=\eps=0$.
+In this case, \ref{eq:eps-midpoint} holds for $\eps_n=\eps\z=0$.
 \qeds
 
 Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, \ref{lem:mid>geod} immediately implies the following.
@@ -510,7 +511,7 @@ Since $B$ is closed and hence complete, it must be compact.
 \claimqeds
 
 \begin{clm}{} $|\rho(x)-\rho(y)|\le \dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$;
-in particular $\rho\:\spc{X}\to\RR$ is a continuous function.
+in particular, $\rho\:\spc{X}\to\RR$ is a continuous function.
 \end{clm}
 
 Indeed, 
@@ -524,7 +525,7 @@ From \ref{eq:rho>0}, we have $\eps>0$.
 
 Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
-Clearly 
+Clearly,
 $\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
 Therefore, $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
 a contradiction.
