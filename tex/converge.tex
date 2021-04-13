@@ -111,16 +111,15 @@ Whence $\iota(\spc{X})$, and therefore $\spc{X}$, are compact.
 To prove the ``if'' part we will need the following two lemmas.
 
 \begin{thm}{Monotone convergence}\label{lem:decreasing-converges}
-Let $K_1\supset K_2\supset\dots$ be a nested sequence of nonempty compact sets in a metric space $\spc{X}$
-then $K_\infty\z=\bigcap_n K_n$ is the Hausdorff limit of $K_n$;
+Let $K_1\supset K_2\supset\dots$ be a nested sequence of nonempty compact sets in a metric space $\spc{X}$.
+Then $K_\infty\z=\bigcap_n K_n$ is the Hausdorff limit of $K_n$;
 that is, $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$.
 \end{thm}
 
 \parit{Proof.}
 By finite intersection property, $K_\infty$ is a nonempty compact set.
 
-If the assertion were false, 
-then there is $\eps>0$ such that for each $n$ 
+If the assertion were false, then there is $\eps>0$ such that for each $n$ 
 one can choose $x_n\in K_n$
 such that $\distfun_{K_\infty}(x_n)\ge\eps$.
 Note that $x_n\in K_1$ for each $n$.
@@ -414,7 +413,7 @@ It is straightforward to check that if $\approx_1$ is an $\eps_1$-approximation 
 Applying \ref{ex:H-R}, we get that if 
 \[|\spc{X}-\spc{Y}|_{\GH}<\eps_1
 \quad\text{and}\quad
-|\spc{Y}-\spc{Z}|_{\GH}<\eps_2
+|\spc{Y}-\spc{Z}|_{\GH}<\eps_2,
 \]
 then 
 \[|\spc{X}-\spc{Z}|_{\GH}<\eps_1+\eps_2.\]
