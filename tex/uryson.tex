@@ -91,14 +91,14 @@ If in addition $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d
 If the complement $\spc{X}'\backslash \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
 In this case, to define metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
 \[f(x)=\dist{p}{x}{\spc{X}'}.\]
+Any function $f$ of that type will be called \index{extension function}\emph{extension function}\label{page:extension function} or {}\emph{$d$-extension function} respectively.
 
-The function $f$ cannot be taken arbitrary --- the triangle inequality implies that 
+The extension function $f$ cannot be taken arbitrary --- the triangle inequality implies that 
 \[f(x)+f(y)\ge \dist{x}{y}{\spc{X}}\ge |f(x)-f(y)|\]
 for any $x,y\in \spc{X}$.
 In particular, $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
 For a $d$-extension, we need to assume in addition that $\diam\spc{X}\z\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
-
-Any function $f$ of that type will be called \index{extension function}\emph{extension function}\label{page:extension function} or {}\emph{$d$-extension function} respectively.
+These conditions are necessary and sufficient.
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -159,8 +159,15 @@ Note that $\spc{V}$ is a dense subset in a complete space $\spc{U}$.
 Observe that $\spc{U}$ has the {}\emph{approximate extension property};
 that is, if $\spc{F}\z\subset\spc{U}$ is a finite set, $\eps>0$, and $f\:\spc{F}\to \RR$ is an extension function, then
 there exists $p\in \spc{U}$ such that
-\[\dist{p}{x}{}\lg f(x)\pm\eps.\]
+\[\dist{p}{x}{}\lg f(x)\pm\eps\eqlbl{eq:|p-x|><f(x)}\]
 for any $x\in\spc{F}$.
+Indeed, let us extend $f$ to the whole $\spc{X}$ by setting 
+\[\bar f(z)=\inf\set{f(x)+\dist{x}{z}{}}{x\in\spc{F}}.\]
+Observe that $\bar f$ is an extension function.
+Since $\spc{V}$ is dense in $\spc{U}$, we can choose a finite set $\spc{F}'\in \spc{V}$ such that for any $x\in \spc{F}$ there is $x'\in \spc{F}'$ with $\dist{x}{x'}{}<\tfrac\eps2$.
+It remains to observe that the point $p$ provided by the extension property for the restriction $\bar f|_{\spc{F}'}$ meets \ref{eq:|p-x|><f(x)}.
+
+
 
 Therefore, there is a sequence of points $p_n\in \spc{U}$ such that for any $x\in \spc{F}$, 
 \[\dist{p_n}{x}{}\lg f(x)\pm\tfrac1{2^n}.\]
