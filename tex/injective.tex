@@ -60,13 +60,19 @@ In other words, any extremal function is an extension function; see the definiti
 \end{subthm}
 
 \begin{subthm}{lem:opposite}
-Let $r$ be an extremal function on $\spc{X}$.
-Then for any point $p\in\spc{X}$ and any $\delta>0$, there is a point $q\in \spc{X}$
+An admissible function $r$ on $\spc{X}$ is extremal if and only if
+for any point $p\in\spc{X}$ and any $\delta>0$, there is a point $q\in \spc{X}$
 such that 
 \[r(p)+r(q)<\dist{p}{q}{\spc{X}}+\delta.\]
-Moreover, if $\spc{X}$ is compact, then there is $q$ such that 
+\end{subthm}
+
+\begin{subthm}{lem:opposite-compact}
+If $\spc{X}$ is compact, then an admissible function $r$ on $\spc{X}$ is extremal if and only if
+for any point $p\in\spc{X}$ there is a point $q\in \spc{X}$
+such that 
 \[r(p)+r(q)=\dist{p}{q}{\spc{X}}.\]
 \end{subthm}
+
 
 
 \begin{subthm}{obs:extremal:below}
@@ -96,26 +102,40 @@ $r(p)-r(q)\le \dist{p}{q}{}$.
 Whence the statement follows.
 
 \parit{\ref{SHORT.lem:opposite}.}
-Again, by \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is an extremal function.
-Arguing by contradiction, assume 
+Assume $r$ is extremal.
+Arguing by contradiction, assume there is $\delta>0$ such that
 \[r(q)\ge \distfun_p(q)-r(p)+\delta\]
 for any $q$.
-By \ref{ex:+-c}, we get that
+By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is a extremal; in particular, admissible.
+Therefore \ref{ex:+-c} implies that
 \[r(q)\le \distfun_p(q)+r(p)-\delta\]
 for any $q$.
 Taking $q=p$, we get $r(p)\le r(p)-\delta$, a contradiction.
 
-Suppose $\spc{X}$ is compact.
-Denote by $q_n$ the point provided by the first part of \ref{SHORT.lem:opposite} for $\delta=\tfrac1n$.
+Now suppose $r$ is not extremal; that is, there is an admissible function $s\le r$ such that $r(p)-s(p)=\delta>0$ for some $p$.
+Then, for any $q$, we have
+\[r(p)+r(q)\ge s(p)+s(q)+\delta\ge \dist{p}{q}{\spc{X}}+\delta\]
+--- a contradiction.
+
+\parit{\ref{SHORT.lem:opposite-compact}.}
+The if part follows from \ref{SHORT.lem:opposite}.
+
+Denote by $q_n$ the point provided by \ref{SHORT.lem:opposite} for $\delta=\tfrac1n$.
 Let $q$ be a partial limit of $q_n$. 
 Then 
 \[r(p)+r(q)\le\dist{p}{q}{\spc{X}}.\]
 Since $r$ is admissible, the opposite inequality holds;
-whence the second part of \ref{SHORT.lem:opposite} follows.
+whence the only-if part follows.
 
 \parit{\ref{SHORT.obs:extremal:below}.}
 Follows by Zorn's lemma. 
 \qeds
+
+\begin{thm}{Exercise}\label{ex:circle}
+Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length-metric.
+Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz and 
+\[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
+\end{thm}
 
 \section{Injective spaces}
 
@@ -127,6 +147,7 @@ that is, $f=F|_{\spc{A}}$.
 
 \begin{thm}{Exercise}\label{ex:inj=complete-geodesic-contractible}
 Show that any injective space is 
+\begin{multicols}{3}
 
 \begin{subthm}{ex:inj=complete-geodesic-contractible:complete}
 complete,
@@ -139,6 +160,9 @@ geodesic, and
 \begin{subthm}{ex:inj=complete-geodesic-contractible:contractible}
 contractible.
 \end{subthm}
+
+\end{multicols}
+
 \end{thm}
 
 
@@ -147,6 +171,7 @@ Show that the following spaces are injective:
 \begin{subthm}{ex:injective-spaces:R}
 the real line;
 \end{subthm}
+
 
 \begin{subthm}{ex:injective-spaces:tree}
 complete metric tree;
@@ -158,19 +183,29 @@ coordinate plane with the metric induced by the $\ell^\infty$-norm.
 
 \end{thm}
 
-The following exercise deals with metric spaces that in some sense dual to the injective spaces. 
+The following two exercise deals with ultrametric spaces which in some sense dual to the injective spaces. 
+Recall that if the following inequality
+\[\dist{x}{z}{\spc{X}}
+\le
+\max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
+holds for any three points $x,y,z$ in a metric space $\spc{X}$,
+then $\spc{X}$ is called an \index{ultrametric space}\emph{ultrametric space}.
 
 \begin{thm}{Exercise}\label{ex:ultrametric}
 Suppose that a metric space $\spc{X}$ satisfies the following property:
 For any subspace $\spc{A}$ in $\spc{X}$ and any other metric space $\spc{Y}$, any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$.
 
-Show that $\spc{X}$ is an \index{ultrametric space}\emph{ultrametric space};
-that is, the following strong version of the triangle inequality
-\[\dist{x}{z}{\spc{X}}
-\le
-\max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
-holds for any three points $x,y,z\in \spc{X}$.
+Show that $\spc{X}$ is an ultrametric space.
 \end{thm}
+
+A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \emph{short retract} if there is a short map $\spc{X}\to \spc{S}$ that is identity on $\spc{S}$.
+
+\begin{thm}{Exercise}\label{ex:ultrametric-converse}
+Show that any compact subspace $\spc{K}$ of a ultrametric space $\spc{X}$ is its short retract.
+
+Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not short its short retract.
+\end{thm}
+
 
 \begin{thm}{Theorem}\label{thm:injective=hyperconvex}
 For any metric space $\spc{Y}$ the following condition are equivalent:
@@ -188,7 +223,7 @@ for any $x\in \spc{Y}$.
 
 \begin{subthm}{thm:injective=hyperconvex:balls}
 $\spc{Y}$ is \index{hyperconvex space}\emph{hyperconvex};
-that is, if $\{\cBall[x_\alpha,r_\alpha]\}_{\alpha\in\IndexSet}$ is a family of closed balls in $\spc{Y}$ such that 
+that is, if $\set{\cBall[x_\alpha,r_\alpha]}{\alpha\in\IndexSet}$ is a family of closed balls in $\spc{Y}$ such that 
  \[r_\alpha+r_\beta\ge \dist{x_\alpha}{x_\beta}{}\]
  for any $\alpha,\beta\in \IndexSet$, then all the balls in the family $\{\cBall[x_\alpha,r_\alpha]\}_{\alpha\in\IndexSet}$ have a common point.
 \end{subthm}
@@ -300,7 +335,7 @@ $\spc{X}$ is a metric space with exactly three points $a,b,c$ such that
 
 \begin{subthm}{ex:tripod+square:square}
 $\spc{X}$ is  a metric space with exactly four points $p,q,x,y$ such that 
-\[\dist{p}{x}{\spc{X}}=\dist{p}{y}{\spc{X}}=\dist{q}{x}{\spc{X}}=\dist{q}{x}{\spc{X}}=1\]
+\[\dist{p}{x}{\spc{X}}=\dist{p}{y}{\spc{X}}=\dist{q}{x}{\spc{X}}=\dist{q}{y}{\spc{X}}=1\]
 and
 \[\dist{p}{q}{\spc{X}}=\dist{x}{y}{\spc{X}}=2.\]
 \end{subthm}

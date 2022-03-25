@@ -18,6 +18,47 @@ Further, if $\bar r(x)=s(x)+c$, then
 Since $r$ is extremal, we have $r=\bar r$;
 that is, $r\le s+c$.
 
+\parbf{\ref{ex:circle};} \textit{only-if part}.
+Suppose $r$ is extremal.
+By \ref{lem:extremal-lipschitz}, $r$ is $1$-Lipschitz.
+Since $\mathbb{S}^1$ is compact, \ref{lem:opposite-compact} implies that for any $p\in \mathbb{S}^1$ there is $q\in \mathbb{S}^1$ such that 
+\[r(p)+r (q) = \dist{p}{q}{\mathbb{S}^1}.\]
+Therefore
+\begin{align*}
+\pi&=\dist{p}{(-p)}{\mathbb{S}^1}\le 
+\\
+&\le 
+r(p)+r(-p)=
+\\
+&=
+r(p)+r(q) +r(-p) -r(q)\le
+\\
+&\le
+\dist{p}{q}{\mathbb{S}^1}+\dist{q}{(-p)}{\mathbb{S}^1}=
+\\
+&=\pi.
+\end{align*}
+It implies that we have equalities in both places.
+Hence the only-if part follows.
+
+\parit{If part.}
+Assume $r$ is 1-Lipschitz function such that $r(p)+r(-p)=\pi$.
+Then 
+\begin{align*}
+\dist pq{\mathbb{S}^1}&=
+\dist{p}{(-p)}{\mathbb{S}^1}-\dist{q}{(-p)}{\mathbb{S}^1}\ge
+\\
+&\ge\pi -(r(-p)-r(q))=
+\\
+&=r(p)+r(q).
+\end{align*}
+Therefore $r$ is admissible.
+
+Finally, if $r$ is not extremal, then there is an admissible function $s\le r$ such that $s(p)<r(p)$ for some $p$.
+The latter contradicts the equality $r(p)+r(-p)=\pi$.
+
+\parit{Source:} \cite[Proposition 2.7]{zuest}.
+
 \parbf{\ref{ex:inj=complete-geodesic-contractible}.}
 Choose an injective space $\spc{Y}$.
 
@@ -96,16 +137,48 @@ is injective as well.
 
 \parbf{\ref{ex:ultrametric}.}
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
-Let $f\:\spc{A}\z\to \spc{Y}$ be an isometry.
-Then $F(y)=f(x)$ or $F(y)=f(z)$.
-If  $f(y)\z=f(x)$, then
+Let $f\:\spc{A}\z\to \spc{A}$ be the identity map.
+Then $F(y)=x$ or $F(y)=z$.
+The strong triangle inequality easily follows in both cases.
+
+\parbf{\ref{ex:ultrametric-converse}}; \textit{main part.}
+Choose a maximal subset $A\supset K$ that admits a short retraction $f\:A\to K$;
+it exists by Zorn's lemma.
+If $A$ is the whole space, then the problem is solved.
+Otherwise, choose $p\notin A$.
+
+Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the the exact lower bound on the distances from points in $A$ to $p$.
+Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
+Set $f(p)=\lim f(a_n)$.
+
+It remains to check that 
+\[\dist{f(a)}{f(p)}{}\le\dist{a}{p}{}\eqlbl{eq:short-retract}\]
+for any $a\in A$.
+Choose $\eps>0$; note that 
+\[\dist{a_n}{p}{}<\dist{a}{p}{}+\eps
+\quad\text{and}\quad
+\dist{f(a_n)}{f(p)}{}<\dist{f(a)}{f(a_n)}{}+\eps
+\]
+for all large~$n$.
+Therefore, 
 \begin{align*}
-\dist{y}{z}{\spc{X}}&\ge  \dist{F(y)}{f(z)}{\spc{Y}}=
+\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},\dist{f(a_n)}{f(p)}{}\,\}\le
 \\
- &=\dist{x}{z}{\spc{X}}.
+&\le \dist{f(a)}{f(a_n)}{}+\eps\le
+\\
+&\le \dist{a}{a_n}{} +\eps\le 
+\\
+&\le \max\{\,\dist{a}{p}{},\dist{a_n}{p}{}\,\}+\eps< 
+\\
+&< \dist{a}{p}{}+2\cdot\eps.
 \end{align*}
-Analogously if $f(y)=f(z)$, then $\dist{x}{y}{\spc{X}}\ge\dist{x}{z}{\spc{X}}$.
-The strong triangle inequality holds in both cases.
+Since $\eps>0$ is arbitrary, we get \ref{eq:short-retract}.
+
+\parit{Example.}
+Consider set of $\{\infty,1,2,\dots\}$ with metric defined by 
+\[|m-n|=1+\frac1{\min\{m,n\}}\]
+for $m\ne n$.
+Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
 
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
@@ -169,9 +242,6 @@ equivalently,
 It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the $(a,b)$-plane with the metric induced by the $\ell^\infty$-norm.
 
 
-
-
-
 \parbf{\ref{ex:4-on-a-line}.}
 Recall that 
 \[\dist{f}{g}{\Inj\spc{X}}=\sup\set{|f(x)-g(x)|}{x\in\spc{X}}\]
@@ -187,7 +257,7 @@ Without loss of generality, we may assume that
 \dist{g}{p}{\Inj\spc{X}}
 +
 \dist{f}{g}{\Inj\spc{X}}.\]
-Applying \ref{lem:opposite}, we can find a point $q\in\spc{X}$ such that 
+Applying \ref{lem:opposite-compact}, we can find a point $q\in\spc{X}$ such that 
 \[\dist{q}{p}{\Inj\spc{X}}
 =
 \dist{f}{p}{\Inj\spc{X}}
