@@ -58,6 +58,19 @@ Show that
 for any four points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:normal}
+Let $A$ and $B$ be two disjoint closed sets in a metric space $\spc{X}$.
+Construct a continuous function $f\:\spc{X}\to [0,1]$ such that $A=f^{-1}\{0\}$ and $B=f^{-1}\{1\}$.
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:tietze}
+Let $f\:A\to\RR$ be a continuous function defined on a closed set $A$ in a metric space $\spc{X}$.
+Show that it admits a continuous extension to the whole space;
+that is, there is a continuous function $F\:\spc{X}\to\RR$ such that $F(a)=f(a)$ for any $a\in A$.
+\end{thm}
+
+
+
 \section{Variations of definition}
 
 \parbf{Pseudometris.}
@@ -179,7 +192,7 @@ Let $\pack_\eps\spc{X}$ be the exact upper bound on the number of points $x_1,\z
 
 If $n=\pack_\eps\spc{X}<\infty$, then
 the collection of points $x_1,\dots,x_n$ is called a \index{maximal packing}\emph{maximal $\eps$-packing}.
-Note that $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
+If $\spc{X}$ is a length space (see Section~\ref{sec:intrinsic}) then $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:pack-net}
 Show that any maximal $\eps$-packing is an $\eps$-net.
