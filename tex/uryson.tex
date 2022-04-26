@@ -81,12 +81,10 @@ Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc
 is distance-preserving.
 \end{thm}
 
-
-
 \section{Extension property}
 
 If a metric space $\spc{X}$ is a subspace of a pseudometric space $\spc{X}'$, then we say that $\spc{X}'$ is an \index{extension}\emph{extension} of $\spc{X}$.
-If in addition $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d$-extension}.
+If in addition $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d$-extension}. %???
 
 If the complement $\spc{X}'\backslash \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
 In this case, to define metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
@@ -99,6 +97,31 @@ for any $x,y\in \spc{X}$.
 In particular, $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
 For a $d$-extension, we need to assume in addition that $\diam\spc{X}\z\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
 These conditions are necessary and sufficient.
+
+\begin{thm}{Exercise}\label{ex:extension-of-extension}
+Let $\spc{X}$ be a subspace of metric space $\spc{Y}$.
+Assume $f$ is an extension function on $\spc{X}$.
+
+\begin{subthm}{ex:extension-of-extension:а}
+Show that 
+\[\bar f(y)
+\df
+\inf_{x\in \spc{X}} \{\,f(x)+\dist{x}{y}{\spc{Y}}\,\}\]
+defines an extension function on $\spc{Y}$.
+\end{subthm}
+
+\begin{subthm}{}
+Assume that $\diam \spc{Y}\le d$ and $f(x)\le d$ for any $x\in  \spc{X}$.
+Show that 
+\[\bar f_d
+\df
+\min \{\, \bar f,d\,\}\]
+is a $d$-extension function on $\spc{Y}$.
+\end{subthm}
+
+
+\end{thm}
+
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -141,9 +164,10 @@ Any finite subspace $\spc{F}$ of $\spc{X}_\infty$ lies in some $\spc{X}_n$ for $
 By construction, there is a point $p\in \spc{X}_{n+1}$ that meets the condition in \ref{def:finite+1} for any extension function $f\:\spc{F}\to\RR$.
 That is, $\spc{X}_\infty$ has the $d$-extension property.
 
-The construction of a separable metric space with the extension property requires only minor changes.
+The construction of a separable metric space with the extension property requires only two changes.
 First, the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
-Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$.
+Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$
+(here on has to apply \ref{ex:extension-of-extension:а}).
 \qeds
 
 \begin{thm}{Proposition}\label{prop:completion-univeral}
@@ -161,9 +185,7 @@ that is, if $\spc{F}\z\subset\spc{U}$ is a finite set, $\eps>0$, and $f\:\spc{F}
 there exists $p\in \spc{U}$ such that
 \[\dist{p}{x}{}\lg f(x)\pm\eps\eqlbl{eq:|p-x|><f(x)}\]
 for any $x\in\spc{F}$.
-Indeed, let us extend $f$ to the whole $\spc{X}$ by setting 
-\[\bar f(z)=\inf\set{f(x)+\dist{x}{z}{}}{x\in\spc{F}}.\]
-Observe that $\bar f$ is an extension function.
+Indeed, let us extend $f$ to an extension function $\bar f\:\spc{U}\to\RR$ as in \ref{ex:extension-of-extension}.
 Since $\spc{V}$ is dense in $\spc{U}$, we can choose a finite set $\spc{F}'\in \spc{V}$ such that for any $x\in \spc{F}$ there is $x'\in \spc{F}'$ with $\dist{x}{x'}{}<\tfrac\eps2$.
 It remains to observe that the point $p$ provided by the extension property for the restriction $\bar f|_{\spc{F}'}$ meets \ref{eq:|p-x|><f(x)}.
 
@@ -181,7 +203,7 @@ Observe that $f_n$ is an extension function for large $n$ and
 $f_n(p_n)\z<\tfrac1{2^n}$.
 Therefore, applying the approximate extension property recursively we get~\ref{eq:|pn-pn|}.
 
-By \ref{eq:|pn-pn|}, $(p_n)$ is a Cauchy sequence and its limit meets the condition in the definition of extension property (\ref{def:finite+1}).
+By \ref{eq:|pn-pn|}, the sequence $p_n$ is Cauchy and its limit meets the condition in the definition of extension property (\ref{def:finite+1}).
 \qeds
 
 Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply the following:

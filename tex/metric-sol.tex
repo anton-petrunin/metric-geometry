@@ -28,15 +28,15 @@ Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that
 \[\dist{x}{x'}{}< \rho(x)
 \quad\text{and}\quad
 \rho(x')\le\frac{\rho(x)}{1+\eps}.\]
-Consider a sequence of points $(x_n)$ such that $x_{n+1}\z=x_n'$.
+Consider a sequence $x_n$ of points such that $x_{n+1}\z=x_n'$.
 Clearly, 
 \[\dist{x_{n+1}}{x_n}{}
 \le
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
 \quad\hbox{and}\quad
 \rho(x_n)\le \frac{\rho(x_0)}{(1+\eps)^n}.\] 
-Therefore, $(x_n)$ is Cauchy.
-Since $\spc{X}$ is complete, the sequence $(x_n)$ converges;
+Therefore, the sequence $x_n$ is Cauchy.
+Since $\spc{X}$ is complete, $x_n$ converges;
 denote its limit by $x_\infty$.
 Since $\rho$ is a continuous function we get
 \begin{align*}\rho(x_\infty)&=\lim_{n\to\infty}\rho(x_n)=
@@ -47,9 +47,9 @@ The latter contradicts that $\rho>0$.
 
 \parbf{\ref{ex:complete-completion}.}
 Let $\bar {\spc{X}}$ be completion of $\spc{X}$.
-By the definition, for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $(x_n)$ in  $\spc{X}$ that converges to $y$.
+By the definition, for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $x_n$ in  $\spc{X}$ that converges to $y$.
 
-Choose a Cauchy sequence $(y_m)$ in $\bar {\spc{X}}$.
+Choose a Cauchy sequence $y_m$ in $\bar {\spc{X}}$.
 From above, we can choose points $x_{n,m}\in \spc{X}$ such that $x_{n,m}\to y_m$ for any $m$.
 Choose $z_m=x_{n_m,m}$ such that $|y_m-z_m|<\tfrac1m$.
 Observe that $z_m$ is Cauchy.
@@ -198,9 +198,9 @@ Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compa
 \parit{Source:} This problem was suggested by Eugene Bilokopytov \cite{bilokopytov}.
 
 \parbf{\ref{ex:compact=>complete}.}
-Choose a Cauchy sequence $(x_n)$ in $(\spc{X},\|*-*\|)$; it is sufficient to show that a subsequence of $(x_n)$ converges.
+Choose a Cauchy sequence $x_n$ in $(\spc{X},\|*-*\|)$; it is sufficient to show that a subsequence of $x_n$ converges.
 
-Note that the sequence $(x_n)$ is Cauchy in $(\spc{X},|*-*|)$;
+Note that the sequence $x_n$ is Cauchy in $(\spc{X},|*-*|)$;
 denote its limit by $x_\infty$.
 
 Passing to a subsequence, we can assume that $\|x_n-x_{n+1}\|\z<\tfrac1{2^n}$.

@@ -67,7 +67,7 @@ and a map $f\:\NN\to \spc{X}$ there is a unique continuous map $\bar f\:\beta\NN
 Further, we will need the existence of a nonprincipal  ultrafilter $\omega$,
 which we fix once and for all.
 
-Assume $(x_n)$ is a sequence of points in a metric space $\spc{X}$. 
+Assume $x_n$ is a sequence of points in a metric space $\spc{X}$. 
 Let us define the \index{$\omega$-limit}\emph{$\omega$-limit} of $(x_n)$ as the point $x_\omega$ 
 such that for any $\eps>0$, $\omega$-almost all elements of $(x_n)$ lie in $\oBall(x_\omega,\eps)$; 
 that is,
@@ -80,7 +80,7 @@ x_n\to x_\omega\ \text{as}\ n\to\omega.\]
 For example, if $\omega$ is the {}\emph{principal} ultrafilter such that $\omega\{n\}=1$ for some $n\in\NN$, then
 $x_\omega=x_n$.
 
-Alternatively, the sequence $(x_n)$ can be regarded as a map $\NN\to\spc{X}$.
+Alternatively, the sequence $x_n$ can be regarded as a map $\NN\to\spc{X}$.
 In this case, the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
 Then the $\omega$-limit $x_\omega$ can be regarded as the image of $\omega$.
 
@@ -92,9 +92,9 @@ For example, sequence $y_n=-(-1)^n$ is a subsequence of $x_n=(-1)^n$, but for an
 
 \begin{thm}{Proposition}\label{prop:ultra/partial}
 Let $\omega$ be a nonprincipal ultrafilter.
-Assume $(x_n)$ is a sequence of points in a metric space $\spc{X}$
+Assume $x_n$ is a sequence of points in a metric space $\spc{X}$
 and $x_n\to  x_\omega$ as $n\to\omega$.
-Then $x_\omega$ is a partial limit of the sequence $(x_n)$;
+Then $x_\omega$ is a partial limit of the sequence $x_n$;
 that is, there is a subsequence $(x_n)_{n\in S}$ that converges to $x_\omega$ in the usual sense.
 \end{thm}
 
@@ -104,7 +104,7 @@ set $S_\eps=\set{n\in\NN}{\dist{x_n}{x_\omega}{}<\eps}$.
 
 Note that $\omega(S_\eps)=1$ for any $\eps>0$.
 Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite.
-Therefore, we can choose an increasing sequence $(n_k)$
+Therefore, we can choose an increasing sequence $n_k$
 such that $n_k\in S_{\frac1k}$ for each $k\in \NN$.
 Clearly, $x_{n_k}\to x_\omega$ as $k\to\infty$.
 \qeds
@@ -117,7 +117,7 @@ it can be proved the same way.
 \begin{thm}{Proposition}\label{prop:ultra/compact}
 Let $\spc{X}$ be a compact metric space.
 Then
-any sequence of points $(x_n)$ in $\spc{X}$ has a unique $\omega$-limit $x_\omega$.
+any sequence $x_n$ of points in $\spc{X}$ has a unique $\omega$-limit $x_\omega$.
 
 In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 \end{thm}
@@ -125,14 +125,14 @@ In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 The following lemma is an ultralimit analog of the Cauchy convergence test.
 
 \begin{thm}{Lemma}\label{lem:X-X^w}
-Let $(x_n)$ be a sequence of points in a complete space~$\spc{X}$. 
-Assume for each subsequence $(y_n)$ of $(x_n)$, 
+Let $x_n$ be a sequence of points in a complete space~$\spc{X}$. 
+Assume for each subsequence $y_n$ of $x_n$, 
 the $\omega$-limit 
 \[y_\omega=\lim_{n\to\omega}y_{n}\in \spc{X}\]
-is defined and does not depend on the choice of subsequence, then the sequence $(x_n)$ converges in the usual sense.
+is defined and does not depend on the choice of subsequence, then the sequence $x_n$ converges in the usual sense.
 \end{thm}
 
-\parit{Proof.} If $(x_n)$ is not a Cauchy sequence, then for some $\eps>0$, there is a subsequence $(y_n)$ of $(x_n)$ such that $\dist{x_n}{y_n}{}\ge\eps$ for all $n$.
+\parit{Proof.} If $x_n$ is not a Cauchy sequence, then for some $\eps>0$, there is a subsequence $y_n$ of $x_n$ such that $\dist{x_n}{y_n}{}\ge\eps$ for all $n$.
 
 It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$, a contradiction.\qeds
 

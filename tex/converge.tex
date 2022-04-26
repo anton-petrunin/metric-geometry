@@ -91,8 +91,8 @@ so is $\Haus\spc{X}$.
 The Hausdorff metric can be used to define convergence.
 Namely, suppose $K_1,K_2,\dots$, and $K_\infty$ are compact sets in a metric space $\spc{X}$.
 If $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$, then we say that 
-the sequence $(K_n)$ {}\emph{converges} to $K_\infty$ \index{convergence in the sense of Hausdorff}\emph{in the sense of Hausdorff};
-or we can say that $K_\infty$ is \emph{Hausdorff limit} of the sequence $(K_n)$.
+the sequence $K_n$ {}\emph{converges} to $K_\infty$ \index{convergence in the sense of Hausdorff}\emph{in the sense of Hausdorff};
+or we can say that $K_\infty$ is \emph{Hausdorff limit} of the sequence $K_n$.
 
 Note that the theorem implies that from any sequence of compact sets in $\spc{X}$ one can select a subsequence that converges in the sense of Hausdorff; 
 for that reason, it is called a \emph{selection} theorem. 
@@ -259,9 +259,9 @@ This refinement is also called \index{Hausdorff convergence}\emph{Hausdorff conv
 in fact, it takes an intermediate place between the original Hausdorff convergence and {}\emph{closed convergence}, also introduced by Hausdorff in \cite{hausdorff}.
 
 \begin{thm}{Definition}\label{def:gen-Haus-conv}
-Let $(A_n)$ be a sequence of closed sets in a metric space $\spc{X}$.
-We say that $(A_n)$ converges to a closed set $A_\infty$ in the sense of Hausdorff if for any $x\in\spc{X}$, we have
-$\distfun_{A_n}(x)\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
+Let $A_1,A_2,\dots$ be a sequence of closed sets in a metric space $\spc{X}$.
+We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense of Hausdorff if for any $x\in\spc{X}$, we have
+$\distfun_{A_n}(x)\z\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
 \end{thm}
 
 For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(n,0)$.
@@ -271,10 +271,10 @@ The following exercise is analogous to the Blaschke selection theorem (\ref{thm:
 
 \begin{thm}{Exercise}\label{ex:generalized-selection}
 Let $\spc{X}$ be a proper metric space
-and $(A_n)_{n=1}^\infty$ be a sequence of closed sets in~$\spc{X}$.
+and $A_1,A_2,\dots$ be a sequence of closed sets in~$\spc{X}$.
 Assume that for some (and therefore any) point  $x\in\spc{X}$, 
 the sequence $a_n=\distfun_{A_n}(x)$ is bounded.
-Show that the sequence  $(A_n)_{n=1}^\infty$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
+Show that the sequence  $A_1,A_2,\dots$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
 \end{thm}
 
 \chapter{Space of spaces}
@@ -454,7 +454,7 @@ By \ref{ex:eps-isom:GH>isom}, for each positive integer $n$, we can choose a $\t
 Since $\spc{X}$ is compact, 
 we can choose a countable dense set
 $S$ in~$\spc{X}$.
-Applying the diagonal procedure if necessary, we can assume that for every $x \in S$ the sequence $(f_n(x))$ 
+Applying the diagonal procedure if necessary, we can assume that for every $x \in S$ the sequence $f_n(x)$ 
 converges in $\spc{Y}$. 
 Consider the pointwise limit map  $f_\infty \: S \to \spc{Y}$,
  $$f_\infty(x) \df \lim_{n\to\infty} f_n (x)$$ for every $x \in S$. 
@@ -469,12 +469,12 @@ Therefore, $f_\infty$ can be extended to a distance-preserving map from the whol
 
 The latter can be done by setting 
 $$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$ 
-for some sequence of points $(x_n)$ in $S$
+for some sequence $x_n$ of points  in $S$
 that converges to $x$ in $\spc{X}$.
-Indeed, if $x_n\to x$, then $(x_n)$ is Cauchy.
+Indeed, if $x_n\to x$, then the sequence $x_n$ is Cauchy.
 Since $f_\infty$ is distance-preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
 therefore it converges.
-It remains to observe that this construction does not depend on the choice of the sequence $(x_n)$.
+It remains to observe that this construction does not depend on the choice of the sequence $x_n$.
 
 This way we obtain a distance-preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
 It remains to show that $f_\infty$ is surjective; that is, $f_\infty(\spc{X})=\spc{Y}$.
@@ -628,7 +628,7 @@ this way the subsets $A$ and $A'$ will be identified and denoted further by~$A$.
 Note that $A=\spc{U}\cap \spc{V}\subset \spc{W}$.
 
 \parit{Proof.}
-Let $(\spc{X}_n)$ be a Cauchy sequence in $\GH$.
+Let $\spc{X}_1,\spc{X}_2,\dots$ be a Cauchy sequence in $\GH$.
 Passing to a subsequence if necessary, 
 we can assume that $|\spc{X}_n-\spc{X}_{n+1}|_{\GH}<\tfrac1{2^n}$ for each~$n$.
 In particular, for each $n$ there is a metric space $\spc{V}_n$ with distance preserving inclusions $\spc{X}_n\hookrightarrow \spc{V}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{V}_n$ such that
@@ -651,7 +651,7 @@ Observe that the union $\spc{X}_1\z\cup \spc{X}_2\cup\z\dots\cup \spc{X}_n$ is c
 Whence $\bar{\spc{W}}$ is compact; see \ref{totally-bounded} and \ref{ex:compact-net}.
 
 Applying Blaschke selection theorem (\ref{thm:compact+Hausdorff}),
-we can pass to a subsequence of $(\spc{X}_n)$ that converges in $\Haus\bar{\spc{W}}$; denote its limit by $\spc{X}_\infty$.
+we can pass to a subsequence of $\spc{X}_n$ that converges in $\Haus\bar{\spc{W}}$; denote its limit by $\spc{X}_\infty$.
 It remains to observe that $\spc{X}_\infty$ is the Gromov--Hausdorff limit of $(\spc{X}_n)$.
 \qeds
 
@@ -670,7 +670,7 @@ Observe that $\pack_{\delta} \spc{X}_\infty=\infty$.
 Therefore, $\spc{X}_\infty$ is not compact --- a contradiction.
 
 \parit{``If'' part.}
-Suppose sequence $(\eps_n)$ as in the definition of uniformly totally bonded families (\ref{def:utb}).
+Let $\eps_n$ be a sequence as in the definition of uniformly totally bonded families (\ref{def:utb}).
 
 Note that $\diam \spc{X}\le \eps_1$ for any $\spc{X}\in \spc{Q}$.
 Given a positive integer $n$ consider the set of all metric spaces $\spc{W}_n$
