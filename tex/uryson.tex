@@ -121,21 +121,6 @@ is a $d$-extension function on $\spc{Y}$.
 
 \end{thm}
 
-\begin{thm}{Exercise}
-Let $\spc{X}$ be a metric space with $\diam\spc{X}\le d$.
-Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
-Show that 
-
-\begin{subthm}{}
-$x\mapsto \distfun_x$ defines a distance preserving inclusion $\spc{X} \hookrightarrow\spc{X}^d$, and
-\end{subthm}
-
-\begin{subthm}{}
-any isometry $f\: \spc{X}\to \spc{X}$ can be extended to a unique isometry $f^d\: \spc{X}^d\to \spc{X}^d$.
-\end{subthm}
-
-\end{thm}
-
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -226,6 +211,24 @@ Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply
 Urysohn space and $d$-Urysohn space for any $d>0$ exist.
 \end{thm}
 
+Here is a slightly stronger statement:
+
+\begin{thm}{Theorem}\label{thm:urysohn-exists+}
+Any separable metric space $\spc{X}$ admits a distance-preserving embedding into a Urysohn space $\spc{U}$ such that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{U}$.
+\end{thm}
+
+\parit{Sketch of proof.}
+Denote by $\spc{X}^\infty$ the space of all extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
+Note that $x\mapsto \distfun_x$ defines a distance preserving inclusion $\spc{X} \hookrightarrow\spc{X}^\infty$, and
+any isometry $f\: \spc{X}\to \spc{X}$ can be extended to a unique isometry $F\: \spc{X}^\infty\to \spc{X}^\infty$.
+
+Note that for arbitrary separable space $\spc{X}=\spc{X}_0$ one can construct a nested sequence of spaces 
+\[\spc{X}_0\subset \spc{X}_1\subset\dots\]
+such that $\spc{X}_{n+1}=\spc{X}_{n}^\infty$.
+It is easy to modify the proofs of \ref{prop:univeral-separable} and \ref{prop:completion-univeral} to show that of the completion of the union $\bigcup_n\spc{X}_{n}$ is an Urysohn space $\spc{U}$ that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
+\qeds
+
+
 \section{Universality}
 
 A metric space will be called \emph{universal} if it includes as a subspace an isometric copy of any separable metric space.
@@ -297,6 +300,8 @@ While \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\s
 it does not solely imply the existence of an isometry $\spc{U}\leftrightarrow \spc{U}'$.
 Its construction uses the idea of \ref{prop:sep-in-urys}, but it is applied {}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
 
+At this point one might wonder what is topology of Urysohn space.
+This question was answered by Vladimir Uspenskij \cite{uspenskij}: \textit{the Urysohn space is homeomorphic to the countable product of the real lines}.
 
 \parit{Proof.}
 Choose dense sequences $a_1,a_2,\dots\in \spc{U}$ and $b'_1,b'_2,\dots\in \spc{U}'$.
@@ -360,6 +365,26 @@ Then any distance-preserving map $K\to \spc{U}$ can be extended to an isometry o
 A proof can be obtained by modifying the proofs of \ref{prop:completion-univeral} and \ref{thm:urysohn-unique}
 the same way as it is done in \ref{ex:compact-extension}.
 
+The followinf exercise answers a question posted by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
+It was solved by Miroslav Katětov \cite{katetov};
+long after his example, it was again mentioned as an open question \cite[p. 83]{gromov-2007}.
+
+\begin{thm}{Exercise}\label{ex:katetov}
+
+\begin{subthm}{ex:katetov:inclusion}
+Show that here is a distance-preserving inclusion of the Urysohn space $\iota\:\spc{U}\hookrightarrow \spc{U}$ 
+such that $\iota(\spc{U})$ is nowhere dense in $\spc{U}$ and for any isometry of $\iota(\spc{U})$ 
+can be extended to an isometry of the whole~$\spc{U}$.
+\end{subthm}
+
+\begin{subthm}{ex:katetov:sol}
+Consider a nested sequence $\spc{U}_0\subset \spc{U}_1\subset\dots$ of Urysohn spaces 
+with each inclusion $\spc{U}_n\hookrightarrow \spc{U}_{n+1}$ as in \ref{SHORT.ex:katetov:inclusion}.
+Show that the union $\bigcup_n\spc{U}_n$ is a noncomplete finite-set homogeneous metric space that meets the extension property.
+\end{subthm}
+
+\end{thm}
+
 \begin{thm}{Exercise}\label{ex:homogeneous}
 Which of the following metric spaces are 
 1-point set homogeneous, finite set homogeneous, compact set homogeneous, countable homogeneous?
@@ -392,22 +417,6 @@ Pavel Urysohn~\cite{urysohn}.
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called {}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.
 In fact, Urysohn space can be considered as the random metric space \cite{vershik}.
-
-The Urysohn space is homeomorphic to the countable product of the real lines;
-it was proved by Vladimir Uspenskij \cite{uspenskij}.
-
-It turns out that \textit{there are noncomplete finite-set homogeneous metric space that meets the extension property}. 
-This question was originally posted by Pavel Urysohn \cite[§$2(6)$]{urysohn} and 
-anwered by Miroslav Katětov \cite{katetov};
-long after his example, it was again mentioned as an open question \cite[p. 83]{gromov-2007}.
-
-\parit{Sketch of Katětov's construction.}
-Note that we essentially produced a construction of a $d$-Urysohn space from a given separable metric space $\spc{X}$ with diameter~$d$.
-Denote it by $\spc{U}_d(\spc{X})$, note that $\spc{X}$ can be considered as a subspace of $\spc{U}_d(\spc{X})$.
-
-This construction can be applied recursively; it produces a nested sequence of Urysohn spaces $\spc{X}_1\subset\spc{X}_2\subset\dots$ such that $\spc{X}_{n+1}=\spc{U}_d(\spc{X}_n)$ for any $n$.
-The union $\bigcup_n\spc{X}_n$ is the needed example.
-\qeds
 
 
 
