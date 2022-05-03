@@ -119,6 +119,20 @@ Show that
 is a $d$-extension function on $\spc{Y}$.
 \end{subthm}
 
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\spc{X}$ be a metric space with $\diam\spc{X}\le d$.
+Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
+Show that 
+
+\begin{subthm}{}
+$x\mapsto \distfun_x$ defines a distance preserving inclusion $\spc{X} \hookrightarrow\spc{X}^d$, and
+\end{subthm}
+
+\begin{subthm}{}
+any isometry $f\: \spc{X}\to \spc{X}$ can be extended to a unique isometry $f^d\: \spc{X}^d\to \spc{X}^d$.
+\end{subthm}
 
 \end{thm}
 
@@ -311,14 +325,6 @@ Observe that \ref{thm:urysohn-unique} implies that the Urysohn space (as well as
  \item any distance-preserving map from a finite subset to the whole space can be extended to an isometry.
 \end{itemize}
 
-\begin{thm}{Open question}
-Is there a {}\emph{noncomplete} finite-set homogeneous metric space that meets the extension property?
-\end{thm}
-
-This is a question of Pavel Urysohn; it appeared already in \cite[§$2(6)$]{urysohn} 
-and reappeared in \cite[p. 83]{gromov-2007} with a missing keyword.
-In fact, I do not see an example of a 1-point homogeneous space that meets the extension property.
-
 Recall that $S_r(p)_{\spc{X}}$ denotes the sphere of radius $r$ centered at $p$ in a metric space $\spc{X}$;
 that is, 
 $$S_r(p)_{\spc{X}}=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}=r}.$$
@@ -385,3 +391,23 @@ Pavel Urysohn~\cite{urysohn}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called {}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.
+In fact, Urysohn space can be considered as the random metric space \cite{vershik}.
+
+The Urysohn space is homeomorphic to the countable product of the real lines;
+it was proved by Vladimir Uspenskij \cite{uspenskij}.
+
+It turns out that \textit{there are noncomplete finite-set homogeneous metric space that meets the extension property}. 
+This question was originally posted by Pavel Urysohn \cite[§$2(6)$]{urysohn} and 
+anwered by Miroslav Katětov \cite{katetov};
+long after his example, it was again mentioned as an open question \cite[p. 83]{gromov-2007}.
+
+\parit{Sketch of Katětov's construction.}
+Note that we essentially produced a construction of a $d$-Urysohn space from a given separable metric space $\spc{X}$ with diameter~$d$.
+Denote it by $\spc{U}_d(\spc{X})$, note that $\spc{X}$ can be considered as a subspace of $\spc{U}_d(\spc{X})$.
+
+This construction can be applied recursively; it produces a nested sequence of Urysohn spaces $\spc{X}_1\subset\spc{X}_2\subset\dots$ such that $\spc{X}_{n+1}=\spc{U}_d(\spc{X}_n)$ for any $n$.
+The union $\bigcup_n\spc{X}_n$ is the needed example.
+\qeds
+
+
+
