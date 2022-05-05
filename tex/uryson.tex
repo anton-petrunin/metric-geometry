@@ -121,6 +121,7 @@ is a $d$-extension function on $\spc{Y}$.
 
 \end{thm}
 
+The functions $\bar f$ and $\bar f_d$ in the above exercise are called \emph{Katětov extensions} of $f$.
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -220,12 +221,15 @@ Any separable metric space $\spc{X}$ admits a distance-preserving embedding into
 \parit{Sketch of proof.}
 Denote by $\spc{X}^\infty$ the space of all extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
 Note that $x\mapsto \distfun_x$ defines a distance preserving inclusion $\spc{X} \hookrightarrow\spc{X}^\infty$, and
-any isometry $f\: \spc{X}\to \spc{X}$ can be extended to a unique isometry $F\: \spc{X}^\infty\to \spc{X}^\infty$.
+any isometry $\spc{X}\to \spc{X}$ can be extended to a unique isometry $\spc{X}^\infty\z\to \spc{X}^\infty$.
 
-Note that for arbitrary separable space $\spc{X}=\spc{X}_0$ one can construct a nested sequence of spaces 
+Given a separable metric space $\spc{X}=\spc{X}_0$ consider a nested sequence of spaces 
 \[\spc{X}_0\subset \spc{X}_1\subset\dots\]
 such that $\spc{X}_{n+1}=\spc{X}_{n}^\infty$.
-It is easy to modify the proofs of \ref{prop:univeral-separable} and \ref{prop:completion-univeral} to show that of the completion of the union $\bigcup_n\spc{X}_{n}$ is an Urysohn space $\spc{U}$ that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
+It is easy to modify the proofs of \ref{prop:univeral-separable} and \ref{prop:completion-univeral} to show that of the completion of the union $\bigcup_n\spc{X}_{n}$ is an Urysohn space, say $\spc{U}$, that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
+
+From above, for any isometry $f\: \spc{X}\to \spc{X}$ there is a unique sequence of isometries $f_{n}\: \spc{X}_{n}\to \spc{X}_{n}$ such that $f_{n+1}$ is an extension of $f_n$ for any $n$.
+Passing to a limit we get an isometry of $\spc{U}$.
 \qeds
 
 
@@ -286,6 +290,8 @@ a distance-preserving map on whole $\spc{S}$.
 \begin{thm}{Exercise}\label{ex:sc-urysohn}
 Show that ($d$-) Urysohn space is simply connected.
 \end{thm}
+
+
 
 \section{Uniqueness and homogeneity}
 
@@ -353,6 +359,7 @@ Show that the subset $M\subset\spc{U}_d$ of midpoints between $p$ and $q$ is iso
 Show that $\spc{U}_d$ is \emph{not} countable-set homogeneous;
 that is, there is a distance-preserving map from a countable subset of $\spc{U}_d$ to $\spc{U}_d$ that cannot be extended to an isometry of $\spc{U}_d$.
 \end{subthm}
+
 \end{thm}
 
 In fact, the Urysohn space is compact-set homogeneous; more precisely the following theorem holds.
@@ -368,6 +375,21 @@ the same way as it is done in \ref{ex:compact-extension}.
 The followinf exercise answers a question posted by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
 It was solved by Miroslav Katětov \cite{katetov};
 long after his example, it was again mentioned as an open question \cite[p. 83]{gromov-2007}.
+
+\begin{thm}{Exercise}\label{ex:shere}
+Let $S$ be a unit sphere in the Urysohn space $\spc{U}$.
+Show that for any two distinct points $x,y\in \spc{U}$ there is a point $z\in S$ such that 
+$\dist{x}{z}{}\ne \dist{y}{z}{}$.
+
+Conclude that two isometries of $\spc{U}$ coincide if they coincide on $S$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:ext(shere)}
+Let $B$ be an open unit ball in the Urysohn space $\spc{U}$.
+Show that $\spc{U}\setminus B$ is isometric to $\spc{U}$.
+
+Use it to construct an isometry of a unit sphere $S$ in $\spc{U}$ that cannot be extended to an isometry of $\spc{U}$.
+\end{thm}
 
 \begin{thm}{Exercise}\label{ex:katetov}
 
