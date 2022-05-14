@@ -1285,9 +1285,9 @@ beginfig(910)
 save u,p,n;
 path p[];
 u:=1cm;
-n=5;
+n=10;
 
-p0=(0,0)*u{1,-.5}..{1,-.5}(5,0)*u;
+p0=(0,0)*u--(5,0)*u;
 
 draw p0;
 
@@ -1296,10 +1296,10 @@ draw circle(point i of p0, .7*u);
 dOt point i of p0;
 endfor
 
-label.lft(btex $\spc{B}^0$ etex, point 0 of p0);
-label.bot(btex $\spc{B}^1$ etex, point 1/n of p0);
-label.bot(btex $\dots$ etex rotated angle(direction 3/n of p0), (2,-1)+point 3/n of p0);
-label.rt(btex $\spc{B}^n$ etex, point 1 of p0);
+whitelabel.lft(btex $\spc{B}^0$ etex,(-4,0) +point 0 of p0);
+whitelabel.bot(btex $\spc{B}^1$ etex, (0,-4) +point 1/n of p0);
+whitelabel.bot(btex $\dots$ etex rotated angle(direction (n+1)/(2*n) of p0), (2,-1)+point (n+1)/(2*n) of p0);
+whitelabel.rt(btex $\spc{B}^n$ etex, (4,0) +point 1 of p0);
 endfig;
 
 beginfig(930) 

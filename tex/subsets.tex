@@ -523,7 +523,7 @@ The following exercise shows that the analogous statement does not hold in highe
 
 \begin{thm}{Exercise}\label{ex:two-planes}
 Let $\Pi_1,\Pi_2$ be two planes in $\EE^4$ intersecting at a single point.
-Let $\tilde K$ be the completion of the universal metric cover of $\EE^4\backslash(\Pi_1\cup\Pi_2)$.
+Let $\tilde K$ be the completion of the universal metric cover of $\EE^4\setminus(\Pi_1\cup\Pi_2)$.
 
 Show that 
 $\tilde K$ is $\CAT(0)$ if and only if $\Pi_1\perp\Pi_2$.
@@ -649,7 +649,7 @@ Show that any closed path of length $<2\cdot \pi$  in the units sphere $\mathbb{
 Assume $\Omega$ is an open subset in $\EE^3$
 that is not two-convex.
 Show that there is a plane $W$ such that the complement 
-$W\backslash \Omega$ contains an isolated point and a small circle around this point in $W$ is contractible in $\Omega$.
+$W\setminus \Omega$ contains an isolated point and a small circle around this point in $W$ is contractible in $\Omega$.
 \end{thm}
 
 \parit{Proof of \ref{lem:poly-shefel}.}
@@ -668,7 +668,7 @@ Note that $K$ is a polyhedral space and the covering $\tilde\Omega\to\Omega$ ext
 the space of directions at $p$,
 is not simply connected and $\tilde K\to K$ branches at~$p$.}
 
-Fix a point $\tilde p\in \tilde K\backslash\tilde\Omega$; 
+Fix a point $\tilde p\in \tilde K\setminus\tilde\Omega$; 
 denote by $p$ the image of $\tilde p$ in~$K$.
 Note that  $\tilde K$ is a ramified cover of $K$ and hence is locally contractible. Thus, any loop in $\tilde K$ is homotopic to a loop in $\tilde\Omega$ which is simply connected.
 Therefore $\tilde K$ is simply connected too.
@@ -730,7 +730,7 @@ $\Omega=\Omega_0\subset\Omega_1\subset\dots$
 such that 
 $\Omega_n$ is the union of $\Omega_{n-1}$ 
 and all the bounded components of 
-$\EE^3\backslash(\Pi_n\cup \Omega_{n-1})$.
+$\EE^3\setminus(\Pi_n\cup \Omega_{n-1})$.
 Then 
 \[\Conv_2\Omega=\bigcup_n\Omega_n.\]
 
@@ -744,15 +744,15 @@ Note that $\Omega'$ is a union of open sets, in particular $\Omega'$ is open.
 Let us show that  
 \[\Conv_2\Omega\supset\Omega'.\eqlbl{eq:Conv2>Omega'}\]
 Suppose we already know that  $\Conv_2\Omega\supset\Omega_{n-1}$. 
-Fix a bounded component $\mathfrak{C}$ of $\EE^3\backslash(\Pi_n\cup \Omega_{n-1})$.
+Fix a bounded component $\mathfrak{C}$ of $\EE^3\setminus(\Pi_n\cup \Omega_{n-1})$.
 It is sufficient to show that $\mathfrak{C}\subset\Conv_2\Omega$.
 
 By \ref{prop:two-hull-open}, $\Conv_2\Omega$ is open.
 Therefore, if $\mathfrak{C}\not\subset\Conv_2\Omega$,
-then there is a point $p\in \mathfrak{C}\backslash\Conv_2\Omega$ lying at maximal distance from~$\Pi_n$.
+then there is a point $p\in \mathfrak{C}\setminus\Conv_2\Omega$ lying at maximal distance from~$\Pi_n$.
 Denote by $W_p$ the plane containing $p$ which is parallel to~$\Pi_n$.
 
-Note that $p$ lies in a bounded component of $W_p\backslash \Conv_2\Omega$.
+Note that $p$ lies in a bounded component of $W_p\setminus \Conv_2\Omega$.
 In particular $p$ can be surrounded by a simple closed curve $\gamma$ in $W_p\cap\Conv_2\Omega$.
 Since $p$ lies at maximal distance from $\Pi_n$,
 the curve $\gamma$ is null-homotopic in $\Conv_2\Omega$.
@@ -788,7 +788,7 @@ By subdividing $F_i$ if necessary, we may assume that all $F_i$ are convex polyg
 Set $\Omega'=\Conv_2\Omega$ and let $P'$ be the closure of~$\Omega'$.
 Further, 
 for each $i$, 
-set $F'_i=F_i\backslash \Omega'$.
+set $F'_i=F_i\setminus \Omega'$.
 In other words, 
 $F'_i$ is the subset of the facet $F_i$ 
 which remains on the boundary of~$P'$.
@@ -802,7 +802,7 @@ $F'_i$ is  a convex subset of~$F_i$.
 Further, since $\Omega'$ is two-convex we obtain the following:
 
 \begin{clm}{}\label{clm:complement-of-F'-convex}
-Each connected component of the complement $F_i\backslash F'_i$ is convex.
+Each connected component of the complement $F_i\setminus F'_i$ is convex.
 \end{clm}
 
 {
@@ -813,7 +813,7 @@ Each connected component of the complement $F_i\backslash F'_i$ is convex.
 \includegraphics{mppics/pic-1209}
 \end{wrapfigure}
 
-Indeed, assume a connected component $A$ of $F_i\backslash F'_i$ fails to be convex.
+Indeed, assume a connected component $A$ of $F_i\setminus F'_i$ fails to be convex.
 Then there is a supporting line $\ell$ to $F'_i$ touching $F'_i$ at a single point in the interior of~$F_i$.
 Then one could rotate the plane of $F_i$ slightly around $\ell$ and move it parallelly to cut a ``cap'' from the complement of~$\Omega$.  
 The latter means that $\Omega$ is not two-convex, 
@@ -827,10 +827,10 @@ From \ref{clm:F'-convex} and \ref{clm:complement-of-F'-convex}, we conclude
 \end{clm}
 
 Consider the complement 
-$\EE^3\backslash \Omega$ 
+$\EE^3\setminus \Omega$ 
 equipped with the length metric.
 By construction of the two-convex hull (\ref{prop:2-conv-construction}), 
-the complement $L\z=\EE^3\backslash (\Omega'\cup P)$
+the complement $L\z=\EE^3\setminus (\Omega'\cup P)$
 is locally convex;
 that is, any point of $L$ admits a convex neighborhood.
 

@@ -17,7 +17,7 @@ a \index{partition of unity}\emph{partition of unity subordinate to the covering
 \parit{Proof.}
 Denote by $\phi_i(x)$ the distance from $x$ to the complement of $V_i$;
 that is,
-$$\phi_i(x)=\distfun_{{\spc{X}}\backslash V_i}(x).$$
+$$\phi_i(x)=\distfun_{{\spc{X}}\setminus V_i}(x).$$
 Note $\phi_i$ is $1$-Lipschitz
 for any $i$
 and $\phi_i(x)>0$ if and only if $x\in V_i$.
@@ -220,7 +220,7 @@ holds for any $t\in S$.
 
 \begin{thm}{Definition}
 Let $\spc{P}$ be an $n$-dimensional Riemannian polyhedron.
-An $(n-1)$-dimensional subpolyhedron $\spc{Q}\subset\spc{P}$ is called \index{separating subpolyhedron}\emph{$R$-separating} if for each connected component $U$ of the complement $\spc{P}\backslash \spc{Q}$ we have 
+An $(n-1)$-dimensional subpolyhedron $\spc{Q}\subset\spc{P}$ is called \index{separating subpolyhedron}\emph{$R$-separating} if for each connected component $U$ of the complement $\spc{P}\setminus \spc{Q}$ we have 
 \[\rad U<R.\]
 
 \end{thm}
@@ -289,9 +289,9 @@ Note that $\{V_1,\dots,V_k\}$ can be converted into an open covering of
 a small neighbourhood of $\spc{Q}$ in $\spc{P}$ without increasing the multiplicity.
 This can be done by setting 
 \[V_i'=\bigcup_{x\in V_i}\oBall(x,r_x),\]
-where $r_x\df\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\backslash V_i}$.
+where $r_x\df\tfrac1{10}\cdot\inf\set{\dist{x}{y}{}}{y\in \spc{Q}\setminus V_i}$.
 
-By adding to  $\{V_i'\}$ all the components of $\spc{P}\backslash \spc{Q}$,
+By adding to  $\{V_i'\}$ all the components of $\spc{P}\setminus \spc{Q}$,
 we increase the multiplicity by at most 1 and obtain a covering of $\spc{P}$.
 The statement follows since $\dim \spc{P}= \dim \spc{Q}\z+1$.
 \qeds

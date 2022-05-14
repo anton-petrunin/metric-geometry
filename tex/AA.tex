@@ -635,8 +635,8 @@ In particular,
 that is the area formula holds for $S$.
 
 It remains to prove that 
-\[\int_{K\backslash S} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K\backslash S)} H_{K\backslash S}(\bm{y})\cdot d\bm{y}.\]
-Since $\jac_{\bm{x}}\bm{f}\ne 0$ for any $\bm{x}\in K\backslash S$, by inverse function theorem, the restriction of $\bm{f}$ to a neighborhood $U\ni\bm{x}$ has a smooth inverse.
+\[\int_{K\setminus S} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K\setminus S)} H_{K\setminus S}(\bm{y})\cdot d\bm{y}.\]
+Since $\jac_{\bm{x}}\bm{f}\ne 0$ for any $\bm{x}\in K\setminus S$, by inverse function theorem, the restriction of $\bm{f}$ to a neighborhood $U\ni\bm{x}$ has a smooth inverse.
 Therefore for any compact set $K'\subset U$ we have that
 \[\int_{K'}h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^{-1}(\bm{y}))\cdot d\bm{y}.\]
 It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
@@ -1348,7 +1348,7 @@ we could also write  $\Omega_n\to \Omega_\omega$ as $n\to\omega$ or $\Omega_\ome
 
 {\sloppy
 
-Applying Observation~\ref{obs:ultralimit-is-complete} to the sequence of complements $\spc{X}_n\backslash \Omega_n$, we see that $\Omega_\omega$ is open for any sequence $\Omega_n$.
+Applying Observation~\ref{obs:ultralimit-is-complete} to the sequence of complements $\spc{X}_n\setminus \Omega_n$, we see that $\Omega_\omega$ is open for any sequence $\Omega_n$.
 The definition can be applied for arbitrary sequences of sets, but  
 open $\omega$-convergence  will be applied here only for sequences of open sets.
 

@@ -262,7 +262,7 @@ such that a short map $f\:\spc{A}\to \spc{Y}$ cannot be extended to a short map 
 By Zorn's lemma, we may assume that $\spc{A}$ is a maximal subset; that is, the domain of $f$ cannot be enlarged by a single point.%
 \footnote{In this case, $\spc{A}$ must be closed, but we will not use it.}
 
-Fix a point $p$ in the complement $\spc{X}\backslash \spc{A}$.
+Fix a point $p$ in the complement $\spc{X}\setminus \spc{A}$.
 To extend $f$ to $p$, we need to choose $f(p)$ in the intersection of the balls 
 $\cBall[f(x),r(x)]$, where $r(x)=\dist{p}{x}{}$.
 Therefore, this intersection for all $x\in \spc{A}$ has to be empty.
@@ -362,7 +362,7 @@ Let us show that $\bar r$ is admissible; that is,
 \eqlbl{r-admissible}\]
 for any $f,g\in \Inj \spc{X}$.
 
-Since $r$ is admissible and $\bar r= r$ on $(\Inj \spc{X})\backslash \{p\}$, it is sufficient to prove \ref{r-admissible} if $f\ne g=p$.
+Since $r$ is admissible and $\bar r= r$ on $(\Inj \spc{X})\setminus \{p\}$, it is sufficient to prove \ref{r-admissible} if $f\ne g=p$.
 By \ref{eq:f(p)=|f-p|}, we have $\dist{f}{p}{\Inj \spc{X}}=f(p)$.
 Therefore, \ref{r-admissible} boils down to the following inequality
 \[r(f)+s(p)\ge f(p).\eqlbl{eq:r(f)+s(p)>=f(p)}\]
