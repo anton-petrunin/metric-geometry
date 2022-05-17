@@ -67,6 +67,14 @@ isbn=false]{biblatex}
 
 \def\emph{\ann}
 
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents*{section}[.5em]
+  {\small}
+  {\thecontentslabel.~{}}
+  {}
+  { \textbf{\thecontentspage}}
+  [; ][.]
+
 %LIST STILES
 \renewcommand{\@listI}{%
 \leftmargin=25pt

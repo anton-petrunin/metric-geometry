@@ -369,7 +369,7 @@ for all large $r$.
 
 \begin{thm}{Advanced exercise}\label{ex:GH-inj}
 Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces;
-denote by $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ their injective envelopes (see the definition on page \pageref{page:InjX}).
+denote by $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ their injective envelopes (see \ref{sec:extremal-functions}).
 Show that 
 \[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}\le 2\cdot|\spc{X}- \spc{Y}|_{\GH}.\] 
 
@@ -592,7 +592,7 @@ The following theorem is analogous to Blaschke selection theorems (\ref{thm:comp
 
 \begin{thm}{Gromov selection theorem}\label{thm:gromov-compactness}
 Let $\spc{Q}$ be a closed subset of $\GH$.
-Then $\spc{Q}$ is compact if and only if it is totally bounded.
+Then $\spc{Q}$ is compact if and only if the elements of $Q$ are uniformly totally bounded.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:GH-complete}
@@ -697,6 +697,12 @@ geodesic.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:GH-po}
+For two metric spaces $\spc{X}$ and $\spc{Y}$,
+we write $\spc{X}\le \spc{Y}+\eps$ if
+there is a map $f\:\spc{X}\to \spc{Y}$ such that 
+\[\dist{x}{x'}{\spc{X}}\le \dist{f(x)}{f(x')}{\spc{Y}}+\eps\]
+for any $x,x'\in \spc{X}$.
+
 \begin{subthm}{ex:GH-po:a}
 Show that 
 $$\dist{\spc{X}}{\spc{Y}}{\GH'}=\inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
