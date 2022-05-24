@@ -1,3 +1,125 @@
+\section{Almost isometries}\label{sec:alm-isom}
+
+\begin{thm}{Definition} Let $\spc{X}$ and $\spc{Y}$ be metric spaces and $\eps>0$. 
+A  map\footnote{possibly noncontinuous} $f\: \spc{X} \z\to \spc{Y}$ is called an \index{almost isometry}\emph{$\eps$-isometry} 
+if $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$ and
+\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{f(x)}{f(x')}{\spc{Y}}\bigr|<\eps.\]
+for any $x,x'\in \spc{X}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:eps-isom}
+Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces.
+
+\begin{subthm}{ex:eps-isom:GH>isom}
+If $\dist{\spc{X}}{\spc{Y}}{\GH}<\eps$, then there is a $2\cdot\eps$-isometry $f\:\spc{X}\to\spc{Y}$.
+\end{subthm}
+
+\begin{subthm}{ex:eps-isom:isom>GH}
+If there is an $\eps$-isometry $f\:\spc{X}\to\spc{Y}$, then $\dist{\spc{X}}{\spc{Y}}{\GH}<\eps$.
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof of the ``only if''-part in \ref{GH-2}.}
+\label{page:GH-2-proof}
+Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces.
+Suppose that $\dist{\spc{X}}{\spc{Y}}{\GH}<\eps$ for any $\eps>0$;
+we need to show that there is an isometry $\spc{X}\to\spc{Y}$.
+
+By \ref{ex:eps-isom:GH>isom}, for each positive integer $n$, we can choose a $\tfrac1n$-isometry $f_n\:\spc{X}\to\spc{Y}$.
+
+Since $\spc{X}$ is compact, 
+we can choose a countable dense set
+$S$ in~$\spc{X}$.
+Applying the diagonal procedure if necessary, we can assume that for every $x \in S$ the sequence $f_n(x)$ 
+converges in $\spc{Y}$. 
+Consider the pointwise limit map  $f_\infty \: S \to \spc{Y}$,
+ $$f_\infty(x) \df \lim_{n\to\infty} f_n (x)$$ for every $x \in S$. 
+Since $$|f_n (x)- f_n (x')|_{\spc{Y}}\lg |x- x'|_\spc{X} \pm\tfrac1n,$$ 
+we have 
+$$|f_\infty(x)-f_\infty (x')|_{\spc{Y}} 
+= \lim_{n\to\infty} |f_n(x)-f_n (x')|_{\spc{Y}} 
+= |x -x'|_\spc{X}$$ for all
+$x, x' \in S$; 
+that is, the map $f_\infty\:S\to \spc{Y}$ is distance-preserving. 
+Therefore, $f_\infty$ can be extended to a distance-preserving map from the whole $\spc{X}$ to $\spc{Y}$.
+
+The latter can be done by setting 
+$$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$ 
+for some sequence $x_n$ of points  in $S$
+that converges to $x$ in $\spc{X}$.
+Indeed, if $x_n\to x$, then the sequence $x_n$ is Cauchy.
+Since $f_\infty$ is distance-preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
+therefore it converges.
+It remains to observe that this construction does not depend on the choice of the sequence $x_n$.
+
+This way we obtain a distance-preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
+It remains to show that $f_\infty$ is surjective; that is, $f_\infty(\spc{X})=\spc{Y}$.
+
+The same argument produces a distance-preserving map $g_\infty\:\spc{Y}\z\to \spc{X}$.
+If $f_\infty$ is not surjective, then neither is the composition $f_\infty\z\circ g_\infty\:\spc{Y}\to \spc{Y}$.
+So $f_\infty \z\circ g_\infty$ is a distance-preserving map from a compact space to itself which is not an isometry.
+The latter contradicts \ref{ex:non-contracting-map}. 
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parit{Proof.}
+Suppose $\dist{\spc{X}}{\spc{Y}}{\GH}<r$, let $\spc{X}'$, $\spc{Y}'$, and $\spc{Z}$ are as in \ref{def:GH}.
+Let us identify $\spc{X}$ with $\spc{X}'$ and  $\spc{Y}$ with $\spc{Y}'$ by isometries.
+Observe that  
+\[f(x,y)=\dist{x}{y}{\spc{Z}}\]
+defines an appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$ such that 
+$a_f,b_f<r$.
+It follows that 
+\[\dist{\spc{X}}{\spc{Y}}{\GH}\ge\inf_f\{a_f,b_f\}.\]
+
+Now suppose that $f\:\spc{X}\times\spc{Y}\to\RR$ is an appropriate function such that 
+$a_f,b_f<r$.
+Note that the following defines a pseudometric on $\spc{X}\sqcup\spc{Y}$
+\[\dist{x}{y}{\spc{X}\sqcup\spc{Y}}=
+\begin{cases}
+\dist{x}{y}{\spc{X}}&\text{if\ } x,y\in \spc{X},
+\\
+\dist{x}{y}{\spc{Y}}&\text{if\ } x,y\in \spc{Y},
+\\
+f(x,y)&\text{if\ } x\in \spc{X}\ \text{and}\ y\in \spc{Y}.
+\end{cases}
+\]
+The corresponding metric space contains isometric copies of $\spc{X}$ and $\spc{Y}$.
+It is straightforward to see that the right-hand side in \ref{eq:GH-afbf} is the Hausdorff distance between these copies.
+Hence 
+\[\dist{\spc{X}}{\spc{Y}}{\GH}\le\inf_f\{a_f,b_f\}.\qedsin\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \parbf{\ref{ex:wasserstein}.}
 Choose a finite $\eps$-net $F\subset\spc{X}$.
 Show that the space $P_F$ of probability measures with support in $F$ is a compact net in $\Wass_1\spc{X}$.

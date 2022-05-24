@@ -32,6 +32,26 @@ Note that $\partial A=\partial B$; in particular, $\dist{\partial A}{\partial B}
 There is the so-called {}\emph{lakes of Wada} --- an example of three (and more) open bounded topological disks in the plane that have identical boundaries.
 It can be used to construct more interesting examples for \ref{SHORT.ex:Hausdorff-bry:bry}.
 
+\parbf{\ref{ex:H-sections}};
+\ref{SHORT.ex:H-sections:S}.
+Given $t\in (0,1]$, consider the real interval $\tilde C_t=[\tfrac 1t+t, \tfrac 1t+1]$.
+Denote by $C_t$ the image of $\tilde C_t$ under the covering map $\pi\:\RR\to \mathbb{S}^1\z=\RR/\ZZ$.
+
+Set $C_0=\mathbb{S}^1$.
+Note that the Hausdorff distance from $C_0$ to $C_t$ is $\tfrac t2$.
+Therefore $\{C_t\}_{t\in[0,1]}$ is a family of compact subsets in $\mathbb{S}^1$ that is continuous in the sense of Hausdorff.
+
+Assume there is a continuous section $c(t)\in C_t$, for $t\in [0,1]$.
+Since $\pi$ is a covering map,
+we can lift the path $c$ to a path $\tilde c\:[0,1]\to \RR$ such that $\tilde c(t)\in \tilde C_t$ for all $t$.
+In particular $\tilde c(t)\to\infty$ as $t\to0$,
+a contradiction.
+
+\parit{\ref{SHORT.ex:H-sections:R}.}
+Consider path $c(t)\df\min C_t$.
+
+\parit{Source:} The problem had been suggested by Stephan Stadler.
+
 \parbf{\ref{ex:closure-union}.} 
 Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
 Observe that $\bigcup_{n\le N} K_n$
@@ -178,7 +198,7 @@ $|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
 
 \parit{Remark.} 
 This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]{lang-pavon-zust}.
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-505}
@@ -217,14 +237,17 @@ Set $x\approx y$ if $\dist{y}{f(x)}{\spc{Y}}<\eps$.
 Show that $\approx$ is a $\eps$-approximation. 
 Apply \ref{ex:H-R}.
 
+\parbf{\ref{ex:XYZ}.}
+Consider three the product space $[0,\eps]\times \ZZ_n$ with the natural $\ell^\infty$-product metric and make three variations of it bay changing the size of the segments.
+
 \parbf{\ref{ex:GH-SC}}; \ref{SHORT.ex:GH-SC:circle}.
 Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply connected length metric space.
 It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
 The latter can be constructed by covering $\spc{X}_n$ by small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
 
-\begin{wrapfigure}{r}{40 mm}
-\vskip-0mm
+\begin{wrapfigure}[6]{r}{40 mm}
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-2}
 \end{wrapfigure}

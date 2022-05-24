@@ -23,6 +23,12 @@
 \vskip0.5em}%
 }
 
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,german,english]{babel}
+%\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
+%\DeclareUnicodeCharacter{0301}{*************************************}
+
 \usepackage[
 sorting=debug,
 bibencoding=auto,
@@ -41,12 +47,6 @@ isbn=false]{biblatex}
 \renewbibmacro{in:}{}
 \renewcommand*{\bibfont}{\small}
 \addbibresource{library.bib}
-
-\usepackage[russian,german,english]{babel}
-\usepackage[T1,T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-%\DeclareUnicodeCharacter{2010}{-}% support older LaTeX versions
-%\DeclareUnicodeCharacter{0301}{*************************************}
 
 
 \DeclareFieldFormat{postnote}{#1}
@@ -135,6 +135,7 @@ isbn=false]{biblatex}
 \def\SO{\mathrm{SO}}%
 \def\SU{\mathrm{SU}}%
 \def\SL{\mathrm{SL}}
+\def\UU{\mathbb{U}}% 
 
 \def\eps{\varepsilon}%  
 \def\ge{\geqslant}%

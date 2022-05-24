@@ -80,6 +80,20 @@ where the least upper bound is taken for all $1$-Lipschitz functions $f$.
 
 \end{thm}
 
+\begin{thm}{Advanced exercise}\label{ex:H-sections}
+\begin{subthm}{ex:H-sections:S}
+Construct a family of compact sets $C_t\subset\mathbb{S}^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
+but does not admit a {}\emph{section}.
+That is, there is no path $c\:[0,1]\to \mathbb{S}^1$ such that $c(t)\in C_t$ for all $t$.
+\end{subthm}
+
+\begin{subthm}{ex:H-sections:R}
+Show that any family of compact sets $C_t\subset\RR^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
+admits a {}\emph{section}.
+That is, there is path $c\:[0,1]\to \RR^1$ such that $c(t)\in C_t$ for all $t$.
+\end{subthm}
+
+\end{thm}
 
 \section{Hausdorff convergence}
 
@@ -282,9 +296,9 @@ Show that the sequence  $A_1,A_2,\dots$ has a convergent subsequence in the sens
 \section{Gromov--Hausdorff metric}
 
 The goal of this section is to cook up a metric space out of metric spaces.
-More precisely, we want to define the so-called  Gromov--Hausdorff metric on the set of {}\emph{isometry classes} of compact metric spaces.
+More precisely, we want to define the so-called  Gromov--Hausdorff metric on the set of \textit{isometry classes} of compact metric spaces.
 (Being isometric is an equivalence relation, 
-and an isometry class is an equivalence class with respect to this equivalence relation.)
+and an \emph{isometry class} is an equivalence class with respect to this relation.)
 
 The obtained metric space will be denoted by $\GH$.
 Given two metric spaces $\spc{X}$ and $\spc{Y}$,
@@ -292,10 +306,10 @@ denote by $[\spc{X}]$ and $[\spc{Y}]$ their isometry classes;
 that is, $\spc{X}'\in [\spc{X}]$ if and only if $\spc{X}'\iso \spc{X}$.
 Pedantically, the Gromov--Hausdorff distance from $[\spc{X}]$ 
 to $[\spc{Y}]$ should be denoted as $|[\spc{X}]-[\spc{Y}]|_{\GH}$;
-but we will write it as $|\spc{X}\z-\spc{Y}|_{\GH}$ and say (not quite correctly) 
-``$|\spc{X}\z-\spc{Y}|_{\GH}$ is the Gromov--Hausdorff distance from  $\spc{X}$ 
-to  $\spc{Y}$''.
-In other words, from now on the term {}\emph{metric space} might also stand for its {}\emph{isometry class}.
+but we will write it as $|\spc{X}\z-\spc{Y}|_{\GH}$ and say (not quite correctly) that 
+\textit{$|\spc{X}\z-\spc{Y}|_{\GH}$ is the Gromov--Hausdorff distance from  $\spc{X}$ 
+to  $\spc{Y}$}.
+In other words, from now on the term \textit{metric space} might also stand for its \textit{isometry class}.
 
 The metric on $\GH$ is defined as the maximal metric such that \textit{the distance between subspaces in a metric space is not greater than the Hausdorff distance between them}.
 Here is a formal definition:
@@ -306,13 +320,10 @@ The Gromov--Hausdorff distance $|\spc{X}-\spc{Y}|_{\GH}$ is defined by the follo
 relation.
  
 Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\GH} < r$ if and only if there exist a metric
-space $\spc{Z}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$ that are isometric to $\spc{X}$ and $\spc{Y}$
-respectively and such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{Z}} < r$. 
-(Here $|\spc{X}'-\spc{Y}'|_{\Haus\spc{Z}}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{Z}$.)
+space $\spc{W}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{W}$ that are isometric to $\spc{X}$ and $\spc{Y}$
+respectively and such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}} < r$. 
+(Here $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{W}$.)
 \end{thm}
-
-Note that passing to the subspace $\spc{X}'\cup\spc{Y}'$ of $\spc{Z}$ does not affect the definition.
-Therefore we can always assume that $\spc{Z}$ is compact.
 
 \begin{thm}{Theorem}\label{thm:GH-is-a-metric}
 The set of isometry classes of compact metric spaces equipped with Gromov--Hausdorff metric forms a metric space (which is denoted by $\GH$).
@@ -336,7 +347,7 @@ In other words, for arbitrary  compact metric spaces $\spc{X}$, $\spc{Y}$ and $\
 Note that \ref{SHORT.GH-1}, \ref{SHORT.GH-3},
 and the ``if''-part of \ref{SHORT.GH-2} follow directly from Definition \ref{def:GH}.
 Part \ref{SHORT.GH-4} will be proved in Section~\ref{sec:GH-approx}.
-The ``only-if''-part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:alm-isom}.
+The ``only-if''-part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:extfun=GH}.
 
 Recall that $a\cdot\spc{X}$ denotes $\spc{X}$ \index{scaled space}\emph{scaled} by factor $a>0$;
 that is, $a\cdot\spc{X}$ is a metric space with the underlying set of $\spc{X}$ and the metric defined by
@@ -382,11 +393,11 @@ Show that
 
 \end{thm}
 
-\section{Approximations}\label{sec:GH-approx}
+\section{Approximations and almost isometries}\label{sec:GH-approx}
 
 \begin{thm}{Definition}\label{ex:defGHR}
 Let $\spc{X}$ and $\spc{Y}$ be two metric spaces.
-A relation $\approx$ between points in $\spc{X}$ and $\spc{Y}$ is called $\eps$-approximation if the following conditions hold:
+A relation $\approx$ between points in $\spc{X}$ and $\spc{Y}$ is called \emph{$\eps$-approximation} if the following conditions hold:
 \begin{itemize}
 \item For any $x\in  \spc{X}$ there is $y\in \spc{Y}$ such that $x\approx y$.
 \item For any $y\in  \spc{Y}$ there is $x\in \spc{X}$ such that $x\approx y$.
@@ -427,8 +438,7 @@ then
 Hence \ref{GH-4} follows.
 \qeds
 
-
-\section{Almost isometries}\label{sec:alm-isom}
+The following weakened version of isometry is closely related to $\eps$-approximations.
 
 \begin{thm}{Definition} Let $\spc{X}$ and $\spc{Y}$ be metric spaces and $\eps>0$. 
 A  map\footnote{possibly noncontinuous} $f\: \spc{X} \z\to \spc{Y}$ is called an \index{almost isometry}\emph{$\eps$-isometry} 
@@ -450,47 +460,90 @@ If there is an $\eps$-isometry $f\:\spc{X}\to\spc{Y}$, then $\dist{\spc{X}}{\spc
 
 \end{thm}
 
-\parit{Proof of the ``only if''-part in \ref{GH-2}.}
-\label{page:GH-2-proof}
-Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces.
-Suppose that $\dist{\spc{X}}{\spc{Y}}{\GH}<\eps$ for any $\eps>0$;
-we need to show that there is an isometry $\spc{X}\to\spc{Y}$.
+\section{Optimal realization}\label{sec:extfun=GH}
 
-By \ref{ex:eps-isom:GH>isom}, for each positive integer $n$, we can choose a $\tfrac1n$-isometry $f_n\:\spc{X}\to\spc{Y}$.
+Note that
+\[\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}\ge \dist{\spc{X}}{\spc{Y}}{\GH},\]
+where $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ are as in \ref{def:GH}.
+The following proposition states that equality holds for some choice of $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$.
 
-Since $\spc{X}$ is compact, 
-we can choose a countable dense set
-$S$ in~$\spc{X}$.
-Applying the diagonal procedure if necessary, we can assume that for every $x \in S$ the sequence $f_n(x)$ 
-converges in $\spc{Y}$. 
-Consider the pointwise limit map  $f_\infty \: S \to \spc{Y}$,
- $$f_\infty(x) \df \lim_{n\to\infty} f_n (x)$$ for every $x \in S$. 
-Since $$|f_n (x)- f_n (x')|_{\spc{Y}}\lg |x- x'|_\spc{X} \pm\tfrac1n,$$ 
-we have 
-$$|f_\infty(x)-f_\infty (x')|_{\spc{Y}} 
-= \lim_{n\to\infty} |f_n(x)-f_n (x')|_{\spc{Y}} 
-= |x -x'|_\spc{X}$$ for all
-$x, x' \in S$; 
-that is, the map $f_\infty\:S\to \spc{Y}$ is distance-preserving. 
-Therefore, $f_\infty$ can be extended to a distance-preserving map from the whole $\spc{X}$ to $\spc{Y}$.
+\begin{thm}{Proposition}\label{prop:GH=H}
+For any two compact metric spaces $\spc{X}$ and $\spc{Y}$ there is a metric space $\spc{W}$
+with subsets $\spc{X}'$ and $\spc{Y}'$ such that 
+$\spc{X}'\iso\spc{X}$, $\spc{Y}'\iso\spc{Y}$, and 
+\[\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}=\dist{\spc{X}}{\spc{Y}}{\GH}.\]
+\end{thm}
 
-The latter can be done by setting 
-$$f_\infty(x)=\lim_{n\to\infty} f_\infty(x_n)$$ 
-for some sequence $x_n$ of points  in $S$
-that converges to $x$ in $\spc{X}$.
-Indeed, if $x_n\to x$, then the sequence $x_n$ is Cauchy.
-Since $f_\infty$ is distance-preserving, $y_n=f_\infty(x_n)$ is also a Cauchy sequence in $\spc{Y}$;
-therefore it converges.
-It remains to observe that this construction does not depend on the choice of the sequence $x_n$.
+Let us introduce the so-called \textit{appropriate functions} and use them in a reinterpretation of Gromov--Hausdorff distance.
 
-This way we obtain a distance-preserving map $f_\infty\:\spc{X}\to \spc{Y}$. 
-It remains to show that $f_\infty$ is surjective; that is, $f_\infty(\spc{X})=\spc{Y}$.
+Suppose $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ are as in \ref{def:GH}.
+By passing to the subspace $\spc{X}'\cup\spc{Y}'$ in $\spc{W}$, we can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$.
+Note that in this case the metric on $\spc{W}$ is completely determined by the function 
+\[f(x,y)=\dist{x}{y}{\spc{W}};\]
+the functions $f\:\spc{X}\times \spc{Y}\to\RR$ that can appear this way will be called \emph{appropriate}.
 
-The same argument produces a distance-preserving map $g_\infty\:\spc{Y}\z\to \spc{X}$.
-If $f_\infty$ is not surjective, then neither is the composition $f_\infty\z\circ g_\infty\:\spc{Y}\to \spc{Y}$.
-So $f_\infty \z\circ g_\infty$ is a distance-preserving map from a compact space to itself which is not an isometry.
-The latter contradicts \ref{ex:non-contracting-map}. 
+Note that a function $f\:\spc{X}\times\spc{Y}\to\RR$ is appropriate if and only if
+$x\mapsto f(x,y)$ and $y\mapsto f(x,y)$ are extension functions;
+that is, if
+\[
+\begin{aligned}
+f(x,y)+f(x,y')
+&\ge \dist{y}{y'}{\spc{Y}}\ge |f(x,y)-f(x,y')|,
+\\
+f(x,y)+f(x',y)
+&\ge \dist{x}{x'}{\spc{X}}\ge |f(x,y)-f(x',y)|;
+\end{aligned}
+\eqlbl{eq:appropriate}
+\]
+for any $x,x',\in\spc{X}$ and  $y,y'\in\spc{X}$;
+see \ref{sec:Extension property}.
+In other words, the following defines a pseudometric on $\spc{X}\sqcup\spc{Y}$
+\[\dist{x}{y}{\spc{X}\sqcup\spc{Y}}=
+\begin{cases}
+\dist{x}{y}{\spc{X}}&\text{if\ } x,y\in \spc{X},
+\\
+\dist{x}{y}{\spc{Y}}&\text{if\ } x,y\in \spc{Y},
+\\
+f(x,y)&\text{if\ } x\in \spc{X}\ \text{and}\ y\in \spc{Y},
+\end{cases}
+\]
+and the corresponding metric space $\spc{W}$ contains isometric copies of $\spc{X}$ and $\spc{Y}$.
+
+Given an appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$, set 
+\begin{align*}
+a_f&=\max_{x\in \spc{X}}\{\min_{y\in\spc{Y}} \{f(x,y)\}\},
+\\
+b_f&=\max_{y\in \spc{Y}}\{\min_{x\in\spc{X}} \{f(x,y)\}\}.
+\end{align*}
+
+\begin{thm}{Observation}\label{obs:GH=min-appropriate}
+If $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ as above then
+\[\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}=\inf_f\{a_f,b_f\}.\]
+
+\end{thm}
+
+\parit{Proof of \ref{prop:GH=H}.}
+By \ref{eq:appropriate}, any appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$ is $2$-Lipschitz.
+Observe that the functional $f\mapsto \min\{a_f,b_f\}$ is continuous.
+Applying the Arzelà--Ascoli theorem, we can get an  appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$ 
+that minimize $\min\{a_f,b_f\}$.
+It reamins to apply \ref{obs:GH=min-appropriate}.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:XYZ}
+Construct three compact metric spaces $\spc{X}$, $\spc{Y}$, and $\spc{Z}$
+such that for any metric space $\spc{W}$
+with subsets $\spc{X}'$, $\spc{Y}'$, and $\spc{Z}'$ such that 
+$\spc{X}'\iso\spc{X}$, $\spc{Y}'\iso\spc{Y}$, and $\spc{Z}'\iso\spc{Z}$
+at least one of the following three inequalities is strict
+\begin{align*}
+\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}&\ge \dist{\spc{X}}{\spc{Y}}{\GH},
+\\
+\dist{\spc{Y}'}{\spc{Z}'}{\Haus\spc{W}}&\ge\dist{\spc{Y}}{\spc{Z}}{\GH},
+\\
+\dist{\spc{Z}'}{\spc{X}'}{\Haus\spc{W}}&\ge\dist{\spc{Z}}{\spc{X}}{\GH}.
+\end{align*}
+\end{thm}
 
 \section{Convergence}
 
@@ -531,16 +584,6 @@ Construct a sequence of length metrics on the 3-sphere that converges to a unit 
 
 \end{thm}
 
-Given two metric spaces $\spc{X}$ and $\spc{Y}$, we will write $\spc{X}\le \spc{Y}$ if there is a noncontracting map $f\:\spc{X}\to \spc{Y}$;
-that is, if 
-$$ |x-x'|_{\spc{X}}\le|f(x)-f(x')|_{\spc{Y}}$$
-for any $x,x'\in \spc{X}$.
-
-Further, given $\eps>0$, we will write $\spc{X}\le \spc{Y}+\eps$
-if there is a map $f\:\spc{X}\to \spc{Y}$ such that 
-$$|x-x'|_{\spc{X}}\le|f(x)-f(x')|_{\spc{Y}}+\eps$$
-for any $x,x'\in \spc{X}$.
-
 \section{Uniformly totally bonded families}
 
 \begin{thm}{Definition}\label{def:utb}
@@ -576,7 +619,10 @@ Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at 
 Show that $\spc{Q}(C,D)$ is totally bounded.
 \end{thm}
 
-Recall that we write $\spc{X}\le\spc{Y}$ if there is a distance-nondecreasing map $\spc{X}\to\spc{Y}$.
+Given two metric spaces $\spc{X}$ and $\spc{Y}$, we will write $\spc{X}\le \spc{Y}$ if there is a noncontracting map $f\:\spc{X}\to \spc{Y}$;
+that is, if 
+$$ |x-x'|_{\spc{X}}\le|f(x)-f(x')|_{\spc{Y}}$$
+for any $x,x'\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{pr:under}
 
@@ -685,7 +731,7 @@ with the number of points at most $n$ and diameter $\le \eps_1$.
 Note that $\spc{W}_n$ is a compact set in $\GH$ for each $n$.
 
 Further, a subspace formed by a maximal $\eps_n$-net of any $\spc{X}\in\spc{Q}$ belongs to $\spc{W}_n$.
-Therefore, $\spc{W}_n\cap\spc{Q}$ is a compact $\eps_n$-net in  $\spc{Q}$.
+Therefore, $\spc{W}_n$ is a compact $\eps_n$-net of $\spc{Q}$.
 That is, $\spc{Q}$ has a compact $\eps$-net for any $\eps>0$.
 Since $\spc{Q}$ is closed in a complete space $\GH$, it implies that $\spc{Q}$ is compact.
 \qeds
@@ -752,13 +798,13 @@ By the definition (\ref{def:GH}), we have that
 it remains to prove the opposite inequality.
 
 Suppse $|\spc{X}-\spc{Y}|_{\GH}<\eps$;
-let $\spc{X}'$, $\spc{Y}'$ and $\spc{Z}$ be as in \ref{def:GH}.
-We can assume that $\spc{Z}=\spc{X}'\cup\spc{Y}'$;
-otherwise pass to the subspace $\spc{X}'\cup\spc{Y}'$ of~$\spc{Z}$.
-In this case, $\spc{Z}$ is compact;
+let $\spc{X}'$, $\spc{Y}'$ and $\spc{W}$ be as in \ref{def:GH}.
+We can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$;
+otherwise pass to the subspace $\spc{X}'\cup\spc{Y}'$ of~$\spc{W}$.
+In this case, $\spc{W}$ is compact;
 in particular, it is separable.
 
-Since $\spc{U}$ is universal, there is a distance-preserving embedding of $\spc{Z}$ in $\spc{U}$;
+Since $\spc{U}$ is universal, there is a distance-preserving embedding of $\spc{W}$ in $\spc{U}$;
 let us keep the same notation for $\spc{X}'$, $\spc{Y}'$, and their images.
 It follows that 
 \[|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}<\eps,\]
@@ -775,7 +821,7 @@ Show that $\|{*}\z-{*}\|$ defines a pseudometric%
 on nonempty compact subsets of $\spc{U}_\infty$ and its corresponding metric space is isometric to $\GH$.
 \end{thm}
 
-\section{Remarks}
+\section{More on convergence}
 
 Suppose $\spc{X}_n\GHto \spc{X}_\infty$, then there is a metric on the disjoint union 
 \[\bm{X}=\bigsqcup_{n\in \NN\cup\{\infty\}} \spc{X}_n\] 
@@ -793,23 +839,22 @@ Gluing all $\spc{V}_n$ along $\spc{X}_\infty$, we obtain the required space $\bm
 In other words, the metric on $\bm{X}$ defines the convergence $\spc{X}_n\z\GHto \spc{X}_\infty$.
 This metric makes it possible to talk about limits of sequences $x_n\in \spc{X}_n$ as $n\to\infty$, as well as weak limits of a sequence of Borel measures $\mu_n$ on $\spc{X}_n$ and so on.
 
-For that reason, it is useful to define convergence by specifying the metric on $\bm{X}$ that satisfies the property
+For that reason, it is useful to define \emph{convergence} by specifying the metric on $\bm{X}$ that satisfies the property
 for the variation of Hausdorff convergence described in Section~\ref{sec:H-variation}.
-This approach is very flexible;
-in particular, it can be used to define Gromov--Hausdorff convergence of arbitrary metric spaces (net necessarily compact).
 
-In this case, a limit space for this generalized convergence is not uniquely defined.
-\begin{figure}[h!]
+This approach is more flexible;
+in particular, it can be used to define Gromov--Hausdorff convergence of arbitrary metric spaces (not necessarily compact).
+A limit space for this generalized convergence is not uniquely defined.
+For example, if each space $\spc{X}_n$ in the sequence is isometric to the half-line, then its limit might be isometric to the half-line or the whole line.
+The first convergence is evident and the second could be guessed from the diagram.
+
+\begin{figure}[ht!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-500}
 \end{figure}
-For example, if each space $\spc{X}_n$ in the sequence is isometric to the half-line, then its limit might be isometric to the half-line or the whole line.
-The first convergence is evident and the second could be guessed from the diagram.
 
-
-
-Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Hausdorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
+Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Hausdorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ as in \ref{propery:GH} such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
 For example, the sequence $(\spc{X}_n,p_n)=(\RR_+,0)$ converges to $(\RR_+,0)$, while $(\spc{X}_n,p_n)=(\RR_+,n)$ converges to $(\RR,0)$.
 
 The pointed convergence works nicely only for proper metric spaces;
@@ -821,9 +866,3 @@ $(\spc{X},p)$.
 Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
 Then $\spc{Q}$ is precompact with respect to pointed Gromov--Hausdorff convergence. 
 \end{thm}
-
-
-
-
-
-
