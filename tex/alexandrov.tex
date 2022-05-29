@@ -32,7 +32,7 @@ Consider the subset $\mathcal{E}_4\subset \mathcal{M}_4$ of all isometry classes
 The complement $\mathcal{M}_4\setminus \mathcal{E}_4$ has two connected components.
 \end{thm}
 
-A proof of the claim can extracted from \ref{ex:CAT+CBB}.
+A proof of the claim can be extracted from~\ref{ex:CAT+CBB}.
 
 The definition of Alexandrov spaces is based on this claim.
 Let us denote one of the components by $\mathcal{P}_4$ and the other by~$\mathcal{N}_4$.
@@ -57,7 +57,7 @@ Imagine that you move out of $\mathcal{E}_4$ --- your path is a one parameter fa
 The last thing you see in $\mathcal{E}_4$ is one of the two plane configurations shown on the diagram.
 If you see the left configuration then you move into $\mathcal{N}_4$;
 if it is the one on the right, then you move into $\mathcal{P}_4$.
-More degenerate pictures can be avoided, for example a triangle with a point on a side.
+More degenerate pictures can be avoided, for example, a triangle with a point on a side.
 From such a configuration one may move in $\mathcal{N}_4$ and in $\mathcal{P}_4$ (as well as come back to $\mathcal{E}_4$).
 
 Here is an exercise, solving which would force you to rebuild a considerable part of Alexandrov geometry.
@@ -86,7 +86,7 @@ The latter condition could be considered as a part of the {}\emph{spherical tria
 
 \parbf{Triangles.}
 For a triple of points $p,q,r\in \spc{X}$, a choice of a triple of geodesics $([q r], [r p], [p q])$ will be called a \index{triangle}\emph{triangle}; we will use the short notation 
-$\trig p q r=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
+$\trig p q r=\trig p q r_{\spc{X}}=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
 
 Given a triple $p,q,r\in \spc{X}$ there may be no triangle 
 $\trig p q r$ simply because one of the pairs of these points cannot be joined by a geodesic.
@@ -220,11 +220,11 @@ so, if you see $\CAT(\kappa)$, you can assume that $\kappa$ is $0$ or~$1$.
 If all quadruples in a metric space $\spc{X}$ satisfy $\CAT(\kappa)$ comparison, then we say that the space $\spc{X}$ is $\CAT(\kappa)$
 (we use $\CAT(\kappa)$ as an adjective).
 
-Here $\CAT$ is an acronym for Cartan, Alexandrov, and Toponogov.
-It was coined by Mikhael Gromov in 1987,
-but it should be pronounced as ``cat'' in the sense of ``miauw''.
-Originally, Alexandrov called these spaces ``$\mathfrak{R}_\kappa$ domain'';
-this term is still in use.)
+Here $\CAT$ is an acronym for Cartan, Alexandrov, and Toponogov,
+but usually pronounced as ``cat'' in the sense of ``miauw''.
+The term was coined by Mikhael Gromov in 1987.
+Originally, Alexandrov called these spaces \emph{$\mathfrak{R}_\kappa$ domain};
+this term is still in use.
 
 \begin{thm}{Exercise}\label{ex:sba-2+2-short}
 Show that a metric space $\spc{X}$ is $\CAT(0)$
@@ -401,7 +401,7 @@ if $x$ is the tip, then $|x|=0$ and we can take any point of $\spc{U}$ as~$x'$.
 
 Let $p$, $q$, $x$, $y$
 be a quadruple in $\Cone\spc{U}$.
-Assume that the spherical model triangles $\trig{\tilde p'}{\tilde x'}{\tilde y'}=\modtrig(p'x'y')_{\SSS^2}$ and $\trig{\tilde q'}{\tilde x'}{\tilde y'}=\modtrig(q'x'y')_{\SSS^2}$ are defined.
+Assume that the spherical model triangles $\trig{\tilde p'}{\tilde x'}{\tilde y'}_{\SSS^2}=\modtrig(p'x'y')_{\SSS^2}$ and $\trig{\tilde q'}{\tilde x'}{\tilde y'}_{\SSS^2}=\modtrig(q'x'y')_{\SSS^2}$ are defined.
 Consider the following points in $\EE^3=\Cone\SSS^2$: 
 \begin{align*}
 \tilde p&=|p|\cdot\tilde p',
@@ -414,13 +414,24 @@ Consider the following points in $\EE^3=\Cone\SSS^2$:
 \end{align*}
 
 Note that
-$\trig{\tilde p}{\tilde x}{\tilde y}\iso\modtrig(pxy)_{\EE^2}$
+$\trig{\tilde p}{\tilde x}{\tilde y}_{\EE^3}\iso\modtrig(pxy)_{\EE^2}$
 and
-$\trig{\tilde q}{\tilde x}{\tilde y}\iso\modtrig(qxy)_{\EE^2}$.
+$\trig{\tilde q}{\tilde x}{\tilde y}_{\EE^3}\iso\modtrig(qxy)_{\EE^2}$.
 Further note that if $\tilde z\in [\tilde x\tilde y]_{\EE^3}$, then
 $\tilde z'=\tilde z/|\tilde z|$ lies on the geodesic $[\tilde x'\tilde y']_{\SSS^2}$.
 Therefore the $\CAT(1)$ comparison for $\dist{p'}{q'}{}$ with $\tilde z'\in[\tilde x'\tilde y']_{\SSS^2}$ implies the 
 $\CAT(0)$ comparison for $\dist{p}{q}{}$ with $\tilde z\in[\tilde x\tilde y]_{\EE^3}$.
+
+If at least one of the model triangles $\modtrig(p'x'y')_{\SSS^2}$ and $\modtrig(q'x'y')_{\SSS^2}$ is undefined,
+then the statement follows from the triangle inequalities 
+\begin{align*}
+|p'-x'|_{\spc{U}}+|q'-x'|_{\spc{U}}
+&\ge |p'-q'|_{\spc{U}}
+\\
+|p'-y'|_{\spc{U}}+|q'-y'|_{\spc{U}}
+&\ge |p'-q'|_{\spc{U}}
+\end{align*}
+This case is left as an exercise. %???
 
 \parit{``Only-if'' part.}
 Suppose that $\tilde p'$, $\tilde q'$, $\tilde x'$, $\tilde y'$ are defined as above.
@@ -737,7 +748,7 @@ Note that a smooth real-to-real function $f$ is $\lambda$-convex ($\lambda$-conc
 \begin{thm}{Proposition}
 Let $\spc{X}$ be a geodesic space.
 Then $\spc{X}$ is $\CAT(0)$ (respectively $\CBB(0)$) if and only if for any point $p\in \spc{X}$ the function
-\[f(x)=\tfrac12\cdot\dist{p}{x}{\spc{X}}\]
+\[f(x)=\tfrac12\cdot\dist[2]{p}{x}{\spc{X}}\]
 is 1-convex (respectively 1-concave).
 \end{thm}
 
@@ -781,7 +792,7 @@ admits a short extension $f\:\EE^m\to \EE^n$.
 
 The conclusion of the theorem holds for some other metric spaces instead of $\EE^m$ and $\EE^n$.
 For example instead of $\EE^n$ one might take any injective space (\ref{def:injective}) and instead of $\EE^m$ one may take any compact ultrametric space (\ref{ex:ultrametric}).
-On the other hand existance of extension to/from a Euclidean space is much weaker condition than in \ref{def:injective} and \ref{ex:ultrametric}.
+On the other hand, the existence of extension to/from a Euclidean space is a much weaker condition than in \ref{def:injective} and \ref{ex:ultrametric}.
 As the following theorems state, these conditions are closely related to the $\CBB(0)$ and $\CAT(0)$ conditions.
 
 \begin{thm}{Theorem}
