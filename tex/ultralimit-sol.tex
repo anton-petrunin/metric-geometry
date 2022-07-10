@@ -1,5 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\parbf{\ref{ex:ultrakatetov}.}
+Let $F=\set{n\in \NN}{f(n)=n}$; we need to show that $\omega(F)=1$.
+
+Consider an oriented graph $\Gamma$ with vertex set $\NN\backslash F$ such that $m$ is connected to $n$ if $f(m)=n$.
+Show that each conected component of $\Gamma$ has at most one cycle.
+Use it to subdivide vertices of $\Gamma$ into three sets $S_1$, $S_2$, and $S_3$ such that $f(S_i)\cap S_i=\emptyset$ for each $i$.
+
+Conclude that $\omega(S_1)=\omega(S_2)=\omega(S_3)=0$ and hence \[\omega(F)=\omega(\NN\setminus(S_1\cup S_2\cup S_3))=1.\]
+
+\parit{Source:} 
+The presented proof was given by Robert Solovay \cite{solovay}, but
+the key statement is due Miroslav Katětov \cite{katetov}.
+
 \parbf{\ref{ex:prop:eps-isometry=isometry}.}
 Suppose that  $f_n\:\spc{X}\to \spc{Y}$ is a $\tfrac1n$-isometry between compact spaces for each $n\in\NN$.
 Consider the $\omega$-limit $f_\omega$ of~$f_n$,
@@ -23,6 +36,9 @@ It follows that $f_\omega\:\spc{X}\to\spc{Y}$ is an isometry.
 \parbf{\ref{ex:linear}.}
 Choose a nonprincipal ultrafilter $\omega$ and set $L(\bm{s})=s_\omega$.
 It remains to observe that $L$ is linear.
+
+\parbf{\ref{ex:ultrakatetov+}.}
+Use \ref{ex:ultrakatetov}.
 
 \parbf{\ref{ex:lim(tree)}.}
 Let $\gamma$ be a path from $p$ to $q$ in a metric tree $\spc{T}$.
@@ -89,6 +105,17 @@ Further, if $(x_n)$ is not  $\omega$-bounded, then
 that is, $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
 
 \parbf{\ref{ex:isom-ultrapower}.} Show and use that the spaces $\spc{X}^\omega$ and $(\spc{X}^\omega)^\omega$ have discrete metric and both have cardinality continuum.
+
+\parbf{\ref{ex:ultrapower(ultrapower)}.}
+Choose a bijection $\iota\:\NN\to \NN\times \NN$.
+Given a set $S\subset \NN$, define
+\[S_n=\set{m\in\NN}{(m,n)\in \iota(S)}.\]
+Set $\omega'(S)=1$ if and only if $\omega(S_n)=1$ for $\omega$-almost all $n$.
+It remains to check that $\omega'$ meets the conditions of the exercise.
+
+\parit{Comment.}
+It turns out that $\omega'\ne \omega$ for any $\iota$;
+see the post of Andreas Blass \cite{blass}.
 
 \parbf{\ref{ex:two-geodesics-in-ultrapower}.}
 Apply \ref{lem:X-X^w} and \ref{obs:ultrapower-is-geodesic}.

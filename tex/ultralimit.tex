@@ -14,7 +14,7 @@ Recall that $\NN$ denotes the set of natural numbers, $\NN=\{1,2,\dots\}$
 
 \begin{thm}{Definition}
 A finitely additive measure $\omega$ 
-on  $\NN$ 
+on $\NN$ 
 is called an \index{ultrafilter}\emph{ultrafilter} if it satisfies the following condition:
 \begin{subthm}{}
 $\omega(\NN)=1$ and 
@@ -30,6 +30,13 @@ $\omega(F)=0$ for any finite subset $F\subset \NN$.
 If $\omega(S)=0$ for some subset $S\subset \NN$,
 we say that $S$ is \index{$\omega$-small}\emph{$\omega$-small}. 
 If $\omega(S)=1$, we say that $S$ contains \index{$\omega$-almost all}\emph{$\omega$-almost all} elements of $\NN$.
+
+\begin{thm}{Advanced exercise}\label{ex:ultrakatetov}
+Let $\omega$ be an ultrafilter on $\NN$ and $f\:\NN\z\to \NN$.
+Suppose that $\omega(S)\le \omega(f^{-1}(S))$ for any set $S\subset \NN$.
+Show that $f(n)=n$ for $\omega$-almost all $n\in\NN$.
+\end{thm}
+
 
 \parbf{Classical definition.}
 More commonly, a nonprincipal ultrafilter is defined as a collection, say $\mathfrak{F}$, of sets in $\NN$ such that
@@ -148,6 +155,14 @@ Denote by $S$ the space of bounded sequences of real numbers.
 Show that there is a linear functional $L\:S\to\RR$ such that
 for any sequence $\bm{s}=(s_1,s_2,\dots)\in S$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:ultrakatetov+}
+Suppose that $f\:\NN\to\NN$ is a map such that 
+\[\lim_{n\to\omega}x_n=\lim_{n\to\omega}x_{f(n)}\]
+for any bounded sequence $x_n$ of real numbers.
+Show that $f(n)=n$ for $\omega$-almost all $n\in\NN$.
+\end{thm}
+
 
 
 
@@ -269,7 +284,8 @@ Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component
 
 \end{thm}
 
-Note that \ref{SHORT.ex:ultrapower:compact} implies that the inclusion $\spc{X}\hookrightarrow\spc{X}^\omega$ is not onto if the space $\spc{X}$ is not compact. However, the spaces $\spc{X}$ and $\spc{X}^\omega$ might be isometric; here is an example:
+Note that \ref{SHORT.ex:ultrapower:compact} implies that the inclusion $\spc{X}\hookrightarrow\spc{X}^\omega$ is not onto if the space $\spc{X}$ is not compact.
+However, the spaces $\spc{X}$ and $\spc{X}^\omega$ might be isometric; here is an example:
 
 \begin{thm}{Exercise}\label{ex:isom-ultrapower}
 Let $\spc{X}$ be a countable set with discrete metric;
@@ -286,6 +302,12 @@ $\spc{X}^\omega$ is  isometric to $(\spc{X}^\omega)^\omega$.
 
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:ultrapower(ultrapower)}
+Given a nonprincipal ultrafilter $\omega$, construct an ultrafilter $\omega'$ such that 
+\[\spc{X}^{\omega'}\iso(\spc{X}^\omega)^\omega\]
+for any metric space~$\spc{X}$.
+
+\end{thm}
 
 
 \begin{thm}{Observation}\label{obs:ultrapower-is-geodesic}
