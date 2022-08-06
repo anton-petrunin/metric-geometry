@@ -104,12 +104,18 @@ Further, if $(x_n)$ is not  $\omega$-bounded, then
 \[\lim_{n\to\omega}\dist{p}{x_n}{\spc{X}}=\infty;\]
 that is, $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
 
-\parbf{\ref{ex:isom-ultrapower}.} Show and use that the spaces $\spc{X}^\omega$ and $(\spc{X}^\omega)^\omega$ have discrete metric and both have cardinality continuum.
+\parbf{\ref{ex:isom-ultrapower}.}
+Let us identify $\spc{X}$ with nonnegative integers.
+Consider the set $\mathcal{A}$ of all sequences $a_n$ such that $a_0=0$ and $a_{n+1}=a_n+\eps_n\cdot 2^n$ where $\eps_n\in\{0,1\}$ for any $n$.
+Observe that $\mathcal{A}$ has cardinality continuum and distinct sequences in $\mathcal{A}$ have distinct $\omega$-limits.
+Conclude that the cardinality of $\spc{X}^\omega$ is at least continuum.
+
+Show and use that the spaces $\spc{X}^\omega$ and $(\spc{X}^\omega)^\omega$ have discrete metric and both have cardinality at most continuum.
+
 
 \parbf{\ref{ex:ultrapower(ultrapower)}.}
 Choose a bijection $\iota\:\NN\to \NN\times \NN$.
-Given a set $S\subset \NN$, define
-\[S_n=\set{m\in\NN}{(m,n)\in \iota(S)}.\]
+Given a set $S\subset \NN$, consider the sequence $S_1$, $S_2,\dots$ of subsets in $\NN$ defined by $m\in S_n$ if $(m,n)\z=\iota(k)$ for some $k\in S$.
 Set $\omega'(S)=1$ if and only if $\omega(S_n)=1$ for $\omega$-almost all $n$.
 It remains to check that $\omega'$ meets the conditions of the exercise.
 

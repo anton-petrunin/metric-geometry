@@ -168,7 +168,8 @@ That is, $\spc{X}_\infty$ has the $d$-extension property.
 The construction of a separable metric space with the extension property requires only two changes.
 First, the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
 Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$
-(here on has to apply \ref{ex:extension-of-extension:a}).
+(here one has to apply \ref{ex:extension-of-extension:a}).\footnote{Alternatively, instead of $\spc{X}^d$, one may use $\spc{X}^\infty$ --- the space of all extension functions on $\spc{X}$ with the metric defined by the sup-norm.
+Note that if $\spc{X}$ is separable, then so is $\spc{X}^\infty$ --- this claim has to be used instead of compactness.}
 \qeds
 
 \begin{thm}{Proposition}\label{prop:completion-univeral}
@@ -389,14 +390,14 @@ Use it to construct an isometry of a unit sphere $S$ in $\spc{U}$ that cannot be
 \end{thm}
 
 The following exercise answers a question posted by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
-It was solved by Miroslav Katětov \cite{katetov};
-long after his example, it was again mentioned as an open question \cite[p. 83]{gromov-2007}.
+It was solved by Miroslav Katětov \cite{katetov},
+but long after that, it was again mentioned as an open problem \cite[p. 83]{gromov-2007}.
 
 \begin{thm}{Exercise}\label{ex:katetov}
 
 \begin{subthm}{ex:katetov:inclusion}
-Show that here is a distance-preserving inclusion of the Urysohn space $\iota\:\spc{U}\hookrightarrow \spc{U}$ 
-such that $\iota(\spc{U})$ is nowhere dense in $\spc{U}$ and for any isometry of $\iota(\spc{U})$ 
+Show that there is a distance-preserving inclusion of the Urysohn space $\iota\:\spc{U}\hookrightarrow \spc{U}$ 
+such that $\spc{U}'=\iota(\spc{U})$ is nowhere dense in $\spc{U}$ and any isometry of $\spc{U}'$ 
 can be extended to an isometry of the whole~$\spc{U}$.
 \end{subthm}
 
@@ -439,7 +440,7 @@ Pavel Urysohn~\cite{urysohn}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called {}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.
-In fact, Urysohn space can be considered as the random metric space \cite{vershik}.
+In fact, the Urysohn space is the random metric space in \textit{certain sense} \cite{vershik}.
 
 
 
