@@ -1,10 +1,10 @@
 \chapter{Ultralimits}
 
 Ultralimits provide a very general way to pass to a limit.
-This procedure works for \emph{any} sequence of metric spaces, its result reminds limit in the sense of Gromov Gausdorff, but has some strange features; for example, the limit of a constant sequence does \emph{not} coincide with this constant (see \ref{ex:ultrapower:compact}).
+This procedure works for \textit{any} sequence of metric spaces, its result reminds limit in the sense of Gromov--Hausdorff, but has some strange features; for example, the limit of a constant sequence of spaces $\spc{X}_n=\spc{X}$ is \textit{not} $\spc{X}$ (see \ref{ex:ultrapower:compact}).
 
 In geometry, ultralimits are used only as a canonical way to pass to a convergent subsequence.
-It is a useful thing in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
+It is useful in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
 
 This lecture is based on the introductory part of the paper by Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
 
@@ -71,12 +71,11 @@ and a map $f\:\NN\to \spc{X}$ there is a unique continuous map $\bar f\:\beta\NN
 \section{Ultralimits of points}
 \label{ultralimits}\index{ultralimit}
 
-Further, we will need the existence of a nonprincipal  ultrafilter $\omega$,
-which we fix once and for all.
+Let us fix a nonprincipal  ultrafilter $\omega$ once and for all.
 
 Assume $x_n$ is a sequence of points in a metric space $\spc{X}$. 
-Let us define the \index{$\omega$-limit}\emph{$\omega$-limit} of $(x_n)$ as the point $x_\omega$ 
-such that for any $\eps>0$, $\omega$-almost all elements of $(x_n)$ lie in $\oBall(x_\omega,\eps)$; 
+Let us define the \index{$\omega$-limit}\emph{$\omega$-limit} of a sequence $x_1,x_2,\dots$ as the point $x_\omega$ 
+such that for any $\eps>0$, point $x_n$ lie in $\oBall(x_\omega,\eps)$ for $\omega$-almost all $n$; 
 that is,
 \[\omega\set{n\in\NN}{\dist{x_\omega}{x_n}{}<\eps}=1.\]
 In this case, we will write 
@@ -84,14 +83,14 @@ In this case, we will write
 \ \ \text{or}\ \ 
 x_n\to x_\omega\ \text{as}\ n\to\omega.\]
 
-For example, if $\omega$ is the {}\emph{principal} ultrafilter such that $\omega\{n\}=1$ for some $n\in\NN$, then
-$x_\omega=x_n$.
+For example, if $\omega_n$ is the \textit{principal} ultrafilter such that $\omega_n\{n\}=1$ for some $n\in\NN$, then
+$x_{\omega_n}=x_n$.
 
-Alternatively, the sequence $x_n$ can be regarded as a map $\NN\to\spc{X}$.
-In this case, the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
+The sequence $x_n$ can be regarded as a map $\NN\to\spc{X}$ defined by $n\mapsto x_n$.
+If $\spc{X}$ is compact, then the map $\NN\to\spc{X}$ can be extended to a continuous map $\beta\NN\to\spc{X}$ from the Stone--\v{C}ech compactification $\beta\NN$ of $\NN$.
 Then the $\omega$-limit $x_\omega$ can be regarded as the image of $\omega$.
 
-Note that $\omega$-limits of a sequence and its subsequence may differ.
+Note that the $\omega$-limits of a sequence and its subsequence may differ.
 For example, sequence $y_n=-(-1)^n$ is a subsequence of $x_n=(-1)^n$, but for any ultrafilter $\omega$, we have
 \[\lim_{n\to\omega}x_n
 \ne
@@ -113,7 +112,7 @@ Note that $\omega(S_\eps)=1$ for any $\eps>0$.
 Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite.
 Therefore, we can choose an increasing sequence $n_k$
 such that $n_k\in S_{\frac1k}$ for each $k\in \NN$.
-Clearly, $x_{n_k}\to x_\omega$ as $k\to\infty$.
+Clearly $x_{n_k}\to x_\omega$ as $k\to\infty$.
 \qeds
 
 The following proposition 
@@ -141,19 +140,12 @@ is defined and does not depend on the choice of subsequence, then the sequence $
 
 \parit{Proof.} If $x_n$ is not a Cauchy sequence, then for some $\eps>0$, there is a subsequence $y_n$ of $x_n$ such that $\dist{x_n}{y_n}{}\ge\eps$ for all $n$.
 
-It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$, a contradiction.\qeds
-
-Ultralimits could shorten some proofs in the previous lecture.
-The following exercise provides an example.
-
-\begin{thm}{Exercise}\label{ex:prop:eps-isometry=isometry}
-Use ultralimits to give a shorter proof of \ref{GH-2}.
-\end{thm}
+It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$ --- a contradiction.\qeds
 
 \begin{thm}{Exercise}\label{ex:linear}
 Denote by $S$ the space of bounded sequences of real numbers.
 Show that there is a linear functional $L\:S\to\RR$ such that
-for any sequence $\bm{s}=(s_1,s_2,\dots)\in S$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$.
+for any sequence $\bm{s}=(s_1,s_2,\dots)\in S$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:ultrakatetov+}
@@ -163,8 +155,35 @@ for any bounded sequence $x_n$ of real numbers.
 Show that $f(n)=n$ for $\omega$-almost all $n\in\NN$.
 \end{thm}
 
+\section{An illustration}
 
+\begin{thm}{Claim}
+Let $\spc{X}$ and $\spc{Y}$ be compact spaces.
+Suppose that for every $n\in\NN$ there is a $\tfrac1n$-isometry $f_n\:\spc{X}\to \spc{Y}$.
+Then there is an isometry $\spc{X}\to \spc{Y}$.
+\end{thm}
 
+We give a proof of this claim only as an illustration for ulralimits.
+
+\parit{Proof.}
+Consider the $\omega$-limit $f_\omega$ of~$f_n$;
+according to \ref{prop:ultra/compact}, $f_\omega$ is defined.
+Since 
+\[|f_n(x)-f_n(x')|\lege |x-x'|\pm\tfrac1n\]
+we get that 
+\[|f_\omega(x)-f_\omega(x')|= |x-x'|\]
+for any $x,x'\in \spc{X}$;
+that is, $f_\omega$ is distance-preserving.
+
+Further, since $f_n$ is a $\tfrac1n$-isometry,
+for any $y\in \spc{Y}$ there is a sequence $x_n\in \spc{X}$ such that $|f_n(x_n)-y|\le \tfrac1n$.
+Therefore,
+\[f_\omega(x_\omega)=y,\]
+where $x_\omega$ is the $\omega$-limit of $x_n$;
+that is, $f_\omega$ is onto.
+
+It follows that $f_\omega\:\spc{X}\to\spc{Y}$ is an isometry.
+\qeds
 
 \section{Ultralimits of spaces}\label{sec:Ultralimit of spaces}
 
@@ -205,9 +224,11 @@ it can be written as
 The $\omega$-limit of any sequence of metric spaces is complete. 
 \end{thm}
 
+We will repeat the proof of \ref{ex:complete-completion} using a slightly different language.
+
 \parit{Proof.}
 Let $\spc{X}_n$ be a sequence of metric spaces and $\spc{X}_n\to\spc{X}_\omega$ as $n\to\omega$.
-Choose a Cauchy sequence $x_1,x_2,\dots\in\spc{X}_\omega$.
+Choose a Cauchy sequence $x_1,x_2,\dots{}\in\spc{X}_\omega$.
 Passing to a subsequence, we can assume that $\dist{x_k}{x_{m}}{\spc{X}_\omega}<\tfrac1{k}$ if $k<m$.
 
 Choose a double sequence $x_{n,m}\in \spc{X}_n$ such that for any fixed $m$ we have $x_{n,m}\to x_m$ as $n\to\omega$.
@@ -275,11 +296,11 @@ Show that $\iota\:\spc{X}\to\spc{X}^\omega$ is distance-preserving embedding. (S
 \end{subthm}
 
 \begin{subthm}{ex:ultrapower:compact} 
-Show that $\iota$ is onto if and only if $\spc{X}$ compact.
+Show that $\iota$ is onto if and only if $\spc{X}$ is compact.
 \end{subthm}
 
 \begin{subthm}{ex:ultrapower:proper} 
-Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component of $\spc{X}^\omega$; that is, a subset of $\spc{X}^\omega$ that lie at a finite distance from a given point.
+Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component of $\spc{X}^\omega$; that is, a subset of $\spc{X}^\omega$ that lies at a finite distance from a given point.
 \end{subthm}
 
 \end{thm}
@@ -347,16 +368,17 @@ that is, there is a point $p\in \spc{X}^\omega$ and $R<\infty$ such that the clo
 \section{Tangent and asymptotic spaces}
 \label{sec:tan+asymptotic}
 
-Choose a space $\spc{X}$ and a sequence of $\lambda_n>0$.
-Consider the sequence of \index{scaled space}\emph{scalings} $\spc{X}_n=\lambda_n\cdot\spc{X}=(\spc{X},\lambda_n\cdot\dist{*}{*}{\spc{X}})$.
+Choose a space $\spc{X}$ and a sequence $\lambda_n$ of positive numbers.
+Consider the sequence of \index{rescaled space}\emph{rescalings} $\spc{X}_n=\lambda_n\cdot\spc{X}=(\spc{X},\lambda_n\cdot\dist{*}{*}{\spc{X}})$.
 
 Choose a point $p\in \spc{X}$ and denote by $p_n$ the corresponding point in $\spc{X}_n$.
 Consider the $\omega$-limit $\spc{X}_\omega$ of $\spc{X}_n$ (one may denote it by $\lambda_\omega\cdot \spc{X}$);
 set $p_\omega$ to be the $\omega$-limit of $p_n$.
 
-If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\lambda_\omega$-tangent space}\emph{$\lambda_\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
+If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\lambda_\omega$-tangent space}\emph{$\lambda_\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
 
-If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}\footnote{Often it is called \emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
+If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}€
+\footnote{Often it is called an {}\emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
 
 The following exercise states that the tangent and asymptotic spaces depend on the sequence $\lambda_n$ and a nonprincipal ultrafilter $\omega$.
@@ -376,7 +398,7 @@ Show that $\spc{T}$ is a complete metric tree.
 \end{subthm}
 
 \begin{subthm}{ex:Asym(Lob):homogeneous}
-Show that $\spc{T}$ is one-point homogeneous; that is, given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
+Show that $\spc{T}$ is one-point-homogeneous; that is, given two points $s,t\in \spc{T}$ there is an isometry of $\spc{T}$ that maps $s$ to $t$.
 \end{subthm}
 
 \begin{subthm}{ex:Asym(Lob):continuum}
@@ -403,6 +425,6 @@ there is a set $S\subset \NN$ such that $\omega(S)=1$ and $S\cap C_\alpha$ is a 
 
 The existence of a selective ultrafilter follows from the continuum hypothesis \cite{rudin}.
 
-For a selective ultrafilter $\omega$, there is a stronger version of Proposition~\ref{prop:ultra/partial};
-namely we can assume that the subsequence $(x_n)_{n\in S}$ can be chosen so that $\omega(S)=1$.
-So, if needed, one may assume that the ultrafilter $\omega$ is chosen to be selective and use this stronger version of the proposition.
+If needed, we may assume that the chosen ultrafilter $\omega$ is selective.
+In this case \textit{the subsequence $(x_n)_{n\in S}$ in \ref{prop:ultra/partial} can be chosen so that $\omega(S)=1$}.
+

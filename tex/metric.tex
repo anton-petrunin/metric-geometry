@@ -1,6 +1,6 @@
 \chapter{Definitions}
 
-In this lecture we give some conventions used further
+In this lecture we make some conventions used further
 and remind some definitions related to metric spaces.
 
 We assume some prior knowledge of metric spaces.
@@ -34,8 +34,9 @@ $\dist{x}{y}{\spc{X}}\ge 0$,
 \end{thm}
 
 Recall that a \index{metric space}\emph{metric space} is a set with a metric on it.
-The elements of the set are called \emph{points}. 
-Most of the time we keep the same notation for the metric space and its underlying set.
+The elements of the set are called \index{point}\emph{points}. 
+Most of the time we keep the same notation for the metric space and its underlying set,
+but if needed we may use $\ushort{\spc{X}}$ for the underlying set of metric space $\spc{X}$.
 
 The function 
 \[\distfun_x\:y\mapsto \dist{x}{y}{}\]
@@ -71,14 +72,11 @@ that is, there is a continuous function $F\:\spc{X}\to\RR$ such that $F(a)=f(a)$
 
 
 
-\section{Variations of definition}
+\section{Variations}
 
 \parbf{Pseudometris.}
 A metric for which the distance between two distinct points can be zero is called a \index{pseudometric}\emph{pseudometric}.
 In other words, to define pseudometric, we need to remove condition \ref{SHORT.metric=0} from \ref{def:metric}.
-
-The following observation shows that
-nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
 
 Assume $\spc{X}$ is a pseudometric space.
 Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
@@ -91,9 +89,12 @@ The space $\spc{X}'$ is called the
 \emph{corresponding metric space} for the pseudometric space $\spc{X}$.
 Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
 
+This construction shows that nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
+
 \parbf{$\bm{\infty}$-metrics.}
-One may also consider metrics with values in $\RR\cup\{\infty\}$;
-we might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but most of the time we use the term {}\emph{metric}.
+One may also consider metrics with values in $[0,\infty]$;
+that is, we allow infinite distance between points.
+We might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but most of the time we use the term {}\emph{metric}.
 
 Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
 
@@ -110,7 +111,9 @@ It follows that any $\infty$-metric space is a {}\emph{disjoint union} of genuin
 Given two sets $A$ and $B$ on the plane, set 
 \[\dist{A}{B}{}=\mu(A\bigtriangleup B),\]
 where $\mu$ denotes the Lebesgue measure and $\bigtriangleup$ denotes symmetric difference
-\[A\bigtriangleup B\df(A\cup B)\setminus(B\cap A).\]
+\[A\bigtriangleup B
+\df(A\cup B)\setminus(B\cap A)
+=(A\setminus B)\cup(B\setminus A).\]
 
 \begin{subthm}{ex:pseudo-infty-metric:pseudo}
 Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded closed subsets.
@@ -142,13 +145,14 @@ consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
 Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right-hand side in \ref{eq:cauchy-dist} is defined;
 moreover, it defines a pseudometric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
-The corresponding metric space $\bar{\spc{X}}$ is called \index{completion}\emph{completion} of $\spc{X}$.
-
-Note that the original space $\spc{X}$ forms a dense subset in its completion $\bar{\spc{X}}$.
-More precisely,  for each point $x\in\spc{X}$ one can consider a constant sequence $x_n=x$ which is Cauchy.
-It defines a natural map $\spc{X}\to \bar{\spc{X}}$.
+The corresponding metric space is called the \index{completion}\emph{completion} of $\spc{X}$;
+it will be denoted by $\bar{\spc{X}}$.
+  
+For each point $x\in\spc{X}$, one can consider a constant sequence $x_n=x$ which is Cauchy.
+It defines a natural inclusion map $\spc{X}\hookrightarrow \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
-In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$;
+note that $\spc{X}$ is a dense subset in its completion $\bar{\spc{X}}$
 
 \begin{thm}{Exercise}\label{ex:complete-completion}
 Show that the completion of a metric space is complete.
@@ -157,17 +161,13 @@ Show that the completion of a metric space is complete.
 
 \section{Compact spaces}
 
-Let us recall few equivalent definitions of compact metric spaces.
+Let us recall a few statements about compact metric spaces.
 
 \begin{thm}{Definition}\label{def:compact}
-A metric space $\spc{K}$ is compact if and only if one of the following equivalent conditions hold:
+A metric space $\spc{K}$ is compact if and only if one of the following equivalent conditions holds:
 
 \begin{subthm}{}
  Every open cover of $\spc{K}$ has a finite subcover.
-\end{subthm}
-
-\begin{subthm}{}
- For any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover. (The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.)
 \end{subthm}
 
 \begin{subthm}{}
@@ -180,11 +180,17 @@ The space $\spc{K}$ is complete and \index{totally bounded space}\emph{totally b
 
 \end{thm}
 
-A subset $N$ of a metric space $\spc{K}$ is called \index{net}\emph{$\eps$-net} if any point $x\in \spc{K}$ lies on the distance less than $\eps$ from a point in $N$.
-More generally, a subset $N$ is called \index{net}\emph{$\eps$-net} of a subset $S\subset\spc{K}$ if any point $x\in S$ lies on the distance less than $\eps$ from a point in $N$. 
+\begin{thm}{Lebesgue lemma}
+Let $\spc{K}$ be a compact metric space.
+Then for any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover.
+
+The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.
+\end{thm}
+
+A subset $N$ of a metric space $\spc{K}$ is called \index{net}\emph{$\eps$-net} if any point $x\in \spc{K}$ lies at the distance less than $\eps$ from a point in $N$.
+More generally, a subset $N$ is called \index{net}\emph{$\eps$-net} of a subset $S\subset\spc{K}$ if any point $x\in S$ lies at the distance less than $\eps$ from a point in $N$. 
 
 Note that totally bounded spaces can be defined as spaces that admit a finite $\eps$-net for any $\eps>0$.
-
 
 \begin{thm}{Exercise}\label{ex:compact-net}
 Show that a space $\spc{K}$ is totally bounded if and only if it contains a compact $\eps$-net for any $\eps>0$. 
@@ -195,7 +201,7 @@ Let $\pack_\eps\spc{X}$ be the exact upper bound on the number of points $x_1,\z
 
 If $n=\pack_\eps\spc{X}<\infty$, then
 the collection of points $x_1,\dots,x_n$ is called a \index{maximal packing}\emph{maximal $\eps$-packing}.
-If $\spc{X}$ is a length space (see Section~\ref{sec:intrinsic}) then $n$ is the maximal number of open disjoint $\tfrac\eps2$-balls in $\spc{X}$.
+If $\spc{X}$ is a length space (see Section~\ref{sec:intrinsic}) then $n$ is the maximal number of disjoint open $\tfrac\eps2$-balls in $\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:pack-net}
 Show that any maximal $\eps$-packing is an $\eps$-net.
@@ -207,29 +213,29 @@ Conclude that a complete space $\spc{X}$ is compact if and only if $\pack_\eps\s
 \begin{thm}{Exercise}\label{ex:non-contracting-map}
 Let $\spc{K}$  be a compact metric space and
 \[f\:\spc{K}\z\to \spc{K}\] 
-be a distance-nondecreasing map.
+be a distance-noncontracting map.
 Prove that $f$ is an \index{isometry}\emph{isometry};
 that is, $f$ is a distance-preserving bijection.
 \end{thm}
 
 A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
-in other words, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
+equivalently, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
 \section{Proper spaces}
 
-A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact. 
-This condition is equivalent to each of the following statements:
+A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact.
+It is straightforward to check that this condition is equivalent to each of the following statements:
 \begin{itemize}
 \item For some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
 the closed ball $\cBall[p,R]_{\spc{X}}$ is compact. 
-\item The function $\distfun_p\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} for some (and therefore any) point $p\in \spc{X}$;
-that is, for any compact set $K\subset \RR$, its inverse image 
-\[\distfun_p^{-1}(K)=\set{x\in \spc{X}}{\dist{p}{x}{\spc{X}}\in K}\]
-is compact.
+\item The function $\distfun_p\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} for some (and therefore any) point $p\in \spc{X}$.
+(Recall that a function $f\:\spc{X}\to\RR$ is proper if for any compact set $K\subset \RR$, its inverse image 
+$f^{-1}(K)$
+is compact.)
 \end{itemize}
 
 \begin{thm}{Exercise}\label{ex:loc-compact-not-proper}
-Give an example of space which is locally compact but not proper.
+Give an example of a metric space that is locally compact but not proper.
 \end{thm}
 
 \section{Geodesics}
@@ -237,9 +243,9 @@ Give an example of space which is locally compact but not proper.
 
 Let $\spc{X}$ be a metric space 
 and $\II$\index{$\II$} a real interval. 
-A~globally isometric map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
-\footnote{Different authors call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.
-Also, note that the meaning of the term \emph{geodesic} is different from what is used in Riemannian geometry, altho they are closely related.}; 
+A distance-preserving map $\gamma\:\II\to \spc{X}$ is called a \index{geodesic}\emph{geodesic}%
+\footnote{Others call it differently: {}\emph{shortest path}, {}\emph{minimizing geodesic}.
+Also, note that the meaning of the term {}\emph{geodesic} is different from what is used in Riemannian geometry, altho they are closely related.}; 
 in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if 
 \[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
 for any pair $s,t\in \II$.
@@ -256,7 +262,9 @@ A \index{geodesic path}\emph{geodesic path} is a geodesic with constant-speed pa
 
 \section{Geodesic spaces and metric trees}
 
-A metric space is called \index{geodesic}\emph{geodesic} if any pair of its points can be joined by a geodesic.
+A metric space is called \index{geodesic space}\emph{geodesic} if any pair of its points can be joined by a geodesic.
+
+An $\infty$-metric space $\spc{X}$ is called {}\emph{geodesic} if each metric component of $\spc{X}$ is geodesic.
 
 \begin{thm}{Exercise}\label{ex:pogorelov}
 Let $f$ be a centrally symmetric positive continuous function on $\mathbb{S}^2$.
@@ -264,18 +272,19 @@ Given two points $x,y\in \mathbb{S}^2$,
 set 
 \[\|x-y\|=\int_{B(x,\frac \pi2)\setminus B(y,\frac\pi2)}f.\]
 
-Show that $(\mathbb{S}^2,\|{*}-{*}\|)$ is a geodesic space
+Show that $(\mathbb{S}^2,\|{*}-{*}\|)$ is a geodesic space,
 and the geodesics in $(\mathbb{S}^2,\|{*}-{*}\|)$ run along great circles of $\mathbb{S}^2$.
 \end{thm}
 
 A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
 and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contain the geodesic $[xz]_{\spc{T}}$.
-In other words any triangle in $\spc{T}$ is a tripod;
-that is, for any three geodesics $[xy]$, $[yz]$, and $[zx]$ have a common point.
+The latter means that any triangle in $\spc{T}$ is a tripod;
+that is, for any three points $x$, $y$, and $z$ there is a point $p$ such that 
+\[[xy]\cup[yz]\cup[zx]=[px]\cup[py]\cup[pz].\]
 
 
 \begin{thm}{Exercise}\label{ex:4-point-trees}
-Let $p,x,y,z$ be points in a metric tree.
+Let $p$, $x$, $y$, and $z$ be points in a metric tree.
 Consider three numbers 
 \begin{align*}
 a&=|p-x|+|y-z|,
@@ -289,9 +298,9 @@ Show that $b=c$.
 
 \end{thm}
 
-Recall that the set 
-\[S_r(p)_{\spc{X}}=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
-is called a \emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
+The set 
+\[S(p,r)_{\spc{X}}=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
+will be called a \index{sphere}\emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
 
 
 \begin{thm}{Exercise}\label{ex:spheres-in-trees}
@@ -300,13 +309,13 @@ That is,
 \[\dist{x}{z}{}
 \le
 \max\{\,\dist{x}{y}{},\dist{y}{z}{}\,\}\]
-for any $x,y,z\in S_r(p)_{\spc{T}}$.
+for any $x,y,z\in S(p,r)_{\spc{T}}$.
 \end{thm}
 
 \section{Length}
 
 A \index{curve}\emph{curve} is defined as a continuous map from a real interval $\II$ to a metric space.
-If $\II=[0,1]$, that is, if the interval is unit, then the curve is called a \index{path}\emph{path}.
+If $\II=[0,1]$, then the curve is called a \index{path}\emph{path}.
 
 \begin{thm}{Definition}
 Let $\spc{X}$ be a metric space and
@@ -327,7 +336,7 @@ Length is a lower semi-continuous with respect to the pointwise convergence of c
 More precisely, assume that a sequence
 of curves $\gamma_n\:\II\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
 to a curve $\gamma_\infty\:\II\to \spc{X}$;
-that is, for any fixed $t \in \II$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
+that is, for any fixed $t \in \II$ we have $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
 Then 
 $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
 \end{thm}
@@ -376,7 +385,8 @@ Since the partition was arbitrary, by the definition of length, the inequality  
 
 \section{Length spaces}\label{sec:intrinsic}
 
-If for any $\eps>0$ and any pair of points $x$ and $y$ in a metric space $\spc{X}$, there is a path $\alpha$ connecting $x$ to $y$ such that
+Let $\spc{X}$ be a metric space.
+If for any $\eps>0$ and any pair of points $x,y\in\spc{X}$, there is a path $\alpha$ connecting $x$ to $y$ such that
 \[\length\alpha< \dist{x}{y}{}+\eps,\]
 then $\spc{X}$ is called a \index{length space}\emph{length space} and the metric on $\spc{X}$ is called a \index{length metric}\emph{length metric}.\label{page:length metric}
 
@@ -401,7 +411,7 @@ Directly from the definition, it follows that if $\alpha\:[0,1]\to\spc{X}$ is a 
 (that is, $\alpha(0)=x$ and $\alpha(1)=y$), then 
 \[\length\alpha\ge \dist{x}{y}{}.\]
 Set 
-\[\yetdist{x}{y}{}=\inf\{\length\alpha\}\]
+\[\yetdist{x}{y}{}=\inf\{\,\length\alpha\,\}\]
 where the greatest lower bound is taken for all paths from $x$ to~$y$.
 It is straightforward to check that $(x,y)\mapsto \yetdist{x}{y}{}$ is an $\infty$-metric; moreover, $(\spc{X},\yetdist{*}{*}{})$ is a length space.
 The metric $\yetdist{*}{*}{}$ is called the \index{induced length metric}\emph{induced length metric}.
@@ -476,7 +486,7 @@ $\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
 
 This way we define $\alpha(t)$ for $t\in W$,
 where $W$ denotes the set of dyadic rationals in $[0,1]$.
-Moreover, $\alpha\:W\to \spc{X}$ is Lipschitz (it has Lipschitz constant $(1+\eps)\cdot\dist{x}{y}{}$).
+Moreover, $\alpha\:W\to \spc{X}$ is Lipschitz (it has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$).
 Since $\spc{X}$ is complete, the map $\alpha$ can be extended continuously to $[0,1]$.
 Moreover,
 \[\begin{aligned}
@@ -522,7 +532,7 @@ It is sufficient to show that $\rho(x)=\infty$ for some (and therefore any) poin
 Indeed, $\spc{X}$ is a length space;
 therefore for any $\eps>0$, 
 the set $\cBall[x,\rho(x)-\eps]$ is a compact $\eps$-net in~$B$.
-Since $B$ is closed and hence complete, it must be compact.
+Since $B$ is closed and hence complete, it must be compact; see \ref{totally-bounded} and \ref{ex:compact-net}.
 \claimqeds
 
 \begin{clm}{} $|\rho(x)-\rho(y)|\le \dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$;
@@ -533,14 +543,14 @@ Indeed,
 assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
 Then 
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
-Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$, a contradiction.\claimqeds
+Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
 
 Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
 From \ref{eq:rho>0}, we have $\eps>0$.
 
 Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
-Clearly,
+Clearly
 $\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
 Therefore, $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
 a contradiction.

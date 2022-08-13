@@ -2,8 +2,6 @@
 
 {}\emph{Injective spaces} (also known as {}\emph{hyperconvex spaces}) are the metric analog of convex sets.
 
-This lecture is based on a paper by John Isbell \cite{isbell}.
-
 \section{Admissible and extremal functions}
 
 Let $\spc{X}$ be a metric space.
@@ -39,7 +37,7 @@ if for any admissible function $s\:\spc{X}\to\RR$ we have
 \begin{thm}{Key exercise}\label{ex:+-c}
 Let $r$ be an extremal function and $s$ an admissible function on a metric space $\spc{X}$.
 Suppose that $r\ge s-c$ for some constant $c$.
-Show that $c\ge 0$ and $r\le s+c$.
+Show that $r\le s+c$; in particular, $c\ge 0$.
 \end{thm}
 
 
@@ -106,7 +104,7 @@ Assume $r$ is extremal.
 Arguing by contradiction, assume there is $\delta>0$ such that
 \[r(q)\ge \distfun_p(q)-r(p)+\delta\]
 for any $q$.
-By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is a extremal; in particular, admissible.
+By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is extremal; in particular, admissible.
 Therefore \ref{ex:+-c} implies that
 \[r(q)\le \distfun_p(q)+r(p)-\delta\]
 for any $q$.
@@ -132,7 +130,7 @@ Follows by Zorn's lemma.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:circle}
-Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length-metric.
+Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length metric.
 Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz and 
 \[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
 \end{thm}
@@ -183,7 +181,7 @@ coordinate plane with the metric induced by the $\ell^\infty$-norm.
 
 \end{thm}
 
-The following two exercise deals with ultrametric spaces which in some sense dual to the injective spaces. 
+The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
 Recall that if the following inequality
 \[\dist{x}{z}{\spc{X}}
 \le
@@ -198,12 +196,12 @@ For any subspace $\spc{A}$ in $\spc{X}$ and any other metric space $\spc{Y}$, an
 Show that $\spc{X}$ is an ultrametric space.
 \end{thm}
 
-A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \emph{short retract} if there is a short map $\spc{X}\to \spc{S}$ that is identity on $\spc{S}$.
+A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \index{short retract}\emph{short retract} if there is a short map $\spc{X}\to \spc{S}$ that is the identity on $\spc{S}$.
 
 \begin{thm}{Exercise}\label{ex:ultrametric-converse}
-Show that any compact subspace $\spc{K}$ of a ultrametric space $\spc{X}$ is its short retract.
+Show that any compact subspace $\spc{K}$ of an ultrametric space $\spc{X}$ is its short retract.
 
-Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not short its short retract.
+Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not its short retract.
 \end{thm}
 
 
@@ -253,7 +251,7 @@ The condition in \ref{SHORT.thm:injective=hyperconvex:balls} implies that $r$ is
 It remains to observe that $p\in \cBall[x_\alpha,r_\alpha]$ for every $\alpha$ if and only if \ref{eq:|p-x|=<r(x)} holds.
 
 By \ref{obs:extremal:below}, for any admissible function $r$ there is an extremal function $\bar r\le r$;
-whence \ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}.
+hence \ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}.
 
 \parit{\ref{SHORT.thm:injective=hyperconvex:balls}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:injective}.}
 Arguing by contradiction, suppose $\spc{Y}$ is not injective;
@@ -327,7 +325,7 @@ Show that $\Inj\spc{X}$ is compact if and only if so is $\spc{X}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:tripod+square}
-Describe the set of all extremal functions on a metric space $\spc{X}$ and the metric space $\Inj \spc{X}$ in each of the following case:
+Describe the set of all extremal functions on a metric space $\spc{X}$ and the metric space $\Inj \spc{X}$ in each of the following cases:
 
 \begin{subthm}{ex:tripod+square:tripod} 
 $\spc{X}$ is a metric space with exactly three points $a,b,c$ such that 
@@ -349,7 +347,8 @@ For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is  injective.
 
 \begin{thm}{Lemma}\label{lem:r|X-extremal}
 Let $\spc{X}$ be a metric space.
-Suppose that $r$ is an extremal function on $\Inj \spc{X}$.
+Suppose that $r\in \Inj(\Inj \spc{X})$;
+that is, $r$ is an extremal function on $\Inj \spc{X}$.
 Then $r|_\spc{X}\in \Inj \spc{X}$;
 that is, the restriction of $r$ to $\spc{X}$ is an extremal function.
 \end{thm}
@@ -388,9 +387,8 @@ that is, $r$ is not extremal --- a contradiction.
 \qeds
 
 \parit{Proof of \ref{prop:InjX-is-injective}.}
-Choose an extremal function $r\:\Inj\spc{X}\to\RR$.
-Set $s\z\df r|_{\spc{X}}$.
-By \ref{lem:r|X-extremal}, $s\in \Inj\spc{X}$;
+Choose a function $r\in\Inj(\Inj\spc{X})$.
+By \ref{lem:r|X-extremal}, $s\z\df r|_{\spc{X}}\in \Inj\spc{X}$;
 that is, $s$ is extremal.
 By \ref{thm:injective=hyperconvex:extremal},
 it is sufficient to show that  
@@ -413,7 +411,7 @@ Recall that
 \[\dist{s}{f}{\Inj \spc{X}}
 \df
 \sup\set{|s(x)-f(x)|}{x\in\spc{X}};\] 
-hence \ref{eq:r(f)>=| r-f|} follows.
+whence \ref{eq:r(f)>=| r-f|} follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:4-on-a-line}
@@ -423,7 +421,7 @@ Show that for any two points $f,g\in\Inj \spc{X}$ lie on a geodesic $[pq]$ with 
 
 \section{Injective envelope}
 
-An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelope}\emph{injective envelope} if $\spc{E}$ is an injective space and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
+An extension $\spc{E}$ of a metric space $\spc{X}$ will be called its \index{injective envelope}\emph{injective envelope} if $\spc{E}$ is an injective space, and there is no proper injective subspace of $\spc{E}$ that contains $\spc{X}$.
 
 Two injective envelopes $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are called  equivalent if there is an isometry $\iota\: \spc{E}\to\spc{F}$ such that $f=\iota\circ e$.
 
@@ -439,7 +437,7 @@ Since $S$ is injective, there is a short map $w\:\Inj\spc{X}\to S$ that fixes al
 
 Suppose that $w\:f\mapsto f'$; observe that $f(x)\ge f'(x)$ for any $x\in \spc{X}$.
 Since $f$ is extremal, $f=f'$;
-that is, $w$ is the identity map and therefore $S=\Inj\spc{X}$.
+that is, $w$ is the identity map, and therefore $S=\Inj\spc{X}$.
 
 Assume we have another injective envelope $e\:\spc{X}\hookrightarrow \spc{E}$.
 Then there are short maps $v\:\spc{E}\to \Inj\spc{X}$ and $w\:\Inj\spc{X}\to \spc{E}$ such that $x=v\circ e(x)$ and $e(x)=w(x)$ for any $x\in\spc{X}$.
@@ -462,5 +460,5 @@ Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to a dis
 Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi}.
 The injective envelope was introduced by John Isbell \cite{isbell}.
 It was rediscovered a couple of times since then;
-as a result the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
+as a result, the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
 

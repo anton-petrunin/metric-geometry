@@ -9,7 +9,7 @@ Show that $f$ is continuous and satisfies the needed property.
 
 \parbf{\ref{ex:tietze}.}
 Use \ref{ex:normal} to construct an approximation of the needed function and pass to a limit.
-Alternatively, read about \emph{Tietze extension theorem}.
+Alternatively, read about the \textit{Tietze extension theorem}.
 
 \parbf{\ref{ex:pseudo-infty-metric}};\ref{SHORT.ex:pseudo-infty-metric:pseudo}.
 Note that if $\mu(A)=\mu(B)=0$, then $|A-B|=0$.
@@ -18,7 +18,7 @@ It is straightforward to check that for bounded measurable sets the remaining co
 
 
 \parit{\ref{SHORT.ex:pseudo-infty-metric:infty}.}
-Note that distance from the empty set to the whole plane is infinite; so the value $|A-B|$ might be infinite.
+Note that the distance from the empty set to the whole plane is infinite; so the value $|A-B|$ might be infinite.
 It is straightforward to check the remaining conditions in~\ref{def:metric}.
 
 
@@ -29,7 +29,7 @@ Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that
 \quad\text{and}\quad
 \rho(x')\le\frac{\rho(x)}{1+\eps}.\]
 Consider a sequence $x_n$ of points such that $x_{n+1}\z=x_n'$.
-Clearly, 
+Clearly
 \[\dist{x_{n+1}}{x_n}{}
 \le
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
@@ -46,7 +46,7 @@ Since $\rho$ is a continuous function we get
 The latter contradicts that $\rho>0$.
 
 \parbf{\ref{ex:complete-completion}.}
-Let $\bar {\spc{X}}$ be completion of $\spc{X}$.
+Let $\bar {\spc{X}}$ be the completion of $\spc{X}$.
 By the definition, for any $y\in \bar {\spc{X}}$ there is a Cauchy sequence $x_n$ in  $\spc{X}$ that converges to $y$.
 
 Choose a Cauchy sequence $y_m$ in $\bar {\spc{X}}$.
@@ -79,7 +79,7 @@ that is,
 \]
 
 
-Since $f$ is non-contracting, we get
+Since $f$ is distance-noncontracting, we get
 \[
 |x_0-x_{|n_i-n_j|}|
 \le 
@@ -93,7 +93,7 @@ x_{m_i}\to x_0\quad\text{and}\quad y_{m_i}\to y_0\quad\text{as}\quad i\to\infty.
 \leqno({*})\]
 
 Set \[\ell_n=|x_n-y_n|_{\spc{K}}.\]
-Since $f$ is non-contracting, the sequence $(\ell_n)$ is nondecreasing.
+Since $f$ is distance-noncontracting, the sequence $(\ell_n)$ is nondecreasing.
 
 By $({*})$,  $\ell_{m_i}\to\ell_0$ as $m_i\to\infty$.
 It follows that $(\ell_n)$ is a constant sequence.
@@ -112,8 +112,7 @@ The presented proof is not quite standard,
 I learned it from Travis Morrison, 
 a student in my MASS class at Penn State, Fall 2011.
 
-Note that this exercise implies that \emph{any surjective non-expanding map from a compact metric space to itself is an isometry}
-. 
+Note that this exercise implies that \textit{any surjective non-expanding map from a compact metric space to itself is an isometry}. 
 
 \parbf{\ref{ex:loc-compact-not-proper}.} Consider an infinite discrete space.
 
@@ -159,8 +158,8 @@ Apply \ref{ex:4-point-trees}.
 
 
 \parbf{\ref{ex:no-geod}.}
-Formally speaking, one-point space is an example,
-but there is not a trivial example as well.
+Formally speaking, a one-point space is a solution,
+but we will construct a nontrivial example.
 
 Consider the unit ball $(B,\rho_0)$
 in the space $c_0$ of all sequences converging to zero equipped with the sup-norm.
@@ -173,7 +172,7 @@ then its $\rho_1$-length is defined by
 \[\length_{\rho_1}\bm{x}\df\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
 Note that the metric $\rho_1$ is bilipschitz to~$\rho_0$.
 
-Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate, denote by $x_m(t)$ and $x_m'(t)$ respectively.
+Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate; denote them by $x_m(t)$ and $x_m'(t)$ respectively.
 Note that if $x'_m(t)\le x_m(t)$ for any $t$ and 
 the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x_m(t)$, then 
 \[\length_{\rho_1}\bm{x}'\le \length_{\rho_1}\bm{x}.\]
@@ -189,9 +188,9 @@ In particular, $(B,\rho_1)$ has no geodesics.
 This solution was suggested by Fedor Nazarov~\cite{nazarov}.
 
 \parbf{\ref{ex:compact+connceted}.}
-Choose a sequence of positive numbers $\varepsilon_n\to 0$ and an $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
+Choose a sequence of positive numbers $\varepsilon_n\to 0$ and a finite $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
 Assume $N_0$ is a one-point set, so $\eps_0>\diam K$.
-Connect each point $x\in N_{k+1}$ to a point $y\in N_{k}$ by a curve of length at most $\eps_k$.
+If $\dist{x}{y}{}<\eps_k$ for some $x\in N_{k+1}$ and $y\in N_{k}$, then connect them by a curve of length at most $\eps_k$.
 
 Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path-connected.
 
@@ -218,7 +217,7 @@ In particular, $x_n$ converges to $x_\infty$ in $(\spc{X},\|*-*\|)$.
 
 
 \begin{wrapfigure}{r}{20 mm}
-\vskip-5mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-1}
 \end{wrapfigure}

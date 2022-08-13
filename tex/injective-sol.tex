@@ -94,7 +94,7 @@ in particular, there is a homotopy $k_t\:\spc{Y}\hookrightarrow \ell^\infty(\spc
 
 Since $k$ is distance-preserving and $\spc{Y}$ is injective,
 there is a short map $f\:\ell^\infty(\spc{Y})\to \spc{Y}$ such that the composition $f\circ k$ is the identity map on $\spc{Y}$.
-The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ is a needed homotopy. 
+The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ provides the needed homotopy. 
 
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
@@ -129,7 +129,7 @@ In this case, $\spc{Y}=(\RR^2,\ell^\infty)$.
 Note that $\spc{X}\to (\RR^2,\ell^\infty)$ is a short map if and only if both of its coordinate projections are short.
 It remains to apply \ref{SHORT.ex:injective-spaces:R}.
 
-More generally, \emph{any $\ell^\infty$-product of injective spaces is injective};
+More generally, \textit{any $\ell^\infty$-product of injective spaces is injective};
 in particular, if $\spc{Y}$ and $\spc{Z}$ are injective then the product $\spc{Y}\times\spc{Z}$ equipped with the metric 
 \[\dist{(y,z)}{(y',z')}{\spc{Y}\times\spc{Z}}=\max\{\,\dist{y}{y'}{\spc{Y}},\dist{z}{z'}{\spc{Z}}\,\}\]
 is injective as well.
@@ -147,7 +147,7 @@ it exists by Zorn's lemma.
 If $A$ is the whole space, then the problem is solved.
 Otherwise, choose $p\notin A$.
 
-Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the the exact lower bound on the distances from points in $A$ to $p$.
+Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the exact lower bound on the distances from points in $A$ to $p$.
 Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
 Set $f(p)=\lim f(a_n)$.
 
@@ -198,11 +198,11 @@ Whence $\spc{U}_d$ is not countably hyperconvex.
 Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
 
 \parbf{\ref{ex:Inj(compact)}.}
-Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded functions.
+Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded.
 
 \parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
 Let $f$ be an extremal function.
-Observe that at least two of the numbers $f(a)+f(b)$, $f(b)+f(c)$, and $f(c)+f(a)$ are $1$.
+By \ref{lem:opposite-compact}, at least two of the numbers $f(a)+f(b)$, $f(b)+f(c)$, and $f(c)+f(a)$ are $1$.
 It follows that for some $x\in[0,\tfrac12]$, we have 
 \begin{align*}
 f(a)&=1\pm x,&
@@ -211,6 +211,12 @@ f(c)&=1\pm x,
 \end{align*}
 where we have one ``minus'' and two ``pluses'' in these three formulas.
 
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-3}
+\end{wrapfigure}
+
 Suppose that
 \begin{align*}
 g(a)&=1\pm y,& g(b)&=1\pm y,& g(c)&=1\pm y
@@ -218,20 +224,18 @@ g(a)&=1\pm y,& g(b)&=1\pm y,& g(c)&=1\pm y
 is another extremal function.
 Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x+y|$ otherwise.
 
+It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
+
 \begin{wrapfigure}{o}{30 mm}
 \vskip-0mm
 \centering
-\includegraphics{mppics/pic-3}
-\bigskip
 \includegraphics{mppics/pic-4}
 \end{wrapfigure}
 
-It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
-
 \parit{\ref{SHORT.ex:tripod+square:square}.}
 Assume $f$ is an extremal function.
-Observe that 
-$f(x)+f(y)=f(p)+f(q)=2$;
+Use \ref{lem:opposite-compact} to show that
+\[f(x)+f(y)=f(p)+f(q)=2;\]
 in particular, two values $a=f(x)-1$ and $b=f(p)-1$ completely describe the function $f$.
 Since $f$ is extremal, we also have that 
 \[(1\pm a)+(1\pm b)\ge 1\]
@@ -270,6 +274,6 @@ Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=
 \parbf{\ref{ex:d-p-inclusion}.}
 Show that there is a pair of short maps 
 $\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$ 
-such that their composition is identity of $\spc{X}$.
+such that their composition is the identity on $\spc{X}$.
 Make a conclusion.
 
