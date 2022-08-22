@@ -7,28 +7,30 @@ This lecture devoted to interactions between metric measures.
 A measure on a metric space is called \index{Borel measure}\emph{Borel} if it is defined on all open sets (and thus on all Borel sets).
 
 Let us consider the space of Borel probability measures on a metric space $\spc{X}$.
-Recall that a sequence of Borel measures $\mu_n$ \index{weak convergence}\emph{weakly converges} to a measure $\mu$ if for any continuous function $f$ with compact support we have
-\[\int_{\spc{X}} f\cdot \mu_n\to\int_{\spc{X}} f\cdot \mu\]
-as $n\to \infty$.
-The weak convergence defines a topology on the space ...
-This space comes with topology defined by weak convergence;
-that is ...
-
-can be equipped with the following metric 
+It can be equipped with the \index{Wasserstein metric}\emph{Wasserstein metric}
 \[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
 where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
-The obtained metric space is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$ and denoted by $\Wass_1\spc{X}$.
 
-\begin{thm}{Exercise}\label{ex:wasserstein}
-Let $\spc{X}$ be a compact metric space.
-Show that $\Wass_1\spc{X}$ is a compact length metric space.
+The Wasserstein distance $\dist{\mu}{\nu}{}$ might take infinite value, but all measures with compact support belong lie on finite distance from each other in the obtained $\infty$-metric space.
+the metric component of these measures is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$; 
+it is denoted by $\Wass_1\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:wasserstein-infty}
+Construct two Borel probability measures $\mu$ and $\nu$ on $\RR$ with Wasserstein distance $\dist{\mu}{\nu}{}=\infty$.
 \end{thm}
 
-\section{Metric-measure space}
 
-\section{Wasserstein's metric}
+\begin{thm}{Exercise}\label{ex:wasserstein-compact}
+Show that $\Wass_1\spc{X}$ is a compact if and only if so is~$\spc{X}$.
+\end{thm}
 
-Assume we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
+\begin{thm}{Exercise}\label{ex:wasserstein-length}
+Show that the Wasserstein space $\Wass_1\spc{X}$ is a geodesic space for any metric space $\spc{X}$.
+\end{thm}
+
+\section{Transportation plan}
+
+Imagine that we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
 Suppose that cost of transporting a unit of dirt equals to the traveled distance.%
 \footnote{This is the simplest cost function one can imagine.
 One may consider other cost functions; for example, if the cost proportional to the square of the distance, then the problem has more applications.}
@@ -36,7 +38,7 @@ We are free to chose a destination point for dirt from a given place.
 How to minimize the total cost?
 
 Let us formalize this question.
-Suppose that the piles at the beginning are described by probability measures $\mu$ and $\nu$ on a metric space~$\spc{X}$.
+Suppose that the piles of dirt are described by probability measures $\mu$ and $\nu$ on a metric space~$\spc{X}$.
 To describe where each piece of dirt goes, we will use the so called \index{plan}\emph{plan} for $\mu$ and $\nu$.
 It is a probability measure $\pi$ on the square $\spc{X}\times\spc{X}$ such that the following condition holds:
 \begin{itemize}
@@ -44,11 +46,29 @@ It is a probability measure $\pi$ on the square $\spc{X}\times\spc{X}$ such that
 \[\pi [A \times \spc{X}] = \mu A,\quad\text{and}\quad \pi [  \spc{X}\times A] = \nu A.\]
 \end{itemize}
 
+Suppose that $f\:\spc{X}\to \RR$ is a 1-Lipschitz function,
+so $f(x)-f(y)\le\dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$.
+It follows that 
+\begin{align*}
+\int_{\spc{X}} f\cdot(\mu-\nu)&=\int_{x\in\spc{X}}f(x)\cdot\mu-\int_{y\in\spc{X}}f(y)\cdot\nu=
+\\
+&=\int_{(x,y)\in\spc{X}\times\spc{X}}[f(x)-f(y)]\cdot \pi\le
+\\
+&\le\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot \pi,
+\end{align*}
+where $\pi$ is a plan for $\mu$ and $\nu$.
+By the definition of Wasserstein metric, we get  
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}\le \int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi\eqlbl{wass=<int.plan}\]
+for any plan $\pi$.
+
+Next we want to show that equality holds in \ref{wass=<int.plan} for some plan $\pi$; such plans will be called \index{optimal plan}\emph{optimal}.
+
 First note that a plan $\pi$ for given measures $\mu$ and $\nu$ always exists.
-For example, one may take the plane $\pi$ that is uniquely defined  defined by the identity
+For example, one may take the plan $\pi$ that is uniquely defined  defined by the identity
 \[\pi(A\times B)=\mu A\cdot \mu B\]
 for any Borel subsets $A,B\subset\spc{X}$.
 This plan says that each piece of dirt distributed equally in the new pile; as we will see this plan is usually far from optimum.
+
 
 Denote by $\Pi(\mu,\nu)$ the set of all plans for $\mu$ and $\nu$.
 From above $\Pi(\mu,\nu)\ne\emptyset$.
@@ -69,8 +89,8 @@ A plan $\pi$ for given measures $\mu$ and $\nu$ is called \index{optimal plan}\e
 Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
 Then there is an optimal plan $\pi$ for $\mu$ and~$\nu$.
 
-Moreover any optimal plan is cycliccaly monotonic;
-that is, for any sequence of pairs $(x_0,y_0),\dots,(x_n,y_n)\in\spc{X}\times\spc{X}$ we have
+Moreover any optimal plan $\pi$ is cycliccaly monotonic;
+that is, for any sequence of pairs $(x_0,y_0),\dots,(x_n,y_n)\in\supp\pi\subset\spc{X}\times\spc{X}$ we have
 \[\dist{x_1}{y_1}{}+\dots+\dist{x_n}{y_n}{}
 \le
 \dist{x_1}{y_2}{}+\dots+\dist{x_{n-1}}{y_n}{}+\dist{x_{n}}{y_1}{}.\]
@@ -78,7 +98,7 @@ that is, for any sequence of pairs $(x_0,y_0),\dots,(x_n,y_n)\in\spc{X}\times\sp
 
 \parit{Proof.}
 By the definition of Wasserstein distance, we can choose a sequence of plans $\pi_n$ for $\mu$ and $\nu$ such that 
-\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi_n\to .\dist{\mu}{\nu}{\Wass_1\spc{X}}\]
+\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi_n\to \dist{\mu}{\nu}{\Wass_1\spc{X}}\]
 as $n\to \infty$.
 Denote by $\pi$ a weak partial limit of $\pi_n$;
 it exists by ???.

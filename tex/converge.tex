@@ -266,7 +266,7 @@ Another popular way to prove that $D$ is a round disk is given by the so-called 
 It seems that Hausdorff convergence was first introduced by Felix Hausdorff~\cite{hausdorff}.
 A couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
 
-The following refinement of the definition was introduced by  Zdeněk Frolík \cite{frolik},
+The following refinement was introduced by  Zdeněk Frolík \cite{frolik},
 later it was rediscovered by Robert Wijsman~\cite{wijsman}.  
 This refinement is also called \index{Hausdorff convergence}\emph{Hausdorff convergence};
 in fact, it takes an intermediate place between the original Hausdorff convergence and {}\emph{closed convergence}, also introduced by Hausdorff in \cite{hausdorff}.
@@ -316,8 +316,8 @@ The metric on $\GH$ is defined as the maximal metric such that \textit{the dista
 Here is a formal definition:
 
 \begin{thm}{Definition}\label{def:GH}
-Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces. 
-The Gromov--Hausdorff distance $|\spc{X}-\spc{Y}|_{\GH}$ is defined by the following
+The \index{Gromov--Hausdorff distance}\emph{Gromov--Hausdorff distance} $|\spc{X}-\spc{Y}|_{\GH}$ between compact metric spaces $\spc{X}$ and $\spc{Y}$
+is defined by the following
 relation.
  
 Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\GH} < r$ if and only if there exists a metric
@@ -866,12 +866,12 @@ The first convergence is evident and the second could be guessed from the diagra
 Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Hausdorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ as in \ref{propery:GH} such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
 For example, the sequence $(\spc{X}_n,p_n)=(\RR_+,0)$ converges to $(\RR_+,0)$, while $(\spc{X}_n,p_n)=(\RR_+,n)$ converges to $(\RR,0)$.
 
-The pointed convergence works nicely only for proper metric spaces;
+The pointed convergence works nicely for proper metric spaces;
 the following theorem is an analog of Gromov's selection theorem for this convergence.
 
 \begin{thm}{Theorem}\label{thm:pointed-gromov-compactness}%
 Let $\spc{Q}$ be a set of isometry classes of pointed proper metric spaces
 $(\spc{X},p)$.
 Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
-Then $\spc{Q}$ is precompact with respect to pointed Gromov--Hausdorff convergence. 
+Then $\spc{Q}$ is precompact with respect to the pointed Gromov--Hausdorff convergence. 
 \end{thm}
