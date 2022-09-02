@@ -638,6 +638,29 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,
 
 endfig;
 
+beginfig(200) 
+save u,n;
+u:=.5cm;
+n:=4;
+
+draw (0,0)*u--(n+.5,0)*u pensemibold;
+
+
+for i=0 step 1 until n:
+draw (i,0)*u--(i,i+1)*u pensemibold;
+Dot (i,i+1)*u;
+endfor
+
+Dot (0,0)*u;
+
+label.bot(btex $o$ etex, (0,0)*u);
+label.top(btex $x_0$ etex, (0,0+1)*u);
+label.top(btex $x_1$ etex, (1,1+1)*u);
+label.top(btex $x_2$ etex, (2,2+1)*u);
+label.top(btex $x_3$ etex, (3,3+1)*u);
+label.top(btex $x_4$ etex, (4,4+1)*u);
+endfig;
+
 
 beginfig(405)
 save u,p,a;

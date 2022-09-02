@@ -17,6 +17,12 @@ for any $\eps>0$ and all sufficiently small $t,\tau,s\in\RR_+$ we have
 &+\sqrt{s^2+\tau^2-2\cdot s\cdot \tau\cdot \cos(\beta+\eps)}\le
 \end{align*}
 
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-7}
+\end{wrapfigure}
+
 Below we define 
 $s(t,\tau)$ so that for 
 $s=s(t,\tau)$, this chain of inequalities can be continued as follows:
@@ -27,18 +33,12 @@ Thus for any $\eps>0$,
 \[\gamma\le \alpha+\beta+2\cdot \eps.\]
 Hence the result.
 
-\begin{wrapfigure}{r}{30 mm}
-\vskip-8mm
-\centering
-\includegraphics{mppics/pic-7}
-\end{wrapfigure}
-
 To define $s(t,\tau)$, consider three rays $\tilde \gamma_x$, $\tilde \gamma_y$, $\tilde \gamma_z$ on a Euclidean plane starting at one point, such that $\mangle(\tilde \gamma_x,\tilde \gamma_y)=\alpha+\eps$,
 $\mangle(\tilde \gamma_y,\tilde \gamma_z)=\beta+\eps$ and $\mangle(\tilde \gamma_x,\tilde \gamma_z)=\alpha+\beta+2\cdot \eps$.
 We parametrize each ray by the distance from the starting point.
 Given two positive numbers $t,\tau\in\RR_+$, let $s=s(t,\tau)$ be 
 the number such that 
-$\tilde \gamma_y(s)\in[\tilde \gamma_x(t)\ \tilde \gamma_z(\tau)]$. 
+$\tilde \gamma_y(s)\z\in[\tilde \gamma_x(t)\ \tilde \gamma_z(\tau)]$. 
 Clearly $s\le\max\{t,\tau\}$, so $t,\tau,s$ may be taken sufficiently small.
 
 \parit{Remark.}
@@ -556,8 +556,9 @@ In the $\CAT(1)$ case we also have a geodesic circle.
 The proof is done nearly the same way, but we need to consider the homotopy classes of closed curves shorter than $2\cdot \pi$.
 One also need to apply \ref{ex:null-homotopic}, to show that curves $\gamma_1$ and $\gamma_2$ are not contractible in the class of curves shorter than $2\cdot \pi$.
 
-\parit{Remarks.}
-The statement of the exercise fails if the requirement that $\spc{X}$ be compact is replaced by the assumption that it is proper. For example, the surface of revolution of the graph of $y=e^x$ around the $x$-axis is locally $\CAT(0)$ but has no closed geodesics.
+\parit{Remark.}
+The statement of the exercise fails if the requirement that $\spc{X}$ be compact is replaced by the assumption that it is proper.
+For example, the surface of revolution of the graph of $y=e^x$ around the $x$-axis is locally $\CAT(0)$ but has no closed geodesics.
 
 
 \parbf{\ref{ex:branching-cover}.}
@@ -732,16 +733,16 @@ By \ref{ex:inj=complete-geodesic-contractible:contractible}, $Q$ is contractible
 Therefore the globalization theorem and flag condition (\ref{thm:hadamard-cartan} and \ref{thm:flag}) imply that it is sufficient to show that each link in $Q$ is flag.
 Further, by \ref{prop:no-trig} it is sufficient to show that link of each cube in $Q$ satisfies no-triangle condition.
 
+\begin{wrapfigure}{r}{25 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-13}
+\end{wrapfigure}
+
 Arguing by contradiction, we can assume that no-triangle condition does not hold at a vertex $v$; that is, a zero-dimensional cube.
 In this case $v$ is a vertex of there edges $e_x$, $e_y$, and $e_z$;
 each pair of edges belong to one of the squares $s_x$, $s_y$, and $s_z$ with complementary index, but the squares $s_x$, $s_y$, $s_z$ do not belong to one cube.
 For higher dimensional cubes we have a product of this configuration with a cube.
-
-\begin{wrapfigure}{r}{25 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-13}
-\end{wrapfigure}
 
 Let $m_x$, $m_y$ and $m_z$ be the midpoints of $e_x$, $e_y$, and $e_z$ respectively.
 Consider 3 balls with centers $m_x$, $m_y$ and $m_z$ and radius $\tfrac14$.
@@ -859,15 +860,14 @@ Note that the boundary $\partial S$ of $\bar S$ is a collection of closed polygo
 Assume $\bar S$ is not piecewise linear.
 Show that there is a line segment $[pq]$ in $\EE^3$ that is tangent to $\bar S$ at some point $p$ and    has no common points with $\bar S$ except~$p$.
 
+Since $\bar S$ is locally concave,
+there is a local inner supporting plane $\Pi$ at $p$ that contains the segment $[pq]$.
 
 \begin{wrapfigure}{r}{35 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-21}
 \end{wrapfigure}
-
-Since $\bar S$ is locally concave,
-there is a local inner supporting plane $\Pi$ at $p$ that contains the segment $[pq]$.
 
 Show that $\Pi\cap \bar S$ contains a segment $[xy]\z\ni p$ with the ends in $\partial \bar S$.
 Denote by $\Pi^+$ the half-plane in $\Pi$ that contains $[pq]$ and has $[xy]$ in its boundary.
