@@ -284,6 +284,8 @@ that is, for any three points $x$, $y$, and $z$ there is a point $p$ such that
 
 \begin{thm}{Exercise}\label{ex:4-point-trees}
 Let $p$, $x$, $y$, and $z$ be points in a metric tree.
+
+\begin{subthm}{ex:4-point-trees:diagonals}
 Consider three numbers 
 \begin{align*}
 a&=|p-x|+|y-z|,
@@ -294,12 +296,26 @@ c&=|p-z|+|x-y|.
 \end{align*}
 Suppose that $a\le b\le c$.
 Show that $b=c$.
+\end{subthm}
+
+\begin{subthm}{ex:4-point-trees:gromov-product}
+Consider three numbers 
+\begin{align*}
+\alpha&=\tfrac12\cdot(|p-y|+|p-z|-|y-z|),
+\\
+\beta &=\tfrac12\cdot(|p-x|+|p-z|-|x-z|),
+\\
+\gamma&=\tfrac12\cdot(|p-x|+|p-y|-|x-y|).
+\end{align*}
+Suppose that $\alpha\le \beta\le \gamma$.
+Show that $\alpha=\beta$.
+\end{subthm}
 
 \end{thm}
 
 The set 
 \[S(p,r)_{\spc{X}}=\set{x\in\spc{X}}{\dist{p}{x}{\spc{X}}=r}\]
-will be called a \index{sphere}\emph{sphere} with center $p$ and radius $r$ in a metric space $\spc{X}$.
+will be called a \index{sphere}\emph{sphere} with center $p$ and radius $r$ in a metric space~$\spc{X}$.
 
 
 \begin{thm}{Exercise}\label{ex:spheres-in-trees}
