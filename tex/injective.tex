@@ -135,6 +135,14 @@ Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz a
 \[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:retraction}
+Given a real-valued function $s$ on a metric space $\spc{X}$,
+consider the function
+\[s^*(x)=\sup\set{\dist{z}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
+Show that if $s$ is admissible then so is $\tfrac12\cdot(s+s^*)$.
+\end{thm}
+
+
 \section{Injective spaces}
 
 \begin{thm}{Definition}\label{def:injective}
@@ -327,6 +335,11 @@ Show that $\Inj\spc{X}$ is compact if and only if so is $\spc{X}$.
 \begin{thm}{Exercise}\label{ex:tripod+square}
 Describe the set of all extremal functions on a metric space $\spc{X}$ and the metric space $\Inj \spc{X}$ in each of the following cases:
 
+\begin{subthm}{ex:tripod+square:2}
+$\spc{X}$ is a metric space with exactly two points $v,w$ on distance 1 from each other.
+\end{subthm}
+
+
 \begin{subthm}{ex:tripod+square:tripod} 
 $\spc{X}$ is a metric space with exactly three points $a,b,c$ such that 
 \[\dist{a}{b}{\spc{X}}=\dist{b}{c}{\spc{X}}=\dist{c}{a}{\spc{X}}=1.\]
@@ -340,6 +353,17 @@ and
 \end{subthm}
 
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:kur-inj}
+Assume $\spc{X}$ is a compact metric space.
+Recall that the map $x\mapsto \distfun_x$ gives an isometric embedding $\spc{X}\hookrightarrow\ell^\infty(\spc{X})$; so we can think that $\spc{X}$ is a subset of $\ell^\infty(\spc{X})$.
+
+Given two points $x,y\in \spc{X}$, denote by $G_{x,y}$ the union of all geodesics from $x$ to $y$ in $\ell^\infty(\spc{X})$.
+Show that $\Inj\spc{X}$ is isometric to
+\[G=\bigcap_{x\in \spc{X}}\left(\bigcup_{y\in \spc{X}}G_{x,y}\right).\]
+
+\end{thm}
+
 
 \begin{thm}{Proposition}\label{prop:InjX-is-injective}
 For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is  injective.
@@ -377,7 +401,7 @@ r(f)+s(p)&\ge [r(f)-r(q)]+[r(q)+s(p)]\ge
 &\ge -\dist{q}{f}{\Inj \spc{X}}+[s(q)+s(p)]\ge
 \intertext{by \ref{eq:f(p)=|f-p|} and since $s$ is admissible}
 &\ge -f(q)+\dist{p}{q}{}>
-\intertext{by \ref{lem:opposite}}
+\intertext{and by \ref{lem:opposite}}
 &> f(p)-\delta.
 \end{align*}
 Since $\delta>0$ is arbitrary, \ref{eq:r(f)+s(p)>=f(p)} and \ref{r-admissible} follow.
@@ -453,6 +477,15 @@ Whence $w$ is an isometry.
 Suppose $\spc{X}$ is a subspace of a metric space $\spc{U}$.
 Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusion $\Inj\spc{X}\hookrightarrow\Inj\spc{U}$.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:bicombing}
+Let $\spc{X}$ be a metric space.
+Show that for any two points $x,y\in \spc{X}$ one can choose a path $\gamma_{x,y}\:[0,1]\to \Inj\spc{X}$ such that
+$\gamma_{x,y}(t)\equiv\gamma_{y,x}(1-t)$ and
+\[\dist{\gamma_{x,y}(t)}{\gamma_{p,q}(t)}{\Inj\spc{X}}\le (1-t)\cdot\dist{p}{x}{\spc{X}}+t\cdot\dist{q}{y}{\spc{X}}\]
+for any $x,y,p,q\in \spc{X}$.
+\end{thm}
+
 
 
 \section{Remarks}

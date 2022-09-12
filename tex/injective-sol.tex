@@ -59,6 +59,16 @@ The latter contradicts the equality $r(p)+r(-p)=\pi$.
 
 \parit{Source:} \cite[Proposition 2.7]{zuest}.
 
+\parbf{\ref{ex:retraction}.}
+Show and use that
+$s^*(x)+s(y)\ge \dist{x}{y}{}$
+for any $x,y\in \spc{X}$.
+
+\parit{Remarks.}
+It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
+Moreover iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
+The existence of such a map will also follow from \ref{thm:inj-envelope}.
+
 \parbf{\ref{ex:inj=complete-geodesic-contractible}.}
 Choose an injective space $\spc{Y}$.
 
@@ -200,7 +210,11 @@ Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the cas
 \parbf{\ref{ex:Inj(compact)}.}
 Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded.
 
-\parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:tripod}.
+\parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:2}.
+Use \ref{lem:opposite-compact} to show that if $f$ is extremal if and only if $f(v)=x$ and $f(w)=1-x$ for some $x\in [0,1]$.
+Conclude that $\Inj\spc{X}$ is isometric to the unit interval $[0,1]$.
+
+\parit{\ref{SHORT.ex:tripod+square:tripod}.}
 Let $f$ be an extremal function.
 By \ref{lem:opposite-compact}, at least two of the numbers $f(a)+f(b)$, $f(b)+f(c)$, and $f(c)+f(a)$ are $1$.
 It follows that for some $x\in[0,\tfrac12]$, we have 
@@ -211,12 +225,6 @@ f(c)&=1\pm x,
 \end{align*}
 where we have one ``minus'' and two ``pluses'' in these three formulas.
 
-\begin{wrapfigure}{o}{30 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-3}
-\end{wrapfigure}
-
 Suppose that
 \begin{align*}
 g(a)&=1\pm y,& g(b)&=1\pm y,& g(c)&=1\pm y
@@ -226,9 +234,11 @@ Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x
 
 It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
 
-\begin{wrapfigure}{o}{30 mm}
+\begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
 \centering
+\includegraphics{mppics/pic-3}
+\bigskip
 \includegraphics{mppics/pic-4}
 \end{wrapfigure}
 
@@ -245,6 +255,22 @@ equivalently,
 
 It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the $(a,b)$-plane with the metric induced by the $\ell^\infty$-norm.
 
+\parit{Remarks.}
+If $\spc{X}$ is finite, then $\Inj\spc{X}$ has polyhedral structure with $\ell^\infty$ metric on each face;
+its combinatorics can be encoded by certain graphs with the vertex set $\spc{X}$ \cite[see Section 4 in][]{lang-2013}.
+
+\parbf{\ref{ex:kur-inj}.}
+Recall that $x\mapsto \distfun_x$ gives an isometric embedding $\spc{X}\z\hookrightarrow\ell^\infty(\spc{X})$;
+so we can identify $\spc{X}$ with a subset of $\ell^\infty(\spc{X})$.
+Further, $\Inj\spc{X}$ is a subset of $\ell^\infty(\spc{X})$.
+It is sufficient to show that $\Inj\spc{X}=G$.
+
+Use \ref{lem:opposite-compact} to show that $\Ext\spc{X}\subset G$.
+
+Given $g\in G$, show that $g(x)=\dist{g}{x}{\ell^\infty(\spc{X})}$.
+Conclude that $g$ is admissible and apply \ref{lem:opposite-compact}.
+
+\parit{Source:} The problem has been by Rostislav Matveyev.
 
 \parbf{\ref{ex:4-on-a-line}.}
 Recall that 
@@ -277,3 +303,10 @@ $\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$
 such that their composition is the identity on $\spc{X}$.
 Make a conclusion.
 
+\parbf{\ref{ex:bicombing}.}
+By \ref{lem:kuratowski}, the space $\spc{X}$ can be considered as a subset in $\ell^\infty(\spc{X})$.
+Given $x,y\in \spc{X}$, let $\tilde\gamma_{x,y}(t)=(1-t)\cdot x+t\cdot y\in \ell^\infty(\spc{X})$.
+Observe that $\tilde\gamma_{x,y}$ meets both conditions in the exercise.
+It remains to apply \ref{thm:inj-envelope}.
+
+\parit{Source:} \cite[3.6]{lang-2013}.
