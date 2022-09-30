@@ -1,19 +1,97 @@
 \chapter{Metric plus measure}
 
-This lecture devoted to interactions between metric measures.
+\section{Borel sets}
 
-\section{Space of measures}
+Let us remind few definitions assuming knowleage of basic measure theory;
+comprehensive treatments can be found in \cite{billingsley} and \cite{bogachev}.
 
-A measure on a metric space is called \index{Borel measure}\emph{Borel} if it is defined on all open sets (and thus on all Borel sets).
+Let $\spc{X}$ be a metric space.
+\index{Borel set}\emph{Borel set} is any subset of $\spc{X}$ that can be formed from open sets using the countable union, countable intersection, and complement.
+In other words, Borel sets form the minimal sigma-algebra that included open sets.
 
-Let us consider the space of Borel probability measures on a metric space $\spc{X}$.
-It can be equipped with the \index{Wasserstein metric}\emph{Wasserstein metric}
-\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
-where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
+A measure on metric space will be always assumed to be \index{Borel measure}\emph{Borel};
+that is, it is defined on the sigma-algebra of Borel sets.
+A Borel measure can be uniquely determined by its values on all open (or closed) sets.
 
-The Wasserstein distance $\dist{\mu}{\nu}{}$ might take infinite value, but all measures with compact support belong lie on finite distance from each other in the obtained $\infty$-metric space.
-the metric component of these measures is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$; 
+A measure $\mu$ on $\spc{X}$ is called \index{probability measure}\emph{probability measure} if $\mu\spc{X}=1$.
+
+Recall that \index{delta-measure}\emph{delta-measure} is a probability measure with support at one point.
+Delta-measure with support in $\{x\}$ will be denoted by~\index{$\delta_{x}$}$\delta_{x}$; so
+\[\text{if}\quad x\in A,\quad\text{then}\quad \delta_x(A)=1,\quad\text{otherwise}\quad\delta_x(A)=0.\]
+
+Let $\mu_n$ be a sequence of Borel measures on $\spc{X}$.
+A measure $\mu_\infty$ is a \index{weak limit}\emph{weak limit} of $\mu_n$ if 
+\[\int_{\spc{X}}f\cdot(\mu_n-\mu_\infty)\to0\gamma
+\quad\text{as}\quad
+n\to\infty
+\]
+for any continuous function $f\:\spc{X}\to \RR$.
+
+Suppose $\mu$ is a measure on a metric space $\spc{X}$ and $f\:\spc{X}\to \spc{Y}$ is a measurable map;
+that is, for any Borel set $B\subset \spc{Y}$, its inverse image $f^{-1}B$ is a Borel set in $\spc{Y}$.
+
+Consider the unit interval with its Lebesgue mesure.
+If $\spc{X}$ is a complete separable metric space with probability measure $\mu$, then there is a measurable map $[0,1]\to \spc{X}$
+
+\section{Metric on measures}
+
+Imagine that we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
+Suppose that cost of transporting a unit of dirt equals to the traveled distance.%
+\footnote{This is the simplest cost function one can imagine.
+One may consider other cost functions; for example, if the cost proportional to the square of the distance, then the problem has more applications.}
+We are free to choose a destination point for dirt from a given place.
+How to minimize the total cost?
+
+To formalize this question,
+suppose that the piles of dirt are described by Borel probability measures $\mu$ and $\nu$ on a metric space~$\spc{X}$.
+
+To describe where each piece of dirt goes, we will use the so called \index{plan}\emph{plan} for $\mu$ and $\nu$.
+It is a probability measure $\pi$ on the product $\spc{X}\times\spc{X}$ such that 
+for all measurable sets $A \subset \spc{X}$, we have 
+\[\mu A= \pi [A \times \spc{X}],
+\quad\text{and}\quad
+\nu A=\pi [\spc{X}\times A].
+\eqlbl{eq:marginals}\]
+Equivalently it can be described as a measure that satisfies the following identity
+\begin{align*}
+\int_{(x,y)\in \spc{X}\times\spc{X}}f(x)\cdot g(y) \cdot \pi
+&=
+\int_{x\in \spc{X}}f(x)\cdot \mu
+\oldcdot \int_{y\in \spc{X}}g(y)\cdot \nu,
+\end{align*}
+for any continuous functions $f,g\:\spc{X}\to \RR$.
+
+Given a measure $\pi$ on $\spc{X}\times\spc{X}$, the measures $\mu$ and $\nu$ defined by \ref{eq:marginals} are called first and second \index{marginal}\emph{marginals} of $\pi$;
+so the statement \textit{$\pi$ is a plan for $\mu$ and $\nu$} is equivalent to \textit{$\mu$ and $\nu$ are the first and second marginals of $\pi$ respectively}.
+
+\begin{thm}{Claim}\label{clm:plan-exists}
+There is a plan $\pi$ for any two given Borel probability measures $\mu$ and $\nu$.
+\end{thm}
+
+The plan constructed in the proof distributes equally each piece of dirt in the new pile.
+As we will see this plan is usually far from optimum.
+
+\parit{Proof.}
+Consider the measure $\pi$ that is uniquely defined  defined by the identity
+\[\pi(A\times B)=\mu A\cdot \mu B\]
+for any Borel subsets $A,B\subset\spc{X}$.
+Observe that $\pi$ is a plan for $\mu$ and~$\nu$.
+\qeds
+
+Denote by $\Pi(\mu,\nu)$ the set of all plans for $\mu$ and $\nu$;
+by \ref{clm:plan-exists}, $\Pi(\mu,\nu)\z\ne\emptyset$.
+It is straightforwrd to check that the following formula defines a metric on the space of probability measures on $\spc{X}$.
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
+\df
+\inf_{\pi\in\Pi(\mu,\nu)}
+\left\{\,\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi\,\right\}.\]
+This metric is called \index{Wasserstein distance}\emph{Wasserstein distance of order 1} between $\mu$ and $\nu$.
+
+In genereral, the Wasserstein distance $\dist{\mu}{\nu}{}$ might take infinite value, but all measures with compact support lie on finite distance from each other in the obtained $\infty$-metric space.
+The metric component of these measures is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$; 
 it is denoted by $\Wass_1\spc{X}$.
+In other words, $\Wass_1\spc{X}$ is the space of all Borel probability measures $\mu$ such that 
+$\int\distfun_p\cdot\mu<\infty$ for some (and therefore any) point $p\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:wasserstein-infty}
 Construct two Borel probability measures $\mu$ and $\nu$ on $\RR$ with Wasserstein distance $\dist{\mu}{\nu}{}=\infty$.
@@ -28,23 +106,151 @@ Show that $\Wass_1\spc{X}$ is a compact if and only if so is~$\spc{X}$.
 Show that the Wasserstein space $\Wass_1\spc{X}$ is a geodesic space for any metric space $\spc{X}$.
 \end{thm}
 
-\section{Transportation plan}
+\section{Optimal plan}
 
-Imagine that we need to transport dirt from one pile of a given shape to make another pile of a needed shape.
-Suppose that cost of transporting a unit of dirt equals to the traveled distance.%
-\footnote{This is the simplest cost function one can imagine.
-One may consider other cost functions; for example, if the cost proportional to the square of the distance, then the problem has more applications.}
-We are free to chose a destination point for dirt from a given place.
-How to minimize the total cost?
+A plan $\pi$ for given measures $\mu$ and $\nu$ is called \index{optimal plan}\emph{optimal} if 
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
+=\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi.\]
 
-Let us formalize this question.
-Suppose that the piles of dirt are described by probability measures $\mu$ and $\nu$ on a metric space~$\spc{X}$.
-To describe where each piece of dirt goes, we will use the so called \index{plan}\emph{plan} for $\mu$ and $\nu$.
-It is a probability measure $\pi$ on the square $\spc{X}\times\spc{X}$ such that the following condition holds:
-\begin{itemize}
-\item For all measurable sets $A \subset \spc{X}$, we have 
-\[\pi [A \times \spc{X}] = \mu A,\quad\text{and}\quad \pi [  \spc{X}\times A] = \nu A.\]
-\end{itemize}
+\begin{thm}{Theorem} %Vilani:Theorem 1.4
+Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
+Then there is an optimal plan $\pi$ for $\mu$ and~$\nu$.
+\end{thm}
+
+\parit{Proof.}
+By the definition of Wasserstein distance, we can choose a sequence of plans $\pi_n$ for $\mu$ and $\nu$ such that 
+\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi_n\to \dist{\mu}{\nu}{\Wass_1\spc{X}}\]
+as $n\to \infty$.
+
+Observe that $\pi_n$ has a weak partial limit, say $\pi$.
+Moreover $\pi$ is an optimal plan for $\mu$ and $\nu$.
+\qeds
+
+\begin{thm}{Theorem}
+Any optimal plan $\pi$ is \index{cyclic monotonicity}\emph{cyclically monotonic}.
+That is, suppose $\pi$ is an optimal plan for probability measures $\mu$ and $\nu$ on a metric space $\spc{X}$.
+Then any sequence of pairs $(x_1,y_1),\dots,(x_n,y_n)\in\supp\pi\subset\spc{X}\times\spc{X}$ we have
+\[\sum_i\dist{x_i}{y_i}{}
+\le
+\sum_i\dist{x_{i+1}}{y_i}{},\]
+here the index $i$ in the sum is taken modulo $n$; in particular $x_{n+1}\z=x_1$.
+\end{thm}
+
+\parit{Proof.}
+Assume that the cyclic monotonicity does not hold;
+that is,
+\[R=\sum_i\dist{x_i}{y_i}{}
+-
+\sum_i\dist{x_{i+1}}{y_i}{}>0,\]
+for some $(x_0,y_0),\dots,(x_n,y_n)\in\supp\pi$.
+We need to show that $\pi$ is not optimal;
+in other words we need to construct another plan $\pi'$ for $\mu$ and $\nu$ such that 
+\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot(\pi'-\pi)<0.\eqlbl{pi'<pi}\]
+
+Assume $\spc{X}$ is finite.
+In this case we can choose $\eps>0$ such that 
+$\pi\{(x_i,y_i)\}>\eps$ for each $i$.
+Let
+\[\pi'=\pi-\eps\cdot\sum_i(\sigma_i-\sigma_i')\eqlbl{eq:pi'}\]
+where $\sigma_i=\delta_{(x_i,y_i)}$ and $\sigma_i'=\delta_{(x_{i+1},y_i)}$.
+It remains to observe that $\pi'$ is a plan for $\mu$ and $\nu$ that satisfies \ref{pi'<pi}.
+
+The general case is similar, we only need to redefine $\eps$, $\sigma_i$, and~$\sigma_i'$.
+Note that given $r>0$, we can choose a probability measures $\sigma_i$ with support in $\oBall((x_i,y_i),r)_{\spc{X}\times\spc{X}}$ such that $\eps\cdot \sigma_i<\pi$ for some fixed $\eps>0$ and every $i$.
+Further denote by $\zeta_i$ and $\eta_i$ the first and second marginals of $\sigma_i$.
+Observe that $\supp\zeta_i\subset\oBall(x_i,r)$ and $\supp\eta_i\subset\oBall(y_i,r)$ for all $i$.
+Let $\sigma_i'$ be a plan for $\zeta_{i+1}$ and $\eta_i$.
+Evidently 
+\begin{align*}
+\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{}\cdot \sigma_i
+&\lessgtr
+\dist{x_i}{y_i}{}\pm 2\cdot r,
+\\
+\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{}\cdot \sigma_i'
+&\lessgtr
+\dist{x_{i+1}}{y_i}{}\pm 2\cdot r.
+\end{align*}
+Taking $r<\tfrac R{10\cdot n}$, we get  \ref{pi'<pi}. 
+\qeds
+
+
+
+
+\section{Capitalistic approach}
+
+Imagine that measures $\mu$ and $\nu$ describe the production and consumer of beer in the space.
+A transportaition company transports beer from $\mu$ to $\nu$ and want to maximize its profit by adjusting price $f(x)$ of beer the point $x$; they buy beer at price $f(x)$ per unit, move it to an other point $y$ and sale it with (presumably higher) price $f(y)$.
+However, the function $f$ is 1-Lipschitz condition;
+otherwise the profit goes to second-hand dealers, or maybe it is a government regulation.
+In other words we need to maximize the following expression
+\[\int_{\spc{X}} f\cdot(\mu-\nu)\]
+for all $1$-Lipschitz functions $f$.
+The maximal profit defines a metric
+
+\begin{thm}{Theorem}
+Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
+Then
+\[\dist{\mu}{\nu}{\Wass_1\spc{X}}=\sup\int_{\spc{X}} f\cdot(\mu-\nu),\]
+where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\z\to\RR$.
+\end{thm}
+
+The definition of Wassershtein metric described in the previous section reminds communist's planed economy.
+The right-hand side in the above equation reminds capitalistic system.
+Indeed, think that measures $\mu$ and $\nu$ describe the production and consumer of beer in the space.
+A transportaition company trnasports beer from $\mu$ to $\nu$ and want to maximize its profit by adjusting price $f(x)$ of beer the point $x$.
+However, the function $f$ is 1-Lipschitz condition --- this is a government regulation.
+
+
+
+
+\parit{Proof.}
+By the definition of Wasserstein metric, we can choose a sequence $\pi_n$ of plans  
+
+Let us choose an optimal plan $\pi$ for $\mu$ and $\nu$; it exists by ???.
+We need to find a 1-Lipschitz function $f\:\spc{X}\to\RR$ such that 
+\[
+\int_{\spc{X}} f\cdot(\mu-\nu)=\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot \pi.
+\eqlbl{eq:f(mu-nu)}
+\]
+
+Choose $x_0\in \supp\mu$.
+Note that adding a constant to $f$ does not change the left hand side in \ref{eq:f(mu-nu)}.
+Therefore we can assume assume that $f(x_0)=0$ and set
+\[f(x)=\sup\{\,|x_0-y_0|+\dots+|x_n-y_n|-(|x_1-y_0|+\dots+|x_n-y_{n-1}|)-|x-y_n|\,\}\]
+where the least upper bound is taken for all sequences $(x_0,y_0),\z\dots,(x_n,y_n)\z\in\supp\pi$.
+
+\qeds
+
+\section{Metric-measure space}
+
+A metric measure space is a metric $\spc{X}$ space with a choice of Borel probability measure $\vol$ on it.
+In a metric-measure we ignore sets with vanishing volume; in other words, passing from $\spc{X}$ to the support of $\vol$ does not change the metric-measure space.
+
+Alternatively we may start with unit interval $[0,1]$ equipped with Lebesgue measure and equip it with measurable pseudometric $[0,1]\times [0,1]\to \RR$.
+
+
+
+
+
+\section{Space of measures}
+
+
+It can be equipped with the \index{Wasserstein metric}\emph{Wasserstein metric}
+\[\dist{\mu}{\nu}{}\df\sup\left\{\,\int_{\spc{X}} f\cdot(\mu-\nu)\,\right\},\]
+where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\to\RR$.
+
+The Wasserstein distance $\dist{\mu}{\nu}{}$ might take infinite value, but all measures with compact support lie on finite distance from each other in the obtained $\infty$-metric space.
+The metric component of these measures is called \index{Wasserstein space}\emph{Wasserstein space} of order 1 over $\spc{X}$; 
+it is denoted by $\Wass_1\spc{X}$.
+
+
+
+\section{Misc}
+
+Suppose $\pi_n$ is a sequence of plans for $\mu$ and $\nu$.
+Assume that $\pi_n$ weakly converges to a probability measure $\pi$ on $\spc{X}\times\spc{X}$.
+
+is a weak limit of a sequence of plans $\pi_n$, then $\pi$ is a plan for $\mu$ and $\nu$ if for each $n$ $\pi_n$ is a plane for $\mu$ and $\nu$ 
 
 Suppose that $f\:\spc{X}\to \RR$ is a 1-Lipschitz function,
 so $f(x)-f(y)\le\dist{x}{y}{\spc{X}}$ for any $x,y\in \spc{X}$.
@@ -63,46 +269,43 @@ for any plan $\pi$.
 
 Next we want to show that equality holds in \ref{wass=<int.plan} for some plan $\pi$; such plans will be called \index{optimal plan}\emph{optimal}.
 
-First note that a plan $\pi$ for given measures $\mu$ and $\nu$ always exists.
-For example, one may take the plan $\pi$ that is uniquely defined  defined by the identity
-\[\pi(A\times B)=\mu A\cdot \mu B\]
-for any Borel subsets $A,B\subset\spc{X}$.
-This plan says that each piece of dirt distributed equally in the new pile; as we will see this plan is usually far from optimum.
-
-
-Denote by $\Pi(\mu,\nu)$ the set of all plans for $\mu$ and $\nu$.
-From above $\Pi(\mu,\nu)\ne\emptyset$.
-It is straightforwrd to check that the following formula defines a metric on the space of probability measures on $\spc{X}$.
-\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
-\df
-\inf_{\pi\in\Pi(\mu,\nu)}
-\left\{\,\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi\,\right\}.\]
-This metric is called \index{Wasserstein distance}\emph{Wasserstein distance of order 1} and the obtained metric space will be denoted by $\Wass_1\spc{X}$.
-
-\section{Optimal plan}
-
-A plan $\pi$ for given measures $\mu$ and $\nu$ is called \index{optimal plan}\emph{optimal} if 
-\[\dist{\mu}{\nu}{\Wass_1\spc{X}}
-=\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi.\]
-
-\begin{thm}{Theorem}
-Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
-Then there is an optimal plan $\pi$ for $\mu$ and~$\nu$.
-
-Moreover any optimal plan $\pi$ is cycliccaly monotonic;
-that is, for any sequence of pairs $(x_0,y_0),\dots,(x_n,y_n)\in\supp\pi\subset\spc{X}\times\spc{X}$ we have
-\[\dist{x_1}{y_1}{}+\dots+\dist{x_n}{y_n}{}
-\le
-\dist{x_1}{y_2}{}+\dots+\dist{x_{n-1}}{y_n}{}+\dist{x_{n}}{y_1}{}.\]
-\end{thm}
 
 \parit{Proof.}
-By the definition of Wasserstein distance, we can choose a sequence of plans $\pi_n$ for $\mu$ and $\nu$ such that 
-\[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot\pi_n\to \dist{\mu}{\nu}{\Wass_1\spc{X}}\]
-as $n\to \infty$.
-Denote by $\pi$ a weak partial limit of $\pi_n$;
-it exists by ???.
-Note that $\pi$ is an optimal plan.
+Choose a point $x_0\in \supp\mu$.
+Given  $p\in \spc{X}$,
+let
+\[f(p)=\inf\left\{\sum_{i=0}^n\dist{x_i}{y_i}{}-\sum_{i=0}^n\dist{x_{i+1}}{y_i}{}-\dist{y_n}{p}{}\right\},
+\eqlbl{eq:f(p)}\]
+where the least upper bound is taken for all sequences of pairs 
+\[(x_0,y_0),\z\dots,(x_n,y_n)\in \supp\pi.\eqlbl{eq:sequence}\]
+
+Fix a sequence as in \ref{eq:sequence} and  denote by $F_\sigma(p)$ the expression under infimum in \ref{eq:f(p)}.
+
+Let us show that 
+\[F_\sigma(x_0)\ge 0.\]
+Indeed, suppose $F_\sigma(x_0)<-\eps<0$.
+Since $(x_i,y_i)\in \supp\pi$, we have $x_i\in\supp\mu$ and $y_i\in\supp\nu$ for any $i$.
+Therefore we can choose sets $X_i\subset \oBall(x_i,\tfrac{\eps}{10\cdot n})$ and $Y_i\subset \oBall(y_i,\tfrac{\eps}{10\cdot n})$ such that 
+$\mu(X_0)=\nu(Y_0)=\dots=\mu(X_n)=\nu(Y_n)$
+
+
+
+Let us denote by $F(p)$ the expression under infimum in \ref{eq:f(p)}.
+By triangle inequality, 
+\[F(q)\le F(p)+\dist{p}{q}{}.\]
+Passing to the least upper bound in this inequality, we get
+\[f(q)\le f(p)+\dist{p}{q}{}\]
+for any $p,q\in\spc{X}$.
+Hence $f$ is a 1-Lipschitz function.
+
+Further, let us show that
+\[(x,y)\in\supp\pi
+\quad\Longrightarrow\quad
+f(y)-f(x)=\dist{x}{y}{}\]
+
+
+
+
 
 Suppose that cyclic monotonicity fails;
 that is, there is a sequence of pairs $(x_1,y_1),\dots,(x_n,y_n)\in\spc{X}\times\spc{X}$ such that
@@ -128,30 +331,3 @@ $\pi'(X_i\times Y_{i+1})=\delta$ for each $i$;
 Observe that
 \[\int_{(x,y)\in\spc{X}\times\spc{X}}\dist{x}{y}{\spc{X}}\cdot(\pi'-\pi)>\]
 \qeds
-
-
-\section{Kantorovich duality}
-
-
-\begin{thm}{Theorem}
-Let $\mu$ and $\nu$ be probability Borel measures on a compact metric space $\spc{X}$.
-Then
-\[\dist{\mu}{\nu}{\Wass_1\spc{X}}=\sup\int_{\spc{X}} f\cdot(\mu-\nu),\]
-where the least upper bound is taken for all $1$-Lipschitz functions $f\:\spc{X}\z\to\RR$.
-\end{thm}
-
-
-The following theorem gives an alternative way to define it.
-
-\begin{thm}{Theorem}
-Let $\mu$ and $\nu$ be two probability measures of a metric space $\spc{X}$.
-Then 
-\[\cost(\mu,\nu)
-\df
-\sup\set{\int_{x\in\spc{X}}\phi(x)\cdot\mu+\int_{y\in\spc{X}}\psi(y)\cdot\nu}{\phi(x)+\psi(y)\le \cost(x,y)},\]
-where the functions $\phi$ and $\psi$ are assumed to be continuous.\footnote{In fact one }
-\end{thm}
-
-
-
-

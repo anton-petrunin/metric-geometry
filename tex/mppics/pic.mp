@@ -638,6 +638,28 @@ draw (0,0)*u--(1,0)*u--(1,1)*u--(2,1)*u--(2,2)*u--(3,2)*u--(3,3)*u--(4,3)*u--(4,
 
 endfig;
 
+beginfig(105) 
+save u;
+u:=1cm;
+
+z.p=origin;
+z.x=(1,.4)*u;
+z.y=(-.2,-.7)*u;
+z.z=(-.7,.8)*u;
+
+draw z.p--z.x;
+draw z.p--z.y;
+draw z.p--z.z;
+
+dOt z.p,z.x,z.y,z.z;
+
+label.lrt(btex $p$ etex, z.p);
+label.rt(btex $x$ etex, z.x);
+label.bot(btex $y$ etex, z.y);
+label.lft(btex $z$ etex, z.z);
+
+endfig;
+
 beginfig(200) 
 save u,n;
 u:=.5cm;

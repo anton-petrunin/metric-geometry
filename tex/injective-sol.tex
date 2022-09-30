@@ -265,7 +265,7 @@ so we can identify $\spc{X}$ with a subset of $\ell^\infty(\spc{X})$.
 Further, $\Inj\spc{X}$ is a subset of $\ell^\infty(\spc{X})$.
 It is sufficient to show that $\Inj\spc{X}=G$.
 
-Use \ref{lem:opposite-compact} to show that $\Ext\spc{X}\subset G$.
+Use \ref{lem:opposite-compact} to show that $\Inj\spc{X}\subset G$.
 
 Given $g\in G$, show that $g(x)=\dist{g}{x}{\ell^\infty(\spc{X})}$.
 Conclude that $g$ is admissible and apply \ref{lem:opposite-compact}.
@@ -296,6 +296,38 @@ Applying \ref{lem:opposite-compact}, we can find a point $q\in\spc{X}$ such that
 whence the result.
 
 Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=complete-geodesic-contractible:geodesic} it has to be geodesic. It remains to note that the concatenation of geodesics $[pq]$, $[gf]$, and $[fq]$ is a required geodesic $[pq]$.
+
+\parbf{\ref{ex:delta-hyp}.} The only-if part follows since $\spc{X}$ is isometric to a subset of $\Inj\spc{X}$.
+
+The if part means that 
+\[\dist{f}{g}{}+\dist{v}{w}{}\le
+\max\{\,\dist{f}{v}{}+\dist{g}{w}{},
+\,
+\dist{f}{w}{}+\dist{g}{v}{}\,\}+2\cdot\delta\eqlbl{eq:fgvw-hyp}\]
+for any $f,g,v,w\in \Inj\spc{X}$.
+
+Suppose $\spc{X}$ is compact. 
+Applying \ref{ex:4-on-a-line}, we can choose $p,q,x,y\in \spc{X}$  such that 
+\[
+\begin{aligned}
+\dist{p}{f}{}+\dist{f}{g}{}+\dist{g}{q}{}&=\dist{p}{q}{}
+\\
+\dist{x}{v}{}+\dist{v}{w}{}+\dist{w}{y}{}&=\dist{x}{y}{}
+\end{aligned}
+\eqlbl{eq:pfgq+xvwy}
+\]
+
+Since $\spc{X}$ is $\delta$-hyperbolic, we have
+\[\dist{p}{q}{}+\dist{x}{y}{}\le
+\max\{\,\dist{p}{x}{}+\dist{q}{y}{},
+\,
+\dist{p}{y}{}+\dist{q}{x}{}\,\}+2\cdot\delta.\]
+Show that this inequality, together with the triangle inequality and \ref{eq:pfgq+xvwy} imply \ref{eq:fgvw-hyp}.
+
+For the noncompact case, prove an approimate version of \ref{eq:pfgq+xvwy} and apply it the same way.
+
+
+
 
 \parbf{\ref{ex:d-p-inclusion}.}
 Show that there is a pair of short maps 
