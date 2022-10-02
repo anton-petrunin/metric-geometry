@@ -540,6 +540,13 @@ Any complete, locally compact length space is proper.
 \end{thm}
 
 Before reading the proof, it is instructive to solve \ref{ex:loc-compact-not-proper}.
+In the proof we will use the following exercise.
+
+\begin{thm}{Exercise}\label{ex:eps-nbhd(ball)}
+Let $M$ be a length space.
+Show that $\oBall(x,R+\eps)_M$ is the $\eps$-neighborhood of $\oBall(x,R)_M$.
+\end{thm}
+
 
 \parit{Proof.}
 Let $\spc{X}$ be a locally compact length space.
@@ -554,9 +561,9 @@ It is sufficient to show that $\rho(x)=\infty$ for some (and therefore any) poin
 \begin{clm}{} If $\rho(x)<\infty$, then $B=\cBall[x,\rho(x)]$ is compact.
 \end{clm}
 
-Indeed, $\spc{X}$ is a length space;
-therefore for any $\eps>0$, 
-the set $\cBall[x,\rho(x)-\eps]$ is a compact $\eps$-net in~$B$.
+Suppose  $\rho(x)>\eps>0$;
+by \ref{ex:eps-nbhd(ball)}, 
+the set $\cBall[x,\rho(x)-\eps]$ is a compact $2\cdot\eps$-net in~$B$.
 Since $B$ is closed and hence complete, it must be compact; see \ref{totally-bounded} and \ref{ex:compact-net}.
 \claimqeds
 
@@ -564,8 +571,7 @@ Since $B$ is closed and hence complete, it must be compact; see \ref{totally-bou
 in particular, $\rho\:\spc{X}\to\RR$ is a continuous function.
 \end{clm}
 
-Indeed, 
-assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
+Assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
 Then 
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
 Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
@@ -575,7 +581,7 @@ From \ref{eq:rho>0}, we have $\eps>0$.
 
 Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.
-Clearly
+By \ref{ex:eps-nbhd(ball)},
 $\cBall[x,\rho(x)+\frac\eps{10}]\subset W$.
 Therefore, $\cBall[x,\rho(x)+\frac\eps{10}]$ is compact,
 a contradiction.
