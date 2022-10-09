@@ -683,6 +683,43 @@ label.top(btex $x_3$ etex, (3,3+1)*u);
 label.top(btex $x_4$ etex, (4,4+1)*u);
 endfig;
 
+beginfig(205) 
+save u;
+u:=.5cm;
+
+draw (-4.3,2)*u--(4.3,2)*u pensemibold;;
+draw (0,1)*u--(0,3)*u pensemibold;;
+draw (1,1)*u--(1,3)*u pensemibold;;
+draw (2,1)*u--(2,3)*u pensemibold;;
+draw (3,1)*u--(3,3)*u pensemibold;;
+draw (4,1)*u--(4,3)*u pensemibold;;
+
+draw (-4.3,-2)*u--(4.3,-2)*u pensemibold;;
+draw (0,-2)*u--(0,-1)*u pensemibold;;
+draw (1,-3)*u--(1,-1)*u pensemibold;;
+draw (2,-3)*u--(2,-1)*u pensemibold;;
+draw (3,-3)*u--(3,-1)*u pensemibold;;
+draw (4,-3)*u--(4,-1)*u pensemibold;;
+
+Dot
+(-4,2)*u,(-3,2)*u,(-2,2)*u,(-1,2)*u,(-0,2)*u,(1,2)*u,(2,2)*u,(3,2)*u,(4,2)*u,
+(-0,3)*u,(1,3)*u,(2,3)*u,(3,3)*u,(4,3)*u,
+(1,1)*u,(2,1)*u,(3,1)*u,(4,1)*u,
+(-4,-2)*u,(-3,-2)*u,(-2,-2)*u,(-1,-2)*u,(-0,-2)*u,(1,-2)*u,(2,-2)*u,(3,-2)*u,(4,-2)*u,
+(1,-1)*u,(2,-1)*u,(3,-1)*u,(4,-1)*u,
+(1,-3)*u,(2,-3)*u,(3,-3)*u,(4,-3)*u,
+(-0,1)*u,(-0,-1)*u,(-0,1)*u,(-0,-1)*u
+;
+
+label.lft(btex $\dots$ etex, (-4.3,2)*u);
+label.lft(btex $\dots$ etex, (-4.3,-2)*u);
+label.rt(btex $\dots$ etex, (4.3,2)*u);
+label.rt(btex $\dots$ etex, (4.3,-2)*u);
+
+label.top(btex $\spc{X}$ etex, (-1.5,2)*u);
+label.top(btex $\spc{Y}$ etex, (-1.5,-2)*u);
+endfig;
+
 
 beginfig(405)
 save u,p,a;

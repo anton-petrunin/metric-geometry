@@ -7,149 +7,7 @@ Show that $A\subset \RR^n$ is a closed convex set if and only if
 any for any  $B\subset \RR^n$ any short map $B\to A$ can be extended to a short map $\RR^n\to A$.
 \end{thm}
 
-
-\section{Admissible and extremal functions}
-
-Let $\spc{X}$ be a metric space.
-A function $r\:\spc{X}\to\RR$ is called \label{page:admissible function}\index{admissible function}\emph{admissible} if the following inequality
-\[r(x)+r(y)\ge \dist{x}{y}{\spc{X}}\eqlbl{eq:admissible}\]
-holds for any $x,y\in \spc{X}$.
-
-\begin{thm}{Observation}\label{obs:admissible}
-
-\begin{subthm}{obs:admissible:nonnegative}
-Any admissible function is nonnegative.
-\end{subthm}
-
-\begin{subthm}{obs:admissible:balls}
-If $\spc{X}$ is a geodesic space, then a function $r\:\spc{X}\to\RR$ is admissible if and only if 
-\[\cBall[x,r(x)]\cap\cBall[y,r(y)]\ne \emptyset\]
-for any $x,y\in \spc{X}$.
-\end{subthm}
- 
-\end{thm}
-
-\parit{Proof.} For \ref{SHORT.obs:admissible:nonnegative}, take $x=y$ in \ref{eq:admissible}.
-
-Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and the existence of a geodesic $[xy]$.
-\qeds
-
-A minimal admissible function will be called \label{page:extremal function}\index{extremal function}\emph{extremal}.
-More precisely, an admissible function $r\:\spc{X}\to\RR$ is extremal 
-if for any admissible function $s\:\spc{X}\to\RR$ we have
-\[s\le r\quad\Longrightarrow\quad s=r.\]
-
-
-\begin{thm}{Key exercise}\label{ex:+-c}
-Let $r$ be an extremal function and $s$ an admissible function on a metric space $\spc{X}$.
-Suppose that $r\ge s-c$ for some constant $c$.
-Show that $r\le s+c$; in particular, $c\ge 0$.
-\end{thm}
-
-
-\begin{thm}{Observations}\label{obs:extremal}
-Let $\spc{X}$ be a metric space.
-
-\begin{subthm}{obs:extremal:distfun}
-For any point $p\in\spc{X}$
-the distance function $r\z=\distfun_p$ is extremal.
-\end{subthm}
-
-\begin{subthm}{lem:extremal-lipschitz}
-Any extremal function $r$ on $\spc{X}$ is \index{1-Lipschitz function}\emph{1-Lipschitz};
-that is,
-\[|r(p)-r(q)|\le \dist{p}{q}{}\]
-for any $p,q\in\spc{X}$.
-In other words, any extremal function is an extension function; see the definition in \ref{sec:Extension property}.
-\end{subthm}
-
-\begin{subthm}{lem:opposite}
-An admissible function $r$ on $\spc{X}$ is extremal if and only if
-for any point $p\in\spc{X}$ and any $\delta>0$, there is a point $q\in \spc{X}$
-such that 
-\[r(p)+r(q)<\dist{p}{q}{\spc{X}}+\delta.\]
-\end{subthm}
-
-\begin{subthm}{lem:opposite-compact}
-If $\spc{X}$ is compact, then an admissible function $r$ on $\spc{X}$ is extremal if and only if
-for any point $p\in\spc{X}$ there is a point $q\in \spc{X}$
-such that 
-\[r(p)+r(q)=\dist{p}{q}{\spc{X}}.\]
-\end{subthm}
-
-
-
-\begin{subthm}{obs:extremal:below}
-For any admissible function $s$ there is an extremal function $r$ such that $r\le s$.
-\end{subthm}
-
-\end{thm}
-
-\parit{Proof; \ref{SHORT.obs:extremal:distfun}.}
-By the triangle inequality, \ref{eq:admissible} holds;
-that is, $r=\distfun_p$ is an admissible function.
-
-Further, if $s\le r$ is another admissible function, then $s(p)=0$ and \ref{eq:admissible} implies that $s(x)\z\ge\dist{p}{x}{}$.
-Whence $s=r$.
-
-\parit{\ref{SHORT.lem:extremal-lipschitz}.}
-By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is admissible.
-Since $r$ is admissible, we have that
-\[r\ge \distfun_p-r(p).\]
-Since $r$ is extremal, \ref{ex:+-c} implies that
-\[r\le \distfun_p+r(p),\]
-or, equivalently,
-\[r(q)-r(p)\le \dist{p}{q}{}\]
-for any $p,q\in\spc{X}$.
-The same way we can show that
-$r(p)-r(q)\le \dist{p}{q}{}$.
-Whence the statement follows.
-
-\parit{\ref{SHORT.lem:opposite}.}
-Assume $r$ is extremal.
-Arguing by contradiction, assume there is $\delta>0$ such that
-\[r(q)\ge \distfun_p(q)-r(p)+\delta\]
-for any $q$.
-By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is extremal; in particular, admissible.
-Therefore \ref{ex:+-c} implies that
-\[r(q)\le \distfun_p(q)+r(p)-\delta\]
-for any $q$.
-Taking $q=p$, we get $r(p)\le r(p)-\delta$, a contradiction.
-
-Now suppose $r$ is not extremal; that is, there is an admissible function $s\le r$ such that $r(p)-s(p)=\delta>0$ for some $p$.
-Then, for any $q$, we have
-\[r(p)+r(q)\ge s(p)+s(q)+\delta\ge \dist{p}{q}{\spc{X}}+\delta\]
---- a contradiction.
-
-\parit{\ref{SHORT.lem:opposite-compact}.}
-The if part follows from \ref{SHORT.lem:opposite}.
-
-Denote by $q_n$ the point provided by \ref{SHORT.lem:opposite} for $\delta=\tfrac1n$.
-Let $q$ be a partial limit of $q_n$. 
-Then 
-\[r(p)+r(q)\le\dist{p}{q}{\spc{X}}.\]
-Since $r$ is admissible, the opposite inequality holds;
-whence the only-if part follows.
-
-\parit{\ref{SHORT.obs:extremal:below}.}
-Follows by Zorn's lemma. 
-\qeds
-
-\begin{thm}{Exercise}\label{ex:circle}
-Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length metric.
-Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz and 
-\[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:retraction}
-Given a real-valued function $s$ on a metric space $\spc{X}$,
-consider the function
-\[s^*(x)=\sup\set{\dist{z}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
-Show that if $s$ is admissible then so is $\tfrac12\cdot(s+s^*)$.
-\end{thm}
-
-
-\section{Injective spaces}
+\section{Definition}
 
 \begin{thm}{Definition}\label{def:injective}
 A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any of its subspaces $\spc{A}$
@@ -195,29 +53,61 @@ coordinate plane with the metric induced by the $\ell^\infty$-norm.
 
 \end{thm}
 
-The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
-Recall that if the following inequality
-\[\dist{x}{z}{\spc{X}}
-\le
-\max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
-holds for any three points $x,y,z$ in a metric space $\spc{X}$,
-then $\spc{X}$ is called an \index{ultrametric space}\emph{ultrametric space}.
+\begin{thm}{Exercise}\label{ex:extr-ball}
+Let $\spc{Y}$ be an injective space.
 
-\begin{thm}{Exercise}\label{ex:ultrametric}
-Suppose that a metric space $\spc{X}$ satisfies the following property:
-For any subspace $\spc{A}$ in $\spc{X}$ and any other metric space $\spc{Y}$, any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$.
+\begin{subthm}{ex:extr-ball:one}
+Show that any closed ball in $\spc{Y}$ is injective.
+\end{subthm}
 
-Show that $\spc{X}$ is an ultrametric space.
+\begin{subthm}{ex:extr-ball:many}
+Show that intersection of an arbitrary collection of closed ball in $\spc{Y}$ is injective.
+\end{subthm}
+
 \end{thm}
 
-A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \index{short retract}\emph{short retract} if there is a short map $\spc{X}\to \spc{S}$ that is the identity on $\spc{S}$.
-
-\begin{thm}{Exercise}\label{ex:ultrametric-converse}
-Show that any compact subspace $\spc{K}$ of an ultrametric space $\spc{X}$ is its short retract.
-
-Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not its short retract.
+\begin{thm}{Advanced exercise}\label{ex:extr-fixed}
+Let $\spc{Y}$ be a bounded injective space.
+Show that any short map $s\:\spc{Y}\to\spc{Y}$ has a fixed point. 
 \end{thm}
 
+
+\section{Equivalent conditions}
+
+Let $\spc{X}$ be a metric space.
+A function $r\:\spc{X}\to\RR$ is called \label{page:admissible function}\index{admissible function}\emph{admissible} if the following inequality
+\[r(x)+r(y)\ge \dist{x}{y}{\spc{X}}\eqlbl{eq:admissible}\]
+holds for any $x,y\in \spc{X}$.
+
+\begin{thm}{Observation}\label{obs:admissible}
+
+\begin{subthm}{obs:admissible:nonnegative}
+Any admissible function is nonnegative.
+\end{subthm}
+
+\begin{subthm}{obs:admissible:balls}
+If $\spc{X}$ is a geodesic space, then a function $r\:\spc{X}\to\RR$ is admissible if and only if 
+\[\cBall[x,r(x)]\cap\cBall[y,r(y)]\ne \emptyset\]
+for any $x,y\in \spc{X}$.
+\end{subthm}
+ 
+\end{thm}
+
+\parit{Proof.} For \ref{SHORT.obs:admissible:nonnegative}, take $x=y$ in \ref{eq:admissible}.
+
+Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and the existence of a geodesic $[xy]$.
+\qeds
+
+A minimal admissible function will be called \label{page:extremal function}\index{extremal function}\emph{extremal}.
+More precisely, an admissible function $r\:\spc{X}\to\RR$ is extremal 
+if for any admissible function $s\:\spc{X}\to\RR$ we have
+\[s\le r\quad\Longrightarrow\quad s=r.\]
+
+Applying Zorn's lemma, we get the following.
+
+\begin{thm}{Observation}\label{obs:extremal:below}
+For any admissible function $s$ there is an extremal function $r$ such that $r\le s$.
+\end{thm}
 
 \begin{thm}{Theorem}\label{thm:injective=hyperconvex}
 For any metric space $\spc{Y}$ the following condition are equivalent:
@@ -302,6 +192,109 @@ Conclude that the $d$-Urysohn space is not injective.
 
 Try to do the same for the Urysohn space.
 \end{thm}
+
+\section{Properties of extremal functions}
+
+\begin{thm}{Key exercise}\label{ex:+-c}
+Let $r$ be an extremal function and $s$ an admissible function on a metric space $\spc{X}$.
+Suppose that $r\ge s-c$ for some constant $c$.
+Show that $r\le s+c$; in particular, $c\ge 0$.
+\end{thm}
+
+\begin{thm}{Observations}\label{obs:extremal}
+Let $\spc{X}$ be a metric space.
+
+\begin{subthm}{obs:extremal:distfun}
+For any point $p\in\spc{X}$
+the distance function $r\z=\distfun_p$ is extremal.
+\end{subthm}
+
+\begin{subthm}{lem:extremal-lipschitz}
+Any extremal function $r$ on $\spc{X}$ is \index{1-Lipschitz function}\emph{1-Lipschitz};
+that is,
+\[|r(p)-r(q)|\le \dist{p}{q}{}\]
+for any $p,q\in\spc{X}$.
+In other words, any extremal function is an extension function; see the definition in \ref{sec:Extension property}.
+\end{subthm}
+
+\begin{subthm}{lem:opposite}
+An admissible function $r$ on $\spc{X}$ is extremal if and only if
+for any point $p\in\spc{X}$ and any $\delta>0$, there is a point $q\in \spc{X}$
+such that 
+\[r(p)+r(q)<\dist{p}{q}{\spc{X}}+\delta.\]
+\end{subthm}
+
+\begin{subthm}{lem:opposite-compact}
+If $\spc{X}$ is compact, then an admissible function $r$ on $\spc{X}$ is extremal if and only if
+for any point $p\in\spc{X}$ there is a point $q\in \spc{X}$
+such that 
+\[r(p)+r(q)=\dist{p}{q}{\spc{X}}.\]
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof; \ref{SHORT.obs:extremal:distfun}.}
+By the triangle inequality, \ref{eq:admissible} holds;
+that is, $r=\distfun_p$ is an admissible function.
+
+Further, if $s\le r$ is another admissible function, then $s(p)=0$ and \ref{eq:admissible} implies that $s(x)\z\ge\dist{p}{x}{}$.
+Whence $s=r$.
+
+\parit{\ref{SHORT.lem:extremal-lipschitz}.}
+By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is admissible.
+Since $r$ is admissible, we have that
+\[r\ge \distfun_p-r(p).\]
+Since $r$ is extremal, \ref{ex:+-c} implies that
+\[r\le \distfun_p+r(p),\]
+or, equivalently,
+\[r(q)-r(p)\le \dist{p}{q}{}\]
+for any $p,q\in\spc{X}$.
+The same way we can show that
+$r(p)-r(q)\le \dist{p}{q}{}$.
+Whence the statement follows.
+
+\parit{\ref{SHORT.lem:opposite}.}
+Assume $r$ is extremal.
+Arguing by contradiction, assume there is $\delta>0$ such that
+\[r(q)\ge \distfun_p(q)-r(p)+\delta\]
+for any $q$.
+By \ref{SHORT.obs:extremal:distfun}, $\distfun_p$ is extremal; in particular, admissible.
+Therefore \ref{ex:+-c} implies that
+\[r(q)\le \distfun_p(q)+r(p)-\delta\]
+for any $q$.
+Taking $q=p$, we get $r(p)\le r(p)-\delta$, a contradiction.
+
+Now suppose $r$ is not extremal; that is, there is an admissible function $s\le r$ such that $r(p)-s(p)=\delta>0$ for some $p$.
+Then, for any $q$, we have
+\[r(p)+r(q)\ge s(p)+s(q)+\delta\ge \dist{p}{q}{\spc{X}}+\delta\]
+--- a contradiction.
+
+\parit{\ref{SHORT.lem:opposite-compact}.}
+The if part follows from \ref{SHORT.lem:opposite}.
+
+Denote by $q_n$ the point provided by \ref{SHORT.lem:opposite} for $\delta=\tfrac1n$.
+Let $q$ be a partial limit of $q_n$. 
+Then 
+\[r(p)+r(q)\le\dist{p}{q}{\spc{X}}.\]
+Since $r$ is admissible, the opposite inequality holds;
+whence the only-if part follows.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:circle}
+Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length metric.
+Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz and 
+\[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:retraction}
+Given a real-valued function $s$ on a metric space $\spc{X}$,
+consider the function
+\[s^*(x)=\sup\set{\dist{z}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
+Show that if $s$ is admissible then so is $\tfrac12\cdot(s+s^*)$.
+\end{thm}
+
+
+
 
 
 
@@ -512,4 +505,27 @@ Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cit
 The injective envelope was introduced by John Isbell \cite{isbell}.
 It was rediscovered a couple of times since then;
 as a result, the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
+
+The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
+Recall that if the following inequality
+\[\dist{x}{z}{\spc{X}}
+\le
+\max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
+holds for any three points $x,y,z$ in a metric space $\spc{X}$,
+then $\spc{X}$ is called an \index{ultrametric space}\emph{ultrametric space}.
+
+\begin{thm}{Exercise}\label{ex:ultrametric}
+Suppose that a metric space $\spc{X}$ satisfies the following property:
+For any subspace $\spc{A}$ in $\spc{X}$ and any other metric space $\spc{Y}$, any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$.
+
+Show that $\spc{X}$ is an ultrametric space.
+\end{thm}
+
+A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \index{short retract}\emph{short retract} if there is a short map $\spc{X}\to \spc{S}$ that is the identity on $\spc{S}$.
+
+\begin{thm}{Exercise}\label{ex:ultrametric-converse}
+Show that any compact subspace $\spc{K}$ of an ultrametric space $\spc{X}$ is its short retract.
+
+Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not its short retract.
+\end{thm}
 

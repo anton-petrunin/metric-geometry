@@ -5,76 +5,7 @@ For closeness, assume that $B$ is a countable set of $A$.
 \parit{If part.} Learn about the Kirszbraun theorem and apply it together with closest-point projection.
 
 
-\parbf{\ref{ex:+-c}.}
-Note that if $c<0$, then $r>s$.
-The latter is impossible since $r$ is extremal and $s$ is admissible.
 
-Observe that the function $\bar r=\min\{\,r,s+c\,\}$ is admissible.
-Indeed, choose $x,y\in \spc{X}$.
-If $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
-\[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
-Further, if $\bar r(x)=s(x)+c$, then 
-\begin{align*}
-\bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
-\\
-&=s(x)+s(y) \ge 
-\\
-&\ge\dist{x}{y}{}.
-\end{align*}
-
-Since $r$ is extremal, we have $r=\bar r$;
-that is, $r\le s+c$.
-
-\parbf{\ref{ex:circle};} \textit{only-if part}.
-Suppose $r$ is extremal.
-By \ref{lem:extremal-lipschitz}, $r$ is $1$-Lipschitz.
-Since $\mathbb{S}^1$ is compact, \ref{lem:opposite-compact} implies that for any $p\in \mathbb{S}^1$ there is $q\in \mathbb{S}^1$ such that 
-\[r(p)+r (q) = \dist{p}{q}{\mathbb{S}^1}.\]
-Therefore
-\begin{align*}
-\pi&=\dist{p}{(-p)}{\mathbb{S}^1}\le 
-\\
-&\le 
-r(p)+r(-p)=
-\\
-&=
-r(p)+r(q) +r(-p) -r(q)\le
-\\
-&\le
-\dist{p}{q}{\mathbb{S}^1}+\dist{q}{(-p)}{\mathbb{S}^1}=
-\\
-&=\pi.
-\end{align*}
-It implies that we have equalities in both places.
-Hence the only-if part follows.
-
-\parit{If part.}
-Assume $r$ is 1-Lipschitz function such that $r(p)+r(-p)=\pi$.
-Then 
-\begin{align*}
-\dist pq{\mathbb{S}^1}&=
-\dist{p}{(-p)}{\mathbb{S}^1}-\dist{q}{(-p)}{\mathbb{S}^1}\ge
-\\
-&\ge\pi -(r(-p)-r(q))=
-\\
-&=r(p)+r(q).
-\end{align*}
-Therefore $r$ is admissible.
-
-Finally, if $r$ is not extremal, then there is an admissible function $s\le r$ such that $s(p)<r(p)$ for some $p$.
-The latter contradicts the equality $r(p)+r(-p)=\pi$.
-
-\parit{Source:} \cite[Proposition 2.7]{zuest}.
-
-\parbf{\ref{ex:retraction}.}
-Show and use that
-$s^*(x)+s(y)\ge \dist{x}{y}{}$
-for any $x,y\in \spc{X}$.
-
-\parit{Remarks.}
-It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
-Moreover iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
-The existence of such a map will also follow from \ref{thm:inj-envelope}.
 
 \parbf{\ref{ex:inj=complete-geodesic-contractible}.}
 Choose an injective space $\spc{Y}$.
@@ -151,51 +82,50 @@ in particular, if $\spc{Y}$ and $\spc{Z}$ are injective then the product $\spc{Y
 \[\dist{(y,z)}{(y',z')}{\spc{Y}\times\spc{Z}}=\max\{\,\dist{y}{y'}{\spc{Y}},\dist{z}{z'}{\spc{Z}}\,\}\]
 is injective as well.
 
+\parbf{\ref{ex:extr-ball}}; \ref{SHORT.ex:extr-ball:one}.
+Let $\spc{B}=\cBall[o,R]_{\spc{Y}}$.
+Choose a metric space $\spc{X}$ with a subset $A$.
+Given a short map $f\:A\to \spc{B}$ we need to find its short extension $\spc{X}\to \spc{B}$.
 
-\parbf{\ref{ex:ultrametric}.}
-Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
-Let $f\:\spc{A}\z\to \spc{A}$ be the identity map.
-Then $F(y)=x$ or $F(y)=z$.
-The strong triangle inequality easily follows in both cases.
+Since $\diam\spc{B}\le 2\cdot R$, we may assume that  $\diam \spc{X}\le 2\cdot R$;
+if not pass to the metric defined by $\dist{x}{y}{}=\max\{\,\dist{x}{y}{\spc{X}},2\cdot R\,\}$.
 
-\parbf{\ref{ex:ultrametric-converse}}; \textit{main part.}
-Choose a maximal subset $A\supset K$ that admits a short retraction $f\:A\to K$;
-it exists by Zorn's lemma.
-If $A$ is the whole space, then the problem is solved.
-Otherwise, choose $p\notin A$.
+Let us add point $w$ to $\spc{X}$ such that $\dist{w}{x}{}=R$ for any $x\in\spc{X}$;
+denote the obtained space $\spc{X}'$.
+Let $f'\:A\cup\{w\}\to \spc{B}$ be extension of $f$ by $w\mapsto o$; note that $f'$ is short.
 
-Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the exact lower bound on the distances from points in $A$ to $p$.
-Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
-Set $f(p)=\lim f(a_n)$.
+Since $\spc{Y}$ is injective, there is a short extension $F\:\spc{X}'\to \spc{Y}$ of $f'$.
+Show and use that $F(\spc{X}')\subset \spc{B}$.
 
-It remains to check that 
-\[\dist{f(a)}{f(p)}{}\le\dist{a}{p}{}\eqlbl{eq:short-retract}\]
-for any $a\in A$.
-Choose $\eps>0$; note that 
-\[\dist{a_n}{p}{}<\dist{a}{p}{}+\eps
-\quad\text{and}\quad
-\dist{f(a_n)}{f(p)}{}<\dist{f(a)}{f(a_n)}{}+\eps
-\]
-for all large~$n$.
-Therefore, 
-\begin{align*}
-\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},\dist{f(a_n)}{f(p)}{}\,\}\le
-\\
-&\le \dist{f(a)}{f(a_n)}{}+\eps\le
-\\
-&\le \dist{a}{a_n}{} +\eps\le 
-\\
-&\le \max\{\,\dist{a}{p}{},\dist{a_n}{p}{}\,\}+\eps< 
-\\
-&< \dist{a}{p}{}+2\cdot\eps.
-\end{align*}
-Since $\eps>0$ is arbitrary, we get \ref{eq:short-retract}.
+\parit{\ref{SHORT.ex:extr-ball:many}.}
+Let $\spc{B}=\cap_\alpha\cBall[o_\alpha,R_\alpha]_{\spc{Y}}$.
+Try to modify the argument in \ref{SHORT.ex:extr-ball:one}.
 
-\parit{Example.}
-Consider set of $\{\infty,1,2,\dots\}$ with metric defined by 
-\[|m-n|=1+\frac1{\min\{m,n\}}\]
-for $m\ne n$.
-Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
+(Note that one may assume that $\diam \spc{X}\le 2\cdot \inf_\alpha\{\,R_\alpha\,\}$.
+Consider the space $\spc{X}'=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}{x}{}=R_\alpha$ for any $x\in \spc{X}$ and $\dist{w_\alpha}{w_\beta}{}=R_\alpha+R_\beta$ if $\alpha\ne\beta$.
+Further, consider an extension of $f$ by $w_\alpha\mapsto o_\alpha$.)
+
+\parbf{\ref{ex:extr-fixed}.}
+Let $\{B_\alpha\}$ be an arbitrary collection of closed balls in an injective space.
+Argue as in \ref{ex:extr-ball} to show that the intersection $\bigcap_\alpha B_\alpha$ is injective.
+
+Let $\diam \spc{Y}=2\cdot R$.
+We can assume that $R>0$; otherwise there is nothing to prove.
+Denote by $\spc{Z}$ a minimal (with respect to inclusion) intersection of closed $R$-balls in $\spc{Y}$ such that $s(\spc{Z})\subset\spc{Z}$.
+
+Consider 
+the intersection 
+\[\spc{Y}'=\spc{Z}\cap\left(\bigcap_{p\in \spc{Z}} \cBall[p,R]_{\spc{Y}}\right).\]
+From above, $\spc{Y}'$ is injective.
+Use that $\spc{Z}$ is minimal to show that $s(\spc{Y}')\subset \spc{Y}'$.
+Show that $\diam \spc{Y}'\le \tfrac12\cdot\diam \spc{Y}$.
+
+Consider sequence of nested injective spaces $\spc{Y}=\spc{Y}_0\supset \spc{Y}_1\supset\dots$ such that $\spc{Y}_{n+1}=\spc{Y}_{n}'$.
+Choose a point $y_n\in \spc{Y}_{n}$ for each $n$.
+Show that the sequence $y_n$ is Cauchy.
+By \ref{ex:inj=complete-geodesic-contractible:complete}, $y_n$ converges, say to $y_\infty$.
+Observe that $y_\infty$ is a fixed point of $s$.
+
 
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
@@ -213,6 +143,81 @@ It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}
 Whence $\spc{U}_d$ is not countably hyperconvex.
 
 Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
+
+
+\parbf{\ref{ex:+-c}.}
+Note that if $c<0$, then $r>s$.
+The latter is impossible since $r$ is extremal and $s$ is admissible.
+
+Observe that the function $\bar r=\min\{\,r,s+c\,\}$ is admissible.
+Indeed, choose $x,y\in \spc{X}$.
+If $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
+\[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
+Further, if $\bar r(x)=s(x)+c$, then 
+\begin{align*}
+\bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
+\\
+&=s(x)+s(y) \ge 
+\\
+&\ge\dist{x}{y}{}.
+\end{align*}
+
+Since $r$ is extremal, we have $r=\bar r$;
+that is, $r\le s+c$.
+
+\parbf{\ref{ex:circle};} \textit{only-if part}.
+Suppose $r$ is extremal.
+By \ref{lem:extremal-lipschitz}, $r$ is $1$-Lipschitz.
+Since $\mathbb{S}^1$ is compact, \ref{lem:opposite-compact} implies that for any $p\in \mathbb{S}^1$ there is $q\in \mathbb{S}^1$ such that 
+\[r(p)+r (q) = \dist{p}{q}{\mathbb{S}^1}.\]
+Therefore
+\begin{align*}
+\pi&=\dist{p}{(-p)}{\mathbb{S}^1}\le 
+\\
+&\le 
+r(p)+r(-p)=
+\\
+&=
+r(p)+r(q) +r(-p) -r(q)\le
+\\
+&\le
+\dist{p}{q}{\mathbb{S}^1}+\dist{q}{(-p)}{\mathbb{S}^1}=
+\\
+&=\pi.
+\end{align*}
+It implies that we have equalities in both places.
+Hence the only-if part follows.
+
+\parit{If part.}
+Assume $r$ is 1-Lipschitz function such that $r(p)+r(-p)=\pi$.
+Then 
+\begin{align*}
+\dist pq{\mathbb{S}^1}&=
+\dist{p}{(-p)}{\mathbb{S}^1}-\dist{q}{(-p)}{\mathbb{S}^1}\ge
+\\
+&\ge\pi -(r(-p)-r(q))=
+\\
+&=r(p)+r(q).
+\end{align*}
+Therefore $r$ is admissible.
+
+Finally, if $r$ is not extremal, then there is an admissible function $s\le r$ such that $s(p)<r(p)$ for some $p$.
+The latter contradicts the equality $r(p)+r(-p)=\pi$.
+
+\parit{Source:} \cite[Proposition 2.7]{zuest}.
+
+\parbf{\ref{ex:retraction}.}
+Show and use that
+$s^*(x)+s(y)\ge \dist{x}{y}{}$
+for any $x,y\in \spc{X}$.
+
+\parit{Remarks.}
+It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
+Moreover iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
+The existence of such a map will also follow from \ref{thm:inj-envelope}.
+
+
+
 
 \parbf{\ref{ex:Inj(compact)}.}
 Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded.
@@ -349,3 +354,49 @@ Observe that $\tilde\gamma_{x,y}$ meets both conditions in the exercise.
 It remains to apply \ref{thm:inj-envelope}.
 
 \parit{Source:} \cite[3.6]{lang-2013}.
+
+
+\parbf{\ref{ex:ultrametric}.}
+Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
+Let $f\:\spc{A}\z\to \spc{A}$ be the identity map.
+Then $F(y)=x$ or $F(y)=z$.
+The strong triangle inequality easily follows in both cases.
+
+\parbf{\ref{ex:ultrametric-converse}}; \textit{main part.}
+Choose a maximal subset $A\supset K$ that admits a short retraction $f\:A\to K$;
+it exists by Zorn's lemma.
+If $A$ is the whole space, then the problem is solved.
+Otherwise, choose $p\notin A$.
+
+Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the exact lower bound on the distances from points in $A$ to $p$.
+Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
+Set $f(p)=\lim f(a_n)$.
+
+It remains to check that 
+\[\dist{f(a)}{f(p)}{}\le\dist{a}{p}{}\eqlbl{eq:short-retract}\]
+for any $a\in A$.
+Choose $\eps>0$; note that 
+\[\dist{a_n}{p}{}<\dist{a}{p}{}+\eps
+\quad\text{and}\quad
+\dist{f(a_n)}{f(p)}{}<\dist{f(a)}{f(a_n)}{}+\eps
+\]
+for all large~$n$.
+Therefore, 
+\begin{align*}
+\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},\dist{f(a_n)}{f(p)}{}\,\}\le
+\\
+&\le \dist{f(a)}{f(a_n)}{}+\eps\le
+\\
+&\le \dist{a}{a_n}{} +\eps\le 
+\\
+&\le \max\{\,\dist{a}{p}{},\dist{a_n}{p}{}\,\}+\eps< 
+\\
+&< \dist{a}{p}{}+2\cdot\eps.
+\end{align*}
+Since $\eps>0$ is arbitrary, we get \ref{eq:short-retract}.
+
+\parit{Example.}
+Consider set of $\{\infty,1,2,\dots\}$ with metric defined by 
+\[|m-n|=1+\frac1{\min\{m,n\}}\]
+for $m\ne n$.
+Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.

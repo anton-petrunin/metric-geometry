@@ -123,7 +123,7 @@ is a $d$-extension function on $\spc{Y}$.
 
 \end{thm}
 
-The functions $\bar f$ and $\bar f_d$ in the above exercise are called \index{Katětov extensions}\emph{Katětov extensions} of $f$.
+The functions $\bar f$ and $\bar f_d$ in the above exercise are called \index{Katětov extensions}\emph{Katětov extensions} of $f$ and $\spc{X}$ is called its {support of extension function}\emph{support}, briefly \index{$\supp$}$\supp \bar f=\spc{X}$.
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -169,7 +169,10 @@ That is, $\spc{X}_\infty$ has the $d$-extension property.
 The construction of a separable metric space with the extension property requires only two changes.
 First, the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
 Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$
-(here one has to apply \ref{ex:extension-of-extension:a}).
+(here one has to apply \ref{ex:extension-of-extension:a}).%
+
+(Alternatively, one can start with any separable space $\spc{X}_0$ and consider a nested sequence $\spc{X}_0\subset \spc{X}_1\subset{}\dots$ where $\spc{X}_{n+1}$ is the space of all extension functions on $\spc{X}_{n}$ with at most $n+1$ points in its support.
+The last condition is needed to keep $\spc{X}_{n}$ separable.)
 \qeds
 
 Given a metric space $\spc{X}$, denote by $\spc{X}^\infty$ the space of all extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
@@ -225,18 +228,21 @@ Here is a slightly stronger statement:
 Any separable metric space $\spc{X}$ admits a distance-preserving embedding into an Urysohn space $\spc{U}$ such that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{U}$.
 \end{thm}
 
+%??? PROBLEM
+
 \parit{Sketch of proof.}
-Denote by $\spc{X}^\infty$ the space of all extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
-Note that $x\mapsto \distfun_x$ defines a distance preserving inclusion $\spc{X} \hookrightarrow\spc{X}^\infty$, and
-any isometry $\spc{X}\to \spc{X}$ can be extended to a unique isometry $\spc{X}^\infty\z\to \spc{X}^\infty$.
+Start with $\spc{X}_0=\spc{X}$ and construct a nested sequence of spaces $\spc{X}_0\subset\spc{X}_1 \subset{}\dots$ as at the very end of proof of \ref{prop:univeral-separable}.
+Note that 
+any isometry $\spc{X}_n\to \spc{X}_n$ can be extended to a unique isometry $\spc{X}_{n+1}\to \spc{X}_{n+1}$.
+It follows that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{X}'=\bigcup_n\spc{X}_n$.
 
-Given a separable metric space $\spc{X}=\spc{X}_0$ consider a nested sequence of spaces 
-\[\spc{X}_0\subset \spc{X}_1\subset\dots\]
-such that $\spc{X}_{n+1}=\spc{X}_{n}^\infty$.
-It is easy to modify the proofs of \ref{prop:univeral-separable} and \ref{prop:completion-univeral} to show that of the completion of the union $\bigcup_n\spc{X}_{n}$ is an Urysohn space, say $\spc{U}$, that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
+Now, consider new nested sequence $\spc{X}\subset \spc{X}'\subset \spc{X}''\subset \dots$;
+denote its union by $\spc{Y}$.
+Arguing as in \ref{prop:univeral-separable} and \ref{prop:completion-univeral} we get that the completion of $\spc{Y}$ is an Urysohn space, say $\spc{U}$, that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
 
-From above, for any isometry $f\: \spc{X}\to \spc{X}$ there is a unique sequence of isometries $f_{n}\: \spc{X}_{n}\to \spc{X}_{n}$ such that $f_{n+1}$ is an extension of $f_n$ for any $n$.
-Passing to a limit we get an isometry of $\spc{U}$.
+From above, for any isometry of $\spc{X}$ can be extended to an isometries of $\spc{X}'$, $\spc{X}''$ and so on.
+They all define an isometry of $\spc{Y}$;
+passing to its continuous extension, we get an isometry of $\spc{U}$.
 \qeds
 
 
@@ -311,7 +317,14 @@ In particular, ($d$-)Urysohn space is unique up to isometry.
 
 While \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
 it does not solely imply the existence of an isometry $\spc{U}\leftrightarrow \spc{U}'$.
-Its construction uses the idea of \ref{prop:sep-in-urys}, but it is applied {}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
+
+\begin{thm}{Exercise}\label{ex:no-isom}
+Construct two metric spaces $\spc{X}$ and $\spc{Y}$ such that 
+there are distance-preserving maps $\spc{X}\to \spc{Y}$ and $\spc{Y}\to \spc{X}$, but no isometry $\spc{X}\to \spc{Y}$.
+\end{thm}
+
+
+The following construction uses the idea of \ref{prop:sep-in-urys}, but it is applied {}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
 
 \parit{Proof.}
 Choose dense sequences $a_1,a_2,\dots{}\in \spc{U}$ and $b'_1,b'_2,\dots{}\in \spc{U}'$.
@@ -323,9 +336,9 @@ Set $a'_i=b'_i$ if $i\le n$.
 Let us define recursively $a_{n+1}',b_{n+1}, a_{n+2}', b_{n+2},\dots$ --- on the odd step we define the images of $a_{n+1},a_{n+2},\dots$ and on the even steps we define inverse images of $b'_{n+1},b'_{n+2},\dots$
 The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can construct two sequences $a_1',a_2',\dots{}\in \spc{U}'$ and $b_1,b_2,\dots\in \spc{U}$ such that
 \begin{align*}
-\dist{a_i}{a_j}{\spc{U}}&=\dist{a_i'}{a_j'}{\spc{U}'}
+\dist{a_i}{a_j}{\spc{U}}&=\dist{a_i'}{a_j'}{\spc{U}'},
 \\
-\dist{a_i}{b_j}{\spc{U}}&=\dist{a_i'}{b_j'}{\spc{U}'}
+\dist{a_i}{b_j}{\spc{U}}&=\dist{a_i'}{b_j'}{\spc{U}'},
 \\
 \dist{b_i}{b_j}{\spc{U}}&=\dist{b_i'}{b_j'}{\spc{U}'}
 \end{align*}
@@ -391,7 +404,7 @@ Show that $\spc{U}\setminus B$ is isometric to $\spc{U}$.
 Use it to construct an isometry of a unit sphere $S$ in $\spc{U}$ that cannot be extended to an isometry of $\spc{U}$.
 \end{thm}
 
-The following exercise answers a question posted by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
+The following exercise answers a question posed by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
 It was solved by Miroslav Katětov \cite{katetov},
 but long after that, it was again mentioned as an open problem \cite[p. 83]{gromov-2007}.
 
@@ -445,14 +458,14 @@ Show that any separable one-point-homogeneous metric tree is isometric to the re
 
 The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
-The question about the existence of a separable universal space was posted by Maurice René Fréchet and answered by
+The question about the existence of a separable universal space was posed by Maurice René Fréchet and answered by
 Pavel Urysohn~\cite{urysohn}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called \index{Rado graph}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.
 In fact the Urysohn space is the random metric space in \textit{certain sense} \cite{vershik}.
 
-\textit{The Urysohn space is homeomorphic to the Hilbert space};
+\textit{The ($d$-) Urysohn space is homeomorphic to the Hilbert space};
 the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk’s criterion.
 
 The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimension.
@@ -462,7 +475,7 @@ The same conclusion holds for complete all-set-homogeneous geodesic spaces with 
 it was proved by Garrett Birkhoff \cite{birkhoff}.
 The answer might be the same for complete separable all-set-homogeneous length spaces.
 Without the separability condition, we also get the so-called \emph{universal metric trees} with finite valence; 
-a transparent construction of these spaces is given by Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}.  
+a transparent construction of these spaces is given by Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}; no other examples seem to be known.  
 
 {\sloppy
 
