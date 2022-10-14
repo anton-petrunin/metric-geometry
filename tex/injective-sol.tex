@@ -44,6 +44,14 @@ Since $k$ is distance-preserving and $\spc{Y}$ is injective,
 there is a short map $f\:\ell^\infty(\spc{Y})\to \spc{Y}$ such that the composition $f\circ k$ is the identity map on $\spc{Y}$.
 The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ provides the needed homotopy. 
 
+\parbf{\ref{ex:bicombing}.}
+By \ref{lem:kuratowski}, the space $\spc{Y}$ can be considered as a subset in $\ell^\infty(\spc{Y})$.
+Given $x,y\in \spc{Y}$, let $\tilde\gamma_{x,y}(t)=(1-t)\cdot x+t\cdot y\in \ell^\infty(\spc{Y})$.
+Observe that $\tilde\gamma_{x,y}$ meets all the conditions.
+Apply the definition of injective space to $\ell^\infty(\spc{Y})$.
+
+\parit{Source:} \cite[3.6]{lang-2013}.
+
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
@@ -106,9 +114,6 @@ Consider the space $\spc{X}'=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}
 Further, consider an extension of $f$ by $w_\alpha\mapsto o_\alpha$.)
 
 \parbf{\ref{ex:extr-fixed}.}
-Let $\{B_\alpha\}$ be an arbitrary collection of closed balls in an injective space.
-Argue as in \ref{ex:extr-ball} to show that the intersection $\bigcap_\alpha B_\alpha$ is injective.
-
 Let $\diam \spc{Y}=2\cdot R$.
 We can assume that $R>0$; otherwise there is nothing to prove.
 Denote by $\spc{Z}$ a minimal (with respect to inclusion) intersection of closed $R$-balls in $\spc{Y}$ such that $s(\spc{Z})\subset\spc{Z}$.
@@ -116,7 +121,7 @@ Denote by $\spc{Z}$ a minimal (with respect to inclusion) intersection of closed
 Consider 
 the intersection 
 \[\spc{Y}'=\spc{Z}\cap\left(\bigcap_{p\in \spc{Z}} \cBall[p,R]_{\spc{Y}}\right).\]
-From above, $\spc{Y}'$ is injective.
+By \ref{ex:extr-ball:many}, $\spc{Y}'$ is injective.
 Use that $\spc{Z}$ is minimal to show that $s(\spc{Y}')\subset \spc{Y}'$.
 Show that $\diam \spc{Y}'\le \tfrac12\cdot\diam \spc{Y}$.
 
@@ -125,45 +130,6 @@ Choose a point $y_n\in \spc{Y}_{n}$ for each $n$.
 Show that the sequence $y_n$ is Cauchy.
 By \ref{ex:inj=complete-geodesic-contractible:complete}, $y_n$ converges, say to $y_\infty$.
 Observe that $y_\infty$ is a fixed point of $s$.
-
-
-\parbf{\ref{ex:one-point-gluing}.}
-Apply \ref{thm:injective=hyperconvex:balls}.
-
-\parbf{\ref{ex:urysohn-hyperconvex}.}
-Denote by $\spc{U}_d$ the $d$-Urysohn space,
-so $\spc{U}_\infty$ is the Urysohn space.
-
-The extension property implies finite hyperconvexity.
-It remains to show that $\spc{U}_d$ is not countably hyperconvex.
-
-Suppose that $d<\infty$.
-Then $\diam\spc{U}_d=d$ and for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
-It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}_d}\le \tfrac d2$ for any $x\in\spc{U}_d$.
-Whence $\spc{U}_d$ is not countably hyperconvex.
-
-Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
-
-
-\parbf{\ref{ex:+-c}.}
-Note that if $c<0$, then $r>s$.
-The latter is impossible since $r$ is extremal and $s$ is admissible.
-
-Observe that the function $\bar r=\min\{\,r,s+c\,\}$ is admissible.
-Indeed, choose $x,y\in \spc{X}$.
-If $\bar r(x)=r(x)$ and $\bar r(y)=r(y)$, then 
-\[\bar r(x)+\bar r(y)=r(x)+ r(y)\ge \dist{x}{y}{}.\]
-Further, if $\bar r(x)=s(x)+c$, then 
-\begin{align*}
-\bar r(x)+\bar r(y)&\ge [s(x)+c]+ [s(y)-c]= 
-\\
-&=s(x)+s(y) \ge 
-\\
-&\ge\dist{x}{y}{}.
-\end{align*}
-
-Since $r$ is extremal, we have $r=\bar r$;
-that is, $r\le s+c$.
 
 \parbf{\ref{ex:circle};} \textit{only-if part}.
 Suppose $r$ is extremal.
@@ -216,7 +182,22 @@ It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on th
 Moreover iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
 The existence of such a map will also follow from \ref{thm:inj-envelope}.
 
+\parbf{\ref{ex:one-point-gluing}.}
+Apply \ref{thm:injective=hyperconvex:balls}.
 
+\parbf{\ref{ex:urysohn-hyperconvex}.}
+Denote by $\spc{U}_d$ the $d$-Urysohn space,
+so $\spc{U}_\infty$ is the Urysohn space.
+
+The extension property implies finite hyperconvexity.
+It remains to show that $\spc{U}_d$ is not countably hyperconvex.
+
+Suppose that $d<\infty$.
+Then $\diam\spc{U}_d=d$ and for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
+It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}_d}\le \tfrac d2$ for any $x\in\spc{U}_d$.
+Whence $\spc{U}_d$ is not countably hyperconvex.
+
+Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
 
 
 \parbf{\ref{ex:Inj(compact)}.}
@@ -338,23 +319,11 @@ Show that this inequality, together with the triangle inequality and \ref{eq:pfg
 
 For the noncompact case, prove an approimate version of \ref{eq:pfgq+xvwy} and apply it the same way.
 
-
-
-
 \parbf{\ref{ex:d-p-inclusion}.}
 Show that there is a pair of short maps 
 $\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$ 
 such that their composition is the identity on $\spc{X}$.
 Make a conclusion.
-
-\parbf{\ref{ex:bicombing}.}
-By \ref{lem:kuratowski}, the space $\spc{X}$ can be considered as a subset in $\ell^\infty(\spc{X})$.
-Given $x,y\in \spc{X}$, let $\tilde\gamma_{x,y}(t)=(1-t)\cdot x+t\cdot y\in \ell^\infty(\spc{X})$.
-Observe that $\tilde\gamma_{x,y}$ meets both conditions in the exercise.
-It remains to apply \ref{thm:inj-envelope}.
-
-\parit{Source:} \cite[3.6]{lang-2013}.
-
 
 \parbf{\ref{ex:ultrametric}.}
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.

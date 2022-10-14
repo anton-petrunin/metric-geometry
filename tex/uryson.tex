@@ -16,8 +16,8 @@ As an example, consider \index{$\ell^\infty$}$\ell^\infty$ --- the space of real
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
 Therefore, any normed space is an example of metric space (in fact, it is a geodesic space).
 Often we do not distinguish between normed space and the corresponding metric space.
-(In fact by Mazur--Ulam theorem, the metric remembers the affine structure of the space; so to recover the original normed space we only need to specify the origin.
-A slick proof of Mazur--Ulam theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.)
+(By Mazur--Ulam theorem, the metric remembers the affine structure of the space; so, to recover the original normed space we only need to specify the origin.
+A slick proof of this theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.)
 
 Now let us show that reasonable metric spaces are isometric to subsets of $\ell^\infty$.
 
@@ -458,15 +458,44 @@ Show that any separable one-point-homogeneous metric tree is isometric to the re
 
 The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
+
+The following two exercises show that in this respect $\ell^\infty$ is very different from $\ell^1$;
+the latter is the space of all real absolutely converging series $\bm{a}\z=(a_1,a_2,\dots)$ with the norm $|\bm{a}|_{\ell^1}=\sum_i|a_i|$.
+For more on the subject, see \cite{deza-laurent}.
+
+Let $S$ be a subset of $X$.
+The \index{cut metric}\emph{cut metric} $\delta_S$ on $X$ is a pseudometric such that $\delta_S(x, y) = 1$ if $x$ and $y$ are separated
+by $S$ and otherwise $\delta_S(x, y) = 0$.
+
+
+\begin{thm}{Exercise}\label{ex:cut}
+Show that a finite metric space $\spc{F}$ admits a distance-preserving embedding into $\ell^1$ if and only if the metric of $\spc{F}$ can be written as a nonnegative linear combination%
+\footnote{that is, linear combination with nonnegative coefficients.} of cut metrics on $\spc{F}$.
+\end{thm}
+
+Recall that vertex set of any graph $\Gamma$ comes with a metric ---
+the distance between two vertices is minimal number of edges in a path connecting them.
+
+\begin{wrapfigure}{r}{15mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-210}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:K23}
+Let $\spc{K}_{2,3}$ be the metric space that corresponds to the complete biparted graph $K_{2,3}$ (see the diagram).
+Use \ref{ex:cut} to show that $\spc{K}_{2,3}$ does not admit a distance-preserving embedding into $\ell^1$.
+\end{thm}
+
 The question about the existence of a separable universal space was posed by Maurice René Fréchet and answered by
 Pavel Urysohn~\cite{urysohn}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called \index{Rado graph}\emph{Rado graph},
-also known as {}\emph{Erd\H{o}s–R\'enyi graph} or \emph{random graph}; a good survey on the subject is given by Peter Cameron~\cite{cameron}.
+also known as {}\emph{Erd\H{o}s--Rényi graph} or \emph{random graph}; see \cite{cameron}.
 In fact the Urysohn space is the random metric space in \textit{certain sense} \cite{vershik}.
 
 \textit{The ($d$-) Urysohn space is homeomorphic to the Hilbert space};
-the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk’s criterion.
+the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk criterion.
 
 The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimension.
 In fact these are the only examples of locally compact three-point-homogeneous length spaces.
