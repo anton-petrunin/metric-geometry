@@ -1,3 +1,6 @@
+\refstepcounter{chapter}
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:diam}.}
 Suppose that $\dist{A}{B}{\Haus\spc{X}}<r$.
 Choose a pair of points $a,a'\in A$ on maximal distance from each other.
@@ -51,6 +54,16 @@ a contradiction.
 Consider path $c(t)\df\min C_t$.
 
 \parit{Source:} The problem had been suggested by Stephan Stadler.
+
+\parbf{\ref{ex:haus-contractible}.}
+Show that $f\:(p,r)\mapsto \cBall[p,r]$ defines a continuous map $\spc{X}\z\times[0,\infty)\to \Haus\spc{X}$.
+Observe that $\cBall[p,r]=\spc{X}$ for all $r\ge\diam\spc{X}$.
+Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy from the identity map to a constant map on $\spc{X}$, hence the statement.
+
+\parit{Remark.}
+Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
+It might be interesting to get better understanding of spaces that admit such a retraction;
+for example Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center}.
 
 \parbf{\ref{ex:closure-union}.} 
 Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
@@ -171,6 +184,9 @@ The latter contradicts $n=\lceil r \rceil$ for large~$r$.
 
 \parit{Remark.}
 Try to show that $|\spc{A}_r-\spc{B}_r|_{\GH}=\tfrac12$ for all large $r$.
+
+\refstepcounter{chapter}
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:GH-inj}.}
 Suppose that $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$;

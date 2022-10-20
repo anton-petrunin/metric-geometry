@@ -121,7 +121,16 @@ By \ref{ex:diam}, $\iota(\spc{X})$ is a closed subset of the compact space $\Hau
 It follows that $\iota(\spc{X})$, and therefore $\spc{X}$, are compact.
 \qeds
 
-To prove the ``if'' part we will need the following two lemmas.
+Since the map $\iota$ above is distance-preserving, we can and will consider $\spc{X}$ as a subspace of $\Haus\spc{X}$.
+
+\begin{thm}{Exercise}\label{ex:haus-contractible}
+Let $\spc{X}$ be a bounded length space with.
+Suppose that there is a short retraction $\Haus\spc{X}\to \spc{X}$.
+Show that $\spc{X}$ is contractible.
+\end{thm}
+
+
+To prove the only-if part we will need the following two lemmas.
 
 \begin{thm}{Monotone convergence}\label{lem:decreasing-converges}
 Let $K_1\supset K_2\supset\dots$ be a nested sequence of nonempty compact sets in a metric space $\spc{X}$.
@@ -296,7 +305,7 @@ Show that the sequence  $A_1,A_2,\dots$ has a convergent subsequence in the sens
 
 \section{Gromov--Hausdorff metric}
 
-The goal of this section is to cook up a metric space out of metric spaces.
+The goal of this section is to cook up a metric space out of all compact metric spaces.
 More precisely, we want to define the so-called  Gromov--Hausdorff metric on the set of \textit{isometry classes} of compact metric spaces.
 (Being isometric is an equivalence relation, 
 and an \index{isometry class}\emph{isometry class} is an equivalence class with respect to this relation.)

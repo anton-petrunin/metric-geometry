@@ -1,10 +1,9 @@
 \chapter{Injective spaces}
 
-\textit{Injective spaces} (also known as \textit{hyperconvex spaces}) are the metric analog of convex sets in the sense of the following exercise:
+\textit{Injective spaces} (also known as \textit{hyperconvex spaces}) are the metric analog of convex sets in the following sense:
 
 \begin{thm}{Advanced exercise}\label{ex:conv-short}
-Show that $A\subset \RR^n$ is a closed convex set if and only if
-any for any  $B\subset \RR^n$ any short map $B\to A$ can be extended to a short map $\RR^n\to A$.
+Show that $A\subset \RR^n$ is a closed convex set if and only if for any  $B\subset \RR^n$ any short map $B\to A$ can be extended to a short map $\RR^n\to A$.
 \end{thm}
 
 \section{Definition}
@@ -37,7 +36,7 @@ contractible.
 
 \begin{thm}{Exercise}\label{ex:bicombing}
 Let $\spc{Y}$ be an injective space.
-Show that for any two points $x,y\in \spc{Y}$ one can choose a geodesic path $\gamma_{x,y}\:[0,1]\to \spc{Y}$ such that
+Show that one can choose a geodesic path $\gamma_{x,y}\:[0,1]\to \spc{Y}$ from any $x\in \spc{Y}$ to any $y\in \spc{Y}$ such that
 $\gamma_{x,y}(t)\equiv\gamma_{y,x}(1-t)$ and
 \[\dist{\gamma_{x,y}(t)}{\gamma_{p,q}(t)}{\spc{Y}}\le (1-t)\cdot\dist{p}{x}{\spc{Y}}+t\cdot\dist{q}{y}{\spc{Y}}\]
 for any $x,y,p,q\in \spc{Y}$.
@@ -169,7 +168,8 @@ such that
 \end{subthm}
 
 \begin{subthm}{lem:opposite-compact}
-If $\spc{X}$ is compact, then an admissible function $r$ on $\spc{X}$ is extremal if and only if
+Suppose $\spc{X}$ is compact.
+Then an admissible function $r$ on $\spc{X}$ is extremal if and only if
 for any point $p\in\spc{X}$ there is a point $q\in \spc{X}$
 such that 
 \[r(p)+r(q)=\dist{p}{q}{\spc{X}}.\]
@@ -314,6 +314,12 @@ Suppose a length space $\spc{W}$ has two subspaces $\spc{X}$ and $\spc{Y}$ such 
 Assume $\spc{X}$ and $\spc{Y}$ are injective.
 Show that  $\spc{W}$ is injective
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:Rm-ell-infty}
+Show that a $m$-dimensional normed space is injective if and only if it is isometric to $\RR^m$ with the norm
+\[|(x_1,\dots,x_m)|=\max_i\{\,|x_i|\,\}.\]
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:urysohn-hyperconvex}
 Show that the $d$-Urysohn space is {}\emph{finitely hyperconvex} but not {}\emph{countably hyperconvex};
@@ -541,3 +547,10 @@ Show that any compact subspace $\spc{K}$ of an ultrametric space $\spc{X}$ is it
 Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not its short retract.
 \end{thm}
 
+The following exercise gives a sufficient condition for existence of a short extension.
+
+\begin{thm}{Exercise}\label{ex:petrunin-stadler}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$, and $f\:A\z\to \spc{Y}$ be a short map.
+Assume $\spc{Y}$ is compact and for any finite set $F\subset \spc{X}$ there is a short map $F\to \spc{Y}$ that agrees with $f$ on $F\cap A$.
+Show that there is a short map $\spc{X}\to \spc{Y}$ that agrees with $f$ on $A$.
+\end{thm}

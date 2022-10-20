@@ -4,7 +4,8 @@ For closeness, assume that $B$ is a countable set of $A$.
 
 \parit{If part.} Learn about the Kirszbraun theorem and apply it together with closest-point projection.
 
-
+\refstepcounter{chapter}
+\setcounter{eqtn}{0}
 
 
 \parbf{\ref{ex:inj=complete-geodesic-contractible}.}
@@ -185,6 +186,19 @@ The existence of such a map will also follow from \ref{thm:inj-envelope}.
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
 
+\parbf{\ref{ex:Rm-ell-infty}.}
+Let $B=\cBall[0,1]$ and $P\supset B$ be a parallelepiped of minimal volume.
+Choose the basis $e_1,\dots,e_m$ parallel to the edges of $P$ so that in the corresponding coordinates the parallelepiped is described by inequalities
+$|x_i|\le 1$ for all $i$.
+
+Let $B_i=\cBall[(1+R)\cdot e_i,R]$ for some $R>0$.
+Show that $ e_i\in B$ for any $i$; in particular $B\cap B_i\ne\emptyset$.
+Show $P$ can be chosen so that $B_i\cap B_j\ne \emptyset$ for all $i$ and~$j$ and all large $R>0$.
+Apply hyperconvexity to show that $e_1+\dots+ e_m\in B$.
+The same way, show that $\pm e_1\pm \dots\pm e_m\in B$ for all choices of signs.
+Conclude that $B=P$.
+
+
 \parbf{\ref{ex:urysohn-hyperconvex}.}
 Denote by $\spc{U}_d$ the $d$-Urysohn space,
 so $\spc{U}_\infty$ is the Urysohn space.
@@ -227,7 +241,7 @@ Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x
 
 It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
 
-\begin{wrapfigure}{r}{30 mm}
+\begin{wrapfigure}{r}{27 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-3}
@@ -239,7 +253,7 @@ It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segmen
 Assume $f$ is an extremal function.
 Use \ref{lem:opposite-compact} to show that
 \[f(x)+f(y)=f(p)+f(q)=2;\]
-in particular, two values $a=f(x)-1$ and $b=f(p)-1$ completely describe the function $f$.
+in particular, two values $a=f(x)-1$ and $b\z=f(p)-1$ completely describe the function $f$.
 Since $f$ is extremal, we also have that 
 \[(1\pm a)+(1\pm b)\ge 1\]
 for all 4 choices of signs;
@@ -249,8 +263,11 @@ equivalently,
 It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the $(a,b)$-plane with the metric induced by the $\ell^\infty$-norm.
 
 \parit{Remarks.}
-If $\spc{X}$ is finite, then $\Inj\spc{X}$ has polyhedral structure with $\ell^\infty$ metric on each face;
-its combinatorics can be encoded by certain graphs with the vertex set $\spc{X}$ \cite[see Section 4 in][]{lang-2013}.
+If $\spc{X}$ has $n$-points, then (evidently) $\Inj\spc{X}$ is a polyhedral complex in $(\RR^n,\ell^\infty) =\ell^\infty(\spc{X})$;
+each face of the complex is defined by equalities and inequalities of the following type: $x_i+x_j\ge \const$ and  $x_i+x_j= \const$.
+It is easy to see (and follows from \ref{ex:Rm-ell-infty}) that each face is isometric to a convex polyhedron in  $(\RR^k,\ell^\infty)$ for some $k\le n$;
+in fact $k\le n/2$.
+The structure of the complex can be encoded by certain graphs with the vertex set $\spc{X}$ \cite[see Section 4 in][]{lang-2013}.
 
 \parbf{\ref{ex:kur-inj}.}
 Recall that $x\mapsto \distfun_x$ gives an isometric embedding $\spc{X}\z\hookrightarrow\ell^\infty(\spc{X})$;
@@ -369,3 +386,14 @@ Consider set of $\{\infty,1,2,\dots\}$ with metric defined by
 \[|m-n|=1+\frac1{\min\{m,n\}}\]
 for $m\ne n$.
 Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
+
+\parbf{\ref{ex:petrunin-stadler}.} Consider the space $\spc{Y}^{\spc{X}}$ of all maps $\spc{X}\to \spc{Y}$ equipped with the product topology.
+
+Denote by $\mathfrak{S}_F$ the set of maps $h\in \spc{Y}^\spc{X}$ such that the restriction $h|_F$  is short and agrees with $f$ in $F\cap A$.
+Note that the sets $\mathfrak{S}_F\subset \spc{Y}^\spc{X}$ are closed and any finite intersection of these sets is nonempty.
+
+According to Tikhonov's theorem, $\spc{Y}^{\spc{X}}$ is compact.
+By the finite intersection property, the intersection $\bigcap_F\mathfrak{S}_F$ for all finite sets $F\subset X$ is nonempty.
+Hence the statement follows.
+
+\parit{Source:} \cite{petrunin-stadler}.

@@ -1,9 +1,12 @@
+\refstepcounter{chapter}
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:quad-inq}.}
 Add four triangle inequalities (\ref{metric:triangle}).
 
 \parbf{\ref{ex:normal}.}
 Consider the function 
-\[f(x)=\tfrac{\distfun_Ax}{\distfun_Ax+\distfun_Bx},\]
+\[f(x)=\frac{\distfun_Ax}{\distfun_Ax+\distfun_Bx},\]
 where $\distfun_Ax\z\df\inf_{a\in A}\dist{a}{x}{}$.
 Show that $f$ is continuous and satisfies the needed property.
 
@@ -16,10 +19,16 @@ Note that if $\mu(A)=\mu(B)=0$, then $|A-B|=0$.
 Therefore, \ref{metric=0} does not hold for bounded closed subsets.
 It is straightforward to check that for bounded measurable sets the remaining conditions in~\ref{def:metric} hold true.
 
-
 \parit{\ref{SHORT.ex:pseudo-infty-metric:infty}.}
 Note that the distance from the empty set to the whole plane is infinite; so the value $|A-B|$ might be infinite.
 It is straightforward to check the remaining conditions in~\ref{def:metric}.
+
+\parit{Remark.}
+Metrics of the form $\dist{A}{B}{}=\mu(A\bigtriangleup B)$ are very special.
+In particular, they satisfy the so called \index{hypermetric inequality}\emph{hypermetric inequalities}; that is, for any sequence of sets $A_1,\dots A_n$ and any sequence of integers $b_1,\dots,b_n$ such that $\sum_ib_i=1$ we have
+\[\sum_{i,j}b_i\cdot b_j\cdot \dist{A_i}{A_j}{}\le 0.\]
+Note that for $n=3$ and $b_1=b_2=-b_3=1$ we get the usual triangle inequality.
+For more on the subject, see \cite{deza-laurent}.
 
 \parbf{\ref{ex:almost-min}.}
 Assume the statement is wrong. 
@@ -145,6 +154,7 @@ Aleksei Pogorelov \cite{pogorelov}.
 It is closely related to the construction given 
 by David Hilbert \cite{hilbert}
 which was the motivating example for his 4-th problem. 
+See also the remark after the solution of \ref{ex:pseudo-infty-metric}.
 
 \parbf{\ref{ex:4-point-trees}.}
 Without loss of generality, we may assume that non of the points $p,x,y,z$ lie on a geodesic between other two.
