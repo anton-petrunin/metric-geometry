@@ -370,15 +370,33 @@ In particular, if $C>10$, then
 for any $x,x'\in \spc{X}$.
 That is, $f$ is a distance-noncontracting map $\spc{X}\to \spc{Y}$.
 
-\parbf{\ref{ex-GH-length}}; \ref{SHORT.ex-GH-length:length}
-Apply
+\parbf{\ref{ex-GH-length}}; \ref{SHORT.ex-GH-length:separable}. Show that (the isometry classes of) finite metric spaces with only rational distances is a countable dense subset in $\GH$. 
+
+\parit{\ref{SHORT.ex-GH-length:length}+\ref{SHORT.ex-GH-length:geodesic}.}
+Choose two compact metric spaces $\spc{X}$ and $\spc{Y}$.
+Let $\spc{W}\supset \spc{X}',\spc{Y}'$ be as in \ref{prop:GH=H};
+so $\spc{X}'\iso \spc{X}$, $\spc{Y}'\iso \spc{Y}$, and
+\[\ell=\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}=\dist{\spc{X}}{\spc{Y}}{\GH}\]
+for some $\ell\ge 0$.
+
+We can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$, so $\spc{W}$ is compact.
+Therefore its injective hull $\Inj\spc{W}$ is compact as well.
+
+Given $t\in[0,\ell]$, consider the set
+\[\spc{Z}_t=\set{w\in \Inj\spc{W}}{\distfun_{\spc{X}'}w\le t,\quad \distfun_{\spc{Y}'}w\le \ell-t}.\]
+Observe that $t\mapsto \spc{Z}_t$ is a geodesic in $\Haus(\Inj\spc{W})$ from $\spc{X}'$ to $\spc{Y}'$.
+Conclude that $t\mapsto [\spc{Z}_t]$ is a geodesic in $\GH$ from $[\spc{X}]$ to $[\spc{Y}]$.
+
+\parit{Remarks.} 
+Alternatively, one can apply
 \ref{ex:Haus-length},
 \ref{prop:GH-with-fixed-Z},
 \ref{lem:GH-complete},
-and \ref{lem:mid>geod}.
+and \ref{lem:mid>geod} to solve \ref{SHORT.ex-GH-length:length}.
 
-\parit{\ref{SHORT.ex-GH-length:geodesic}.}
-Choose two compact metric spaces $\spc{X}$ and $\spc{Y}$.
+The following argument for \ref{SHORT.ex-GH-length:geodesic} does not use injective hull.
+
+As before, $\spc{X}$ and $\spc{Y}$ are compact metric spaces.
 Show that there are subsets $\spc{X}'$, and $\spc{Y}'$ in the Urysohn space $\spc{U}$ that are isometric to $\spc{X}$ and $\spc{Y}$ respectively, and such that 
 \[|\spc{X}-\spc{Y}|_{\GH} = |\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}.\]
 
@@ -389,7 +407,7 @@ for any $n$.
 Observe that the sequence $\spc{Z}_n$ converges in $\GH$, and its limit by $\spc{Z}$ is a midpoint of $\spc{X}$ and $\spc{Y}$.
 Finally, apply \ref{lem:GH-complete} and \ref{lem:mid>geod}.
 
-\parit{Source:} \cite{ivanov-nikolaeva-tuzhilin}.
+Yet another solution is given in \cite{ivanov-nikolaeva-tuzhilin}.
 
 \parbf{\ref{ex:GH-po}}; \ref{SHORT.ex:GH-po:a}.
 To check that $\dist{*}{*}{\GH'}$ is a metric, it is sufficient to show that
