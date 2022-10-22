@@ -63,7 +63,8 @@ Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy
 \parit{Remark.}
 Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
 It might be interesting to get better understanding of spaces that admit such a retraction;
-for example Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center}.
+for example, Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center, aichholzer-alt-rote}.
+It might happen that all such complete length spaces are injective.
 
 \parbf{\ref{ex:closure-union}.} 
 Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
@@ -380,34 +381,15 @@ so $\spc{X}'\iso \spc{X}$, $\spc{Y}'\iso \spc{Y}$, and
 for some $\ell\ge 0$.
 
 We can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$, so $\spc{W}$ is compact.
-Therefore its injective hull $\Inj\spc{W}$ is compact as well.
+Choose a compact geodesic extension $\spc{G}$ of $\spc{W}$;
+it exists by \ref{ex:compact-length} (or \ref{ex:Inj(compact)}).
 
 Given $t\in[0,\ell]$, consider the set
-\[\spc{Z}_t=\set{w\in \Inj\spc{W}}{\distfun_{\spc{X}'}w\le t,\quad \distfun_{\spc{Y}'}w\le \ell-t}.\]
-Observe that $t\mapsto \spc{Z}_t$ is a geodesic in $\Haus(\Inj\spc{W})$ from $\spc{X}'$ to $\spc{Y}'$.
+\[\spc{Z}_t=\set{w\in \spc{G}}{\distfun_{\spc{X}'}w\le t,\quad \distfun_{\spc{Y}'}w\le \ell-t}.\]
+Observe that $t\mapsto \spc{Z}_t$ is a geodesic in $\Haus(\spc{G})$ from $\spc{X}'$ to $\spc{Y}'$.
 Conclude that $t\mapsto [\spc{Z}_t]$ is a geodesic in $\GH$ from $[\spc{X}]$ to $[\spc{Y}]$.
 
-\parit{Remarks.} 
-Alternatively, one can apply
-\ref{ex:Haus-length},
-\ref{prop:GH-with-fixed-Z},
-\ref{lem:GH-complete},
-and \ref{lem:mid>geod} to solve \ref{SHORT.ex-GH-length:length}.
-
-The following argument for \ref{SHORT.ex-GH-length:geodesic} does not use injective hull.
-
-As before, $\spc{X}$ and $\spc{Y}$ are compact metric spaces.
-Show that there are subsets $\spc{X}'$, and $\spc{Y}'$ in the Urysohn space $\spc{U}$ that are isometric to $\spc{X}$ and $\spc{Y}$ respectively, and such that 
-\[|\spc{X}-\spc{Y}|_{\GH} = |\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}.\]
-
-Further, construct a sequence of compact sets $\spc{Z}_n\subset \spc{U}$ such that $\spc{Z}_n$ is an $\tfrac1{2^n}$-midpoint of $\spc{X}'$, and $\spc{Y}'$ in $\Haus\spc{U}$ and 
-\[|\spc{Z}_n-\spc{Z}_{n+1}|_{\Haus\spc{U}}<\tfrac1{2^n}\]
-for any $n$.
-
-Observe that the sequence $\spc{Z}_n$ converges in $\GH$, and its limit by $\spc{Z}$ is a midpoint of $\spc{X}$ and $\spc{Y}$.
-Finally, apply \ref{lem:GH-complete} and \ref{lem:mid>geod}.
-
-Yet another solution is given in \cite{ivanov-nikolaeva-tuzhilin}.
+\parit{Source:} \cite{ivanov-nikolaeva-tuzhilin}.
 
 \parbf{\ref{ex:GH-po}}; \ref{SHORT.ex:GH-po:a}.
 To check that $\dist{*}{*}{\GH'}$ is a metric, it is sufficient to show that
