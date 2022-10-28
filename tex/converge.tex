@@ -80,6 +80,19 @@ where the least upper bound is taken for all $1$-Lipschitz functions $f$.
 
 \end{thm}
 
+Given a subset $A\subset \RR^n$,
+The \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  non-empty closed set $A\subset \RR^n$ is defined as 
+\[h_A(x)=\sup\set{\langle x, a\rangle}{a\in A}.\]
+
+\begin{thm}{Exercise}\label{ex:Haus-support}
+Show that 
+\[\dist{A}{B}{\Haus\RR^n}\ge \sup_{|u|=1}\{|h_A(u)-h_B(u)|\}\]
+for any nonempty compact subsets $A,B\subset \RR^n$.
+
+Moreover equality holds if both $A$ and $B$ are convex.
+\end{thm}
+
+
 \begin{thm}{Advanced exercise}\label{ex:H-sections}
 \begin{subthm}{ex:H-sections:S}
 Construct a family of compact sets $C_t\subset\mathbb{S}^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
@@ -499,9 +512,9 @@ Let us introduce the so-called \textit{appropriate functions} and use them in a 
 
 Suppose $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ are as in \ref{def:GH}.
 By passing to the subspace $\spc{X}'\cup\spc{Y}'$ in $\spc{W}$, we can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$.
-Note that in this case the metric on $\spc{W}$ is completely determined by the function 
+Note that in this case the metric on $\spc{W}$ is completely determined by the function $f\:\spc{X}\times \spc{Y}\to\RR$ defined by
 \[f(x,y)=\dist{x}{y}{\spc{W}};\]
-a function $f\:\spc{X}\times \spc{Y}\to\RR$ that can appear this way will be called \index{appropriate function}\emph{appropriate}.
+a function $f$ that can appear this way will be called \index{appropriate function}\emph{appropriate}.
 
 Note that a function $f\:\spc{X}\times\spc{Y}\to\RR$ is appropriate if and only if
 $x\mapsto f(x,y)$ and $y\mapsto f(x,y)$ are extension functions;
@@ -509,10 +522,10 @@ that is, if
 \[
 \begin{aligned}
 f(x,y)+f(x,y')
-&\ge \dist{y}{y'}{\spc{Y}}\ge |f(x,y)-f(x,y')|,
+&\ge \dist{y}{y'}{\spc{Y}}\ge |f(x,y)-f(x,y')|,\quad\text{and}
 \\
 f(x,y)+f(x',y)
-&\ge \dist{x}{x'}{\spc{X}}\ge |f(x,y)-f(x',y)|;
+&\ge \dist{x}{x'}{\spc{X}}\ge |f(x,y)-f(x',y)|
 \end{aligned}
 \eqlbl{eq:appropriate}
 \]
@@ -530,17 +543,17 @@ f(x,y)&\text{if\ } x\in \spc{X}\ \text{and}\ y\in \spc{Y},
 \]
 and the corresponding metric space $\spc{W}$ contains isometric copies of $\spc{X}$ and $\spc{Y}$.
 
+\begin{thm}{Observation}\label{obs:GH=min-appropriate}
+If $\spc{X}$, $\spc{Y}$ be metric spaces.
 Given an appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$, set 
 \begin{align*}
 a_f&=\max_{x\in \spc{X}}\{\min_{y\in\spc{Y}} \{f(x,y)\}\},
 \\
 b_f&=\max_{y\in \spc{Y}}\{\min_{x\in\spc{X}} \{f(x,y)\}\}.
 \end{align*}
-
-\begin{thm}{Observation}\label{obs:GH=min-appropriate}
-If $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ as above then
-\[\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}=\inf_f\{a_f,b_f\}.\]
-
+Then 
+\[\dist{\spc{X}}{\spc{Y}}{\GH}=\inf_f\{a_f,b_f\}.\]
+where the greatest lower bound is taken for all appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$.
 \end{thm}
 
 \parit{Proof of \ref{prop:GH=H}.}
