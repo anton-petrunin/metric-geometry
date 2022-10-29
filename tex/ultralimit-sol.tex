@@ -19,6 +19,11 @@ the key statement is due to Miroslav Katětov \cite{katetov}.
 Choose a nonprincipal ultrafilter $\omega$ and set $L(\bm{s})=s_\omega$.
 It remains to observe that $L$ is linear.
 
+\parit{Remark.} 
+By this exercise, $\omega$ corresponds t a vector in $(\ell^\infty)^*\backslash \ell^1$.
+(Recall that $\ell^\infty=(\ell^1)^*$ and $\ell^1\subsetneq(\ell^\infty)^*$.
+A principle ultrafilter corresponds to a basis vector in $\ell^1$.)
+
 \parbf{\ref{ex:ultrakatetov+}.}
 Use \ref{ex:ultrakatetov}.
 
@@ -106,10 +111,18 @@ It turns out that $\omega_1\ne \omega$ for any $\iota$;
 see the post of Andreas Blass \cite{blass}.
 
 \parbf{\ref{ex:two-geodesics-in-ultrapower}.}
-Apply \ref{lem:X-X^w} and \ref{obs:ultrapower-is-geodesic}.
+Arguing as in \ref{obs:ultrapower-is-geodesic}, we get a pair of points $x$ and $y$ in $\spc{X}$ such that
+\[\dist{p}{x}{}+\dist{x}{y}{}+\dist{y}{q}{}=\dist{p}{q}{}\]
+and there is no midpoint between $x$ and $y$ in $\spc{X}$
+(possibly $p=x$ and $q=y$).
+Note that it is sufficient to show that there is a continuum of distinct midpoints in $\spc{X}^\omega$ between $x$ and $y$ in $\spc{X}$.
 
-\parit{Remark.}
-Arguing as in \ref{ex:isom-ultrapower}, one can show that there are continuum of different geodesics from $p$ to $q$ in $\spc{X}^\omega$.
+Since $\spc{X}$ is a length space, we can choose a $\tfrac1n$-midpoint $m_n\in\spc{X}$ between $x$ and $y$.
+Note that the sequence $m_n$ contains no converging subsequence.
+Conclude that we may pass to a subsequence of $m_n$ such that $\dist{m_i}{m_j}{}>\eps$ for a fixed $\eps>0$ and any $i\ne j$.
+
+Argue as in \ref{ex:isom-ultrapower} to show that there is a continuum of distinct $\omega$-limits of subsequences of $m_n$;
+each such limit is a midpoint between $x$ and $y$.
 
 \parbf{\ref{ex:notproper-limit}.} Consider the infinite metric $\spc{T}$ tree with unit edges shown
 on the diagram.
@@ -148,7 +161,6 @@ On the other hand, the set of sequences of points in $\spc{L}$  has cardinality 
 In particular, the set of points in $\Asym\spc{L}$ has cardinality at most continuum.
 It follows that the degree of any vertex is at most continuum.
 
-
 The proof for the Lobachevsky space goes along the same lines.
 
 For the infinite three-regular tree, part \ref{SHORT.ex:Asym(Lob):metric-tree} follows from \ref{ex:lim(tree)}.
@@ -158,3 +170,23 @@ No changes are needed in~\ref{SHORT.ex:Asym(Lob):continuum}.
 \parit{Remark.}
 According to the result of Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}, the properties \ref{SHORT.ex:Asym(Lob):homogeneous} and \ref{SHORT.ex:Asym(Lob):continuum} describe the tree $\spc{T}$ up to isometry.
 In particular, the asymptotic space of the Lobachevsky plane does not depend on the choice of the ultrafilter and the sequence $\lambda_n\to \infty$.
+
+
+\parbf{\ref{ex:T(Sx[0,1]/Sx0)}.}
+Denote by $o_\omega$ the point in $\T^\omega_o\spc{X}$ that corresponds to $o$.
+Argue as in \ref{ex:Asym(Lob):continuum} to show that $\T^\omega_o\spc{X}\setminus \{o_\omega\}$ has continuum connected components.
+Further, show that each connected component $\spc{W}_\alpha$ is isometric to $\RR\times (0,\infty)$ with the metric described by
+\[\dist{(x_1,t_1)}{(x_2,t_2)}{}=\min\{\,\dist{(x_1,t_1)}{(x_2,t_2)}{\RR^2},t_1+t_2\,\}.\]
+
+Conclude that the space $\T^\omega_o\spc{X}$ can be described as follows.
+Consider continuum copies $\spc{W}_\alpha$ as above;
+denote by $(x,t)_\alpha$ the point in $\spc{W}_\alpha$ with coordinates $(x,t)$.
+The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ with the following metric:
+\begin{align*}
+\dist{o_\omega}{(x,t)_\alpha}{}&=t,
+\\
+\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}&=\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{\spc{W}_\alpha},
+\\
+\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\beta}{}&=t_1+t_2,
+\end{align*}
+for any $\alpha\ne\beta$.

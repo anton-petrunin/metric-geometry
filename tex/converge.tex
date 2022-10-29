@@ -89,7 +89,7 @@ Show that
 \[\dist{A}{B}{\Haus\RR^n}\ge \sup_{|u|=1}\{|h_A(u)-h_B(u)|\}\]
 for any nonempty compact subsets $A,B\subset \RR^n$.
 
-Moreover equality holds if both $A$ and $B$ are convex.
+Moreover, equality holds if both $A$ and $B$ are convex.
 \end{thm}
 
 
@@ -119,7 +119,7 @@ The Hausdorff metric can be used to define convergence.
 Namely, suppose $K_1,K_2,\dots$, and $K_\infty$ are compact sets in a metric space $\spc{X}$.
 If $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$, then we say that 
 the sequence $K_n$ {}\emph{converges} to $K_\infty$ \index{convergence in the sense of Hausdorff}\emph{in the sense of Hausdorff};
-or we can say that $K_\infty$ is {}\emph{Hausdorff limit} of the sequence $K_n$.
+or we can say that $K_\infty$ is the the {}\emph{Hausdorff limit} of the sequence $K_n$.
 
 Note that the theorem implies that from any sequence of compact sets in $\spc{X}$ one can select a subsequence that converges in the sense of Hausdorff; 
 for that reason, it is called a \textit{selection} theorem. 
@@ -163,7 +163,7 @@ there is
 a \index{partial limit}\emph{partial limit}%
 \footnote{Partial limit is a limit of a subsequence.}
  $x_\infty$ of $x_n$.
-Clearly $\distfun_{K_\infty}(x_\infty)\ge \eps$.
+Clearly, $\distfun_{K_\infty}(x_\infty)\ge \eps$.
 
 On the other hand, since $K_n$ is closed and $x_m\in K_n$ for $m\ge n$,
 we get $x_\infty\in K_n$ for each $n$.
@@ -295,7 +295,7 @@ in fact, it takes an intermediate place between the original Hausdorff convergen
 
 \begin{thm}{Definition}\label{def:gen-Haus-conv}
 Let $A_1,A_2,\dots$ be a sequence of closed sets in a metric space $\spc{X}$.
-We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense of Hausdorff if for any $x\in\spc{X}$, we have
+We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense of Hausdorff if, for any $x\in\spc{X}$, we have
 $\distfun_{A_n}(x)\z\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
 \end{thm}
 
@@ -351,7 +351,7 @@ respectively such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}} < r$.
 \begin{thm}{Theorem}\label{thm:GH-is-a-metric}
 The set of isometry classes of compact metric spaces equipped with Gromov--Hausdorff metric forms a metric space (which is denoted by $\GH$).
 
-In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$ and $\spc{Z}$ the following conditions hold:
+In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$, and $\spc{Z}$ the following conditions hold
 
 \begin{subthm}{GH-1} $|\spc{X}-\spc{Y}|_{\GH}\ge 0$;
 \end{subthm}
@@ -368,11 +368,11 @@ In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$ and $\s
 
 
 Note that \ref{SHORT.GH-1}, \ref{SHORT.GH-3},
-and the ``if''-part of \ref{SHORT.GH-2} follow directly from Definition \ref{def:GH}.
+and the if part of \ref{SHORT.GH-2} follow directly from Definition \ref{def:GH}.
 Part \ref{SHORT.GH-4} will be proved in Section~\ref{sec:GH-approx}.
-The ``only-if''-part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:extfun=GH}.
+The only-if part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:extfun=GH}.
 
-Recall that $a\cdot\spc{X}$ denotes $\spc{X}$ \index{rescaled space}\emph{rescaled} by factor $a>0$;
+Recall that $a\cdot\spc{X}$ denotes $\spc{X}$ \index{rescaled space}\emph{rescaled} by a factor $a>0$;
 that is, $a\cdot\spc{X}$ is a metric space with the underlying set of $\spc{X}$ and the metric defined by
 \[\dist{x}{y}{a\cdot\spc{X}}\df a\cdot\dist{x}{y}{\spc{X}}.\]
 
@@ -421,7 +421,7 @@ Let $\spc{X}$ and $\spc{Y}$ be compact metric spaces;
 denote by $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ their injective envelopes (see \ref{sec:extremal-functions}).
 Show that 
 \[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}\le 2\cdot|\spc{X}- \spc{Y}|_{\GH}.\] 
-In other words $\spc{X}\mapsto \hat{\spc{X}}$ defines a $2$-Lipschitz map $\GH\to\GH$.
+In other words, $\spc{X}\mapsto \hat{\spc{X}}$ defines a $2$-Lipschitz map $\GH\to\GH$.
 
 \end{thm}
 
@@ -447,7 +447,7 @@ Show that
 \[\dist{\spc{X}}{\spc{Y}}{\GH}<\eps\]
 if and only if there is an $\eps$-approximation between $\spc{X}$ and $\spc{Y}$.
 
-In other words $\dist{\spc{X}}{\spc{Y}}{\GH}$ is the greatest lower bound of values $\eps>0$ such that  there is an $\eps$-approximation between $\spc{X}$ and $\spc{Y}$.
+In other words, $\dist{\spc{X}}{\spc{Y}}{\GH}$ is the greatest lower bound of values $\eps>0$ such that  there is an $\eps$-approximation between $\spc{X}$ and $\spc{Y}$.
 \end{thm}
 
 \parit{Proof of \ref{GH-4}.}
@@ -477,7 +477,7 @@ The following weakened version of isometry is closely related to $\eps$-approxim
 \begin{thm}{Definition} Let $\spc{X}$ and $\spc{Y}$ be metric spaces and $\eps>0$. 
 A  map\footnote{possibly noncontinuous} $f\: \spc{X} \z\to \spc{Y}$ is called an \index{almost isometry}\emph{$\eps$-isometry} 
 if $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$ and
-\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{f(x)}{f(x')}{\spc{Y}}\bigr|<\eps.\]
+\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{f(x)}{f(x')}{\spc{Y}}\bigr|<\eps\]
 for any $x,x'\in \spc{X}$.
 \end{thm}
 
@@ -552,8 +552,8 @@ a_f&=\max_{x\in \spc{X}}\{\min_{y\in\spc{Y}} \{f(x,y)\}\},
 b_f&=\max_{y\in \spc{Y}}\{\min_{x\in\spc{X}} \{f(x,y)\}\}.
 \end{align*}
 Then 
-\[\dist{\spc{X}}{\spc{Y}}{\GH}=\inf_f\{a_f,b_f\}.\]
-where the greatest lower bound is taken for all appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$.
+\[\dist{\spc{X}}{\spc{Y}}{\GH}=\inf_f\{a_f,b_f\},\]
+where the greatest lower bound is taken for all appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$.
 \end{thm}
 
 \parit{Proof of \ref{prop:GH=H}.}
@@ -587,7 +587,7 @@ Namely, a sequence of compact metric spaces $\spc{X}_n$ converges to compact met
 
 This convergence is more important than the metric ---
 in all applications, we use only the topology on $\GH$
-and we do not care about the particular value of Gromov--Hausdorff distance between spaces.
+and we do not care about the particular value of the Gromov--Hausdorff distance between spaces.
 The following observation follows from \ref{ex:eps-isom}:
 
 \begin{thm}{Observation}\label{obs:GH-e-isom}
@@ -697,11 +697,11 @@ Consider the space $\spc{W}$ of all equivalence classes in $\spc{U}\sqcup\spc{V}
 
 It is straightforward to check that the following defines a metric on~$\spc{W}$:
 \begin{align*}
-\dist{u}{u'}{\spc{W}}&\df\dist{u}{u'}{\spc{U}}
+\dist{u}{u'}{\spc{W}}&\df\dist{u}{u'}{\spc{U}},
 \\
-\dist{v}{v'}{\spc{W}}&\df\dist{v}{v'}{\spc{V}}
+\dist{v}{v'}{\spc{W}}&\df\dist{v}{v'}{\spc{V}},
 \\
-\dist{u}{v}{\spc{W}}&\df\min\set{\dist{u}{a}{\spc{U}}+\dist{v}{\iota(a)}{\spc{V}}}{a\in A}
+\dist{u}{v}{\spc{W}}&\df\min\set{\dist{u}{a}{\spc{U}}+\dist{v}{\iota(a)}{\spc{V}}}{a\in A},
 \end{align*}
 where $u,u'\in \spc{U}$ and $v,v'\in \spc{V}$.
 
@@ -709,7 +709,7 @@ The  space $\spc{W}$ is called the \index{gluing}\emph{gluing} of $\spc{U}$ and 
 $\spc{W}=\spc{U}\sqcup_\iota\spc{V}$.
 If one applies this construction to two copies of one space $\spc{U}$ with a set $A\subset \spc{U}$ and the identity map $\iota\:A\to A$, then the obtained space is called the \index{doubling}\emph{doubling} of $\spc{U}$ along~$A$; this space can be denoted by $\sqcup_A^2\spc{U}$.
 
-Note that the inclusions $\spc{U}\hookrightarrow \spc{W}$ and $\spc{V}\hookrightarrow \spc{W}$ are distance preserving.
+Note that the inclusions $\spc{U}\hookrightarrow \spc{W}$ and $\spc{V}\hookrightarrow \spc{W}$ are distance-preserving.
 Therefore we can and will consider $\spc{U}$ and $\spc{V}$ as the subspaces of $\spc{W}$;
 this way the subsets $A$ and $A'$ will be identified and denoted further by~$A$.
 Note that $A=\spc{U}\cap \spc{V}\subset \spc{W}$.
@@ -718,7 +718,7 @@ Note that $A=\spc{U}\cap \spc{V}\subset \spc{W}$.
 Let $\spc{X}_1,\spc{X}_2,\dots$ be a Cauchy sequence in $\GH$.
 Passing to a subsequence if necessary, 
 we can assume that $|\spc{X}_n-\spc{X}_{n+1}|_{\GH}<\tfrac1{2^n}$ for each~$n$.
-In particular, for each $n$ there is a metric space $\spc{V}_n$ with distance preserving inclusions $\spc{X}_n\hookrightarrow \spc{V}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{V}_n$ such that
+In particular, for each $n$ there is a metric space $\spc{V}_n$ with distance-preserving inclusions $\spc{X}_n\hookrightarrow \spc{V}_n$ and $\spc{X}_{n+1}\hookrightarrow \spc{V}_n$ such that
 \[|\spc{X}_n-\spc{X}_{n+1}|_{\Haus\spc{V}_n}<\tfrac1{2^n}\]
 for each $n$.
 Moreover, we may assume that $\spc{V}_n=\spc{X}_n\cup\spc{X}_{n+1}$.
@@ -726,7 +726,7 @@ Moreover, we may assume that $\spc{V}_n=\spc{X}_n\cup\spc{X}_{n+1}$.
 Let us glue $\spc{V}_1$ to $\spc{V}_2$ along $\spc{X}_2$;
 to the obtained space glue $\spc{V}_3$ along $\spc{X}_3$, and so on.
 The obtained metric space $\spc{W}$
-has an underlying set formed by the disjoint union of all $\spc{X}_n$ such that each inclusion $\spc{X}_n\z\hookrightarrow\spc{W}$ is distance preserving and
+has an underlying set formed by the disjoint union of all $\spc{X}_n$ such that each inclusion $\spc{X}_n\z\hookrightarrow\spc{W}$ is distance-preserving and
 \[|\spc{X}_n-\spc{X}_{n+1}|_{\Haus\spc{W}}<\tfrac1{2^n}\]
 for each $n$.
 In particular,
@@ -805,7 +805,7 @@ defines a metric on the space of (isometry classes) of compact metric spaces.
 \end{subthm}
 
 \begin{subthm}{ex:GH-po:b}
-Moreover $\dist{*}{*}{\GH'}$ is equivalent to the Gromov--Hausdorff metric;
+Moreover, $\dist{*}{*}{\GH'}$ is equivalent to the Gromov--Hausdorff metric;
 that is,
 $$|\spc{X}_n-\spc{X}_\infty|_{\GH}\to 0 
 \quad\iff\quad 
@@ -824,7 +824,7 @@ The following proposition says that the space $\spc{W}$ in Definition~\ref{def:G
 \begin{thm}{Proposition}\label{prop:GH-with-fixed-Z}
 Let $\spc{U}$ be a universal space.
 Then for any compact metric spaces $\spc{X}$ and $\spc{Y}$ we have
-$$|\spc{X}-\spc{Y}|_{\GH} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}\}$$ 
+$$|\spc{X}-\spc{Y}|_{\GH} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}\},$$ 
 where the greatest lower bound is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{U}$
 which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
 \end{thm}
@@ -840,7 +840,7 @@ it remains to prove the opposite inequality.
 Suppse $|\spc{X}-\spc{Y}|_{\GH}<\eps$;
 let $\spc{X}'$, $\spc{Y}'$ and $\spc{W}$ be as in \ref{def:GH}.
 We can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$;
-otherwise pass to the subspace $\spc{X}'\cup\spc{Y}'$ of~$\spc{W}$.
+otherwise, pass to the subspace $\spc{X}'\cup\spc{Y}'$ of~$\spc{W}$.
 In this case, $\spc{W}$ is compact;
 in particular, it is separable.
 

@@ -182,7 +182,7 @@ The space $\spc{K}$ is complete and \index{totally bounded space}\emph{totally b
 
 \begin{thm}{Lebesgue lemma}
 Let $\spc{K}$ be a compact metric space.
-Then for any open cover of $\spc{K}$ there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover.
+Then for any open cover of $\spc{K}$, there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover.
 
 The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.
 \end{thm}
@@ -218,7 +218,7 @@ that is, $f$ is a distance-preserving bijection.
 \end{thm}
 
 A metric space $\spc{X}$ is called \index{locally compact space}\emph{locally compact} if any point in $\spc{X}$ admits a compact neighborhood;
-equivalently, for any point $x\in\spc{X}$ a closed ball $\cBall[x,r]$ is compact for some $r>0$.
+equivalently, for any point $x\in\spc{X}$, a closed ball $\cBall[x,r]$ is compact for some $r>0$.
 
 \section{Proper spaces}
 
@@ -299,9 +299,9 @@ Let $p$, $x$, $y$, and $z$ be points in a metric tree.
 Consider three numbers 
 \begin{align*}
 a&=|p-x|+|y-z|,
-&
+\\
 b&=|p-y|+|z-x|,
-&
+\\
 c&=|p-z|+|x-y|.
 \end{align*}
 Suppose that $a\le b\le c$.
@@ -457,7 +457,7 @@ Given two points $x,y\in A$,
 consider the value
 \[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
 where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in~$A$.
-In other words $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
+In other words, $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
 \footnote{The notation $\dist{*}{*}{A}$ conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
 
 Let $x$ and $y$ be points in a metric space $\spc{X}$.
@@ -540,7 +540,7 @@ Any complete, locally compact length space is proper.
 \end{thm}
 
 Before reading the proof, it is instructive to solve \ref{ex:loc-compact-not-proper}.
-In the proof we will use the following exercise.
+In the proof, we will use the following exercise.
 
 \begin{thm}{Exercise}\label{ex:eps-nbhd(ball)}
 Let $M$ be a length space.
@@ -574,7 +574,7 @@ in particular, $\rho\:\spc{X}\to\RR$ is a continuous function.
 Assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
 Then 
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
-Then  compactness of $\cBall[y,\rho(y)]$ implies compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
+Then compactness of $\cBall[y,\rho(y)]$ implies the compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
 
 Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
 From \ref{eq:rho>0}, we have $\eps>0$.

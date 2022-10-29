@@ -45,7 +45,7 @@ Again by triangle inequality we have
 \[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
 Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrarily close to $x$.
 Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrarily close to $\dist{x}{y}{\spc{X}}$.
-In other words 
+In other words, 
 \[\sup_n\left\{\,\bigl|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}\bigr|\,\right\}
 \ge
 \dist{x}{y}{\spc{X}}.\]
@@ -91,9 +91,9 @@ If in addition, $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$
 If the complement $\spc{X}'\setminus \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
 In this case, to define a metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
 \[f(x)=\dist{p}{x}{\spc{X}'}.\]
-Any function $f$ of that type will be called \index{extension function}\emph{extension function}\label{page:extension function} or {}\emph{$d$-extension function} respectively.
+Any function $f$ of that type will be called an \index{extension function}\emph{extension function}\label{page:extension function} or {}\emph{$d$-extension function} respectively.
 
-The extension function $f$ cannot be taken arbitrary --- the triangle inequality implies that 
+The extension function $f$ cannot be taken arbitrarily --- the triangle inequality implies that 
 \[f(x)+f(y)\ge \dist{x}{y}{\spc{X}}\ge |f(x)-f(y)|\]
 for any $x,y\in \spc{X}$.
 In particular, $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
@@ -123,7 +123,7 @@ is a $d$-extension function on $\spc{Y}$.
 
 \end{thm}
 
-The functions $\bar f$ and $\bar f_d$ in the above exercise are called \index{Katětov extensions}\emph{Katětov extensions} of $f$ and $\spc{X}$ is called its {support of extension function}\emph{support}, briefly \index{$\supp$}$\supp \bar f=\spc{X}$.
+The functions $\bar f$ and $\bar f_d$ in the above exercise are called \index{Katětov extensions}\emph{Katětov extensions} of $f$ and the minimal possible $\spc{X}$ is called its \index{support of extension function}\emph{support}, briefly \index{$\supp$}$\supp \bar f=\spc{X}$.
 
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
@@ -231,7 +231,7 @@ Any separable metric space $\spc{X}$ admits a distance-preserving embedding into
 %??? PROBLEM
 
 \parit{Sketch of proof.}
-Start with $\spc{X}_0=\spc{X}$ and construct a nested sequence of spaces $\spc{X}_0\subset\spc{X}_1 \subset{}\dots$ as at the very end of proof of \ref{prop:univeral-separable}.
+Start with $\spc{X}_0=\spc{X}$ and construct a nested sequence of spaces $\spc{X}_0\subset\spc{X}_1 \subset{}\dots$ as at the very end of the proof of \ref{prop:univeral-separable}.
 Note that 
 any isometry $\spc{X}_n\to \spc{X}_n$ can be extended to a unique isometry $\spc{X}_{n+1}\to \spc{X}_{n+1}$.
 It follows that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{X}'=\bigcup_n\spc{X}_n$.
@@ -240,7 +240,7 @@ Now, consider new nested sequence $\spc{X}\subset \spc{X}'\subset \spc{X}''\subs
 denote its union by $\spc{Y}$.
 Arguing as in \ref{prop:univeral-separable} and \ref{prop:completion-univeral} we get that the completion of $\spc{Y}$ is an Urysohn space, say $\spc{U}$, that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
 
-From above, for any isometry of $\spc{X}$ can be extended to an isometries of $\spc{X}'$, $\spc{X}''$ and so on.
+From above, for any isometry of $\spc{X}$ can be extended to isometries of $\spc{X}'$, $\spc{X}''$ and so on.
 They all define an isometry of $\spc{Y}$;
 passing to its continuous extension, we get an isometry of $\spc{U}$.
 \qeds
@@ -297,7 +297,7 @@ Modify the proofs of \ref{prop:completion-univeral} and \ref{prop:sep-in-urys} t
 \begin{thm}{Theorem}\label{thm:compact-extension}
 Let $K$ be a compact set in a separable space $\spc{S}$.
 Then any distance-preserving map from $K$ to an Urysohn space can be extended to 
-a distance-preserving map on whole $\spc{S}$.
+a distance-preserving map on the whole $\spc{S}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sc-urysohn}
@@ -379,7 +379,7 @@ that is, there is a distance-preserving map from a countable subset of $\spc{U}_
 
 \end{thm}
 
-In fact the Urysohn space is compact-set-homogeneous; more precisely the following theorem holds.
+In fact, the Urysohn space is compact-set-homogeneous; more precisely the following theorem holds.
 
 \begin{thm}{Theorem}\label{thm:compact-homogeneous}
 Let $K$ be a compact set in a ($d$-)Urysohn space~$\spc{U}$.
@@ -473,8 +473,8 @@ Show that a finite metric space $\spc{F}$ admits a distance-preserving embedding
 \footnote{that is, linear combination with nonnegative coefficients.} of cut metrics on $\spc{F}$.
 \end{thm}
 
-Recall that vertex set of any graph $\Gamma$ comes with a metric ---
-the distance between two vertices is minimal number of edges in a path connecting them.
+Recall that the vertex set of any graph $\Gamma$ comes with a metric ---
+the distance between two vertices is the minimal number of edges in a path connecting them.
 
 \begin{wrapfigure}{r}{15mm}
 \vskip-4mm
@@ -492,13 +492,13 @@ Pavel Urysohn~\cite{urysohn}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called \index{Rado graph}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s--Rényi graph} or \emph{random graph}; see \cite{cameron}.
-In fact the Urysohn space is the random metric space in \textit{certain sense} \cite{vershik}.
+In fact, the Urysohn space is the random metric space in \textit{certain sense} \cite{vershik}.
 
 \textit{The ($d$-) Urysohn space is homeomorphic to the Hilbert space};
 the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk criterion.
 
-The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimension.
-In fact these are the only examples of locally compact three-point-homogeneous length spaces.
+The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
+In fact, these are the only examples of locally compact three-point-homogeneous length spaces.
 The latter was proved by Herbert Busemann \cite{busemann-1942}; it also follows from the more general result of Jacques Tits \cite{tits}.
 The same conclusion holds for complete all-set-homogeneous geodesic spaces with local uniqueness of geodesics;
 it was proved by Garrett Birkhoff \cite{birkhoff}.

@@ -2,7 +2,8 @@
 To check convexity, assume that $B$ is a two-point subset.
 For closeness, assume that $B$ is a countable set of $A$.
 
-\parit{If part.} Learn about the Kirszbraun theorem and apply it together with closest-point projection.
+\parit{If part.}
+Learn about the Kirszbraun theorem and apply it together with the closest-point projection.
 
 \refstepcounter{chapter}
 \setcounter{eqtn}{0}
@@ -56,7 +57,8 @@ Apply the definition of injective space to $\ell^\infty(\spc{Y})$.
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
 We need to construct a short extension $F$ of $f$.
-Without loss of generality, we may assume that $A\ne\emptyset$, otherwise map the whole $\spc{X}$ to a single point.
+Without loss of generality, we may assume that $A\ne\emptyset$;
+otherwise, map the whole $\spc{X}$ to a single point.
 By Zorn's lemma, it is sufficient to enlarge $A$ by a single point $x\notin A$.
 
 \parit{\ref{SHORT.ex:injective-spaces:R}.}
@@ -74,7 +76,7 @@ Note that $x_a\in[q\,f(a)]$ and either $x_a=q$ or $x_a$ lies on distance $\dist{
 
 Note that the geodesics $[q\,x_a]$ are nested;
 that is, for any $a,b\in A$ we have either $[q\,x_a]\subset [q\,x_b]$ or $[q\,x_b]\subset [q\,x_a]$.
-Moreover, in the first case we have $\dist{x_b}{f(a)}{}\le \dist{p}{a}{}$ and in the second $\dist{x_a}{f(b)}{}\le \dist{p}{b}{}$.
+Moreover, in the first case, we have $\dist{x_b}{f(a)}{}\le \dist{p}{a}{}$ and in the second $\dist{x_a}{f(b)}{}\le \dist{p}{b}{}$.
 
 It follows that the closure of the union of all geodesics $[q\,x_a]$ for $a\in\spc{A}$ is a geodesic.
 Denote by $x$ its endpoint; it exists since $\spc{Y}$ is complete.
@@ -101,7 +103,7 @@ if not pass to the metric defined by $\dist{x}{y}{}=\max\{\,\dist{x}{y}{\spc{X}}
 
 Let us add point $w$ to $\spc{X}$ such that $\dist{w}{x}{}=R$ for any $x\in\spc{X}$;
 denote the obtained space $\spc{X}'$.
-Let $f'\:A\cup\{w\}\to \spc{B}$ be extension of $f$ by $w\mapsto o$; note that $f'$ is short.
+Let $f'\:A\cup\{w\}\to \spc{B}$ be an extension of $f$ by $w\mapsto o$; note that $f'$ is short.
 
 Since $\spc{Y}$ is injective, there is a short extension $F\:\spc{X}'\to \spc{Y}$ of $f'$.
 Show and use that $F(\spc{X}')\subset \spc{B}$.
@@ -126,7 +128,7 @@ By \ref{ex:extr-ball:many}, $\spc{Y}'$ is injective.
 Use that $\spc{Z}$ is minimal to show that $s(\spc{Y}')\subset \spc{Y}'$.
 Show that $\diam \spc{Y}'\le \tfrac12\cdot\diam \spc{Y}$.
 
-Consider sequence of nested injective spaces $\spc{Y}=\spc{Y}_0\supset \spc{Y}_1\supset\dots$ such that $\spc{Y}_{n+1}=\spc{Y}_{n}'$.
+Consider a sequence of nested injective spaces $\spc{Y}=\spc{Y}_0\supset \spc{Y}_1\supset\dots$ such that $\spc{Y}_{n+1}=\spc{Y}_{n}'$.
 Choose a point $y_n\in \spc{Y}_{n}$ for each $n$.
 Show that the sequence $y_n$ is Cauchy.
 By \ref{ex:inj=complete-geodesic-contractible:complete}, $y_n$ converges, say to $y_\infty$.
@@ -152,11 +154,10 @@ r(p)+r(q) +r(-p) -r(q)\le
 \\
 &=\pi.
 \end{align*}
-It implies that we have equalities in both places.
-Hence the only-if part follows.
+So, we have equality in both places, and the only-if part follows.
 
 \parit{If part.}
-Assume $r$ is 1-Lipschitz function such that $r(p)+r(-p)=\pi$.
+Assume $r$ is a 1-Lipschitz function such that $r(p)+r(-p)=\pi$.
 Then 
 \begin{align*}
 \dist pq{\mathbb{S}^1}&=
@@ -180,7 +181,7 @@ for any $x,y\in \spc{X}$.
 
 \parit{Remarks.}
 It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
-Moreover iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
+Moreover, iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
 The existence of such a map will also follow from \ref{thm:inj-envelope}.
 
 \parbf{\ref{ex:one-point-gluing}.}
@@ -334,7 +335,7 @@ Since $\spc{X}$ is $\delta$-hyperbolic, we have
 \dist{p}{y}{}+\dist{q}{x}{}\,\}+2\cdot\delta.\]
 Show that this inequality, together with the triangle inequality and \ref{eq:pfgq+xvwy} imply \ref{eq:fgvw-hyp}.
 
-For the noncompact case, prove an approimate version of \ref{eq:pfgq+xvwy} and apply it the same way.
+For the noncompact case, prove an approximate version of \ref{eq:pfgq+xvwy} and apply it the same way.
 
 \parbf{\ref{ex:d-p-inclusion}.}
 Show that there is a pair of short maps 

@@ -57,7 +57,7 @@ Thus there is an ultrafilter $\mathfrak{F}$ contained in the filter of all compl
 \parbf{Stone--\v{C}ech compactification.}
 Given a set $S\subset \NN$, consider subset $\Omega_S$ of all ultrafilters $\omega$ such that $\omega(S)=1$.
 It is straightforward to check that the sets $\Omega_S$ for all $S\subset \NN$ form a topology on the set of ultrafilters on $\NN$. 
-The obtained space is called \index{Stone--\v{C}ech compactification}\emph{Stone--\v{C}ech compactification} of $\NN$;
+The obtained space is called\footnote{Despite it was discovered by Andrey Tikhonov.} \index{Stone--\v{C}ech compactification}\emph{Stone--\v{C}ech compactification} of $\NN$;
 it is usually denoted as $\beta\NN$.
 
 Let $\omega_n$ denotes the principal ultrafilter such that $\omega_n(\{n\})=1$; that is, $\omega_n(S)=1$ if and only if $n\in S$.
@@ -112,7 +112,7 @@ Note that $\omega(S_\eps)=1$ for any $\eps>0$.
 Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite.
 Therefore, we can choose an increasing sequence $n_k$
 such that $n_k\in S_{\frac1k}$ for each $k\in \NN$.
-Clearly $x_{n_k}\to x_\omega$ as $k\to\infty$.
+Clearly, $x_{n_k}\to x_\omega$ as $k\to\infty$.
 \qeds
 
 The following proposition 
@@ -143,9 +143,9 @@ is defined and does not depend on the choice of subsequence, then the sequence $
 It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$ --- a contradiction.\qeds
 
 \begin{thm}{Exercise}\label{ex:linear}
-Denote by $S$ the space of bounded sequences of real numbers.
-Show that there is a linear functional $L\:S\to\RR$ such that
-for any sequence $\bm{s}=(s_1,s_2,\dots)\in S$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$
+Recall that $\ell^\infty$ denotes the space of bounded sequences of real numbers.
+Show that there is a linear functional $L\:\ell^\infty\to\RR$ such that
+for any sequence $\bm{s}=(s_1,s_2,\dots)\in \ell^\infty$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:ultrakatetov+}
@@ -337,7 +337,7 @@ Then $\spc{X}^\omega$ is geodesic space if and only if $\spc{X}$ is a length spa
 \end{thm}
 
 \parit{Proof.}
-The ``if''-part follows from \ref{obs:ultralimit-is-geodesic}; it remains to prove the ``only-if''-part
+The if part follows from \ref{obs:ultralimit-is-geodesic}; it remains to prove the only-if part
 
 Assume $\spc{X}^\omega$ is geodesic space.
 Then any pair of points $x,y\in \spc{X}$ has a midpoint $z_\omega\in\spc{X}^\omega$.
@@ -356,7 +356,7 @@ It remains to apply \ref{lem:mid>geod}.
 \begin{thm}{Exercise}\label{ex:two-geodesics-in-ultrapower}
 Assume $\spc{X}$ is a complete length space 
 and $p,q\in\spc{X}$ cannot be joined by a geodesic in $\spc{X}$.  
-Then there are at least two distinct geodesics between $p$ and $q$ 
+Show that there are at least continuum of distinct geodesics between $p$ and $q$ 
 in the ultrapower $\spc{X}^\omega$.
 \end{thm}
 
@@ -379,7 +379,7 @@ If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega
 
 If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}%
 \footnote{Often it is called an {}\emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
-Note that the space $\Asym\spc{X}$ and its point $p_\omega$ does not depend on the choice of $p\in \spc{X}$.
+Note that the space $\Asym\spc{X}$ and its point $p_\omega$ do not depend on the choice of $p\in \spc{X}$.
 
 The following exercise states that the constructions above depend on the sequence $\lambda_n$ and a nonprincipal ultrafilter $\omega$.
 
@@ -388,7 +388,8 @@ Construct a metric space $\spc{X}$ with a point $p$ such that the tangent space
 $\T_p^{\lambda_\omega}\spc{X}$ depends on the sequence $\lambda_n$ and/or ultrafilter~$\omega$.
 \end{thm}
 
-For nice spaces, different choices may give the same space.
+For nice spaces, different choices of the sequence of coefficients and ultrafilter may give the same space; 
+some examples are given in the following exercise.
 
 \begin{thm}{Exercise}\label{ex:Asym(Lob)}
 Let $\spc{T}=\Asym\spc{L}$, where $\spc{L}$ is the Lobachevsky plane, or Lobachevsky space, or 3-regular%
@@ -411,7 +412,14 @@ that is, for any point $t\in \spc{T}$ the set of connected components of the com
 \end{thm}
 
 
-
+\begin{thm}{Exercise}\label{ex:T(Sx[0,1]/Sx0)}
+Consider the quotient space $\spc{X}=\mathbb{S}^1\times[0,1]/\mathbb{S}^1\times\{0\}$;
+that is, 
+$\dist{(u_1,t_1)}{(u_2,t_2)}{\spc{X}}
+=
+\min\{\,\dist{(u_1,t_1)}{(u_2,t_2)}{\mathbb{S}^1\times[0,1]},t_1+t_2\,\}$.
+Describe the ultratangent space $\T_o^{\omega}\spc{X}$, where $o\in\spc{X}$ is the point that corresponds to $\mathbb{S}^1\times\{0\}$.
+\end{thm}
 
 \section{Remarks}
 

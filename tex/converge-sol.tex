@@ -32,7 +32,7 @@ For the second part take $A$ to be a unit disk and $B=\partial A$ to be its boun
 Note that $\partial A=\partial B$; in particular, $\dist{\partial A}{\partial B}{\Haus\RR^2}=0$ while $\dist{ A}{B}{\Haus\RR^2}=1$.
 
 \parit{Remark.}
-There are the so-called {}\emph{lakes of Wada} --- an example of three (and more) open bounded topological disks in the plane that have identical boundaries.
+There are the so-called {}\emph{lakes of Wada} --- an example of three (and more) open topological disks in the plane that have identical boundaries.
 It can be used to construct more interesting examples for \ref{SHORT.ex:Hausdorff-bry:bry}.
 
 \parbf{\ref{ex:Haus-support}} By \ref{ex:Hausdorff-bry:conv}, it is sufficient to show that  
@@ -72,8 +72,8 @@ Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy
 
 \parit{Remark.}
 Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
-It might be interesting to get better understanding of spaces that admit such a retraction;
-for example, Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center, przeslawski-yost}.
+I do not know which spaces that admit such a retraction.
+For example, the Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center, przeslawski-yost}.
 %It might happen that all such complete length spaces are injective.???
 
 \parbf{\ref{ex:closure-union}.} 
@@ -111,7 +111,7 @@ Let $A$ be a compact convex set in the plane.
 Denote by $A^r$ the closed $r$-neighborhood of $A$.
 Recall that by Steiner's formula we have
 \[\area A^r=\area A+r\cdot\perim A+\pi\cdot r^2.\]
-Taking derivative and applying the coarea formula, we get 
+Taking the derivative and applying the coarea formula, we get 
 \[\perim A^r=\perim A+2\cdot\pi\cdot r.\]
 
 Observe that if $A$ lies in a compact set $B$ bounded by a closed curve, then 
@@ -162,7 +162,7 @@ Show that there is a metric on $\spc{Z}\z=a\cdot\spc{X}\sqcup b\cdot\spc{X}$ suc
 \[|a\cdot x-b\cdot x|_{\spc{Z}}=\tfrac{|b-a|}2\cdot\diam\spc{X}\]
 for any $x$ and the inclusions
 $a\cdot\spc{X}\hookrightarrow\spc{Z}$,
-$b\cdot\spc{X}\hookrightarrow\spc{Z}$ are distance preserving.
+$b\cdot\spc{X}\hookrightarrow\spc{Z}$ are distance-preserving.
 
 \parit{\ref{SHORT.ex:d_GH-and-diam:isometry}.}
 Use \ref{SHORT.ex:d_GH-and-diam:point} and \ref{SHORT.ex:d_GH-and-diam:scale} to show that the isometry class of $\spc{O}$ is completely determined by the following property
@@ -261,7 +261,7 @@ Conclude that
 for some $\eps'<\eps$.
 
 Show that there is a metric on $\spc{Z}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{Z}$ and
-$\spc{Y}\hookrightarrow\spc{Z}$ are distance preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ if $x\approx y$.
+$\spc{Y}\hookrightarrow\spc{Z}$ are distance-preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ if $x\approx y$.
 Conclude that 
 \[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}\le\eps'<\eps.\]
 
@@ -286,8 +286,8 @@ It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to
 
 The latter can be constructed by covering $\spc{X}_n$ with small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
 
-\begin{wrapfigure}{r}{42 mm}
-\vskip-4mm
+\begin{wrapfigure}{r}{43 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-2}
 \end{wrapfigure}
@@ -313,11 +313,11 @@ Suppose that a metric on $\mathbb{S}^2$ is close to the unit disk $\DD^2$.
 Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
 By the Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two disks, say $D_1$ and $D_2$.
 
-By \ref{ex:GH-SC:circle}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$, otherwise the limit would admit a nontrivial covering.
+By \ref{ex:GH-SC:circle}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$; otherwise the limit would admit a nontrivial covering.
 
 Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
 If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
-On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so it has length about 2 --- a contradiction.
+On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so its length is about 2 --- a contradiction.
 
 \parit{\ref{SHORT.ex:sphere-to-ball:3}.}
 Make fine burrows in the standard 3-ball without changing its topology,
@@ -430,7 +430,7 @@ Now suppose $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH'}\to 0$.
 Show that $\{\spc{X}_n\}$ is a uniformly totally bonded family.
 
 If $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\not\to 0$, then we can pass to a subsequence such that $\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\ge\eps$ for some $\eps>0$.
-By Gromov selection theorem, we can assume that $\spc{X}_n$ converges in the sense of Gromov--Hausdorff.
+By the Gromov selection theorem, we can assume that $\spc{X}_n$ converges in the sense of Gromov--Hausdorff.
 From the first implication, the limit $\spc{X}_\infty'$ has to be isometric to $\spc{X}_\infty$;
 on the other hand, $\dist{\spc{X}_\infty'}{\spc{X}_\infty}{\GH}\ge \eps$ --- a contradiction.
 
