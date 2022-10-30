@@ -20,7 +20,10 @@ mppics/pic-3.mps
 mppics/pic-4.mps
 mppics/pic-29.mps
 mppics/pic-100.mps
+mppics/pic-105.mps
 mppics/pic-200.mps
+mppics/pic-205.mps
+mppics/pic-210.mps
 mppics/pic-405.mps
 mppics/pic-500.mps
 mppics/pic-505.mps

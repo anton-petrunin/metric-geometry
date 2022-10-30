@@ -210,6 +210,8 @@ defined by
 and the distance is defined by \ref{eq:olim-dist}.
 
 The space $\spc{X}_\omega$ is called the \index{$\omega$-limit space}\emph{$\omega$-limit} of $\spc{X}_n$.
+(It is also called \index{$\omega$-product}\emph{$\omega$-product}; this term is motivated by the fact that   
+$\spc{X}_\omega$ is a quotient of the product $\prod\spc{X}_n$)
 Typically  $\spc{X}_\omega$ will denote the  
 $\omega$-limit of sequence $\spc{X}_n$;
 we may also write  
@@ -233,16 +235,19 @@ Passing to a subsequence, we can assume that $\dist{x_k}{x_{m}}{\spc{X}_\omega}<
 
 Choose a double sequence $x_{n,m}\in \spc{X}_n$ such that for any fixed $m$ we have $x_{n,m}\to x_m$ as $n\to\omega$.
 Note that for any $k<m$ the inequality $\dist{x_{n,k}}{x_{n,m}}{}<\tfrac1{k}$ holds for $\omega$-almost all $n$.
-It follows that we can choose a nested sequence of sets 
-\[\NN= S_1\supset S_2\supset\dots\] 
-such that 
+
+Given $m\in\NN$, consider the subset $S_m\subset\NN$ defined by
+\[S_m=\set{n\ge m}{\dist{x_{n,k}}{x_{n,l}}{}<\tfrac1{k} \quad\text{for all}\quad k<l\le m}.\]
+Note that 
 \begin{itemize}
+\item $\NN= S_1\supset S_2\supset\dots$
 \item $\omega(S_m)=1$ for each $m$, 
 \item $\bigcap_m S_m=\emptyset$, and
-\item $\dist{x_{n,k}}{x_{n,l}}{}<\tfrac1{k}$ for $k<l\le m$ and $n\in S_m$.
+\item $\min S_m\ge m$.
 \end{itemize}
 
-Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $n\in S_{m(n)}$.
+Consider the sequence $y_n=x_{n,m(n)}$, where $m(n)$ is the largest value such that $n\in S_{m(n)}$;
+from above, $m(n)\le n$.
 Denote by $y_\omega\in \spc{X}_\omega$ the $\omega$-limit of $y_n$.
 
 Observe that $|y_m-x_{n,m}|<\tfrac1{m}$ for $\omega$-almost all $n$.
