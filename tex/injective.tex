@@ -249,7 +249,7 @@ $\spc{Y}$ is injective
 
 \begin{subthm}{thm:injective=hyperconvex:extremal}
 If $r\:\spc{Y}\to\RR$ is an extremal function, then there is a point $p\in \spc{Y}$ such that 
-\[\dist{p}{x}{}\le r(x)\]
+\[\dist{p}{x}{}= r(x)\]
 for any $x\in \spc{Y}$.
 \end{subthm}
 
@@ -266,11 +266,13 @@ that is, if $\set{\cBall[x_\alpha,r_\alpha]}{\alpha\in\IndexSet}$ is a family of
 \ref{SHORT.thm:injective=hyperconvex:injective}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:injective}.
 
 \parit{\ref{SHORT.thm:injective=hyperconvex:injective}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:extremal}.}
-Let us apply the definition of injective space to a one-point extension of $\spc{Y}$.
-It follows that for any extension function $r\:\spc{Y}\to\RR$ there is a point $p\in \spc{Y}$ such that 
-\[\dist{p}{x}{}\le r(x)\]
+By \ref{lem:extremal-lipschitz}, $r$ is an extension function.
+Applying the definition of injective space to a one-point extension of $\spc{Y}$, we get a point $p\in \spc{Y}$ such that 
+\[\dist{p}{x}{}=\distfun_p(x)\le r(x)\]
 for any $x\in \spc{Y}$.
-By \ref{lem:extremal-lipschitz}, any extremal function is an extension function, whence the implication follows.
+By \ref{obs:extremal:distfun}, the distance function $\distfun_p$ is extremal.
+Since  $r$ is extremal, we get $\distfun_p= r$.
+
 
 \parit{\ref{SHORT.thm:injective=hyperconvex:extremal}$\Rightarrow$\ref{SHORT.thm:injective=hyperconvex:balls}.}
 By \ref{obs:admissible:balls}, part \ref{SHORT.thm:injective=hyperconvex:balls} is equivalent to the following statement:
