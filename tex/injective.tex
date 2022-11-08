@@ -48,13 +48,13 @@ Show that the following spaces are injective:
 the real line;
 \end{subthm}
 
-
 \begin{subthm}{ex:injective-spaces:tree}
 complete metric tree;
 \end{subthm}
 
 \begin{subthm}{ex:injective-spaces:ell-infty}
-coordinate plane with the metric induced by the $\ell^\infty$-norm.
+The space $\ell^\infty(\spc{S})$ for any set $\spc{S}$ (defined in \ref{lem:kuratowski}).
+In particular, the coordinate plane with the metric induced by the $\ell^\infty$-norm.
 \end{subthm}
 
 %\begin{subthm}{ex:injective-spaces:L-infty}$L^\infty([0,1])$.\end{subthm}%%%???
@@ -512,6 +512,12 @@ The composition $w\circ v\:\spc{E}\to \spc{E}$ is a short map that fixes points 
 Since $e\:\spc{X}\hookrightarrow \spc{E}$ is an injective envelope, the composition $w\circ v$ and therefore $w$ are onto.
 Whence $w$ is an isometry.
 \qeds
+
+\begin{thm}{Exercise}\label{ex:inj-envelope}
+Suppose $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are two injective envelopes of $\spc{X}$.
+Show that there is unique isometry $\iota\:\spc{E}\to \spc{F}$ such that $\iota\circ e=f$.
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:d-p-inclusion}
 Suppose $\spc{X}$ is a subspace of a metric space $\spc{U}$.
