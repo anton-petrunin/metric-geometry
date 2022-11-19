@@ -24,7 +24,7 @@ and try to use it.
 The answer is ``no'' in both parts.
 
 For the first part let $A$ be a unit disk and $B$ a finite $\eps$-net in $A$.
-Evidently, $|A-B|_{\Haus\RR^2}<\eps$, 
+Evidently, $|A-B|_{\Haus\RR^2}\z<\eps$, 
 but
 $|\partial A-\partial B|_{\Haus\RR^2}\approx 1$.
 
@@ -37,13 +37,13 @@ It can be used to construct more interesting examples for \ref{SHORT.ex:Hausdorf
 
 \parbf{\ref{ex:Haus-support}} By \ref{ex:Hausdorff-bry:conv}, it is sufficient to show that  
 \[\dist{A}{B}{\Haus\RR^n}= \sup_{|u|=1}\{|h_A(u)-h_B(u)|\}\]
-for any nonempty compact convex sets $A,B\subset \RR^n$.
+for any nonempty compact convex sets $A,B\z\subset \RR^n$.
 
 Prove the 1-dimensional case of this equality.
 Further, denote by $A_\ell$ the orthogonal projection of $A$ to a line $\ell$.
 Show and use that
 \[\dist{A}{B}{\Haus\RR^n}=\sup_\ell\{\dist{A_\ell}{B_\ell}{\Haus\ell}\},\]
-where the least upper bound is taken for all lines $\ell$.
+where the least upper bound is taken for all lines~$\ell$.
 
 \parbf{\ref{ex:H-sections}};
 \ref{SHORT.ex:H-sections:S}.
@@ -54,7 +54,7 @@ Set $C_0=\mathbb{S}^1$.
 Note that the Hausdorff distance from $C_0$ to $C_t$ is $\tfrac t2$.
 Therefore $\{C_t\}_{t\in[0,1]}$ is a family of compact subsets in $\mathbb{S}^1$ that is continuous in the sense of Hausdorff.
 
-Assume there is a continuous section $c(t)\in C_t$, for $t\in [0,1]$.
+Assume there is a continuous section $c(t)\z\in C_t$, for $t\in [0,1]$.
 Since $\pi$ is a covering map,
 we can lift the path $c$ to a path $\tilde c\:[0,1]\to \RR$ such that $\tilde c(t)\in \tilde C_t$ for all $t$.
 In particular $\tilde c(t)\to\infty$ as $t\to0$,
@@ -72,7 +72,7 @@ Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy
 
 \parit{Remark.}
 Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
-I do not know which spaces that admit such a retraction.
+I~do not know which spaces that admit such a retraction.
 For example, the Euclidean plane does not satisfy this condition \cite{petrunin-2022-MO-center, przeslawski-yost}.
 %It might happen that all such complete length spaces are injective.???
 
@@ -82,7 +82,7 @@ Observe that $\bigcup_{n\le N} K_n$
 is compact and apply \ref{ex:compact-net} and \ref{totally-bounded}.
 
 \parbf{\ref{ex:Haus-length}}; \textit{if part.}
-Choose two compact sets $A,B\subset \spc{X}$;
+Choose two compact sets $A,B\z\subset \spc{X}$;
 suppose that $\dist{A}{B}{\Haus\spc{X}}<r$.
 
 Choose finite $\eps$-nets $\{a_1,\dots,a_m\}\subset A$ and $\{b_1,\dots b_n\}\subset B$.
@@ -125,7 +125,7 @@ A_\infty\subset A_n^r\]
 hold for all large $n$.
 
 \begin{wrapfigure}{r}{27 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-410}
 \end{wrapfigure}
@@ -161,8 +161,8 @@ Given a point $x\in\spc{X}$, denote by $a\cdot x$ and $b\cdot x$ the correspondi
 Show that there is a metric on $\spc{Z}\z=a\cdot\spc{X}\sqcup b\cdot\spc{X}$ such that 
 \[|a\cdot x-b\cdot x|_{\spc{Z}}=\tfrac{|b-a|}2\cdot\diam\spc{X}\]
 for any $x$ and the inclusions
-$a\cdot\spc{X}\hookrightarrow\spc{Z}$,
-$b\cdot\spc{X}\hookrightarrow\spc{Z}$ are distance-preserving.
+$a\cdot\spc{X}\z\hookrightarrow\spc{Z}$,
+$b\cdot\spc{X}\z\hookrightarrow\spc{Z}$ are distance-preserving.
 
 \parit{\ref{SHORT.ex:d_GH-and-diam:isometry}.}
 Use \ref{SHORT.ex:d_GH-and-diam:point} and \ref{SHORT.ex:d_GH-and-diam:scale} to show that the isometry class of $\spc{O}$ is completely determined by the following property
@@ -187,7 +187,7 @@ for large $r$; see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
 
 Set $n=\lceil r \rceil$.
 Note that there are $2\cdot n$ integer points in~$\spc{A}_r$: 
-$a_1\z=(0,0)$, $a_2=(1,0),\dots,a_{2\cdot n}=(n,1)$.
+$a_1\z=(0,0)$, $a_2\z=(1,0),\ \dots,\ a_{2\cdot n}\z=(n,1)$.
 Choose a point $b_i\in \spc{B}_r$ that lies at the minimal distance from $a_i$.
 Note that $|b_i-b_j|>\tfrac 45$ if $i\ne j$.
 It follows that $r>\tfrac 45\cdot (2\cdot n-1)$.
@@ -238,11 +238,13 @@ $|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
 
 \parit{Remark.} 
 This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]{lang-pavon-zust}.
-\begin{figure}[ht!]
+
+\begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-505}
-\end{figure}
+\end{Figure}
+
 They also show that the constant 2 is optimal.
 To see this, look at the injective envelopes of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
 
@@ -286,15 +288,15 @@ It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to
 
 The latter can be constructed by covering $\spc{X}_n$ with small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
 
-\begin{wrapfigure}{r}{43 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-2}
-\end{wrapfigure}
-
 \parit{\ref{SHORT.ex:GH-SC:nonsc-limit}.}
 Let $\spc{V}$ be a cone over Hawaiian earrings.
 Consider the {}\emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points (see the diagram).
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2}
+\end{Figure}
 
 The space $\spc{W}$ can be equipped with a length metric
 (for example, the induced length metric from the shown embedding).
@@ -374,7 +376,7 @@ $N_n\subset\spc{X}$ for each $n$.
 We can assume that $|N_n|\le M_n$; let us label the points in $N_n$ by $\{1,\dots,M_n\}$.
 Consider the map $f\:\spc{X}\to\spc{Y}$ defined by $f:x\z\mapsto (m_1(x),m_2(x),\dots)$ where $m_n(x)$ is the label of a point in $N_n$ that lies at the distance $<\tfrac1{2^n}$ from $x$.
 
-If $\tfrac1{2^{n-2}}\ge \dist{x}{x'}{\spc{X}}>\tfrac1{2^{n-1}}$, then $m_n(x)\ne m_n(x')$.
+If $\tfrac1{2^{n-2}}\ge \dist{x}{x'}{\spc{X}}>\tfrac1{2^{n-1}}$, then $m_n(x)\z\ne m_n(x')$.
 It follows that $\dist{f(x)}{f(x')}{\spc{Y}}\ge \tfrac C{2^{n}}$.
 In particular, if $C>10$, then 
 \[\dist{f(x)}{f(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}\]
@@ -411,7 +413,7 @@ the remaining conditions are trivial.
 If $\dist{\spc{X}}{\spc{Y}}{\GH'}=0$, then there is a sequence of maps $f_n\:\spc{X}\to \spc{Y}$ such that 
 \[\dist{f_n(x)}{f_n(x')}{\spc{Y}}\ge \dist{x}{x'}{\spc{X}}-\tfrac1n.\]
 
-Choose a countable dense subset $S\subset \spc{X}$ and pass to a subsequence such that $f_n(x)$ converges for any $x\in S$; denote by $f_\infty\:S\to \spc{Y}$ the limit map.
+Choose a countable dense subset $S\subset \spc{X}$ and pass to a subsequence such that $f_n(x)$ converges for any $x\in S$; denote by $f_\infty\:S\z\to \spc{Y}$ the limit map.
 Note that $f_\infty$ is distance-noncontracting, and it can be extended to a distance-noncontracting map $f_\infty\:\spc{X}\to \spc{Y}$.
 
 The same way we can construct a distance-noncontracting map 

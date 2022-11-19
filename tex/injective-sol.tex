@@ -52,7 +52,7 @@ Given $x,y\in \spc{Y}$, let $\tilde\gamma_{x,y}(t)=(1-t)\cdot x+t\cdot y\in \ell
 Observe that $\tilde\gamma_{x,y}$ meets all the conditions.
 Apply the definition of injective space to $\ell^\infty(\spc{Y})$.
 
-\parit{Source:} \cite[3.6]{lang-2013}.
+\parit{Remark.} The choice of geodesic paths as in the exercise is called \index{geodesic bicombing}\emph{geodesic bicombing}; it was introduced by Urs Lang \cite[3.6]{lang-2013}.
 
 \parbf{\ref{ex:injective-spaces}.}
 Suppose that a short map $f\:A\to\spc{Y}$ is defined on a subset $A$ of a metric space $\spc{X}$.
@@ -75,7 +75,7 @@ let $x_a\in\cBall[f(a),\dist{a}{p}{}]$ be the point closest to $f(x)$.
 Note that $x_a\in[q\,f(a)]$ and either $x_a=q$ or $x_a$ lies on distance $\dist{a}{p}{}$ from $f(a)$.
 
 Note that the geodesics $[q\,x_a]$ are nested;
-that is, for any $a,b\in A$ we have either $[q\,x_a]\subset [q\,x_b]$ or $[q\,x_b]\subset [q\,x_a]$.
+that is, for any $a,b\in A$ we have either $[q\,x_a]\z\subset [q\,x_b]$ or $[q\,x_b]\z\subset [q\,x_a]$.
 Moreover, in the first case, we have $\dist{x_b}{f(a)}{}\le \dist{p}{a}{}$ and in the second $\dist{x_a}{f(b)}{}\le \dist{p}{b}{}$.
 
 It follows that the closure of the union of all geodesics $[q\,x_a]$ for $a\in\spc{A}$ is a geodesic.
@@ -85,7 +85,7 @@ that is, one can take $f(p)=x$.
 
 \parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
 Suppose $\spc{Y}=(\RR^2,\ell^\infty)$.
-Note that $\spc{X}\to (\RR^2,\ell^\infty)$ is a short map if and only if both of its coordinate projections are short.
+Note that $\spc{X}\z\to (\RR^2,\ell^\infty)$ is a short map if and only if both of its coordinate projections are short.
 It remains to apply \ref{SHORT.ex:injective-spaces:R}.
 The general case of $\ell^\infty(\spc{S})$ can be done the same way.
 
@@ -113,8 +113,8 @@ Show and use that $F(\spc{X}')\subset \spc{B}$.
 Let $\spc{B}=\cap_\alpha\cBall[o_\alpha,R_\alpha]_{\spc{Y}}$.
 Try to modify the argument in \ref{SHORT.ex:extr-ball:one}.
 
-(Note that one may assume that $\diam \spc{X}\le 2\cdot \inf_\alpha\{\,R_\alpha\,\}$.
-Consider the space $\spc{X}'=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}{x}{}=R_\alpha$ for any $x\in \spc{X}$ and $\dist{w_\alpha}{w_\beta}{}=R_\alpha+R_\beta$ if $\alpha\ne\beta$.
+(Note that one may assume that $\diam \spc{X}\z\le 2\cdot \inf_\alpha\{\,R_\alpha\,\}$.
+Consider the space $\spc{X}'\z=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}{x}{}=R_\alpha$ for any $x\in \spc{X}$ and $\dist{w_\alpha}{w_\beta}{}=R_\alpha+R_\beta$ if $\alpha\ne\beta$.
 Further, consider an extension of $f$ by $w_\alpha\mapsto o_\alpha$.)
 
 \parbf{\ref{ex:extr-fixed}.}
@@ -129,7 +129,7 @@ By \ref{ex:extr-ball:many}, $\spc{Y}'$ is injective.
 Use that $\spc{Z}$ is minimal to show that $s(\spc{Y}')\subset \spc{Y}'$.
 Show that $\diam \spc{Y}'\le \tfrac12\cdot\diam \spc{Y}$.
 
-Consider a sequence of nested injective spaces $\spc{Y}=\spc{Y}_0\supset \spc{Y}_1\supset\dots$ such that $\spc{Y}_{n+1}=\spc{Y}_{n}'$.
+Consider a sequence of nested injective spaces $\spc{Y}=\spc{Y}_0\supset \spc{Y}_1\supset\dots$ such that $\spc{Y}_{n+1}\z=\spc{Y}_{n}'$.
 Choose a point $y_n\in \spc{Y}_{n}$ for each $n$.
 Show that the sequence $y_n$ is Cauchy.
 By \ref{ex:inj=complete-geodesic-contractible:complete}, $y_n$ converges, say to $y_\infty$.
@@ -181,12 +181,15 @@ $s^*(x)+s(y)\ge \dist{x}{y}{}$
 for any $x,y\in \spc{X}$.
 
 \parit{Remarks.}
-It is easy to check that $q\:s\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
+It is easy to check that $q\:s\z\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
 Moreover, iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
 The existence of such a map will also follow from \ref{thm:inj-envelope}.
 
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
+
+\parit{Comment.}
+Conditions under which gluings of injective spaces is injective were studied by Benjamin Miesch and Maël Pavón \cite{miesch,miesch-pavon}.
 
 \parbf{\ref{ex:Rm-ell-infty}.}
 Let $B=\cBall[0,1]$ and $P\supset B$ be a parallelepiped of minimal volume.
@@ -200,6 +203,7 @@ Apply hyperconvexity to show that $e_1+\dots+ e_m\in B$.
 The same way, show that $\pm e_1\pm \dots\pm e_m\in B$ for all choices of signs.
 Conclude that $B=P$.
 
+\parbf{\ref{ex:compact-hyperconvex}.} Apply the finite intersection property.
 
 \parbf{\ref{ex:urysohn-hyperconvex}.}
 Denote by $\spc{U}_d$ the $d$-Urysohn space,
@@ -214,6 +218,23 @@ It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}
 Whence $\spc{U}_d$ is not countably hyperconvex.
 
 Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
+
+\parbf{\ref{ex:almost-hyperconvex}.}
+Let $p_0$ be a point provided by the definition of almost hyperconvexity;
+that is $\dist{x_\alpha}{p_0}{}\le r_\alpha+\eps_0$ for a given $\eps_0>0$.
+We may assume that $\delta_0=\sup\{\,\dist{x_\alpha}{p_0}{}- r_\alpha\,\}>0$; otherwise the problem is solved.
+Clearly, $\delta_0\le \eps_0$.
+
+Let $p_1$ be a point provided by the definition for $\eps_1<\tfrac1{10}\cdot\delta_0$ we get a point 
+$p_1$ such that $\dist{x_\alpha}{p_1}{}\le r_\alpha+\eps_1$ and $\dist{p_0}{p_1}{}\le \delta_0+\eps_1$.
+Again, we may assume that $\delta_1=\sup\{\,\dist{x_\alpha}{p_1}{}- r_\alpha,\dist{p_0}{p_1}{}\,\}>0$, and we have $\delta_1\le \eps_1$.
+
+Continuing this way, we get a sequence $p_0,p_1,\dots$ that either terminates and in this case the problem is solved, or it is an infinte Cauchy sequence.
+In the latter case, its limit $p_\infty$ satisfies $\dist{x_\alpha}{p_\infty}{}\le r_\alpha$ for any $\alpha$.
+
+\parit{Comment.}
+This solution reminds the proof of \ref{prop:completion-univeral};
+a more general statement was proved by Benjamin Miesch and Maël Pavón \cite[2.2]{miesch-pavon2016}.
 
 
 \parbf{\ref{ex:Inj(compact)}.}
@@ -244,7 +265,7 @@ Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x
 It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
 
 \begin{wrapfigure}{r}{27 mm}
-\vskip-0mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-3}
 \bigskip
@@ -254,7 +275,11 @@ It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segmen
 \parit{\ref{SHORT.ex:tripod+square:square}.}
 Assume $f$ is an extremal function.
 Use \ref{lem:opposite-compact} to show that
-\[f(x)+f(y)=f(p)+f(q)=2;\]
+\begin{align*}
+2&=f(x)+f(y)=
+\\
+&=f(p)+f(q);
+\end{align*}
 in particular, two values $a=f(x)-1$ and $b\z=f(p)-1$ completely describe the function $f$.
 Since $f$ is extremal, we also have that 
 \[(1\pm a)+(1\pm b)\ge 1\]
@@ -265,7 +290,7 @@ equivalently,
 It follows that $\Inj\spc{X}$ is isometric to the rhombus $|a|+|b|\le 1$ in the $(a,b)$-plane with the metric induced by the $\ell^\infty$-norm.
 
 \parit{Remarks.}
-If $\spc{X}$ has $n$-points, then (evidently) $\Inj\spc{X}$ is a polyhedral complex in $(\RR^n,\ell^\infty) =\ell^\infty(\spc{X})$;
+If $\spc{X}$ has $n$-points, then (evidently) $\Inj\spc{X}$ is a polyhedral complex in $(\RR^n,\ell^\infty) \z=\ell^\infty(\spc{X})$;
 each face of the complex is defined by equalities and inequalities of the following type: $x_i+x_j\ge \const$ and  $x_i+x_j= \const$.
 It is easy to see (and follows from \ref{ex:Rm-ell-infty}) that each face is isometric to a convex polyhedron in  $(\RR^k,\ell^\infty)$ for some $k\le n$;
 in fact $k\le n/2$.
@@ -292,7 +317,11 @@ and
 for any $f,g\in \Inj\spc{X}$ and $p\in \spc{X}$.
 
 Since $\spc{X}$ is compact we can find a point $p\in\spc{X}$ such that 
-\[\dist{f}{g}{\Inj\spc{X}}=|f(p)-g(p)|=\left|\dist{f}{p}{\Inj\spc{X}}-\dist{g}{p}{\Inj\spc{X}}\right|.\]
+\begin{align*}
+\dist{f}{g}{\Inj\spc{X}}&=|f(p)-g(p)|=
+\\
+&=\left|\dist{f}{p}{\Inj\spc{X}}-\dist{g}{p}{\Inj\spc{X}}\right|.
+\end{align*}
 Without loss of generality, we may assume that 
 \[\dist{f}{p}{\Inj\spc{X}}
 =
@@ -312,10 +341,15 @@ Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=
 \parbf{\ref{ex:delta-hyp}.} The only-if part follows since $\spc{X}$ is isometric to a subset of $\Inj\spc{X}$.
 
 The if part means that 
-\[\dist{f}{g}{}+\dist{v}{w}{}\le
-\max\{\,\dist{f}{v}{}+\dist{g}{w}{},
-\,
-\dist{f}{w}{}+\dist{g}{v}{}\,\}+2\cdot\delta\eqlbl{eq:fgvw-hyp}\]
+\[
+\begin{aligned}
+\dist{f}{g}{}+\dist{v}{w}{}\le
+\max\{\,
+&\dist{f}{v}{}+\dist{g}{w}{},\\
+\dist{f}{w}{}+&\dist{g}{v}{}
+\,\}+2\cdot\delta
+\end{aligned}
+\eqlbl{eq:fgvw-hyp}\]
 for any $f,g,v,w\in \Inj\spc{X}$.
 
 Suppose $\spc{X}$ is compact. 
@@ -330,10 +364,12 @@ Applying \ref{ex:4-on-a-line}, we can choose $p,q,x,y\in \spc{X}$  such that
 \]
 
 Since $\spc{X}$ is $\delta$-hyperbolic, we have
-\[\dist{p}{q}{}+\dist{x}{y}{}\le
-\max\{\,\dist{p}{x}{}+\dist{q}{y}{},
-\,
-\dist{p}{y}{}+\dist{q}{x}{}\,\}+2\cdot\delta.\]
+\[\begin{aligned}
+\dist{p}{q}{}+\dist{x}{y}{}\le
+\max\{\,&\dist{p}{x}{}+\dist{q}{y}{},
+\\
+\dist{p}{y}{}+&\dist{q}{x}{}\,\}+2\cdot\delta.
+\end{aligned}\]
 Show that this inequality, together with the triangle inequality and \ref{eq:pfgq+xvwy} imply \ref{eq:fgvw-hyp}.
 
 For the noncompact case, prove an approximate version of \ref{eq:pfgq+xvwy} and apply it the same way.
@@ -349,6 +385,11 @@ $\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$
 such that their composition is the identity on $\spc{X}$.
 Make a conclusion.
 
+\parbf{\ref{ex:hemisphere}.}
+Apply \ref{lem:opposite-compact} to show that for any $u\in\mathbb{S}^2_+$ the restriction $f_u\z\df\distfun_u|_{\mathbb{S}^1}$ is extremal function on $\mathbb{S}^1$.
+Moreover, the function $f_u$ uniquely determines $u$. 
+Make a conclusion.
+
 \parbf{\ref{ex:ultrametric}.}
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
 Let $f\:\spc{A}\z\to \spc{A}$ be the identity map.
@@ -356,27 +397,31 @@ Then $F(y)=x$ or $F(y)=z$.
 The strong triangle inequality easily follows in both cases.
 
 \parbf{\ref{ex:ultrametric-converse}}; \textit{main part.}
-Choose a maximal subset $A\supset K$ that admits a short retraction $f\:A\to K$;
+Choose a maximal subset $A\z\supset K$ that admits a short retraction $f\:A\to K$;
 it exists by Zorn's lemma.
 If $A$ is the whole space, then the problem is solved.
 Otherwise, choose $p\notin A$.
 
 Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the exact lower bound on the distances from points in $A$ to $p$.
 Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
-Set $f(p)=\lim f(a_n)$.
+Let 
+\[f(p)=\lim f(a_n).\]
 
 It remains to check that 
 \[\dist{f(a)}{f(p)}{}\le\dist{a}{p}{}\eqlbl{eq:short-retract}\]
 for any $a\in A$.
 Choose $\eps>0$; note that 
-\[\dist{a_n}{p}{}<\dist{a}{p}{}+\eps
-\quad\text{and}\quad
-\dist{f(a_n)}{f(p)}{}<\dist{f(a)}{f(a_n)}{}+\eps
-\]
+\begin{align*}
+\dist{a_n}{p}{}&<\dist{a}{p}{}+\eps
+\intertext{and}
+\dist{f(a_n)}{f(p)}{}&<\dist{f(a)}{f(a_n)}{}+\eps
+\end{align*}
 for all large~$n$.
 Therefore, 
 \begin{align*}
-\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},\dist{f(a_n)}{f(p)}{}\,\}\le
+\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},
+\\
+&\qquad\dist{f(a_n)}{f(p)}{}\,\}\le
 \\
 &\le \dist{f(a)}{f(a_n)}{}+\eps\le
 \\
@@ -394,7 +439,7 @@ Consider set of $\{\infty,1,2,\dots\}$ with metric defined by
 for $m\ne n$.
 Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
 
-\parbf{\ref{ex:petrunin-stadler}.} Consider the space $\spc{Y}^{\spc{X}}$ of all maps $\spc{X}\to \spc{Y}$ equipped with the product topology.
+\parbf{\ref{ex:petrunin-stadler}.} Consider the space $\spc{Y}^{\spc{X}}$ of all maps $\spc{X}\z\to \spc{Y}$ equipped with the product topology.
 
 Denote by $\mathfrak{S}_F$ the set of maps $h\in \spc{Y}^\spc{X}$ such that the restriction $h|_F$  is short and agrees with $f$ in $F\cap A$.
 Note that the sets $\mathfrak{S}_F\subset \spc{Y}^\spc{X}$ are closed and any finite intersection of these sets is nonempty.

@@ -45,7 +45,9 @@ Indeed, if for a geodesic $[p_\omega q_\omega]$ there is another geodesic $\gamm
 Choose sequences $p_n,q_n,x_n\in\spc{T}_n$ such that $p_n\to p_\omega$, $q_n\to q_\omega$, and $x_n\to x_\omega$ as $n\to\omega$.
 Then 
 \begin{align*}
-\dist{p_\omega}{q_\omega}{}&=\length\gamma\ge \lim_{n\to\omega}(\dist{p_n}{x_n}{}+\dist{q_n}{x_n}{})\ge
+\dist{p_\omega}{q_\omega}{}&=\length\gamma\ge 
+\\
+&\ge\lim_{n\to\omega}(\dist{p_n}{x_n}{}+\dist{q_n}{x_n}{})\ge
 \\
 &\ge \lim_{n\to\omega}(\dist{p_n}{q_n}{}+2\cdot\ell_n)=
 \\
@@ -127,22 +129,38 @@ Conclude that we may pass to a subsequence of $m_n$ such that $\dist{m_i}{m_j}{}
 Argue as in \ref{ex:isom-ultrapower} to show that there is a continuum of distinct $\omega$-limits of subsequences of $m_n$;
 each such limit is a midpoint between $x$ and $y$.
 
+\parit{\ref{SHORT.ex:sphere-in-urysohn:homogeneous}.} 
+Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
+
+\parbf{\ref{ex:shere}.}
+Let $p$ be the center of the sphere;
+without loss of generality, we can assume that $\dist{p}{x}{}\le \dist{p}{y}{}$.
+Set $f(p)=1$, $f(x)=1+\dist{p}{x}{}$ and $f(y)=1+\dist{p}{y}{}-\eps$.
+Suppose $\eps>0$ is sufficiently small;
+show that $f$ is an extension function on $\{p,x,y\}$.
+
+By the extension property, there is a point $z\in \spc{U}$ such that $\dist{p}{z}{}=f(p)$, $\dist{x}{z}{}=f(x)$, and $\dist{y}{z}{}=f(y)$.
+Whence the statement follows.
+
+\parit{Source:} This problem is taken from a survey of Julien Melleray
+ \cite[Prop. 4.3]{melleray}, where it was attributed to Matatyahu Rubin.
+
 \parbf{\ref{ex:notproper-limit}.} Consider the infinite metric $\spc{T}$ tree with unit edges shown
 on the diagram.
 Observe that $\spc{T}$ is proper.
 
-\begin{figure}[ht!]
+\begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-605}
-\end{figure}
+\end{Figure}
 
 Consider the vertex $v_\omega=\lim_{n\to\omega}v_n$ in the ultrapower $\spc{T}^\omega$.
 Observe that $\omega$ has an infinite degree.
 Conclude that $\spc{T}^\omega$ is not locally compact.
 
 \parbf{\ref{ex:ultraT}.}
-Consider a product space $[0,1]\times[0,\tfrac12]\times[0,\tfrac14]\times\dots$
+Consider a product space $[0,1]\z\times[0,\tfrac12]\z\times[0,\tfrac14]\z\times\dots$
 
 \parbf{\ref{ex:Asym(Lob)}.} Assume $\spc{L}$ is the Lobachevsky plane.
 
@@ -155,7 +173,7 @@ Conclude that any geodesic triangle in $\Asym\spc{L}$ is a tripod.
 \parit{\ref{SHORT.ex:Asym(Lob):continuum}.} 
 By \ref{SHORT.ex:Asym(Lob):homogeneous}, it is sufficient to show that $p_\omega$ has a continuum degree.
 
-Choose distinct geodesics $\gamma_1,\gamma_2\:[0,\infty)\to L$ that start at a point $p$.
+Choose distinct geodesics $\gamma_1,\gamma_2\:[0,\infty)\z\to L$ that start at a point $p$.
 Show that the limits of $\gamma_1$ and $\gamma_2$ run in the different connected components of $(\Asym\spc{L})\setminus \{p_\omega\}$.
 Since there is a continuum of distinct geodesics starting at $p$,
 we get that the degree of $p_\omega$ is at least continuum.
@@ -179,17 +197,20 @@ In particular, the asymptotic space of the Lobachevsky plane does not depend on 
 Denote by $o_\omega$ the point in $\T^\omega_o\spc{X}$ that corresponds to $o$.
 Argue as in \ref{ex:Asym(Lob):continuum} to show that $\T^\omega_o\spc{X}\setminus \{o_\omega\}$ has continuum connected components.
 Further, show that each connected component $\spc{W}_\alpha$ is isometric to $\RR\times (0,\infty)$ with the metric described by
-\[\dist{(x_1,t_1)}{(x_2,t_2)}{}=\min\{\,\dist{(x_1,t_1)}{(x_2,t_2)}{\RR^2},t_1+t_2\,\}.\]
+\begin{align*}
+&\dist{(x_1,t_1)}{(x_2,t_2)}{}=
+\\
+&\qquad=\min\{\,\dist{(x_1,t_1)}{(x_2,t_2)}{\RR^2},t_1+t_2\,\}.
+\end{align*}
 
 Conclude that the space $\T^\omega_o\spc{X}$ can be described as follows.
 Consider continuum copies $\spc{W}_\alpha$ as above;
 denote by $(x,t)_\alpha$ the point in $\spc{W}_\alpha$ with coordinates $(x,t)$.
-The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ with the following metric:
+The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ 
+such that $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}$ is the same as in $\spc{W}_\alpha$ and for the remaining pairs, we have
 \begin{align*}
 \dist{o_\omega}{(x,t)_\alpha}{}&=t,
 \\
-\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}&=\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{\spc{W}_\alpha},
-\\
 \dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\beta}{}&=t_1+t_2,
 \end{align*}
-for any $\alpha\ne\beta$.
+if $\alpha\ne\beta$.

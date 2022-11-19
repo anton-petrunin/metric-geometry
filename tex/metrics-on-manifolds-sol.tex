@@ -76,7 +76,7 @@ It remains to apply \ref{ex:volume-preserving+short} and \ref{ex:compact-interio
 Consider the hexagon with flat metric and curved sides shown on the diagram.
 Observe that its area can be made arbitrarily small while keeping the distances from the opposite sides at least 1.
 
-\begin{figure}[!ht]
+\begin{Figure}
 \begin{minipage}{.48\textwidth}
 \centering
 \includegraphics{mppics/pic-27}
@@ -86,7 +86,7 @@ Observe that its area can be made arbitrarily small while keeping the distances 
 \includegraphics{mppics/pic-23}
 \end{minipage}
 \vskip-4mm
-\end{figure}
+\end{Figure}
 
 \parbf{\ref{ex:cylinder};} \ref{SHORT.ex:cylinder:besicovitch}.
 Let $\alpha$ be a shortest curve that runs between the boundary components of the cylinder.
@@ -192,7 +192,11 @@ Christopher Croke conjectured that the optimal bound is $\tfrac4\pi$ and the rou
 
 \parbf{\ref{ex:involution-of-3sphere}.}
 Given $\eps>0$, construct a disk $\Delta$ in the plane with 
-\[\length\partial \Delta<10\ \ \text{and}\ \ \area \Delta<\eps\]
+\begin{align*}
+\length\partial \Delta&<10
+\intertext{and}
+\area \Delta&<\eps
+\end{align*}
 that admits an continuous involution $\iota$ such that 
 \[|\iota(x)-x|\ge 1\]
 for any $x\in\partial \Delta$.
@@ -244,11 +248,7 @@ Then \ref{ex:cylinder:besicovitch} implies that the area of torus is at least $\
 \parit{Remark.}
 The optimal bound is $\tfrac{\sqrt{3}}{2}\cdot s^2$; see  \ref{sec:besicovitch-remarks}.
 
-\begin{wrapfigure}{r}{44 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-25}
-\end{wrapfigure}
+
 
 \parbf{\ref{ex:sysRP2}.}
 Set $s\z=\sys (\RP^2,g)$.
@@ -258,6 +258,12 @@ We obtain $(\DD^2,g)$ --- a disc with metric tensor which we still denote by $g$
 Divide $\gamma$ into two equal arcs $\alpha$ and $\beta$.
 Denote by $A$ and $A'$ the two connected components of the inverse image of $\alpha$.
 Similarly denote by $B$ and $B'$ the two connected components of the inverse image of $\beta$.
+
+\begin{Figure}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-25}
+\end{Figure}
 
 Let $\gamma_1$ be a path from $A$ to $A'$;
 map it to $\RP^2$ and keep the same notation for it.
@@ -350,11 +356,11 @@ Denote by $\{V_j\}$ the connected components of $\distfun_p^{-1}(W_i)$ for all $
 Note that $\{V_j\}$ is an open finite cover of $\spc{X}$ with multiplicity at most 2.
 It remains to show that $\rad V_j<100\cdot R$ for each $j$.
 
-\begin{wrapfigure}{o}{31 mm}
-\vskip-2mm
+\begin{Figure}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1310}
-\end{wrapfigure}
+\end{Figure}
 
 Arguing by contradiction assume there is a pair of points  $x,y\in V_i$ 
 such that $|x\z-y|_{\spc{X}}\z\ge 100\cdot R$.
@@ -368,13 +374,14 @@ Therefore, there is a point $m$ on $[px]$ such that $|m-x|=20$.
 By the triangle inequality, the subdivision of $\sigma$ into the arcs $[pm]$, $[mx]$, $\tau$ and $[yp]$ satisfy the conditions of the claim $({*})$ for $a=10\cdot R$,
 hence the statement.
 
-\parit{The quasiconverse} does not hold.
-As an example take a surface that looks like a long cylinder with closed ends;
-\begin{figure}[h!]
+\begin{Figure}
 \vskip0mm
 \centering
 \includegraphics{mppics/pic-1315}
-\end{figure}
+\end{Figure}
+
+\parit{The quasiconverse} does not hold.
+As an example take a surface that looks like a long cylinder with closed ends;
 it is a smooth surface diffeomorphic to a sphere.
 Assuming the cylinder is thin, it has macroscopic dimension 1 at a given scale.
 However, a circle formed by a section of cylinder around its midpoint by a plane parallel to the base is a circle that cannot be contracted in its small neighborhood.
@@ -446,7 +453,13 @@ Further for each vertex $v_{ij}$ choose a point $p_{ij}\in V_i\cap V_j$ and set 
 Similarly for each vertex $v_{ijk}$ choose a point $p_{ijk}\z\in V_i\cap V_j\cap V_k$ and set $f(v_{ijk})=p_{ijk}$.
 
 Note that 
-\[|p_i-p_{ij}|<R,\quad |p_i-p_{ijk}|<R,\quad\text{and}\quad |p_{ij}-p_{ijk}|<2\cdot R.\]
+\begin{align*}
+|p_i-p_{ij}|&<R,
+\\
+|p_i-p_{ijk}|&<R,
+\\
+|p_{ij}-p_{ijk}|&<2\cdot R.
+\end{align*}
 Therefore, perimeter of the triangle $[p_ip_{ij}p_{ijk}]$ in the subdivision is less that $4\cdot R$.
 It resolves the first issue.
 

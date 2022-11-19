@@ -511,7 +511,7 @@ endfig;
 
 beginfig(23) 
 save u;
-u:=.9cm;
+u:=.6cm;
 path p[];
 
 p0=circle(origin,.7*u);
@@ -567,7 +567,7 @@ endfig;
 
 beginfig(27) 
 save u;
-u:=2cm;
+u:=4/3cm;
 path p[];
 
 z.a0=(0,1)*u rotated 5;
@@ -589,7 +589,7 @@ endfig;
 beginfig(29)
 save u,p;
 path p[];
-u:=1cm;
+u:=.7cm;
 
 z.a=origin;
 z.b=(1,0)*u;
@@ -662,7 +662,7 @@ endfig;
 
 beginfig(200) 
 save u,n;
-u:=.5cm;
+u:=.4cm;
 n:=4;
 
 draw (0,0)*u--(n+.5,0)*u pensemibold;
@@ -826,7 +826,7 @@ endfig;
 beginfig(505)
 save u,p,n;
 path p[];
-u:=.5cm;
+u:=.25cm;
 n:=10;
 
 z.r=(n,0)*u;
@@ -852,13 +852,13 @@ draw p0;
 dOt z.r shifted z.shift,z.l shifted z.shift,(z.l-z4) shifted z.shift,(z.r-z4) shifted z.shift;
 
 whitelabel(btex $\ell^1$ etex, z.shift-z4/2);
-label.ulft(btex $1$ etex, .5[z.r,z.ur]);
-label.llft(btex $1$ etex, .5[z.r,z.lr]);
-label.urt(btex $1$ etex, .5[z.l,z.ul]);
-label.lrt(btex $1$ etex, .5[z.l,z.ll]);
+label.ulft(btex {\scriptsize $1$} etex, .5[z.r,z.ur]);
+label.llft(btex {\scriptsize $1$} etex, .5[z.r,z.lr]);
+label.urt(btex {\scriptsize $1$} etex, .5[z.l,z.ul]);
+label.lrt(btex {\scriptsize $1$} etex, .5[z.l,z.ll]);
 label.top(btex $s$ etex, origin);
 label.top(btex $s$ etex, z.shift);
-label.lft(btex $4$ etex, z.l+z.shift-z4/2);
+label.lft(btex {\scriptsize $4$} etex, z.l+z.shift-z4/2);
 endfig;
 
 beginfig(605)
@@ -1774,7 +1774,7 @@ endfig;
 beginfig(1315)
 save u,p,a,b;
 path p[];
-u:=1cm;
+u:=.7cm;
 a:=3.5*u;
 b:=.3*u;
 

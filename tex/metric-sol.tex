@@ -33,22 +33,27 @@ For more on the subject, see \cite{deza-laurent}.
 \parbf{\ref{ex:almost-min}.}
 Assume the statement is wrong. 
 Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that 
-\[\dist{x}{x'}{}< \rho(x)
-\quad\text{and}\quad
-\rho(x')\le\frac{\rho(x)}{1+\eps}.\]
+\begin{align*}
+\dist{x}{x'}{}&<\rho(x)
+\intertext{and}
+\rho(x')&\le\frac{\rho(x)}{1+\eps}.
+\end{align*}
 Consider a sequence $x_n$ of points such that $x_{n+1}\z=x_n'$.
 Clearly
-\[\dist{x_{n+1}}{x_n}{}
-\le
+\begin{align*}
+\dist{x_{n+1}}{x_n}{}
+&\le
 \frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
-\quad\hbox{and}\quad
-\rho(x_n)\le \frac{\rho(x_0)}{(1+\eps)^n}.\] 
+\intertext{and}
+\rho(x_n)
+&\le \frac{\rho(x_0)}{(1+\eps)^n}.
+\end{align*}
 Therefore, the sequence $x_n$ is Cauchy.
 Since $\spc{X}$ is complete, $x_n$ converges;
 denote its limit by $x_\infty$.
 Since $\rho$ is a continuous function we get
-\begin{align*}\rho(x_\infty)&=\lim_{n\to\infty}\rho(x_n)=
-\\&=0.
+\begin{align*}
+\rho(x_\infty)&=\lim_{n\to\infty}\rho(x_n)=0.
 \end{align*}
 
 The latter contradicts that $\rho>0$.
@@ -81,11 +86,8 @@ In particular, both are Cauchy;
 that is,
 \[
 |x_{n_i}-x_{n_j}|_{\spc{K}}, |y_{n_i}-y_{n_j}|_{\spc{K}}\to 0
-\quad
-\text{as}
-\quad\min\{i,j\}\to\infty.
 \]
-
+as $\min\{i,j\}\to\infty$.
 
 Since $f$ is distance-noncontracting, we get
 \[
@@ -127,26 +129,31 @@ Note that this exercise implies that \textit{any surjective non-expanding map fr
 \parbf{\ref{ex:pogorelov}.}
 The conditions \ref{SHORT.metric>=0}--\ref{SHORT.metric:sym} in Definition \ref{def:metric} are evident.
 
+Set $B_p=B(x,\tfrac \pi2)_{\mathbb{S}^2}$.
 The triangle inequality \ref{SHORT.metric:triangle} follows since
-\[[B(x,\tfrac \pi2)\setminus B(y,\tfrac\pi2)]
+\[
+(B_x\setminus B_y)
 \cup 
-[B(y,\tfrac\pi2)\setminus B(z,\tfrac\pi2)]
+(B_y\setminus B_z)
 \supseteq
-B(x,\tfrac \pi2) \setminus B(z,\tfrac\pi2).
+B_x\setminus B_z.
 \leqno(*)\]
 
-\begin{wrapfigure}[8]{o}{31 mm}
+{
+
+\begin{wrapfigure}{o}{25 mm}
 \vskip-2mm
 \centering
 \includegraphics{mppics/pic-29}
 \end{wrapfigure}
 
 Observe that
-$B(x,\tfrac \pi2)\setminus B(y,\tfrac\pi2)$
+$B_x\setminus B_y$
 does not overlap with
-$B(y,\tfrac\pi2)\setminus B(z,\tfrac\pi2)$ and  we get equality in $(*)$ if and only if $y$ lies on the great circle arc from $x$ to $z$.
+$B_y\setminus B_z$ and  we get equality in $(*)$ if and only if $y$ lies on the great circle arc from $x$ to $z$.
 Therefore, the second statement follows.
 
+}
 
 \parit{Remarks.}
 This construction was given by 
@@ -192,7 +199,7 @@ Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrize
 Note that if $x'_m(t)\le x_m(t)$ for any $t$ and 
 the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x_m(t)$, then 
 \[\length_{\rho_1}\bm{x}'\le \length_{\rho_1}\bm{x}.\]
-Moreover, this inequality is strict if $x'_m(t)< x_m(t)$ for some~$t$.
+Moreover, this inequality is strict if $x'_m(t)\z< x_m(t)$ for some~$t$.
 
 Fix a curve $\bm{x}(t)$, $t\in[0,\ell]$, parametrized by  $\rho_0$-length.
 We can choose large $m$ so that $x_m(t)$ is sufficiently close to $0$ for any~$t$.
@@ -213,7 +220,7 @@ Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compa
 \parit{Source:} This problem was suggested by Eugene Bilokopytov \cite{bilokopytov}.
 
 \parbf{\ref{ex:compact=>complete}.}
-Choose a Cauchy sequence $x_n$ in $(\spc{X},\|*-*\|)$; it is sufficient to show that a subsequence of $x_n$ converges.
+Choose a Cauchy sequence $x_n$ in $(\spc{X},\|*\z-*\|)$; it is sufficient to show that a subsequence of $x_n$ converges.
 
 Note that the sequence $x_n$ is Cauchy in $(\spc{X},|*-*|)$;
 denote its limit by $x_\infty$.
@@ -227,25 +234,18 @@ It follows that
 \\
 &\le \tfrac1{2^n}.
 \end{align*}
-In particular, $x_n$ converges to $x_\infty$ in $(\spc{X},\|*-*\|)$.
+In particular, $x_n$ converges to $x_\infty$ in $(\spc{X},\|*\z-*\|)$.
 
 \parit{Source:} \cite[Corollary]{hu-kirk}; see also \cite[Lemma 2.3]{petrunin-stadler}.
 
 \parbf{\ref{ex:eps-nbhd(ball)}.}
 Denote by $U$ the $\eps$-neighborhood of $\oBall(x,R)_M$.
-By the triangle inequality, $U\subset \oBall(x,R+\eps)_M$;
+By the triangle inequality, $U\z\subset \oBall(x,R+\eps)_M$;
 this inclusion holds in any metric space.
 
-Choose $y\in \oBall(x,R+\eps)_M$, so $\dist{x}{y}{M}<R+\eps$.
+Choose $y\in \oBall(x,R+\eps)_M$, so $\dist{x}{y}{M}\z<R+\eps$.
 Since $M$ is a length space, there is a curve $\gamma$ from $x$ to $y$ with length less than $R+\eps$.
 Show and use that $\gamma$ contains a point $m$ such that $\dist{x}{m}{M}<R$ and $\dist{y}{m}{M}<\eps$.
-
-
-\begin{wrapfigure}{r}{20 mm}
-\vskip-6mm
-\centering
-\includegraphics{mppics/pic-1}
-\end{wrapfigure}
 
 \parbf{\ref{exercise from BH}.}
 Consider the following subset of $\RR^2$ equipped with the induced length metric
@@ -259,11 +259,50 @@ Consider the following subset of $\RR^2$ equipped with the induced length metric
 Note that $\spc{X}$ is locally compact and geodesic.
 
 Its completion $\bar{\spc{X}}$ is isometric to the closure of $\spc{X}$ equipped with the induced length metric.
-Note that $\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,0)$ and $q=(0,1)$.
+Note that $\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,0)$ and $q\z=(0,1)$.
+
+{
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-1}
+\end{wrapfigure}
 
 Observe that $p$ admits no compact neighborhood in $\bar{\spc{X}}$ 
 and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. 
 
 \parit{Source:} \cite[I.3.6(4)]{bridson-haefliger}.
+
+}
+
+\parbf{\ref{ex:gross}.}
+If such a number does not exist, then the ranges of average distance functions have an empty intersection.
+Since $\spc{X}$ is a compact length space, the range of any continuous function on $\spc{X}$ is a closed interval.
+By 1-dimensional Helly's theorem, there is a pair of such range intervals that do not intersect.
+That is, for two point-arrays $(x_1,\dots,x_n)$ and $(y_1,\dots,y_m)$
+and their average distance functions 
+\begin{align*}
+f(z)&=\tfrac1n\cdot\sum_i|x_i-z|_{\spc{X}}
+\intertext{and}
+h(z)&=\tfrac1m\cdot\sum_j|y_j-z|_{\spc{X}},
+\end{align*}
+we have 
+$$\min_{z\in \spc{X}}\{\,f(z)\,\}
+>\max_{z\in \spc{X}}\{\,h(z)\,\}.
+\leqno({*})$$
+
+Note that
+\begin{align*}\tfrac1m\cdot\sum_j f(y_j)&=\tfrac1{m\cdot n}\cdot\sum_{i,j}|x_i-y_j|_{\spc{X}}=
+\\
+&=\tfrac1n\cdot\sum_i h(x_i);
+\end{align*}
+that is, the average value of $f(y_j)$ coincides with the average value of $h(x_i)$, 
+which contradicts~$({*})$.
+
+\parit{Remark.}
+The value $\ell$ is uniquely defined;
+it is called the \index{rendezvous value}\emph{rendezvous value} of ${\spc{X}}$.
+This is a result of Oliver Gross \cite{gross}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -322,14 +322,28 @@ Show that an $m$-dimensional normed space is injective if and only if it is isom
 \[|(x_1,\dots,x_m)|=\max_i\{\,|x_i|\,\}.\]
 \end{thm}
 
+A metric space $\spc{Y}$ is called \index{finitely hyperconvex}\emph{finitely hyperconvex} or \index{countably hyperconvex}\emph{countably hyperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for finite or respectively countable family of balls.
+
+\begin{thm}{Exercise}\label{ex:compact-hyperconvex}
+Show that any proper finitely hyperconvex metric space is hyperconvex.
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:urysohn-hyperconvex}
-Show that the $d$-Urysohn space is {}\emph{finitely hyperconvex} but not {}\emph{countably hyperconvex};
-that is, the condition in \ref{thm:injective=hyperconvex:balls} holds for any finite family of balls, but may not hold for a countable family.
+Show that the $d$-Urysohn space is finitely hyperconvex, but not countably hyperconvex.
 Conclude that the $d$-Urysohn space is not injective.
 
 Try to do the same for the Urysohn space.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:almost-hyperconvex}
+Let $\spc{Y}$ be a complete metric space.
+Suppose $\spc{Y}$ is \index{almost hyperconvex}\emph{almost hyperconvex},
+that is, for any $\eps>0$ any family of closed balls $\set{\cBall[x_\alpha,r_\alpha+\eps]}{\alpha\in\IndexSet}$ has a common point if 
+$r_\alpha+r_\beta\ge \dist{x_\alpha}{x_\beta}{}$ for all $\alpha,\beta\in \IndexSet$.
+Show that $\spc{Y}$ is hyperconvex.
+\end{thm}
+
 
 \section{Space of extremal functions}
 \label{sec:extremal-functions}
@@ -518,10 +532,21 @@ Suppose $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{
 Show that there is unique isometry $\iota\:\spc{E}\to \spc{F}$ such that $\iota\circ e=f$.
 \end{thm}
 
-
 \begin{thm}{Exercise}\label{ex:d-p-inclusion}
 Suppose $\spc{X}$ is a subspace of a metric space $\spc{U}$.
 Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusion $\Inj\spc{X}\hookrightarrow\Inj\spc{U}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:hemisphere}
+Consider the hemisphere 
+\begin{align*}
+\mathbb{S}^2_+&=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1,\quad z\ge0}
+\intertext{and its boundary}
+\mathbb{S}^1&=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1,\quad z=0};
+\end{align*}
+ both with induced length metrics.
+ 
+Show that there is unique isometric embedding $\iota\:\mathbb{S}^2_+\hookrightarrow\Inj\mathbb{S}^1$ such that $\iota(u)=u$ for any $u\in \mathbb{S}^1$.
 \end{thm}
 
 
@@ -532,6 +557,9 @@ The injective envelope was introduced by John Isbell \cite{isbell}.
 It was rediscovered a couple of times since then;
 as a result, the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
 
+It was observed by John Isbell \cite{isbell2} that \textit{if $\spc{X}$ is a Banach space, then its injective hull $\Inj\spc{X}$ has a natural structure of Banach space} (which is unique by the Mazur--Ulam theorem).
+Moreover, $\spc{X}$ is a linear subspace of $\Inj\spc{X}$.
+ 
 Let us mention that a metric space $\spc{X}$ is called \index{convex space}\emph{convex} if for any pair of points $x_1,x_2\in \spc{X}$ and any $r_1,r_2\ge 0$ we have 
 \[r_1+r_2\ge \dist{x_1}{x_2}{\spc{X}}\qquad\Longrightarrow\qquad\cBall[x,r_1]_\spc{X}\cap \cBall[y,r_2]_\spc{X}\ne\emptyset;\]
 in other words, a pair of balls intersect if the triangle inequality does not forbid it.
@@ -539,6 +567,9 @@ Clearly, hyperconvexity (\ref{thm:injective=hyperconvex:balls}) is stronger than
 Note that \textit{any geodesic space is convex}.
 The converse does not hold in general, but by \ref{lem:mid>geod:geod} \textit{any complete convex space is geodesic}.
 
+More generally, a metric space $\spc{X}$ is called \index{$n$-heperconvex space}\emph{$n$-heperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls.
+Benjamin Miesch and Maël Pavón proved that \textit{any complete $4$-hyperconvex space is finitely hyperconvex} \cite{miesch-pavon2016}.
+So by \ref{ex:compact-hyperconvex}, \textit{any proper $4$-hyperconvex space is hyperconvex}.
 
 The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
 

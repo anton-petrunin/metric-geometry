@@ -9,18 +9,19 @@ Denote by $\gamma_x$, $\gamma_y$, and $\gamma_z$ the geodesics $[px]$, $[py]$, a
 By triangle inequality,
 for any $\eps>0$ and all sufficiently small $t,\tau,s\in\RR_+$ we have
 \begin{align*}
-\dist{\gamma_x(t)}{\gamma_z(\tau)}{}
-\le 
-\ &\dist{\gamma_x(t)}{\gamma_y(s)}{}+\dist{\gamma_y(s)}{\gamma_z(\tau)}{}<\\
-<
-\ &\sqrt{t^2+s^2-2\cdot t\cdot  s\cdot \cos(\alpha+\eps)}\ +
+&\dist{\gamma_x(t)}{\gamma_z(\tau)}{}\le 
 \\
-&+\sqrt{s^2+\tau^2-2\cdot s\cdot \tau\cdot \cos(\beta+\eps)}\le
+&\quad\le 
+\ \dist{\gamma_x(t)}{\gamma_y(s)}{}+\dist{\gamma_y(s)}{\gamma_z(\tau)}{}<
+\\
+&\quad<{t^2+s^2-2\cdot t\cdot  s\cdot \cos(\alpha+\eps)}\ +
+\\
+&\qquad+\sqrt{s^2+\tau^2-2\cdot s\cdot \tau\cdot \cos(\beta+\eps)}\le
 \end{align*}
 
 Below we define 
 $s(t,\tau)$ so that for 
-$s=s(t,\tau)$, this chain of inequalities can be continued as follows:
+$s\z=s(t,\tau)$, this chain of inequalities can be continued as follows:
 \[\le
 \ \sqrt{t^2+\tau^2-2\cdot t\cdot \tau\cdot \cos(\alpha+\beta+2\cdot \eps)}.
 \]
@@ -28,11 +29,11 @@ Thus for any $\eps>0$,
 \[\gamma\le \alpha+\beta+2\cdot \eps.\]
 Hence the result.
 
-\begin{wrapfigure}{r}{30 mm}
+\begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-7}
-\end{wrapfigure}
+\end{Figure}
 
 To define $s(t,\tau)$, consider three rays $\tilde \gamma_x$, $\tilde \gamma_y$, $\tilde \gamma_z$ on a Euclidean plane starting at one point, such that $\mangle(\tilde \gamma_x,\tilde \gamma_y)=\alpha+\eps$,
 $\mangle(\tilde \gamma_y,\tilde \gamma_z)=\beta+\eps$ and $\mangle(\tilde \gamma_x,\tilde \gamma_z)=\alpha+\beta+2\cdot \eps$.
@@ -53,15 +54,17 @@ Suppose $[\tilde x \tilde y]$ intersects $[\tilde p\tilde q]$ at a point $\tilde
 In this case by $\CAT(0)$ comparison we have that
 \[\dist{\tilde p}{\tilde q}{\EE^2}=\dist{\tilde p}{\tilde z}{\EE^2}-\dist{\tilde z}{\tilde q}{\EE^2}\le \dist{p}{q}{\spc{X}}.\]
 
-{
-
-\begin{wrapfigure}{r}{30 mm}
-\vskip-7mm
+\begin{Figure}
+\begin{minipage}{.48\textwidth}
 \centering
 \includegraphics{mppics/pic-5}
-\bigskip
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
 \includegraphics{mppics/pic-6}
-\end{wrapfigure}
+\end{minipage}
+\vskip-4mm
+\end{Figure}
 
 Let us fix points $\tilde x$ and $\tilde y$, and the distances from $\tilde x$ to the remaining three points and reduce the angles $\alpha=\mangle\hinge{\tilde x}{\tilde p}{\tilde y}$ and $\beta=\mangle\hinge{\tilde x}{\tilde q}{\tilde y}$.
 It results in decreasing distances $\dist{\tilde p}{\tilde q}{}$, $\dist{\tilde p}{\tilde y}{}$, and $\dist{\tilde q}{\tilde y}{}$.
@@ -76,8 +79,6 @@ If $\alpha=\beta=0$, then
 \end{align*}
 By the intermediate value theorem, there are intermediate values of $\alpha$ and $\beta$ so that $\dist{\tilde p}{\tilde q}{\EE^2}\z=\dist{p}{q}{\spc{X}}$.
 By construction, $\dist{\tilde x}{\tilde p}{\EE^2}=\dist{x}{p}{\spc{X}}$, $\dist{\tilde x}{\tilde q}{\EE^2}=\dist{x}{q}{\spc{X}}$, $\dist{\tilde y}{\tilde p}{\EE^2}\le\dist{y}{p}{\spc{X}}$, $\dist{\tilde y}{\tilde q}{\EE^2}\le\dist{y}{q}{\spc{X}}$.
-
-}
 
 Now suppose $[\tilde p \tilde q]$ does not intersect $[\tilde x\tilde y]$.
 Without loss of generality, we may assume that $[\tilde p \tilde q]$ crosses the line $\tilde x\tilde y$ behind $\tilde x$.
@@ -167,13 +168,13 @@ such that
 \begin{align*}
 \dist{p}{x}{\spc{X}}&=\dist{\tilde p}{\tilde x}{\EE^2},
 &
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
+\\
 \dist{p}{y}{\spc{X}}&=\dist{\tilde p}{\tilde y}{\EE^2},
 &
-\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^2},
-\\
-\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
-&
 \dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^2},
+\\
+\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^2},
 &
 \dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^2}.
 \end{align*}
@@ -209,7 +210,7 @@ in this case the triangle inequities hold if
 
 Note that the inequality \ref{eq:a+b+c=<2pi} follow from $\CBB(0)$ comparison.
 
-Consider two model triangles $[\tilde x\tilde y\tilde p]=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
+Consider two model triangles $[\tilde x\tilde y\tilde p]\z=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q]=\modtrig(xyq)$ such that $\tilde p$ and $\tilde q$ lie on the opposite sides of the line $\tilde x\tilde y$.
 
 Suppose $[\tilde x \tilde y]$ intersects $[\tilde p\tilde q]$ at a point $\tilde z$.
 In this case by $\CAT(0)$ comparison we have that
@@ -236,7 +237,7 @@ Fix a quadruple in $\spc{U}\times \spc{V}$:
 p&=(p_1,p_2),
 &
 x&=(x_1,x_2),
-&
+\\
 y&=(y_1,y_2),
 &
 z&=(z_1,z_2).
@@ -251,7 +252,7 @@ Consider four points in $\EE^4=\EE^2\times\EE^2$
 \tilde p&=(\tilde p_1,\tilde p_2),
 &
 \tilde x&=(\tilde x_1,\tilde x_2),
-&
+\\
 \tilde y&=(\tilde y_1,\tilde y_2),
 &
 \tilde z&=(\tilde z_1,\tilde z_2).
@@ -260,15 +261,15 @@ The inequalities in  \ref{ex:(3+1)-expanding} imply that
 \begin{align*}
 \dist{p}{x}{\spc{X}}&=\dist{\tilde p}{\tilde x}{\EE^4},
 &
+\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^4},
+\\
 \dist{p}{y}{\spc{X}}&=\dist{\tilde p}{\tilde y}{\EE^4},
 &
-\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^4},
-\\
-\dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^4},
-&
 \dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^4},
+\\
+\dist{p}{z}{\spc{X}}&=\dist{\tilde p}{\tilde z}{\EE^4},
 &
-\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^4}
+\dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^4}.
 \end{align*}
 It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$, $\tilde x$, and $\tilde y$ keeping the distance $\dist{\tilde p}{\tilde z}{\EE^4}$ and nondecreasing the rest of distances. 
 
@@ -287,7 +288,7 @@ It follows that $\angk zpq=0$.
 Since $\dist{z}{p}{}=\dist{z}{q}{}$, it implies that $p=q$ --- a contradiction.
 
 \parbf{\ref{ex:contractible}.}
-Use \ref{ex:noncreasing-CAT}, to show that the map $(t,x)\mapsto \gamma_x(t)$ is continuous; that is $h_t(x)=\gamma_x(t)$ defines a homotopy.
+Use \ref{ex:noncreasing-CAT}, to show that the map $(t,x)\z\mapsto \gamma_x(t)$ is continuous; that is $h_t(x)=\gamma_x(t)$ defines a homotopy.
 
 It remains to observe that $h_1(x)=x$ and $h_0(x)=p$ for any $x$.
 
@@ -325,13 +326,11 @@ that is,
 t\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
-{
-
-\begin{wrapfigure}{o}{45 mm}
-\vskip-5mm
+\begin{Figure}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-8}
-\end{wrapfigure}
+\end{Figure}
 
 Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
 From \ref{ex:noncreasing-CAT}, we have
@@ -345,8 +344,6 @@ From \ref{ex:noncreasing-CAT}, we have
 t\cdot\dist{\delta(1)}{\gamma_2(1)}{}
 \end{align*}
 It remains to sum it up and apply the triangle inequality.
-
-}
 
 \parit{Remark.} Note that in the Euclidean space the proof is just as hard.
 
@@ -404,11 +401,11 @@ Observe that
 for any $t$.
 Whence Jensen's inequality holds for $f\circ\gamma$ if $\gamma$ is any geodesic in $B_p$.
 
-\begin{wrapfigure}{o}{45 mm}
-\vskip-4mm
+\begin{Figure}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-9}
-\end{wrapfigure}
+\end{Figure}
 
 Since $K$ is locally convex,
 it is locally path connected.
@@ -462,7 +459,7 @@ Then the set  $\dot A$ (respectively, $\dot B$) is defined as the unique support
 
 Suppose $f(z)<f(z_0)$ for some $z\in \dot A\cap\dot B$.
 Since $f$ is concave,
-$f(\bar z)<f(z_0)$ for any $\bar z \in \left[zz_0\right[$.
+$f(\bar z)<f(z_0)$ for any $\bar z \z\in \left[zz_0\right[$.
 Since $\left[zz_0\right[\cap A\cap B\ne\emptyset$,
 the latter contradicts the fact that $z_0$ is minimum point of $f$ on $A\cap B$.
 
@@ -594,11 +591,11 @@ at $p$
 of geodesics $[pq_n]$.
 Since the geodesics are extendable, we can assume that the distances $\dist{p}{q_n}{\spc{U}}=1$ for any $n$.
 
-\begin{wrapfigure}{r}{45 mm}
+\begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-12}
-\end{wrapfigure}
+\end{Figure}
 
 Since $\spc{U}$ is proper,
 we can pass to a converging subsequence of $q_n$;
@@ -773,7 +770,7 @@ Note that boundary of triangle runs along $\gamma$.
 It follows that $\gamma$ is null homotopic and therefore $Q$ is simply connected.
 
 \begin{wrapfigure}{r}{25 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-15}
 \end{wrapfigure}
@@ -806,14 +803,18 @@ Assume the contrary; that is, $\alpha$ meets the equator $\partial H$ at a point
 Without loss of generality we may assume that $r\in\alpha_1$.
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-17}
 \end{wrapfigure}
 
 The arc $\alpha_1$ together with its reflection $\alpha_1^*$ in $z$ form a closed curve of length $2\cdot \ell$ which meets $r$ and its antipodal point~$r'$.
 Thus 
-\[\ell\z=\length \alpha_1\ge \dist{r}{r'}{}=\pi\] 
+\begin{align*}
+\ell&=\length \alpha_1\ge
+\\
+&\ge\dist{r}{r'}{}=\pi
+\end{align*}
 --- a contradiction.
 
 \parit{Solution with the Crofton formula.}
@@ -842,11 +843,11 @@ Since  $\Omega$ is not two-convex,
 we can choose a simple closed curve $\gamma$ that lies in the intersection of a plane $W_0$ and $\Omega$, 
 and is contractible in $\Omega$ but not contractible in $\Omega\cap W_0$.
 
-\begin{wrapfigure}{r}{45 mm}
-\vskip-4mm
+\begin{Figure}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-19}
-\end{wrapfigure}
+\end{Figure}
 
 Let $\phi\:\DD\to \Omega$ be a disc that  shrinks~$\gamma$.
 Applying the loop theorem (arguing as in the proof of Proposition~\ref{prop:3d-strong-2-convexity}), we can assume that $\phi$ is an embedding and $\phi(\DD)$ lies on one side of~$W_0$.
@@ -878,11 +879,11 @@ Show that there is a line segment $[pq]$ in $\EE^3$ that is tangent to $\bar S$ 
 Since $\bar S$ is locally concave,
 there is a local inner supporting plane $\Pi$ at $p$ that contains the segment $[pq]$.
 
-\begin{wrapfigure}{r}{35 mm}
+\begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-21}
-\end{wrapfigure}
+\end{Figure}
 
 Show that $\Pi\cap \bar S$ contains a segment $[xy]\z\ni p$ with the ends in $\partial \bar S$.
 Denote by $\Pi^+$ the half-plane in $\Pi$ that contains $[pq]$ and has $[xy]$ in its boundary.
