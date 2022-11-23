@@ -35,8 +35,8 @@ $\dist{x}{y}{\spc{X}}\ge 0$,
 
 Recall that a \index{metric space}\emph{metric space} is a set with a metric on it.
 The elements of the set are called \index{point}\emph{points}. 
-Most of the time we keep the same notation for the metric space and its underlying set,
-but if needed we may use $\ushort{\spc{X}}$ for the underlying set of metric space $\spc{X}$.
+Most of the time we keep the same notation for the metric space and its underlying set;
+the latter will be denoted by $\ushort{\spc{X}}$ if needed.
 
 The function 
 \[\distfun_x\:y\mapsto \dist{x}{y}{}\]
@@ -83,9 +83,8 @@ Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
 \[x\sim y\quad\iff\quad\dist{x}{y}{}=0.\] 
 Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
 Thus, $\dist{*}{*}{}$ defines a metric on the
-quotient set $\spc{X}/{\sim}$.
-This way we obtain a metric space $\spc{X}'$.
-The space $\spc{X}'$ is called the 
+quotient $\spc{X}/{\sim}$.
+The obtained metric space, say $\spc{X}'$, is called the 
 \emph{corresponding metric space} for the pseudometric space $\spc{X}$.
 Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
 
@@ -96,7 +95,7 @@ One may also consider metrics with values in $[0,\infty]$;
 that is, we allow infinite distance between points.
 We might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but most of the time we use the term {}\emph{metric}.
 
-Again nearly any question about $\infty$-metric spaces can be reduced to a question about genuine metric spaces. 
+The following construction shows how to reduce questions about $\infty$-metrics to genuine metrics. 
 
 Set 
 \[x\approx y\quad\iff\quad\dist{x}{y}{}<\infty;\]
@@ -182,7 +181,7 @@ The space $\spc{K}$ is complete and \index{totally bounded space}\emph{totally b
 
 \begin{thm}{Lebesgue lemma}
 Let $\spc{K}$ be a compact metric space.
-Then for any open cover of $\spc{K}$, there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in one element of the cover.
+Then for any open cover of $\spc{K}$, there is $\eps>0$ such that any $\eps$-ball in $\spc{K}$ lies in an element of the cover.
 
 The value $\eps$ is called a \index{Lebesgue number}\emph{Lebesgue number} of the covering.
 \end{thm}
@@ -211,7 +210,7 @@ Conclude that a complete space $\spc{X}$ is compact if and only if $\pack_\eps\s
 
 \begin{thm}{Exercise}\label{ex:non-contracting-map}
 Let $\spc{K}$  be a compact metric space and
-\[f\:\spc{K}\z\to \spc{K}\] 
+$f\:\spc{K}\z\to \spc{K}$
 be a distance-noncontracting map.
 Prove that $f$ is an \index{isometry}\emph{isometry};
 that is, $f$ is a distance-preserving bijection.
@@ -423,7 +422,8 @@ The following example shows that the converse does not hold.
 
 
 \begin{thm}{Example}
-Suppose a space $\spc{X}$ is obtained by gluing a countable collection of disjoint intervals $\{\II_n\}$ of length $1+\tfrac1n$, where for each $\II_n$ the left end is glued to $p$ and the right end to~$q$.
+Set $\II_n=[0,1+\tfrac1n]$ for every natural $n$.
+Suppose a space $\spc{X}$ is obtained by gluing intervals $\{\II_n\}$, where the left ends are glued to $p$ and the right ends to~$q$.
 
 Observe that the space $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{\spc{X}}=1$ but there is no geodesic connecting $p$ to~$q$.
 \end{thm}
@@ -455,10 +455,11 @@ Show that $(\spc{X},\yetdist{*}{*}{})$ is complete.
 Let $A$ be a subset of a metric space $\spc{X}$.
 Given two points $x,y\in A$,
 consider the value
-\[\dist{x}{y}{A}=\inf_{\alpha}\{\length\alpha\},\]
+\[\dist{x}{y}{A}=\inf_{\alpha}\{\,\length\alpha\,\},\]
 where the greatest lower bound is taken for all paths $\alpha$ from $x$ to $y$ in~$A$.
-In other words, $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.%
-\footnote{The notation $\dist{*}{*}{A}$ conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$. However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.}
+In other words, $\dist{*}{*}{A}$ denotes the induced length metric on the subspace $A$.
+(The notation $\dist{*}{*}{A}$ conflicts with the previously defined notation for distance $\dist{x}{y}{\spc{X}}$ in a metric space $\spc{X}$.
+However, most of the time we will work with ambient length spaces where the meaning will be unambiguous.)
 
 Let $x$ and $y$ be points in a metric space $\spc{X}$.
 
@@ -509,9 +510,8 @@ as an $\eps_{n}$-midpoint of the already defined
 $\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
 
 
-This way we define $\alpha(t)$ for $t\in W$,
-where $W$ denotes the set of dyadic rationals in $[0,1]$.
-Moreover, $\alpha\:W\to \spc{X}$ is Lipschitz (it has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$).
+This way we define $\alpha(t)$ for all dyadic rationals $t$ in $[0,1]$.
+Moreover, $\alpha$ is Lipschitz (it has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$).
 Since $\spc{X}$ is complete, the map $\alpha$ can be extended continuously to $[0,1]$.
 Moreover,
 \[\begin{aligned}
@@ -529,7 +529,7 @@ taking midpoints instead of $\eps_n$-midpoints.
 In this case, \ref{eq:eps-midpoint} holds for $\eps_n=\eps\z=0$.
 \qeds
 
-Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, \ref{lem:mid>geod} immediately implies the following.
+Since in a compact space a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence, \ref{lem:mid>geod} implies the following.
 
 \begin{thm}{Proposition}\label{prop:length+proper=>geodesic}
 Any proper length space is geodesic.
@@ -576,7 +576,7 @@ Then
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
 Then compactness of $\cBall[y,\rho(y)]$ implies the compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
 
-Set $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
+Let $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
 From \ref{eq:rho>0}, we have $\eps>0$.
 
 Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.

@@ -132,19 +132,6 @@ each such limit is a midpoint between $x$ and $y$.
 \parit{\ref{SHORT.ex:sphere-in-urysohn:homogeneous}.} 
 Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
 
-\parbf{\ref{ex:shere}.}
-Let $p$ be the center of the sphere;
-without loss of generality, we can assume that $\dist{p}{x}{}\le \dist{p}{y}{}$.
-Set $f(p)=1$, $f(x)=1+\dist{p}{x}{}$ and $f(y)=1+\dist{p}{y}{}-\eps$.
-Suppose $\eps>0$ is sufficiently small;
-show that $f$ is an extension function on $\{p,x,y\}$.
-
-By the extension property, there is a point $z\in \spc{U}$ such that $\dist{p}{z}{}=f(p)$, $\dist{x}{z}{}=f(x)$, and $\dist{y}{z}{}=f(y)$.
-Whence the statement follows.
-
-\parit{Source:} This problem is taken from a survey of Julien Melleray
- \cite[Prop. 4.3]{melleray}, where it was attributed to Matatyahu Rubin.
-
 \parbf{\ref{ex:notproper-limit}.} Consider the infinite metric $\spc{T}$ tree with unit edges shown
 on the diagram.
 Observe that $\spc{T}$ is proper.
@@ -160,7 +147,10 @@ Observe that $\omega$ has an infinite degree.
 Conclude that $\spc{T}^\omega$ is not locally compact.
 
 \parbf{\ref{ex:ultraT}.}
-Consider a product space $[0,1]\z\times[0,\tfrac12]\z\times[0,\tfrac14]\z\times\dots$
+Consider a product of an infinite sequence of closed intervals.
+
+\parit{Remark.}
+Such examples with different asymptotic cones exist even for spaces with cocompact isometric action \cite{thomas-velickovic}.
 
 \parbf{\ref{ex:Asym(Lob)}.} Assume $\spc{L}$ is the Lobachevsky plane.
 
@@ -207,10 +197,5 @@ Conclude that the space $\T^\omega_o\spc{X}$ can be described as follows.
 Consider continuum copies $\spc{W}_\alpha$ as above;
 denote by $(x,t)_\alpha$ the point in $\spc{W}_\alpha$ with coordinates $(x,t)$.
 The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ 
-such that $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}$ is the same as in $\spc{W}_\alpha$ and for the remaining pairs, we have
-\begin{align*}
-\dist{o_\omega}{(x,t)_\alpha}{}&=t,
-\\
-\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\beta}{}&=t_1+t_2,
-\end{align*}
+such that $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}$ is the same as in $\spc{W}_\alpha$ and for the remaining pairs, we have $\dist{o_\omega}{(x,t)_\alpha}{}=t$ and $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\beta}{}=t_1+t_2$
 if $\alpha\ne\beta$.

@@ -57,8 +57,6 @@ The space $\ell^\infty(\spc{S})$ for any set $\spc{S}$ (defined in \ref{lem:kura
 In particular, the coordinate plane with the metric induced by the $\ell^\infty$-norm.
 \end{subthm}
 
-%\begin{subthm}{ex:injective-spaces:L-infty}$L^\infty([0,1])$.\end{subthm}%%%???
-
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:extr-ball}
@@ -537,7 +535,7 @@ Suppose $\spc{X}$ is a subspace of a metric space $\spc{U}$.
 Show that the inclusion $\spc{X}\hookrightarrow\spc{U}$ can be extended to a distance-preserving inclusion $\Inj\spc{X}\hookrightarrow\Inj\spc{U}$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:hemisphere}
+\begin{thm}{Exercise}\label{ex:hemisphere-inj}
 Consider the hemisphere 
 \begin{align*}
 \mathbb{S}^2_+&=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1,\quad z\ge0}
@@ -568,8 +566,20 @@ Note that \textit{any geodesic space is convex}.
 The converse does not hold in general, but by \ref{lem:mid>geod:geod} \textit{any complete convex space is geodesic}.
 
 More generally, a metric space $\spc{X}$ is called \index{$n$-heperconvex space}\emph{$n$-heperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls.
-Benjamin Miesch and Maël Pavón proved that \textit{any complete $4$-hyperconvex space is finitely hyperconvex} \cite{miesch-pavon2016}.
-So by \ref{ex:compact-hyperconvex}, \textit{any proper $4$-hyperconvex space is hyperconvex}.
+Note that convex is the same as $2$-hyperconvex.
+
+The following striking result was proved by Benjamin Miesch and Maël Pavón \cite{miesch-pavon2016}.
+
+\begin{thm}{Theorem}
+Any complete $4$-hyperconvex space is finitely hyperconvex.
+\end{thm}
+
+So, by \ref{ex:compact-hyperconvex}, it follows that \textit{any proper $4$-hyperconvex space is hyperconvex}.
+
+\begin{thm}{Exercise}\label{ex:3-4-hypreconvex}
+Show that $\ell^1$ is $3$- but not $4$-hyperconvex.
+\end{thm}
+
 
 The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
 

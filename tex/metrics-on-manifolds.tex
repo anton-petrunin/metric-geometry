@@ -24,11 +24,12 @@ pdfauthor={Anton Petrunin}
 \maketitle
 
 We discuss Besicovitch inequality, width, and systole of manifolds.
-I assume that students are familiar with 
-measure theory,
-smooth manifolds,
+Prerequisite includes  
+basic measure theory, and
+definitions of smooth manifolds,
 degree of map, 
-CW-complexes and related notions.
+CW-complexes,
+and related notions.
 
 This is a polished version of two final lectures of a graduate course given at Penn State, Spring 2020.
 The complete lectures can be found on the author's website;
@@ -51,12 +52,21 @@ I want to thank Alexander Lytchak and Alexander Nabutovsky for help.
 %\include{filling-rad}
 %\include{examples}
 %\include{AA}
-\appendix
+\backmatter
+
+\newgeometry{top=0.9in, bottom=0.9in,inner=0.5in, outer=0.5in}
 \chapter{Semisolutions}
+{
+
+\footnotesize
+\begin{multicols}{2}
 \input{metrics-on-manifolds-sol}
 
-%\include{tickets}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
+}
+
+\newgeometry{top=0.9in, bottom=0.9in,left=0.9in, right=0.9in, paperwidth=6in, paperheight=9in}
+
 {\small\sloppy
 \input{metrics-on-manifolds.ind}
 

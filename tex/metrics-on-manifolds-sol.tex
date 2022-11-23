@@ -38,9 +38,12 @@ By \ref{obs:lip-chart} there is $R>0$ such that $\oBall(z,10\cdot R)$ admits a $
 
 Choose $x,y\in \oBall(z, R)$.
 The argument used in part \ref{SHORT.ex:volume-preserving+short:injective} implies that 
-\[e^{-n\cdot\eps}\cdot \sigma(e^{-\eps}\cdot r, e^{-\eps}\cdot \dist{x}{y}{\spc{M}})
-\le 
+\[\begin{aligned}
+e^{-n\cdot\eps}&\cdot \sigma(e^{-\eps}\cdot r, e^{-\eps}\cdot \dist{x}{y}{\spc{M}})\le
+\\
+&\le 
 e^{n\cdot\eps}\cdot \sigma(e^{\eps}\cdot r, e^{\eps}\cdot \dist{f(x)}{f(y)}{\spc{N}}).
+  \end{aligned}
 \eqlbl{eq:v(r,a)}\]
 This inequality implies a lower bound on $\dist{f(x)}{f(y)}{\spc{N}}$ in terms of $\dist{x}{y}{\spc{M}}$.
 
@@ -125,7 +128,7 @@ Observe that the $\bar g$-distances between opposite faces of $\square$ are at l
 Indeed this is true for the Euclidean metric and the assumption $\dist{p}{q}{g}\ge\dist{p}{q}{\EE^d}$  guarantees that one cannot make a shortcut in~$V$.
 Therefore, the $\bar g$-distances between every pair of opposite faces is at least as large as 1 which is the Euclidean distance.
 
-Applying part \ref{SHORT.ex:gadograph-besikovitch}, we get that $\vol(\square,\bar g)\ge \vol\square$.
+Applying part \ref{SHORT.ex:gadograph-besikovitch}, we get that $\vol(\square,\bar g)\z\ge \vol\square$.
 Whence the statement follows.
 
 
@@ -507,7 +510,7 @@ Moreover it is not hard to check that
 \begin{itemize}
 \item $K$ is uniquely defined up to a weak homotopy equivalence;
 \item if $\spc{W}$ is a connected finite CW-complex.
-Then any homomorphism $\pi_1(\spc{W},w)\to\pi_1(K,k)$ is induced by a continuous map $\phi\:(\spc{W},w)\to(K,k)$.
+Then any homomorphism $\pi_1(\spc{W},w)\z\to\pi_1(K,k)$ is induced by a continuous map $\phi\:(\spc{W},w)\to(K,k)$.
 Moreover, $\phi$ is uniquely defined up to homotopy equivalence.
 \end{itemize}
 
@@ -519,7 +522,7 @@ Then $M$ is essential if and only if $\iota$ sends the fundamental class of $M$ 
 
 The property described in the last statement is the original definition of essential manifold.
 It can be used to prove a converse to the exercise;
-namely \textit{the product of a nonessential closed manifold with any closed manifold is \emph{not} essential}.
+namely \textit{the product of a nonessential closed manifold with any closed manifold is not essential}.
 
 
 

@@ -142,13 +142,13 @@ Consider a model configuration $\tilde p$, $\tilde x$, $\tilde y$, $\tilde z\in\
 \begin{align*}
 \dist{\tilde p}{\tilde x}{\EE^2}&=\dist{p}{x}{\spc{X}},
 &
+\mangle\hinge {\tilde p}{\tilde x}{\tilde y}&=\alpha,
+\\
 \dist{\tilde p}{\tilde y}{\EE^2}&=\dist{p}{y}{\spc{X}},
 &
-\dist{\tilde p}{\tilde z}{\EE^2}&=\dist{p}{z}{\spc{X}},
-\\
-\mangle\hinge {\tilde p}{\tilde x}{\tilde y}&=\alpha,
-&
 \mangle\hinge {\tilde p}{\tilde y}{\tilde z}&=\beta,
+\\
+\dist{\tilde p}{\tilde z}{\EE^2}&=\dist{p}{z}{\spc{X}},
 &
 \mangle\hinge {\tilde p}{\tilde z}{\tilde x}&=\gamma.
 \end{align*}
@@ -156,9 +156,9 @@ Consider a model configuration $\tilde p$, $\tilde x$, $\tilde y$, $\tilde z\in\
 Since increasing angle in a triangle increase the opposite side, we have 
 \begin{align*}
 \dist{x}{y}{\spc{X}}&\le\dist{\tilde x}{\tilde y}{\EE^2},
-&
+\\
 \dist{y}{z}{\spc{X}}&\le\dist{\tilde y}{\tilde z}{\EE^2},
-&
+\\
 \dist{z}{x}{\spc{X}}&\le\dist{\tilde z}{\tilde x}{\EE^2}.
 \end{align*}
 Whence the ``only-if'' part follows.
@@ -318,18 +318,20 @@ Whence \ref{eq:pq=<pq} follows.
 \parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;
 that is, 
-\[
+\begin{align*}
 \dist{\gamma_1(t)}{\gamma_2(t)}{}
-\le
+&\le
 (1-t)\cdot\dist{\gamma_1(0)}{\gamma_2(0)}{}
-+
+\\
+&\quad+
 t\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
-\]
+\end{align*}
 
 \begin{Figure}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-8}
+\vskip1mm
 \end{Figure}
 
 Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
@@ -682,7 +684,7 @@ Use induction on the dimension  to prove that if in a spherical simplex $\triang
 all dihedral angles of $\triangle$ are at least~$\tfrac\pi2$.
 
 The rest of the proof goes along the same lines as the proof of the flag condition (\ref{thm:flag}).
-The only difference is that a geodesic may spend time {}\emph{at least} $\pi$ on each visit to $\Star_v$.
+The only difference is that a geodesic may spend time \textit{at least} $\pi$ on each visit to $\Star_v$.
 
 \parit{Remark.}
 Note that it is not sufficient to assume only that the all dihedral angles of the simplices are at least~$\tfrac\pi2$. 
@@ -765,7 +767,7 @@ By \ref{thm:injective=hyperconvex:balls}, the latter implies that $(Q,\ell^\inft
 Observe that median point $m(x,y,z)$ of depends continuously on triple of points $(x,y,z)$ and $m(x,x,y)=x$.
 
 Given a loop $\gamma\:[0,1]\to Q$ with base at $p=\gamma(0)=\gamma(1)$,
-consider the map $(a,b)\mapsto m(p,\gamma(a),\gamma(b))$ of the triangle $\triangle$ defined by $0\z\le a \z\le b\z\le 1$.
+consider the map $(a,b)\z\mapsto m(p,\gamma(a),\gamma(b))$ of the triangle $\triangle$ defined by $0\z\le a \z\le b\z\le 1$.
 Note that boundary of triangle runs along $\gamma$.
 It follows that $\gamma$ is null homotopic and therefore $Q$ is simply connected.
 

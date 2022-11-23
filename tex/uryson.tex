@@ -9,13 +9,14 @@ Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \ind
 \item $|v|+|w|\ge|v+w|$.
 \end{itemize}
 
-As an example, consider \index{$\ell^\infty$}$\ell^\infty$ --- the space of real sequences equipped with \index{sup-norm}\emph{sup-norm}; that is, the norm of $\bm{a}=a_1,a_2,\dots$ is defined by
+As an example, consider \index{$\ell^\infty$}$\ell^\infty$ --- the space of real sequences equipped with \index{sup-norm}\emph{sup-norm}; that is, the norm of $\bm{a}=(a_1,a_2,\dots)$ is defined by
 \[|\bm{a}|_{\ell^\infty}=\sup_n\{\,|a_n|\,\}.\]
 
 
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
-Therefore, any normed space is an example of metric space (in fact, it is a geodesic space).
-Often we do not distinguish between normed space and the corresponding metric space.
+Therefore, any normed space is an example of metric space;
+moreover, it is a geodesic space.
+Often we do not distinguish normed space from the corresponding metric space.
 (By the Mazur--Ulam theorem, the metric remembers the affine structure of the space; so, to recover the original normed space we only need to specify the origin.
 A slick proof of this theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.)
 
@@ -228,10 +229,8 @@ Here is a slightly stronger statement:
 Any separable metric space $\spc{X}$ admits a distance-preserving embedding into an Urysohn space $\spc{U}$ such that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{U}$.
 \end{thm}
 
-%??? PROBLEM
-
 \parit{Sketch of proof.}
-Start with $\spc{X}_0=\spc{X}$ and construct a nested sequence of spaces $\spc{X}_0\subset\spc{X}_1 \subset{}\dots$ as at the very end of the proof of \ref{prop:univeral-separable}.
+Start with $\spc{X}_0=\spc{X}$ and construct a nested sequence of spaces $\spc{X}_0\subset\spc{X}_1 \subset{}\dots$ as at the alternative end of the proof of~\ref{prop:univeral-separable}.
 Note that 
 any isometry $\spc{X}_n\to \spc{X}_n$ can be extended to a unique isometry $\spc{X}_{n+1}\to \spc{X}_{n+1}$.
 It follows that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{X}'=\bigcup_n\spc{X}_n$.
@@ -459,7 +458,7 @@ Show that any separable one-point-homogeneous metric tree is isometric to the re
 The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
 
-The following two exercises show that in this respect $\ell^\infty$ is very different from $\ell^1$;
+The following two exercises show that in this respect $\ell^\infty$ is very different from \index{$\ell^1$}$\ell^1$;
 the latter is the space of all real absolutely converging series $\bm{a}\z=(a_1,a_2,\dots)$ with the norm $|\bm{a}|_{\ell^1}=\sum_i|a_i|$.
 For more on the subject, see \cite{deza-laurent}.
 
@@ -504,7 +503,7 @@ The same conclusion holds for complete all-set-homogeneous geodesic spaces with 
 it was proved by Garrett Birkhoff \cite{birkhoff}.
 The answer might be the same for complete separable all-set-homogeneous length spaces.
 Without the separability condition, we also get the so-called \emph{universal metric trees} with finite valence; 
-a transparent construction of these spaces is given by Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}; no other examples seem to be known.  
+a transparent construction of these spaces is given by Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}; no other examples seem to be known \cite{lebedeva-petrunin2211.09671}.  
 
 {\sloppy
 
@@ -520,3 +519,4 @@ assume $n$ is large.
 Show that $Q$ is three-point-homogeneous, but not four-point-homogeneous.
 \end{thm}
 
+I do not know examples of metric spaces that are $n$-point-homogeneous, but not $(n+1)$-point-homogeneous for large $n$ \cite{petrunin-431426}.
