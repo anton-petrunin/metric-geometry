@@ -35,11 +35,9 @@ contractible.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:bicombing}
-Let $\spc{Y}$ be an injective space.
-Show that one can choose a geodesic path $\gamma_{x,y}\:[0,1]\to \spc{Y}$ from any $x\in \spc{Y}$ to any $y\in \spc{Y}$ such that
-$\gamma_{x,y}(t)\equiv\gamma_{y,x}(1-t)$ and
-\[\dist{\gamma_{x,y}(t)}{\gamma_{p,q}(t)}{\spc{Y}}\le (1-t)\cdot\dist{p}{x}{\spc{Y}}+t\cdot\dist{q}{y}{\spc{Y}}\]
-for any $x,y,p,q\in \spc{Y}$.
+Show that for any injective space $\spc{Y}$ there is a map $m\:\spc{Y}\times\spc{Y}\to\spc{Y}$ (the \index{midpoint map}\emph{midpoint map}) such that the inequality
+\[2\cdot \dist{p}{m(x,y)}{\spc{Y}}\le\dist{p}{x}{\spc{Y}}+\dist{p}{y}{\spc{Y}}\]
+holds for any $p,x,y\in \spc{Y}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:injective-spaces}
