@@ -75,20 +75,20 @@ that is, there is a continuous function $F\:\spc{X}\to\RR$ such that $F(a)=f(a)$
 \section{Variations}
 
 \parbf{Pseudometris.}
-A metric for which the distance between two distinct points can be zero is called a \index{pseudometric}\emph{pseudometric}.
-In other words, to define pseudometric, we need to remove condition \ref{SHORT.metric=0} from \ref{def:metric}.
+A metric for which the distance between two distinct points can be zero is called a \index{semimetric}\emph{semimetric} (also known as \index{pseudometric}\emph{pseudometric}).
+In other words, to define semimetric, we need to remove condition \ref{SHORT.metric=0} from \ref{def:metric}.
 
-Assume $\spc{X}$ is a pseudometric space.
+Assume $\spc{X}$ is a semimetric space.
 Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
 \[x\sim y\quad\iff\quad\dist{x}{y}{}=0.\] 
 Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
 Thus, $\dist{*}{*}{}$ defines a metric on the
 quotient $\spc{X}/{\sim}$.
 The obtained metric space, say $\spc{X}'$, is called the 
-\emph{corresponding metric space} for the pseudometric space $\spc{X}$.
+\emph{corresponding metric space} for the semimetric space $\spc{X}$.
 Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
 
-This construction shows that nearly any question about pseudometric spaces can be reduced to a question about genuine metric spaces.
+This construction shows that nearly any question about semimetric spaces can be reduced to a question about genuine metric spaces.
 
 \parbf{$\bm{\infty}$-metrics.}
 One may also consider metrics with values in $[0,\infty]$;
@@ -115,13 +115,43 @@ where $\mu$ denotes the Lebesgue measure and $\bigtriangleup$ denotes symmetric 
 =(A\setminus B)\cup(B\setminus A).\]
 
 \begin{subthm}{ex:pseudo-infty-metric:pseudo}
-Show that $\dist{*}{*}{}$ is a pseudometric on the set of bounded closed subsets.
+Show that $\dist{*}{*}{}$ is a semimetric on the set of bounded closed subsets.
 \end{subthm}
 
 \begin{subthm}{ex:pseudo-infty-metric:infty}
 Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open subsets.
 \end{subthm}
 \end{thm}
+
+
+\parbf{Maximal metric and gluing.}
+Let $\{\,\dist{\ }{\ }{\alpha}\,\}$ be a family of $\infty$-semimetrics on a fixed set.
+Observe that
+\[\dist{x}{y}{}\df\sup_\alpha\{\,\dist{x}{y}{\alpha}\,\}\]
+defines an $\infty$-semimetric; it is called \index{maximal metric}\emph{maximal metric} of the family.
+
+Suppose $\spc{X}$ and $\spc{Y}$ are metric spaces and $\sim$ is an equivalence relation on the disjoint union $\spc{X}\sqcup\spc{Y}$.
+Given $x\in\spc{X}\sqcup\spc{Y}$, 
+denote by $[x]$ its equivalence class in the quotient $\spc{X}\sqcup\spc{Y}/\sim$.
+Consider all $\infty$-semimetrics $|\ -\ |_\alpha$ on $\spc{X}\sqcup\spc{Y}/\sim$ such that  both maps $\spc{X},\spc{Y}\to \spc{X}\sqcup\spc{Y}/\sim$ defined by $x\mapsto [x]$ are \index{short map}\emph{short};
+that is,
+\[|[x]-[x']|_\alpha\le |x-x'|_{\spc{X}}
+\quad\text{and}\quad
+|[x]-[x']|_\alpha\le |x-x'|_{\spc{X}}\]
+for any $x,x'\in \spc{X}$ and $y,y\in \spc{Y}$.
+Let us equip $\spc{X}\sqcup\spc{Y}/\sim$ with the maximal metric of this family; in general it is a $\infty$-semimetric.
+The space $\spc{Z}$ that corresponds to the obtained $\infty$-semimetric space is called \index{gluing}\emph{gluing} of $\spc{X}$ and $\spc{Y}$ along $\sim$.
+Similarly one can define gluing of arbitrary collection of metric spaces.
+
+Note that any partially defined map $\phi$ from $\spc{X}$ to $\spc{Y}$ defines a minimal equivalence relation on $\spc{X}\sqcup\spc{Y}$ such that $x\sim \phi(x)$;
+the corresponding gluing space is called \emph{gluing} along $\phi$.
+
+The following exercise shows that the topology of the described metric gluing might deffer from the corresponding topological gluing.
+ 
+\begin{thm}{Exercise}\label{ex:gluing}
+Construct a homeomorphism $\phi\:[0,1]\to [0,1]$ such that gluing of two unit intervals $[0,1]$ along $\phi$ is a one-point metric space.
+\end{thm}
+
 
 \section{Completeness}
 
@@ -142,7 +172,7 @@ The following construction produces a complete metric space $\bar{\spc{X}}$ for 
 Given a metric space $\spc{X}$, 
 consider the set $\spc{C}$ of all Cauchy sequences in $\spc{X}$.
 Note that for any two Cauchy sequences $(x_n)$ and $(y_n)$ the right-hand side in \ref{eq:cauchy-dist} is defined;
-moreover, it defines a pseudometric on~$\spc{C}$
+moreover, it defines a semimetric on~$\spc{C}$
 \[\dist{(x_n)}{(y_n)}{\spc{C}}\df\lim_{n\to\infty}\dist{x_n}{y_n}{\spc{X}}.\eqlbl{eq:cauchy-dist}\]
 The corresponding metric space is called the \index{completion}\emph{completion} of $\spc{X}$;
 it will be denoted by $\bar{\spc{X}}$.
@@ -275,7 +305,7 @@ and the geodesics in $(\mathbb{S}^2,\|{*}-{*}\|)$ run along great circles of $\m
 \section{Metric trees}
 
 A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
-and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contain the geodesic $[xz]_{\spc{T}}$.
+and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contains the geodesic $[xz]_{\spc{T}}$.
 
 {
 

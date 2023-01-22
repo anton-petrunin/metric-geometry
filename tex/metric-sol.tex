@@ -30,6 +30,21 @@ In particular, they satisfy the so called \index{hypermetric inequality}\emph{hy
 Note that for $n=3$ and $b_1=b_2=-b_3=1$ we get the usual triangle inequality.
 For more on the subject, see \cite{deza-laurent}.
 
+\parbf{\ref{ex:gluing}.}
+Choose $\delta>0$ and an increasing linear bijection $\ell\:[a,b]\to [c,d]$.
+Show that $\ell$ has arbitrarily close increasing piecewise-linear bijetion $s\:[a,b]\to [c,d]$ such that derivative at any point is either $<\delta$ or $>\tfrac1\delta$.
+
+Start with the identity map $[0,1]\to [0,1]$;
+iterate the above construction for smaller and smaller $\delta$ and pass to the limit.
+This way we obtain an increasing  bijection $x\leftrightarrow x'$ from $[0,1]$ to itself
+such that for any $\eps>0$ there is a partition $0=t_0<t_1<\dots <t_{2\cdot n}=1$ of $[0,1]$ with 
+\begin{align*}
+\eps&>|t_0-t_1|+|t_1'-t_2'|+|t_2-t_3|+\dots
+\\
+&\dots+|t_{2\cdot n-2}-t_{2\cdot n-1}|+|t_{2\cdot n-1}'-t_{2\cdot n}'|.
+\end{align*}
+Make a conclusion.
+
 \parbf{\ref{ex:almost-min}.}
 Assume the statement is wrong. 
 Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that 
