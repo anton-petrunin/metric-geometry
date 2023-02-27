@@ -1,4 +1,14 @@
-\chapter{Universal spaces}
+\chapter{Universal spaces}\label{chap:urysohn}
+
+The Urysohn space is the main hero of this lecture.
+It shares some fundamental properties with classical spaces (spheres, Euclidean, and Lobachevsky spaces),
+but also has many counterintuitive properties.
+
+This space often serves as a counterexample to plausible conjectures,
+so it is worth to know it.
+In addition, this space is beautiful.
+
+
 
 \section{Embedding in a normed space}
 
@@ -10,7 +20,9 @@ Recall that a function $v\mapsto |v|$ on a vector space $\spc{V}$ is called \ind
 \end{itemize}
 
 As an example, consider \index{$\ell^\infty$}$\ell^\infty$ --- the space of real sequences equipped with \index{sup-norm}\emph{sup-norm}; that is, the norm of $\bm{a}=(a_1,a_2,\dots)$ is defined by
-\[|\bm{a}|_{\ell^\infty}=\sup_n\{\,|a_n|\,\}.\]
+\[|\bm{a}|_{\ell^\infty}
+\df
+\sup_n\{\,|a_n|\,\}.\]
 
 
 It is straightforward to check that for any normed space the function $(v,w)\mapsto |v-w|$ defines a metric on it.
@@ -20,17 +32,18 @@ Often we do not distinguish normed space from the corresponding metric space.
 (By the Mazur--Ulam theorem, the metric remembers the affine structure of the space; so, to recover the original normed space we only need to specify the origin.
 A slick proof of this theorem was given by Jussi V\"{a}is\"{a}l\"{a} \cite{vaisala}.)
 
-Now let us show that reasonable metric spaces are isometric to subsets of $\ell^\infty$.
-
 Recall that \index{diameter}\emph{diameter} of a metric space $\spc{X}$ (briefly $\diam \spc{X}$) is defined as the least upper bound on the distances between pairs of its points;
 that is,
-\[\diam \spc{X}=\sup\set{\dist{x}{y}{\spc{X}}}{x,y\in \spc{X}}.\]
+\[\diam \spc{X}
+\df
+\sup\set{\dist{x}{y}{\spc{X}}}{x,y\in \spc{X}}.\]
+If $\diam\spc{X}<\infty$, then the space $\spc{X}$ is called \index{bounded space}\emph{bounded}.
 
 
 
 \begin{thm}{Lemma}\label{lem:frechet}
-Suppose $\spc{X}$ is a \index{bounded space}\emph{bounded} \index{separable space}\emph{separable} metric space;
-that is, $\diam\spc{X}$ is finite and $\spc{X}$ contains a countable, dense set $\{w_n\}$.
+Suppose $\spc{X}$ is a bounded \index{separable space}\emph{separable} metric space;
+that is, $\spc{X}$ contains a countable, dense set, say $\{w_n\}$.
 Given $x\in \spc{X}$, set $a_n(x)=\dist{w_n}{x}{\spc{X}}$.
 Then 
 \[\iota\:x\mapsto (a_1(x), a_2(x),\dots)\]
@@ -40,17 +53,12 @@ defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\inf
 \parit{Proof.} 
 By the triangle inequality 
 \[|a_n(x)-a_n(y)|\le \dist{x}{y}{\spc{X}}.\eqlbl{eq:a-a=<dist}\]
-Therefore, $\iota$ is \index{short map}\emph{short} (in other words, $\iota$ is distance-noncontracting).
+Therefore, $\iota$ is \index{short map}\emph{short} (in other words, $\iota$ is distance-expanding).
 
 Again by triangle inequality we have 
 \[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
 Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrarily close to $x$.
-Whence the value $|a_n(x)-a_n(y)|$ can be chosen arbitrarily close to $\dist{x}{y}{\spc{X}}$.
-In other words, 
-\[\sup_n\left\{\,\bigl|\dist{w_n}{x}{\spc{X}}-\dist{w_n}{y}{\spc{X}}\bigr|\,\right\}
-\ge
-\dist{x}{y}{\spc{X}}.\]
-Hence 
+Whence 
 \[\sup_n\{\,|a_n(x)-a_n(y)|\,\}\ge \dist{x}{y}{\spc{X}};\eqlbl{eq:a-a>=dist}\]
 that is, $\iota$ is distance-noncontracting.
 
@@ -69,18 +77,23 @@ Choose $x_0\in \spc{X}$;
 given $x\in \spc{X}$, set 
 \[a_n(x)=\dist{w_n}{x}{\spc{X}}-\dist{w_n}{x_0}{\spc{X}}.\]
 Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
+
+Conclude that any separable metric space $\spc{X}$ admits a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
 \end{thm}
 
 The following lemma implies that {}\textit{any metric space is isometric to a subset of a normed vector space};
 its proof is nearly identical to the proof of \ref{ex:frechet}.
+Given a set $\spc{X}$, denote by \index{$\ell^\infty(\spc{X})$}$\ell^\infty(\spc{X})$ the space of all bounded functions on $\spc{X}$ equipped with sup-norm; 
+that is,
+\[|f-g|_{\ell^\infty}=\sup\set{|f(x)-f(x)}{x\in \spc{X}}.\]
 
 \begin{thm}{Lemma}\label{lem:kuratowski}
-Let $\spc{X}$ be arbitrary metric space.
-Denote by \index{$\ell^\infty(\spc{X})$}$\ell^\infty(\spc{X})$ the space of all bounded functions on $\spc{X}$ equipped with sup-norm.
-
-Then for any point $x_0\in \spc{X}$, the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defined by 
+Let $x_0$ be a point in a metric space $\spc{X}$.
+Then the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defined by 
 \[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
 is distance-preserving.
+
+In particular, any metric space $\spc{X}$ admits a distance-preserving into $\ell^\infty(\spc{X})$.
 \end{thm}
 
 \section{Extension property}
@@ -89,9 +102,9 @@ is distance-preserving.
 If a metric space $\spc{X}$ is a subspace of a semimetric space $\spc{X}'$, then we say that $\spc{X}'$ is an \index{extension}\emph{extension} of $\spc{X}$.
 If in addition, $\diam\spc{X}'\le d$, then we say that $\spc{X}'$ is a {}\emph{$d$-extension}.
 
-If the complement $\spc{X}'\setminus \spc{X}$ contains a single point, say $p$, we say that $\spc{X}'$ is a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
+If the complement $\spc{X}'\setminus \spc{X}$ contains a single point, say $p$, then $\spc{X}'$ is called a \index{one-point extension}\emph{one-point extension} of $\spc{X}$.
 In this case, to define a metric on $\spc{X}'$, it is sufficient to specify the distance function from $p$; that is, a function $f\:\spc{X}\to\RR$ defined by 
-\[f(x)=\dist{p}{x}{\spc{X}'}.\]
+\[f(x)\df\dist{p}{x}{\spc{X}'}.\]
 Any function $f$ of that type will be called an \index{extension function}\emph{extension function}\label{page:extension function} or {}\emph{$d$-extension function} respectively.
 
 The extension function $f$ cannot be taken arbitrarily --- the triangle inequality implies that 
@@ -99,7 +112,7 @@ The extension function $f$ cannot be taken arbitrarily --- the triangle inequali
 for any $x,y\in \spc{X}$.
 In particular, $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
 For a $d$-extension, we need to assume in addition that $\diam\spc{X}\z\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
-It is easy to see that these conditions are necessary and sufficient.
+A straightforward check shows that these conditions are necessary and sufficient.
 
 \begin{thm}{Exercise}\label{ex:extension-of-extension}
 Let $\spc{X}$ be a subspace of metric space $\spc{Y}$.
@@ -146,10 +159,10 @@ Let us construct a separable metric space with  the $d$-extension property.
 Let $\spc{X}$ be a metric space such that $\diam\spc{X}\le d$.
 Denote by $\spc{X}^d$ the space of all $d$-extension functions on $\spc{X}$ equipped with the metric defined by the sup-norm.
 Note that the map $\spc{X} \to \spc{X}^d$ defined by $x\mapsto\distfun_x$ is a distance-preserving embedding,
-so we can (and will) treat $\spc{X}$ as a subspace of $\spc{X}^d$, or, equivalently, $\spc{X}^d$ is an extension of $\spc{X}$.
+so we can (and will) treat $\spc{X}$ as a subspace of $\spc{X}^d$; equivalently, $\spc{X}^d$ is an extension of $\spc{X}$.
 
 Let us iterate this construction.
-Start with a one-point space $\spc{X}_0$ and consider a sequence of spaces $(\spc{X}_n)$ defined by $\spc{X}_{n+1}\z=\spc{X}_n^d$.
+Start with a one-point space $\spc{X}_0$ and consider a sequence of spaces $(\spc{X}_n)$ defined by $\spc{X}_{n+1}\z\df\spc{X}_n^d$.
 Note that the sequence is nested;
 that is, $\spc{X}_0\subset \spc{X}_1\subset\dots$
 and the union
@@ -164,11 +177,12 @@ In particular, $\spc{X}_\infty$ is a countable union of compact spaces;
 therefore $\spc{X}_\infty$ is separable.
 
 Any finite subspace $\spc{F}$ of $\spc{X}_\infty$ lies in some $\spc{X}_n$ for $n<\infty$.
-By construction, there is a point $p\in \spc{X}_{n+1}$ that meets the condition in \ref{def:finite+1} for any extension function $f\:\spc{F}\to\RR$.
+By construction, given an extension function $f\:\spc{F}\to\RR$,
+there is a point $p\in \spc{X}_{n+1}$ that meets the condition in \ref{def:finite+1}.
 That is, $\spc{X}_\infty$ has the $d$-extension property.
 
 The construction of a separable metric space with the extension property requires only two changes.
-First, the sequence should be defined by $\spc{X}_{n+1}\z=\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
+First, the sequence should be defined by $\spc{X}_{n+1}\z\df\spc{X}_n^{d_n}$, where $d_n$ is an increasing sequence such that $d_n\to\infty$.
 Second, the point $p$ should be taken in $\spc{X}_{n+k}$ for sufficiently large $k$, so that $d_{n+k}>\max\{f(x)\}$
 (here one has to apply \ref{ex:extension-of-extension:a}).%
 
@@ -198,9 +212,10 @@ that is, if $\spc{F}\z\subset\spc{U}$ is a finite set, $\eps>0$, and $f\:\spc{F}
 there exists $p\in \spc{U}$ such that
 \[\dist{p}{x}{}\lg f(x)\pm\eps\eqlbl{eq:|p-x|><f(x)}\]
 for any $x\in\spc{F}$.
-Indeed, the Katětov extension  $\bar f\:\spc{U}\to\RR$ of $f$; see \ref{ex:extension-of-extension}.
+Indeed, consider the Katětov extension $\bar f\:\spc{U}\to\RR$ of~$f$.
 Since $\spc{V}$ is dense in $\spc{U}$, we can choose a finite set $\spc{F}'\in \spc{V}$ such that for any $x\in \spc{F}$ there is $x'\in \spc{F}'$ with $\dist{x}{x'}{}<\tfrac\eps2$.
-It remains to observe that the point $p$ provided by the extension property for the restriction $\bar f|_{\spc{F}'}$ meets \ref{eq:|p-x|><f(x)}.
+Let $p$ be the point provided by the extension property for the restriction $\bar f|_{\spc{F}'}$.
+It remains to observe $p$ meets \ref{eq:|p-x|><f(x)}.
 
 It follows that there is a sequence of points $p_n\in \spc{U}$ such that for any $x\in \spc{F}$, 
 \[\dist{p_n}{x}{}\lg f(x)\pm\tfrac1{2^n}.\]
@@ -208,13 +223,17 @@ It follows that there is a sequence of points $p_n\in \spc{U}$ such that for any
 Moreover, we can assume that 
 \[\dist{p_n}{p_{n+1}}{} < \tfrac1{2^n}\eqlbl{eq:|pn-pn|}\]
 for all large $n$.
-Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\:\spc{F}_n\to\RR$ defined by $f_n(x)=f(x)$ if $x\ne p_n$ and
-\[f_n(p_n)=\max\set{\bigl|\dist{p_n}{x}{}- f(x)\bigr|}{x\in \spc{F}}.\]
+Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\:\spc{F}_n\to\RR$ defined by $f_n(x)\df f(x)$ and
+\[f_n(p_n)
+\df
+\max\set{\bigl|\dist{p_n}{x}{}- f(x)\bigr|}{x\in \spc{F}}\]
+ if $x\ne p_n$.
 Observe that $f_n$ is an extension function for large $n$ and
 $f_n(p_n)\z<\tfrac1{2^n}$.
 Therefore, applying the approximate extension property recursively we get~\ref{eq:|pn-pn|}.
 
-By \ref{eq:|pn-pn|}, the sequence $p_n$ is Cauchy and its limit meets the condition in the definition of extension property (\ref{def:finite+1}).
+Therefore, the sequence $p_n$ is Cauchy.
+Note that its limit meets the condition in the definition of extension property (\ref{def:finite+1}).
 \qeds
 
 Note that \ref{prop:univeral-separable} and \ref{prop:completion-univeral} imply the following:
@@ -247,7 +266,7 @@ passing to its continuous extension, we get an isometry of $\spc{U}$.
 
 \section{Universality}
 
-A metric space will be called \index{universal space}\emph{universal} if it includes as a subspace an isometric copy of any separable metric space.
+A metric space will be called \index{universal space}\emph{universal} if it has a subspace isometric to any given separable metric space.
 In \ref{ex:frechet}, we proved that $\ell^\infty$ is a universal space. 
 The following proposition shows that an Urysohn space is universal as well.
 Unlike $\ell^\infty$, Urysohn spaces are separable;
@@ -286,7 +305,7 @@ It remains to observe that the constructed map $\spc{S}\hookrightarrow\spc{U}$ i
 \qeds
 
 \begin{thm}{Exercise}\label{ex:geodesics-urysohn}
-Show that any two distinct points in an Urysohn space can be joined by an infinite number of geodesics.
+Show that any two distinct points in an Urysohn space can be joined by an infinite number of distinct geodesics.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact-extension}
@@ -296,7 +315,7 @@ Modify the proofs of \ref{prop:completion-univeral} and \ref{prop:sep-in-urys} t
 \begin{thm}{Theorem}\label{thm:compact-extension}
 Let $K$ be a compact set in a separable space $\spc{S}$.
 Then any distance-preserving map from $K$ to an Urysohn space can be extended to 
-a distance-preserving map on the whole $\spc{S}$.
+a distance-preserving map of the whole $\spc{S}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sc-urysohn}
@@ -314,23 +333,23 @@ Then any isometry $\iota\:\spc{F}\leftrightarrow \spc{F}'$ can be extended to an
 In particular, ($d$-)Urysohn space is unique up to isometry.
 \end{thm}
 
-While \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\to \spc{U}'$ and $\spc{U}'\to \spc{U}$,
-it does not solely imply the existence of an isometry $\spc{U}\leftrightarrow \spc{U}'$.
+Note that \ref{prop:sep-in-urys} implies that there are distance-preserving maps $\spc{U}\z\to \spc{U}'$ and $\spc{U}'\to \spc{U}$.
+The next exercise shows that it does not solely imply the existence of an isometry $\spc{U}\leftrightarrow \spc{U}'$.
 
 \begin{thm}{Exercise}\label{ex:no-isom}
 Construct two metric spaces $\spc{X}$ and $\spc{Y}$ such that 
-there are distance-preserving maps $\spc{X}\to \spc{Y}$ and $\spc{Y}\to \spc{X}$, but no isometry $\spc{X}\to \spc{Y}$.
+there are distance-preserving maps $\spc{X}\to \spc{Y}$ and $\spc{Y}\to \spc{X}$, but no isometry $\spc{X}\leftrightarrow \spc{Y}$.
 \end{thm}
 
 
-The following construction uses the idea of \ref{prop:sep-in-urys}, but it is applied {}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
+The following construction uses the idea of \ref{prop:sep-in-urys}, but it is applied \index{back-and-forth}\emph{back-and-forth} to ensure that the obtained distance-preserving map is onto.
 
 \parit{Proof.}
 Choose dense sequences $a_1,a_2,\dots{}\in \spc{U}$ and $b'_1,b'_2,\dots{}\in \spc{U}'$.
-We can assume that $\spc{F}=\{a_1,\dots,a_n\}$, $\spc{F}'=\{b_1',\dots,b_n'\}$ and $\iota(a_i)=b_i$ for $i\le n$.
+We can assume that $\spc{F}=\{a_1,\dots,a_n\}$, $\spc{F}'=\{b_1',\dots,b_n'\}$ and $\iota(a_i)=b_i'$ for $i\le n$.
 
 The required isometry $\spc{U}\leftrightarrow \spc{U}'$ will be denoted by $u \leftrightarrow u'$.
-Set $a'_i=b'_i$ if $i\le n$.
+Set $a_i=b_i$ and $a'_i=b'_i$ if $i\le n$.
 
 Let us define recursively $a_{n+1}',b_{n+1}, a_{n+2}', b_{n+2},\dots$ --- on the odd step we define the images of $a_{n+1},a_{n+2},\dots$ and on the even steps we define inverse images of $b'_{n+1},b'_{n+2},\dots$
 The same argument as in the proof of \ref{prop:sep-in-urys} shows that we can construct two sequences $a_1',a_2',\dots{}\in \spc{U}'$ and $b_1,b_2,\dots\in \spc{U}$ such that
@@ -403,10 +422,6 @@ Show that $\spc{U}\setminus B$ is isometric to $\spc{U}$.
 Use it to construct an isometry of a unit sphere $S$ in $\spc{U}$ that cannot be extended to an isometry of $\spc{U}$.
 \end{thm}
 
-The following exercise answers a question posed by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
-It was solved by Miroslav Katětov \cite{katetov},
-but long after that, it was again mentioned as an open problem \cite[p. 83]{gromov-2007}.
-
 \begin{thm}{Exercise}\label{ex:katetov}
 
 \begin{subthm}{ex:katetov:inclusion}
@@ -442,7 +457,8 @@ Euclidean plane,
 \end{subthm}
 
 \begin{subthm}{ex:homogeneous:ell-1}
- $\ell^1$.
+ \index{$\ell^1$}$\ell^1$ --- the space of all real absolutely converging series $\bm{a}\z=(a_1,a_2,\dots)$ with the norm $|\bm{a}|_{\ell^1}=\sum_i|a_i|$.
+ 
 \end{subthm}
 \end{thm}
 
@@ -458,8 +474,7 @@ Show that any separable one-point-homogeneous metric tree is isometric to the re
 The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
 
-The following two exercises show that in this respect $\ell^\infty$ is very different from \index{$\ell^1$}$\ell^1$;
-the latter is the space of all real absolutely converging series $\bm{a}\z=(a_1,a_2,\dots)$ with the norm $|\bm{a}|_{\ell^1}=\sum_i|a_i|$.
+The following two exercises show that in this respect $\ell^\infty$ is very different from $\ell^1$.
 For more on the subject, see \cite{deza-laurent}.
 
 Let $S$ be a subset of $X$.
@@ -472,22 +487,24 @@ Show that a finite metric space $\spc{F}$ admits a distance-preserving embedding
 \footnote{that is, linear combination with nonnegative coefficients.} of cut metrics on $\spc{F}$.
 \end{thm}
 
-Recall that the vertex set of any graph $\Gamma$ comes with a metric ---
+Recall that the vertex set of any graph $\Gamma$ comes with the shortest-path distance ---
 the distance between two vertices is the minimal number of edges in a path connecting them.
 
 \begin{wrapfigure}{r}{15mm}
-\vskip-4mm
+\vskip-8mm
 \centering
 \includegraphics{mppics/pic-210}
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:K23}
-Let $\spc{K}_{2,3}$ be the metric space that corresponds to the complete biparted graph $K_{2,3}$ (see the diagram).
-Use \ref{ex:cut} to show that $\spc{K}_{2,3}$ does not admit a distance-preserving embedding into $\ell^1$.
+Use \ref{ex:cut} to show that the metric for complete biparted graph $K_{2,3}$ (see the diagram) does not admit a distance-preserving embedding into $\ell^1$.
 \end{thm}
 
-The question about the existence of a separable universal space was posed by Maurice René Fréchet and answered by
+The question about existence of a separable universal space was posed by Maurice René Fréchet and answered by
 Pavel Urysohn~\cite{urysohn}.
+Exercise \ref{ex:katetov} answers a question posed by Pavel Urysohn \cite[§$2(6)$]{urysohn}.
+It was solved by Miroslav Katětov \cite{katetov},
+but long after that, it was again mentioned as an open problem \cite[p. 83]{gromov-2007}.
 
 The idea of Urysohn's construction was reused in graph theory; it produces the so-called \index{Rado graph}\emph{Rado graph},
 also known as {}\emph{Erd\H{o}s--Rényi graph} or \emph{random graph}; see \cite{cameron}.
@@ -498,12 +515,11 @@ the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called
 
 The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
 In fact, these are the only examples of locally compact three-point-homogeneous length spaces.
-The latter was proved by Herbert Busemann \cite{busemann-1942}; it also follows from the more general result of Jacques Tits \cite{tits}.
+The latter was proved by Herbert Busemann \cite{busemann-1942}; it also follows from the more general result of Jacques Tits about two-point-homogeneous spaces \cite{tits}.
 The same conclusion holds for complete all-set-homogeneous geodesic spaces with local uniqueness of geodesics;
 it was proved by Garrett Birkhoff \cite{birkhoff}.
 The answer might be the same for complete separable all-set-homogeneous length spaces.
-Without the separability condition, we also get the so-called \emph{universal metric trees} with finite valence; 
-a transparent construction of these spaces is given by Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}; no other examples seem to be known \cite{lebedeva-petrunin2211.09671}.  
+Without the separability condition, we also get the so-called \emph{universal metric trees} with finite valence \cite{dyubina-polterovich}; no other examples seem to be known \cite{lebedeva-petrunin2211.09671}.  
 
 {\sloppy
 

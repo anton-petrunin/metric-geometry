@@ -1,9 +1,9 @@
-\chapter{Definitions}
+\chapter{Definitions}\label{chap:defs}
 
-In this lecture we make some conventions used further
-and remind some definitions related to metric spaces.
+In this lecture, we remind several definitions related to metric spaces and fix some conventions.
 
-We assume some prior knowledge of metric spaces.
+This lecture is self-contained, but it is written for students with some prior knowledge of metric spaces;
+an introduction to general topology is sufficient but not necessary.
 For a more detailed introduction, we recommend the first couple of chapters in the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov}.
 
 \section{Metric spaces}
@@ -16,7 +16,7 @@ that the distance is taken in the space~${\spc{X}}$.
 Let us recall the definition of metric. 
 
 \begin{thm}{Definition}\label{def:metric}
-A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\z\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any three points $x,y,z\in \spc{X}$:
+A \index{metric}\emph{metric} on a set $\spc{X}$ is a real-valued function $(x,y)\z\mapsto\dist{x}{y}{\spc{X}}$ that satisfies the following conditions for any $x,y,z\z\in \spc{X}$:
 
 \begin{subthm}{metric>=0}
 $\dist{x}{y}{\spc{X}}\ge 0$,
@@ -36,11 +36,7 @@ $\dist{x}{y}{\spc{X}}\ge 0$,
 Recall that a \index{metric space}\emph{metric space} is a set with a metric on it.
 The elements of the set are called \index{point}\emph{points}. 
 Most of the time we keep the same notation for the metric space and its underlying set;
-the latter will be denoted by $\ushort{\spc{X}}$ if needed.
-
-The function 
-\[\distfun_x\:y\mapsto \dist{x}{y}{}\]
-is called the \index{distance function}\emph{distance function} from~$x$. 
+the latter can be denoted by $\ushort{\spc{X}}$ if needed.
 
 Given $R\in[0,\infty]$ and $x\in \spc{X}$, the sets
 \begin{align*}
@@ -58,6 +54,18 @@ Show that the following inequality
 \[\dist{p}{q}{\spc{X}}+\dist{x}{y}{\spc{X}}\le\dist{p}{x}{\spc{X}}+\dist{p}{y}{\spc{X}}+\dist{q}{x}{\spc{X}}+\dist{q}{y}{\spc{X}}\]
 holds for any four points $p$, $q$, $x$, and $y$ in a metric space $\spc{X}$.
 \end{thm}
+
+\section{Topology}
+
+The standard calculus definitions of \index{closed set}\emph{closed} and \index{open set}\emph{open sets}, \index{continuous function}\emph{continuous functions}, and \index{converging sequence}\emph{converging sequences} admit straightforward generalizations in the context of metric spaces.
+
+\begin{thm}{Exercise}\label{ex:cont-dist}
+Let $x$ be a point in a metric space $\spc{X}$.
+Show that the \index{distance function}\emph{distance function} $\distfun_x\:\spc{X}\to \RR$ defined by
+\[\distfun_x\:y\mapsto \dist{x}{y}{}\]
+is continuous.
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:normal}
 Let $A$ and $B$ be two disjoint closed sets in a metric space $\spc{X}$.
@@ -86,9 +94,10 @@ Thus, $\dist{*}{*}{}$ defines a metric on the
 quotient $\spc{X}/{\sim}$.
 The obtained metric space, say $\spc{X}'$, is called the 
 \emph{corresponding metric space} for the semimetric space $\spc{X}$.
-Often we do not distinguish between $\spc{X}'$ and~$\spc{X}$. 
+ 
 
 This construction shows that nearly any question about semimetric spaces can be reduced to a question about genuine metric spaces.
+Often we do not distinguish between a semimetric space $\spc{X}$ and its corresponding metric space $\spc{X}'$.
 
 \parbf{$\bm{\infty}$-metrics.}
 One may also consider metrics with values in $[0,\infty]$;
@@ -104,7 +113,16 @@ The equivalence class of a point $x\in\spc{X}$ will be called the \index{metric 
  of $x$; it will be denoted by $\spc{X}_x$.
 One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
 
-It follows that any $\infty$-metric space is a {}\emph{disjoint union} of genuine metric spaces --- the metric components of the original $\infty$-metric space.
+If $\{\spc{X}_\alpha\}$ is a collection of metric spaces, then \index{disjoint union}\emph{disjoint union} $\bm{X}\z=\bigsqcup_\alpha\spc{X}_\alpha$ will be considered with a natural metric defined by
+\[\dist{x}{y}{\bm{X}}
+\df
+\begin{cases}
+\dist{x}{y}{\spc{X}_\alpha}&\text{if}\quad x,y\in \spc{X}_\alpha\quad\text{for some}\quad \alpha,
+\\
+\hfil \infty&\text{otherwise.}
+\end{cases}
+\]
+It follows that any $\infty$-metric space is a disjoint union of genuine metric spaces --- the metric components of the original $\infty$-metric space.
 
 \begin{thm}{Exercise}\label{ex:pseudo-infty-metric}
 Given two sets $A$ and $B$ on the plane, set 
@@ -124,29 +142,30 @@ Show that $\dist{*}{*}{}$ is an $\infty$-metric on the set of all open subsets.
 \end{thm}
 
 
-\parbf{Maximal metric and gluing.}
+\parbf{Maximal metric.}
 Let $\{\,\dist{\ }{\ }{\alpha}\,\}$ be a family of $\infty$-semimetrics on a fixed set.
 Observe that
 \[\dist{x}{y}{}\df\sup_\alpha\{\,\dist{x}{y}{\alpha}\,\}\]
 defines an $\infty$-semimetric; it is called \index{maximal metric}\emph{maximal metric} of the family.
 
-Suppose $\spc{X}$ and $\spc{Y}$ are metric spaces and $\sim$ is an equivalence relation on the disjoint union $\spc{X}\sqcup\spc{Y}$.
-Given $x\in\spc{X}\sqcup\spc{Y}$, 
-denote by $[x]$ its equivalence class in the quotient $\spc{X}\sqcup\spc{Y}/\sim$.
-Consider all $\infty$-semimetrics $|\ -\ |_\alpha$ on $\spc{X}\sqcup\spc{Y}/\sim$ such that  both maps $\spc{X},\spc{Y}\to \spc{X}\sqcup\spc{Y}/\sim$ defined by $x\mapsto [x]$ are \index{short map}\emph{short};
+\parbf{Gluing.}
+Suppose $\sim$ is an equivalence relation on an $\infty$-semimetric space $\spc{X}$.
+Given $x\in\spc{X}$, 
+denote by $[x]$ its equivalence class in the quotient $\spc{X}/\sim$.
+Consider all $\infty$-semimetrics $|\ -\ |_\alpha$ on $\spc{X}/\sim$ such that the maps $\spc{X}\to \spc{X}/\sim$ defined by $x\mapsto [x]$ is \index{short map}\emph{short};
 that is,
-\[|[x]-[x']|_\alpha\le |x-x'|_{\spc{X}}
-\quad\text{and}\quad
-|[x]-[x']|_\alpha\le |x-x'|_{\spc{X}}\]
-for any $x,x'\in \spc{X}$ and $y,y\in \spc{Y}$.
-Let us equip $\spc{X}\sqcup\spc{Y}/\sim$ with the maximal metric of this family; in general it is a $\infty$-semimetric.
-The space $\spc{Z}$ that corresponds to the obtained $\infty$-semimetric space is called \index{gluing}\emph{gluing} of $\spc{X}$ and $\spc{Y}$ along $\sim$.
-Similarly one can define gluing of arbitrary collection of metric spaces.
+\[|[x]-[x']|_\alpha\le |x-x'|_{\spc{X}}\]
+for any $x,x'\in \spc{X}$.
+Let us equip $\spc{X}/\sim$ with the maximal metric of this family; in general it is an $\infty$-semimetric.
+The space $\spc{Z}$ that corresponds to the obtained $\infty$-semimetric space is called \index{gluing}\emph{gluing} of $\spc{X}$ along $\sim$.
+
+This definition can be applied to disjoint union of spaces; this way we can glue arbitrary collection of metric spaces.
 
 Note that any partially defined map $\phi$ from $\spc{X}$ to $\spc{Y}$ defines a minimal equivalence relation on $\spc{X}\sqcup\spc{Y}$ such that $x\sim \phi(x)$;
 the corresponding gluing space is called \emph{gluing} along $\phi$.
 
-The following exercise shows that the topology of the described metric gluing might deffer from the corresponding topological gluing.
+The following exercise shows that a metric gluing and the corresponding topological gluing
+might have different topology.
  
 \begin{thm}{Exercise}\label{ex:gluing}
 Construct a homeomorphism $\phi\:[0,1]\to [0,1]$ such that gluing of two unit intervals $[0,1]$ along $\phi$ is a one-point metric space.
@@ -180,8 +199,9 @@ it will be denoted by $\bar{\spc{X}}$.
 For each point $x\in\spc{X}$, one can consider a constant sequence $x_n=x$ which is Cauchy.
 It defines a natural inclusion map $\spc{X}\hookrightarrow \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
-In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$;
-note that $\spc{X}$ is a dense subset in its completion $\bar{\spc{X}}$
+In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
+
+Note that $\spc{X}$ is a dense subset in its completion $\bar{\spc{X}}$
 
 \begin{thm}{Exercise}\label{ex:complete-completion}
 Show that the completion of a metric space is complete.
@@ -234,6 +254,7 @@ If $\spc{X}$ is a length space (see Section~\ref{sec:intrinsic}) then $n$ is the
 
 \begin{thm}{Exercise}\label{ex:pack-net}
 Show that any maximal $\eps$-packing is an $\eps$-net.
+
 Conclude that a complete space $\spc{X}$ is compact if and only if $\pack_\eps\spc{X}\z<\infty$ for any $\eps>0$.
 \end{thm}
 
@@ -278,7 +299,7 @@ in other words, $\gamma\:\II\to \spc{X}$ is a geodesic if
 \[\dist{\gamma(s)}{\gamma(t)}{\spc{X}}=|s-t|\]
 for any pair $s,t\in \II$.
 
-If $\gamma\:[a,b]\to \spc{X}$ is a geodesic and $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from $p$ to $q$.
+If $\gamma\:[a,b]\to \spc{X}$ is a geodesic such that $p=\gamma(a)$, $q=\gamma(b)$, then we say that $\gamma$ is a geodesic from $p$ to $q$.
 In this case, the image of $\gamma$ is denoted by $[p q]$\index{$[{*}{*}]$}, and, with abuse of notations, we also call it a \index{geodesic}\emph{geodesic}.
 We may write $[p q]_{\spc{X}}$ 
 to emphasize that the geodesic $[p q]$ is in the space  ${\spc{X}}$.
@@ -315,7 +336,7 @@ and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contai
 \includegraphics{mppics/pic-105}
 \end{wrapfigure}
 
-The latter means that any triangle in $\spc{T}$ is a tripod;
+The latter means that any triangle in $\spc{T}$ is a \index{tripod}\emph{tripod};
 that is, for any three points $x$, $y$, and $z$ there is a point $p$ such that 
 \[[xy]\cup[yz]\cup[zx]=[px]\cup[py]\cup[pz].\]
 
@@ -412,7 +433,7 @@ In this case
 for any $n$.
 
 \parit{Proof.}
-Fix a sequence $t_0\le t_1\le\dots\le t_k$ in $\II$.
+Fix a sequence $t_0\le\dots\le t_k$ in $\II$.
 Set 
 \begin{align*}\Sigma_n
 &\df
@@ -434,7 +455,7 @@ for each $n$.
 Hence,
 $$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.$$
 
-Since the partition was arbitrary, by the definition of length, the inequality  \ref{eq:semicont-length} is obtained.
+Since the partition was arbitrary, applying the definition of length, we get \ref{eq:semicont-length}.
 \qeds
 
 \section{Length spaces}\label{sec:intrinsic}
@@ -455,7 +476,7 @@ The following example shows that the converse does not hold.
 Set $\II_n=[0,1+\tfrac1n]$ for every natural $n$.
 Suppose a space $\spc{X}$ is obtained by gluing intervals $\{\II_n\}$, where the left ends are glued to $p$ and the right ends to~$q$.
 
-Observe that the space $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{\spc{X}}=1$ but there is no geodesic connecting $p$ to~$q$.
+Observe that the space $\spc{X}$ carries a natural complete length metric with respect to which $\dist{p}{q}{\spc{X}}=1$, but there is no geodesic connecting $p$ to~$q$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:no-geod}
@@ -473,8 +494,8 @@ The metric $\yetdist{*}{*}{}$ is called the \index{induced length metric}\emph{i
 
 \begin{thm}{Exercise}\label{ex:compact+connceted}
 Let $\spc{X}$ be a complete length space.
-Show that for any compact subset $K$ in $\spc{X}$
-there is a compact path-connected subset $K'$ that contains $K$.  
+Show that for any compact subset $K\subset\spc{X}$
+there is a compact path-connected subset $K'\subset\spc{X}$ that contains $K$.  
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:compact=>complete}
@@ -500,7 +521,9 @@ if
 \item Assume $\eps\ge 0$.
 A point $z\in \spc{X}$ is called an \index{$\eps$-midpoint}\emph{$\eps$-midpoint} between $x$ and $y$
 if 
-\[\dist{x}{z}{},\quad\dist{y}{z}{}\le\tfrac12\cdot\dist[{{}}]{x}{y}{}+\eps.\]
+\[\dist{x}{z}{}\le\tfrac12\cdot\dist[{{}}]{x}{y}{}+\eps
+\quad\text{and}\quad
+\dist{y}{z}{}\le\tfrac12\cdot\dist[{{}}]{x}{y}{}+\eps.\]
 \end{enumerate}
 
 
@@ -523,11 +546,9 @@ Then $\spc{X}$ is a geodesic space.
 \end{subthm}
 \end{thm}
 
-\parit{Proof.}
-We first prove \ref{SHORT.lem:mid>length}.
-Let $x,y\in \spc{X}$ be a pair of points.
-
-Set $\eps_n=\frac\eps{4^n}$, $\alpha(0)=x$ and $\alpha(1)=y$.
+\parit{Proof; \ref{SHORT.lem:mid>length}.}
+Choose $x,y\in \spc{X}$;
+set $\eps_n=\frac\eps{4^n}$, $\alpha(0)=x$, and $\alpha(1)=y$.
 
 Let $\alpha(\tfrac12)$ be an $\eps_1$-midpoint between $\alpha(0)$ and $\alpha(1)$.
 Further, let $\alpha(\frac14)$ 
@@ -541,7 +562,7 @@ $\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
 
 
 This way we define $\alpha(t)$ for all dyadic rationals $t$ in $[0,1]$.
-Moreover, $\alpha$ is Lipschitz (it has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$).
+Moreover, $\alpha$ has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$.
 Since $\spc{X}$ is complete, the map $\alpha$ can be extended continuously to $[0,1]$.
 Moreover,
 \[\begin{aligned}
@@ -553,8 +574,8 @@ Moreover,
 \]
 Since $\eps>0$ is arbitrary, we get \ref{SHORT.lem:mid>length}.
 
-To prove \ref{SHORT.lem:mid>geod:geod}, 
-one should repeat the same argument 
+\parit{\ref{SHORT.lem:mid>geod:geod}.} 
+Repeat the same argument 
 taking midpoints instead of $\eps_n$-midpoints.
 In this case, \ref{eq:eps-midpoint} holds for $\eps_n=\eps\z=0$.
 \qeds

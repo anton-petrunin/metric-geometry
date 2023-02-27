@@ -1,4 +1,8 @@
-\chapter{Space of sets}
+\chapter{Space of subsets}\label{chap:hausdorff}
+
+In this lecture we cook up a new metric space $\Haus\spc{X}$ from subsets of a given metric spaces $\spc{X}$.
+Further, we prove the Blaschke selection theorem;
+it says that $\spc{X}$ is compact, then so is  $\Haus\spc{X}$.
 
 \section{Hausdorff distance}
 
@@ -81,7 +85,9 @@ where the least upper bound is taken for all $1$-Lipschitz functions $f$.
 
 Given a subset $A\subset \RR^n$,
 The \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  non-empty closed set $A\subset \RR^n$ is defined as 
-\[h_A(x)=\sup\set{\langle x, a\rangle}{a\in A}.\]
+\[h_A(x)
+\df
+\sup\set{\langle x, a\rangle}{a\in A}.\]
 
 \begin{thm}{Exercise}\label{ex:Haus-support}
 Show that 
@@ -313,7 +319,10 @@ and $A_1,A_2,\dots$ be a sequence of closed sets in~$\spc{X}$.
 Show that the sequence  $A_1,A_2,\dots$ has a convergent subsequence in the sense of Definition~\ref{def:gen-Haus-conv}.
 \end{thm}
 
-\chapter{Space of spaces}
+\chapter{Space of spaces}\label{chap:GH}
+
+In this lecture we introduce the so called Gromov--Hausdorff metric on the isometry classes of compact metric spaces.
+Further, we prove the Gromov selection theorem that characterize compact subsets in the obtained space.
 
 \section{Gromov--Hausdorff metric}
 
@@ -512,7 +521,9 @@ Let us introduce the so-called \textit{appropriate functions} and use them in a 
 Suppose $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ are as in \ref{def:GH}.
 By passing to the subspace $\spc{X}'\cup\spc{Y}'$ in $\spc{W}$, we can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$.
 Note that in this case the metric on $\spc{W}$ is completely determined by the function $f\:\spc{X}\times \spc{Y}\to\RR$ defined by
-\[f(x,y)=\dist{x}{y}{\spc{W}};\]
+\[f(x,y)
+\df
+\dist{x}{y}{\spc{W}};\]
 a function $f$ that can appear this way will be called \index{appropriate function}\emph{appropriate}.
 
 Note that a function $f\:\spc{X}\times\spc{Y}\to\RR$ is appropriate if and only if
@@ -531,7 +542,7 @@ f(x,y)+f(x',y)
 for any $x,x',\in\spc{X}$ and  $y,y'\in\spc{X}$;
 see \ref{sec:Extension property}.
 In other words, the following defines a semimetric on $\spc{X}\sqcup\spc{Y}$
-\[\dist{x}{y}{\spc{X}\sqcup\spc{Y}}=
+\[\dist{x}{y}{\spc{X}\sqcup\spc{Y}}\df
 \begin{cases}
 \dist{x}{y}{\spc{X}}&\text{if\ } x,y\in \spc{X},
 \\
@@ -797,7 +808,9 @@ for any $x,x'\in \spc{X}$.
 
 \begin{subthm}{ex:GH-po:a}
 Show that 
-$$\dist{\spc{X}}{\spc{Y}}{\GH'}=\inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
+$$\dist{\spc{X}}{\spc{Y}}{\GH'}
+\df
+\inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
 \quad\text{and}\quad
 \spc{Y}\le \spc{X}+\eps}$$
 defines a metric on the space of (isometry classes) of compact metric spaces.
@@ -853,7 +866,7 @@ It follows that
 \begin{thm}{Exercise}\label{ex:GH-urysohn}
 Let $\spc{U}_\infty$ be the Urysohn space.
 Given two compact sets $A$ and $B$ in $\spc{U}_\infty$ define 
-\[\|A-B\|=\inf\{|A-\iota(B)|_{\Haus\spc{U}_\infty}\},\]
+\[\|A-B\|\df\inf\{|A-\iota(B)|_{\Haus\spc{U}_\infty}\},\]
 where the greatest lower bound is taken for all isometrics $\iota$ of $\spc{U}_\infty$.
 Show that $\|{*}\z-{*}\|$ defines a semimetric%
 \footnote{The value $\|A-B\|$ is called Hausdorff distance \index{Hausdorff distance up to isometry}\emph{up to isometry} from $A$ to $B$ in $\spc{U}_\infty$.}

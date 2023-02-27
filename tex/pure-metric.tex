@@ -25,13 +25,47 @@ introductory lectures}
 \date{}
 \maketitle
 
-We discuss domestic affairs of metric spaces,
-keeping away from any extra structure. 
-Applications are given only as illustrations.
+\section*{Preface}
 
+This text can serve as an introductory part to a variety of courses in metric geometry.
+Here is a graph of essential dependencies of the lectures; some statements (mostly exercises) add more dependencies, but they can be ignored.
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,scale=1.4,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
+
+  \node[main node] (1) at (1,0) {\ref{chap:defs}};
+  \node[main node] (2) at (.5,-5/6){\ref{chap:urysohn}};
+  \node[main node] (3) at (1.5,-5/6) {\ref{chap:injective}};
+  \node[main node] (4) at (2,0) {\ref{chap:hausdorff}};
+  \node[main node] (5) at (3,0) {\ref{chap:GH}};
+  \node[main node] (6) at (4,0) {\ref{chap:ultralimits}};
+  
+
+  \path[every node/.style={font=\sffamily\small}]
+   (1) edge node{}(2)
+   (1) edge node{}(3)
+   (1) edge node{}(4)
+   (4) edge node{}(5)
+   (5) edge node{}(6);
+\end{tikzpicture}
+\end{figure}
+The necessary definitions introduced in (\ref{chap:defs}).
+In (\ref{chap:urysohn}) we discuss the Urysohn space.
+In (\ref{chap:injective}) we discuss injective spaces.
+In (\ref{chap:hausdorff}) we introduce Hausdorff metric.
+In (\ref{chap:GH}) and (\ref{chap:ultralimits}) we discuss two types of convergences of metric spaces --- the Gromov--Hausdorff limit and ultralimit.
+
+Applications are given only as illustrations.
+We stick to domestic affairs of metric spaces, keeping away from any extra structure. 
+(Adding an extra structure brings an extra tool and often opens a huge field for development.
+The examples include Alexandrov geometry,
+geometric group theory,
+metric-measure spaces and optimal transport.)
+
+These notes are based on the minicourse given at SPbSU (Fall 2022) and the introductory part of a course at PSU (Spring 2020).
+The latter included additional material from \cite{alexander-kapovitch-petrunin-2019,petrunin2020mnfld,nabutovsky}.
 A part of the text is a compilation from \cite{alexander-kapovitch-petrunin-2019, alexander-kapovitch-petrunin-2025, petrunin-yashinski, petrunin-2022-PIGTIKAL, petrunin-zamorabarrera} and its drafts.
-These notes are based on a minicourse I gave at SPbSU (Fall 2022) and the introductory part of a course at PSU (Spring 2020).
-The latter included an introduction to Alexandrov geometry based on \cite{alexander-kapovitch-petrunin-2019} and metric geometry on manifolds \cite{petrunin2020mnfld} based on a simplified proof of Gromov's systolic inequality given by Alexander Nabutovsky~\cite{nabutovsky}.
 
 I want to thank
 Sergei Ivanov,

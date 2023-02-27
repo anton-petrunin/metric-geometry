@@ -49,7 +49,7 @@ The composition $f\circ k_t\:\spc{Y}\hookrightarrow \spc{Y}$ provides the needed
 \parbf{\ref{ex:bicombing}.}
 By \ref{lem:kuratowski}, the space $\spc{Y}$ can be considered as a subset in $\ell^\infty(\spc{Y})$.
 Let $r\: \ell^\infty(\spc{Y})\to \spc{Y}$ be the short retraction provided by the definition of injective space.
-Observe that $m(x,y)=r(\tfrac{x+y}2)$ meets the condition.
+Observe that $m(x,y)\df r(\tfrac{x+y}2)$ meets the condition.
 
 \parit{Remark.} The same argument can be used to construct the so-called \index{geodesic bicombing}\emph{geodesic bicombing} on injective space --- a useful tool introduced by Urs Lang \cite[3.6]{lang-2013}.
 
@@ -99,7 +99,7 @@ Choose a metric space $\spc{X}$ with a subset $A$.
 Given a short map $f\:A\to \spc{B}$ we need to find its short extension $\spc{X}\to \spc{B}$.
 
 Since $\diam\spc{B}\le 2\cdot R$, we may assume that  $\diam \spc{X}\le 2\cdot R$;
-if not pass to the metric defined by $\dist{x}{y}{}=\max\{\,\dist{x}{y}{\spc{X}},2\cdot R\,\}$.
+if not pass to the metric defined by $\dist{x}{y}{}\df\max\{\,\dist{x}{y}{\spc{X}},2\cdot R\,\}$.
 
 Let us add point $w$ to $\spc{X}$ such that $\dist{w}{x}{}=R$ for any $x\in\spc{X}$;
 denote the obtained space $\spc{X}'$.
@@ -450,7 +450,9 @@ Since $\eps>0$ is arbitrary, we get \ref{eq:short-retract}.
 
 \parit{Example.}
 Consider set of $\{\infty,1,2,\dots\}$ with metric defined by 
-\[|m-n|=1+\frac1{\min\{m,n\}}\]
+\[|m-n|
+\df
+1+\frac1{\min\{m,n\}}\]
 for $m\ne n$.
 Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
 

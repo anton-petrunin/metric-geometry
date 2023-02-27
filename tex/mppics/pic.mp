@@ -1137,7 +1137,7 @@ z.zxy=z.zx rotatedabout(z.p,-2);
 
 p0=arc(z.z,z.zxx,z.zx)--arc(z.zx,z.zxy,z.zy)--(arc(z.zy,z.zyy,z.z))--cycle;
 
-hatchfill p0 withcolor (40, 3, -.5bp);
+fill p0 withcolor 0;
 
 p1=arc(z.z,z.zxx,z.zx);
 
@@ -1170,6 +1170,50 @@ label.llft(btex $\tilde z_x$ etex, z.zx);
 label.lrt(btex $\tilde z_y$ etex, z.zy);
 label.bot(btex $\tilde p$ etex, z.p);
 
+endfig;
+
+beginfig(831) 
+save u,p;
+u:=2cm;
+path p[];
+
+z.x=(0,0)*u;
+z.y=(2,0)*u;
+z.z=.52[z.x,z.y];
+z.zx=z.z rotatedabout(z.x,-25);
+z.zxx=z.z rotatedabout(z.x,-20);
+z.zy=z.z rotatedabout(z.y,30);
+z.zyy=z.z rotatedabout(z.y,20);
+z.p=z.zy+((z.zx-z.zy) zscaled (.5,4));
+z.zxy=z.zx rotatedabout(z.p,-2);
+
+p0=arc(z.z,z.zxx,z.zx)--arc(z.zx,z.zxy,z.zy)--(arc(z.zy,z.zyy,z.z))--cycle;
+
+fill p0 withcolor 0;
+
+p1=arc(z.z,z.zxx,z.zx);
+
+for i=0 step 6 until abs(z.x-z.z):
+draw p1 shifted -z.x scaled ((abs(z.x-z.z)-i)/(abs(z.x-z.z))) shifted z.x;
+endfor
+
+p2=arc(z.zy,z.zyy,z.z);
+
+for i=0 step 6 until abs(z.y-z.z):
+draw p2 shifted -z.y scaled ((abs(z.y-z.z)-i)/(abs(z.y-z.z))) shifted z.y;
+endfor
+
+p3=arc(z.zx,z.zxy,z.zy);
+
+for i=0 step 6 until abs(z.p-z.zx):
+draw p3 shifted -z.p scaled ((abs(z.p-z.zx)-i)/(abs(z.p-z.zx))) shifted z.p;
+endfor
+
+draw z.x--z.y--z.p--cycle penbold;
+draw z.x--z.zx--z.p--z.zy--z.y penbold;
+
+
+%dOt z.p,z.x,z.y,z.z,z.zx,z.zy;
 endfig;
 
 beginfig(840) 

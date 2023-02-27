@@ -1,10 +1,10 @@
-\chapter{Ultralimits}
+\chapter{Ultralimits}\label{chap:ultralimits}
 
 Ultralimits provide a very general way to pass to a limit.
-This procedure works for \textit{any} sequence of metric spaces, its result reminds limit in the sense of Gromov--Hausdorff, but has some strange features; for example, the limit of a constant sequence of spaces $\spc{X}_n=\spc{X}$ is \textit{not} $\spc{X}$ (see \ref{ex:ultrapower:compact}).
+This procedure works for \textit{any} sequence of metric spaces, its result reminds limit in the sense of Gromov--Hausdorff, but has some strange features; for example, the limit of a constant sequence of spaces $\spc{X}_n=\spc{X}$ is \textit{not} $\spc{X}$ in general (see \ref{ex:ultrapower:compact}).
 
-In geometry, ultralimits are used only as a canonical way to pass to a convergent subsequence.
-It is useful in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
+In geometry, ultralimits are used mostly as a canonical way to pass to a convergent subsequence.
+It is very useful in the proofs where one needs to repeat ``pass to convergent subsequence'' too many times.
 
 This lecture is based on the introductory part of the paper by Bruce Kleiner and Bernhard Leeb \cite{kleiner-leeb}.
 
@@ -191,10 +191,9 @@ Recall that $\omega$ denotes a nonprincipal ultrafilter on the set of natural nu
 
 Let $\spc{X}_n$ be a sequence of metric spaces.
 Consider all sequences of points $x_n\in \spc{X}_n$.
-On the set of all such sequences,
-define a semimetric by
+On the set of all such sequences, define a semimetric by
 \[\dist{(x_n)}{(y_n)}{}
-=
+\df
 \lim_{n\to\omega} \dist{x_n}{y_n}{\spc{X}_n}.
 \eqlbl{eq:olim-dist}\]
 Note that the $\omega$-limit on the right-hand side is always defined 
