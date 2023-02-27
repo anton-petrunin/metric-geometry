@@ -100,9 +100,9 @@ for any $x,y\in \spc{X}$.
  
 \end{thm}
 
-\parit{Proof.} For \ref{SHORT.obs:admissible:nonnegative}, take $x=y$ in \ref{eq:admissible}.
+\parit{Proof; \ref{SHORT.obs:admissible:nonnegative}.} Apply \ref{eq:admissible} for $x=y$.
 
-Part \ref{SHORT.obs:admissible:balls} follows from the triangle inequality and the existence of a geodesic $[xy]$.
+\parit{\ref{SHORT.obs:admissible:balls}.} Apply the triangle inequality and the existence of a geodesic $[xy]$.
 \qeds
 
 A minimal admissible function will be called \label{page:extremal function}\index{extremal function}\emph{extremal}.
@@ -156,7 +156,7 @@ Any extremal function $r$ on $\spc{X}$ is \index{1-Lipschitz function}\emph{1-Li
 that is,
 \[|r(p)-r(q)|\le \dist{p}{q}{}\]
 for any $p,q\in\spc{X}$.
-In other words, any extremal function is an extension function; see the definition in \ref{sec:Extension property}.
+In other words, any extremal function is an extension function [see \ref{sec:Extension property}].
 \end{subthm}
 
 \begin{subthm}{lem:opposite}
@@ -192,8 +192,6 @@ Since $r$ is extremal, \ref{lem:+-c} implies that
 or, equivalently,
 \[r(q)-r(p)\le \dist{p}{q}{}\]
 for any $p,q\in\spc{X}$.
-The same way we can show that
-$r(p)-r(q)\le \dist{p}{q}{}$.
 Whence the statement follows.
 
 \parit{\ref{SHORT.lem:opposite}.}
@@ -232,7 +230,7 @@ Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz a
 \begin{thm}{Exercise}\label{ex:retraction}
 Given a real-valued function $s$ on a metric space $\spc{X}$,
 consider the function
-\[s^*(x)=\sup\set{\dist{z}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
+\[s^*(x)=\sup\set{\dist{x}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
 Show that if $s$ is admissible then so is $\tfrac12\cdot(s+s^*)$.
 \end{thm}
 
@@ -306,7 +304,7 @@ r(x)+r(y)&\ge \dist{x}{y}{\spc{X}}\ge
 \\
 &\ge \dist{f(x)}{f(y)}{\spc{Y}}.
 \end{align*}
-Therefore, by \ref{SHORT.thm:injective=hyperconvex:balls} the balls 
+By \ref{SHORT.thm:injective=hyperconvex:balls} the balls 
 $\cBall[f(x),r(x)]$ have a common point --- a contradiction. 
 \qeds
 
@@ -374,7 +372,6 @@ In particular, the statement in \ref{lem:opposite} can be written as
 \[\dist{f}{p}{\Inj\spc{X}}+\dist{f}{q}{\Inj\spc{X}}<\dist{p}{q}{\Inj\spc{X}}+\delta.\]
 
 \begin{thm}{Exercise}\label{ex:Inj(compact)}
-Let $\spc{X}$ be a metric space.
 Show that $\Inj\spc{X}$ is compact if and only if so is $\spc{X}$.
 \end{thm}
 
@@ -412,38 +409,41 @@ Show that $\Inj\spc{X}$ is isometric to
 
 
 \begin{thm}{Proposition}\label{prop:InjX-is-injective}
-For any metric space $\spc{X}$, its extension $\Inj\spc{X}$ is  injective.
+$\Inj\spc{X}$ is injective for any metric space $\spc{X}$. 
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:r|X-extremal}
 Let $\spc{X}$ be a metric space.
-Suppose $r\in \Inj(\Inj \spc{X})$;
-that is, $r$ is an extremal function on $\Inj \spc{X}$.
-Then $r|_\spc{X}\in \Inj \spc{X}$;
-that is, the restriction of $r$ to $\spc{X}$ is an extremal function.
+Then 
+\[\sigma\in \Inj(\Inj \spc{X})
+\quad\Longrightarrow\quad
+\sigma|_\spc{X}\in \Inj \spc{X}.\]
 \end{thm}
 
-\parit{Proof.}
-Arguing by contradiction, suppose that there is an admissible function $s\:\spc{X}\to \RR$ such that $s(x)\le r(x)$ for any $x\in\spc{X}$ and $s(p)\z< r(p)$ for some point $p\in\spc{X}$.
-Consider another function $\bar r\:\Inj \spc{X}\to\RR$ such that $\bar r(f)\df r(f)$ if $f\ne p$ and $\bar r(p)\df s(p)$.
+In other words, if $\sigma$ is an extremal function on $\Inj \spc{X}$,
+then the restriction of $\sigma$ to $\spc{X}$ is an extremal function on $\spc{X}$.
 
-Let us show that $\bar r$ is admissible; that is, 
-\[\dist{f}{g}{\Inj \spc{X}}\le\bar r(f)+\bar r(g)
+\parit{Proof.}
+Arguing by contradiction, suppose that there is an admissible function $s\:\spc{X}\to \RR$ such that $s(x)\le \sigma(x)$ for any $x\in\spc{X}$ and $s(p)\z< \sigma(p)$ for some point $p\in\spc{X}$.
+Consider another function $\bar \sigma\:\Inj \spc{X}\to\RR$ such that $\bar \sigma(f)\df \sigma(f)$ if $f\ne p$ and $\bar \sigma(p)\df s(p)$.
+
+Let us show that $\bar \sigma$ is admissible; that is, 
+\[\dist{f}{g}{\Inj \spc{X}}\le\bar \sigma(f)+\bar \sigma(g)
 \eqlbl{r-admissible}\]
 for any $f,g\in \Inj \spc{X}$.
 
-Since $r$ is admissible and $\bar r= r$ on $(\Inj \spc{X})\setminus \{p\}$, it is sufficient to prove \ref{r-admissible} if $f\ne g=p$.
+Since $\sigma$ is admissible and $\bar \sigma= \sigma$ on $(\Inj \spc{X})\setminus \{p\}$, it is sufficient to prove \ref{r-admissible} assuming $f\ne g=p$.
 By \ref{eq:f(p)=|f-p|}, we have $\dist{f}{p}{\Inj \spc{X}}=f(p)$.
 Therefore, \ref{r-admissible} boils down to the following inequality
-\[r(f)+s(p)\ge f(p).\eqlbl{eq:r(f)+s(p)>=f(p)}\]
+\[\sigma(f)+s(p)\ge f(p).\eqlbl{eq:r(f)+s(p)>=f(p)}\]
 for any $f\in\Inj \spc{X}$.
 
 Fix small $\delta>0$. 
 Let $q\in\spc{X}$ be the point provided by \ref{lem:opposite}.
 Then
 \begin{align*}
-r(f)+s(p)&\ge [r(f)-r(q)]+[r(q)+s(p)]\ge
-\intertext{since $r$ is 1-Lipschitz, and $r(q)\ge s(q)$, we can continue}
+\sigma(f)+s(p)&\ge [\sigma(f)-\sigma(q)]+[\sigma(q)+s(p)]\ge
+\intertext{since $\sigma$ is 1-Lipschitz, and $\sigma(q)\ge s(q)$, we can continue}
 &\ge -\dist{q}{f}{\Inj \spc{X}}+[s(q)+s(p)]\ge
 \intertext{by \ref{eq:f(p)=|f-p|} and since $s$ is admissible}
 &\ge -f(q)+\dist{p}{q}{}>
@@ -452,28 +452,28 @@ r(f)+s(p)&\ge [r(f)-r(q)]+[r(q)+s(p)]\ge
 \end{align*}
 Since $\delta>0$ is arbitrary, \ref{eq:r(f)+s(p)>=f(p)} and \ref{r-admissible} follow.
 
-Summarizing: the function $\bar r$ is admissible, $\bar r\le r$ and $\bar r(p)<r(p)$;
-that is, $r$ is not extremal --- a contradiction.
+Summarizing: the function $\bar \sigma$ is admissible, $\bar \sigma\le \sigma$ and $\bar \sigma(p)<\sigma(p)$;
+that is, $\sigma$ is not extremal --- a contradiction.
 \qeds
 
 \parit{Proof of \ref{prop:InjX-is-injective}.}
-Choose a function $r\in\Inj(\Inj\spc{X})$.
-By \ref{lem:r|X-extremal}, $s\z\df r|_{\spc{X}}\in \Inj\spc{X}$;
+Choose a function $\sigma\in\Inj(\Inj\spc{X})$.
+By \ref{lem:r|X-extremal}, $s\z\df \sigma|_{\spc{X}}\in \Inj\spc{X}$;
 that is, $s$ is extremal.
 By \ref{thm:injective=hyperconvex:extremal},
 it is sufficient to show that  
-\[r(f)\ge\dist{s}{f}{\Inj\spc{X}}
+\[\sigma(f)\ge\dist{s}{f}{\Inj\spc{X}}
 \eqlbl{eq:r(f)>=| r-f|}\]
 for any $f\in\Inj\spc{X}$.
 
-Since $r$ is $1$-Lipschitz (\ref{lem:extremal-lipschitz}) we have that
+Since $\sigma$ is $1$-Lipschitz (\ref{lem:extremal-lipschitz}) we have that
 \[
-s(x)-f(x)=r(x)-\dist{f}{x}{\Inj \spc{X}}\le r(f).
+s(x)-f(x)=\sigma(x)-\dist{f}{x}{\Inj \spc{X}}\le \sigma(f).
 \]
 for any $x\in\spc{X}$.
 By \ref{lem:+-c},
 $
-s(x)-f(x)\ge -r(f)
+s(x)-f(x)\ge -\sigma(f)
 $
 for any $x\in\spc{X}$.
 Whence \ref{eq:r(f)>=| r-f|} follows.
@@ -492,7 +492,7 @@ A metric space $\spc{X}$ is called \index{$\delta$-hyperbolic}\emph{$\delta$-hyp
 for any $p,q,x,y\in \spc{X}$.
 
 \begin{thm}{Advanced exercise}\label{ex:delta-hyp}
-Show that $\Inj \spc{X}$ is $\delta$-hyperbolic if and only if $\spc{X}$ is.
+Show that $\Inj \spc{X}$ is $\delta$-hyperbolic if and only if so is $\spc{X}$.
 \end{thm}
 
 
@@ -552,9 +552,7 @@ Show that there is unique isometric embedding $\iota\:\mathbb{S}^2_+\hookrightar
 \section{Remarks}
 
 Injective spaces were introduced by Nachman Aronszajn and Prom Panitchpakdi \cite{aronszajn-panitchpakdi}.
-The injective envelope was introduced by John Isbell \cite{isbell}.
-It was rediscovered a couple of times since then;
-as a result, the injective envelope has many other names including \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
+The injective envelope was introduced by John Isbell \cite{isbell}; it is also known as \index{tight span}\emph{tight span} and \index{hyperconvex hull}\emph{hyperconvex hull}.
 
 It was observed by John Isbell \cite{isbell2} that \textit{if $\spc{X}$ is a Banach space, then its injective hull $\Inj\spc{X}$ has a natural structure of Banach space} (which is unique by the Mazur--Ulam theorem).
 Moreover, $\spc{X}$ is a linear subspace of $\Inj\spc{X}$.
@@ -566,8 +564,7 @@ Clearly, hyperconvexity (\ref{thm:injective=hyperconvex:balls}) is stronger than
 Note that \textit{any geodesic space is convex}.
 The converse does not hold in general, but by \ref{lem:mid>geod:geod} \textit{any complete convex space is geodesic}.
 
-More generally, a metric space $\spc{X}$ is called \index{$n$-heperconvex space}\emph{$n$-heperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls.
-Note that convex is the same as $2$-hyperconvex.
+More generally, a metric space $\spc{X}$ is called \index{$n$-heperconvex space}\emph{$n$-heperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls; so \textit{convex means $2$-hyperconvex}.
 
 The following striking result was proved by Benjamin Miesch and Maël Pavón \cite{miesch-pavon2016}.
 
@@ -580,9 +577,7 @@ So, by \ref{ex:compact-hyperconvex}, it follows that \textit{any proper $4$-hype
 \begin{thm}{Exercise}\label{ex:3-4-hypreconvex}
 Show that $\ell^1$ is $3$- but not $4$-hyperconvex.
 \end{thm}
-
-
-The following two exercise deals with ultrametric spaces which in some sense are dual to the injective spaces. 
+ 
 
 Recall that if the following inequality
 \[\dist{x}{z}{\spc{X}}
@@ -590,6 +585,7 @@ Recall that if the following inequality
 \max\{\,\dist{x}{y}{\spc{X}},\dist{y}{z}{\spc{X}}\,\}\]
 holds for any three points $x,y,z$ in a metric space $\spc{X}$,
 then $\spc{X}$ is called an \index{ultrametric space}\emph{ultrametric space}.
+In some sense, ultrametric spaces are dual to injective spaces.
 
 \begin{thm}{Exercise}\label{ex:ultrametric}
 Suppose that a metric space $\spc{X}$ satisfies the following property:
@@ -603,7 +599,7 @@ A subspace $\spc{S}$ of a metric space $\spc{X}$ is called its \index{short retr
 \begin{thm}{Exercise}\label{ex:ultrametric-converse}
 Show that any compact subspace $\spc{K}$ of an ultrametric space $\spc{X}$ is its short retract.
 
-Construct an example of a complete ultrametric space $\spc{X}$ with a closed subset $Q$ that is not its short retract.
+Construct an example of a complete ultrametric space $\spc{X}$ with a closed subspace $\spc{Q}$ that is not its short retract.
 \end{thm}
 
 The following exercise gives a sufficient condition for the existence of a short extension.
