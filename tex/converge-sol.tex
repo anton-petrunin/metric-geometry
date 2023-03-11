@@ -11,14 +11,13 @@ Whence
 and therefore
 \[\diam A-\diam B\le 2\cdot\dist{A}{B}{\Haus\spc{X}}.\]
 
-It remains to swap $A$ and $B$ and repeat the argument.
+Swap $A$ and $B$ and repeat the argument.
 
 
 \parbf{\ref{ex:Hausdorff-bry}}; \ref{SHORT.ex:Hausdorff-bry:conv}.
-Denote by $A^r$ the closed $r$-neighborhood of a set $A\z\subset \RR^2$.
-Observe  that 
-\[(\Conv A)^r=\Conv(A^r),\]
-and try to use it.
+Given a set $A\z\subset \RR^2$, denote by $A^r$ its closed $r$-neighborhood.
+Show and use that 
+\[(\Conv A)^r=\Conv(A^r).\]
 
 \parit{\ref{SHORT.ex:Hausdorff-bry:bry}.}
 The answer is ``no'' in both parts.
@@ -32,10 +31,14 @@ For the second part take $A$ to be a unit disk and $B=\partial A$ to be its boun
 Note that $\partial A=\partial B$; in particular, $\dist{\partial A}{\partial B}{\Haus\RR^2}=0$ while $\dist{ A}{B}{\Haus\RR^2}=1$.
 
 \parit{Remark.}
-There are the so-called {}\emph{lakes of Wada} --- an example of three (and more) open topological disks in the plane that have identical boundaries.
-It can be used to construct more interesting examples for \ref{SHORT.ex:Hausdorff-bry:bry}.
+A more interesting example for \ref{SHORT.ex:Hausdorff-bry:bry} is provided by the so-called \textit{lakes of Wada} --- an example of three (and more) disjoint open topological disks in the plane that have identical boundaries.
 
-\parbf{\ref{ex:Haus-support}} By \ref{ex:Hausdorff-bry:conv}, it is sufficient to show that  
+\parbf{\ref{ex:Haus-func}.}
+Checking two functions $\distfun_A$ and $\distfun_B$ leads to 
+\[\dist{A}{B}{}\le\sup_f\, \{\,\max_{a\in A}\{f(a)\}-\max_{b\in B}\{f(b)\,\}.\]
+Use \ref{obs:Haus-nbhds} to prove the opposite inequality.
+
+\parbf{\ref{ex:Haus-support}.} By \ref{ex:Hausdorff-bry:conv}, it is sufficient to show that  
 \[\dist{A}{B}{\Haus\RR^n}= \sup_{|u|=1}\{|h_A(u)-h_B(u)|\}\]
 for any nonempty compact convex sets $A,B\z\subset \RR^n$.
 
@@ -63,22 +66,23 @@ a contradiction.
 \parit{\ref{SHORT.ex:H-sections:R}.}
 Consider path $c(t)\df\min C_t$.
 
-\parit{Source:} The problem had been suggested by Stephan Stadler.
+\parit{Source:} Suggested by Stephan Stadler.
 
 \parbf{\ref{ex:haus-contractible}.}
 Show that $f\:(p,r)\mapsto \cBall[p,r]$ defines a continuous map $\spc{X}\z\times[0,\infty)\to \Haus\spc{X}$.
 Observe that $\cBall[p,r]=\spc{X}$ for all $r\ge\diam\spc{X}$.
 Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy from the identity map to a constant map on $\spc{X}$, hence the statement.
 
-\parit{Remark.}
+\parit{By the way, is there a good description of such spaces?}
 Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
-On the other hand, the Euclidean plane does not such a retraction \cite{petrunin-2022-MO-center, przeslawski-yost}.
-I~do not know a good description of such spaces \cite{petrunin-435157}.
+On the other hand, the Euclidean plane does not have such a retraction \cite{petrunin-2022-MO-center, przeslawski-yost}.
+See also \cite{petrunin-435157}.
 
 \parbf{\ref{ex:closure-union}.} 
 Show that for any $\eps>0$ there is a positive integer $N$ such that $\bigcup_{n\le N} K_n$ is an $\eps$-net in the union $\bigcup_{n} K_n$.
 Observe that $\bigcup_{n\le N} K_n$
-is compact and apply \ref{ex:compact-net} and \ref{totally-bounded}.
+is compact.
+Apply \ref{ex:compact-net} and \ref{totally-bounded}.
 
 \parbf{\ref{ex:Haus-length}}; \textit{if part.}
 Choose two compact sets $A,B\z\subset \spc{X}$;
@@ -140,11 +144,12 @@ Show that if the identity $\alpha=\beta$ holds for almost all chords, then $D$ i
 
 \parbf{\ref{ex:generalized-selection}.}
 Observe that all functions $\distfun_{A_n}$ are Lipschitz.
-
-If they are not uniformly bounded on compact sets, then we can pass to a subsequence of $A_n$ so that $\distfun_{A_n}(x)\to\infty$ for any $x$;
+Suppose that for some (and therefore any) point $x$ the sequence $\distfun_{A_n}(x)$ is not bounded.
+Then we can pass to a subsequence of $A_n$ so that $\distfun_{A_n}(x)\to\infty$ for any $x$;
 in this case $A_n$ converges to the empty set.
 
-If the functions are uniformly bounded, then, passing to a subsequence, we may assume that the sequence $\distfun_{A_n}$ converges to some function $f$.
+Assume the sequence $\distfun_{A_n}(x)$ is bounded for some (and therefore any) point $x$.
+Then, passing to a subsequence of $A_n$, we may assume that the sequence $\distfun_{A_n}$ converges to some function $f$.
 
 Set $A_\infty=f^{-1}\{0\}$.
 It remains to show that $f=\distfun_{A_\infty}$.
@@ -153,15 +158,19 @@ It remains to show that $f=\distfun_{A_\infty}$.
 
 \parbf{\ref{ex:d_GH-and-diam}};
 \ref{SHORT.ex:d_GH-and-diam:point}.
-Apply the definition for space $\spc{Z}$ obtained from $\spc{X}$ by adding a point that lies at distance $\tfrac12\cdot\diam \spc{X}$ from each point of $\spc{X}$.
+Apply the definition (\ref{def:GH}) for space $\spc{W}$ obtained from $\spc{X}$ by adding one point that lies at distance $\tfrac12\cdot\diam \spc{X}$ from each point of $\spc{X}$.
 
 \parit{\ref{SHORT.ex:d_GH-and-diam:scale}.}
 Given a point $x\in\spc{X}$, denote by $a\cdot x$ and $b\cdot x$ the corresponding points in $a\cdot\spc{X}$ and $b\cdot \spc{X}$ respectively.
-Show that there is a metric on $\spc{Z}\z=a\cdot\spc{X}\sqcup b\cdot\spc{X}$ such that 
-\[|a\cdot x-b\cdot x|_{\spc{Z}}=\tfrac{|b-a|}2\cdot\diam\spc{X}\]
+Show that there is a metric on $\spc{W}\z=a\cdot\spc{X}\sqcup b\cdot\spc{X}$ such that 
+\[|a\cdot x-b\cdot x|_{\spc{W}}=\tfrac{|b-a|}2\cdot\diam\spc{X}\]
 for any $x$ and the inclusions
-$a\cdot\spc{X}\z\hookrightarrow\spc{Z}$,
-$b\cdot\spc{X}\z\hookrightarrow\spc{Z}$ are distance-preserving.
+$a\cdot\spc{X}\z\hookrightarrow\spc{W}$,
+$b\cdot\spc{X}\z\hookrightarrow\spc{W}$ are distance-preserving.
+Conclude that 
+$|\spc{X}-\spc{O}|_{\GH}\le\tfrac12\cdot \diam \spc{X}.$
+The opposite inequality follows from \ref{SHORT.ex:d_GH-and-diam:point}.
+
 
 \parit{\ref{SHORT.ex:d_GH-and-diam:isometry}.}
 Use \ref{SHORT.ex:d_GH-and-diam:point} and \ref{SHORT.ex:d_GH-and-diam:scale} to show that the isometry class of $\spc{O}$ is completely determined by the following property
@@ -178,10 +187,10 @@ You may use \ref{ex:d_GH-and-diam:point}.
 
 
 \parbf{\ref{ex:rectangle}.}
-Arguing by contradiction,
-we can identify $\spc{A}_r$ and $\spc{B}_r$ with subspaces of a space $\spc{Z}$
+Suppose that
+we can identify $\spc{A}_r$ and $\spc{B}_r$ with subspaces of a space $\spc{W}$
 such that 
-\[|\spc{A}_r-\spc{B}_r|_{\Haus \spc{Z}}<\tfrac1{10}\]
+\[|\spc{A}_r-\spc{B}_r|_{\Haus \spc{W}}<\tfrac1{10}\]
 for large $r$; see the definition of Gromov--Hausdorff metric (\ref{def:GH}).
 
 Set $n=\lceil r \rceil$.
@@ -199,15 +208,13 @@ Try to show that $|\spc{A}_r-\spc{B}_r|_{\GH}=\tfrac12$ for all large $r$.
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:GH-inj}.}
-Suppose that $|\spc{X}-\spc{Y}|_{\spc{U}}<\eps$;
-we need to show that 
-\[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot \eps.\]
-
+Suppose 
+\[|\spc{X}-\spc{Y}|_{\Haus\spc{U}}<\eps.\]
 Denote by $\hat{\spc{U}}$ the injective envelope of $\spc{U}$.
-Recall that $\spc{U}$, $\spc{X}$, and $\spc{Y}$ can be considered as subspaces of $\hat{\spc{U}}$, $\hat{\spc{X}}$, and $\hat{\spc{Y}}$ respectively.
-
 According to \ref{ex:d-p-inclusion}, the inclusions $\spc{X}\hookrightarrow\spc{U}$ and $\spc{Y}\hookrightarrow\spc{U}$ can be extended to distance-preserving inclusions $\hat{\spc{X}}\hookrightarrow\hat{\spc{U}}$ and $\hat{\spc{Y}}\hookrightarrow\hat{\spc{U}}$.
 Therefore, we can and will consider  $\hat{\spc{X}}$ and $\hat{\spc{Y}}$ as subspaces of $\hat{\spc{U}}$.
+It is sufficient to show that
+\[|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\hat{\spc{U}}}<2\cdot \eps.\eqlbl{eq:hats|X-Y|<2eps}\]
 
 Given $f\in \hat{\spc{U}}$,
 let us find $g\in \hat{\spc{X}}$ such that 
@@ -230,13 +237,12 @@ Whence \ref{|g-f|} follows.
 
 It follows that $\hat{\spc{Y}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{X}}$ in $\hat{\spc{U}}$.
 The same way we show that $\hat{\spc{X}}$ lies in a $2\cdot\eps$-neighborhood of $\hat{\spc{Y}}$ in $\hat{\spc{U}}$.
-The latter means that
-$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\Haus\hat{\spc{U}}}<2\cdot\eps$,
-and therefore
-$|\hat{\spc{X}}-\hat{\spc{Y}}|_{\GH}<2\cdot\eps$.
+Hence \ref{eq:hats|X-Y|<2eps} follows.
 
 \parit{Remark.} 
 This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]{lang-pavon-zust}.
+They also show that the constant 2 is optimal.
+To see this, look at the injective envelopes of two four-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
 
 \begin{Figure}
 \vskip-0mm
@@ -244,14 +250,11 @@ This problem was discussed by Urs Lang, Maël Pavón, and Roger Züst \cite[3.1]
 \includegraphics{mppics/pic-505}
 \end{Figure}
 
-They also show that the constant 2 is optimal.
-To see this, look at the injective envelopes of two 4-point metric spaces shown on the diagram and observe that the Gromov--Hausdorff distance between the 4-point metric spaces is 1, while the distance between their injective envelopes approaches 2 as $s\to\infty$. 
-
 \parbf{\ref{ex:H-R}}; \textit{only-if part.}
-Let us identify $\spc{X}$ and $\spc{Y}$ with subspaces of a metric space $\spc{Z}$ such that 
-\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}<\eps.\]
+Let us identify $\spc{X}$ and $\spc{Y}$ with subspaces of a metric space $\spc{W}$ such that 
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{W}}<\eps.\]
 
-Set $x\approx y$ if and only if $\dist{x}{y}{\spc{Z}}<\eps$.
+Set $x\approx y$ if and only if $\dist{x}{y}{\spc{W}}<\eps$.
 It remains to check that $\approx$ is an $\eps$-approximation.
 
 \parit{If part.}
@@ -261,10 +264,10 @@ Conclude that
 \[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps'\]
 for some $\eps'<\eps$.
 
-Show that there is a metric on $\spc{Z}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{Z}$ and
-$\spc{Y}\hookrightarrow\spc{Z}$ are distance-preserving and $\dist{x}{y}{\spc{Z}}=\eps'$ if $x\approx y$.
+Show that there is a metric on $\spc{W}=\spc{X}\sqcup\spc{Y}$ such that the inclusions $\spc{X}\hookrightarrow\spc{W}$ and
+$\spc{Y}\hookrightarrow\spc{W}$ are distance-preserving and $\dist{x}{y}{\spc{W}}=\eps'$ if $x\approx y$.
 Conclude that 
-\[|\spc{X}-\spc{Y}|_{\Haus \spc{Z}}\le\eps'<\eps.\]
+\[|\spc{X}-\spc{Y}|_{\Haus \spc{W}}\le\eps'<\eps.\]
 
 \parbf{\ref{ex:eps-isom}};
 \ref{SHORT.ex:eps-isom:GH>isom}.
@@ -279,17 +282,35 @@ Show that $\approx$ is an $\eps$-approximation.
 Apply \ref{ex:H-R}.
 
 \parbf{\ref{ex:XYZ}.}
-Consider the product space $[0,\eps]\times \ZZ_n$ with the natural $\ell^\infty$-product metric and make three variations of it by changing the size of the segments.
+Consider the product space $[0,\eps]\times \ZZ_n$ with the natural $\ell^\infty$-product metric. 
+Make three variations of it by changing the sizes of some segments.
 
 \parbf{\ref{ex:GH-SC}}; \ref{SHORT.ex:GH-SC:circle}.
-Suppose $\spc{X}_n\GHto \spc{X}$ and $\spc{X}_n$ are simply-connected length metric space.
-It is sufficient to show that any nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$ corresponds to a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
+Suppose $\spc{X}_n$ are simply-connected length metric space, $\spc{X}_n\GHto \spc{X}$, and there is a nontrivial covering map $f\:\tilde{\spc{X}}\to \spc{X}$.
+We will arrive at a contradiction by showing that there is a nontrivial covering map $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$ for large $n$.
 
-The latter can be constructed by covering $\spc{X}_n$ with small balls that lie close to sets in $\spc{X}$ evenly covered by $f$, prepare a few copies of these sets and glue them the same way as the inverse images of the evenly covered sets in $\spc{X}$ glued to obtain $\tilde{\spc{X}}$.
+Choose a base point $p\in \spc{X}$ and its inverse image $\tilde p\in \tilde{\spc{X}}$.
+Consider two paths $\alpha,\alpha'\:[0,1]\to \spc{X}$ that start at $p$;
+denote by $\tilde \alpha,\tilde \alpha'\:[0,1]\z\to \tilde{\spc{X}}$ their liftings.
+Show that there is $\eps>0$ such that if $\dist{\alpha(t)}{\alpha'(t)}{\spc{X}}<\eps$ for any $t$, then $\dist{\tilde \alpha(1)}{\tilde \alpha'(1)}{\tilde{\spc{X}}}<\eps$.
+
+Now suppose $n$ is large.
+Choose an $\tfrac\eps{10}$-approximation $\approx$ for $\spc{X}_n$ and $\spc{X}$.
+Choose $q\in\spc{X}_n$ such that $q\approx p$.
+Show that for any path $\beta\:[0,1]\to \spc{X}_n$ that starts at $q$ there is a path $\alpha\:[0,1]\to \spc{X}$ that starts at $p$ such that $\alpha(t)\z\approx\beta(t)$ for any $t$.
+Observe that if $\alpha$ and $\alpha'$ are two choices of such paths, then $\dist{\alpha(t)}{\alpha'(t)}{\spc{X}}<\eps$.
+
+Mimicking the standard construction of a covering map, we get the needed $f_n\:\tilde{\spc{X}}_n\to \spc{X}_n$.
+
+%Cover $\spc{X}$ by finite number of open balls $\oBall(p_i,R_i)_{\spc{X}}$ that \index{evenly covered set}\emph{evenly covered} by $f$;that is for any $x_i,y_i\in f^{-1}\{p_i\}$ the balls $\oBall(x_i,R_i)_{\tilde{\spc{X}}}$ and $\oBall(y_i,R_i)_{\tilde{\spc{X}}}$ are disjoint and the restriction of $f$ to $\oBall(x_i,R_i)_{\tilde{\spc{X}}}$ is a homeomorphism to $\oBall(p_i,R_i)_{\spc{X}}$.
+
+%Fix large $n$; choose $q_i\in\spc{X}_n$ close to $p_i\in \spc{X}$ for each $i$.
+%Prepare a copy of $\oBall(q_i,R_i)_{\spc{X}_n}$ for each $i$ and each $x_i\in f^{-1}\{p_i\}$.
+%Glue $\tilde{\spc{X}}_n$ from these copies the same way as $\tilde{\spc{X}}$ glued from $\oBall(x_i,R_i)_{\tilde{\spc{X}}}$.
 
 \parit{\ref{SHORT.ex:GH-SC:nonsc-limit}.}
 Let $\spc{V}$ be a cone over Hawaiian earrings.
-Consider the {}\emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points (see the diagram).
+Consider the \textit{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with glued base points (see the diagram).
 
 \begin{Figure}
 \vskip-0mm
@@ -300,32 +321,33 @@ Consider the {}\emph{doubled cone} $\spc{W}$ --- two copies of $\spc{V}$ with gl
 The space $\spc{W}$ can be equipped with a length metric
 (for example, the induced length metric from the shown embedding).
 
-Show that $\spc{V}$ is simply-connected, but $\spc{W}$ is not; follows from the van Kampen theorem.
+Show that $\spc{V}$ is simply-connected, but $\spc{W}$ is not; use the van Kampen theorem.
 
-If we delete from the earrings all small circles, then the obtained double cone becomes simply-connected and it remains to be close to $\spc{W}$.
-That is $\spc{W}$ is a Gromov--Hausdorff limit of simply-connected spaces.
+If we delete from the earrings all small circles and repeat the construction,
+then the obtained double cone becomes simply-connected and remains close to $\spc{W}$.
+That is, $\spc{W}$ is a Gromov--Hausdorff limit of simply-connected spaces.
 
 \parit{Remark.}
 Note that the limit space in \ref{SHORT.ex:GH-SC:nonsc-limit}, does not admit a nontrivial covering.
 
-\parbf{\ref{ex:sphere-to-ball},}
+\parbf{\ref{ex:sphere-to-ball}};
 \textit{\ref{SHORT.ex:sphere-to-ball:2}.}
 Suppose that a metric on $\mathbb{S}^2$ is close to the unit disk $\DD^2$.
-Note that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
+Show that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
 By the Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two disks, say $D_1$ and $D_2$.
 
 By \ref{ex:GH-SC:circle}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$; otherwise the limit would admit a nontrivial covering.
 
 Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
 If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
-On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so its length is about 2 --- a contradiction.
+On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so its length is about 2 (or larger) --- a contradiction.
 
 \parit{\ref{SHORT.ex:sphere-to-ball:3}.}
 Make fine burrows in the standard 3-ball without changing its topology,
 but at the same time come sufficiently close to any point in the ball.
 
 Consider the \index{doubling}\emph{doubling} of the obtained ball along its boundary;
-that is, two copies of the ball with identified corresponding points on their boundaries.
+that is, two copies of the ball with glued corresponding points on their boundaries.
 The obtained space is homeomorphic to $\mathbb{S}^3$.
 Note that the burrows can be made 
 so that the obtained space is sufficiently close to the original ball 
@@ -336,7 +358,7 @@ in the Gromov--Hausdorff metric.
 \parbf{\ref{ex:utb+pack}.} Apply \ref{ex:pack-net}.
 
 \parbf{\ref{pr:doubling}.}
-Choose a space $\spc{X}$ in $\spc{Q}(C,D)$, denote a $C$-doubling measure by~$\mu$.
+Let $\mu$ be a $C$-doubling measure on a space $\spc{X}$ from $\bm{Q}(C,D)$.
 Without loss of generality, we may assume that $\mu(\spc{X})\z=1$.
 
 The doubling condition implies that 
@@ -346,7 +368,7 @@ It follows that
 \[\pack_{\frac D{2^n}}\spc{X}\le C^n.\]
 
 By \ref{ex:pack-net}, for any $\eps\ge\frac D{2^{n-1}}$, the space $\spc{X}$ admits an $\eps$-net with at most $C^n$ points.
-Whence $\spc{Q}(C,D)$ is uniformly totally bounded.
+Whence $\bm{Q}(C,D)$ is uniformly totally bounded.
 
 \parbf{\ref{pr:under}}; \ref{SHORT.pr:under:if}.
 Choose $\eps>0$.
@@ -358,8 +380,9 @@ Note that the subset $B_i$ has diameter at most $2\cdot \eps$ and
 \[\spc{X}=\bigcup_iB_i.\]
 Therefore, the set of points $\{x_i\}$ is a $2\cdot\eps$-net in $\spc{X}$.
 
-\parit{\ref{SHORT.pr:under:only-if}.} Let $\spc{Q}$ be a uniformly totally bounded family of spaces. 
-Suppose that each space in $\spc{Q}$ has an $\tfrac1{2^n}$-net with at most $M_n$ points; we may assume that $M_0=1$.
+\parit{\ref{SHORT.pr:under:only-if}.}
+Let $\bm{Q}$ be a uniformly totally bounded family of spaces. 
+Suppose that each space in $\bm{Q}$ has an $\tfrac1{2^n}$-net with at most $M_n$ points; we may assume that $M_0=1$.
 
 Consider the space $\spc{Y}$ of all infinite integer sequences $m_0,m_1,\dots$ such that $1\le m_n\le M_n$ for any $n$.
 Given two sequences $\bm{\ell}\z=(\ell_1,\ell_2,\dots)$, and $\bm{m}\z=(m_1,m_2,\dots)$ of points in $\spc{Y}$, set 
@@ -367,9 +390,9 @@ Given two sequences $\bm{\ell}\z=(\ell_1,\ell_2,\dots)$, and $\bm{m}\z=(m_1,m_2,
 where $n$ is the minimal index such that $\ell_n\ne m_n$ and $C$ is a positive constant.
 
 Observe that $\spc{Y}$ is compact.
-Indeed it is complete and the sequences with constant tails, starting from index $n$, form a finite $\tfrac C{2^{n}}$-net in $\spc{Y}$.
+Indeed it is complete and the sequences with constant tails, starting from index $n$, form a finite $\tfrac C{2^{n}}$-net in~$\spc{Y}$.
 
-Given a space $\spc{X}$ in $\spc{Q}$,
+Given a space $\spc{X}$ in $\bm{Q}$,
 choose a sequence of $\tfrac1{2^n}$ nets 
 $N_n\subset\spc{X}$ for each $n$.
 We can assume that $|N_n|\le M_n$; let us label the points in $N_n$ by $\{1,\dots,M_n\}$.

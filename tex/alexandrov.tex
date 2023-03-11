@@ -17,7 +17,7 @@ These 6 numbers are subject to 12 triangle inequalities; that is,
 holds for all $i$, $j$ and $k$, where we assume that $\ell_{j,i}=\ell_{i,j}$ and $\ell_{i,i}=0$.
 
 The space $\mathcal{M}_4$ comes with topology.
-It can defined as a quotient of the cone in $\RR^6$ by permutations of the 4-points of the space.
+It can defined as a quotient of the cone in $\RR^6$ by permutations of the 4 points of the space.
 And, the same topology is induced on $\mathcal{M}_4$ by the Gromov--Hausdorff metric.
 
 \begin{wrapfigure}[7]{o}{33mm}
@@ -52,13 +52,13 @@ is called an Alexandrov space with non-positive ($\CAT(0)$) or non-negative curv
 \includegraphics{mppics/pic-710}
 \end{wrapfigure}
 
-Let us describe the subdivision into  $\mathcal{P}_4$, $\mathcal{E}_4$ and $\mathcal{N}_4$ intuitively.
-Imagine that you move out of $\mathcal{E}_4$ --- your path is a one parameter family of 4-point metric spaces.
+Let us describe the subdivision into  $\mathcal{P}_4$, $\mathcal{E}_4$, and $\mathcal{N}_4$ intuitively.
+Imagine that you move out of $\mathcal{E}_4$ --- your path is a one-parameter family of 4-point metric spaces.
 The last thing you see in $\mathcal{E}_4$ is one of the two plane configurations shown on the diagram.
 If you see the left configuration then you move into $\mathcal{N}_4$;
 if it is the one on the right, then you move into $\mathcal{P}_4$.
-More degenerate pictures can be avoided, for example, a triangle with a point on a side.
-From such a configuration one may move in $\mathcal{N}_4$ and in $\mathcal{P}_4$ (as well as come back to $\mathcal{E}_4$).
+More degenerate pictures can be avoided; for example, a triangle with a point on a side.
+From such a configuration one may move in $\mathcal{N}_4$ and $\mathcal{P}_4$ (as well as come back to $\mathcal{E}_4$).
 
 Here is an exercise, solving which would force you to rebuild a considerable part of Alexandrov geometry.
 It might be helpful to spend some time thinking about this exercise before proceeding.
@@ -84,6 +84,8 @@ The latter condition could be considered as a part of the {}\emph{spherical tria
 
 \section{Triangles, hinges and angles}
 
+Let $\spc{X}$ be a metric space.
+
 \parbf{Triangles.}
 For a triple of points $p,q,r\in \spc{X}$, a choice of a triple of geodesics $([q r], [r p], [p q])$ will be called a \index{triangle}\emph{triangle}; we will use the short notation 
 $\trig p q r=\trig p q r_{\spc{X}}=([q r], [r p], [p q])$\index{$\trig {{*}}{{*}}{{*}}$}.
@@ -98,10 +100,8 @@ The value
 \[\dist{p}{q}{}+\dist{q}{r}{}+\dist{r}{p}{}\]
 will be called the {}\emph{perimeter of the triangle} $\trig p q r$.
 
-\parbf{Model triangles.}
-Let $\spc{X}$ be a metric space and 
-$p,q,r\in \spc{X}$. 
-Let us define the \index{model triangle}\emph{model triangle} $\trig{\tilde p}{\tilde q}{\tilde r}$ 
+\parbf{Model triangles.}Given three points $p,q,r$ in a metric space $\spc{X}$,
+let us define the \index{model triangle}\emph{model triangle} $\trig{\tilde p}{\tilde q}{\tilde r}$ 
 (briefly, 
 $\trig{\tilde p}{\tilde q}{\tilde r}=\modtrig(p q r)_{\EE^2}$%
 \index{$\modtrig$!$\modtrig({*}{*}{*})_{\EE^2}$}) to be a triangle in the Euclidean plane $\EE^2$ such that
@@ -602,7 +602,7 @@ as required.
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:noncreasing} Given $\hinge p x y$ in a metric space $\spc{X}$, consider the function 
-\[f\:(\dist{p}{\bar x}{},\dist{p}{\bar y}{})\mapsto \angk p{\bar x}{\bar y}\]
+\[f\:(\dist{p}{\bar x}{},\dist{p}{\bar y}{})\mapsto \angk p{\bar x}{\bar y},\]
 where $\bar x\in\left]p x\right]$ and $\bar y\in\left]p y\right]$.
 
 \begin{subthm}{ex:noncreasing-CAT}
@@ -646,7 +646,7 @@ Consider the  model triangle $\trig{\tilde x}{\tilde y}{\tilde z}=\modtrig{}({x}
 The \index{natural map}\emph{natural map} $\trig{\tilde x}{\tilde y}{\tilde z}\to \trig{x}{y}{z}$ 
 sends a point $\tilde p\in[\tilde x\tilde y]\cup[\tilde y\tilde z]\cup[\tilde z\tilde x]$ to the corresponding point $p\in[ x y]\cup[y z]\cup[ z x]$;
 that is, if $\tilde p$ lies on $[\tilde y\tilde z]$,
-then $p\in [y z]$ and $\dist{\tilde y}{\tilde p}{}=\dist{y}{p}{}$ (and therefore $\dist{\tilde z}{\tilde p}{}=\dist{z}{p}{}$.
+then $p\in [y z]$ and $\dist{\tilde y}{\tilde p}{}=\dist{y}{p}{}$ (and therefore $\dist{\tilde z}{\tilde p}{}=\dist{z}{p}{}$).
 
 In the same way, the natural map can be defined for the spherical model triangle $\modtrig{}({x}{y}{z})_{\SSS^2}$.
  

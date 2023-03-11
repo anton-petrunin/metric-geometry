@@ -1,8 +1,6 @@
 \chapter{Space of subsets}\label{chap:hausdorff}
 
-In this lecture we cook up a new metric space $\Haus\spc{X}$ from subsets of a given metric spaces $\spc{X}$.
-Further, we prove the Blaschke selection theorem;
-it says that $\spc{X}$ is compact, then so is  $\Haus\spc{X}$.
+In this lecture we define and study Hausdorff metric on subsets of a given metric space.
 
 \section{Hausdorff distance}
 
@@ -13,10 +11,13 @@ $$\distfun_A: \spc{X} \to [0,\infty)$$
 defined as 
 $$\distfun_A(x)
 \df
-\inf_{a\in A}\{\,\dist ax{\spc{X}}\,\}.$$
+\inf\set{\dist ax{\spc{X}}}{a\in A}.$$
+
+Further, we define the so-called Hausdorff metric on all nonempty compact subsets of a given metric space $\spc{X}$;
+The obtained metric space will be denoted as $\Haus\spc{X}$.
 
 \begin{thm}{Definition}\label{def:hausdorff-convergence}
-Let $A$ and $B$ be two compact subsets of a metric space $\spc{X}$.
+Let $A$ and $B$ be two nonempty compact subsets of a metric space $\spc{X}$.
 Then the \index{Hausdorff distance}\emph{Hausdorff distance} between $A$ and $B$ is defined as 
 $$|A-B|_{\Haus\spc{X}}
 \df
@@ -34,11 +35,6 @@ $B$ lies in an $R$-neighborhood of $A$,
 and 
 $A$ lies in an $R$-neighborhood of~$B$.
 \end{thm}
-
-
-
-Note that the set of all nonempty compact subsets of a metric space $\spc{X}$ equipped with the Hausdorff metric forms a metric space.
-This new metric space will be denoted as $\Haus\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:diam}
 Let $\spc{X}$ be a metric space.
@@ -76,7 +72,7 @@ is it true that $|A-B|_{\Haus\RR^2}\z<\eps$?
 Note that part \ref{SHORT.ex:Hausdorff-bry:conv} implies that $A\mapsto \Conv A$ defines a short map $\Haus\RR^2\to \Haus\RR^2$. 
 
 \begin{thm}{Exercise}\label{ex:Haus-func}
-Let $A$ and $B$ be two compact subsets in metric space~$\spc{X}$.
+Let $A$ and $B$ be compact subsets in metric space~$\spc{X}$.
 Show that 
 \[\dist{A}{B}{\Haus\spc{X}}=\sup_f\, \{\,\max_{a\in A}\{f(a)\}-\max_{b\in B}\{f(b)\,\},\]
 where the least upper bound is taken for all $1$-Lipschitz functions $f$.
@@ -84,7 +80,7 @@ where the least upper bound is taken for all $1$-Lipschitz functions $f$.
 \end{thm}
 
 Given a subset $A\subset \RR^n$,
-The \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  non-empty closed set $A\subset \RR^n$ is defined as 
+The \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  nonempty closed set $A\subset \RR^n$ is defined as 
 \[h_A(x)
 \df
 \sup\set{\langle x, a\rangle}{a\in A}.\]
@@ -99,16 +95,17 @@ Moreover, equality holds if both $A$ and $B$ are convex.
 
 
 \begin{thm}{Advanced exercise}\label{ex:H-sections}
+Suppose $C_t\subset \spc{X}$, $t\z\in [0,1]$ is a family of subsets.
+A path $c\:[0,1]\to \spc{X}$ such that $c(t)\in C_t$ for all $t$ will be called a {}\emph{section} of $C_t$.
+
 \begin{subthm}{ex:H-sections:S}
-Construct a family of compact sets $C_t\subset\mathbb{S}^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
-but does not admit a {}\emph{section}.
-That is, there is no path $c\:[0,1]\to \mathbb{S}^1$ such that $c(t)\in C_t$ for all $t$.
+Construct a family of nonempty compact sets $C_t\subset\mathbb{S}^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
+but does not admit a section.
 \end{subthm}
 
 \begin{subthm}{ex:H-sections:R}
-Show that any family of compact sets $C_t\subset\RR^1$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
-admits a {}\emph{section}.
-That is, there is path $c\:[0,1]\to \RR^1$ such that $c(t)\in C_t$ for all $t$.
+Show that any family of nonempty compact sets $C_t\subset\RR$, $t\z\in [0,1]$ that is continuous in the Hausdorff topology, 
+admits a section.
 \end{subthm}
 
 \end{thm}
@@ -123,10 +120,10 @@ so is $\Haus\spc{X}$.
 The Hausdorff metric can be used to define convergence.
 Namely, suppose $K_1,K_2,\dots$, and $K_\infty$ are compact sets in a metric space $\spc{X}$.
 If $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$, then we say that 
-the sequence $K_n$ {}\emph{converges} to $K_\infty$ \index{convergence in the sense of Hausdorff}\emph{in the sense of Hausdorff};
-or we can say that $K_\infty$ is the the {}\emph{Hausdorff limit} of the sequence $K_n$.
+the sequence $K_n$ {}\emph{converges} to $K_\infty$ \index{Hausdorff convergence}\emph{in the sense of Hausdorff};
+equivalently, $K_\infty$ is the \index{Hausdorff limit}\emph{Hausdorff limit} of the sequence $K_n$.
 
-Note that the theorem implies that from any sequence of compact sets in $\spc{X}$ one can select a subsequence that converges in the sense of Hausdorff; 
+Note that the theorem implies that from any sequence of nonempty compact sets in $\spc{X}$ one can select a convergent subsequence; 
 for that reason, it is called a \textit{selection} theorem. 
 
 \parit{Proof; if part.}
@@ -142,7 +139,7 @@ It follows that $\iota(\spc{X})$, and therefore $\spc{X}$, are compact.
 Since the map $\iota$ above is distance-preserving, we can and will consider $\spc{X}$ as a subspace of $\Haus\spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:haus-contractible}
-Let $\spc{X}$ be a bounded length space with.
+Let $\spc{X}$ be a compact length space.
 Suppose that there is a short retraction $\Haus\spc{X}\to \spc{X}$.
 Show that $\spc{X}$ is contractible.
 \end{thm}
@@ -159,15 +156,15 @@ that is, $|K_\infty-K_n|_{\Haus\spc{X}}\to0$ as $n\to\infty$.
 \parit{Proof.}
 By finite intersection property, $K_\infty$ is a nonempty compact set.
 
-If the assertion were false, then there is $\eps>0$ such that for each $n$ 
+Arguing by contradiction, assume that there is $\eps>0$ such that for each $n$ 
 one can choose $x_n\in K_n$
 such that $\distfun_{K_\infty}(x_n)\ge\eps$.
 Note that $x_n\in K_1$ for each $n$.
 Since $K_1$ is compact, 
 there is 
-a \index{partial limit}\emph{partial limit}%
-\footnote{Partial limit is a limit of a subsequence.}
- $x_\infty$ of $x_n$.
+a \index{partial limit}\emph{partial limit}
+ $x_\infty$ of $x_n$;
+that is, a limit of a subsequence.
 Clearly, $\distfun_{K_\infty}(x_\infty)\ge \eps$.
 
 On the other hand, since $K_n$ is closed and $x_m\in K_n$ for $m\ge n$,
@@ -182,19 +179,18 @@ is complete.
 \end{thm}
 
 \parit{Proof.}
-Let $(Q_n)$ be a Cauchy sequence in $\Haus\spc{X}$.
-Passing to a subsequence of $Q_n$ we may assume that 
+Let $Q_1,Q_2,\dots$ be a Cauchy sequence in $\Haus\spc{X}$.
+Passing to a subsequence, we may assume that 
 $$|Q_n-Q_{n+1}|_{\Haus\spc{X}}\le \tfrac1{10^n}\eqlbl{eq:eps=1/10}$$
 for each $n$.
 
-Denote by $K_n$ the closed $\tfrac1{10^n}$-neighborhood of $Q_n$;
+Denote by $K_n$ the closed $\tfrac2{10^n}$-neighborhood of $Q_n$;
 that is,
 \begin{align*}
-K_n&= \set{x\in \spc{X}}{\distfun_{Q_n}(x)\le \tfrac1{10^n}}
+K_n&= \set{x\in \spc{X}}{\distfun_{Q_n}(x)\le \tfrac2{10^n}}
 \end{align*}
 Since $\spc{X}$ is compact so is each $K_n$.
 
-By \ref{obs:Haus-nbhds}, $|Q_n-K_n|_{\Haus\spc{X}}\le \tfrac1{10^n}$.
 From \ref{eq:eps=1/10}, we get
 $K_n\supset K_{n+1}$ 
 for each $n$.
@@ -202,7 +198,9 @@ Set
 $$K_\infty=\bigcap_{n=1}^\infty K_n.$$
 By the monotone convergence (\ref{lem:decreasing-converges}),
  $|K_n-K_\infty|_{\Haus\spc{X}}\to 0$ as $n\to\infty$.
-Since $|Q_n-K_n|_{\Haus\spc{X}}\le \tfrac1{10^n}$, we get $|Q_n-K_\infty|_{\Haus\spc{X}}\to 0$ as $n\to\infty$ --- hence the lemma.
+
+By \ref{obs:Haus-nbhds}, $|Q_n-K_n|_{\Haus\spc{X}}\le \tfrac2{10^n}$.
+Therefore, $|Q_n-K_\infty|_{\Haus\spc{X}}\to 0$ as $n\to\infty$ --- hence the lemma.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:closure-union}
@@ -220,7 +218,7 @@ It remains to show that $\Haus\spc{X}$ is totally bounded (\ref{totally-bounded}
 that is, given $\eps>0$ there is a finite $\eps$-net in $\Haus\spc{X}$.
 
 Choose a finite $\eps$-net $A$ in $\spc{X}$.
-Denote by $B$ the set of all subsets of $A$.
+Denote by $B$ the set of all nonempty subsets of $A$.
 Note that  $B$ is a finite set in $\Haus\spc{X}$.
 For each compact set $K\subset \spc{X}$, consider the subset $K'$ of all points $a\in A$
 such that $\distfun_K(a)\le \eps$.
@@ -235,31 +233,35 @@ Show that $\spc{X}$ is a length space if and only if so is $\Haus\spc{X}$.
 
 \section{An application}
 
-The following statement is called \index{isoperimetric inequality}\emph{isoperimetric inequality in the plane}.
 
-\begin{thm}{Theorem}\label{thm:isoperimetric}
-Among the plane figures bounded by closed curves of length at most $\ell$, the round disk has the maximal area.
-\end{thm}
+In this section, we will sketch a proof of the isoperimetric inequality in the plane that uses the Hausdorff convergence.
 
-In this section, we will sketch a proof of the isoperimetric inequality that uses the Hausdorff convergence.
 It is based on the following exercise.
 
 \begin{thm}{Exercise}\label{ex:Huas-perimeter-area}
-Let $\spc{C}$ be a subspace of $\Haus\RR^2$ formed by all compact convex subsets in $\RR^2$.
-Show that perimeter\footnote{If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.} and area are continuous on~$\spc{C}$.
-That is, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then 
+Let $\spc{C}$ be the set of all nonempty compact convex subsets in $\RR^2$.
+Show that $\spc{C}$ is a closed subset of $\Haus\RR^2$ and 
+perimeter and area are continuous on~$\spc{C}$.
+(If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.)
+
+More precisely, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then $X_\infty$ is convex,
 \[\perim X_n\to \perim X_\infty\quad\text{and}\quad\area X_n\to\area X_\infty\]
 as $n\to\infty$.
 \end{thm}
 
-\parit{Semiproof of \ref{thm:isoperimetric}.}
+
+\begin{thm}{Isoperimetric inequality}\label{thm:isoperimetric}
+Among the plane figures bounded by closed curves of length at most $\ell$, the round disk has the maximal area.
+\end{thm}
+
+\parit{Sketch.}
 It is sufficient to consider only convex figures of the given perimeter; if a figure is not convex, pass to its convex hull and observe that it has a larger area and smaller perimeter.
 
 
 Note that the selection theorem (\ref{thm:compact+Hausdorff}) together with the exercise imply the existence of figure $D$ with perimeter $\ell$ and maximal area.
 
-It remains to show that $D$ is a round disk.
-This is a problem in elementary geometry.
+It remains to show that $D$ is a round disk;
+it will be done by means of elementary geometry.
 
 Let us cut $D$ along a chord $[ab]$ into two lenses, $L_1$ and $L_2$.
 Denote by $L_1'$ the reflection of $L_1$ across the perpendicular bisector of $[ab]$.
@@ -283,20 +285,18 @@ Suppose $D$ is a convex figure such that for any chord $[ab]$ of $D$ the above c
 Show that $D$ is a round disk.
 \end{thm}
 
-
 }
 
-Another popular way to prove that $D$ is a round disk is given by the so-called {}\emph{Steiner's 4-joint method} \cite{blaschke}.
+Another popular way to prove that $D$ is a round disk is given by the so-called \textit{Steiner's 4-joint method} \cite{blaschke}.
 
 \section{Remarks}\label{sec:H-variation}
 
 It seems that Hausdorff convergence was first introduced by Felix Hausdorff~\cite{hausdorff}.
 A couple of years later an equivalent definition was given by Wilhelm Blaschke~\cite{blaschke}.
 
-The following refinement was introduced by  Zdeněk Frolík \cite{frolik},
-later it was rediscovered by Robert Wijsman~\cite{wijsman}.  
+The following refinement was introduced by  Zdeněk Frolík \cite{frolik} and rediscovered by Robert Wijsman~\cite{wijsman}.  
 This refinement is also called \index{Hausdorff convergence}\emph{Hausdorff convergence};
-in fact, it takes an intermediate place between the original Hausdorff convergence and {}\emph{closed convergence}, also introduced by Hausdorff in \cite{hausdorff}.
+in fact, it takes an intermediate place between the original Hausdorff convergence and the so-called \textit{closed convergence}, also introduced by Hausdorff in \cite{hausdorff}.
 
 \begin{thm}{Definition}\label{def:gen-Haus-conv}
 Let $A_1,A_2,\dots$ be a sequence of closed sets in a metric space $\spc{X}$.
@@ -304,8 +304,14 @@ We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense
 $\distfun_{A_n}(x)\z\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
 \end{thm}
 
-For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(n,0)$.
-If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $(A_n)$ diverges, but it converges to the $y$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
+For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(0,n)$.
+If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $A_1,A_2,\dots$ diverges, but it converges to the $x$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
+
+\begin{figure}[ht!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-415}
+\end{figure}
 
 Further, consider the sequence of one-point sets $B_n=\{(n,0)\}$ in the Euclidean plane.
 It diverges in the sense of the standard definition, but, in the sense of \ref{def:gen-Haus-conv}, it converges to the empty set;
@@ -321,8 +327,7 @@ Show that the sequence  $A_1,A_2,\dots$ has a convergent subsequence in the sens
 
 \chapter{Space of spaces}\label{chap:GH}
 
-In this lecture we introduce the so called Gromov--Hausdorff metric on the isometry classes of compact metric spaces.
-Further, we prove the Gromov selection theorem that characterize compact subsets in the obtained space.
+In this lecture we define and study the so-called Gromov--Hausdorff metric on the isometry classes of compact metric spaces.
 
 \section{Gromov--Hausdorff metric}
 
@@ -376,7 +381,7 @@ In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$, and $\
 
 
 Note that \ref{SHORT.GH-1}, \ref{SHORT.GH-3},
-and the if part of \ref{SHORT.GH-2} follow directly from Definition \ref{def:GH}.
+and the if part of \ref{SHORT.GH-2} follow directly from \ref{def:GH}.
 Part \ref{SHORT.GH-4} will be proved in Section~\ref{sec:GH-approx}.
 The only-if part of \ref{SHORT.GH-2} will be proved in Section~\ref{sec:extfun=GH}.
 
@@ -387,12 +392,10 @@ that is, $a\cdot\spc{X}$ is a metric space with the underlying set of $\spc{X}$ 
 \begin{thm}{Exercise}\label{ex:d_GH-and-diam}
 Let $\spc{X}$ be a compact metric space,
 $\spc{O}$ be the one-point metric space.
-
-Prove that 
+Prove the following.
 
 \begin{subthm}{ex:d_GH-and-diam:point}
 $|\spc{X}-\spc{O}|_{\GH}=\tfrac12\cdot \diam \spc{X}.$
-
 \end{subthm}
 
 \begin{subthm}{ex:d_GH-and-diam:scale}
@@ -410,7 +413,7 @@ $\iota[\spc{O}]=[\spc{O}]$ for any isometry $\iota\:\GH\to\GH$.
 
 
 \begin{thm}{Exercise}\label{ex:GH<H}
-Find subsets $A,B\subset\RR^2$ such that 
+Find two subsets $A,B\subset\RR^2$ such that 
 \[|A-B|_{\GH}>|A-\iota(B)|_{\Haus\RR^2}\]
 for any isometry $\iota$ of $\RR^2$.
 \end{thm}
@@ -444,7 +447,7 @@ A relation $\approx$ between points in $\spc{X}$ and $\spc{Y}$ is called \index{
 \item For any $x\in  \spc{X}$ there is $y\in \spc{Y}$ such that $x\approx y$.
 \item For any $y\in  \spc{Y}$ there is $x\in \spc{X}$ such that $x\approx y$.
 \item If $x\approx y$ and $x'\approx y'$ for some $x, x'\in  \spc{X}$ and $y,y'\in \spc{Y}$, then 
-\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{y}{y'}{\spc{Y}}\bigr|<2\cdot\eps.\]
+\[\dist{x}{x'}{\spc{X}}\lg\dist{y}{y'}{\spc{Y}}\bigr|\pm2\cdot\eps.\]
 \end{itemize}
 
 \end{thm}
@@ -485,7 +488,7 @@ The following weakened version of isometry is closely related to $\eps$-approxim
 \begin{thm}{Definition} Let $\spc{X}$ and $\spc{Y}$ be metric spaces and $\eps>0$. 
 A  map\footnote{possibly noncontinuous} $f\: \spc{X} \z\to \spc{Y}$ is called an \index{almost isometry}\emph{$\eps$-isometry} 
 if $f(\spc{X})$ is an $\eps$-net in $\spc{Y}$ and
-\[\bigl|\dist{x}{x'}{\spc{X}}-\dist{f(x)}{f(x')}{\spc{Y}}\bigr|<\eps\]
+\[\dist{x}{x'}{\spc{X}}\lg\dist{f(x)}{f(x')}{\spc{Y}}\bigr|\pm\eps\]
 for any $x,x'\in \spc{X}$.
 \end{thm}
 
@@ -527,7 +530,7 @@ Note that in this case the metric on $\spc{W}$ is completely determined by the f
 a function $f$ that can appear this way will be called \index{appropriate function}\emph{appropriate}.
 
 Note that a function $f\:\spc{X}\times\spc{Y}\to\RR$ is appropriate if and only if
-$x\mapsto f(x,y)$ and $y\mapsto f(x,y)$ are extension functions;
+$x\mapsto f(x,y)$ and $y\mapsto f(x,y)$ are extension functions [see \ref{sec:Extension property}];
 that is, if
 \[
 \begin{aligned}
@@ -539,8 +542,7 @@ f(x,y)+f(x',y)
 \end{aligned}
 \eqlbl{eq:appropriate}
 \]
-for any $x,x',\in\spc{X}$ and  $y,y'\in\spc{X}$;
-see \ref{sec:Extension property}.
+for any $x,x',\in\spc{X}$ and  $y,y'\in\spc{X}$.
 In other words, the following defines a semimetric on $\spc{X}\sqcup\spc{Y}$
 \[\dist{x}{y}{\spc{X}\sqcup\spc{Y}}\df
 \begin{cases}
@@ -554,23 +556,32 @@ f(x,y)&\text{if\ } x\in \spc{X}\ \text{and}\ y\in \spc{Y},
 and the corresponding metric space $\spc{W}$ contains isometric copies of $\spc{X}$ and $\spc{Y}$.
 
 \begin{thm}{Observation}\label{obs:GH=min-appropriate}
-If $\spc{X}$, $\spc{Y}$ be metric spaces.
+Let $\spc{X}$, $\spc{Y}$ be metric spaces.
 Given an appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$, set 
 \begin{align*}
 a_f&=\max_{x\in \spc{X}}\{\min_{y\in\spc{Y}} \{f(x,y)\}\},
 \\
-b_f&=\max_{y\in \spc{Y}}\{\min_{x\in\spc{X}} \{f(x,y)\}\}.
+b_f&=\max_{y\in \spc{Y}}\{\min_{x\in\spc{X}} \{f(x,y)\}\},
+\\
+c_f&=\max\{\,a_f,b_f\,\}.
 \end{align*}
 Then 
-\[\dist{\spc{X}}{\spc{Y}}{\GH}=\inf_f\{a_f,b_f\},\]
+\[\dist{\spc{X}}{\spc{Y}}{\GH}=\inf\{\,c_f\,\},\]
 where the greatest lower bound is taken for all appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$.
 \end{thm}
 
 \parit{Proof of \ref{prop:GH=H}.}
-By \ref{eq:appropriate}, any appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$ is $2$-Lipschitz.
-Observe that the functional $f\mapsto \min\{a_f,b_f\}$ is continuous.
-Applying the Arzelà--Ascoli theorem, we can get an  appropriate function $f\:\spc{X}\times\spc{Y}\to\RR$ 
-with minimal possible value $\min\{a_f,b_f\}$.
+Equip the product $\spc{X}\times\spc{Y}$ with $\ell_1$-metric;
+that is,
+\[\dist{(x,y)}{(x',y')}{\spc{X}\times\spc{Y}}
+\df
+\dist{x}{x'}{\spc{X}}+\dist{y}{y'}{\spc{Y}}\]
+Note that any appropriate functions $f\:\spc{X}\times\spc{Y}\to\RR$ is $1$-Lipschitz.
+
+Let us equip the space of appropriate functions $\spc{X}\times\spc{Y}\to\RR$ with supnorm.
+Observe that the functional $f\mapsto c_f$ is continuous.
+By the Arzelà--Ascoli theorem, we can choose an appropriate function $f$ 
+with minimal possible value $c_f$.
 It remains to apply \ref{obs:GH=min-appropriate}.
 \qeds
 
@@ -591,7 +602,7 @@ at least one of the following three inequalities is strict
 
 \section{Convergence}
 
-The Gromov--Hausdorff metric is used to define \index{Gromov--Hausdorff convergence}\emph{Gromov--Hausdorff convergence}.
+The Gromov--Hausdorff metric defines Gromov--Hausdorff \index{Gromov--Hausdorff convergence}\emph{convergence}.
 Namely, a sequence of compact metric spaces $\spc{X}_n$ converges to compact metric spaces $\spc{X}_\infty$ in the sense of Gromov--Hausdorff if 
 \[\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\to 0\quad\text{as}\quad n\to\infty.\]
 
@@ -623,7 +634,7 @@ Show that a sequence of length metrics on the 2-sphere cannot converge to the un
 \end{subthm}
 
 \begin{subthm}{ex:sphere-to-ball:3}
-Construct a sequence of length metrics on the 3-sphere that converges to a unit 3-ball.
+Construct a sequence of length metrics on the 3-sphere that converges to the unit 3-ball.
 \end{subthm}
 
 \end{thm}
@@ -631,24 +642,24 @@ Construct a sequence of length metrics on the 3-sphere that converges to a unit 
 \section{Uniformly totally bonded families}
 
 \begin{thm}{Definition}\label{def:utb}
-A family $\spc{Q}$ of (isometry classes) of compact metric spaces is called  \index{uniformly totally bonded family}\emph{uniformly totally bonded} if it meets the following two conditions:
+A family $\bm{Q}$ of (isometry classes) of compact metric spaces is called  \index{uniformly totally bonded family}\emph{uniformly totally bonded} if it meets the following two conditions:
 
 \begin{subthm}{}
-spaces in $\spc{Q}$ have uniformly bounded diameters; that is, there is $D\in\RR$ such that
+spaces in $\bm{Q}$ have uniformly bounded diameters; that is, there is $D\in\RR$ such that
 \[\diam\spc{X}\le D\]
-for any space $\spc{X}$ in $\spc{Q}$.
+for any space $\spc{X}$ in $\bm{Q}$.
 \end{subthm}
 
 \begin{subthm}{}
-For any $\eps>0$ there is $n\in\NN$ such that any space $\spc{X}$ in $\spc{Q}$ admits an $\eps$-net with at most $n$ points.
+For any $\eps>0$ there is $n\in\NN$ such that any space $\spc{X}$ in $\bm{Q}$ admits an $\eps$-net with at most $n$ points.
 \end{subthm}
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:utb+pack}
-Let $\spc{Q}$ be a family of compact spaces with uniformly bounded diameters.
-Show that $\spc{Q}$ is uniformly totally bonded if for any $\eps>0$ there is $n\in\NN$ such that 
+Let $\bm{Q}$ be a family of compact spaces with uniformly bounded diameters.
+Show that $\bm{Q}$ is uniformly totally bonded if for any $\eps>0$ there is $n\in\NN$ such that 
 \[\pack_\eps\spc{X}\le n\]
-for any space $\spc{X}$ in $\spc{Q}$.
+for any space $\spc{X}$ in $\bm{Q}$.
 \end{thm}
 
 
@@ -659,8 +670,8 @@ for any point $p\in \spc{X}$ and any $r>0$.
 A Borel measure is called \index{doubling measure}\emph{doubling} if it is {}\emph{$C$-doubling} for some real constant $C$.
 
 \begin{thm}{Exercise}\label{pr:doubling}
-Let $\spc{Q}(C,D)$ be the set of all the compact metric spaces with diameter at most $D$ that admit a $C$-doubling measure.
-Show that $\spc{Q}(C,D)$ is totally bounded.
+Let $\bm{Q}(C,D)$ be the set of all the compact metric spaces with diameter at most $D$ that admit a $C$-doubling measure.
+Show that $\bm{Q}(C,D)$ is totally bounded.
 \end{thm}
 
 Given two metric spaces $\spc{X}$ and $\spc{Y}$, we will write $\spc{X}\le \spc{Y}$ if there is a distance-noncontracting map $f\:\spc{X}\to \spc{Y}$;
@@ -677,8 +688,8 @@ is uniformly totally bounded.
 \end{subthm}
 
 \begin{subthm}{pr:under:only-if}
-Show that for any uniformly totally bounded set $\spc{Q}\subset\GH$ there is a compact space $\spc{Y}$
-such that $\spc{X}\le\spc{Y}$ for any $\spc{X}$ in $\spc{Q}$.
+Show that for any uniformly totally bounded set $\bm{Q}\subset\GH$ there is a compact space $\spc{Y}$
+such that $\spc{X}\le\spc{Y}$ for any $\spc{X}$ in $\bm{Q}$.
 \end{subthm}
 
 \end{thm}
@@ -688,24 +699,22 @@ such that $\spc{X}\le\spc{Y}$ for any $\spc{X}$ in $\spc{Q}$.
 The following theorem is analogous to Blaschke selection theorems (\ref{thm:compact+Hausdorff}).
 
 \begin{thm}{Gromov selection theorem}\label{thm:gromov-compactness}
-Let $\spc{Q}$ be a closed subset of $\GH$.
-Then $\spc{Q}$ is compact if and only if the spaces in $Q$ are uniformly totally bounded.
+Let $\bm{Q}$ be a closed subset of $\GH$.
+Then $\bm{Q}$ is compact if and only if the spaces in $\bm{Q}$ are uniformly totally bounded.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:GH-complete}
 The space $\GH$ is complete.
 \end{thm}
 
-
-Let us define gluing of metric spaces that will be used in the proof of the lemma.
-
 Suppose 
 $\spc{U}$ and $\spc{V}$ are metric spaces 
 with isometric closed sets $A\subset\spc{U}$ and $A'\subset\spc{V}$;
 let $\iota\:A\to A'$ be an isometry.
-Consider the space $\spc{W}$ of all equivalence classes in $\spc{U}\sqcup\spc{V}$ with the equivalence relation given by $a\sim\iota(a)$ for any $a\in A$.
+Consider the gluing $\spc{W}=\spc{U}\sqcup_\iota\spc{V}$ of $\spc{U}$ and $\spc{V}$ along $\iota$ [see \ref{sec:max+glue}].
 
-It is straightforward to check that the following defines a metric on~$\spc{W}$:
+Let us identify points of $\spc{U}$ and $\spc{V}$ with their images in $\spc{W}$.
+It is straightforward to check that the metric on~$\spc{W}$ is defined by
 \begin{align*}
 \dist{u}{u'}{\spc{W}}&\df\dist{u}{u'}{\spc{U}},
 \\
@@ -715,8 +724,6 @@ It is straightforward to check that the following defines a metric on~$\spc{W}$:
 \end{align*}
 where $u,u'\in \spc{U}$ and $v,v'\in \spc{V}$.
 
-The  space $\spc{W}$ is called the \index{gluing}\emph{gluing} of $\spc{U}$ and  $\spc{V}$ along~$\iota$; briefly, we can write
-$\spc{W}=\spc{U}\sqcup_\iota\spc{V}$.
 If one applies this construction to two copies of one space $\spc{U}$ with a set $A\subset \spc{U}$ and the identity map $\iota\:A\to A$, then the obtained space is called the \index{doubling}\emph{doubling} of $\spc{U}$ along~$A$; this space can be denoted by $\sqcup_A^2\spc{U}$.
 
 Note that the inclusions $\spc{U}\hookrightarrow \spc{W}$ and $\spc{V}\hookrightarrow \spc{W}$ are distance-preserving.
@@ -755,27 +762,27 @@ It remains to observe that $\spc{X}_\infty$ is the Gromov--Hausdorff limit of $\
 \parit{Proof of \ref{thm:gromov-compactness}; only-if part.}
 Suppose that there is no sequence $\eps_n\to0$ as described in \ref{def:utb}.
 Observe that in this case
-there is a sequence of spaces $\spc{X}_n\in\spc{Q}$ such that 
+there is a sequence of spaces $\spc{X}_n\in\bm{Q}$ such that 
 $$\pack_\delta \spc{X}_n\to\infty
 \quad\text{as}\quad
 n\to\infty$$
 for some fixed $\delta>0$.
 
-Since $\spc{Q}$ is compact, 
-this sequence has a partial limit, say $\spc{X}_\infty\in\spc{Q}$.
+Since $\bm{Q}$ is compact, 
+this sequence has a partial limit, say $\spc{X}_\infty\in\bm{Q}$.
 Observe that $\pack_{\delta} \spc{X}_\infty=\infty$.
 Therefore, $\spc{X}_\infty$ is not compact --- a contradiction.
 
 \parit{If part.}
-Given a positive integer $n$ consider the set of all metric spaces $\spc{W}_n$
+Given a positive integer $n$ consider the set of all nonempty metric spaces $\spc{W}_n$
 with the number of points at most $n$ and diameter $\le D$.
 Note that $\spc{W}_n$ is a compact set in $\GH$ for each $n$.
 
 Let $D$ and $n=n(\eps)$ be as in the definition of uniformly totally bonded families (\ref{def:utb}).
 
-Note that an $\eps$-net of any $\spc{X}\in\spc{Q}$ belongs to $\spc{W}_{n(\eps)}$.
-Therefore, $\spc{W}_{n(\eps)}$ is a compact $\eps$-net of $\spc{Q}$ for any $\eps>0$.
-Since $\spc{Q}$ is closed in a complete space $\GH$, it implies that $\spc{Q}$ is compact.
+Note that an $\eps$-net of any $\spc{X}\in\bm{Q}$ belongs to $\spc{W}_{n(\eps)}$.
+Therefore, $\spc{W}_{n(\eps)}$ is a compact $\eps$-net of $\bm{Q}$ for any $\eps>0$.
+Since $\bm{Q}$ is closed in a complete space $\GH$, it implies that $\bm{Q}$ is compact.
 \qeds
 
 \begin{thm}{Exercise}\label{ex-GH-length}
@@ -865,15 +872,16 @@ It follows that
 
 \begin{thm}{Exercise}\label{ex:GH-urysohn}
 Let $\spc{U}_\infty$ be the Urysohn space.
-Given two compact sets $A$ and $B$ in $\spc{U}_\infty$ define 
+Given two compact sets $A$ and $B$ in $\spc{U}_\infty$, define 
 \[\|A-B\|\df\inf\{|A-\iota(B)|_{\Haus\spc{U}_\infty}\},\]
 where the greatest lower bound is taken for all isometrics $\iota$ of $\spc{U}_\infty$.
-Show that $\|{*}\z-{*}\|$ defines a semimetric%
-\footnote{The value $\|A-B\|$ is called Hausdorff distance \index{Hausdorff distance up to isometry}\emph{up to isometry} from $A$ to $B$ in $\spc{U}_\infty$.}
+Show that $\|{*}\z-{*}\|$ defines a semimetric 
 on nonempty compact subsets of $\spc{U}_\infty$ and its corresponding metric space is isometric to $\GH$.
 \end{thm}
 
-\section{Remarks}
+The value $\|A-B\|$ is called Hausdorff distance \index{Hausdorff distance!up to isometry}\emph{up to isometry} from $A$ to $B$ in $\spc{U}_\infty$.
+
+\section{Remarks}\label{sec:remarks-GH}
 
 Suppose $\spc{X}_n\GHto \spc{X}_\infty$, then there is a metric on the disjoint union 
 \[\bm{X}=\bigsqcup_{n\in \NN\cup\{\infty\}} \spc{X}_n\] 
@@ -894,7 +902,7 @@ For that reason, it is useful to define \index{Hausdorff convergence}\emph{conve
 for the variation of Hausdorff convergence described in Section~\ref{sec:H-variation}.
 
 This approach is more flexible;
-in particular, it can be used to define Gromov--Hausdorff convergence of arbitrary metric spaces (not necessarily compact).
+in particular, it can be used to define the Gromov--Hausdorff convergence of arbitrary metric spaces (not necessarily compact).
 A limit space for this generalized convergence is not uniquely defined.
 For example, if each space $\spc{X}_n$ in the sequence is isometric to the half-line, then its limit might be isometric to the half-line or the whole line.
 The first convergence is evident and the second could be guessed from the diagram.
@@ -912,8 +920,7 @@ The pointed convergence works nicely for proper metric spaces;
 the following theorem is an analog of Gromov's selection theorem for this convergence.
 
 \begin{thm}{Theorem}\label{thm:pointed-gromov-compactness}%
-Let $\spc{Q}$ be a set of isometry classes of pointed proper metric spaces
-$(\spc{X},p)$.
+Let $\bm{Q}$ be a set of isometry classes of pointed proper metric spaces.
 Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
-Then $\spc{Q}$ is precompact with respect to the pointed Gromov--Hausdorff convergence. 
+Then $\bm{Q}$ is precompact with respect to the pointed Gromov--Hausdorff convergence. 
 \end{thm}

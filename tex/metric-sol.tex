@@ -11,13 +11,12 @@ where $\distfun_Ax\z\df\inf_{a\in A}\dist{a}{x}{}$.
 Show that $f$ is continuous and satisfies the needed property.
 
 \parbf{\ref{ex:tietze}.}
-Use \ref{ex:normal} to construct an approximation of the needed function and pass to a limit.
-Alternatively, read about the \textit{Tietze extension theorem}.
+Use \ref{ex:normal} to construct an approximation of the needed function and pass to a limit or find a proof of the \index{Tietze extension theorem}\emph{Tietze extension theorem}.
 
 \parbf{\ref{ex:pseudo-infty-metric}};\ref{SHORT.ex:pseudo-infty-metric:pseudo}.
 Note that if $\mu(A)=\mu(B)=0$, then $|A-B|=0$.
 Therefore, \ref{metric=0} does not hold for bounded closed subsets.
-It is straightforward to check that for bounded measurable sets the remaining conditions in~\ref{def:metric} hold true.
+It is straightforward to check the remaining conditions in~\ref{def:metric} hold true.
 
 \parit{\ref{SHORT.ex:pseudo-infty-metric:infty}.}
 Note that the distance from the empty set to the whole plane is infinite; so the value $|A-B|$ might be infinite.
@@ -25,14 +24,14 @@ It is straightforward to check the remaining conditions in~\ref{def:metric}.
 
 \parit{Remark.}
 Metrics of the form $\dist{A}{B}{}=\mu(A\bigtriangleup B)$ are very special.
-In particular, they satisfy the so called \index{hypermetric inequality}\emph{hypermetric inequalities}; that is, for any sequence of sets $A_1,\dots, A_n$ and any sequence of integers $b_1,\dots,b_n$ such that $\sum_ib_i=1$ we have
+In particular, they satisfy the so-called \index{hypermetric inequality}\emph{hypermetric inequalities}; that is, for any sequence of sets $A_1,\dots, A_n$ and any sequence of integers $b_1,\dots,b_n$ such that $\sum_ib_i=1$ we have
 \[\sum_{i,j}b_i\cdot b_j\cdot \dist{A_i}{A_j}{}\le 0.\]
 Note that for $n=3$ and $b_1=b_2=-b_3=1$ we get the usual triangle inequality.
 For more on the subject, see \cite{deza-laurent}.
 
 \parbf{\ref{ex:gluing}.}
 Choose $\delta>0$ and an increasing linear bijection $\ell\:[a,b]\to [c,d]$.
-Show that $\ell$ has arbitrarily close increasing piecewise-linear bijetion $s\:[a,b]\to [c,d]$ such that derivative at any point is either $<\delta$ or $>\tfrac1\delta$.
+Show that $\ell$ has arbitrarily close increasing piecewise-linear bijection $s\:[a,b]\to [c,d]$ such that derivative at any point is either $<\delta$ or $>\tfrac1\delta$.
 
 Start with the identity map $[0,1]\to [0,1]$;
 iterate the above construction for smaller and smaller $\delta$ and pass to the limit.
@@ -53,17 +52,8 @@ Then for any point $x\in \spc{X}$, there is a point $x'\in \spc{X}$ such that
 \intertext{and}
 \rho(x')&\le\frac{\rho(x)}{1+\eps}.
 \end{align*}
-Consider a sequence $x_n$ of points such that $x_{n+1}\z=x_n'$.
-Clearly
-\begin{align*}
-\dist{x_{n+1}}{x_n}{}
-&\le
-\frac{\rho(x_0)}{\eps\cdot(1+\eps)^n}
-\intertext{and}
-\rho(x_n)
-&\le \frac{\rho(x_0)}{(1+\eps)^n}.
-\end{align*}
-Therefore, the sequence $x_n$ is Cauchy.
+Consider a sequence $x_1,x_2,\dots\in \spc{X}$ such that $x_{n+1}\z=x_n'$.
+Show that this is a Cauchy sequence.
 Since $\spc{X}$ is complete, $x_n$ converges;
 denote its limit by $x_\infty$.
 Since $\rho$ is a continuous function we get
@@ -139,7 +129,8 @@ a student in my MASS class at Penn State, Fall 2011.
 
 Note that this exercise implies that \textit{any surjective non-expanding map from a compact metric space to itself is an isometry}. 
 
-\parbf{\ref{ex:loc-compact-not-proper}.} Consider an infinite discrete space.
+\parbf{\ref{ex:loc-compact-not-proper}.}
+Check an infinite set with a discrete metric.
 
 \parbf{\ref{ex:pogorelov}.}
 The conditions \ref{SHORT.metric>=0}--\ref{SHORT.metric:sym} in Definition \ref{def:metric} are evident.
@@ -154,29 +145,26 @@ The triangle inequality \ref{SHORT.metric:triangle} follows since
 B_x\setminus B_z.
 \leqno(*)\]
 
-{
-
-\begin{wrapfigure}{o}{24 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-29}
-\end{wrapfigure}
-
 Observe that
 $B_x\setminus B_y$
 does not overlap with
 $B_y\z\setminus B_z$ and  we get equality in $(*)$ if and only if $y$ lies on the great circle arc from $x$ to $z$.
 Therefore, the second statement follows.
 
-}
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-29}
+\end{wrapfigure}
 
 \parit{Remarks.}
 This construction was given by 
 Aleksei Pogorelov \cite{pogorelov}.
 It is closely related to the construction given 
 by David Hilbert \cite{hilbert}
-which was the motivating example for his 4-th problem. 
-See also the remark after the solution of \ref{ex:pseudo-infty-metric}.
+which was the motivating example for his fourth problem. 
+See also the remark after the solution of~\ref{ex:pseudo-infty-metric}.
 
 \parbf{\ref{ex:4-point-trees}.}
 Without loss of generality, we may assume that non of the points $p,x,y,z$ lie on a geodesic between the other two.
@@ -185,8 +173,8 @@ Let $K$ be the set in the tree covered by all six geodesics with the endpoints $
 Observe that $K$ looks like an H or like an X; make a conclusion.
 
 \parit{Remarks.}
-In fact, a four-point metric space admits an isometric embedding into a metric tree if and only if one of these two equivalent conditions holds.
-Moreover, a finite metric space admits an isometric embedding into a metric tree if every its 4-point subspace admits such embedding.
+Note that a four-point metric space admits an isometric embedding into a metric tree if and only if one of these two equivalent conditions holds.
+Moreover, a metric space admits an isometric embedding into a metric tree if every its four-point subspace admits such embedding.
 
 The value $\tfrac12\cdot(|p-x|+|p-y|-|x-y|)$ is called \index{Gromov's product}\emph{Gromov's product} of $x$ and $y$ with the origin at $p$;
 usually it is denoted by $(x|y)_p$.
@@ -196,13 +184,14 @@ Apply \ref{ex:4-point-trees}.
 
 
 \parbf{\ref{ex:no-geod}.}
-Formally speaking, a one-point space is a solution,
-but we will construct a nontrivial example.
+\textit{Formally speaking, a one-point space is a solution,
+but we will construct a nontrivial example.}
 
-Consider the unit ball $(B,\rho_0)$
-in the space $c_0$ of all sequences converging to zero equipped with the sup-norm.
+Denote by $c_0$ the space of all real sequences converging to zero equipped with the sup-norm.
+Consider the unit ball $B$ in $c_0$;
+denote by $\rho_0$ the metric on $B$.
 
-Consider another metric $\rho_1$ which is different from $\rho_0$ by the conformal factor
+Consider another length metric $\rho_1$ on $B$ which is different from $\rho_0$ by the conformal factor
 \[\phi(\bm{x})=2+\tfrac{1}2\cdot x_1+\tfrac{1}4\cdot x_2+\tfrac{1}8\cdot x_3+\dots,\]
 where $\bm{x}=(x_1,x_2\,\dots)\in B$.
 That is, if $t\mapsto\bm{x}(t)$ for $t\in[0,\ell]$ is a curve parametrized by $\rho_0$-length,
@@ -218,7 +207,7 @@ Moreover, this inequality is strict if $x'_m(t)\z< x_m(t)$ for some~$t$.
 
 Fix a curve $\bm{x}(t)$, $t\in[0,\ell]$, parametrized by  $\rho_0$-length.
 We can choose large $m$ so that $x_m(t)$ is sufficiently close to $0$ for any~$t$.
-In this case, it is easy to construct a function $t\mapsto x'_m$ that meets the above properties.
+In this case, it is easy to construct a function $t\mapsto x'_m$ that meets the above conditions.
 It follows that for any curve $\bm{x}(t)$ in $(B,\rho_1)$, we can find a shorter curve $\bm{x}'(t)$ with the same endpoints.
 In particular, $(B,\rho_1)$ has no geodesics.
 
@@ -227,7 +216,7 @@ This solution was suggested by Fedor Nazarov~\cite{nazarov}.
 
 \parbf{\ref{ex:compact+connceted}.}
 Choose a sequence of positive numbers $\varepsilon_n\to 0$ and a finite $\varepsilon_n$-net $N_n$ of $K$ for each $n$.
-Assume $N_0$ is a one-point set, so $\eps_0>\diam K$.
+We can assume that $\eps_0>\diam K$, and $N_0$ is a one-point set.
 If $\dist{x}{y}{}<\eps_k$ for some $x\in N_{k+1}$ and $y\in N_{k}$, then connect them by a curve of length at most $\eps_k$.
 
 Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path-connected.
@@ -292,28 +281,28 @@ and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$.
 }
 
 \parbf{\ref{ex:gross}.}
-If such a number does not exist, then the ranges of average distance functions have an empty intersection.
-Since $\spc{X}$ is a compact length space, the range of any continuous function on $\spc{X}$ is a closed interval.
-By 1-dimensional Helly's theorem, there is a pair of such range intervals that do not intersect.
-That is, for two point-arrays $(x_1,\dots,x_n)$ and $(y_1,\dots,y_m)$
-and their average distance functions 
+Suppose such a number does not exist.
+Show that there are two point-arrays $(x_1,\z\dots,x_n)$ and $(y_1,\dots,y_m)$
+such that
+\[
+\min_{z\in \spc{X}}\{\,f(z)\,\}>\max_{z\in \spc{X}}\{\,h(z)\,\},
+\leqno({*})
+\]
+where
 \begin{align*}
 f(z)&=\tfrac1n\cdot\sum_i|x_i-z|_{\spc{X}}
 \intertext{and}
-h(z)&=\tfrac1m\cdot\sum_j|y_j-z|_{\spc{X}},
+h(z)&=\tfrac1m\cdot\sum_j|y_j-z|_{\spc{X}}.
 \end{align*}
-we have 
-$$\min_{z\in \spc{X}}\{\,f(z)\,\}
->\max_{z\in \spc{X}}\{\,h(z)\,\}.
-\leqno({*})$$
+
 
 Note that
 \begin{align*}\tfrac1m\cdot\sum_j f(y_j)&=\tfrac1{m\cdot n}\cdot\sum_{i,j}|x_i-y_j|_{\spc{X}}=
 \\
 &=\tfrac1n\cdot\sum_i h(x_i);
 \end{align*}
-that is, the average value of $f(y_j)$ coincides with the average value of $h(x_i)$, 
-which contradicts~$({*})$.
+that is, the average value of $f(y_j)$ coincides with the average value of $h(x_i)$.
+The latter contradicts~$({*})$.
 
 \parit{Remark.}
 The value $\ell$ is uniquely defined;

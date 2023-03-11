@@ -3,9 +3,10 @@
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:compact-length}.}
-By the Fréchet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset of $\ell^\infty$.
+By the Fréchet lemma (\ref{lem:frechet}) we can identify $\spc{K}$ with a compact subset in $\ell^\infty$.
 
-Denote by $\spc{L}=\Conv\spc{K}$ --- it is defined as the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
+Denote by $\spc{L}$ the \index{closed convex hull}\emph{closed convex hull} of $\spc{K}$;
+that is, $\spc{L}$ is the minimal convex closed set in $\ell^\infty$ that contains $\spc{K}$.
 (In other words, $\spc{L}$ is the minimal closed set containing $\spc{K}$ such that if $x,y\in \spc{L}$, then 
 $t\cdot x+(1-t)\cdot y\in \spc{L}$ for any $t\in[0,1]$.)
 
@@ -44,7 +45,7 @@ Modify the proof of \ref{lem:frechet}.
 
 \parbf{\ref{ex:inf-extension}.}
 Consider the metric tree $\spc{T}$ shown on the diagram;
-it is a half-line $[0,\infty)$ with attached an interval of length $n+1$ to each integer point~$n$.
+it is a half-line $[0,\infty)$ with attached an interval of length $n+1$ to each integer~$n\ge 0$.
 Denote by $o$ the origin of the half-line
 and by $x_n$ the endpoint of $n^{\text{th}}$ interval.
 
@@ -78,7 +79,7 @@ Since $K$ is compact, we may fix $\eps>0$ such that $f(x)>\eps$ for any $x\in K$
 
 Consider the sequence $\eps_n=\tfrac\eps{100\cdot 2^n}$.
 Choose a sequence of $\eps_n$-nets $N_n\subset K$.
-Applying universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
+Applying the universality of $\spc{U}$ recursively, we may choose a point $p_n$ such that $\dist{p_n}{x}{}=f(x)$ for any $x\in N_n$ and $\dist{p_n}{p_{n-1}}{}\z=10\cdot\eps_{n-1}$.
 Observe that the sequence $p_n$ is Cauchy and its limit $p$ meets 
 $\dist{p}{x}{}=f(x)$ for any $x\in K$.
 
@@ -141,10 +142,14 @@ Observe that $L$ and $M$ satisfy the definition of $d$-Urysohn space and apply t
 Note that
 \[\ell=\diam L=\min\{2\cdot r, d\}.\]
 
+\parit{\ref{SHORT.ex:sphere-in-urysohn:homogeneous}.} 
+Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
+
 \parbf{\ref{ex:shere}.}
 Let $p$ be the center of the sphere;
 without loss of generality, we can assume that $\dist{p}{x}{}\le \dist{p}{y}{}$.
-Set $f(p)=1$, $f(x)=1+\dist{p}{x}{}$ and $f(y)=1+\dist{p}{y}{}-\eps$.
+
+Consider function $f\:\{p,x,y\}\to\RR$ defined by $f(p)=1$, $f(x)=1+\dist{p}{x}{}$, and $f(y)=1+\dist{p}{y}{}-\eps$.
 Suppose $\eps>0$ is sufficiently small;
 show that $f$ is an extension function on $\{p,x,y\}$.
 
@@ -221,7 +226,7 @@ The if part is proved.
 For the only-if part, check the statement for subsets of the real line, and use it.
 
 \parbf{\ref{ex:K23}.}
-Show that for any proper subset $S\subset \spc{K}_{2,3}$ there are three points $x,y,z\in \spc{K}_{2,3}$ such that $\dist{x}{y}{} +\dist{y}{z}{}=\dist{x}{z}{}$ and either 
+Show that for any proper subset $S$ in the vertex set there are three vertices $x,y,z$ such that $\dist{x}{y}{} +\dist{y}{z}{}=\dist{x}{z}{}$ and either 
 $x,z\in S$ and $y\notin S$, or $x,z\notin S$ and $y\in S$.
 Then apply \ref{ex:cut}.
 
@@ -234,9 +239,9 @@ Show and use that there is an isometric three-point set in $\RP^2$ that does not
 \parit{Source:} \cite[V \S 2]{busemann-1942}.
 
 \parbf{\ref{ex:hom-cube}.}
-Given $x_1,\dots,x_m\in Q$, denote by $(x_1,\dots,x_m)$ number coordinates that are equal for all.
+Denote by $\dim(x_1,\dots,x_m)$ the dimension of the minimal face of the cube that contains all the points $x_1,\dots,x_m\in Q$.
 Show and use that 
-\[(x_1,\dots,x_m)=(x_1',\dots,x_m')\]
+\[\dim(x_1,\dots,x_m)=\dim(x_1',\dots,x_m')\]
 for any isometry $x\mapsto x'$ of $Q$.
 
 \parit{Source:} \cite[prop. 6 and 7]{berestovskii-nikonorov}.

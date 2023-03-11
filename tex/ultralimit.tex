@@ -39,7 +39,7 @@ Show that $f(n)=n$ for $\omega$-almost all $n\in\NN$.
 
 
 \parbf{Classical definition.}
-More commonly, a nonprincipal ultrafilter is defined as a collection, say $\mathfrak{F}$, of sets in $\NN$ such that
+More commonly, a nonprincipal ultrafilter is defined as a collection, say $\mathfrak{F}$, of subsets in $\NN$ such that
 \begin{enumerate}
 \item\label{filter:supset} if $P\in \mathfrak{F}$ and $Q\supset P$, then $Q\in \mathfrak{F}$,
 \item\label{filter:cap} if $P, Q\in \mathfrak{F}$, then $P\cap Q\in \mathfrak{F}$,
@@ -60,13 +60,13 @@ It is straightforward to check that the sets $\Omega_S$ for all $S\subset \NN$ f
 The obtained space was first considered by Andrey Tikhonov and called \index{Stone--\v{C}ech compactification}\emph{Stone--\v{C}ech compactification} of $\NN$;
 it is usually denoted as $\beta\NN$.
 
-Let $\omega_n$ denotes the principal ultrafilter such that $\omega_n(\{n\})=1$; that is, $\omega_n(S)=1$ if and only if $n\in S$.
-Note that $n\mapsto\omega_n$ defines a natural embedding $\NN\hookrightarrow\beta\NN$. 
-Using the described embedding, we can (and will) consider $\NN$ as a subset of $\beta\NN$.
+Let $\omega_n$ be a principal ultrafilter such that $\omega_n(\{n\})=1$; that is, $\omega_n(S)=1$ if and only if $n\in S$.
+Note that $n\mapsto\omega_n$ defines an embedding $\NN\hookrightarrow\beta\NN$;
+so, we can (and will) consider $\NN$ as a subset of~$\beta\NN$.
 
 The space $\beta\NN$ is the maximal compact Hausdorff space that contains $\NN$  as an everywhere dense subset.
-More precisely, for any compact Hausdorff space $\spc{X}$ 
-and a map $f\:\NN\to \spc{X}$ there is a unique continuous map $\bar f\:\beta\NN\to X$ such that the restriction $\bar f|_\NN$ coincides with $f$. 
+More precisely, \textit{for any compact Hausdorff space $\spc{X}$ 
+and a map $f\:\NN\to \spc{X}$ there is a unique continuous map $\bar f\:\beta\NN\to X$ such that the restriction $\bar f|_\NN$ coincides with $f$.} 
 
 \section{Ultralimits of points}
 \label{ultralimits}\index{ultralimit}
@@ -76,14 +76,15 @@ Let us fix a nonprincipal  ultrafilter $\omega$ once and for all.
 Assume $x_n$ is a sequence of points in a metric space $\spc{X}$. 
 Let us define the \index{$\omega$-limit}\emph{$\omega$-limit} of a sequence $x_1,x_2,\dots$ as the point $x_\omega$ 
 such that for any $\eps>0$, point $x_n$ lie in $\oBall(x_\omega,\eps)$ for $\omega$-almost all $n$; 
-that is,
-\[\omega\set{n\in\NN}{\dist{x_\omega}{x_n}{}<\eps}=1.\]
+that is, if 
+\[S_\eps=\set{n\in\NN}{\dist{x_\omega}{x_n}{}<\eps},\]
+then $\omega(S_\eps)=1$ for any $\eps>0$.
 In this case, we will write 
 \[x_\omega=\lim_{n\to\omega} x_n
 \ \ \text{or}\ \ 
 x_n\to x_\omega\ \text{as}\ n\to\omega.\]
 
-For example, if $\omega_n$ is the \textit{principal} ultrafilter such that $\omega_n\{n\}=1$ for some $n\in\NN$, then
+For example, if $\omega_n$ is the \textit{principal} ultrafilter defined by $\omega_n\{n\}=1$ for some $n\in\NN$, then
 $x_{\omega_n}=x_n$.
 
 The sequence $x_n$ can be regarded as a map $\NN\to\spc{X}$ defined by $n\mapsto x_n$.
@@ -107,9 +108,9 @@ that is, there is a subsequence $(x_n)_{n\in S}$ that converges to $x_\omega$ in
 \parit{Proof.}
 Given $\eps>0$, 
 set $S_\eps=\set{n\in\NN}{\dist{x_n}{x_\omega}{}<\eps}$.
+Recall that $\omega(S_\eps)=1$ for any $\eps>0$.
 
-Note that $\omega(S_\eps)=1$ for any $\eps>0$.
-Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite.
+Since $\omega$ is nonprincipal, the set $S_\eps$ is infinite for any $\eps>0$.
 Therefore, we can choose an increasing sequence $n_k$
 such that $n_k\in S_{\frac1k}$ for each $k\in \NN$.
 Clearly, $x_{n_k}\to x_\omega$ as $k\to\infty$.
@@ -131,7 +132,7 @@ In particular, a bounded sequence of real numbers has a unique $\omega$-limit.
 The following lemma is an ultralimit analog of the Cauchy convergence test.
 
 \begin{thm}{Lemma}\label{lem:X-X^w}
-Let $x_n$ be a sequence of points in a complete space~$\spc{X}$. 
+Let $x_n$ be a sequence of points in a complete metric space~$\spc{X}$. 
 Assume for each subsequence $y_n$ of $x_n$, 
 the $\omega$-limit 
 \[y_\omega=\lim_{n\to\omega}y_{n}\in \spc{X}\]
@@ -140,10 +141,12 @@ is defined and does not depend on the choice of subsequence, then the sequence $
 
 \parit{Proof.} If $x_n$ is not a Cauchy sequence, then for some $\eps>0$, there is a subsequence $y_n$ of $x_n$ such that $\dist{x_n}{y_n}{}\ge\eps$ for all $n$.
 
-It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$ --- a contradiction.\qeds
+It follows that $\dist{x_\omega}{y_\omega}{}\ge \eps$ --- a contradiction.
+\qeds
+
+Recall that $\ell^\infty$ denotes the space of bounded sequences of real numbers equipped with the sup-norm.
 
 \begin{thm}{Exercise}\label{ex:linear}
-Recall that $\ell^\infty$ denotes the space of bounded sequences of real numbers.
 Show that there is a linear functional $L\:\ell^\infty\to\RR$ such that
 for any sequence $\bm{s}=(s_1,s_2,\dots)\in \ell^\infty$ the image $L(\bm{s})$ is a partial limit of $s_1,s_2,\dots$
 \end{thm}
@@ -157,13 +160,13 @@ Show that $f(n)=n$ for $\omega$-almost all $n\in\NN$.
 
 \section{An illustration}
 
+In this section, we illustrate the power of ulralimits by proving the following simple claim.
+
 \begin{thm}{Claim}
 Let $\spc{X}$ and $\spc{Y}$ be compact spaces.
 Suppose that for every $n\in\NN$ there is a $\tfrac1n$-isometry $f_n\:\spc{X}\to \spc{Y}$.
 Then there is an isometry $\spc{X}\to \spc{Y}$.
 \end{thm}
-
-We give a proof of this claim only as an illustration for ulralimits.
 
 \parit{Proof.}
 Consider the $\omega$-limit $f_\omega$ of~$f_n$;
@@ -176,7 +179,7 @@ for any $x,x'\in \spc{X}$;
 that is, $f_\omega$ is distance-preserving.
 
 Further, since $f_n$ is a $\tfrac1n$-isometry,
-for any $y\in \spc{Y}$ there is a sequence $x_n\in \spc{X}$ such that $|f_n(x_n)-y|\le \tfrac1n$.
+for any $y\in \spc{Y}$ there is a sequence $x_1,x_2,\dots\in \spc{X}$ such that $|f_n(x_n)-y|\le \tfrac1n$ for any $n$.
 Therefore,
 \[f_\omega(x_\omega)=y,\]
 where $x_\omega$ is the $\omega$-limit of $x_n$;
@@ -187,18 +190,18 @@ It follows that $f_\omega\:\spc{X}\to\spc{Y}$ is an isometry.
 
 \section{Ultralimits of spaces}\label{sec:Ultralimit of spaces}
 
-Recall that $\omega$ denotes a nonprincipal ultrafilter on the set of natural numbers.
+Recall that $\omega$ is a fixed nonprincipal ultrafilter on $\NN$.
 
 Let $\spc{X}_n$ be a sequence of metric spaces.
 Consider all sequences of points $x_n\in \spc{X}_n$.
-On the set of all such sequences, define a semimetric by
+On the set of all such sequences, define an $\infty$-semimetric by
 \[\dist{(x_n)}{(y_n)}{}
 \df
 \lim_{n\to\omega} \dist{x_n}{y_n}{\spc{X}_n}.
 \eqlbl{eq:olim-dist}\]
 Note that the $\omega$-limit on the right-hand side is always defined 
 and takes a value in $[0,\infty]$. 
-(The $\omega$-convergence to $\infty$ is defined analogously to the usual convergence to $\infty$).
+(The $\omega$-convergence to $\infty$ is defined analogously to the usual convergence to $\infty$; that is, $\lim x_n=\infty$ $\Longleftrightarrow$ $\lim\tfrac1{x_n}=0$).
 
 Set $\spc{X}_\omega$ to be the corresponding metric space; 
 that is, the underlying set of $\spc{X}_\omega$ is formed by classes of equivalence of sequences of points $x_n\in\spc{X}_n$ 
@@ -264,8 +267,8 @@ If $\spc{X}_n$ is a sequence of length spaces, then for any sequence of pairs $x
 Let $x_n\to x_\omega$, $y_n\to y_\omega$ and $z_n\to z_\omega$ as $n\to \omega$.
 Note that $z_\omega$ is a midpoint of $x_\omega$ and $y_\omega$ in $\spc{X}_\omega$.
 
-By Observation~\ref{obs:ultralimit-is-complete}, $\spc{X}_\omega$ is complete.
-Applying Lemma~\ref{lem:mid>geod} we get the statement.
+By \ref{obs:ultralimit-is-complete}, $\spc{X}_\omega$ is complete.
+Applying \ref{lem:mid>geod}, we get the statement.
 \qeds
 
 
@@ -278,6 +281,26 @@ Suppose that $\spc{X}_\infty$ and $\spc{X}_1,\spc{X}_2,\dots$ are compact metric
 Assume $\spc{X}_n\GHto\spc{X}_\infty$.
 Show that $\spc{X}_\omega\iso\spc{X}_\infty$.
 \end{thm}
+
+\parbf{Pointed limit.}
+If $\diam \spc{X}_n\to \infty$ as $n\to\omega$,
+then the metric on $\spc{X}_\omega$ takes value $\infty$;
+so $\spc{X}_\omega$ has at least two metric components.
+
+To specify a metric component in $\spc{X}_\omega$,
+we may choose a sequence of marked points $p_n$ in $\spc{X}_n$, and pass to the metric component of its $\omega$-limit $p_\omega$ in $\spc{X}_\omega$.
+The obtained metric component $\spc{Z}=(\spc{X}_\omega)_{p_\omega}$ with marked $p_\omega$ is also called the \index{pointed ultralimi}\emph{pointed $\omega$-limit} of $(\spc{X}_n,p_n)$.
+Note that $\spc{Z}$ is a genuine metric space.
+
+If, in the definition of ultralimit, we consider only sequences $x_n\z\in \spc{X}_n$ with such that $\dist{p_n}{x_n}{}$ is bounded, 
+then arrive at $\spc{Z}$.  
+
+For proper metric spaces, there is a relation between the pointed ultralimit and the pointed Gromov--Hausdorff limit introduced in~\ref{sec:remarks-GH}.
+Namely, \textit{if $(\spc{X}_\infty,p_\infty)$ and $(\spc{X}_1,p_1),(\spc{X}_2,p_2),\dots$ are proper pointed metric spaces such that $(\spc{X}_n,p_n)\GHto(\spc{X}_\infty,p_\infty)$ as defined in \ref{sec:remarks-GH}, then $(\spc{X}_\infty,p_\infty)$ is isometric to the pointed $\omega$-limit of $(\spc{X}_n,p_n)$.}
+The proof is the same as for \ref{ex:ultracompact}.
+
+
+
 
 
 \section{Ultrapower}
@@ -308,16 +331,21 @@ Show that if $\spc{X}$ is proper, then $\iota(\spc{X})$ forms a metric component
 
 \end{thm}
 
+If $\spc{X}$ is a genuine metric space, then the metric component of $\spc{X}$ in $\spc{X}^\omega$ is also called the ultrapower of $\spc{X}$;
+if needed, we may call it the \index{small ultrapower}\emph{small ultrapower}, and the whole space $\spc{X}^\omega$ could be called the \index{big ultrapower}\emph{big ultrapower} of $\spc{X}$.
+Note that the small ultrapower of genuine metric space is a genuine metric space.
+Further, according to \ref{SHORT.ex:ultrapower:proper}, \textit{proper metric space is isometric to its small ultrapower}.
+
 Note that \ref{SHORT.ex:ultrapower:compact} implies that the inclusion $\spc{X}\hookrightarrow\spc{X}^\omega$ is not onto if the space $\spc{X}$ is not compact.
 However, the spaces $\spc{X}$ and $\spc{X}^\omega$ might be isometric; here is an example:
 
 \begin{thm}{Exercise}\label{ex:isom-ultrapower}
-Let $\spc{X}$ be an infinite countable set with discrete metric;
+Let $\spc{X}$ be an infinite countable set with \index{discrete metric}\emph{discrete metric};
 that is $\dist{x}{y}{\spc{X}}=1$ if $x\ne y$.
 Show that 
 
 \begin{subthm}{ex:isom-ultrapower:no}
-$\spc{X}^\omega$ is not isometric to $\spc{X}$.
+$\spc{X}^\omega$ is not isometric to $\spc{X}$, but
 \end{subthm}
 
 \begin{subthm}{ex:isom-ultrapower:yes}
@@ -342,7 +370,7 @@ Then $\spc{X}^\omega$ is geodesic space if and only if $\spc{X}$ is a length spa
 \parit{Proof.}
 The if part follows from \ref{obs:ultralimit-is-geodesic}; it remains to prove the only-if part
 
-Assume $\spc{X}^\omega$ is geodesic space.
+Assume $\spc{X}^\omega$ is geodesic.
 Then any pair of points $x,y\in \spc{X}$ has a midpoint $z_\omega\in\spc{X}^\omega$.
 Fix a sequence of points $z_n\in  \spc{X}$ such that $z_n\to z_\omega$ as $n\to \omega$.
 
@@ -364,8 +392,7 @@ in the ultrapower $\spc{X}^\omega$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:notproper-limit}
-Construct a proper metric space $\spc{X}$ such that $\spc{X}^\omega$ is not proper;
-that is, there is a point $p\in \spc{X}^\omega$ and $R<\infty$ such that the closed ball $\cBall[p,R]_{\spc{X}^\omega}$ is not compact.
+Construct a proper metric space $\spc{X}$ such that its big ultrapower $\spc{X}^\omega$ is not locally compact.
 \end{thm}
 
 \section{Tangent and asymptotic spaces}
@@ -381,7 +408,7 @@ set $p_\omega$ to be the $\omega$-limit of $p_n$.
 If $\lambda_n\to \infty$ as $n\to\omega$, then the metric component of $p_\omega$ in $\spc{X}_\omega$ is called \index{$\lambda_\omega$-tangent space}\emph{$\lambda_\omega$-tangent space} at $p$ and denoted by $\T_p^{\lambda_\omega}\spc{X}$ (or $\T_p^{\omega}\spc{X}$ if $\lambda_n=n$).\label{page:ultratangent space}
 
 If $\lambda_n\to 0$ as $n\to\omega$, then the metric component of $p_\omega$ is called \index{$\lambda_\omega$-asymptotic space}\emph{$\lambda_\omega$-asymptotic space}%
-\footnote{Often it is called an {}\emph{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
+\footnote{Often it is called an \textit{asymptotic cone} despite that it is not a cone in general; this name is used since in good cases it has a cone structure.} and denoted by $\Asym\spc{X}$ or $\Asym^{\lambda_\omega}\spc{X}$.
 Note that the space $\Asym\spc{X}$ and its point $p_\omega$ do not depend on the choice of $p\in \spc{X}$.
 
 The following exercise states that the constructions above depend on the sequence $\lambda_n$ and a nonprincipal ultrafilter $\omega$.
@@ -416,11 +443,12 @@ that is, for any point $t\in \spc{T}$ the set of connected components of the com
 
 
 \begin{thm}{Exercise}\label{ex:T(Sx[0,1]/Sx0)}
-Consider the quotient space $\spc{X}=\mathbb{S}^1\times[0,1]/\mathbb{S}^1\times\{0\}$;
+Consider the cylinder $\mathbb{S}^1\times[0,1]$ with the standard metric.
+Let $\spc{X}$ be the quotient space $\mathbb{S}^1\times[0,1]/\mathbb{S}^1\times\{0\}$;
 that is, 
-$\dist{(u_1,t_1)}{(u_2,t_2)}{\spc{X}}
-=
-\min\{\,\dist{(u_1,t_1)}{(u_2,t_2)}{\mathbb{S}^1\times[0,1]},t_1+t_2\,\}$.
+\[\dist{(u_1,t_1)}{(u_2,t_2)}{\spc{X}}
+\df
+\min\{\,\dist{(u_1,t_1)}{(u_2,t_2)}{\mathbb{S}^1\times[0,1]},t_1+t_2\,\}.\]
 Describe the ultratangent space $\T_o^{\omega}\spc{X}$, where $o\in\spc{X}$ is the point that corresponds to $\mathbb{S}^1\times\{0\}$.
 \end{thm}
 

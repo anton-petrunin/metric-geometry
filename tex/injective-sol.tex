@@ -1,9 +1,9 @@
-\parbf{\ref{ex:conv-short};} \textit{only-if part}.
+\parbf{\ref{ex:conv-short}}; \textit{only-if part}.
 To check convexity, assume that $B$ is a two-point subset.
 For closeness, assume that $B$ is a countable set of $A$.
 
 \parit{If part.}
-Learn about the Kirszbraun theorem and apply it together with the closest-point projection.
+Apply the Kirszbraun theorem together with the closest-point projection.
 
 \refstepcounter{chapter}
 \setcounter{eqtn}{0}
@@ -83,15 +83,9 @@ It remains to observe that $\dist{x}{f(a)}{}\le \dist{p}{a}{}$ for any $a\in\spc
 that is, one can take $f(p)=x$.
 
 \parit{\ref{SHORT.ex:injective-spaces:ell-infty}.}
-Suppose $\spc{Y}=(\RR^2,\ell^\infty)$.
-Note that $\spc{X}\z\to (\RR^2,\ell^\infty)$ is a short map if and only if both of its coordinate projections are short.
-It remains to apply \ref{SHORT.ex:injective-spaces:R}.
-The general case of $\ell^\infty(\spc{S})$ can be done the same way.
-
-More generally, \textit{any $\ell^\infty$-product of injective spaces is injective};
-in particular, if $\spc{Y}$ and $\spc{Z}$ are injective then the product $\spc{Y}\times\spc{Z}$ equipped with the metric 
-\[\dist{(y,z)}{(y',z')}{\spc{Y}\times\spc{Z}}=\max\{\,\dist{y}{y'}{\spc{Y}},\dist{z}{z'}{\spc{Z}}\,\}\]
-is injective as well.
+Show and use that \textit{any $\ell^\infty$-product of injective spaces is injective};
+in particular, if $\spc{Y}$ and $\spc{Z}$ are injective, then so is the product $\spc{Y}\times\spc{Z}$ equipped with the metric 
+\[\dist{(y,z)}{(y',z')}{\spc{Y}\times\spc{Z}}=\max\{\,\dist{y}{y'}{\spc{Y}},\dist{z}{z'}{\spc{Z}}\,\}.\]
 
 \parbf{\ref{ex:extr-ball}}; \ref{SHORT.ex:extr-ball:one}.
 Let $\spc{B}=\cBall[o,R]_{\spc{Y}}$.
@@ -109,16 +103,14 @@ Since $\spc{Y}$ is injective, there is a short extension $F\:\spc{X}'\to \spc{Y}
 Show and use that $F(\spc{X}')\subset \spc{B}$.
 
 \parit{\ref{SHORT.ex:extr-ball:many}.}
-Let $\spc{B}=\cap_\alpha\cBall[o_\alpha,R_\alpha]_{\spc{Y}}$.
-Try to modify the argument in \ref{SHORT.ex:extr-ball:one}.
-
-(Note that one may assume that $\diam \spc{X}\z\le 2\cdot \inf_\alpha\{\,R_\alpha\,\}$.
-Consider the space $\spc{X}'\z=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}{x}{}=R_\alpha$ for any $x\in \spc{X}$ and $\dist{w_\alpha}{w_\beta}{}=R_\alpha+R_\beta$ if $\alpha\ne\beta$.
-Further, consider an extension of $f$ by $w_\alpha\mapsto o_\alpha$.)
+Try to modify the argument in \ref{SHORT.ex:extr-ball:one}.~Namely, let $\spc{B}=\bigcap_\alpha\cBall[o_\alpha,R_\alpha]_{\spc{Y}}$.
+Note that one may assume that $\diam \spc{X}\z\le 2\cdot \inf_\alpha\{\,R_\alpha\,\}$.
+Consider the space $\spc{X}'\z=\spc{X}\cup\{w_\alpha\}$ such that $\dist{w_\alpha}{x}{}\z=R_\alpha$ for any $x\in \spc{X}$ and $\dist{w_\alpha}{w_\beta}{}=R_\alpha+R_\beta$ if $\alpha\ne\beta$.
+Further, consider an extension of $f$ by $w_\alpha\mapsto o_\alpha$.
 
 \parbf{\ref{ex:extr-fixed}.}
 Let $\diam \spc{Y}=2\cdot R$.
-We can assume that $R>0$; otherwise there is nothing to prove.
+We can assume that $R>0$; otherwise, there is nothing to prove.
 Denote by $\spc{Z}$ a minimal (with respect to inclusion) intersection of closed $R$-balls in $\spc{Y}$ such that $s(\spc{Z})\subset\spc{Z}$.
 
 Consider 
@@ -134,7 +126,7 @@ Show that the sequence $y_n$ is Cauchy.
 By \ref{ex:inj=complete-geodesic-contractible:complete}, $y_n$ converges, say to $y_\infty$.
 Observe that $y_\infty$ is a fixed point of $s$.
 
-\parbf{\ref{ex:circle};} \textit{only-if part}.
+\parbf{\ref{ex:circle}}; \textit{only-if part}.
 Suppose $r$ is extremal.
 By \ref{lem:extremal-lipschitz}, $r$ is $1$-Lipschitz.
 Since $\mathbb{S}^1$ is compact, \ref{lem:opposite-compact} implies that for any $p\in \mathbb{S}^1$ there is $q\in \mathbb{S}^1$ such that 
@@ -176,13 +168,13 @@ The latter contradicts the equality $r(p)+r(-p)=\pi$.
 
 \parbf{\ref{ex:retraction}.}
 Show and use that
-$s^*(x)+s(y)\ge \dist{x}{y}{}$
+$s^*(x)\ge \dist{x}{y}{}-s(y)$
 for any $x,y\in \spc{X}$.
 
 \parit{Remarks.}
 It is easy to check that $q\:s\z\mapsto \tfrac12\cdot(s+s^*)$ is a short map on the space of admissible functions (with sup-norm).
 Moreover, iterating $q$ and passing to the limit, we get a short retraction from the space of admissible functions to the space of extremal functions on $\spc{X}$ \cite[see 3.1 in][]{lang-2013}.
-The existence of such a map will also follow from \ref{thm:inj-envelope}.
+The existence of such a map also follows from \ref{thm:inj-envelope}.
 
 \parbf{\ref{ex:one-point-gluing}.}
 Apply \ref{thm:injective=hyperconvex:balls}.
@@ -192,8 +184,9 @@ Conditions under which gluings of injective spaces is injective were studied by 
 
 \parbf{\ref{ex:Rm-ell-infty}.}
 Let $B=\cBall[0,1]$ and $P\supset B$ be a parallelepiped of minimal volume.
-Choose the basis $e_1,\dots,e_m$ parallel to the edges of $P$ so that in the corresponding coordinates the parallelepiped is described by inequalities
-$|x_i|\le 1$ for all $i$.
+Choose coordinates so that $P$ is described by inequalities
+$|x_i|\le 1$ for all $i$;
+let $e_1,\dots,e_m$ be the standard basis of these coordinates.
 
 Let $B_i=\cBall[(1+R)\cdot e_i,R]$ for some $R>0$.
 Show that $ e_i\in B$ for any $i$; in particular $B\cap B_i\ne\emptyset$.
@@ -213,34 +206,36 @@ so $\spc{U}_\infty$ is the Urysohn space.
 The extension property implies finite hyperconvexity.
 It remains to show that $\spc{U}_d$ is not countably hyperconvex.
 
-Suppose that $d<\infty$.
-Then $\diam\spc{U}_d=d$ and for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d$.
+Suppose that $d<\infty$. 
+Show that for any point $x\in\spc{U}_d$ there is a point $y\in\spc{U}_d$ such that $\dist{x}{y}{\spc{U}_d}=d=\diam\spc{U}_d$.
 It follows that there is no point $z\in\spc{U}_d$ such that $\dist{z}{x}{\spc{U}_d}\le \tfrac d2$ for any $x\in\spc{U}_d$.
 Whence $\spc{U}_d$ is not countably hyperconvex.
 
 Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the case $d<\infty$.
 
 \parbf{\ref{ex:almost-hyperconvex}.}
+Choose $\eps_0>0$.
 Let $p_0$ be a point provided by the definition of almost hyperconvexity;
 that is $\dist{x_\alpha}{p_0}{}\le r_\alpha+\eps_0$ for a given $\eps_0>0$.
 We may assume that $\delta_0=\sup\{\,\dist{x_\alpha}{p_0}{}- r_\alpha\,\}>0$; otherwise the problem is solved.
 Clearly, $\delta_0\le \eps_0$.
 
-Let $p_1$ be a point provided by the definition for $\eps_1<\tfrac1{10}\cdot\delta_0$ we get a point 
+Applying hyperconvexity for $\eps_1<\tfrac1{10}\cdot\delta_0$,
+we get a point 
 $p_1$ such that $\dist{x_\alpha}{p_1}{}\le r_\alpha+\eps_1$ and $\dist{p_0}{p_1}{}\le \delta_0+\eps_1$.
 Again, we may assume that $\delta_1=\sup\{\,\dist{x_\alpha}{p_1}{}- r_\alpha,\dist{p_0}{p_1}{}\,\}>0$, and we have $\delta_1\le \eps_1$.
 
-Continuing this way, we get a sequence $p_0,p_1,\dots$ that either terminates and in this case the problem is solved, or it is an infinte Cauchy sequence.
+Continuing this way, we get a sequence $p_0,p_1,\dots$ that either terminates and in this case the problem is solved, or it is an infinite Cauchy sequence.
 In the latter case, its limit $p_\infty$ satisfies $\dist{x_\alpha}{p_\infty}{}\le r_\alpha$ for any $\alpha$.
 
 \parit{Comment.}
 This solution reminds the proof of \ref{prop:completion-univeral};
 a more exact statement was proved by Benjamin Miesch and Maël Pavón \cite[2.2]{miesch-pavon2016};
-namely they show that almost $n$-hyperconvexity implies $(n-1)$-hyperconvexity.
+namely, they show that almost $n$-hyperconvexity implies $(n-1)$-hyperconvexity.
 
 
 \parbf{\ref{ex:Inj(compact)}.}
-Observe and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded.
+Show and use that the functions in $\Inj\spc{X}$ are 1-Lipschitz and uniformly bounded.
 
 \parbf{\ref{ex:tripod+square}}; \ref{SHORT.ex:tripod+square:2}.
 Use \ref{lem:opposite-compact} to show that if $f$ is extremal if and only if $f(v)=x$ and $f(w)=1-x$ for some $x\in [0,1]$.
@@ -264,7 +259,7 @@ g(a)&=1\pm y,& g(b)&=1\pm y,& g(c)&=1\pm y
 is another extremal function.
 Then $|f-g|\z=|x-y|$ if $g$ has ``minus'' at the same place as $f$ and $|f-g|=|x+y|$ otherwise.
 
-It follows that $\Inj\spc{X}$ is isometric to a {}\emph{tripod} --- three segments of length $\tfrac12$ glued at one end.
+It follows that $\Inj\spc{X}$ is isometric to a \textit{tripod} --- three segments of length $\tfrac12$ glued at one end.
 
 \begin{Figure}
 \begin{minipage}{.48\textwidth}
@@ -313,7 +308,7 @@ Use \ref{lem:opposite-compact} to show that $\Inj\spc{X}\subset G$.
 Given $g\in G$, show that $g(x)=\dist{g}{x}{\ell^\infty(\spc{X})}$.
 Conclude that $g$ is admissible and apply \ref{lem:opposite-compact}.
 
-\parit{Source:} Private communications with Rostislav Matveyev.
+\parit{Source:} Suggested by Rostislav Matveyev.
 
 \parbf{\ref{ex:4-on-a-line}.}
 Recall that 
@@ -342,7 +337,7 @@ Applying \ref{lem:opposite-compact}, we can find a point $q\in\spc{X}$ such that
 \dist{f}{q}{\Inj\spc{X}},\]
 whence the result.
 
-Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=complete-geodesic-contractible:geodesic} it has to be geodesic. It remains to note that the concatenation of geodesics $[pq]$, $[gf]$, and $[fq]$ is a required geodesic $[pq]$.
+Since $\Inj\spc{X}$ is injective (\ref{prop:InjX-is-injective}), by \ref{ex:inj=complete-geodesic-contractible:geodesic} it has to be geodesic. It remains to note that the concatenation of geodesics $[pq]$, $[gf]$, and $[fq]$ is the required geodesic $[pq]$.
 
 \parbf{\ref{ex:delta-hyp}.} The only-if part follows since $\spc{X}$ is isometric to a subset of $\Inj\spc{X}$.
 
@@ -381,7 +376,7 @@ Show that this inequality, together with the triangle inequality and \ref{eq:pfg
 For the noncompact case, prove an approximate version of \ref{eq:pfgq+xvwy} and apply it the same way.
 
 \parbf{\ref{ex:inj-envelope}.}
-Show that there is unique isometry of $\Inj\spc{X}$ that is indentity of $\spc{X}$.
+Show that there is a unique isometry of $\Inj\spc{X}$ that is identity on $\spc{X}$.
 Use it together with \ref{thm:inj-envelope}.
 
 
@@ -389,6 +384,7 @@ Use it together with \ref{thm:inj-envelope}.
 Show that there is a pair of short maps 
 $\Inj\spc{X}\to\Inj\spc{U}\to\Inj\spc{X}$ 
 such that their composition is the identity on $\spc{X}$.
+You may need to apply the Katětov extension (\ref{ex:extension-of-extension:a}).
 Make a conclusion.
 
 \parbf{\ref{ex:hemisphere-inj}.}
@@ -399,7 +395,7 @@ Make a conclusion.
 \parbf{\ref{ex:3-4-hypreconvex}.}
 Observe that coordinate functions are monotonic on any geodesic in $\ell^1$.
 Use it to show that $\ell^1$ is a \emph{median space};
-that is, for any three points $x,y,z$ there is a {}\emph{unique} point $m$ (it is called \index{median}\emph{median} of $x$, $y$, and $z$) that lies on {}\emph{some} geodesics $[xy]$, $[xz]$ and $[yz]$.
+that is, for any three points $x,y,z$ there is a \textit{unique} point $m$ (it is called the \index{median}\emph{median} of $x$, $y$, and $z$) that lies on {}\emph{some} geodesics $[xy]$, $[xz]$ and $[yz]$.
 Apply it to show that $\ell^1$ is 3-hyperconvex.
 
 The 4-hyperconvexity fails for the unit balls centered at four even vertices of the cube $([0,1]^3,\ell^1)$.
@@ -409,16 +405,17 @@ The 4-hyperconvexity fails for the unit balls centered at four even vertices of 
 Choose three points $x,y,z\in\spc{X}$ and set $\spc{A}=\{x,z\}$.
 Let $f\:\spc{A}\z\to \spc{A}$ be the identity map.
 Then $F(y)=x$ or $F(y)=z$.
-The strong triangle inequality easily follows in both cases.
+In both cases,
+the strong triangle inequality follows.
 
 \parbf{\ref{ex:ultrametric-converse}}; \textit{main part.}
-Choose a maximal subset $A\z\supset K$ that admits a short retraction $f\:A\to K$;
+Choose a maximal (with respect to inclusion) subset $A\z\supset \spc{K}$ that admits a short retraction $f\:A\to \spc{K}$;
 it exists by Zorn's lemma.
 If $A$ is the whole space, then the problem is solved.
 Otherwise, choose $p\notin A$.
 
 Choose a sequence of points $a_n\in A$ such that $\dist{a_n}{p}{}$ converge to the exact lower bound on the distances from points in $A$ to $p$.
-Since $K$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
+Since $\spc{K}$ is compact, we can pass to a subsequence of $a_n$ such that $f(a_n)$ converges.
 Let 
 \[f(p)=\lim f(a_n).\]
 
@@ -427,16 +424,17 @@ It remains to check that
 for any $a\in A$.
 Choose $\eps>0$; note that 
 \begin{align*}
-\dist{a_n}{p}{}&<\dist{a}{p}{}+\eps
-\intertext{and}
-\dist{f(a_n)}{f(p)}{}&<\dist{f(a)}{f(a_n)}{}+\eps
+\dist{a_n}{p}{}&<\dist{a}{p}{}+\eps,
+&
+\dist{f(a_n)}{f(p)}{}&<\eps
 \end{align*}
 for all large~$n$.
 Therefore, 
 \begin{align*}
-\dist{f(a)}{f(p)}{}&\le \max\{\,\dist{f(a)}{f(a_n)}{},
+&\!\!\!\!\dist{f(a)}{f(p)}{}\le
 \\
-&\qquad\dist{f(a_n)}{f(p)}{}\,\}\le
+&\le\max\{\,\dist{f(a)}{f(a_n)}{},
+\dist{f(a_n)}{f(p)}{}\,\}\le
 \\
 &\le \dist{f(a)}{f(a_n)}{}+\eps\le
 \\
@@ -465,4 +463,4 @@ According to Tikhonov's theorem, $\spc{Y}^{\spc{X}}$ is compact.
 By the finite intersection property, the intersection $\bigcap_F\mathfrak{S}_F$ for all finite sets $F\subset X$ is nonempty.
 Hence the statement follows.
 
-\parit{Source:} \cite{petrunin-stadler}.
+\parit{Source:} \cite[7.1]{petrunin-stadler}.

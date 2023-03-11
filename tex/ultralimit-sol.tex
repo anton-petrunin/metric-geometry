@@ -28,7 +28,7 @@ The set of ultrafilters is the closure of basis vectors in $\ell^1$ with respect
 
 
 \parbf{\ref{ex:ultrakatetov+}.}
-Use \ref{ex:ultrakatetov}.
+Apply \ref{ex:ultrakatetov}.
 
 \parbf{\ref{ex:lim(tree)}.}
 Let $\gamma$ be a path from $p$ to $q$ in a metric tree $\spc{T}$.
@@ -57,12 +57,12 @@ Since $x_\omega\notin [p_\omega q_\omega]$, we have that $\ell_\omega>0$ --- a c
 
 It remains to show that any geodesic triangle $\spc{T}_\omega$ is a tripod.
 Consider the sequence of centers of tripods $m_n$ for given sequences of points $x_n,y_n,z_n\in \spc{T}_n$.
-Observe that its ultralimit $m_\omega$ is the center of the tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.
+Observe that its ultralimit $m_\omega$ is the center of a tripod with ends at $x_\omega,y_\omega,z_\omega\in \spc{T}_\omega$.
 
 \parbf{\ref{ex:ultracompact}.}
 Construct $\bm{X}$ and distance-preserving embeddings $\spc{X}_n\hookrightarrow\bm{X}$ that satisfy \ref{propery:GH}.
 Given $x_\infty\in \spc{X}_\infty$, choose a sequence $x_n\in \spc{X}_n$ such that $x_n\to x_\infty$ in $\bm{X}$.
-Let $x_\omega$ be $\omega$-limit of the sequence $x_n$ in $\bm{X}$.
+Let $x_\omega$ be the $\omega$-limit of the sequence $x_n$ in $\bm{X}$.
 Note that $x_\omega\in \spc{X}_\infty$.
 Show that the map $x_\infty\mapsto x_\omega$ is defined; that is, it does not depend on the choice of the sequence $x_n$.
 Further, show that the map $x_\infty\mapsto x_\omega$ is an isometry of $\spc{X}_\infty$.
@@ -97,12 +97,20 @@ Further, if $(x_n)$ is not  $\omega$-bounded, then
 that is, $x_\omega$ does not lie in the metric component of $p$ in $\spc{X}^\omega$.
 
 \parbf{\ref{ex:isom-ultrapower}.}
-Let us identify points in $\spc{X}$ with nonnegative integers.
-Consider the set $\mathcal{A}$ of all sequences $a_n$ such that $a_0=0$ and $a_{n+1}=a_n+\eps_n\cdot 2^n$ where $\eps_n\in\{0,1\}$ for any $n$.
+Let us show that cardinality of $\spc{X}^\omega$ is at least continuum ---
+it is sufficient to construct a continuum family $\mathcal{A}$ sequences of points on $\spc{X}$ such that for any two sequences $(a_n)$ and $(b_n)$ in $\mathcal{A}$ the equality $a_n=b_n$ holds only for finitely many $n$.
+
+To do this, let us identify points in $\spc{X}$ with nonnegative integers.
+Consider the set $\mathcal{A}$ of all sequences $a_n$ such that $a_0=0$ and $a_{n+1}\z=a_n+\eps_n\cdot 2^n$ where $\eps_n\in\{0,1\}$ for any $n$.
 Observe that $\mathcal{A}$ has cardinality continuum and distinct sequences in $\mathcal{A}$ have distinct $\omega$-limits.
-Conclude that the cardinality of $\spc{X}^\omega$ is at least continuum.
 
 Show and use that the spaces $\spc{X}^\omega$ and $(\spc{X}^\omega)^\omega$ have discrete metrics and both have cardinality at most continuum.
+
+\parit{A more conceptual construction of $\mathcal{A}$.}
+Choose a compact metric space $\spc{K}$ with continuum points, say $\spc{K}=[0,1]$.
+Identify $\spc{X}$ with a dense subset of $\spc{K}$.
+For any point $k\in \spc{K}$, choose a sequence $a_n\in \spc{X}$ that converges to $k$.
+Observe that the family of all these sequences meet the required condition.
 
 
 \parbf{\ref{ex:ultrapower(ultrapower)}.}
@@ -129,9 +137,6 @@ Conclude that we may pass to a subsequence of $m_n$ such that $\dist{m_i}{m_j}{}
 Argue as in \ref{ex:isom-ultrapower} to show that there is a continuum of distinct $\omega$-limits of subsequences of $m_n$;
 each such limit is a midpoint between $x$ and $y$.
 
-\parit{\ref{SHORT.ex:sphere-in-urysohn:homogeneous}.} 
-Use \ref{SHORT.ex:sphere-in-urysohn:sphere}, maybe twice.
-
 \parbf{\ref{ex:notproper-limit}.} Consider the infinite metric $\spc{T}$ tree with unit edges shown
 on the diagram.
 Observe that $\spc{T}$ is proper.
@@ -150,11 +155,11 @@ Conclude that $\spc{T}^\omega$ is not locally compact.
 Consider a product of an infinite sequence of two-point spaces.
 
 \parit{Remark.}
-There are such examples with cocompact isometric action of finitely generated group \cite{thomas-velickovic}.
+There are such examples of geodesic spaces with a cocompact isometric action of a finitely generated group \cite{thomas-velickovic}.
 
 \parbf{\ref{ex:Asym(Lob)}.} Assume $\spc{L}$ is the Lobachevsky plane.
 
-\parbf{\ref{SHORT.ex:Asym(Lob):metric-tree}.}
+\parit{\ref{SHORT.ex:Asym(Lob):metric-tree}.}
 Show that there is $\delta>0$ such that sides of any geodesic triangle in $\spc{L}$ intersect a disk of radius $\delta$.
 Conclude that any geodesic triangle in $\Asym\spc{L}$ is a tripod.
 
@@ -179,8 +184,8 @@ The three-regular tree is only vertex-homogeneous; the latter is sufficient to p
 No changes are needed in~\ref{SHORT.ex:Asym(Lob):continuum}.
 
 \parit{Remark.}
-According to the result of Anna Dyubina and Iosif Polterovich \cite{dyubina-polterovich}, the properties \ref{SHORT.ex:Asym(Lob):homogeneous} and \ref{SHORT.ex:Asym(Lob):continuum} describe the tree $\spc{T}$ up to isometry.
-In particular, the asymptotic space of the Lobachevsky plane does not depend on the choice of the ultrafilter and the sequence $\lambda_n\to \infty$.
+The properties \ref{SHORT.ex:Asym(Lob):homogeneous} and \ref{SHORT.ex:Asym(Lob):continuum} describe the tree $\spc{T}$ up to isometry \cite{dyubina-polterovich}.
+In particular, the asymptotic space of the Lobachevsky plane does not depend on the choice of the ultrafilter and the sequence $\lambda_n\z\to \infty$.
 
 
 \parbf{\ref{ex:T(Sx[0,1]/Sx0)}.}
@@ -194,8 +199,8 @@ Further, show that each connected component $\spc{W}_\alpha$ is isometric to $\R
 \end{align*}
 
 Conclude that the space $\T^\omega_o\spc{X}$ can be described as follows.
-Consider continuum copies $\spc{W}_\alpha$ as above;
+Prepare continuum copies $\spc{W}_\alpha$ as above;
 denote by $(x,t)_\alpha$ the point in $\spc{W}_\alpha$ with coordinates $(x,t)$.
-The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ 
+The tangent space is the disjoint union of single point $o_\omega$ and all $\spc{W}_\alpha$ with metric
 such that $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\alpha}{}$ is the same as in $\spc{W}_\alpha$ and for the remaining pairs, we have $\dist{o_\omega}{(x,t)_\alpha}{}=t$ and $\dist{(x_1,t_1)_\alpha}{(x_2,t_2)_\beta}{}=t_1+t_2$
 if $\alpha\ne\beta$.

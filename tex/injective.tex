@@ -2,7 +2,7 @@
 
 
 Injective hull is a useful construction that provides a canonical choice of a specially nice (injective) space that includes a given metric space. 
-This construction is similar to the convex hull in the Euclidean space.
+This construction is similar to the convex hull in Euclidean space.
 The following exercise gives a bridge from the latter to the former.
 
 \begin{thm}{Advanced exercise}\label{ex:conv-short}
@@ -12,7 +12,7 @@ Show that $A\subset \RR^n$ is a closed convex set if and only if for any  $B\sub
 \section{Definition}
 
 \begin{thm}{Definition}\label{def:injective}
-A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any of its subspaces $\spc{A}$
+A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any of its subspace $\spc{A}$,
 any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$;
 that is, $f=F|_{\spc{A}}$.
 \end{thm}
@@ -82,7 +82,7 @@ Show that any short map $s\:\spc{Y}\to\spc{Y}$ has a fixed point.
 \section{Admissible and extremal functions}
 
 Let $\spc{X}$ be a metric space.
-A function $r\:\spc{X}\to\RR$ is called \label{page:admissible function}\index{admissible function}\emph{admissible} if the following inequality
+A function $r\:\spc{X}\to(-\infty,\infty]$ is called \label{page:admissible function}\index{admissible function}\emph{admissible} if the following inequality
 \[r(x)+r(y)\ge \dist{x}{y}{\spc{X}}\eqlbl{eq:admissible}\]
 holds for any $x,y\in \spc{X}$.
 
@@ -147,8 +147,7 @@ that is, $r\le s+c$.
 Let $\spc{X}$ be a metric space.
 
 \begin{subthm}{obs:extremal:distfun}
-For any point $p\in\spc{X}$
-the distance function $r\z=\distfun_p$ is extremal.
+For any point $p\in\spc{X}$ the distance function $r\z=\distfun_p$ is extremal.
 \end{subthm}
 
 \begin{subthm}{lem:extremal-lipschitz}
@@ -222,7 +221,9 @@ whence the only-if part follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:circle}
-Consider the unit circle $\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}$ in the plane with induced length metric.
+Consider the unit circle 
+\[\mathbb{S}^1=\set{(x,y)}{x^2+y^2=1}\]
+in the plane with induced length metric.
 Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz and 
 \[r(p)+r(-p)=\pi\] for any $p\in\mathbb{S}^1$.
 \end{thm}
@@ -231,7 +232,7 @@ Show that $r\:\mathbb{S}^1\to\RR$ is extremal if and only if it is 1-Lipschitz a
 Given a real-valued function $s$ on a metric space $\spc{X}$,
 consider the function
 \[s^*(x)=\sup\set{\dist{x}{y}{\spc{X}}-s(y)}{y\in \spc{X}}\]
-Show that if $s$ is admissible then so is $\tfrac12\cdot(s+s^*)$.
+Show that the function $\tfrac12\cdot(s+s^*)$ is admissible for any $s$.
 \end{thm}
 
 \section{Equivalent conditions}
@@ -315,11 +316,11 @@ Show that  $\spc{W}$ is injective
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:Rm-ell-infty}
-Show that an $m$-dimensional normed space is injective if and only if it is isometric to $\RR^m$ with the norm
+Show that an $m$-dimensional normed space is injective if and only if it is isometric to $\RR^m$ with $\ell^\infty$-norm; that is,
 \[|(x_1,\dots,x_m)|=\max_i\{\,|x_i|\,\}.\]
 \end{thm}
 
-A metric space $\spc{Y}$ is called \index{finitely hyperconvex}\emph{finitely hyperconvex} or \index{countably hyperconvex}\emph{countably hyperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for finite or respectively countable family of balls.
+A metric space $\spc{Y}$ is called \index{finitely hyperconvex}\emph{finitely hyperconvex} or \index{countably hyperconvex}\emph{countably hyperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for any finite or respectively countable family of balls.
 
 \begin{thm}{Exercise}\label{ex:compact-hyperconvex}
 Show that any proper finitely hyperconvex metric space is hyperconvex.
@@ -528,7 +529,7 @@ Whence $w$ is an isometry.
 
 \begin{thm}{Exercise}\label{ex:inj-envelope}
 Suppose $e\:\spc{X}\hookrightarrow \spc{E}$ and $f\:\spc{X}\hookrightarrow \spc{F}$ are two injective envelopes of $\spc{X}$.
-Show that there is unique isometry $\iota\:\spc{E}\to \spc{F}$ such that $\iota\circ e=f$.
+Show that there is a unique isometry $\iota\:\spc{E}\to \spc{F}$ such that $\iota\circ e=f$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:d-p-inclusion}
