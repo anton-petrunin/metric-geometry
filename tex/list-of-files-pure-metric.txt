@@ -25,7 +25,8 @@ mppics/pic-200.mps
 mppics/pic-205.mps
 mppics/pic-210.mps
 mppics/pic-405.mps
+mppics/pic-410.mps
+mppics/pic-415.mps
 mppics/pic-500.mps
 mppics/pic-505.mps
 mppics/pic-605.mps
-mppics/pic-410.mps

@@ -13,7 +13,7 @@ $$\distfun_A(x)
 \df
 \inf\set{\dist ax{\spc{X}}}{a\in A}.$$
 
-Further, we define the so-called Hausdorff metric on all nonempty compact subsets of a given metric space $\spc{X}$;
+Further, we define the so-called Hausdorff metric on all nonempty compact subsets of a given metric space $\spc{X}$.
 The obtained metric space will be denoted as $\Haus\spc{X}$.
 
 \begin{thm}{Definition}\label{def:hausdorff-convergence}
@@ -38,7 +38,7 @@ $A$ lies in an $R$-neighborhood of~$B$.
 
 \begin{thm}{Exercise}\label{ex:diam}
 Let $\spc{X}$ be a metric space.
-Given a subset $A\subset \spc{X}$ define its \index{diameter}\emph{diameter} as 
+Given a subset $A\subset \spc{X}$, define its \index{diameter}\emph{diameter} as 
 $$\diam A\df\sup_{a,b\in A} |a-b|.$$
 
 Show that 
@@ -51,7 +51,7 @@ for any two compact nonempty sets $A,B\subset\spc{X}$.
 
 
 \begin{thm}{Exercise}\label{ex:Hausdorff-bry}
-Let $A$ and $B$ be two compact subsets in the Euclidean plane $\RR^2$.
+Let $A$ and $B$ be two compact subsets in the euclidean plane $\RR^2$.
 Assume $|A-B|_{\Haus\RR^2}<\eps$.
 
 \begin{subthm}{ex:Hausdorff-bry:conv}
@@ -80,7 +80,7 @@ where the least upper bound is taken for all $1$-Lipschitz functions $f$.
 \end{thm}
 
 Given a subset $A\subset \RR^n$,
-The \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  nonempty closed set $A\subset \RR^n$ is defined as 
+the \index{support function}\emph{support function} $h_A\colon\mathbb{R}^n\to\mathbb{R}$ of a  nonempty closed set $A\subset \RR^n$ is defined as 
 \[h_A(x)
 \df
 \sup\set{\langle x, a\rangle}{a\in A}.\]
@@ -231,6 +231,22 @@ Let $\spc{X}$ be a complete metric space.
 Show that $\spc{X}$ is a length space if and only if so is $\Haus\spc{X}$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:Haus-G-delta}
+
+\begin{subthm}{ex:Haus-G-delta:closed}
+Show that the set of all connected compact subsets of $\RR^2$ is closed in $\Haus\RR^2$. 
+\end{subthm}
+
+\begin{subthm}{ex:Haus-G-delta:curves}
+Show that any connected compact subset of $\RR^2$ is a Hausdorff limit of a sequence of closed simple curves.
+\end{subthm}
+
+
+
+
+\end{thm}
+
+
 \section{An application}
 
 
@@ -245,7 +261,7 @@ perimeter and area are continuous on~$\spc{C}$.
 (If the set degenerates to a line segment of length $\ell$, then its perimeter is defined as $2\cdot \ell$.)
 
 More precisely, if a sequence of convex compact plane sets $X_n$ converges to $X_\infty$ in the sense of Hausdorff, then $X_\infty$ is convex,
-\[\perim X_n\to \perim X_\infty\quad\text{and}\quad\area X_n\to\area X_\infty\]
+\[\perim X_n\to \perim X_\infty,\quad\text{and}\quad\area X_n\to\area X_\infty\]
 as $n\to\infty$.
 \end{thm}
 
@@ -258,7 +274,7 @@ Among the plane figures bounded by closed curves of length at most $\ell$, the r
 It is sufficient to consider only convex figures of the given perimeter; if a figure is not convex, pass to its convex hull and observe that it has a larger area and smaller perimeter.
 
 
-Note that the selection theorem (\ref{thm:compact+Hausdorff}) together with the exercise imply the existence of figure $D$ with perimeter $\ell$ and maximal area.
+Note that the selection theorem (\ref{thm:compact+Hausdorff}) together with the exercise implies the existence of figure $D$ with perimeter $\ell$ and maximal area.
 
 It remains to show that $D$ is a round disk;
 it will be done by means of elementary geometry.
@@ -274,8 +290,8 @@ The following exercise will finish the proof.
 
 {
 
-\begin{wrapfigure}{o}{57 mm}
-\vskip-5mm
+\begin{wrapfigure}{r}{57 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-405}
 \end{wrapfigure}
@@ -288,6 +304,8 @@ Show that $D$ is a round disk.
 }
 
 Another popular way to prove that $D$ is a round disk is given by the so-called \textit{Steiner's 4-joint method} \cite{blaschke}.
+
+
 
 \section{Remarks}\label{sec:H-variation}
 
@@ -304,7 +322,7 @@ We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense
 $\distfun_{A_n}(x)\z\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
 \end{thm}
 
-For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(0,n)$.
+For example, suppose $\spc{X}$ is the euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(0,n)$.
 If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $A_1,A_2,\dots$ diverges, but it converges to the $x$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
 
 \begin{figure}[ht!]
@@ -313,7 +331,7 @@ If we use the standard definition (\ref{def:hausdorff-convergence}), then the se
 \includegraphics{mppics/pic-415}
 \end{figure}
 
-Further, consider the sequence of one-point sets $B_n=\{(n,0)\}$ in the Euclidean plane.
+Further, consider the sequence of one-point sets $B_n=\{(n,0)\}$ in the euclidean plane.
 It diverges in the sense of the standard definition, but, in the sense of \ref{def:gen-Haus-conv}, it converges to the empty set;
 indeed, for any point $x$ we have $\distfun_{B_n}(x)\to\infty$ as $n\to \infty$ and $\distfun_{\emptyset}(x)= \infty$ for any~$x$.
 
@@ -420,7 +438,7 @@ for any isometry $\iota$ of $\RR^2$.
 
 
 \begin{thm}{Exercise}\label{ex:rectangle}
-Let $\spc{A}_r$ be a rectangle $1$ by $r$ in the Euclidean plane 
+Let $\spc{A}_r$ be a rectangle $1$ by $r$ in the euclidean plane 
 and $\spc{B}_r$ be a closed line interval of length $r$.
 Show that 
 \[|\spc{A}_r-\spc{B}_r|_{\GH}>\tfrac1{10}\]
@@ -519,7 +537,7 @@ $\spc{X}'\iso\spc{X}$, $\spc{Y}'\iso\spc{Y}$, and
 \[\dist{\spc{X}'}{\spc{Y}'}{\Haus\spc{W}}=\dist{\spc{X}}{\spc{Y}}{\GH}.\]
 \end{thm}
 
-Let us introduce the so-called \textit{appropriate functions} and use them in a reinterpretation of Gromov--Hausdorff distance.
+Let us introduce the so-called \textit{appropriate functions} and use them in a reinterpretation of the Gromov--Hausdorff distance.
 
 Suppose $\spc{X}$, $\spc{Y}$, $\spc{X}'$, $\spc{Y}'$, and $\spc{W}$ are as in \ref{def:GH}.
 By passing to the subspace $\spc{X}'\cup\spc{Y}'$ in $\spc{W}$, we can assume that $\spc{W}=\spc{X}'\cup\spc{Y}'$.
@@ -616,25 +634,26 @@ A sequence of compact metric spaces $(\spc{X}_n)$ converges to  $\spc{X}_\infty$
 and an $\eps_n$-isometry $f_n\:\spc{X}_n\to \spc{X}_\infty$ for each $n$.
 \end{thm}
 
-In the following exercises, \textit{convergence} is understood in the sense of Gromov--Hausdorff.
+\pagebreak
 
 \begin{thm}{Exercise}\label{ex:GH-SC}
 \begin{subthm}{ex:GH-SC:circle}
-Show that a sequence of compact simply-connected length spaces cannot converge to a circle.
+Show that a circle is not a Gromov--Hausdorff limit of compact simply-connected length spaces.
 \end{subthm}
 
 \begin{subthm}{ex:GH-SC:nonsc-limit}
-Construct a sequence of compact simply-connected length spaces that converges to a compact non-simply-connected space.
+Construct a compact non-simply-connected metric space
+that is a Gromov--Hausdorff limit of compact simply-connected length spaces.
 \end{subthm}
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sphere-to-ball}
 \begin{subthm}{ex:sphere-to-ball:2}
-Show that a sequence of length metrics on the 2-sphere cannot converge to the unit disk.
+Show that a sequence of length metrics on the 2-sphere cannot converge to the unit disk in the sense of Gromov--Hausdorff.
 \end{subthm}
 
 \begin{subthm}{ex:sphere-to-ball:3}
-Construct a sequence of length metrics on the 3-sphere that converges to the unit 3-ball.
+Construct a sequence of length metrics on the 3-sphere that converges to the unit 3-ball in the sense of Gromov--Hausdorff.
 \end{subthm}
 
 \end{thm}
@@ -785,6 +804,14 @@ Therefore, $\spc{W}_{n(\eps)}$ is a compact $\eps$-net of $\bm{Q}$ for any $\eps
 Since $\bm{Q}$ is closed in a complete space $\GH$, it implies that $\bm{Q}$ is compact.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:GH-G-delta}
+Show that most of the compact metric spaces are homeomorphic to the Cantor set.
+
+More precisely, suppose $\bm{Q}$ denotes all metric spaces homeomorphic to the Cantor set.
+Show that $\bm{Q}$ is a dense G-delta set in $\GH$.
+\end{thm}
+
+
 \begin{thm}{Exercise}\label{ex-GH-length}
 Show that the space $\GH$ is 
 \begin{multicols}{3}
@@ -893,7 +920,7 @@ and $\spc{X}_n\Hto \spc{X}_\infty$ as subsets in $\bm{X}$.
 \end{thm}
 
 Indeed, since $\spc{X}_n\GHto \spc{X}_\infty$, there is a metric on $\spc{V}_n=\spc{X}_n\sqcup \spc{X}_\infty$ such that the restriction of metric on each $\spc{X}_n$ and $\spc{X}_\infty$ coincides with its original metric, and $\dist{\spc{X}_n}{\spc{X}_\infty}{\Haus\spc{V}_n}<\eps_n$ for some sequence $\eps_n\to 0$.
-Gluing all $\spc{V}_n$ along $\spc{X}_\infty$, we obtain the required space $\bm{X}$.
+Gluing all $\spc{V}_n$ along $\spc{X}_\infty$, we get the required space $\bm{X}$.
 
 In other words, the metric on $\bm{X}$ \textit{defines} the convergence $\spc{X}_n\z\GHto \spc{X}_\infty$.
 This metric makes it possible to talk about limits of sequences $x_n\in \spc{X}_n$ as $n\to\infty$, as well as weak limits of a sequence of Borel measures $\mu_n$ on $\spc{X}_n$ and so on.

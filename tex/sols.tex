@@ -6,7 +6,7 @@ Let us show that $\gamma\le\alpha+\beta$; the rest of inequalities can be done t
 Since $\gamma\le\pi$, we may assume that $\alpha+\beta< \pi$.
 
 Denote by $\gamma_x$, $\gamma_y$, and $\gamma_z$ the geodesics $[px]$, $[py]$, and $[pz]$ parameterized from $p$ by arc-length.
-By triangle inequality,
+By the triangle inequality,
 for any $\eps>0$ and all sufficiently small $t,\tau,s\in\RR_+$ we have
 \begin{align*}
 &\dist{\gamma_x(t)}{\gamma_z(\tau)}{}\le 
@@ -84,8 +84,8 @@ Now suppose $[\tilde p \tilde q]$ does not intersect $[\tilde x\tilde y]$.
 Without loss of generality, we may assume that $[\tilde p \tilde q]$ crosses the line $\tilde x\tilde y$ behind $\tilde x$.
 
 Let us rotate $\tilde p$ around $\tilde x$ so that $\tilde x$ will lie between $\tilde p$ and $\tilde q$.
-It will result in decreasing the distance $\dist{\tilde p}{\tilde y}{}$,
-by triangle inequality we have that 
+It will result in decreasing the distance $\dist{\tilde p}{\tilde y}{}$;
+by the triangle inequality we have that 
 \begin{align*}
 \dist{\tilde p}{\tilde q}{\EE^2}&=\dist{\tilde p}{\tilde x}{\EE^2}+\dist{\tilde x}{\tilde q}{\EE^2}=
 \\
@@ -112,7 +112,7 @@ Suppose $\tilde p,\tilde q,\tilde x,\tilde y\in\EE^2$ satisfies the conditions
 \end{align*}
 
 Fix $\tilde z\in [\tilde x\tilde y]$.
-By triangle inequality 
+By the triangle inequality 
 \[\dist{\tilde p}{\tilde z}{}+\dist{\tilde z}{\tilde q}{}\ge \dist{\tilde p}{\tilde q}{}=\dist{p}{q}{}.\]
 
 Note that if 
@@ -120,7 +120,7 @@ $\dist{\tilde p'}{\tilde x}{}\ge \dist{\tilde p}{\tilde x}{}$
 and
 $\dist{\tilde p'}{\tilde y}{}\ge \dist{\tilde p}{\tilde y}{}$,
 then $\dist{\tilde p'}{\tilde z}{}\ge \dist{\tilde p}{\tilde z}{}$.
-In particular if $[\tilde x\tilde y\tilde p']=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q']=\modtrig(xyq)$, then
+In particular, if $[\tilde x\tilde y\tilde p']=\modtrig(xyp)$ and $[\tilde x\tilde y\tilde q']=\modtrig(xyq)$, then
 \begin{align*}
  \dist{\tilde p'}{\tilde z}{}+\dist{\tilde q'}{\tilde z}{}\ge \dist{\tilde p}{\tilde z}{}+\dist{\tilde z}{\tilde q}{}.
 \end{align*}
@@ -205,7 +205,7 @@ Note that the quadruple $p,x,y,z$ is euclidean if
 and the triple of numbers $\tilde\alpha,\tilde\beta,\tilde\gamma$ satisfies all triangle inequalities.
 Without loss of generality we may assume that
 $\tilde\alpha\le\tilde\beta\le\tilde\gamma$;
-in this case the triangle inequities hold if 
+in this case, the triangle inequities hold if 
 \[\tilde\gamma\le \tilde\alpha+\tilde\beta.\eqlbl{eq:a+b>=c}\]
 
 Note that the inequality \ref{eq:a+b+c=<2pi} follow from $\CBB(0)$ comparison.
@@ -276,7 +276,7 @@ It remains to observe that one can move $\tilde z$ into the plane of $\tilde p$,
 \parbf{\ref{ex:CBB-geodesic}.}
 Suppose that there are distinct geodesics.
 Then there are two points $p$ and $q$ on different geodesics such that $\dist{p}{x}{}=\dist{q}{x}{}$.
-Without loss of generality we may assume that $\dist{z}{x}{}<\dist{p}{x}{}$;
+Without loss of generality, we may assume that $\dist{z}{x}{}<\dist{p}{x}{}$;
 in other words $z$ lies between $p$ and $x$ on the first geodesic and 
 $z$ lies between $q$ and $x$ on the second geodesic.
 Observe that 
@@ -297,7 +297,7 @@ Suppose that a geodesic $[pq]$ is not expendable behind~$q$.
 Denote by $h_t$ the geodesic homotopy with the center at $p$; see \ref{ex:contractible}.
 
 Since $[pq]$ is not extendable, $q\notin \Im h_t$ for any $t<1$.
-In particular the local homology groups vanish at $p$;
+In particular, the local homology groups vanish at $p$;
 the latter does not hold for a manifold --- a contradiction.
 
 \parbf{\ref{ex:fat-triangle}.}
@@ -410,8 +410,8 @@ Whence Jensen's inequality holds for $f\circ\gamma$ if $\gamma$ is any geodesic 
 \end{Figure}
 
 Since $K$ is locally convex,
-it is locally path connected.
-Since $K$ is connected, the latter implies that $K$ is path connected.
+it is locally path-connected.
+Since $K$ is connected, the latter implies that $K$ is path-connected.
 
 Fix two points $x,y\in K$. 
 Let us connect $x$ to $y$ by a path $\alpha\:[0,1]\z\to K$.
@@ -493,7 +493,7 @@ Note that we can assume that the balls have zero radiuses.
 Observe that at each collision the balls exchange their velocities.
 Let us also change their labels at each collision.
 Note that after the relabeling,  the coordinates functions $t\mapsto x_{i}(t)$ of the balls are linear functions in time.%
-\footnote{We use here that radiuses vanish, otherwise $\tilde x_i=x_i-2\cdot k_i\cdot r$ are linear, where $k_i$ is the number of $i$-th ball counted from left.} 
+\footnote{We use here that radiuses vanish; otherwise, $\tilde x_i=x_i-2\cdot k_i\cdot r$ are linear, where $k_i$ is the number of $i$-th ball counted from left.} 
 
 It remains to show $n$ lines on the plane have at most $\tfrac{n\cdot(n-1)}2$ intersections.
 It follows since any pair of lines have at most one intersection.
@@ -634,7 +634,7 @@ the same argument as in \ref{lem:mid>length}, shows that it sufficient to prove 
 that is, if $\mangle(\xi,\zeta)<\pi$, then, given $\eps>0$, there is $\mu\in \Sigma_p$ such that 
 \[\mangle(\xi,\mu),\quad \mangle(\mu,\zeta) \le \tfrac12\cdot \mangle(\xi,\zeta)+\eps.\eqlbl{eq:dir-mid}\]
 
-Without loss of generality we may assume that $\zeta$ and $\xi$ are geodesic directions;
+Without loss of generality, we may assume that $\zeta$ and $\xi$ are geodesic directions;
 so there are geodesics $[px]$ and $[pz]$ that start from $p$ in these directions; in particular, $\mangle\hinge pxz=\mangle(\xi,\zeta)$.
 Fix small $r>0$ and choose points $\bar x=[px]$ and $\bar z=[pz]$ on the distance $r$ from $p$.
 Since $r$ is small, we can assume that 
@@ -738,7 +738,7 @@ The solution goes along the same lines as the proof of Lemma \ref{lem:example-pi
 The cycle $\gamma$ is taken in the complement $\mathcal{S}\setminus\{v\}$ (or, alternatively, in the link of $v$ in $\mathcal{S}$).
 Instead of a vertex, one has to take edge $e$ in $\tilde Q$ that corresponds to $v$; so we show existence of large cycle in $\tilde Q$ that is not contractible in $\tilde Q\setminus e$.
 The last change is not principle:
-it is more visual to think that $G$ is made from the squares parallel to the squares of the cubical complex which meet the edges of the complex orthogonally at their midpoints (in this case formally speaking $G$ is not a subcomplex of the cubical analog).
+it is more visual to think that $G$ is made from the squares parallel to the squares of the cubical complex which meet the edges of the complex orthogonally at their midpoints (in this case, formally speaking $G$, is not a subcomplex of the cubical analog).
 
 \begin{wrapfigure}{r}{25 mm}
 \vskip-2mm
@@ -802,7 +802,7 @@ Let $z$ be the midpoint of $[pq]$.
 We claim that $\alpha$ lies in the open hemisphere $H$ centered at~$z$.  
 
 Assume the contrary; that is, $\alpha$ meets the equator $\partial H$ at a point $r$.
-Without loss of generality we may assume that $r\in\alpha_1$.
+Without loss of generality, we may assume that $r\in\alpha_1$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm

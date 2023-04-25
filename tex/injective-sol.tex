@@ -34,7 +34,7 @@ $x_n\to x_\infty$ as $n\to\infty$.
 Applying the definition of injective space, we get a midpoint for any pair of points in $\spc{Y}$.
 By \ref{SHORT.ex:inj=complete-geodesic-contractible:complete},
 $\spc{Y}$ is a complete space.
-It remains to apply \ref{lem:mid>geod:geod}.
+It remains to apply Menger's lemma (\ref{lem:mid>geod:geod}).
 
 \textit{\ref{SHORT.ex:inj=complete-geodesic-contractible:contractible}.}
 Let $k\:\spc{Y}\hookrightarrow \ell^\infty(\spc{Y})$ be the Kuratowski embedding (\ref{lem:kuratowski}).
@@ -180,7 +180,7 @@ The existence of such a map also follows from \ref{thm:inj-envelope}.
 Apply \ref{thm:injective=hyperconvex:balls}.
 
 \parit{Comment.}
-Conditions under which gluings of injective spaces is injective were studied by Benjamin Miesch and Maël Pavón \cite{miesch,miesch-pavon}.
+Conditions under which gluings of injective spaces are injective were studied by Benjamin Miesch and Maël Pavón \cite{miesch,miesch-pavon}.
 
 \parbf{\ref{ex:Rm-ell-infty}.}
 Let $B=\cBall[0,1]$ and $P\supset B$ be a parallelepiped of minimal volume.
@@ -217,7 +217,7 @@ Use \ref{ex:sphere-in-urysohn:midpoint} to reduce the case $d=\infty$ to the cas
 Choose $\eps_0>0$.
 Let $p_0$ be a point provided by the definition of almost hyperconvexity;
 that is $\dist{x_\alpha}{p_0}{}\le r_\alpha+\eps_0$ for a given $\eps_0>0$.
-We may assume that $\delta_0=\sup\{\,\dist{x_\alpha}{p_0}{}- r_\alpha\,\}>0$; otherwise the problem is solved.
+We may assume that $\delta_0=\sup\{\,\dist{x_\alpha}{p_0}{}- r_\alpha\,\}>0$; otherwise, the problem is solved.
 Clearly, $\delta_0\le \eps_0$.
 
 Applying hyperconvexity for $\eps_1<\tfrac1{10}\cdot\delta_0$,
@@ -388,7 +388,7 @@ You may need to apply the Katětov extension (\ref{ex:extension-of-extension:a})
 Make a conclusion.
 
 \parbf{\ref{ex:hemisphere-inj}.}
-Apply \ref{lem:opposite-compact} to show that for any $u\in\mathbb{S}^2_+$ the restriction $f_u\z\df\distfun_u|_{\mathbb{S}^1}$ is extremal function on $\mathbb{S}^1$.
+Apply \ref{lem:opposite-compact} to show that for any $u\in\mathbb{S}^2_+$ the restriction $f_u\z\df\distfun_u|_{\mathbb{S}^1}$ is an extremal function on $\mathbb{S}^1$.
 Moreover, the function $f_u$ uniquely determines $u$. 
 Make a conclusion.
 
@@ -454,12 +454,12 @@ Consider set of $\{\infty,1,2,\dots\}$ with metric defined by
 for $m\ne n$.
 Observe that the space is complete, the subset $\{1,2,\dots\}$ is closed, but it is not a short retract of the ambient space.
 
-\parbf{\ref{ex:petrunin-stadler}.} Consider the space $\spc{Y}^{\spc{X}}$ of all maps $\spc{X}\z\to \spc{Y}$ equipped with the product topology.
+\parbf{\ref{ex:petrunin-stadler}.} Consider the space $\spc{K}^{\spc{X}}$ of all maps $\spc{X}\z\to \spc{K}$ equipped with the product topology.
 
-Denote by $\mathfrak{S}_F$ the set of maps $h\in \spc{Y}^\spc{X}$ such that the restriction $h|_F$  is short and agrees with $f$ in $F\cap A$.
-Note that the sets $\mathfrak{S}_F\subset \spc{Y}^\spc{X}$ are closed and any finite intersection of these sets is nonempty.
+Denote by $\mathfrak{S}_F$ the set of maps $h\in \spc{K}^\spc{X}$ such that the restriction $h|_F$  is short and agrees with $f$ in $F\cap A$.
+Note that the sets $\mathfrak{S}_F\subset \spc{K}^\spc{X}$ are closed and any finite intersection of these sets is nonempty.
 
-According to Tikhonov's theorem, $\spc{Y}^{\spc{X}}$ is compact.
+According to Tikhonov's theorem, $\spc{K}^{\spc{X}}$ is compact.
 By the finite intersection property, the intersection $\bigcap_F\mathfrak{S}_F$ for all finite sets $F\subset X$ is nonempty.
 Hence the statement follows.
 

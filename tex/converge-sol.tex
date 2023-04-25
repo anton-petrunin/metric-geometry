@@ -60,7 +60,7 @@ Therefore $\{C_t\}_{t\in[0,1]}$ is a family of compact subsets in $\mathbb{S}^1$
 Assume there is a continuous section $c(t)\z\in C_t$, for $t\in [0,1]$.
 Since $\pi$ is a covering map,
 we can lift the path $c$ to a path $\tilde c\:[0,1]\to \RR$ such that $\tilde c(t)\in \tilde C_t$ for all $t$.
-In particular $\tilde c(t)\to\infty$ as $t\to0$,
+In particular, $\tilde c(t)\to\infty$ as $t\to0$,
 a contradiction.
 
 \parit{\ref{SHORT.ex:H-sections:R}.}
@@ -75,7 +75,7 @@ Composing $f$ with the retraction $r\:\Haus\spc{X}\to \spc{X}$ we get a homotopy
 
 \parit{By the way, is there a good description of such spaces?}
 Note that if $\spc{X}$ is injective or discrete, then a short retraction $\Haus\spc{X}\to \spc{X}$ exists.
-On the other hand, the Euclidean plane does not have such a retraction \cite{petrunin-2022-MO-center, przeslawski-yost}.
+On the other hand, the euclidean plane does not have such a retraction \cite{petrunin-2022-MO-center, przeslawski-yost}.
 See also \cite{petrunin-435157}.
 
 \parbf{\ref{ex:closure-union}.} 
@@ -108,6 +108,20 @@ Choose points $p,q\in\spc{X}$.
 Show that the existence of $\eps$-midpoints between $\{p\}$ and $\{q\}$ in $\Haus\spc{X}$ implies the existence of $\eps$-midpoints between $p$ and $q$ in $\spc{X}$.
 Apply \ref{lem:mid>geod}.
 
+\parbf{\ref{ex:Haus-G-delta}}; \ref{SHORT.ex:Haus-G-delta:closed}
+Suppose that a sequence of compact subsets $K_n\subset \RR^2$ converges to $K_\infty$ in the sense of Hausdorff.
+Assume $K_\infty$ is not connected; show that so is  $K_n$ for large~$n$.
+
+\parit{\ref{SHORT.ex:Haus-G-delta:curves}.}
+Choose a finite subset $F$ that is $\eps$-close to~$K$.
+Show that one can obtain a tree $T$ by connecting some vertices of $F$ by line segments of length smaller than $2\cdot\eps$.
+Let $\gamma$ be a curve that bounds a neighborhood of $T$.
+Show that if the neighborhood is sufficiently small, then $\gamma$ is $2\cdot\eps$-close to~$K$.
+
+\parit{Remarks.}
+You might be surprised to learn that most connected compact sets in the pane are homeomorphic to each other --- they are homeomorphic to the so-called \index{pseudo-arc}\emph{pseudo-arc} \cite{bing-1948}; here the word \textit{most} understood in the sense of \ref{sec:G-delta}.
+In particular, most of the compact connected plane sets are not path-connected.
+
 
 \parbf{\ref{ex:Huas-perimeter-area}.}
 Let $A$ be a compact convex set in the plane.
@@ -127,15 +141,15 @@ It remains to use the following observation: if $A_n\to A_\infty$, then for any 
 A_\infty\subset A_n^r\]
 hold for all large $n$.
 
-\begin{wrapfigure}{r}{27 mm}
-\vskip-6mm
-\centering
-\includegraphics{mppics/pic-410}
-\end{wrapfigure}
-
 \parbf{\ref{ex:round-disc}.}
 Note that almost all points on $\partial D$ have a defined tangent line.
 In particular, for almost all pairs of points $a,b\z\in\partial D$ the two angles $\alpha$ and $\beta$ between the chord $[ab]$ and $ \partial D$ are defined.
+
+\begin{wrapfigure}{r}{27 mm}
+\vskip-3mm
+\centering
+\includegraphics{mppics/pic-410}
+\end{wrapfigure}
 
 The convexity of $D'$ implies that $\alpha=\beta$;
 here we measure the angles $\alpha$ and $\beta$ on one side from $[ab]$.
@@ -146,7 +160,7 @@ Show that if the identity $\alpha=\beta$ holds for almost all chords, then $D$ i
 Observe that all functions $\distfun_{A_n}$ are Lipschitz.
 Suppose that for some (and therefore any) point $x$ the sequence $\distfun_{A_n}(x)$ is not bounded.
 Then we can pass to a subsequence of $A_n$ so that $\distfun_{A_n}(x)\to\infty$ for any $x$;
-in this case $A_n$ converges to the empty set.
+in this case, $A_n$ converges to the empty set.
 
 Assume the sequence $\distfun_{A_n}(x)$ is bounded for some (and therefore any) point $x$.
 Then, passing to a subsequence of $A_n$, we may assume that the sequence $\distfun_{A_n}$ converges to some function $f$.
@@ -334,24 +348,21 @@ Note that the limit space in \ref{SHORT.ex:GH-SC:nonsc-limit}, does not admit a 
 \textit{\ref{SHORT.ex:sphere-to-ball:2}.}
 Suppose that a metric on $\mathbb{S}^2$ is close to the unit disk $\DD^2$.
 Show that $\mathbb{S}^2$ contains a circle $\gamma$ that is close to the boundary curve of $\DD^2$.
-By the Jordan curve theorem, $\gamma$ divides $\mathbb{S}^2$ into two disks, say $D_1$ and $D_2$.
+By the Jordan curve theorem, $\gamma$ cuts $\mathbb{S}^2$ into two disks, say $D_1$ and $D_2$.
 
-By \ref{ex:GH-SC:circle}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$; otherwise the limit would admit a nontrivial covering.
+By \ref{ex:GH-SC:circle}, the Gromov--Hausdorff limits of $D_1$ and $D_2$ have to contain the whole $\DD^2$; otherwise, the limit would admit a nontrivial covering.
 
 Consider points $p_1\in D_1$ and $p_2\in D_2$ that are close to the center of $\DD^2$.
-If $n$ is large, the distance $\dist{p_1}{p_2}{n}$ has to be very small.
+On one hand, the distance $\dist{p_1}{p_2}{\mathbb{S}^2}$ has to be small.
 On the other hand, any curve from $p_1$ to $p_2$ must cross $\gamma$, so its length is about 2 (or larger) --- a contradiction.
 
 \parit{\ref{SHORT.ex:sphere-to-ball:3}.}
-Make fine burrows in the standard 3-ball without changing its topology,
-but at the same time come sufficiently close to any point in the ball.
+Show that one can remove fine tunnels from the standard 3-ball in such a way that (1) the topology does not change, (2) the induced length metric is very close to the original one, and (3) the tunnels come sufficiently close to any point in the ball.
 
 Consider the \index{doubling}\emph{doubling} of the obtained ball along its boundary;
 that is, two copies of the ball with glued corresponding points on their boundaries.
 The obtained space is homeomorphic to $\mathbb{S}^3$.
-Note that the burrows can be made 
-so that the obtained space is sufficiently close to the original ball 
-in the Gromov--Hausdorff metric.
+Observe that the obtained space is sufficiently close to the original ball.
 
 \parit{Source:} \cite[Exercises 7.5.13 and 7.5.17]{burago-burago-ivanov}. 
 
@@ -378,7 +389,7 @@ Suppose $f\:\spc{X}\to \spc{Y}$ be a distance-noncontracting map.
 Choose one point $x_i$ in each nonempty subset $B_i=f^{-1}[\oBall(y_i,\eps)]$.
 Note that the subset $B_i$ has diameter at most $2\cdot \eps$ and 
 \[\spc{X}=\bigcup_iB_i.\]
-Therefore, the set of points $\{x_i\}$ is a $2\cdot\eps$-net in $\spc{X}$.
+Therefore, the set of points $\{x_i\}$ is a $2\cdot\eps$-net in~$\spc{X}$.
 
 \parit{\ref{SHORT.pr:under:only-if}.}
 Let $\bm{Q}$ be a uniformly totally bounded family of spaces. 
@@ -405,7 +416,28 @@ In particular, if $C>10$, then
 for any $x,x'\in \spc{X}$.
 That is, $f$ is a distance-noncontracting map $\spc{X}\to \spc{Y}$.
 
-\parbf{\ref{ex-GH-length}}; \ref{SHORT.ex-GH-length:separable}. Show that (the isometry classes of) finite metric spaces with only rational distances is a countable dense subset in $\GH$. 
+\parbf{\ref{ex:GH-G-delta}.}
+Let $\spc{K}$ be a compact space.
+Denote by $a(\spc{K})$ the largest diameter of connected component in a compact space $\spc{K}$.
+Further, let 
+\[b(\spc{K})=\max_{p\in \spc{K}}\min_{q\ne p}\{\dist{p}{q}{\spc{K}}\}.\]
+Note that $b(\spc{K})=0$ if and only if $\spc{K}$ has no isolated points.
+
+Show that if $a(\spc{K})=b(\spc{K})=0$, then $\spc{K}$ is homeomorphic to the Cantor set.
+
+Further show that the sets
+\begin{align*}
+A_\eps&=\set{\spc{K}\in\GH}{a(\spc{K})<\eps}
+\\
+B_\eps&=\set{\spc{K}\in\GH}{b(\spc{K})<\eps}
+\end{align*}
+are open and dense in $\GH$.
+Apply \ref{thm:baire}.
+
+
+
+\parbf{\ref{ex-GH-length}}; \ref{SHORT.ex-GH-length:separable}.
+Show that (the isometry classes of) finite metric spaces with only rational distances form a countable dense subset in $\GH$. 
 
 \parit{\ref{SHORT.ex-GH-length:length}+\ref{SHORT.ex-GH-length:geodesic}.}
 Choose two compact metric spaces $\spc{X}$ and $\spc{Y}$.

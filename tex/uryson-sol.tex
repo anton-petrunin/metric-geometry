@@ -178,7 +178,7 @@ Use \ref{ex:shere} to show that it cannot be extended to an isometry of $\spc{U}
 Apply \ref{thm:urysohn-unique} and the construction in \ref{thm:urysohn-exists+}.
 
 \parbf{\ref{ex:homogeneous}}; \ref{SHORT.ex:homogeneous:euclidean}.
-The Euclidean plane is homogeneous in every sense.
+The euclidean plane is homogeneous in every sense.
 
 \parit{\ref{SHORT.ex:homogeneous:hilbert}.}
 The Hilbert space $\ell^2$ is finite-set-homogeneous, but not compact-set-homogeneous, nor countable-set-homogeneous.
@@ -214,6 +214,47 @@ Suppose $d\ge 3$.
 Choose a geodesic $\gamma$ in $\spc{T}$.
 Show that number of connected components of $\spc{T}\setminus\gamma$ has cardinality continuum.
 Observe and use that one can choose a point $p_\alpha$ in each connected component such that $\dist{p_\alpha}{p_\beta}{\spc{T}}>1$ if $\alpha\ne\beta$.
+
+\parbf{\ref{ex:horobry}.}
+Assume $F_{\spc{X}}$ is not an embedding.
+That is, there is a sequence of points $x_1,x_2,\dots$ 
+and a point $x_\infty$ such that $f_{x_n}\to f_{x_\infty}$ in $C(\spc{X},\RR)$
+as $n\to \infty$, 
+while $|x_n-x_\infty|_{\spc{X}}>\eps$ 
+for some fixed $\eps>0$ and all~$n$.
+
+By \ref{prop:length+proper=>geodesic}, any pair of points $x,y\in \spc{X}$ can be connected by a minimizing geodesic $[xy]$.
+Choose $\bar x_n$ on a geodesic $[x_\infty x_n]$ such that $|x_\infty-\bar x_n|=\eps$.
+Note that 
+\begin{align*}
+f_{x_n}(x_\infty)-f_{x_n}(\bar x_n)&=\eps,
+\\
+f_{x_\infty}(x_\infty)-f_{x_n}(\bar x_n)&=-\eps
+\end{align*}
+for all $n$.
+
+Since $\spc{X}$ is proper, we can pass to a subsequence of $x_n$ so that the sequence  $\bar x_n$ converges;
+denote its limit by $\bar x_\infty$.
+The above identities imply that
+\begin{align*}
+f_{x_n}(\bar x_\infty)&\not\to f_{x_\infty}(\bar x_\infty)
+\quad
+\text{or}
+\\
+f_{x_n}(x_\infty)&\not\to f_{x_\infty}( x_\infty)
+\end{align*}
+--- a contradiction.
+
+For the second part, take $\spc{Y}$ to be the set of non-negative integers with the metric $\rho$ defined by
+\[\rho(m,n)=m+n\] 
+for $m\ne n$.
+
+\medskip
+
+\parit{Source:}
+I learned this example from Linus Kramer and Alexander Lytchak;
+it was also mentioned in the lectures of Anders Karlsson
+and attributed to Uri Bader \cite[2.3]{karlsson}.
 
 \parbf{\ref{ex:cut}.}
 Suppose that our metric is $\sum a_S\cdot\delta_S$ with $a_S\ge 0$ for any $S\subset F$.

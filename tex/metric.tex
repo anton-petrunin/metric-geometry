@@ -38,16 +38,16 @@ The elements of the set are called \index{point}\emph{points}.
 Most of the time we keep the same notation for the metric space and its underlying set;
 the latter can be denoted by $\ushort{\spc{X}}$ if needed.
 
-Given $R\in[0,\infty]$ and $x\in \spc{X}$, the sets
+Given radius $R\in[0,\infty]$ and center $x\in \spc{X}$, the sets
 \begin{align*}
-\oBall(x,R)&=\{y\in \spc{X}\mid \dist{x}{y}{}<R\},
+\oBall(x,R)&=\set{y\in \spc{X}}{\dist{x}{y}{}<R},
 \\
-\cBall[x,R]&=\{y\in \spc{X}\mid \dist{x}{y}{}\le R\}
+\cBall[x,R]&=\set{y\in \spc{X}}{\dist{x}{y}{}\le R}
 \end{align*}
-are called, respectively, the  \index{open ball}\emph{open} and  the \index{closed ball}\emph{closed  balls}   of radius $R$ with center~$x$.
-If we need to emphasize that these balls are taken in the metric space $\spc{X}$,
-we write 
-\[\oBall(x,R)_{\spc{X}}\quad\text{and}\quad\cBall[x,R]_{\spc{X}}.\]
+are called, respectively, the  \index{open ball}\emph{open} and  the \index{closed ball}\emph{closed  balls}.
+The notations $\oBall(x,R)_{\spc{X}}$ and $\cBall[x,R]_{\spc{X}}$
+might be used if we need to emphasize that these balls are taken in the metric space $\spc{X}$.
+
 
 \begin{thm}{Exercise}\label{ex:quad-inq}
 Show that the following inequality
@@ -92,7 +92,7 @@ Consider an equivalence relation $\sim$ on $\spc{X}$ defined by
 Note that if $x\sim x'$, then $\dist{y}{x}{}=\dist{y}{x'}{}$ for any $y\in\spc{X}$.
 Thus, $\dist{*}{*}{}$ defines a metric on the
 quotient $\spc{X}/{\sim}$.
-The obtained metric space, say $\spc{X}'$, is called the 
+The so-obtained metric space, say $\spc{X}'$, is called the 
 \emph{corresponding metric space} for the semimetric space $\spc{X}$.
  
 
@@ -106,12 +106,14 @@ We might call them \index{metric!$\infty$-metric}\emph{$\infty$-metrics}, but mo
 
 The following construction shows how to reduce questions about $\infty$-metrics to genuine metrics. 
 
-Set 
+Let 
 \[x\approx y\quad\iff\quad\dist{x}{y}{}<\infty;\]
 it defines another equivalence relation on $\spc{X}$.
 The equivalence class of a point $x\in\spc{X}$ will be called the \index{metric component}\emph{metric component} 
  of $x$; it will be denoted by $\spc{X}_x$.
-One could think of $\spc{X}_x$ as  $\oBall(x,\infty)_{\spc{X}}$ --- the open ball centered at $x$ and radius $\infty$ in $\spc{X}$.
+Note that 
+\[\spc{X}_x=\oBall(x,\infty)_{\spc{X}};\]
+that is, the metric component of $x$ is the open ball centered at $x$ and radius $\infty$.
 
 If $\{\spc{X}_\alpha\}$ is a collection of metric spaces, then \index{disjoint union}\emph{disjoint union} $\bm{X}\z=\bigsqcup_\alpha\spc{X}_\alpha$ will be considered with a natural metric defined by
 \[\dist{x}{y}{\bm{X}}
@@ -203,11 +205,42 @@ It defines a natural inclusion map $\spc{X}\hookrightarrow \bar{\spc{X}}$.
 It is easy to check that this map is distance-preserving.
 In particular, we can (and will) consider $\spc{X}$ as a subset of $\bar{\spc{X}}$.
 
-Note that $\spc{X}$ is a dense subset in its completion $\bar{\spc{X}}$
+Note that $\spc{X}$ is a dense subset in its completion $\bar{\spc{X}}$.
 
 \begin{thm}{Exercise}\label{ex:complete-completion}
 Show that the completion of a metric space is complete.
+\end{thm} 
+
+\section{G-delta sets}\label{sec:G-delta}
+
+\begin{thm}{Baire's theorem}\label{thm:baire}
+For any sequence $\Omega_1,\Omega_2,\dots$ of open dense subsets in a complete metric space, the intersection $\bigcap_{n\in \NN}\Omega_n$ is dense.
 \end{thm}
+
+A subset is called a \index{G-delta set}\emph{G-delta} if it can be presented as an intersection of a countable number of open subsets.
+Note that by Baire's theorem, a countable intersection of dense G-delta sets is a dense G-delta set --- in particular it is nonempty.
+Therefore we are allowed to say that a dense G-delta set contains \textit{most} of the points in a complete metric space.
+
+\parit{Proof.}
+We may assume that the space is nonempty; otherwise, there is nothing to prove.
+
+Given a  closed ball $\cBall[p_0,R_0]$,
+let us apply induction to construct a nested sequence of closed balls
+\[\cBall[p_0,R_0]\supset\cBall[p_1,R_1]\supset \cBall[p_2,R_2]\supset\dots\]
+such that $\cBall[p_n,R_n]\subset \Omega_n$ and $R_n>0$ for each $n\ge 1$. 
+Assume $\cBall[p_{n-1},R_{n-1}]$ is already constructed.
+Since $\Omega_n$ is dense we can choose a closed ball 
+$\cBall[p_n,R_n]\subset\Omega_n\cap \cBall[p_{n-1},R_{n-1}]$.
+
+Note that we can assume that $R_n<\tfrac1{n}$ for each $n\z\ge 1$.
+In this case, the sequence $p_1$, $p_2,\dots$ is Cauchy; therefore, it is converging.
+Observe that its limit $p_\infty$ belongs to each $\Omega_n$.
+It follows that any closed ball $\cBall[p_0,R_0]$ contains a point in $\bigcap_{n\in \NN}\Omega_n$, hence the result.
+\qeds
+ 
+
+
+
 
 
 \section{Compact spaces}
@@ -273,14 +306,14 @@ equivalently, for any point $x\in\spc{X}$, a closed ball $\cBall[x,r]$ is compac
 
 \section{Proper spaces}
 
+
+
 A metric space $\spc{X}$ is called \index{proper space}\emph{proper} if all closed bounded sets in $\spc{X}$ are compact.
-It is straightforward to check that this condition is equivalent to each of the following statements:
-\begin{itemize}
-\item For some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
-the closed ball $\cBall[p,R]_{\spc{X}}$ is compact. 
-\item The function $\distfun_p\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} for some (and therefore any) point $p\in \spc{X}$.
-(Recall that a function $f\:\spc{X}\to\RR$ is proper if, for any compact set $K\subset \RR$, its inverse image $f^{-1}(K)$ is compact.)
-\end{itemize}
+Note that $\spc{X}$ is proper if for some (and therefore any) point $p\in \spc{X}$ and any $R<\infty$, 
+the closed ball $\cBall[p,R]_{\spc{X}}$ is compact.
+
+Recall that a function $f\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} if, for any compact set $K\subset \RR$, its inverse image $f^{-1}(K)$ is compact.
+Observe that $\spc{X}$ is proper if and only if the function $\distfun_p\:\spc{X}\to\RR$ is \index{proper function}\emph{proper} for some (and therefore any) point $p\in \spc{X}$.
 
 \begin{thm}{Exercise}\label{ex:loc-compact-not-proper}
 Give an example of a metric space that is locally compact but not proper.
@@ -324,7 +357,7 @@ and the geodesics in $(\mathbb{S}^2,\|{*}-{*}\|)$ run along great circles of $\m
 
 \section{Metric trees}
 
-A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any pair of points in $\spc{T}$ are connected by a unique geodesic,
+A geodesic space $\spc{T}$ is called a \index{metric tree}\emph{metric tree} if any two points in $\spc{T}$ are connected by a unique geodesic,
 and the union of any two geodesics $[xy]_{\spc{T}}$, and $[yz]_{\spc{T}}$ contains the geodesic $[xz]_{\spc{T}}$.
 
 {
@@ -457,6 +490,18 @@ $$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.$$
 Since the partition was arbitrary, applying the definition of length, we get \ref{eq:semicont-length}.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:1-Lip-G-delta}
+Show that most of 1-Lipschitz paths in the plane have length 1.
+
+More precisely, consider the space $\spc{P}$ of 1-Lipschitz paths in the plane;
+that is, all paths $a\:[0,1]\to\RR^2$ such that $|a(t_0)-a(t_1)|\le |t_0-t_1|$ for any $t_0$ and $t_1$.
+Equip $\spc{P}$ with the metric defined by
+\[\dist{a}{b}{}\df\sup\set{\dist{a(t)}{b(t)}{}}{t\in[0,1]}.\]
+Show that a dense G-delta set of paths in $\spc{P}$ has length 1.
+
+\end{thm}
+
+
 \section{Length spaces}\label{sec:intrinsic}
 
 Let $\spc{X}$ be a metric space.
@@ -529,21 +574,23 @@ if
 Note that a $0$-midpoint is the same as a midpoint.
 
 
-\begin{thm}{Lemma}\label{lem:mid>geod}
-Let $\spc{X}$ be a complete metric space.
+\begin{thm}{Menger's lemma}\label{lem:mid>geod}
+Assume $\spc{X}$ is a complete metric space.
 \begin{subthm}{lem:mid>length}
-Assume that for any pair of points $x,y\in \spc{X}$,  
-and any $\eps>0$,
-there is an $\eps$-midpoint~$z$.
+Suppose that for any two points in $\spc{X}$,  
+and any positive $\eps$,
+there is an $\eps$-midpoint.
 Then $\spc{X}$ is a length space.
 \end{subthm}
 
 \begin{subthm}{lem:mid>geod:geod}
-Assume that for any pair of points $x,y\in \spc{X}$, 
-there is a midpoint~$z$.
+Suppose that for any two points in $\spc{X}$, 
+there is a midpoint.
 Then $\spc{X}$ is a geodesic space.
 \end{subthm}
 \end{thm}
+
+The second part of this lemma was proved by Karl Menger \cite[Section 6]{menger}.
 
 \parit{Proof; \ref{SHORT.lem:mid>length}.}
 Choose $x,y\in \spc{X}$;
@@ -553,21 +600,19 @@ Let $\alpha(\tfrac12)$ be an $\eps_1$-midpoint between $\alpha(0)$ and $\alpha(1
 Further, let $\alpha(\frac14)$ 
 and $\alpha(\frac34)$ be $\eps_2$-midpoints between the pairs $(\alpha(0),\alpha(\tfrac12))$ 
 and $(\alpha(\tfrac12),\alpha(1))$ respectively.
-Applying the above procedure recursively,
-on the $n$-th step we define $\alpha(\tfrac{k}{2^n})$,
+Continue the above procedure;
+on the $n$-th step, we define $\alpha(\tfrac{k}{2^n})$,
 for every odd integer $k$ such that $0<\tfrac k{2^n}<1$, 
 as an $\eps_{n}$-midpoint of the already defined
 $\alpha(\tfrac{k-1}{2^n})$ and $\alpha(\tfrac{k+1}{2^n})$.
 
 
 This way we define $\alpha(t)$ for all dyadic rationals $t$ in $[0,1]$.
-Moreover, $\alpha$ has Lipschitz constant $1+\tfrac{\eps}{\dist{x}{y}{}}$.
-Since $\spc{X}$ is complete, the map $\alpha$ can be extended continuously to $[0,1]$.
-Moreover,
+Moreover, $\alpha$ has Lipschitz constant $\dist{x}{y}{}+\eps$.
+Since $\spc{X}$ is complete, the map $\alpha$ can be extended $(\dist{x}{y}{}+\eps)$-Lipschitz map $\alpha\:[0,1]\to \spc{X}$.
+In particular
 \[\begin{aligned}
-\length\alpha&\le \dist{x}{y}{}+\sum_{n=1}^\infty 2^{n-1}\cdot\eps_n\le
-\\
-&\le \dist{x}{y}{}+\tfrac\eps2.
+\length\alpha&\le \dist{x}{y}{}+\eps.
 \end{aligned}
 \eqlbl{eq:eps-midpoint}
 \]
@@ -580,7 +625,7 @@ In this case, \ref{eq:eps-midpoint} holds for $\eps_n=\eps\z=0$.
 \qeds
 
 In a compact space, a sequence of $\tfrac1n$-midpoints $z_n$ contains a convergent subsequence.
-Therefore \ref{lem:mid>geod} implies the following.
+Therefore Menger's lemma (\ref{lem:mid>geod}) implies the following.
 
 \begin{thm}{Proposition}\label{prop:length+proper=>geodesic}
 Any proper length space is geodesic.
@@ -594,15 +639,17 @@ Before reading the proof, it is instructive to solve \ref{ex:loc-compact-not-pro
 In the proof, we will use the following exercise.
 
 \begin{thm}{Exercise}\label{ex:eps-nbhd(ball)}
-Let $M$ be a length space.
-Show that $\oBall(x,R+\eps)_M$ is the $\eps$-neighborhood of $\oBall(x,R)_M$.
+Let $\spc{X}$ be a length space.
+Show that $\oBall(x,R+\eps)_{\spc{X}}$ is the $\eps$-neighborhood of $\oBall(x,R)_{\spc{X}}$.
 \end{thm}
 
 
 \parit{Proof.}
-Let $\spc{X}$ be a locally compact length space.
-Given $x\in \spc{X}$, denote by $\rho(x)$ the least upper bound of all $R>0$ such that
-the closed ball $\cBall[x,R]$ is compact.
+Choose a point $x$ in a locally compact length space $\spc{X}$.
+Let 
+\[\rho(x)
+\df
+\sup\set{R}{\cBall[x,R]\ \text{is compact}}.\]
 Since $\spc{X}$ is locally compact, 
 $$\rho(x)>0
 \quad\text{for any}\quad
@@ -622,13 +669,13 @@ Since $B$ is closed and hence complete, it must be compact; see \ref{totally-bou
 in particular, $\rho\:\spc{X}\to\RR$ is a continuous function.
 \end{clm}
 
-Assume the contrary; that is, $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
+Suppose $\rho(x)+|x-y|<\rho(y)$ for some $x,y\in \spc{X}$. 
 Then 
 $\cBall[x,\rho(x)+\eps]$ is a closed subset of $\cBall[y,\rho(y)]$ for some $\eps>0$.
-Then compactness of $\cBall[y,\rho(y)]$ implies the compactness of $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
+Since $\cBall[y,\rho(y)]$ is compact, so is $\cBall[x,\rho(x)+\eps]$ --- a contradiction.\claimqeds
 
 Let $\eps=\min\set{\rho(y)}{y\in B}$; the minimum is defined since $B$ is compact and $\rho$ is continuous.
-From \ref{eq:rho>0}, we have $\eps>0$.
+By \ref{eq:rho>0}, we have $\eps>0$.
 
 Choose a finite $\tfrac\eps{10}$-net $\{a_1,a_2,\dots,a_n\}$ in $B=\cBall[x,\rho(x)]$.
 The union $W$ of the closed balls $\cBall[a_i,\eps]$ is compact.

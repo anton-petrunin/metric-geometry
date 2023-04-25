@@ -90,34 +90,33 @@ converge.
 In particular, both are Cauchy;
 that is,
 \[
-|x_{n_i}-x_{n_j}|_{\spc{K}}, |y_{n_i}-y_{n_j}|_{\spc{K}}\to 0
+|x_{n_i}-x_{n_j}|_{\spc{K}}\to 0 
+\quad\text{and}\quad
+|y_{n_i}-y_{n_j}|_{\spc{K}}\to 0
 \]
 as $\min\{i,j\}\to\infty$.
 
-Since $f$ is distance-noncontracting, we get
+Since $f$ is distance-noncontracting, 
 \[
 |x_0-x_{|n_i-n_j|}|
 \le 
-|x_{n_i}-x_{n_j}|.
+|x_{n_i}-x_{n_j}|
 \]
-
-It follows that  
-there is a sequence $m_i\to\infty$ such that
+for any $i$ and $j$.
+Therefore, there is a sequence $m_i\to\infty$ such that
 \[
-x_{m_i}\to x_0\quad\text{and}\quad y_{m_i}\to y_0\quad\text{as}\quad i\to\infty.
+x_{m_i}\to x_0\quad\text{and}\quad y_{m_i}\to y_0
 \leqno({*})\]
+as $i\to\infty$.
 
-Set \[\ell_n=|x_n-y_n|_{\spc{K}}.\]
-Since $f$ is distance-noncontracting, the sequence $(\ell_n)$ is nondecreasing.
-
+Since $f$ is distance-noncontracting, the sequence $\ell_n=|x_n-y_n|_{\spc{K}}$ is nondecreasing.
 By $({*})$,  $\ell_{m_i}\to\ell_0$ as $m_i\to\infty$.
-It follows that $(\ell_n)$ is a constant sequence.
-
+It follows that 
+\[\ell_0=\ell_1=\dots\]
 In particular, 
 \[|x_0-y_0|_{\spc{K}}=\ell_0=\ell_1=|f(x_0)-f(y_0)|_{\spc{K}}\]
 for any pair of points $(x_0,y_0)$ in $\spc{K}$.
-That is, the map $f$ is distance-preserving and, in particular, injective.
-
+That is, the map $f$ is distance-preserving; hence $f$ is injective.
 From $({*})$, we also get that $f(\spc{K})$ is everywhere dense.
 Since $\spc{K}$ is compact $f\:\spc{K}\to \spc{K}$ is surjective --- hence the result.
 
@@ -133,10 +132,8 @@ Note that this exercise implies that \textit{any surjective non-expanding map fr
 Check an infinite set with a discrete metric.
 
 \parbf{\ref{ex:pogorelov}.}
-The conditions \ref{SHORT.metric>=0}--\ref{SHORT.metric:sym} in Definition \ref{def:metric} are evident.
-
 Set $B_p=B(x,\tfrac \pi2)_{\mathbb{S}^2}$.
-The triangle inequality \ref{SHORT.metric:triangle} follows since
+The triangle inequality follows since
 \[
 (B_x\setminus B_y)
 \cup 
@@ -144,6 +141,7 @@ The triangle inequality \ref{SHORT.metric:triangle} follows since
 \supseteq
 B_x\setminus B_z.
 \leqno(*)\]
+The remaining conditions in Definition \ref{def:metric} are evident.
 
 Observe that
 $B_x\setminus B_y$
@@ -159,7 +157,7 @@ Therefore, the second statement follows.
 \end{wrapfigure}
 
 \parit{Remarks.}
-This construction was given by 
+This construction is due to 
 Aleksei Pogorelov \cite{pogorelov}.
 It is closely related to the construction given 
 by David Hilbert \cite{hilbert}
@@ -167,40 +165,56 @@ which was the motivating example for his fourth problem.
 See also the remark after the solution of~\ref{ex:pseudo-infty-metric}.
 
 \parbf{\ref{ex:4-point-trees}.}
-Without loss of generality, we may assume that non of the points $p,x,y,z$ lie on a geodesic between the other two.
+We may assume that non of the points $p,x,y,z$ lie on a geodesic between the other two.
 
 Let $K$ be the set in the tree covered by all six geodesics with the endpoints $p,x,y,z$.
 Observe that $K$ looks like an H or like an X; make a conclusion.
 
-\parit{Remarks.}
+\parit{Remarks.}The value $\tfrac12\cdot(|p-x|+|p-y|-|x-y|)$ is called \index{Gromov's product}\emph{Gromov's product} of $x$ and $y$ with the origin at $p$;
+usually it is denoted by $(x|y)_p$.
+
 Note that a four-point metric space admits an isometric embedding into a metric tree if and only if one of these two equivalent conditions holds.
 Moreover, a metric space admits an isometric embedding into a metric tree if every its four-point subspace admits such embedding.
 
-The value $\tfrac12\cdot(|p-x|+|p-y|-|x-y|)$ is called \index{Gromov's product}\emph{Gromov's product} of $x$ and $y$ with the origin at $p$;
-usually it is denoted by $(x|y)_p$.
 
 \parbf{\ref{ex:spheres-in-trees}.}
 Apply \ref{ex:4-point-trees}.
+
+\parbf{\ref{ex:1-Lip-G-delta}.}
+Note that $\spc{P}$ is complete.
+Choose $\eps>0$.
+Use \ref{thm:length-semicont} to show that the set of paths of length $>1-\eps$ is open in~$\spc{P}$;
+show that this set is also dense in~$\spc{P}$.
+Apply Baire's theorem (\ref{thm:baire}).
+
+\parit{Remark.}
+You might find it surprising that \textit{most of the short maps from the sphere to the plane are \index{length-preserving map}\emph{length-preserving}}; that is, they preserve lengths of all curves.
+The latter follows from the result of 
+Bernd Kirchheim, 
+Emanuele Spadaro,
+and 
+L{\'a}szl{\'o} Sz{\'e}kelyhidi \cite{KSS}.
+(While most of the maps have this property, it is not at all easy to construct a single such example.) 
 
 
 \parbf{\ref{ex:no-geod}.}
 \textit{Formally speaking, a one-point space is a solution,
 but we will construct a nontrivial example.}
 
-Denote by $c_0$ the space of all real sequences converging to zero equipped with the sup-norm.
+Recall that $c_0\subset\ell^\infty$ denotes the space of all real sequences converging to zero.
 Consider the unit ball $B$ in $c_0$;
 denote by $\rho_0$ the metric on $B$.
 
-Consider another length metric $\rho_1$ on $B$ which is different from $\rho_0$ by the conformal factor
-\[\phi(\bm{x})=2+\tfrac{1}2\cdot x_1+\tfrac{1}4\cdot x_2+\tfrac{1}8\cdot x_3+\dots,\]
+Let \[\phi(\bm{x})=2+\tfrac{1}2\cdot x_1+\tfrac{1}4\cdot x_2+\tfrac{1}8\cdot x_3+\dots,\]
 where $\bm{x}=(x_1,x_2\,\dots)\in B$.
-That is, if $t\mapsto\bm{x}(t)$ for $t\in[0,\ell]$ is a curve parametrized by $\rho_0$-length,
+Consider another length metric $\rho_1$ on $B$ that is different from $\rho_0$ by the conformal factor $\phi$;
+that is, if $t\mapsto\bm{x}(t)$ for $t\in[0,\ell]$ is a curve parametrized by $\rho_0$-length,
 then its $\rho_1$-length is defined by
 \[\length_{\rho_1}\bm{x}\df\int\limits_0^\ell\phi\circ\bm{x}(t)\cdot dt.\]
 Note that the metric $\rho_1$ is bilipschitz to~$\rho_0$.
 
 Assume $t\mapsto \bm{x}(t)$ and $t\mapsto \bm{x}'(t)$ are two curves parametrized by $\rho_0$-length that differ only in the $m$-th coordinate; denote them by $x_m(t)$ and $x_m'(t)$ respectively.
-Note that if $x'_m(t)\le x_m(t)$ for any $t$ and 
+Show that if $x'_m(t)\le x_m(t)$ for any $t$ and 
 the function $x'_m(t)$ is locally $1$-Lipschitz at all $t$ such that $x'_m(t)< x_m(t)$, then 
 \[\length_{\rho_1}\bm{x}'\le \length_{\rho_1}\bm{x}.\]
 Moreover, this inequality is strict if $x'_m(t)\z< x_m(t)$ for some~$t$.
@@ -219,37 +233,35 @@ Choose a sequence of positive numbers $\varepsilon_n\to 0$ and a finite $\vareps
 We can assume that $\eps_0>\diam K$, and $N_0$ is a one-point set.
 If $\dist{x}{y}{}<\eps_k$ for some $x\in N_{k+1}$ and $y\in N_{k}$, then connect them by a curve of length at most $\eps_k$.
 
-Consider the union $K'$ of all these curves with $K$; observe that $K'$ is compact and path-connected.
+Let $K'$ be the union of all these curves and $K$.
+Show that $K'$ is compact and path-connected.
 
-\parit{Source:} This problem was suggested by Eugene Bilokopytov \cite{bilokopytov}.
+\parit{Source:} This problem is due to Eugene Bilokopytov \cite{bilokopytov}.
 
 \parbf{\ref{ex:compact=>complete}.}
 Choose a Cauchy sequence $x_n$ in $(\spc{X},\|*\z-*\|)$; it is sufficient to show that a subsequence of $x_n$ converges.
 
-Note that the sequence $x_n$ is Cauchy in $(\spc{X},|*-*|)$;
+Observe that the sequence $x_n$ is Cauchy in $(\spc{X},|*-*|)$;
 denote its limit by $x_\infty$.
 
 Passing to a subsequence, we can assume that $\|x_n-x_{n+1}\|\z<\tfrac1{2^n}$.
 It follows that there is a 1-Lipschitz path $\gamma$ in $(\spc{X},\|*-*\|)$ such that $x_n=\gamma(\tfrac1{2^n})$ for each $n$ and $x_\infty=\gamma(0)$.
-
-It follows that
+Therefore,
 \begin{align*}
-\|x_\infty-x_n\|&\le \length\gamma|_{[0,\frac1{2^n}]}\le
-\\
-&\le \tfrac1{2^n}.
+\|x_\infty-x_n\|&\le \length\gamma|_{[0,\frac1{2^n}]}\le \tfrac1{2^n}.
 \end{align*}
 In particular, $x_n$ converges to $x_\infty$ in $(\spc{X},\|*\z-*\|)$.
 
 \parit{Source:} \cite[Corollary]{hu-kirk}; see also \cite[Lemma 2.3]{petrunin-stadler}.
 
 \parbf{\ref{ex:eps-nbhd(ball)}.}
-Denote by $U$ the $\eps$-neighborhood of $\oBall(x,R)_M$.
-By the triangle inequality, $U\z\subset \oBall(x,R+\eps)_M$;
+Let $U$ be the $\eps$-neighborhood of $\oBall(x,R)_{\spc{X}}$.
+By the triangle inequality, $U\z\subset \oBall(x,R+\eps)_{\spc{X}}$;
 this inclusion holds in any metric space.
 
-Choose $y\in \oBall(x,R+\eps)_M$, so $\dist{x}{y}{M}\z<R+\eps$.
-Since $M$ is a length space, there is a curve $\gamma$ from $x$ to $y$ with length less than $R+\eps$.
-Show and use that $\gamma$ contains a point $m$ such that $\dist{x}{m}{M}<R$ and $\dist{y}{m}{M}<\eps$.
+Choose $y\in \oBall(x,R+\eps)_{\spc{X}}$, so $\dist{x}{y}{{\spc{X}}}\z<R+\eps$.
+Since ${\spc{X}}$ is a length space, there is a curve $\gamma$ from $x$ to $y$ with length less than $R+\eps$.
+Show and use that $\gamma$ contains a point $m$ such that $\dist{x}{m}{{\spc{X}}}<R$ and $\dist{y}{m}{{\spc{X}}}<\eps$.
 
 \parbf{\ref{exercise from BH}.}
 Consider the following subset of $\RR^2$ equipped with the induced length metric
@@ -273,15 +285,15 @@ Note that $\bar{\spc{X}}$ is obtained from $\spc{X}$ by adding two points $p=(0,
 \includegraphics{mppics/pic-1}
 \end{wrapfigure}
 
-Observe that $p$ admits no compact neighborhood in $\bar{\spc{X}}$ 
-and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. 
+Observe that $p$ admits no compact neighborhood in $\bar{\spc{X}}$ and there is no geodesic connecting $p$ to $q$ in~$\bar{\spc{X}}$. 
+
 
 \parit{Source:} \cite[I.3.6(4)]{bridson-haefliger}.
 
 }
 
 \parbf{\ref{ex:gross}.}
-Suppose such a number does not exist.
+Suppose this number does not exist.
 Show that there are two point-arrays $(x_1,\z\dots,x_n)$ and $(y_1,\dots,y_m)$
 such that
 \[

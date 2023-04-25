@@ -1,8 +1,7 @@
 %%!TEX root = invitation-springer.tex
 \chapter{Gluing and billiards}\label{chapter:gluing}
 
-This chapter is nearly a copy of \cite[Chapter 2]{alexander-kapovitch-petrunin-2019};
-here we prove Reshetnyak's gluing theorem for $\CAT(0)$ spaces and apply it to a problem in billiards.
+
 
 
 \section{Inheritance lemma} \label{sec:thin-triangle}
@@ -79,7 +78,7 @@ Let us show that
 \ge
 \pi.
 \eqlbl{eq:<+<>=pi}\]
-If not, hen for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
+If not, then for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
 <
 \dist{\dot x}{\dot z}{}+\dist{\dot z}{\dot y}{}=\dist{x}{y}{}.\]
 Let $w\in[p z]$ correspond to $\dot w$; that is, $\dist{z}{w}{}=\dist{\dot z}{\dot w}{}$. 
@@ -147,7 +146,7 @@ The spherical case is done along the same lines.
 Suppose 
 $\spc{U}^1$ and $\spc{U}^2$ are proper length spaces 
 with isometric closed convex sets $A^i\subset\spc{U}^i$ and let $\iota\:A^1\to A^2$ be an isometry.
-Consider the space $\spc{W}$ of all equivalence classes in $\spc{U}^1\sqcup\spc{U}^2$ with the equivalence relation given by $a\sim\iota(a)$ for any $a\in A^1$.
+Consider the space $\spc{W}$ of all equivalence classes in $\spc{U}^1\sqcup\spc{U}^2$ with the equivalence relation given by $a\sim\iota(a)$ for any $a\in A^1$. %??? repeating
 
 It is straightforward to see that $\spc{W}$ is a proper length space when equipped with the following metric
 \begin{align*}
@@ -177,7 +176,7 @@ $\spc{U}^1$ and $\spc{U}^2$ are proper length $\CAT(0)$ spaces
 with isometric 
 closed 
  convex
-sets $A^i\subset\spc{U}^i$, and $\iota\:A^1\to A^2$ is an isometry.
+sets $A^i\subset\spc{U}^i$, and $\iota\:A^1\z\to A^2$ is an isometry.
 Then the gluing of $\spc{U}^1$ and  $\spc{U}^2$ along $\iota$ is a $\CAT(0)$ proper length space.
 \end{thm}
 
@@ -188,8 +187,7 @@ By construction of the gluing space, the statement can be reformulated in the fo
 
 
 \begin{thm}{Reformulation of \ref{thm:gluing}}
-Let $\spc{W}$ be a 
-proper length space which has two closed 
+Let $\spc{W}$ be a proper length space that has two closed 
 convex sets $\spc{U}^1,\spc{U}^2\subset\spc{W}$ such that 
 $\spc{U}^1\cup\spc{U}^2=\spc{W}$
 and $\spc{U}^1$, $\spc{U}^2$ are $\CAT(0)$.
@@ -216,8 +214,8 @@ Note that
 \item the triangle $\trig{x}{a}{b}$ lies in $\spc{U}^1$,
 \item both triangles $\trig{y}{a}{b}$ and $\trig{y}{b}{z}$ lie in~$\spc{U}^2$.
 \end{itemize}
-In particular each triangle $\trig{x}{a}{b}$,
-$\trig{y}{a}{b}$ and $\trig{y}{b}{z}$ is thin.
+In particular, each triangle $\trig{x}{a}{b}$,
+$\trig{y}{a}{b}$, and $\trig{y}{b}{z}$ is thin.
 
 Applying the inheritance lemma (\ref{lem:inherit-angle}) twice, 
 we get that $\trig {x}{y}{b}$ 
@@ -234,7 +232,7 @@ Show that $A$ is a convex set of $\spc{U}$.
 
 \section{Puff pastry}\label{sec:puff-pastry}
 
-In this section we introduce 
+In this section, we introduce 
 the notion of 
 Reshetnyak puff pastry.  This  construction will be used in the next section to prove the collision theorem (\ref{thm:collision}).
 
@@ -254,7 +252,7 @@ gluing successive pairs of spaces along  $A^1,\dots,A^N$ respectively.
 
 The resulting space $\spc{R}$  will be called 
 the
-\index{puff pastry}\emph{Reshetnyak puff pastry} for the array~$\bm{A}$.
+\index{puff pastry}\emph{Reshetnyak puff pastry} for array~$\bm{A}$.
 The copies of $\EE^m$ in the puff pastry $\spc{R}$
 will be called {}\emph{levels};
 they will be denoted by $\spc{R}^0,\dots,\spc{R}^N$.
@@ -264,7 +262,7 @@ will be denoted by~$x^k$.
 
 Given $x\in \EE^m$, any point $x^k\in\spc{R}$ is called a {}\emph{lifting} of~$x$.
 The map $x\mapsto x^k$ defines an isometry $\EE^m\to \spc{R}^k$;  
-in particular we can talk about liftings of subsets in~$\EE^m$.
+in particular, we can talk about liftings of subsets in~$\EE^m$.
 
 Note that: 
 \begin{itemize}
@@ -325,8 +323,7 @@ Hence the second statement follows.
 Consider a Reshetnyak puff pastry $\spc{R}$ with the levels 
 $\spc{R}^0,\dots,\spc{R}^N$.
 We say that $\spc{R}$ is \index{end-to-end convex}\emph{end-to-end convex} 
-if $\spc{R}^0\cup\spc{R}^N$, the union of its lower and upper levels, 
-forms a convex set in~$\spc{R}$;
+if $\spc{R}^0\cup\spc{R}^N$, the union of its lower and upper levels forms a convex set in~$\spc{R}$;
 that is, if $x,y\in \spc{R}^0\cup\spc{R}^N$, then $[xy]_{\spc{R}}\subset  \spc{R}^0\cup\spc{R}^N$.
 \end{thm}
 
@@ -338,8 +335,7 @@ $\spc{R}^0\cup\spc{R}^N$ is isometric to the double of $\EE^m$ along the nonempt
 
 \begin{thm}{Observation}\label{obs:end-to-end-convex}
 Let $\check{\bm{A}}$ and $\bm{A}$ be arrays of convex bodies in~$\EE^m$.
-Assume that
-the  array $\bm{A}$ is
+Assume that array $\bm{A}$ is
 obtained by inserting in $\check{\bm{A}}$ 
 several copies of the bodies which were already listed in~$\check{\bm{A}}$.
 
@@ -352,7 +348,7 @@ If $\check{\spc{R}}$ is end-to-end convex, then so is~$\spc{R}$.
 \end{thm}
 
 \parit{Proof.}
-Without loss of generality we may assume that $\bm{A}$ is 
+Without loss of generality, we may assume that $\bm{A}$ is 
 obtained by inserting one element in $\check{\bm{A}}$,
 say at the place number~$k$.
 
@@ -370,7 +366,7 @@ It remains to apply Proposition~\ref{prop:A-check-A}.
 \end{wrapfigure}
 
 Let $X$ be a convex set in a Euclidean space.
-By a \index{dihedral angle}\emph{dihedral angle} we understand an intersection of two half-spaces;
+By a \index{dihedral angle}\emph{dihedral angle}, we understand an intersection of two half-spaces;
 the intersection of corresponding hyperplanes is called the {}\emph{edge} of the angle.
 We say that a dihedral angle $D$ 
 supports
@@ -411,10 +407,10 @@ All the short arcs on the diagram have length $\alpha$;
 the long arcs have length $\pi-\alpha$,
 so making a circuit along any path will take~$2\cdot\pi$.
 
-Observe that end-to-end convexity of $\ddot{\spc{R}}$
+The end-to-end convexity of $\ddot{\spc{R}}$
 is equivalent to the fact that any geodesic shorter than $\pi$ with the ends on the inner and the outer circles lies completely in the union of these two circles.
 
-The latter holds if the zigzag line in the picture has length at least $\pi$.
+The latter holds if the zigzag line in the picture has length at least~$\pi$.
 This line is formed by $\lceil\tfrac\pi\alpha\rceil$ arcs with length $\alpha$ each.
 Hence the sublemma.
 \qeds
@@ -456,7 +452,7 @@ it is sufficient to prove the following:
 The geodesic $[x^0y^N]_\spc{R}$ contains $z^0=z^N\in \spc{R}$.
 \end{clm}
 
-Without loss of generality we may assume that $z\in\partial A\cap\partial B$.
+Without loss of generality, we may assume that $z\in\partial A\cap\partial B$.
 Indeed, since the puff pastry for the 1-array $(B)$ is end-to-end convex,
 Proposition~\ref{prop:A-check-A} together with Observation~\ref{obs:end-to-end-convex}
 imply \ref{clm:z in xy} in  case $z$ lies in the interior of~$A$.
@@ -501,10 +497,10 @@ and the lemma follow.
 \section{Wide corners}
 \label{sec:wide-corners}
 
-We say that a closed convex set $A\subset \EE^m$ has  \index{$\eps$-wide corners}\emph{$\eps$-wide corners}\label{page:wide corners} for given $\epsilon >0$ 
+We say that a closed convex set $A\subset \EE^m$ has  \index{$\eps$-wide corners}\emph{$\eps$-wide corners}\label{page:wide corners} for given $\eps >0$ 
 if together with each point $p$, 
 the set $A$ contains a small right circular cone
-with tip at $p$ and aperture $\eps$;
+with the tip at $p$ and aperture $\eps$;
 that is, $\eps$ is the maximum angle between two generating lines of the cone.
 
 For example, 
@@ -518,7 +514,7 @@ such that for any subset $F\subset\{1,\dots,n\}$,
 the intersection
 $\bigcap_{i\in F}A^i$ 
 has $\eps$-wide corners.
-In this case we may say briefly \index{$\eps$-wide corners}\textit{all intersections of $A^i$ have $\eps$-wide corners}.
+In this case, we may say briefly \index{$\eps$-wide corners}\textit{all intersections of $A^i$ have $\eps$-wide corners}.
 
 
 \begin{thm}{Exercise}\label{ex:compact-walls}
@@ -528,7 +524,7 @@ Show that all intersections of $A^i$ have $\eps$-wide corners for some positive~
 
 \begin{thm}{Exercise}\label{ex:centrally-simmetric-walls}
 Assume $A^1,\dots,A^n\subset\EE^m$ are
-convex sets with nonempty interior that have a common center of symmetry.
+convex sets with nonempty interiors that have a common center of symmetry.
 Show that all intersections of $A^i$ have $\eps$-wide corners for some positive~$\eps$.
 \end{thm}
 
@@ -590,12 +586,12 @@ The sets $A^i$ will be called {}\emph{walls} of the table $T$
 and the billiards described above will be called {}\emph{billiards with convex walls}.
 
 A billiard {}\emph{trajectory} 
-on the table $T$ is a unit-speed broken line $\gamma$ 
+on the table is a unit-speed broken line $\gamma$ 
 that  follows  the
 standard law of billiards 
-at the break points on $\partial A^i$ 
+at the breakpoints on $\partial A^i$ 
 --- in particular, the angle of reflection is equal to the angle of incidence.
-The break points of the trajectory will be called {}\emph{collisions}.
+The breakpoints of the trajectory will be called {}\emph{collisions}.
 We assume the trajectory meets only one wall at a time.
 
 Recall that the definition of sets with $\eps$-wide corners is given in \ref{sec:wide-corners}.
@@ -612,7 +608,7 @@ the value $N$ can be found explicitly;
 $N=(\lceil\tfrac\pi\eps\rceil+1)^{n^2}$
 will do.
 
-The collision theorem was proved by Dmitri Burago, Serge Ferleger and Alexey Kononenko \cite{burago-ferleger-kononenko-1997};
+The collision theorem was proved by Dmitri Burago, Serge Ferleger, and Alexey Kononenko \cite{burago-ferleger-kononenko-1997};
 we present their proof with minor improvements.
 
 Let us formulate and prove a corollary of the  collision theorem;
@@ -650,11 +646,11 @@ Consider the corresponding point in $\RR^{3\cdot N}$
 &=(x_1, y_1 , z_1 , x_2 , y_2 , z_2 , \dots , x_n , y_n , z_n).
 \end{align*}
 
-The $i$-th and $j$-th ball intersect if 
+The $i$-th and $j$-th balls intersect if 
 $$|a_i - a_j | \le R_i+R_j,$$
 where $R_i$ denotes the radius of the $i$-th ball.
 These inequalities define $\tfrac{n\cdot(n-1)}{2}$ cylinders 
-\[C_{i,j}=\set{(a_1, a_2 , \dots , a_n )\in\RR^{3\cdot n}} {|a_i - a_j |\le R_i+R_j}.\] 
+\[C_{i,j}=\set{(a_1, a_2, \dots, a_n)\in\RR^{3\cdot n}} {|a_i - a_j |\le R_i+R_j}.\] 
 The closure of the complement
 \[T=\overline{\RR^{3\cdot n}\setminus \bigcup_{i< j} C_{i,j}}\] 
 is the configuration space of our system. 
@@ -680,7 +676,7 @@ the collisions follow the
 standard law of billiards. 
 
 By construction, the number of collisions of hard balls that we need to estimate 
-is the same as the number of collisions of the corresponding billiard trajectory on the table $T$ with $C_{i,j}$ as the walls.
+is the same as the number of collisions of the corresponding billiard trajectory on the table with $C_{i,j}$ as the walls.
 
 Note that each cylinder $C_{i,j}$ is a convex set;
 it has smooth boundary, 
@@ -718,7 +714,7 @@ Consider the lift of $\gamma$ to $\spc{R}_\gamma$,
 defined by 
 $\bar\gamma(t)=\gamma^k(t)\in \spc{R}_\gamma$ 
 for any moment of time $t$ between the $k$-th and $(k+1)$-th collisions.  
-Since $\gamma$ follows  the standard law of billiards at break points, the lift $\bar\gamma$ is locally a geodesic in~$\spc{R}_\gamma$.
+Since $\gamma$ follows the standard law of billiards at breakpoints, the lift $\bar\gamma$ is locally a geodesic in~$\spc{R}_\gamma$.
 By Observation~\ref{obs:puff pastry is CAT},
 the puff pastry $\spc{R}_\gamma$ is a proper length $\CAT(0)$ space.
 Therefore $\bar\gamma$ is a geodesic.
@@ -761,14 +757,14 @@ The lecture of Dmitri Burago \cite{burago-1998} gives a short survey on the subj
 
 Note that the interior points of the walls play a key role in the proof
 despite the fact that trajectories never go inside the walls.
-In a similar fashion, puff pastry was used by the Stephanie Alexander and Richard Bishop \cite{alexander-bishop}
+In a similar fashion, puff pastry was used by Stephanie Alexander and Richard Bishop \cite{alexander-bishop}
 to find the upper curvature bound for warped products.
 
 Joel Hass \cite{hass} constructed an example of a Riemannian metric on the 3-ball with negative curvature and concave boundary.
 This example might decrease your appetite for generalizing the collision theorem --- while
 locally such a 3-ball looks as good as the billiards table in the theorem, the number of collisions is obviously infinite.
 
-It was show by Dmitri Burago and Sergei Ivanov \cite{burago-ivanov} that the number of collisions that may occur between $n$ identical balls in $\RR^3$ grows at least exponentially in $n$; the two-dimensional case is open so far.
+It was shown by Dmitri Burago and Sergei Ivanov \cite{burago-ivanov} that the number of collisions that may occur between $n$ identical balls in $\RR^3$ grows at least exponentially in $n$; the two-dimensional case is open so far.
 
 
 

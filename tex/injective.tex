@@ -2,7 +2,7 @@
 
 
 Injective hull is a useful construction that provides a canonical choice of a specially nice (injective) space that includes a given metric space. 
-This construction is similar to the convex hull in Euclidean space.
+This construction is similar to the convex hull in euclidean space.
 The following exercise gives a bridge from the latter to the former.
 
 \begin{thm}{Advanced exercise}\label{ex:conv-short}
@@ -12,7 +12,7 @@ Show that $A\subset \RR^n$ is a closed convex set if and only if for any  $B\sub
 \section{Definition}
 
 \begin{thm}{Definition}\label{def:injective}
-A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if for any metric space $\spc{X}$ and any of its subspace $\spc{A}$,
+A metric space $\spc{Y}$ is called \index{injective space}\emph{injective} if, for any metric space $\spc{X}$ and any of its subspace $\spc{A}$,
 any short map $f\:\spc{A}\to \spc{Y}$ can be extended to a short map $F\:\spc{X}\to \spc{Y}$;
 that is, $f=F|_{\spc{A}}$.
 \end{thm}
@@ -563,9 +563,9 @@ Let us mention that a metric space $\spc{X}$ is called \index{convex space}\emph
 in other words, a pair of balls intersect if the triangle inequality does not forbid it.
 Clearly, hyperconvexity (\ref{thm:injective=hyperconvex:balls}) is stronger than convexity.
 Note that \textit{any geodesic space is convex}.
-The converse does not hold in general, but by \ref{lem:mid>geod:geod} \textit{any complete convex space is geodesic}.
+The converse does not hold in general, but by Menger's lemma (\ref{lem:mid>geod:geod}) \textit{any complete convex space is geodesic}.
 
-More generally, a metric space $\spc{X}$ is called \index{$n$-heperconvex space}\emph{$n$-heperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls; so \textit{convex means $2$-hyperconvex}.
+More generally, a metric space $\spc{X}$ is called \index{$n$-hyperconvex space}\emph{$n$-hyperconvex} if the condition in \ref{thm:injective=hyperconvex:balls} holds only for families with at most $n$ balls; so \textit{convex means $2$-hyperconvex}.
 
 The following striking result was proved by Benjamin Miesch and Maël Pavón \cite{miesch-pavon2016}.
 
@@ -606,7 +606,7 @@ Construct an example of a complete ultrametric space $\spc{X}$ with a closed sub
 The following exercise gives a sufficient condition for the existence of a short extension.
 
 \begin{thm}{Exercise}\label{ex:petrunin-stadler}
-Let $\spc{X}$ and $\spc{Y}$ be metric spaces, $A\subset \spc{X}$, and $f\:A\z\to \spc{Y}$ be a short map.
-Assume $\spc{Y}$ is compact and for any finite set $F\subset \spc{X}$ there is a short map $F\to \spc{Y}$ that agrees with $f$ on $F\cap A$.
-Show that there is a short map $\spc{X}\to \spc{Y}$ that agrees with $f$ on $A$.
+Let $f\:A\z\to \spc{K}$ be a short map from a subset $A$ in a metric space $\spc{X}$ to compact metric space $\spc{K}$.
+Assume that for any finite set $F\subset \spc{X}$ there is a short map $F\to \spc{K}$ that agrees with $f$ on $F\cap A$.
+Show that there is a short map $\spc{X}\to \spc{K}$ that agrees with $f$ on $A$.
 \end{thm}

@@ -644,8 +644,8 @@ u:=1cm;
 
 z.p=origin;
 z.x=(1,.4)*u;
-z.y=(-.2,-.7)*u;
-z.z=(-.7,.8)*u;
+z.y=(-.1,-.7)*u;
+z.z=(-.8,.7)*u;
 
 draw z.p--z.x;
 draw z.p--z.y;
@@ -846,7 +846,7 @@ draw (-n,0)*u--(4,0)*u pensemibold;
 
 label.top(btex $\spc{X}_1$ etex, (.5*4,v)*u);
 label.top(btex $\spc{X}_2$ etex, (.5*3,v/2)*u);
-label(btex $\dots$ etex, (0,v/n)*.5*u);
+label.top(btex $\dots$ etex, (0,0)*u);
 label.bot(btex $\spc{X}_\infty$ etex, (0,0)*u);
 
 endfig;
@@ -1400,10 +1400,12 @@ draw subpath (0,1) of (z.x2..z.y3..z.x);
 draw subpath (1,2) of (z.x2..z.y3..z.x) pensemibold;
 draw z.y1..z.x1..z.y;
 draw z.y2..z.x2..z.y;
-draw z.y3..z.x3..z.y pensemibold;
+p3=z.y3..z.x3..z.y;
+draw p3 pensemibold;
 
 dOt z.x,z.x0,z.x1,z.x2,z.x3,z.y,z.y0,z.y1,z.y2,z.y3;
 
+label.top(btex $\alpha$ etex, point .5 of p3);
 label.top(btex $\alpha$ etex, z.r);
 label.bot(btex $\alpha$ etex, -z.r);
 label.lft(btex {\small $\pi-\alpha$} etex rotated 90, z.r rotated 90);

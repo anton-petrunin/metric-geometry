@@ -1,11 +1,11 @@
 \chapter{Universal spaces}\label{chap:urysohn}
 
 The Urysohn space is the main hero of this lecture.
-It shares some fundamental properties with classical spaces (spheres, Euclidean, and Lobachevsky spaces),
+It shares some fundamental properties with classical spaces (spheres, euclidean, and Lobachevsky spaces),
 but also has many counterintuitive properties.
 
-This space often serves as a counterexample to plausible conjectures,
-so it is worth to know it.
+This space often serves as a counterexample to plausible conjectures;
+so it is worth knowing it.
 In addition, this space is beautiful.
 
 
@@ -53,9 +53,9 @@ defines a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\inf
 \parit{Proof.} 
 By the triangle inequality 
 \[|a_n(x)-a_n(y)|\le \dist{x}{y}{\spc{X}}.\eqlbl{eq:a-a=<dist}\]
-Therefore, $\iota$ is \index{short map}\emph{short} (in other words, $\iota$ is distance-expanding).
+Therefore, $\iota$ is \index{short map}\emph{short} (in other words, $\iota$ is distance-nonexpanding).
 
-Again by triangle inequality we have 
+Again by the triangle inequality we have 
 \[|a_n(x)-a_n(y)|\ge \dist{x}{y}{\spc{X}}-2\cdot\dist{w_n}{x}{\spc{X}}.\]
 Since the set $\{w_n\}$ is dense, we can choose $w_n$ arbitrarily close to $x$.
 Whence 
@@ -93,8 +93,9 @@ Then the map $\iota\:\spc{X}\to \ell^\infty(\spc{X})$ defined by
 \[\iota\:x\mapsto (\distfun_x-\distfun_{x_0})\]
 is distance-preserving.
 
-In particular, any metric space $\spc{X}$ admits a distance-preserving into $\ell^\infty(\spc{X})$.
+In particular, any metric space $\spc{X}$ admits a distance-preserving into~$\ell^\infty(\spc{X})$.
 \end{thm}
+
 
 \section{Extension property}
 \label{sec:Extension property}
@@ -142,9 +143,9 @@ The functions $\bar f$ and $\bar f_d$ in the above exercise are called \index{Ka
 \begin{thm}{Definition}\label{def:finite+1}
 A metric space $\spc{U}$ meets the \index{extension property}\emph{extension property}  if for any finite subspace $\spc{F}\subset\spc{U}$ and any extension function $f\:\spc{F}\to\RR$ there is a point $p\in \spc{U}$ such that $\dist{p}{x}{}=f(x)$ for any $x\in \spc{F}$.
 
-If we assume in addition that $\diam \spc{U}\le d$ and instead of extension functions we consider only $d$-extension functions, then we arrive at a definition of {}\emph{$d$-extension property}.
+If we assume in addition that $\diam \spc{U}\le d$ and instead of extension functions we consider only $d$-extension functions, then it defines the {}\emph{$d$-extension property}.
 
-If in addition, $\spc{U}$ is separable and complete, then it is called \index{Urysohn space}\emph{Urysohn space} or {}\emph{$d$-Urysohn space} respectively.
+Furhter, if in addition, $\spc{U}$ is separable and complete, then it is called \index{Urysohn space}\emph{Urysohn space} or {}\emph{$d$-Urysohn space} respectively.
 \end{thm}
 
 
@@ -254,11 +255,11 @@ Note that
 any isometry $\spc{X}_n\to \spc{X}_n$ can be extended to a unique isometry $\spc{X}_{n+1}\to \spc{X}_{n+1}$.
 It follows that any isometry of $\spc{X}$ can be extended to an isometry of $\spc{X}'=\bigcup_n\spc{X}_n$.
 
-Now, consider new nested sequence $\spc{X}\subset \spc{X}'\subset \spc{X}''\subset \dots$;
+Now, consider a new nested sequence $\spc{X}\subset \spc{X}'\subset \spc{X}''\subset \dots$;
 denote its union by $\spc{Y}$.
 Arguing as in \ref{prop:univeral-separable} and \ref{prop:completion-univeral} we get that the completion of $\spc{Y}$ is an Urysohn space, say $\spc{U}$, that comes with a distance-preserving inclusion $\spc{X}\hookrightarrow \spc{U}$.
 
-From above, for any isometry of $\spc{X}$ can be extended to isometries of $\spc{X}'$, $\spc{X}''$ and so on.
+From above, any isometry of $\spc{X}$ can be extended to isometries of $\spc{X}'$, $\spc{X}''$, and so on.
 They all define an isometry of $\spc{Y}$;
 passing to its continuous extension, we get an isometry of $\spc{U}$.
 \qeds
@@ -472,6 +473,43 @@ Show that any separable one-point-homogeneous metric tree is isometric to the re
 
 The statement in \ref{ex:frechet} was proved by Maurice René Fréchet in the paper where he first defined metric spaces \cite{frechet};
 its extension \ref{lem:kuratowski} was given by Kazimierz Kuratowski~\cite{kuratowski}.
+Both maps $x\mapsto (\distfun_x-\distfun_{x_0})$ and $x\mapsto \distfun_x$ can be called \index{Kuratowski embedding}\emph{Kuratowski embedding}.
+
+\medskip
+
+Let us describe a closely related construction introduced by Mikhael Gromov \cite{gromov-1981-hyperbolic}.
+Suppose $\spc{X}$ be a proper metric space.
+Denote by $C(\spc{X},\RR)$ the space of continuous functions $\spc{X}\to \RR$
+equipped with the \emph{compact-open topology};
+that is, for any compact set $K\subset \spc{X}$ and any open set $U\subset \RR$
+the set of all continuous functions $f\: \spc{X}\to \RR$ such that $f(K)\subset U$
+is declared to be open.
+
+Choose a point $x_0\in \spc{X}$.
+Consider the map $F_{\spc{X}}\:\spc{X}\to C(\spc{X},\RR)$
+defined by
+\[x\mapsto f_x\df -\dist{x}{x_0}{}+\distfun_x.\]
+
+\begin{thm}{Exercise}\label{ex:horobry}
+Show that if $\spc{X}$ is a proper length space, then $F_{\spc{X}}$ is an embedding.
+Construct a proper metric space $\spc{Y}$ such that $F_{\spc{Y}}$ 
+is not an embedding.
+
+\end{thm}
+
+Denote by $\hat{\spc{X}}$ 
+the closure of $F_{\spc{X}}(\spc{X})$ in $C(\spc{X},\RR)$;
+observe that $\hat {\spc{X}}$ is compact.
+If $F_{\spc{X}}$ is an embedding, 
+then $\hat {\spc{X}}$ is a compactification of $\spc{X}$,
+and it is called the \index{horo-compactification}\emph{horo-compactification}.
+In this case, the complement 
+\[\partial_\infty \spc{X}\z=\hat {\spc{X}}\setminus F_{\spc{X}}(\spc{X})\] 
+is called the {}\emph{horo-absolute} of~$\spc{X}$.
+A variation of this construction for nonproper spaces was considered by Anders Karlsson \cite{karlsson-2023}.
+
+
+\medskip
 
 The following two exercises show that in this respect $\ell^\infty$ is very different from $\ell^1$.
 For more on the subject, see \cite{deza-laurent}.
@@ -491,8 +529,10 @@ Show that a finite metric space $\spc{F}$ admits a distance-preserving embedding
 Recall that the vertex set of any graph comes with the \index{path metric}\emph{path metric} ---
 the distance between two vertices is the minimal number of edges in a path connecting them.
 
+{
+
 \begin{wrapfigure}{r}{15mm}
-\vskip-8mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-210}
 \end{wrapfigure}
@@ -500,6 +540,8 @@ the distance between two vertices is the minimal number of edges in a path conne
 \begin{thm}{Exercise}\label{ex:K23}
 Use \ref{ex:cut} to show that the metric for complete bipartite graph $K_{2,3}$ (see the diagram) does not admit a distance-preserving embedding into $\ell^1$.
 \end{thm}
+
+}
 
 The question about the existence of a separable universal space was posed by Maurice René Fréchet and answered by
 Pavel Urysohn~\cite{urysohn}.
@@ -514,7 +556,7 @@ In fact, the Urysohn space is the random metric space in \textit{certain sense} 
 \textit{The ($d$-) Urysohn space is homeomorphic to the Hilbert space};
 the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk criterion.
 
-The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
+The finite-set-homogeneous spaces include euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
 In fact, these are the only examples of locally compact three-point-homogeneous length spaces.
 The latter was proved by Herbert Busemann \cite{busemann-1942}; it also follows from the more general result of Jacques Tits about two-point-homogeneous spaces \cite{tits}.
 The same conclusion holds for complete all-set-homogeneous geodesic spaces with local uniqueness of geodesics;
