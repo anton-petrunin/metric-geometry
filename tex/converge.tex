@@ -349,7 +349,7 @@ In this lecture we define and study the so-called Gromov--Hausdorff metric on th
 
 \section{Gromov--Hausdorff metric}
 
-The goal of this section is to cook up a metric space out of all compact metric spaces.
+In this section we cook up a metric space out of all compact metric spaces.
 More precisely, we want to define the so-called  Gromov--Hausdorff metric on the set of \textit{isometry classes} of compact metric spaces.
 (Being isometric is an equivalence relation, 
 and an \index{isometry class}\emph{isometry class} is an equivalence class with respect to this relation.)
@@ -683,14 +683,25 @@ for any space $\spc{X}$ in $\bm{Q}$.
 
 
 Fix a real constant $C$.
-A Borel measure $\mu$ on a metric space $\spc{X}$ is called \index{doubling space}\emph{$C$-doubling} if
+A Borel measure $\mu$ on a metric space $\spc{X}$ is called {}\emph{$C$-doubling} if
 \[\mu[\oBall(p,2\cdot r)]< C\cdot\mu[\oBall(p,r)]\]
 for any point $p\in \spc{X}$ and any $r>0$.
 A Borel measure is called \index{doubling measure}\emph{doubling} if it is {}\emph{$C$-doubling} for some real constant $C$.
 
 \begin{thm}{Exercise}\label{pr:doubling}
 Let $\bm{Q}(C,D)$ be the set of all the compact metric spaces with diameter at most $D$ that admit a $C$-doubling measure.
-Show that $\bm{Q}(C,D)$ is totally bounded.
+Show that $\bm{Q}(C,D)$ is uniformly totally bounded.
+\end{thm}
+
+Fix an integer constant $M\ge 0$.
+А metric space $\spc{X}$ is called {}\emph{$M$-doubling} if any $2\cdot r$-ball in $\spc{X}$ can be covered by $M$ $r$-balls.
+A space $\spc{X}$ is called \index{doubling space}\emph{doubling} if it is $M$-doubling for some $M$.
+
+Observe that \textit{a space is doubling if it admits a doubling measure}.
+
+\begin{thm}{Exercise}\label{ex:pointed-doubling}
+Given a metric space $\spc{X}$ consider family $\bm{B}_{\spc{X}}$ of all rescaled balls $\tfrac1r\cdot \cBall[x,r]_{\spc{X}}$ for all $r>0$ and $x\in\spc{X}$. 
+Show that $\spc{X}$ is doubling if and only if $\bm{B}_{\spc{X}}$ is uniformly totally bounded.
 \end{thm}
 
 Given two metric spaces $\spc{X}$ and $\spc{Y}$, we will write $\spc{X}\le \spc{Y}$ if there is a distance-noncontracting map $f\:\spc{X}\to \spc{Y}$;
@@ -951,3 +962,21 @@ Let $\bm{Q}$ be a set of isometry classes of pointed proper metric spaces.
 Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
 Then $\bm{Q}$ is precompact with respect to the pointed Gromov--Hausdorff convergence. 
 \end{thm}
+
+Let us mention a characterization of doubling spaces discovered by Patrice Assouad \cite{assouad}, \cite[12.2]{heinonen}.
+
+Given a metric space $\spc{X}$, 
+denote by $\spc{X}^\theta$ a space with the same underlying set and the metric defined by 
+\[\dist{x}{y}{\spc{X}^\theta}
+\df
+\dist[\theta]{x}{y}{\spc{X}};\]
+here we assume that $0<\theta<1$.
+The space $\spc{X}^\theta$ is called \index{snowflake}\emph{snowflake} of~$\spc{X}$.
+
+\begin{thm}{Theorem}\label{thm:assuad}
+Suppose $0<\theta<1$.
+A metric space $\spc{X}$ is doubling if and only if its snowflake $\spc{X}^\theta$ admits a
+bi-Lipschitz embedding in some Euclidean space.
+\end{thm}
+
+
