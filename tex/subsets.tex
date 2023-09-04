@@ -68,8 +68,18 @@ if $a<b<c$, then $V_b\supset V_a\cap V_c$.
 Consider the finite union
 \[C'=V_{t_1}\cup\dots\cup V_{t_n}.\]
 The inclusion \ref{eq:VcVnV-0} makes it possible to apply Reshetnyak gluing theorem \ref{thm:gluing} recursively and show that $C'$ is $\CAT(0)$.
+
 By approximation, the $\CAT(0)$ comparison holds for any 4 points in $C$;
 hence $C$ is $\CAT(0)$.
+More precisely, choose $x_1,x_2,x_3,x_4\in C$ and 6 geodesics $[x_ix_j]_C$ between them.
+Choose $\eps>0$, shift each $[x_ix_j]_C$ down by $\eps$, and reconnect it to $x_i$ and $x_j$ by vertical $\eps$-segments.
+Denote the obtained curve by $\gamma_{i,j}$;
+note that 
+\[\length\gamma_{i,j}=\dist{x_i}{x_j}{C}+2\cdot\eps.\]
+We may assume that $C'$ contains all $\gamma_{i,j}$.
+It follows that 
+\[\dist{x_i}{x_j}{C}\le \dist{x_i}{x_j}{C'}\le \dist{x_i}{x_j}{C}+2\cdot\eps\]
+Since and $C'$ is $\CAT(0)$, $\eps>0$ is arbitrary, so is $C$.
 
 \parbf{Remark.}
 The set $C$ is not convex, but it is \textit{two-convex} as defined in the next section.
@@ -137,7 +147,8 @@ Then $K$ is two-convex if and only if $k_2(p)\ge 0$ for any point $p\in S$.
 Moreover, if $k_2(p)<0$ at some point $p$, then Definition~\ref{def:two-convex} fails for some curve $\gamma$ forming a triangle in an arbitrary small neighborhood of~$p$.
 \end{thm}
 
-The followung proof was given by Mikhael Gromov \cite[\S\textonehalf]{gromov-1991}, but we added a few details.
+The following proof was given by Mikhael Gromov \cite[\S\textonehalf]{gromov-1991}, but we added a few details.
+The proof uses a straightforward modification of the Morse theory for manifolds with boundary; the paper of Sergei Vakhrameev \cite{vakhrameev} contains all the necessary lemmas.
 
 \parit{Proof; only-if part.}
 If $k_2(p)<0$ for some $p\in S$,
