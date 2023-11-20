@@ -51,7 +51,7 @@ for any two compact nonempty sets $A,B\subset\spc{X}$.
 
 
 \begin{thm}{Exercise}\label{ex:Hausdorff-bry}
-Let $A$ and $B$ be two compact subsets in the euclidean plane $\RR^2$.
+Let $A$ and $B$ be two compact subsets in the Euclidean plane $\RR^2$.
 Assume $|A-B|_{\Haus\RR^2}<\eps$.
 
 \begin{subthm}{ex:Hausdorff-bry:conv}
@@ -133,7 +133,7 @@ Note that $\iota\:\spc{X}\to \Haus\spc{X}$ is distance-preserving.
 Suppose that $A\subset \spc{X}$.
 Note that $\diam A=0$ if and only if $A$ is a one-point set.
 By \ref{ex:diam}, $\iota(\spc{X})$ is a closed subset of the compact space $\Haus\spc{X}$.
-It follows that $\iota(\spc{X})$, and therefore $\spc{X}$, are compact.
+It follows that $\iota(\spc{X})$ and, therefore, $\spc{X}$, are compact.
 \qeds
 
 Since the map $\iota$ above is distance-preserving, we can and will consider $\spc{X}$ as a subspace of $\Haus\spc{X}$.
@@ -322,7 +322,7 @@ We say that the sequence $A_n$ converges to a closed set $A_\infty$ in the sense
 $\distfun_{A_n}(x)\z\to \distfun_{A_\infty}(x)$ as $n\to\infty$.
 \end{thm}
 
-For example, suppose $\spc{X}$ is the euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(0,n)$.
+For example, suppose $\spc{X}$ is the Euclidean plane and $A_n$ is the circle with radius $n$ and center at the point $(0,n)$.
 If we use the standard definition (\ref{def:hausdorff-convergence}), then the sequence $A_1,A_2,\dots$ diverges, but it converges to the $x$-axis in the sense of Definition~\ref{def:gen-Haus-conv}.
 
 \begin{figure}[ht!]
@@ -331,7 +331,7 @@ If we use the standard definition (\ref{def:hausdorff-convergence}), then the se
 \includegraphics{mppics/pic-415}
 \end{figure}
 
-Further, consider the sequence of one-point sets $B_n=\{(n,0)\}$ in the euclidean plane.
+Further, consider the sequence of one-point sets $B_n=\{(n,0)\}$ in the Euclidean plane.
 It diverges in the sense of the standard definition, but, in the sense of \ref{def:gen-Haus-conv}, it converges to the empty set;
 indeed, for any point $x$ we have $\distfun_{B_n}(x)\to\infty$ as $n\to \infty$ and $\distfun_{\emptyset}(x)= \infty$ for any~$x$.
 
@@ -374,15 +374,15 @@ is defined by the following
 relation.
  
 Given  $r > 0$, we have that $|\spc{X}-\spc{Y}|_{\GH} < r$ if and only if there exists a metric
-space $\spc{W}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{W}$ that are isometric to $\spc{X}$ and $\spc{Y}$
-respectively such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}} < r$. 
+space $\spc{W}$ and subspaces $\spc{X}'$ and $\spc{Y}'$ in $\spc{W}$ that are isometric to $\spc{X}$ and $\spc{Y}$,
+respectively, such that $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}} < r$. 
 (Here $|\spc{X}'-\spc{Y}'|_{\Haus\spc{W}}$ denotes the Hausdorff distance between sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{W}$.)
 \end{thm}
 
 \begin{thm}{Theorem}\label{thm:GH-is-a-metric}
 The set of isometry classes of compact metric spaces equipped with Gromov--Hausdorff metric forms a metric space (which is denoted by $\GH$).
 
-In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$, and $\spc{Z}$ the following conditions hold
+In other words, for arbitrary compact metric spaces $\spc{X}$, $\spc{Y}$, and $\spc{Z}$, the following conditions hold
 
 \begin{subthm}{GH-1} $|\spc{X}-\spc{Y}|_{\GH}\ge 0$;
 \end{subthm}
@@ -438,7 +438,7 @@ for any isometry $\iota$ of $\RR^2$.
 
 
 \begin{thm}{Exercise}\label{ex:rectangle}
-Let $\spc{A}_r$ be a rectangle $1$ by $r$ in the euclidean plane 
+Let $\spc{A}_r$ be a rectangle $1$ by $r$ in the Euclidean plane 
 and $\spc{B}_r$ be a closed line interval of length $r$.
 Show that 
 \[|\spc{A}_r-\spc{B}_r|_{\GH}>\tfrac1{10}\]
@@ -625,7 +625,7 @@ Namely, a sequence of compact metric spaces $\spc{X}_n$ converges to compact met
 \[\dist{\spc{X}_n}{\spc{X}_\infty}{\GH}\to 0\quad\text{as}\quad n\to\infty.\]
 
 This convergence is more important than the metric ---
-in all applications, we use only the topology on $\GH$
+in all applications, we use only the topology on $\GH$,
 and we do not care about the particular value of the Gromov--Hausdorff distance between spaces.
 The following observation follows from \ref{ex:eps-isom}:
 
@@ -664,7 +664,7 @@ Construct a sequence of length metrics on the 3-sphere that converges to the uni
 A family $\bm{Q}$ of (isometry classes) of compact metric spaces is called  \index{uniformly totally bonded family}\emph{uniformly totally bonded} if it meets the following two conditions:
 
 \begin{subthm}{}
-spaces in $\bm{Q}$ have uniformly bounded diameters; that is, there is $D\in\RR$ such that
+Spaces in $\bm{Q}$ have uniformly bounded diameters; that is, there is $D\in\RR$ such that
 \[\diam\spc{X}\le D\]
 for any space $\spc{X}$ in $\bm{Q}$.
 \end{subthm}
@@ -858,7 +858,7 @@ $$\dist{\spc{X}}{\spc{Y}}{\GH'}
 \inf\set{\eps>0}{\spc{X}\le \spc{Y}+\eps
 \quad\text{and}\quad
 \spc{Y}\le \spc{X}+\eps}$$
-defines a metric on the space of (isometry classes) of compact metric spaces.
+defines a metric on the space of (isometry classes of) compact metric spaces.
 \end{subthm}
 
 \begin{subthm}{ex:GH-po:b}
@@ -883,7 +883,7 @@ Let $\spc{U}$ be a universal space.
 Then for any compact metric spaces $\spc{X}$ and $\spc{Y}$ we have
 $$|\spc{X}-\spc{Y}|_{\GH} = \inf \{|\spc{X}'-\spc{Y}'|_{\Haus\spc{U}}\},$$ 
 where the greatest lower bound is taken over all pairs of sets $\spc{X}'$ and $\spc{Y}'$ in $\spc{U}$
-which isometric to  $\spc{X}$ and $\spc{Y}$ respectively.  
+that are isometric to  $\spc{X}$ and $\spc{Y}$, respectively.  
 \end{thm}
 
 

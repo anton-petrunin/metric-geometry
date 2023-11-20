@@ -1,7 +1,7 @@
 \chapter{Universal spaces}\label{chap:urysohn}
 
 The Urysohn space is the main hero of this lecture.
-It shares some fundamental properties with classical spaces (spheres, euclidean, and Lobachevsky spaces),
+It shares some fundamental properties with classical spaces (spheres, Euclidean, and Lobachevsky spaces),
 but also has many counterintuitive properties.
 
 This space often serves as a counterexample to plausible conjectures;
@@ -111,7 +111,7 @@ Any function $f$ of that type will be called an \index{extension function}\emph{
 The extension function $f$ cannot be taken arbitrarily --- the triangle inequality implies that 
 \[f(x)+f(y)\ge \dist{x}{y}{\spc{X}}\ge |f(x)-f(y)|\]
 for any $x,y\in \spc{X}$.
-In particular, $f$ is a non-negative 1-Lipschitz function on $\spc{X}$.
+In particular, $f$ is a nonnegative 1-Lipschitz function on $\spc{X}$.
 For a $d$-extension, we need to assume in addition that $\diam\spc{X}\z\le d$ and $f(x)\le d$ for any $x\in \spc{X}$.
 A straightforward check shows that these conditions are necessary and sufficient.
 
@@ -145,7 +145,7 @@ A metric space $\spc{U}$ meets the \index{extension property}\emph{extension pro
 
 If we assume in addition that $\diam \spc{U}\le d$ and instead of extension functions we consider only $d$-extension functions, then it defines the {}\emph{$d$-extension property}.
 
-Furhter, if in addition, $\spc{U}$ is separable and complete, then it is called \index{Urysohn space}\emph{Urysohn space} or {}\emph{$d$-Urysohn space} respectively.
+Furhter, if, in addition, $\spc{U}$ is separable and complete, then it is called \index{Urysohn space}\emph{Urysohn space} or {}\emph{$d$-Urysohn space}, respectively.
 \end{thm}
 
 
@@ -175,7 +175,7 @@ if $x,y\in\spc{X}_n$.
 Note that if $\spc{X}$ is compact, then so is $\spc{X}^d$.
 It follows that each space $\spc{X}_n$ is compact.
 In particular, $\spc{X}_\infty$ is a countable union of compact spaces;
-therefore $\spc{X}_\infty$ is separable.
+therefore, $\spc{X}_\infty$ is separable.
 
 Any finite subspace $\spc{F}$ of $\spc{X}_\infty$ lies in some $\spc{X}_n$ for $n<\infty$.
 By construction, given an extension function $f\:\spc{F}\to\RR$,
@@ -231,7 +231,7 @@ Indeed, consider the sets $\spc{F}_n=\spc{F}\cup\{p_n\}$ and the functions $f_n\
  if $x\ne p_n$.
 Observe that $f_n$ is an extension function for large $n$ and
 $f_n(p_n)\z<\tfrac1{2^n}$.
-Therefore, applying the approximate extension property recursively we get~\ref{eq:|pn-pn|}.
+Therefore, applying the approximate extension property recursively, we get~\ref{eq:|pn-pn|}.
 
 Therefore, the sequence $p_n$ is Cauchy.
 Note that its limit meets the condition in the definition of extension property (\ref{def:finite+1}).
@@ -556,7 +556,7 @@ In fact, the Urysohn space is the random metric space in \textit{certain sense} 
 \textit{The ($d$-) Urysohn space is homeomorphic to the Hilbert space};
 the latter was proved by Vladimir Uspenskij \cite{uspenskij} using the so-called Toruńczyk criterion.
 
-The finite-set-homogeneous spaces include euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
+The finite-set-homogeneous spaces include Euclidean spaces, hyperbolic spaces, and spheres all with standard length metrics and arbitrary finite dimensions.
 In fact, these are the only examples of locally compact three-point-homogeneous length spaces.
 The latter was proved by Herbert Busemann \cite{busemann-1942}; it also follows from the more general result of Jacques Tits about two-point-homogeneous spaces \cite{tits}.
 The same conclusion holds for complete all-set-homogeneous geodesic spaces with local uniqueness of geodesics;
