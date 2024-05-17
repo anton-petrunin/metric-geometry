@@ -685,7 +685,7 @@ endfig;
 
 beginfig(205) 
 save u;
-u:=.5cm;
+u:=.4cm;
 
 draw (-4.3,2)*u--(4.3,2)*u pensemibold;
 draw (0,1)*u--(0,3)*u pensemibold;
