@@ -951,16 +951,18 @@ The first convergence is evident and the second could be guessed from the diagra
 \includegraphics{mppics/pic-500}
 \end{figure}
 
-Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Hausdorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a metric on $\bm{X}$ as in \ref{propery:GH} such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
+Often the isometry class of the limit can be fixed by marking a point $p_n$ in each space $\spc{X}_n$, it is called \index{pointed convergence}\emph{pointed Gromov--Hausdorff convergence} --- we say that $(\spc{X}_n,p_n)$ converges to $(\spc{X}_\infty,p_\infty)$ if there is a proper metric space $\bm{X}$ as in \ref{propery:GH} such that $\spc{X}_n\Hto \spc{X}_\infty$ and $p_n\to p_\infty$.
 For example, the sequence $(\spc{X}_n,p_n)=(\RR_+,0)$ converges to $(\RR_+,0)$, while $(\spc{X}_n,p_n)=(\RR_+,n)$ converges to $(\RR,0)$.
 
-The pointed convergence works nicely for proper metric spaces;
-the following theorem is an analog of Gromov's selection theorem for this convergence.
+The pointed convergence works nicely for proper metric spaces.
+The following theorem is an analog of Gromov's selection theorem for this convergence; the proof is nearly the same.
 
 \begin{thm}{Theorem}\label{thm:pointed-gromov-compactness}%
-Let $\bm{Q}$ be a set of isometry classes of pointed proper metric spaces.
-Assume that for any $R>0$, the $R$-balls in the spaces centered at the marked points form a uniformly totally bounded family of spaces.
-Then $\bm{Q}$ is precompact with respect to the pointed Gromov--Hausdorff convergence. 
+Let $\spc{X}_n$ be a sequence of proper metric spaces
+with marked points $x_n\in \spc{X}_n$.
+Assume that for any fixed $R>0$, the $R$-balls $\cBall(x_n,R)_{\spc{X}_n}$ form a uniformly totally bounded family.
+Then a subsequence of $\spc{X}_n$ admits a Gromov--Hausdorff convergence
+such that the sequence of marked points $x_n\in\spc{X}_n$ converges.
 \end{thm}
 
 Let us mention a characterization of doubling spaces discovered by Patrice Assouad \cite{assouad}, \cite[12.2]{heinonen}.
