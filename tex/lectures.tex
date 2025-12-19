@@ -13,6 +13,7 @@ pdftitle={Lectures in metric geometry},
 pdfsubject={Geometry},
 pdfauthor={Anton Petrunin}
 ]{hyperref}
+\usepackage{bookmark}
 \makeindex
 
 %\overfullrule=100mm
@@ -37,6 +38,9 @@ Julien Melleray,
 and Sergio Zamora Barrera for their help.
 
 \thispagestyle{empty}
+\cleardoublepage
+\phantomsection
+\pdfbookmark[0]{\contentsname}{bm:toc}
 \tableofcontents
 \thispagestyle{empty}
 
@@ -69,6 +73,7 @@ and Sergio Zamora Barrera for their help.
 \backmatter
 
 \newgeometry{top=0.9in, bottom=0.9in,inner=0.5in, outer=0.5in}
+\bookmarksetupnext{startatroot,level=0}
 \chapter{Semisolutions}
 
 {
