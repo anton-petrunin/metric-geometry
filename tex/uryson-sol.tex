@@ -37,8 +37,39 @@ Alternatively, one may use that \textit{the injective envelope of a compact spac
 \parbf{\ref{ex:frechet}.}
 Modify the proof of \ref{lem:frechet}.
 
+\parbf{\ref{ex:banach}.}
+Let us denote the Cantor set by $\spc{K}$.
+Both parts will rely on the existence of
+\begin{itemize}
+\item a surjective continuous map $f\:\spc{K}\to \spc{M}$ for any compact metric space $\spc{M}$, and
+\item a distance-preserving (linear) map
+\[\spc{C}(\spc{K})\to \spc{C}([0,1]).\]
+\end{itemize}
+
+\parit{(a).}
+Choose a surjective continuous map $f\:\spc{K}\to \spc{X}$.
+Map $\spc{X}\z\to \spc{C}(\spc{K})$ by $x\mapsto \distfun_x\circ f$.
+
+\parit{(b).}
+Choose a dense set $\{x_0,x_1,\dots\}\subset \spc{X}$.
+Consider the set $\spc{L}$ of all 1-Lipschitz functions $h\:\spc{X}\to \RR$ such that $h(x_0)=0$ with the metric defined by norm
+\[\|h\|=\sup\set{\frac{h(x_n)}{2^n\cdot|x_0-x_n|}}{n\ge 1}.\]
+Observe that $\spc{L}$ is compact.
+Choose a continuous surjective map $\spc{K}\to \spc{L}$;
+let us denote it by $a\mapsto h_a$.
+Consider the map $\spc{X}\to \spc{C}(\spc{K})$ that sends $x\in \spc{X}$ to the function
+$a\mapsto h_a(x)$.
+
+\parit{Comments.}
+This statement is due to Stefan Banach \cite[XI §8, Theorem 10]{banach-1932};
+a complete proof is given in the lecture notes of Juha Heinonen \cite[3.6]{heinonen-2003}, which are well worth reading.
+
+Note that there is also a distance-preserving map $\spc{C}([0,1])\to \spc{C}(\spc{K})$.
+However, as it follows from the Banach--Stone theorem, these spaces are not isometric.
+(Topology of a compact metric space $\spc{M}$ can be recovered from $\spc{C}(\spc{M})$.)
+
 \begin{wrapfigure}{r}{23mm}
-\vskip-12mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-200}
 \end{wrapfigure}

@@ -81,6 +81,14 @@ Show that $\iota\:x\mapsto (a_1(x), a_2(x),\dots)$ defines a distance-preserving
 Conclude that any separable metric space $\spc{X}$ admits a distance-preserving embedding $\iota\:\spc{X}\hookrightarrow \ell^\infty$.
 \end{thm}
 
+The following exercise is analogous, but has a separable target space.
+
+\begin{thm}{Advanced exercise}\label{ex:banach}
+Let $\spc{X}$ be a metric space that is (a) compact or (b) separable.
+Construct a distance-preserving map $\spc{X}\z\to \spc{C}([0,1])$, where $\spc{C}([0,1])$ denotes the space of continuous functions on $[0,1]$ equipped with the sup-norm.
+\end{thm}
+
+
 The following lemma implies that {}\textit{any metric space is isometric to a subset of a normed vector space};
 its proof is nearly identical to the proof of \ref{ex:frechet}.
 Given a set $\spc{X}$, denote by \index{$\ell^\infty(\spc{X})$}$\ell^\infty(\spc{X})$ the space of all bounded functions on $\spc{X}$ equipped with sup-norm; 
@@ -268,11 +276,10 @@ passing to its continuous extension, we get an isometry of $\spc{U}$.
 \section{Universality}
 
 A metric space will be called \index{universal space}\emph{universal} if it has a subspace isometric to any given separable metric space.
-In \ref{ex:frechet}, we proved that $\ell^\infty$ is a universal space. 
+By \ref{ex:frechet} and \ref{ex:banach},  $\ell^\infty$ and $\spc{C}([0,1])$ are universal spaces.
 The following proposition shows that an Urysohn space is universal as well.
-Unlike $\ell^\infty$, Urysohn spaces are separable;
-so it might be considered as a \textit{better} universal space.
-Theorem \ref{thm:compact-homogeneous} will give another reason why Urysohn spaces are better.
+Like $\spc{C}([0,1])$, Urysohn spaces are separable, whereas $\ell^\infty$ is not.
+Theorem \ref{thm:compact-homogeneous} will give a reason why Urysohn spaces are the right choice for universal spaces.
 
 \begin{thm}{Proposition}\label{prop:sep-in-urys}
 An Urysohn space is universal.
