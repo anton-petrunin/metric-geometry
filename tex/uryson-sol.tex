@@ -40,29 +40,30 @@ Modify the proof of \ref{lem:frechet}.
 \parbf{\ref{ex:banach}.}
 Let us denote the Cantor set by $\spc{K}$.
 Both parts will rely on the existence of
-\begin{itemize}
-\item a surjective continuous map $f\:\spc{K}\to \spc{M}$ for any compact metric space $\spc{M}$, and
-\item a distance-preserving (linear) map
+\begin{enumerate}[(i)]
+\item\label{ex:banach:surjective} a surjective continuous map $f\:\spc{K}\to \spc{M}$ for any compact metric space $\spc{M}$, and
+\item\label{ex:banach:embedding} a distance-preserving (linear) map
 \[\spc{C}(\spc{K})\to \spc{C}([0,1]).\]
-\end{itemize}
+\end{enumerate}
 
 \parit{(a).}
-Choose a surjective continuous map $f\:\spc{K}\to \spc{X}$.
-Map $\spc{X}\z\to \spc{C}(\spc{K})$ by $x\mapsto \distfun_x\circ f$.
+By \eqref{ex:banach:surjective}, there is a surjective continuous map $f\:\spc{K}\to \spc{X}$.
+Map $\spc{X}\z\to \spc{C}(\spc{K})$ by $x\mapsto \distfun_x\circ f$ and apply \eqref{ex:banach:embedding}.
 
 \parit{(b).}
-Choose a dense set $\{x_0,x_1,\dots\}\subset \spc{X}$.
+Choose a dense countable set $\{x_0,x_1,\dots\}\subset \spc{X}$.
 Consider the set $\spc{L}$ of all 1-Lipschitz functions $h\:\spc{X}\to \RR$ such that $h(x_0)=0$ with the metric defined by norm
 \[\|h\|=\sup\set{\frac{h(x_n)}{2^n\cdot|x_0-x_n|}}{n\ge 1}.\]
 Observe that $\spc{L}$ is compact.
-Choose a continuous surjective map $\spc{K}\to \spc{L}$;
+By \eqref{ex:banach:surjective}, there is a continuous surjective map $\spc{K}\to \spc{L}$;
 let us denote it by $a\mapsto h_a$.
 Consider the map $\spc{X}\to \spc{C}(\spc{K})$ that sends $x\in \spc{X}$ to the function
-$a\mapsto h_a(x)$.
+$a\mapsto h_a(x)$ and
+apply~\eqref{ex:banach:embedding}.
 
 \parit{Comments.}
-This statement is due to Stefan Banach \cite[XI §8, Theorem 10]{banach-1932};
-a complete proof is given in the lecture notes of Juha Heinonen \cite[3.6]{heinonen-2003}, which are well worth reading.
+This statement is due to Stefan Banach \cite[XI §8, Thm 10]{banach-1932};
+a proof is also presented in the lecture notes of Juha Heinonen \cite[3.6]{heinonen-2003}, which are well worth reading.
 
 Note that there is also a distance-preserving map $\spc{C}([0,1])\to \spc{C}(\spc{K})$.
 However, as it follows from the Banach--Stone theorem, these spaces are not isometric.
@@ -231,6 +232,13 @@ Try to show that there is no isometry of $\ell^\infty$ such that
 \\
 (2,0,0\dots)&\mapsto (1,1,0,\dots).
 \end{align*}
+
+\parit{Comment.}
+It is not hard to check that the discrete cube $\{0,1\}^n$ with $\ell^1$-metric is $3$-point-homogeneous, but not $4$-point-homogeneous (assuming $n$ is large).
+I do not know examples of finite metric spaces that are $m$-point-homogeneous, but not $(m+1)$-point-homogeneous for large $m$;
+see \cite{petrunin-2022-MO-homogeneous}.
+
+
 
 \parbf{\ref{ex:homogeneous-tree}.}
 Let $\spc{T}$ be a one-point-homogeneous metric tree.
