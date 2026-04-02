@@ -1,5 +1,8 @@
 \documentclass[twoside]{book}
 
+\newcommand{\spell}[2]{#1} %for text
+%\newcommand{\spell}[2]{#2} %for spelling
+
 \usepackage{lectures}
 \usepackage[colorlinks=true,
 citecolor=black,
@@ -13,6 +16,8 @@ pdfsubject={Geometry},
 pdfauthor={Anton Petrunin}
 ]{hyperref}
 \makeindex
+
+\spell{}{\makeatletter\usepackage{environ}\RenewEnviron{figure}[1][]{ [PICTURE] }\RenewEnviron{figure*}[1][]{ [PICTURE] }\RenewEnviron{wrapfigure}[1][]{ [PICTURE] }\RenewEnviron{Figure}[1][]{ [PICTURE] }\usepackage{emptypage}\pagestyle{empty}\makeatother\usepackage[none]{hyphenat}\def\emph{\textit}\renewcommand{\footnote}[1]{\textup{\ (#1)}}\renewcommand{\frac}[2]{(#1)/(#2)}\renewcommand{\tfrac}[2]{(#1/#2)}\everydisplay{\textstyle}}
 
 \begin{document}
 %\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}\def\emph{\textit}\renewcommand\footnote[1]{\ (#1)}
@@ -68,7 +73,7 @@ but any knowledge of classical geometry, differential geometry, topology, and re
 
 These notes are based on the minicourse given at SPbSU (Fall 2022) and the introductory part of a course at PSU (Spring 2020).
 The latter included additional material from \cite{alexander-kapovitch-petrunin-2019,petrunin2020mnfld,nabutovsky}.
-A part of the text is a compilation from \cite{alexander-kapovitch-petrunin-2019, alexander-kapovitch-petrunin-2025, petrunin-yashinski, petrunin-2022-PIGTIKAL, petrunin-zamorabarrera} and its drafts.
+A part of the text is a compilation from \cite{alexander-kapovitch-petrunin-2019, alexander-kapovitch-petrunin-2025, petrunin-yashinski, petrunin-2022-PIGTIKAL, petrunin-zamorabarrera} and their drafts.
 
 I want to thank
 Sergei Ivanov,
@@ -78,6 +83,7 @@ Alexander Lytchak,
 Luigi Massacci,
 Rostislav Matveyev,
 Julien Melleray,
+Serge Yagunov,
 and Sergio Zamora Barrera for their help.
 The present work is partially supported by NSF grant DMS-2005279,
 the Simons Foundation grant \#584781,
