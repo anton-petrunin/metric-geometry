@@ -549,7 +549,50 @@ Consider the hemisphere
 Show that there is unique isometric embedding $\iota\:\mathbb{S}^2_+\hookrightarrow\Inj\mathbb{S}^1$ such that $\iota(u)=u$ for any $u\in \mathbb{S}^1$.
 \end{thm}
 
-\input{met.tex}
+\section{Category of metric spaces}\label{sec:met}
+
+Consider the category $\Met$ that has metric spaces as its objects and short maps as its morphisms.
+The following statements can be checked easily (and it is also easy to make a mistake).
+
+\begin{itemize}
+\item Isomorphisms in $\Met$ are isometries.
+\item Monomorphisms in $\Met$ are injective short maps.
+\item Epimorphisms in $\Met$ are short maps with dense image.
+\end{itemize}
+Now, a  monomorphism, say $m$, is called \emph{extremal}
+if whenever $m\z=h\circ e$ and $e$ is an epimorphism, then $e$ is an isomorphism.
+\begin{itemize}
+\item Extremal monomorphisms in $\Met$ are distance-preserving maps with closed image.
+\end{itemize}
+The last statement can be used to describe closed sets in categorical language.
+
+Note that injective spaces (see \ref{def:injective}) are not at all injective objects in $\Met$,
+but they are injective with respect to extremal monomorphisms.
+That is, $\spc{Y}$ is injective if for any extremal monomorphism $m\:\spc{A}\to \spc{X}$, and a morphism $f\:\spc{A}\to \spc{Y}$ there is a morphism $h\:\spc{X}\to \spc{Y}$ such that $f=h\circ m$.
+Translating this back to metric language we get the condition in \ref{def:injective} for closed subsets $\spc{A}\subset\spc{X}$.
+This is weaker than the original definition; for example, the open half-line $(0,\infty)$ is an injective object with respect to extremal monomorphisms;
+since $(0,\infty)$ is not complete, it is not an injective space in the usual sense (see \ref{ex:inj=complete-geodesic-contractible}).
+
+Further, the empty space is the initial object in $\Met$ and any one-point space, say $*$, is a final object.
+The set of morphisms $*\to \spc{X}$ can be identified with the set of points in $\spc{X}$.
+In particular, we get a categorical description of $n$-point spaces.
+Now, a distance-preserving map can be defined as a morphism $h\:\spc{X}\to \spc{Y}$ such that for any two-point space $\spc{D}$ and any extremal monomorphism $m\:\spc{D}\to \spc{X}$ the composition $h\circ m$ is an extremal monomorphism.
+
+Let us denote by $\mathscr{R}$ the set of isomorphism classes of the two-point spaces;
+of course each class corresponds to a positive real number.
+Note that $\Met$ defines an order on $\mathscr{R}$.
+From the subcategory of spaces with at most 3 points one can fish out the triples of elements of $\mathscr{R}$ that meet the triangle inequalities, and this allows us to recover addition on $\mathscr{R}$.
+Therefore, we can identify $\mathscr{R}$ with the positive reals in a unique way up to multiplication by a positive constant.
+Once this is done, we can use it to measure the distance between points in a given metric space.
+
+We just sketched a proof of the following statement.
+
+\begin{thm}{Proposition}
+Metric spaces can be reconstructed from the category $\Met$ and this reconstruction is
+unique up to a global change of scale.
+\end{thm}
+
+By the proposition, everything in metric geometry can be translated in purely categorical language.
 
 
 \section{Remarks}
